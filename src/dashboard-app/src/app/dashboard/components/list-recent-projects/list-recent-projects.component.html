@@ -1,0 +1,99 @@
+<ng-container *ngIf="showRecentTable">
+  <div class="table">
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sort$.next($event)" [matSortDisableClear]="true">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="{ 'header-active': order.active === 'name' }">
+          {{ 'projectDetail.info.name' | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+          <mat-icon color="primary">description</mat-icon>
+          <a [href]="'/prospect/detail/' + item.projectId">{{ item.projectName }}</a>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Address Column -->
+      <ng-container matColumnDef="address">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="{ 'header-active': order.active === 'address' }">
+          {{ 'projectDetail.info.address' | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+          <div class="address">{{ item.address }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Coordinates Column -->
+      <ng-container matColumnDef="coordinates">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>
+          {{ 'projectDetail.info.coordinates' | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let item">{{ item.point }}</mat-cell>
+      </ng-container>
+
+      <!-- Capacity Column -->
+      <ng-container matColumnDef="capacity">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="{ 'header-active': order.active === 'capacity' }">
+          {{ 'pvConfig.params.systemSize.capacity' | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+          {{ item.pvInstalledPower }}
+          <sg-unit-label *ngIf="item.pvInstalledPower" [unit]="installedPowerUnit"></sg-unit-label>
+        </mat-cell>
+      </ng-container>
+
+      <!-- LastChange Column -->
+      <ng-container matColumnDef="updatedTs">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="{ 'header-active': order.active === 'updatedTs' }">
+          {{ 'common.datetime.lastChange' | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let item">{{ item.updatedTs | sgDateTimeFormat: 'dateTime' }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </table>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!showRecentTable">
+  <ng-container *ngIf="(dataSource.getCount() | async) > 0 ; else noValue">
+    <mat-card class="wrapper-card">
+      <div class="recent-project-cards" *ngFor="let item of dataSource.connect() | async; let i=index">
+        <mat-card-content class="image">
+          <img mat-card-image class="main-image" [src]="item.srcImg" alt="mapbox image">
+        </mat-card-content>
+        <mat-card-content class="text">
+          <mat-card-title>
+            <a [href]="'/prospect/detail/' + item.projectId">{{ item.projectName }}</a>
+          </mat-card-title>
+          <mat-card-subtitle class="address" *ngIf="item.address">{{ item.address }}</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="item.address">{{ item.point }}</mat-card-subtitle>
+          <mat-card-title>{{ 'common.datetime.lastChange' | transloco }}</mat-card-title>
+          <mat-card-subtitle>{{ item.updatedTs | sgDateTimeFormat: 'dateTime' }}</mat-card-subtitle>
+          <mat-card-title class="value" *ngIf="item.pvInstalledPower">
+            {{ 'pvConfig.params.systemSize.capacity' | transloco }}
+          </mat-card-title>
+          <mat-card-subtitle class="value">
+            {{ item.pvInstalledPower }}
+            <sg-unit-label *ngIf="item.pvInstalledPower" [unit]="installedPowerUnit"></sg-unit-label>
+          </mat-card-subtitle>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </ng-container>
+</ng-container>
+
+<sg-trademark></sg-trademark>
+
+<mat-paginator
+  [pageSizeOptions]="[2, 5, 10, 20, 50, 100]"
+  [length]="(dataSource.getCount() | async) || 0"
+  [pageSize]="defaultPageSize"
+  (page)="pageEvent$.next($event)"
+  showFirstLastButtons>
+</mat-paginator>
+
+<ng-template #noValue>
+  <h3>{{ 'dashboard.listRecentProjects.noProjects' | transloco }}</h3>
+</ng-template>

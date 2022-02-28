@@ -1,0 +1,510 @@
+<div class="print-view">
+
+  <table>
+    <!-- HEADER -->
+    <thead>
+    <tr>
+      <th>
+        <div class="page-header">
+          <img src="assets/img/solargis.svg" class="sg-logo">
+          <span class="right">
+            {{ project | sgProjectName }} <ng-container *ngIf="project?.site.place">({{ project?.site.place?.placemark.countryName }})</ng-container>
+          </span>
+          <div *ngIf="freeTrial$ | async" class="watermark">{{ 'report.freeTrialWatermark' | transloco }}</div>
+        </div>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+      <td>
+
+        <div class="card-layout">
+
+          <!-- TABLE OF CONTENTS -->
+          <div class="section-title hidden-on-screen not-indexed">
+            {{ 'report.contents' | transloco }}
+          </div>
+
+          <div class="card-big hidden-on-screen">
+            <mat-card>
+              <sg-table-of-contents [hasPvConfig]="hasPvConfig$ | async"
+                                    [companyLicense]="(selectedCompany$ | async)?.prospectLicense.licenseType"
+                                    [includeEconomy]="includeEconomy">
+              </sg-table-of-contents>
+            </mat-card>
+          </div>
+
+          <!-- OVERVIEW -->
+          <div class="section-title" id="overview">
+            {{ 'projectDetail.nav.overview' | transloco }}
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'project.data.yearlyAverage' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-project-annual-overview [data]="(pvcalcData$ | async)?.annual.data"
+                                            [keys]="selectedAnnualKeys(hasPvConfig$ | async)"
+                                            [dataset]="pvcalcDataset">
+                </sg-project-annual-overview>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+        </div>
+
+        <!-- PROJECT INFO -->
+        <div class="card-layout">
+
+          <div class="section-title" id="projectInfo">
+            {{ 'projectDetail.info.info' | transloco }}
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-project-info-table [project]="project"></sg-project-info-table>
+            </mat-card>
+          </div>
+
+          <div class="card-small project-location">
+            <mat-card>
+              <sg-indexed-title type="figure">{{ 'report.location' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-site-location-map [site]="project.site" [pvElectricity]="false"></sg-site-location-map>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="card-small map-view">
+            <mat-card>
+              <sg-indexed-title type="figure">{{ 'report.mapView' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-site-location-map [site]="project.site" [layerDef]="layerDef" [satellite]="true">
+                </sg-site-location-map>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="card-small">
+            <mat-card>
+              <sg-indexed-title type="figure">{{ 'projectDetail.sunpath.label' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-sunpath-canvas [project]="project" [horizon]="horizon$ | async">
+                </sg-sunpath-canvas>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="card-small">
+            <mat-card>
+              <sg-indexed-title type="figure">{{ 'projectDetail.daylength.label' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-daylength-canvas [project]="project" [horizon]="horizon$ | async">
+                </sg-daylength-canvas>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <!-- Filling container - fixes some issues with solar params table -->
+          <div class="filling-container"></div>
+
+        </div>
+
+        <!-- PV CONFIGURATION -->
+        <ng-container *ngIf="pvConfig$ | async as pvConfig">
+          <div class="card-layout" *ngIf="pvConfig.type !== 'noPvSystem'">
+
+            <div class="section-title" id="pvConfig">
+              {{ 'projectDetail.pvConfig.pvConfiguration' | transloco }}
+            </div>
+
+            <div class="card-big">
+              <mat-card>
+                <sg-pv-config-viewer [pvConfig]="pvConfig" size="large" [print]="true"></sg-pv-config-viewer>
+              </mat-card>
+            </div>
+
+            <div class="card-big" *ngIf="pvConfig['snowSoilingLosses']">
+              <mat-card>
+                <sg-indexed-title type="table">{{ 'pvConfig.params.snowSoilingLosses.headline' | transloco }}</sg-indexed-title>
+                <mat-card-content>
+                  <sg-snow-soiling-losses-table [params]="pvConfig['snowSoilingLosses']"></sg-snow-soiling-losses-table>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+          </div>
+        </ng-container>
+
+        <!-- SOLAR AND METEO: MONTHLY -->
+        <div class="card-layout">
+
+          <div class="section-title" id="solarMeteo">
+            {{ 'projectDetail.nav.solarMeteo' | transloco }}: {{ 'projectDetail.nav.monthlyStatistics' | transloco }}
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <p>{{'projectDetail.solarMeteo.summary' | transloco}}</p>
+            </mat-card>
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'report.solarParams' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-monthly-data-table [columns]="solarColumns$ | async"
+                                       [dataColumns]="dataColumns$ | async"
+                                       [dataSource]="solarMeteoMonthlyDataSource"
+                                       [dataset]="dataset">
+                </sg-monthly-data-table>
+                <div class="azimuth" *ngIf="(hasPvConfig$ | async) === false">
+                  <span>{{ 'projectDetail.solarMeteo.optimumAzimuth' | transloco }} </span>
+                  <sg-unit-value [unit]="optaUnit" [value]="(annualData$ | async)?.OPTA"></sg-unit-value>
+                  <sg-unit-label [unit]="optaUnit"></sg-unit-label>
+                  /&nbsp;
+                  <sg-unit-value [unit]="optaUnit" [value]="(optaAzimuth$ | async)"></sg-unit-value>
+                  <sg-unit-label [unit]="optaUnit"></sg-unit-label>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="card-big" *ngIf="hasLtaAllPermission$ | async">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'report.otherParams' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-monthly-data-table [columns]="meteoColumns$ | async"
+                                       [dataColumns]="dataColumns$ | async"
+                                       [dataSource]="solarMeteoMonthlyDataSource"
+                                       [dataset]="dataset">
+                </sg-monthly-data-table>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <ng-container *ngFor="let cardChart of (charts$ | async)">
+            <div class="card-small" *ngIf="cardChart[0].hasPermission">
+              <mat-card>
+                <sg-indexed-title type="figure">
+                  <ng-container *ngIf="!isLayerArray(cardChart[0].layers); else array">
+                    {{ cardChart[0].layers.name.translate | transloco }}
+                  </ng-container>
+                  <ng-template #array>
+                    <ng-container *ngFor="let layer of cardChart[0].layers; let last = last">
+                      <ng-container *ngIf="!last">{{ (layer.name.translate | transloco).split(' ')[0] }}</ng-container>
+                      <ng-container *ngIf="last">{{ layer.name.translate | transloco | lowercase }}</ng-container>
+                      <ng-container *ngIf="!last">&nbsp;+&nbsp;</ng-container>
+                    </ng-container>
+                  </ng-template>
+                </sg-indexed-title>
+                <mat-card-content>
+                  <sg-highcharts [opts]="cardChart[0].chart | async" [destroyOnChange]="true" class="pv-chart"></sg-highcharts>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </ng-container>
+
+        </div>
+
+        <!-- SOLAR AND METEO: DAILY -->
+        <div class="card-layout" *ngIf="(pvConfig$ | async) === (null || undefined) || (pvConfig$ | async).type === 'noPvSystem'">
+
+          <div class="section-title" id="solarMeteoDaily">
+            {{ 'projectDetail.nav.solarMeteo' | transloco }}: {{ 'report.dailyStats' | transloco }}
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <p>{{ 'report.solarDailySummary' | transloco }}</p>
+            </mat-card>
+          </div>
+
+          <div class="card-big" *ngIf="solarMeteoHourlyCharts$ | async as solarMeteoHourlyCharts">
+            <mat-card>
+              <sg-indexed-title type="figure">{{ 'report.dailyGhiDniDif' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <div *ngFor="let series of solarMeteoHourlyCharts.series; let i = index;" class="hourly-chart">
+                  <div class="headline">{{ months[i] | transloco }}</div>
+                  <sg-highcharts [opts]="series"></sg-highcharts>
+                </div>
+                <div class="charts-legend">
+                  <ul>
+                    <li *ngFor="let l of solarMeteoHourlyCharts.layers">
+                      <i [ngStyle]="{'background-color': l.chart.color}"></i>
+                      <span>{{ l.key }} [<sg-unit-label [unit]="l.unit"></sg-unit-label>]</span>
+                    </li>
+                  </ul>
+                  <sg-timezone [timezone]="project?.site.timezone"></sg-timezone>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <ng-container *ngIf="solarMeteoHourlyHeatmaps$ | async as solarMeteoHourlyHeatmaps">
+            <div class="card-big" *ngFor="let heatmap of solarMeteoHourlyHeatmaps">
+              <mat-card>
+                <sg-indexed-title type="table">
+                  {{ 'report.hourly' + capitalized(heatmap.layer.key) | transloco }} [<sg-unit-label [unit]="heatmap.layer.unit"></sg-unit-label>]
+                </sg-indexed-title>
+                <mat-card-content>
+                  <sg-hourly-heatmap
+                    [data]="heatmap.data"
+                    [layer]="heatmap.layer"
+                    [stats]="heatmap.stats"
+                  ></sg-hourly-heatmap>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </ng-container>
+
+        </div>
+
+        <!-- PV ELECTRICITY: MONTHLY -->
+        <div class="card-layout" *ngIf="hasPvConfig$ | async">
+
+          <div class="section-title" id="pvElectricity">
+            {{ 'projectDetail.nav.pvElectricity' | transloco }}: {{ 'projectDetail.nav.monthlyStatistics' | transloco }}
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <p>{{'projectDetail.pvElectricity.summary' | transloco}}</p>
+            </mat-card>
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-indexed-title type="table">
+                {{ 'report.ltaPvout' | transloco }}
+              </sg-indexed-title>
+              <mat-card-content>
+                <sg-monthly-data-table [columns]="pvElectricityColumns"
+                                       [dataColumns]="pvElectricityDataColumns"
+                                       [dataSource]="pvElectricityMonthlyDataSource"
+                                       [dataset]="pvcalcDataset">
+                </sg-monthly-data-table>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="card-small" *ngFor="let chart$ of pvElectricityCharts$; let i = index">
+            <mat-card>
+              <sg-indexed-title type="figure">{{ 'project.dataLayer.' + pvElectricityLayers[i] + '.name' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-highcharts [opts]="chart$ | async" class="pv-chart"></sg-highcharts>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
+        <!-- PV ELECTRICITY: HOURLY -->
+        <div class="card-layout" *ngIf="hourlyProfiles$ | async as hourlyProfiles">
+
+          <div class="section-title" id="pvElectricityHourly">
+            {{ 'projectDetail.nav.pvElectricity' | transloco }}: {{ 'projectDetail.nav.hourlyProfiles' | transloco }}
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <p>{{'projectDetail.pvElectricity.hourlySummary' | transloco}}</p>
+            </mat-card>
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-indexed-title type="figure">{{ 'report.hourlyPvoutSpecific' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <div *ngFor="let chart of hourlyProfiles?.charts; let i = index" class="hourly-chart">
+                  <div class="headline">{{ months[i] | transloco }}</div>
+                  <sg-highcharts [opts]="chart"></sg-highcharts>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'report.hourlyPvoutSpecific' | transloco }} [Wh/kWp]</sg-indexed-title>
+              <mat-card-content>
+                <sg-hourly-heatmap [data]="hourlyProfiles?.heatmap?.data"
+                                   [layer]="hourlyProfiles?.heatmap?.layer"
+                                   [stats]="hourlyProfiles?.heatmap?.stats">
+                </sg-hourly-heatmap>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
+        <!-- PV PERFORMANCE: Energy conversion and system losses -->
+        <div class="card-layout" *ngIf="(lossesTable$ | async) && (lossesDiagram$ | async)">
+
+          <div class="section-title" id="pvPerformanceLosses">
+            {{ 'projectDetail.nav.pvPerformance' | transloco }}: {{ 'projectDetail.nav.pvLosses' | transloco }}
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <p>{{'projectDetail.pvLosses.summary' | transloco}}</p>
+            </mat-card>
+          </div>
+
+          <div class="card-big breakable">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'projectDetail.pvLosses.title' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-pv-losses-table [gtiLayer]="gtiLayer" [lossesTable]="lossesTable$ | async"
+                                    [pvoutSpecificLayer]="pvoutSpecificLayer">
+                </sg-pv-losses-table>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'projectDetail.pvLosses.lossDiagram' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-pv-losses-diagram [annualLayers]="annualLayers" [annualPvCalcData]="annualPvCalcData$ | async"
+                                     [lossesDiagram]="lossesDiagram$ | async">
+                </sg-pv-losses-diagram>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+        </div>
+
+        <!-- PV PERFORMANCE: Lifetime performance -->
+        <div class="card-layout" *ngIf="performanceTable$ | async as performanceTable">
+
+          <div class="section-title" id="pvPerformanceLifetime">
+            {{ 'projectDetail.nav.pvPerformance' | transloco }}: {{ 'projectDetail.nav.lifetimePerformance' | transloco }}
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <p>{{'projectDetail.pvPerformance.lifetimeSummary' | transloco}}</p>
+            </mat-card>
+          </div>
+
+          <div class="card-big breakable">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'projectDetail.pvPerformance.lifetimeProduction' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-pv-lifetime-performance-table [performanceTable]="performanceTable"
+                                                  [pvcalcDataset]="pvcalcDataset">
+                </sg-pv-lifetime-performance-table>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+        </div>
+
+        <!-- ECONOMY -->
+        <div class="card-layout" *ngIf="includeEconomy && hasPvConfig$ | async">
+
+          <div class="section-title" id="economy">{{ 'projectDetail.nav.finance' | transloco }}</div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'projectDetail.economy.label.overview' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-economy-overview [data]="economyStats$ | async"></sg-economy-overview>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'projectDetail.economy.label.economicIndicators' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-economy-calculator-table [economy$]="economy$"
+                                             [shorten]="true" [inverse]="true"
+                                             [maxHeight]="752">
+                </sg-economy-calculator-table>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'projectDetail.economy.label.inputs' | transloco }}</sg-indexed-title>
+              <mat-card-content>
+                <sg-economy-inputs [inputs]="economyInputs$ | async"
+                                   [annualPvCalcData]="annualPvCalcData$ | async"
+                                   [system]="systemConfig$ | async">
+                </sg-economy-inputs>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+        </div>
+
+        <!-- GLOSSARY -->
+        <div class="card-layout">
+          <div class="section-title" id="glossary">
+            {{ 'report.glossary.title' | transloco }}
+          </div>
+
+          <div class="card-big breakable">
+            <mat-card>
+              <sg-indexed-title type="table">{{ 'report.glossary.title' | transloco }}</sg-indexed-title>
+              <sg-glossary-table [layers]="glossaryLayers$ | async" [noSort]="true" [print]="true"></sg-glossary-table>
+            </mat-card>
+          </div>
+        </div>
+
+        <!-- METADATA -->
+        <div class="card-layout">
+
+          <div class="section-title" id="metadata">
+            {{ 'projectDetail.nav.metadata' | transloco }}
+          </div>
+
+          <sg-prospect-metadata></sg-prospect-metadata>
+
+        </div>
+
+        <!-- DISCLAIMER -->
+        <div class="card-layout disclaimer">
+
+          <div class="section-title" id="disclaimer">
+            {{ 'report.legal.title' | transloco }}
+          </div>
+
+          <div class="card-big">
+            <mat-card>
+              <p>{{ 'report.legal.guarantee' | transloco }}</p>
+              <p>{{ 'report.legal.uncertainty' | transloco }}</p>
+              <p>
+                {{ 'report.legal.moreInfo' | transloco }}<br>
+                <a href="https://solargis.com/products/pv-yield-assessment-study/overview/">https://solargis.com/products/pv-yield-assessment-study/overview/</a>
+              </p>
+              <p>{{ 'report.legal.copyright' | transloco:{currentYear: currentYear} }}<br>{{ 'report.legal.trademark' | transloco }}</p>
+              <p>
+                {{ 'report.legal.terms' | transloco }}<br>
+                <a href="https://solargis.com/legal/general-contractual-terms/">https://solargis.com/legal/general-contractual-terms/</a>
+              </p>
+              <p class="bold">{{ 'report.legal.validationAuth' | transloco }}</p>
+              <p>{{ 'report.legal.validationAuthText' | transloco }}</p>
+              <p class="bold">{{ 'report.legal.serviceProvider' | transloco }}</p>
+              <p>
+                Solargis s.r.o., Bottova 2A, 811 09 Bratislava, {{ 'report.slovakia' | transloco }}<br>
+                {{ 'report.legal.registrationId' | transloco }}: 45 354 766<br>
+                {{ 'report.legal.vatNr' | transloco }}: SK2022962766<br>
+                {{ 'report.legal.tel' | transloco }}: +421 2 4319 1708<br>
+                {{ 'report.legal.email' | transloco }}: <a href="mailto:contact@solargis.com">contact@solargis.com</a><br>
+                URL: <a href="https://solargis.com">solargis.com</a>
+              </p>
+            </mat-card>
+          </div>
+
+        </div>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

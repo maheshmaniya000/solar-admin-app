@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StandardDialogComponent component when content is a component should match snapshot 1`] = `
+<mat-dialog-container
+  aria-modal="true"
+  class="mat-dialog-container ng-trigger ng-trigger-dialogContainer"
+  role="dialog"
+  style="transform:none;0:transform;"
+  tabindex="-1"
+>
+  <sg-standard-dialog>
+    <sg-dialog>
+      
+      
+      <sg-test-content
+        style=""
+      >
+        <div>
+          Some 
+          <b>
+            HTML
+          </b>
+           content
+        </div>
+      </sg-test-content>
+      
+      
+    </sg-dialog>
+  </sg-standard-dialog>
+  
+</mat-dialog-container>
+`;
+
+exports[`StandardDialogComponent component when content is a string should pass injected mat dialog data to the dialog as props and match snapshot 1`] = `
+<sg-standard-dialog
+  __ngContext__={[Function LRootView]}
+  data={[Function Object]}
+>
+  <sg-dialog>
+     Some content 
+  </sg-dialog>
+</sg-standard-dialog>
+`;
+
+exports[`StandardDialogComponent component when content is a template should match snapshot 1`] = `
+<mat-dialog-container
+  aria-modal="true"
+  class="mat-dialog-container ng-trigger ng-trigger-dialogContainer"
+  role="dialog"
+  style="transform:none;0:transform;"
+  tabindex="-1"
+>
+  <sg-standard-dialog>
+    <sg-dialog>
+      
+      <div
+        style=""
+      >
+        Some 
+        <b>
+          HTML
+        </b>
+         content
+      </div>
+      
+      
+      
+    </sg-dialog>
+  </sg-standard-dialog>
+  
+</mat-dialog-container>
+`;

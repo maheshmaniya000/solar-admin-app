@@ -1,0 +1,70 @@
+:host ::ng-deep {
+  .dialog-container.bootstrap {
+    width: 100%;
+  }
+}
+
+.row {
+  min-height: 40px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.price {
+  text-align: left;
+  font-weight: bold;
+  padding-right: 16px;
+
+  &-value {
+    display: inline-block;
+    min-width: 90px;
+  }
+}
+
+.users {
+  margin-top: -24px;
+  margin-left: -13px;
+
+  mat-form-field {
+    width: 50px;
+  }
+
+  input {
+    text-align: center;
+  }
+
+  &-adjust {
+    display: inline-block;
+    min-width: 130px;
+  }
+}
+
+hr {
+  margin-bottom: 24px;
+}
+
+.total-price-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .total-price {
+    max-width: 350px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 384px) {
+  .price {
+    text-align: right;
+    min-width: 100px;
+  }
+}
+
+@media (min-width: 600px) {
+  .total-price-wrapper {
+    align-items: flex-end;
+  }
+}

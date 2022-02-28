@@ -1,0 +1,43 @@
+@import 'theme';
+
+
+mat-card {
+  padding: 24px 32px;
+
+  .headline {
+    color: #44A987;
+    position: relative;
+
+    > mat-icon {
+      position: absolute;
+    }
+
+    span {
+      margin-left: 24px + 16px;
+      color: #222D3D;
+      font-size: 20px;
+      font-weight: $font-weight-bold;
+    }
+
+    button {
+      float: right;
+      margin-top: -8px;
+    }
+  }
+
+  .content {
+    padding-top: 16px;
+    color: #222D3D;
+    font-size: 14px;
+  }
+
+}
+
+.divider {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.row {
+  margin-bottom: 4px;
+}

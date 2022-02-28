@@ -1,0 +1,85 @@
+<div class="table-s" [ngStyle]="{'width': inverse ? 'auto' : tableWidth, 'max-height': maxHeight + 'px'}">
+  <cdk-table #table [dataSource]="table$" class="data-table" *ngIf="!inverse; else inverseTable">
+
+    <ng-container cdkColumnDef="label">
+      <cdk-header-cell *cdkHeaderCellDef>
+        {{ 'projectDetail.economy.table.endOfYear' | transloco }}
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <ng-container *ngIf="row.id">
+          {{ 'projectDetail.economy.table.' + row.id | transloco }}
+        </ng-container>
+      </cdk-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="unit">
+      <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" >
+        <div *ngIf="row.id" class="muted toggle"><sg-unit-toggle-label [unit]="row.unit" ></sg-unit-toggle-label></div>
+      </cdk-cell>
+    </ng-container>
+
+    <ng-container *ngFor="let year of dataColumns" [cdkColumnDef]="year">
+      <cdk-header-cell *cdkHeaderCellDef class="number-cell">
+        {{ year }}
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" class="number-cell">
+        <span *ngIf="row.id" [ngClass]="{'red': (row.data[year] < 0)}">
+          <sg-unit-value *ngIf="row.data[year] !== null" [unit]="row.unit" [value]="row.data[year]"></sg-unit-value>
+        </span>
+      </cdk-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="sum">
+        <cdk-header-cell *cdkHeaderCellDef class="number-cell sum-cell">
+          {{ 'common.aggregation.sum' | transloco }}
+        </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="number-cell sum-cell">
+          <span *ngIf="row.id && isSumRow(row.id)" [ngClass]="{'red': (row.data[year] < 0)}">
+            <sg-unit-value [unit]="row.unit" [value]="sum(row.data)"></sg-unit-value>
+          </span>
+        </cdk-cell>
+      </ng-container>
+
+    <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+    <cdk-row *cdkRowDef="let row; columns: columns" [ngClass]="{'total': (row.id === 'totalCashFlow')}"></cdk-row>
+
+  </cdk-table>
+</div>
+
+<ng-template #inverseTable>
+  <cdk-table [dataSource]="table$" class="data-table">
+
+    <ng-container cdkColumnDef="year">
+      <cdk-header-cell *cdkHeaderCellDef>
+        {{ 'projectDetail.economy.table.endOfYear' | transloco }}
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        {{row['year'] === 'sum' ? ('common.aggregation.sum' | transloco) : row['year']}}
+      </cdk-cell>
+    </ng-container>
+
+    <ng-container *ngFor="let column of dataColumns" [cdkColumnDef]="column">
+      <cdk-header-cell *cdkHeaderCellDef>
+        <ng-container *ngIf="isLayerKey(column); else columnName">
+          <sg-project-data-key [key]="column"></sg-project-data-key>
+        </ng-container>
+        <ng-template #columnName>
+          {{ 'projectDetail.economy.table.' + column | transloco }}
+        </ng-template>
+        <div class="label">
+          <sg-unit-toggle-label [unit]="getUnit(column)"></sg-unit-toggle-label>
+        </div>
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" class="number-cell">
+        <span [ngClass]="{'red': (row[column] < 0)}">
+          <sg-unit-value *ngIf="row[column] !== null" [unit]="getUnit(column)" [value]="row[column]"></sg-unit-value>
+        </span>
+      </cdk-cell>
+    </ng-container>
+
+    <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+    <cdk-row *cdkRowDef="let row; columns: columns" [ngClass]="{'total': (row.id === 'totalCashFlow')}"></cdk-row>
+
+  </cdk-table>
+</ng-template>

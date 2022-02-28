@@ -1,0 +1,7 @@
+<mat-icon
+  *ngIf="dataNotLatestIconVisible()"
+  style="vertical-align: text-bottom"
+  [matTooltip]="'project.data.notLatest' | transloco"
+  [svgIcon]="'sg:sgf-status-dot'"
+></mat-icon>
+<div>{{ project | sgProjectName }}</div>

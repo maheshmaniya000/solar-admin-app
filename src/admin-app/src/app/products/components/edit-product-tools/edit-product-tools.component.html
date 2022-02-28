@@ -1,0 +1,9 @@
+<ng-container *ngIf="productDetailStore.viewModel$ | async as viewModel">
+  <button mat-icon-button routerLink="..">
+    <mat-icon>backspace</mat-icon>
+  </button>
+
+  <button mat-icon-button [disabled]="viewModel.saveDisabled" (click)="productDetailStore.update()">
+    <mat-icon>save</mat-icon>
+  </button>
+</ng-container>

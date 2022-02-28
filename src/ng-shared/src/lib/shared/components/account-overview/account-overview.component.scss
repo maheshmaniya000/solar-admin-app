@@ -1,0 +1,36 @@
+@import 'theme';
+
+:host > div {
+  position: relative;
+  max-width: 196px;
+  margin-right: $sg-16;
+
+  .account-overview-info {
+    margin-left: $sg-12;
+    line-height: 15px;
+    position: relative;
+    max-width: 150px;
+  }
+
+  .account-overview-name {
+    font-size: $sg-14;
+    color: map-get($sg-gray, 800);
+    @include no-margin();
+    @include text-ellipsis();
+  }
+
+  .account-overview-text {
+    font-size: $sg-12;
+    font-weight: $font-weight-regular;
+    color: map-get($primary, 600);
+    line-height: $sg-18;
+    @include no-margin();
+    @include text-ellipsis();
+  }
+
+  .display-small-none {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}

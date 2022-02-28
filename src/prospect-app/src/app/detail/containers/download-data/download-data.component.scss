@@ -1,0 +1,21 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.title {
+  margin-bottom: $sg-24;
+  color: map-get($primary, 800);
+}
+
+.subtitle {
+  font-size: $sg-13;
+  line-height: $sg-18;
+  margin-bottom: $sg-32;
+}
+
+.error-generating {
+  color: map-get($accent, 400);
+  font-style: italic;
+}

@@ -1,0 +1,33 @@
+@import 'theme';
+
+.success-container {
+  text-align: center;
+
+  h3 {
+    font-size: $sg-18;
+    line-height: 22px;
+    margin-bottom: 16px;
+    font-weight: $font-weight-bold;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  button {
+    outline: 0;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    box-shadow: none;
+    padding:  0 16px;
+    min-width: 96px;
+    border-radius: 4px;
+    background: map-get($accent, default);
+    color: white;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    border: 0;
+    cursor: pointer;
+  }
+}

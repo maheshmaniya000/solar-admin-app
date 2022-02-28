@@ -1,0 +1,104 @@
+<mat-expansion-panel expanded="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title> {{ 'projectDetail.shared.summary' | transloco }}</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div fxLayout="column" fxLayout.gt-sm="row">
+    <div fxFlex>
+      <div fxLayout="column" fxLayout.gt-xs="row" *ngIf="hasData">
+        <div fxFlex="50%" class="cell border">
+          <ng-content select=".left"></ng-content>
+        </div>
+        <div fxFlex class="cell border">
+          <ng-content select=".right"></ng-content>
+        </div>
+      </div>
+      <div *ngIf="!hasData" class="cell border">
+        {{ text | transloco }}
+      </div>
+    </div>
+    <div fxFlex="50%" class="cell" [ngClass.lt-md]="{'small-no-pv': !hasPvConfig}">
+
+      <div *ngIf="hasPvConfig; else noPvConfig" class="pv-config">
+        <div class="heading">
+          {{ 'pvConfig.type.' + pvConfig.type + '.name' | transloco }}
+        </div>
+
+        <div>
+          <sg-pv-config-param-value
+            type="systemSize"
+            [param]="pvConfig.systemSize"
+            [pvConfig]="pvConfig">
+          </sg-pv-config-param-value>
+          {{ delimiter }}
+          <sg-pv-config-param-value
+            type="pvModule"
+            [param]="pvConfig.pvModule">
+          </sg-pv-config-param-value>
+        </div>
+
+        <div *ngIf="pvConfig.orientation">
+          <sg-pv-config-param-value
+            type="orientation"
+            [param]="pvConfig.orientation"
+            [pvConfig]="pvConfig">
+          </sg-pv-config-param-value>
+        </div>
+
+        <div *ngIf="pvConfig.rotationLimits">
+          {{ 'pvConfig.params.rotationLimits.headline' | transloco }}:
+          <sg-pv-config-param-value
+            type="rotationLimits"
+            [param]="pvConfig.rotationLimits"
+            [pvConfig]="pvConfig">
+          </sg-pv-config-param-value>
+        </div>
+
+        <div>
+          <sg-pv-config-param-value
+            type="inverter"
+            [param]="pvConfig.inverter">
+          </sg-pv-config-param-value>
+          {{ delimiter }}
+          <sg-pv-config-param-value
+            type="transformer"
+            [param]="pvConfig.transformer">
+          </sg-pv-config-param-value>
+          {{ delimiter }}
+          <sg-pv-config-param-value
+            type="systemAvailability"
+            [param]="pvConfig.systemAvailability">
+          </sg-pv-config-param-value>
+        </div>
+
+        <div>
+          <sg-pv-config-param-value
+            type="cablingLosses"
+            [param]="pvConfig.cablingLosses"
+            [pvConfig]="pvConfig">
+          </sg-pv-config-param-value>
+        </div>
+
+        <div>
+          <sg-pv-config-param-value
+            type="snowSoilingLosses"
+            [param]="pvConfig.snowSoilingLosses"
+            [pvConfig]="pvConfig">
+          </sg-pv-config-param-value>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div fxLayout *ngIf="hasData" class="bottom-text" fxHide fxShow.gt-sm>
+    <div fxFlex>
+      {{ text | transloco }}
+    </div>
+  </div>
+</mat-expansion-panel>
+
+<ng-template #noPvConfig>
+  <div>
+    {{ 'projectDetail.shared.noPvConfig' | transloco }}
+  </div>
+</ng-template>

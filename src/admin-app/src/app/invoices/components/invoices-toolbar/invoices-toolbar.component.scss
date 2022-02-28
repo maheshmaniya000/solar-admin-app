@@ -1,0 +1,15 @@
+@import 'theme';
+
+.search-input {
+  width: 160px;
+  height: $sg-24;
+  border: 0;
+  border-bottom: 1px solid map-get($primary, 400);
+  background: transparent;
+  outline: none;
+  padding: 0;
+
+  &:focus {
+    border-bottom-color: map-get($primary, 600);
+  }
+}

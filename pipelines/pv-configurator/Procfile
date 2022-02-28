@@ -1,0 +1,1 @@
+web: node dist/pv-configurator/server.js --cluster

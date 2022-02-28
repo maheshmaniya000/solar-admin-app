@@ -1,0 +1,18 @@
+<div class="card-layout">
+  <!-- Summary !-->
+
+  <div class="card-big">
+    <mat-card>
+      <div class="title">{{ 'projectDetail.data.title' | transloco }}</div>
+      <div class="subtitle" [innerHTML]="'projectDetail.data.note' | transloco"></div>
+      <form [formGroup]="form">
+        <button class="primary-button" (click)="exportPvSystData()" *ngIf="!generateButtonDisabled">
+          {{ 'projectDetail.data.download' | transloco }}
+        </button>
+        <ng-container *ngIf="generateButtonDisabled">
+            <mat-spinner [diameter]="20" style="display: inline-block; margin-left: 15px;"></mat-spinner>
+        </ng-container>
+      </form>
+    </mat-card>
+  </div>
+</div>

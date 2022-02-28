@@ -1,0 +1,27 @@
+<html>
+<head>
+  <style>
+    .app {
+      display: grid;
+      grid-template-rows: 100px 100px 100px;
+      grid-template-columns: 100px 100px 100px;
+      grid-column-gap: 50px;
+      grid-template-areas: ". red green"
+                           "blue red green"
+                           "blue yellow yellow"
+    }
+    .red { grid-area: red; background-color: red; }
+    .blue { grid-area: blue; background-color: blue; }
+    .yellow { grid-area: yellow; background-color: yellow; }
+    .green { grid-area: green; background-color: green; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="item blue">item 1</div>
+    <div class="item red">item 2</div>
+    <div class="item yellow">item 3</div>
+    <div class="item green">item 4</div>
+  </div>
+</body>
+</html>

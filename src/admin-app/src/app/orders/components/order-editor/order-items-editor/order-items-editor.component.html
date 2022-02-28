@@ -1,0 +1,31 @@
+<ng-container [formGroup]="formArray.parent">
+  <h4>Order Items</h4>
+
+  <div *ngIf="hasOrderItems()" formArrayName="orderItems">
+    <ng-container *ngIf="(orderDetailStore.viewModel$ | async) as viewModel">
+      <sg-admin-order-item-editor
+        (remove)="onRemove($event)"
+        *ngFor="let orderItem of formArray.controls; let i = index"
+        [parentForm]="getOrderItemFormGroup(i)"
+        [index]="i"
+        [products]="viewModel.products"
+        [removable]="canBeRemoved(i)"
+      >
+      </sg-admin-order-item-editor>
+    </ng-container>
+  </div>
+
+  <div *ngIf="orderDetailStore.viewModel$ | async as viewModel" class="order-items-toolbar">
+    <button (click)="addOrderItem()" color="accent" mat-raised-button>Add order item</button>
+
+    <mat-form-field class="quantity">
+      <input [value]="viewModel.totals?.quantity" matInput readonly type="number" />
+      <mat-hint align="start">Quantity (total)</mat-hint>
+    </mat-form-field>
+
+    <div class="total">
+      <div>Total:</div>
+      <span>{{ viewModel.totals?.price | number:'1.2-2':'en' }} {{ orderDetailStore.currency$ | async }}</span>
+    </div>
+  </div>
+</ng-container>

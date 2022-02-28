@@ -1,0 +1,26 @@
+
+@mixin user-or-company-selected($changeBackground: true) {
+
+  color: map-get($primary, 800);
+
+  &.selected {
+    color: map-get($accent, 500);
+  }
+
+  @if $changeBackground == true {
+
+    &:hover {
+      background-color: map-get($primary, 100);
+    }
+
+    &.selected {
+      background-color: map-get($primary, 200);
+
+      &:hover {
+        background-color: map-get($primary, 300);
+      }
+    }
+
+  }
+
+}

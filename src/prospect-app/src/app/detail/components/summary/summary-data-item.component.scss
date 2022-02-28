@@ -1,0 +1,19 @@
+@import 'theme';
+
+.chart-heading {
+  font-weight: $font-weight-bold;
+  font-size: $sg-16;
+}
+
+.value {
+  margin-top: $sg-8;
+  color: #67BCF0;
+  font-size: $sg-32;
+  font-weight: $font-weight-bold;
+
+  sg-unit-toggle-label {
+    color: map-get($primary, 500);
+    font-weight: $font-weight-regular;
+    font-size: 13px;
+  }
+}

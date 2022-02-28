@@ -1,0 +1,76 @@
+<div *ngIf="fullscreen$ | async; else default">
+  <router-outlet></router-outlet>
+</div>
+
+<ng-template #default>
+  <ng-container *ngIf="isReady$ | async; else spinner">
+    <sg-drawer-layout>
+      <ng-container class="navigation">
+        <sg-project-detail-side-navigation
+          [path]="path$ | async"
+          [routes]="routes"
+          [allowedPaths]="allowedPaths$ | async"
+          [pathsWithPermissions]="pathsWithPermissions$ | async"
+          (onSelect)="onRouteNavigation($event)"
+        ></sg-project-detail-side-navigation>
+      </ng-container>
+      <ng-container class="content">
+        <sg-detail-toolbar
+          [project]="project$ | async"
+          [energySystemRef]="energySystemRef$ | async"
+          [hasCompareAccess]="hasCompareAccess$ | async"
+          [freetrialToClaim]="freetrialToClaim$ | async"
+          [freetrial]="freetrial$ | async">
+        </sg-detail-toolbar>
+        <sg-alert-bar-container route="prospect/detail"></sg-alert-bar-container>
+
+        <div class="container" [ngStyle]="{'padding-top': (alertBarHeight$ | async) + 'px'}">
+          <div class="inner-container" >
+            <div class="detail-content">
+              <!-- no pv config -->
+              <mat-card class="no-pv-config" *ngIf="(pvConfigStatus$ | async) === 'empty' && pvConfigWarning">
+                <div fxLayout="row">
+                  <div fxFlex="grow">
+                    {{ 'pvConfig.error.missing' | transloco }}
+                    <div class="row">
+                      <button mat-button [routerLink]="['configure']" color="accent">
+                        {{ 'pvConfig.action.add' | transloco }}
+                      </button>
+                    </div>
+                  </div>
+                  <div fxFlex="40px" class="close">
+                    <button mat-icon-button (click)="pvConfigWarning = false">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </mat-card>
+
+              <!-- content -->
+              <div *ngIf="route && currentRoute">
+                <div class="project-detail-title">
+                  <sg-drawer-button></sg-drawer-button>
+                  <div class="separator"></div>
+                  <span *ngIf="parentRoute" class="section-title">{{ parentRoute.data?.nav?.name | transloco }}: </span>
+                  <span class="section-title">{{ currentRoute.data?.nav?.name | transloco }}</span>
+                </div>
+              </div>
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+          <sg-bottom-navigation
+            [path]="path$ | async"
+            [routes]="routes"
+            [allowedPaths]="allowedPaths$ | async"
+            (onSelect)="onRouteNavigation($event)"
+          ></sg-bottom-navigation>
+        </div>
+
+      </ng-container>
+    </sg-drawer-layout>
+  </ng-container>
+</ng-template>
+
+<ng-template #spinner>
+  <div class="detail-spinner"><div><mat-progress-spinner [diameter]="50" mode="indeterminate"></mat-progress-spinner></div></div>
+</ng-template>

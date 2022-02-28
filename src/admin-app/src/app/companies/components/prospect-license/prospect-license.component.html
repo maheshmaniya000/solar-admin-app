@@ -1,0 +1,97 @@
+<div>
+  <sg-fullscreen-dialog-toolbar headline="Prospect license" subheadline="Admin" (onClose)="onCloseClick()"></sg-fullscreen-dialog-toolbar>
+
+  <ng-container *ngIf="hasProspectLicense$ | async; else noLicense">
+    <mat-tab-group>
+      <mat-tab label="General">
+        <mat-card>
+          <form [formGroup]="form">
+            <div>
+              From:
+              <mat-form-field>
+                <input matInput formControlName="from" [matDatepicker]="fromPicker">
+                <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+                <mat-datepicker #fromPicker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div>
+              To:
+              <mat-form-field>
+                <input matInput formControlName="to" [matDatepicker]="toPicker">
+                <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+                <mat-datepicker #toPicker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div>
+              Subscription type:
+              <mat-form-field>
+                <mat-select formControlName="licenseType">
+                  <mat-option *ngFor="let licenseType of licenseTypes" [value]="licenseType">
+                    {{ 'common.subscriptionType.' + mapProspectLicenseType(licenseType) | transloco }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div [hidden]="licenseType.value !== FREE_TRIAL">
+              Remaining free trial projects:
+              <mat-form-field>
+                <input matInput formControlName="remainingFreeTrialProjects" type="number" step="1">
+              </mat-form-field>
+            </div>
+
+            <div>
+              Users limit:
+              <mat-form-field>
+                <input matInput formControlName="usersLimit" type="number" step="1">
+              </mat-form-field>
+            </div>
+          </form>
+        </mat-card>
+
+        <ng-container *ngTemplateOutlet="toolbar; context: { canDelete: true }"></ng-container>
+      </mat-tab>
+
+      <mat-tab label="Allocated users">
+        <sg-app-subscription-users
+          *ngIf="companyUsers?.length > 0; else noUsers"
+          [users]="companyUsers"
+          [selectedUsers]="selectedUsers"
+          (selectUser)="selectUser($event.id, $event.checked)"
+          (selectAllUsers)="selectAllUsers($event)">
+        </sg-app-subscription-users>
+
+        <ng-container *ngTemplateOutlet="toolbar; context: { canDelete: false }"></ng-container>
+      </mat-tab>
+    </mat-tab-group>
+  </ng-container>
+</div>
+
+<ng-template #noLicense>
+  <mat-card class="no-license">
+    No prospect subscription exists.
+    <button mat-button color="accent" (click)="createLicense()">Create a subscription</button>
+  </mat-card>
+</ng-template>
+
+<ng-template #noUsers>
+  <mat-card class="no-license">No users found.</mat-card>
+</ng-template>
+
+<ng-template #toolbar let-canDelete="canDelete">
+  <div class="toolbar">
+    <button mat-raised-button color="accent" *ngIf="!savingOrDeleting" [disabled]="(tooManyUsers$ | async) || form.invalid" (click)="save()">
+      Save & Close
+    </button>
+    <button mat-raised-button color="accent" *ngIf="(subscription$ | async) && !savingOrDeleting && canDelete" (click)="delete()">
+      Delete Prospect subscription
+    </button>
+
+    <mat-progress-spinner mode="indeterminate" *ngIf="savingOrDeleting" [diameter]="30"></mat-progress-spinner>
+  </div>
+  <div *ngIf="tooManyUsers$ | async" class="userLimit">
+    {{ 'companyAdmin.subscription.tooManyUsers' | transloco: { userLimit: this.form.value.usersLimit } }}
+  </div>
+</ng-template>

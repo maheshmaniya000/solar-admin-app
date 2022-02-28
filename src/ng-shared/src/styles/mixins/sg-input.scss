@@ -1,0 +1,9 @@
+@mixin sg-input {
+    position: relative;
+    border: 1px solid map-get($primary, 400);
+    border-radius: 4px;
+    padding: 10px 12px 9px 12px;
+    background-color: white;
+    font-size: 14px;
+    color: map-get($primary, 800);
+  }

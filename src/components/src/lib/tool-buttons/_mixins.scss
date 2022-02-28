@@ -1,0 +1,37 @@
+@mixin side-attachments() {
+  &.attached-to-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    &:not(.preserved-border) {
+      border-top: none;
+    }
+  }
+
+  &.attached-to-end {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &:not(.preserved-border) {
+      border-right: none;
+    }
+  }
+
+  &.attached-to-bottom {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:not(.preserved-border) {
+      border-bottom: none;
+    }
+  }
+
+  &.attached-to-start {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:not(.preserved-border) {
+      border-left: none;
+    }
+  }
+}

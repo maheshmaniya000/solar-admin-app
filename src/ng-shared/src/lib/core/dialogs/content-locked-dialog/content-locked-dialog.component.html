@@ -1,0 +1,40 @@
+<sg-dialog-deprecated [large]="true">
+  <div class="sg-dialog-heading">
+    {{ 'projectDetail.unlockDialog.mainTitle' | transloco }}
+  </div>
+
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div *ngIf="lockerDialogContent" class="sg-dialog-content">
+    <div class="dialog-heading">{{lockerDialogContent.title | transloco}}</div>
+    <div class="dialog-text">{{lockerDialogContent.text | transloco}}</div>
+    <div *ngIf="lockerDialogContent.bulletPoints.length > 0" class="bullet-points">
+      <ul class="row">
+        <li *ngFor="let point of lockerDialogContent.bulletPoints"
+            class="col-12 col-sm-6">{{ point | transloco }}</li>
+      </ul>
+    </div>
+    <div>
+      <img [src]="lockerDialogContent.image" alt="">
+    </div>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <div class="button-group">
+      <ng-container *ngIf="lockerDialogContent.section === 'pvConfig'; else unlockButtons">
+        <button *ngIf="lockerDialogContent.section === 'pvConfig'" class="primary-button" (click)="redirectToPVConfig()">{{'projectDetail.unlockDialog.addPVConfig' | transloco}}</button>
+      </ng-container>
+    </div>
+  </div>
+
+  <ng-template   #unlockButtons>
+    <button *ngIf="data.showFreeTrial" class="secondary-button" (click)="activateFreeTrial()">{{'projectDetail.unlockDialog.activateFreeTrial' | transloco}}</button>
+    <button *ngIf="data.showRequestFreeTrial" class="secondary-button" (click)="requestFreeTrial()">{{'projectDetail.unlockDialog.requestFreeTrial' | transloco}}</button>
+    <button class="primary-button" (click)="redirectToUpgrade()">{{'projectDetail.unlockDialog.upgrade' | transloco}}</button>
+  </ng-template>
+
+</sg-dialog-deprecated>

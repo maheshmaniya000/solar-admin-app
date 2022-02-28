@@ -1,0 +1,26 @@
+<section>
+  <span>Origin system</span>
+  <span>{{ entity.originSystem }}</span>
+
+  <span>Create date</span>
+  <span>{{ entity.created | sgDateTimeFormat: 'dateTime' }}</span>
+
+  <span>Update date</span>
+  <span>{{ entity.updated | sgDateTimeFormat: 'dateTime' }}</span>
+</section>
+
+<ng-container *ngIf="hasOriginData()">
+  <section>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Origin data</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div [innerHTML]="entity.originData"></div>
+    </mat-expansion-panel>
+  </section>
+
+  <section *ngIf="hasOriginFile()">
+    <span>Origin file</span>
+    <span>{{ entity.originFile }}</span>
+  </section>
+</ng-container>

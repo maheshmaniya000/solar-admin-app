@@ -1,0 +1,5 @@
+<sg-alert-bar *ngFor="let alert of alerts$ | async; let i = index;"
+  [alert]="alert"
+  (dispatch)="dispatch($event)"
+  (closeAlertBar)="closeAlert(alert)"
+></sg-alert-bar>

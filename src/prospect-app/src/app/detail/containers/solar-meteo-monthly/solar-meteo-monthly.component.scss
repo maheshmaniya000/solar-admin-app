@@ -1,0 +1,37 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.data-table-card {
+  .header-actions {
+    margin-top: -11px;
+  }
+
+  .azimuth {
+    margin-top: $sg-16;
+  }
+
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    height: 460px;
+
+    .table-s {
+      @include cdk-table-s();
+
+      cdk-cell,
+      cdk-header-cell {
+        text-align: right;
+      }
+
+      @include sticky-table-scrolling();
+
+      width: 100%;
+      position: absolute;
+      min-width: 1060px;
+    }
+  }
+}

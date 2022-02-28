@@ -1,0 +1,32 @@
+@import 'theme';
+
+mat-card {
+  padding: 0;
+
+  button {
+    padding: 0 ;
+
+    &[hidden] {
+      display: none;
+    }
+
+    hr {
+      width: 100%;
+      margin: 0;
+      color: map-get($sg-gray, 800);
+    }
+
+    .legend {
+      padding: 0 5px;
+
+      .mat-icon {
+        vertical-align: middle;
+      }
+    }
+
+    span {
+      font-size: $sg-13;
+    }
+  }
+}
+

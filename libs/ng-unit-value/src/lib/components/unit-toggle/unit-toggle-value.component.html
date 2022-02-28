@@ -1,0 +1,24 @@
+<span *ngIf="unit.toggle; else noToggle"
+      [matMenuTriggerFor]="toggleMenu"
+      (click)="$event.stopPropagation()" class="toggle">
+  <span>
+    <sg-unit-value-inner [codelistValue]="codelistValue" [unitValue]="unitValue$ | async">
+    </sg-unit-value-inner>
+  </span>
+  <mat-icon>arrow_drop_down</mat-icon>
+</span>
+
+<mat-menu #toggleMenu="matMenu">
+  <button mat-menu-item fxLayout="row"
+          *ngFor="let variant of toggleVariants$ | async"
+          (click)="toggleUnit(variant.toggleKeys)">
+    <div fxFlex="32px">
+      <mat-icon *ngIf="equalsToggleKeys(variant.toggleKeys, (currentToggleKeys$ | async))">done</mat-icon>
+    </div>
+    <div fxFlex>{{ variant.value }}</div>
+  </button>
+</mat-menu>
+
+<ng-template #noToggle>
+  {{ unitValue$ | async }}
+</ng-template>

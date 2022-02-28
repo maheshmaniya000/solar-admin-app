@@ -1,0 +1,32 @@
+<div map>
+  <sg-map-coordinates position="bottomleft"></sg-map-coordinates>
+
+  <sg-map-menu
+    [layerId]="(selected$ | async)?.layerId"
+    [layers]="layers$ | async">
+  </sg-map-menu>
+
+<!--
+  <sg-map-preview></sg-map-preview>
+-->
+
+<sg-map-full-screen-view position="topleft" (click)="trackEvent('fullscreen')">
+</sg-map-full-screen-view>
+
+  <sg-map-zoom-selected position="topleft" (onAction)="trackEvent($event)">
+  </sg-map-zoom-selected>
+
+  <sg-map-location *ngIf="geolocationAvailable" position="topleft"
+                   [projectWithPosition]="projectWithPosition$ | async"
+                   (click)="trackEvent('map_locate_me')"
+                   (onGeolocation)="onGeolocation($event)">
+  </sg-map-location>
+
+  <sg-map-legend position="bottomright"
+    [layers]="layers$ | async"
+    [layerId]="(selected$ | async)?.layerId">
+  </sg-map-legend>
+
+  <sg-map-draw position="topright" (click)="trackEvent('map_draw')"></sg-map-draw>
+
+</div>

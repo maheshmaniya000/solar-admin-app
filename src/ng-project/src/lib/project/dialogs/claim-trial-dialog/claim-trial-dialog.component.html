@@ -1,0 +1,28 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'Activate Free trial for project' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <p class="data-label">Project</p>
+    <p>{{ data?.project | sgProjectName }}</p>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button
+      type="button"
+      class="primary"
+      (click)="activate()">
+      {{ 'Activate' | transloco }}
+    </button>
+    <button
+      type="button"
+      class="secondary"
+      (click)="close()">
+      {{ 'Cancel' | transloco }}
+    </button>
+  </div>
+</sg-dialog-deprecated>

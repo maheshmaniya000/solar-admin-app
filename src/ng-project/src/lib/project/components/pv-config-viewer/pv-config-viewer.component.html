@@ -1,0 +1,21 @@
+<div class="{{ size }} bootstrap">
+  <div class="row align-items-center">
+    <div class="col-4 text-center" [ngClass]="{'d-none d-md-block': !print}">
+      <img src="assets/pvconfig/{{ pvConfig.type }}.svg" />
+    </div>
+    <div [ngClass]="print ? 'col-8' : 'col-12 col-md-8'">
+      <div class="title">{{ 'pvConfig.type.' + pvConfig.type + '.name' | transloco }}</div>
+      <div class="desc" [ngClass]="{'d-none': size === 'small', 'd-lg-flex': size === 'small'}">{{ 'pvConfig.type.' + pvConfig.type + '.desc' | transloco }}</div>
+    </div>
+  </div>
+
+  <div class="settings" *ngIf="paramOrder.length">
+    <div class="row" *ngFor="let paramType of paramOrder">
+      <div class="name" [ngClass]="print ? 'col-4' : 'col-12 col-md-4'">{{ 'pvConfig.params.' + paramType + '.headline' | transloco }}</div>
+      <div [ngClass]="print ? 'col-8' : 'col-12 col-md-8'">
+        <sg-pv-config-param-value [type]="paramType" [pvConfig]="pvConfig" [param]="pvConfig[paramType]"></sg-pv-config-param-value>
+      </div>
+    </div>
+
+  </div>
+</div>

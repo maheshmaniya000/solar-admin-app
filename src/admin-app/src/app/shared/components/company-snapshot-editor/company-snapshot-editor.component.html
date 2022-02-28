@@ -1,0 +1,131 @@
+<ng-container [formGroup]="parentForm" *transloco="let t; read: 'user.company'">
+  <div>
+    <div class="data-grid" fxFlex>
+      <div class="single-block" fxLayout="row">
+        <mat-form-field fxFlex="auto">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" matInput required />
+        </mat-form-field>
+
+        <mat-form-field fxFlex="auto">
+          <mat-label>Group name</mat-label>
+          <input formControlName="groupName" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="single-block">
+    <div class="data-grid" fxFlex>
+      <div *ngIf="(euCompany$ | async) === true" fxLayout="row">
+        <mat-form-field doNotAppendFormError>
+          <mat-label>VAT</mat-label>
+          <input formControlName="VAT_ID" matInput required [pattern]="vatNoSpacesPattern" />
+          <mat-error *ngIf="getVatFormControl().hasError('required')">{{ 'common.validation.required' | transloco }}</mat-error>
+          <mat-error *ngIf="getVatFormControl().hasError('vatValidation')">
+            {{ t('errors.vatNotValid', {vatPrefix: getVatFormControl().errors.vatValidation.vatPrefix}) }}
+          </mat-error>
+          <mat-error *ngIf="getVatFormControl().hasError('pattern')">
+            {{ t('errors.vatIdSpacesForbidden') }}
+          </mat-error>
+          <mat-hint *ngIf="getVatFormControl().status === 'PENDING'">
+            <mat-progress-spinner [diameter]="15" mode="indeterminate"></mat-progress-spinner>
+            {{ t('messages.checkingVat') }}
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field>
+          <mat-label>Web</mat-label>
+          <input formControlName="web" matInput />
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field>
+          <mat-label>Phone</mat-label>
+          <input formControlName="phone" matInput />
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field>
+          <mat-label>Registration ID</mat-label>
+          <input formControlName="registrationId" matInput />
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field>
+          <mat-label>Email for Invoice</mat-label>
+          <input formControlName="companyEmailForInvoice" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="data-grid" fxFlex  *transloco="let t; read: 'user.company'">
+      <div fxLayout="row">
+        <mat-form-field [customErrors]="notSelectedFromListCustomErrors('country')">
+          <mat-label>Country</mat-label>
+          <input [matAutocomplete]="countryAutocomplete" autocomplete="false" formControlName="country" matInput required type="search" />
+          <mat-autocomplete #countryAutocomplete="matAutocomplete" (optionSelected)="onCountrySelected()" [displayWith]="nameDisplayFn">
+            <mat-option *ngFor="let country of filteredCountries$ | async" [value]="country">
+              <small>{{ country.name }}</small>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div *ngIf="stateRequired$ | async" fxLayout="row">
+        <mat-form-field [customErrors]="notSelectedFromListCustomErrors('state')">
+          <mat-label>State</mat-label>
+          <input [matAutocomplete]="stateAutocomplete" autocomplete="off" formControlName="state" matInput type="search" required />
+          <mat-autocomplete #stateAutocomplete="matAutocomplete" [displayWith]="nameDisplayFn">
+            <mat-option *ngFor="let state of filteredStates$ | async" [value]="state">
+              <small>{{ state.name }}</small>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div *ngIf="territoriesAvailable$ | async" fxLayout="row">
+        <mat-form-field [customErrors]="notSelectedFromListCustomErrors('territory')">
+          <mat-label>Territory</mat-label>
+          <input [matAutocomplete]="territoryAutocomplete" autocomplete="off" formControlName="territory" matInput type="search" />
+          <mat-autocomplete #territoryAutocomplete="matAutocomplete" (optionSelected)="onTerritorySelected()" [displayWith]="nameDisplayFn">
+            <mat-option *ngFor="let territory of filteredTerritories$ | async" [value]="territory">
+              <small>{{ territory.name }}</small>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row">
+        <mat-form-field>
+          <mat-label>City</mat-label>
+          <input required formControlName="city" matInput />
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field>
+          <mat-label>Street</mat-label>
+          <input formControlName="street" matInput />
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field>
+          <mat-label>Street 2</mat-label>
+          <input formControlName="street2" matInput />
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field>
+          <mat-label>ZIP</mat-label>
+          <input formControlName="zipCode" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="data-grid" fxFlex>
+      <div fxLayout="row">
+        <mat-form-field>
+          <mat-label>Company note</mat-label>
+          <input formControlName="note" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</ng-container>

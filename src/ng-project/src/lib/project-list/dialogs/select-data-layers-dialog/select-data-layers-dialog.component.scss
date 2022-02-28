@@ -1,0 +1,41 @@
+@import 'theme';
+
+:host ::ng-deep {
+  .mat-tab-body-content {
+    overflow: hidden;
+  }
+
+  .tab-row {
+    height: $sg-32;
+    padding-left: $sg-8;
+    margin: auto;
+
+    mat-icon {
+      margin-left: $sg-8;
+    }
+  }
+
+  mat-checkbox {
+    .mat-checkbox-label {
+      margin-left: $sg-8;
+    }
+
+    .mat-checkbox-frame {
+      border-color: map-get($sg-gray, 900);
+    }
+  }
+
+  .mat-tab-label {
+    @include mat-tabs();
+  }
+
+  .primary-button {
+    @include sg-button(md, red);
+    min-width: 96px;
+  }
+
+  .secondary-button {
+    @include sg-button(md);
+    min-width: 96px;
+  }
+}

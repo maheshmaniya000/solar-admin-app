@@ -1,0 +1,14 @@
+<mat-card>
+  <div fxLayout="row">
+    <div fxFlex="100%" fxFlex.gt-xs="300px" fxFlex.gt-sm="400px" class="template-list">
+      <sg-pv-config-select-default-list
+        [pvConfigTemplates]="pvConfigTemplates"
+        [permissions]="permissions"
+        (onSelected)="onSelected.emit($event)">
+      </sg-pv-config-select-default-list>
+    </div>
+    <div fxFlex fxHide fxShow.gt-xs class="template-view">
+      <sg-pv-config-viewer [pvConfig]="(onSelected | async) || pvConfigTemplates[0]"></sg-pv-config-viewer>
+    </div>
+  </div>
+</mat-card>

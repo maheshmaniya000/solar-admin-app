@@ -1,0 +1,14 @@
+@import 'theme';
+
+:host {
+  background-color: map-get($primary, 100);
+
+  > div {
+    max-height: calc(100vh - 50px);
+    overflow: auto;
+  }
+}
+
+sg-admin-order-discount {
+  max-width: 300px;
+}

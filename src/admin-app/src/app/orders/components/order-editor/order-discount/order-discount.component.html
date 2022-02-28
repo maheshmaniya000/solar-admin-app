@@ -1,0 +1,13 @@
+<h4 *ngIf="header">{{header}}</h4>
+<div [formGroup]="parentForm">
+  <mat-form-field>
+    <mat-label>Discount amount</mat-label>
+    <input formControlName="amount" matInput type="number" />
+    <span matSuffix>{{ currency }}</span>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Discount %</mat-label>
+    <input [min]="0" [max]="100" formControlName="percent" matInput type="number" />
+    <span matSuffix>%</span>
+  </mat-form-field>
+</div>

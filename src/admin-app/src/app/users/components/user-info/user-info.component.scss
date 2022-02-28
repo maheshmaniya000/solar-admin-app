@@ -1,0 +1,11 @@
+section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-bottom: 1rem;
+
+  ::ng-deep {
+    span:nth-child(2n - 1) {
+      font-weight: bold;
+    }
+  }
+}

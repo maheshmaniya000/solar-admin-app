@@ -1,0 +1,213 @@
+@import 'theme';
+$color: #222d3d;
+
+::ng-deep .mat-tab-label {
+  @include mat-tabs();
+}
+
+:host ::ng-deep .mat-tab-header {
+  width: fit-content;
+  margin: 16px auto;
+}
+
+:host ::ng-deep .mat-tab-header .mat-tab-label:first-of-type .mat-tab-label-content {
+  color: #c8220a;
+  font-weight: $font-weight-bold;
+}
+
+:host {
+  width: 100%;
+
+  > div {
+    max-width: 1232px;
+    width: 100%;
+    margin: auto;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: $color;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-top: 64px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+}
+
+.plans {
+  justify-content: space-between;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+
+  .plan {
+    box-sizing: border-box;
+    width: 400px;
+    height: 540px;
+    background-color: map-get($primary, 100);
+    border-radius: 6px;
+    padding: 24px;
+    color: map-get($primary, 800);
+    position: relative;
+    overflow: hidden;
+
+    .current-plan {
+      border-radius: 6px;
+      position: absolute;
+      background-color: map-get($primary, 800);
+      color: white;
+      padding: 6px;
+      width: 400px;
+      text-align: center;
+      top: 50px;
+      right: -128px;
+      transform: rotate(45deg);
+    }
+
+    .subscription {
+      font-size: 18px;
+      font-weight: $font-weight-bold;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: $font-weight-bold;
+      color: $color;
+    }
+
+    button,
+    .button {
+      margin: 24px 0 16px 0;
+      text-transform: uppercase;
+      min-width: 176px;
+      min-height: 48px;
+    }
+
+    .button-text {
+      display: block;
+      text-decoration: none;
+      color: map-get($accent, 400);
+      margin-bottom: 32px;
+      cursor: pointer;
+    }
+
+    .button-text-disabled {
+      text-decoration: none !important;
+      cursor: default !important;
+      color: map-get($primary, 500);
+    }
+
+    .button-text:hover {
+      text-decoration: underline;
+    }
+
+    .first-row {
+      margin-top: 24px;
+    }
+
+    .row {
+      margin-bottom: 8px;
+    }
+
+    .row.all {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .row > mat-icon,
+    .row > div {
+      margin: auto;
+    }
+
+    .row,
+    .button-text,
+    .price-info {
+      font-size: 14px;
+    }
+  }
+}
+
+.payment-table-wrapper {
+  overflow: auto;
+  width: 100%;
+  height: 945px;
+  position: relative;
+
+  .table {
+    margin-top: 60px;
+    margin-bottom: 120px;
+
+    position: absolute;
+    width: 100%;
+    min-width: 1130px;
+    .row {
+      border-bottom: 1px solid map-get($primary, 300);
+      height: 39px;
+      line-height: 39px;
+
+      font-size: 14px;
+      color: map-get($primary, 800);
+      vertical-align: center;
+    }
+
+    mat-icon {
+      margin-top: 7px;
+    }
+
+    .info {
+      transform: scale(0.7);
+    }
+
+    .center,
+    .headline {
+      text-align: center;
+    }
+
+    .headline {
+      font-weight: $font-weight-bold;
+      color: $color;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .section-text {
+      font-weight: $font-weight-bold;
+    }
+    .section-row {
+      margin-top: 21px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+
+  .plans {
+    flex-direction: column;
+    align-items: center;
+
+    .plan {
+      margin: $sg-8;
+      width: 90%;
+      max-width: 700px;
+      height: auto;
+    }
+  }
+
+  .payment-table-wrapper {
+    height: 870px;
+
+    .table {
+      padding: 0 20px;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'compare.replaceDialog.replace' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="dialogRef.close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="sg-dialog-content">
+    <div class="msg">
+      {{ 'compare.replaceDialog.msg' | transloco }}
+    </div>
+
+    <mat-radio-group [(ngModel)]="selected">
+      <ul>
+        <li *ngFor="let item of compare$ | async">
+          <mat-radio-button [value]="item.energySystemRef">
+            <div class="project-wrapper">
+              <div class="name">{{ item.project | sgProjectName: 30 }}</div>
+              <div class="type-wrapper">
+                <div
+                  class="type"
+                  *ngIf="!!item.energySystem && !!item.energySystem ; else notAvailable"
+                >{{ 'pvConfig.type.' + item?.energySystem?.pvConfig?.type + '.name' | transloco }}</div>
+              </div>
+            </div>
+          </mat-radio-button>
+        </li>
+      </ul>
+    </mat-radio-group>
+    <ng-template #notAvailable><span> - </span></ng-template>
+  </div>
+
+  <div class="sg-dialog-actions auth-dialog-actions">
+    <button
+      cdkFocusRegionstart
+      mat-button
+      class="primary-button"
+      [disabled]="!selected"
+      [ngClass]="{'disabled': !selected}"
+      (click)="dialogRef.close(selected)">{{ 'compare.replaceDialog.replace' | transloco }}
+    </button>
+  </div>
+</sg-dialog-deprecated>

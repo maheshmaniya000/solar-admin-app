@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserPreferencesDialogContentComponent component should match snapshot and have correctly bound methods and attributes 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+  data={[Function Object]}
+  destroyed$={[Function Subject]}
+  form={[Function FormGroup]}
+  latlngSample={[Function Object]}
+  latlngToggle={[Function Object]}
+  latlngUnit={[Function Object]}
+  unitToggleService={[Function UnitTogglePlainService]}
+  unitToggleSettingsKeyToLabel={[Function Object]}
+>
+  <div
+    class="sg-grid-8-15"
+  >
+    <form>
+      <sg-timezone-input
+        class="row-6-9"
+      />
+    </form>
+    <div
+      class="row-6-9 row-next"
+    >
+      <span>
+        Latitude and longitude
+      </span>
+      <sg-unit-toggle />
+      <sg-unit-value />
+    </div>
+    <div
+      class="row-6-9 row-next"
+    >
+      <span>
+        Elevation and length
+      </span>
+      <sg-unit-toggle />
+    </div>
+    <div
+      class="row-6-9 row-next"
+    >
+      <span>
+        Solar radiation
+      </span>
+      <sg-unit-toggle />
+    </div>
+    <div
+      class="row-6-9 row-next"
+    >
+      <span>
+        Long-term averages
+      </span>
+      <sg-unit-toggle />
+    </div>
+    <div
+      class="row-6-9 row-next"
+    >
+      <span>
+        Temperature
+      </span>
+      <sg-unit-toggle />
+    </div>
+  </div>
+</ng-component>
+`;

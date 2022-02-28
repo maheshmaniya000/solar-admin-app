@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormErrorComponent component should match snapshot with bound attributes 1`] = `
+<sg-form-error
+  __ngContext__={[Function LRootView]}
+  className={[Function String]}
+  errorMessage={[Function String]}
+>
+  <mat-error
+    class="some-class"
+  >
+     some error 
+  </mat-error>
+</sg-form-error>
+`;

@@ -1,0 +1,168 @@
+<mat-tab-group>
+  <mat-tab [label]="'companyAdmin.billing.history' | transloco">
+    <mat-form-field *ngIf="numOrders > 0;">
+      <mat-select [value]="-1" (selectionChange)="yearFilter$.next($event.value)" [disabled]="numOrders <= 0">
+        <mat-option *ngFor="let year of years$ | async" [value]="year">
+          {{ year === -1 ? ('companyAdmin.billing.allYears' | transloco) : year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-card>
+      <ng-container *ngIf="numOrders !== -1; else spinner">
+        <ng-container *ngIf="numOrders > 0; else noOrders">
+
+          <div sgScrollContainer>
+            <mat-table [dataSource]="dataSource$" matSort (matSortChange)="sort$.next($event)" [matSortActive]="date" [matSortDirection]="asc" [matSortDisableClear]="true">
+
+              <!-- ORDER COLUMN -->
+              <ng-container matColumnDef="order">
+                <mat-header-cell *matHeaderCellDef fxFlex="13%">
+                  {{ 'companyAdmin.billing.orderId' | transloco }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let order" fxFlex="13%" >
+                  {{ order.sgOrderId }}
+                </mat-cell>
+              </ng-container>
+
+              <!-- AMMOUNT COLUMN -->
+              <ng-container matColumnDef="price">
+                <mat-header-cell *matHeaderCellDef fxFlex="8%">
+                  {{ 'companyAdmin.billing.price' | transloco }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let order" fxFlex="8%">
+                  {{ order.price }} {{ order.currency }}
+                </mat-cell>
+              </ng-container>
+
+              <!-- ORDER STATUS COLUMN -->
+              <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef fxFlex="15%">
+                  {{ 'companyAdmin.billing.status' | transloco }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let order" fxFlex="15%">
+                  {{ order.status.status ? (('enum.orderStatus.' + order.status.status) | transloco) : '' }}
+                </mat-cell>
+              </ng-container>
+
+              <!-- DATE COLUMN -->
+              <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="15%">
+                  {{ 'companyAdmin.billing.orderDate' | transloco }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let order" fxFlex="15%" class="bold">
+                  {{ order.author.ts | sgDateTimeFormat }}
+                </mat-cell>
+              </ng-container>
+
+              <!-- PAYMENT COLUMN -->
+              <ng-container matColumnDef="payment">
+                <mat-header-cell *matHeaderCellDef fxFlex="12%">
+                  {{ 'companyAdmin.billing.payment' | transloco }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let order"
+                          fxFlex="12%"
+                          [ngClass]="{'red': order.payment?.status !== 'PAID'}">
+                <ng-container *ngIf="order.payment?.type && order.payment?.status !== 'NOT_PAID'">
+                  {{ ('enum.orderPaymentStatus.' + order.payment?.status ) | transloco }}
+                  ,
+                  {{ ('enum.orderPaymentType.' + order.payment?.type ) | transloco }}
+                </ng-container>
+                <ng-container *ngIf="!order.payment">
+                  -
+                </ng-container>
+                </mat-cell>
+              </ng-container>
+
+              <!-- STATUS COLUMN -->
+              <ng-container matColumnDef="delivery">
+                <mat-header-cell *matHeaderCellDef fxFlex="10%">
+                  {{ 'companyAdmin.billing.deliveryDate' | transloco }}
+                </mat-header-cell>
+                <mat-cell *matCellDef="let order" fxFlex="10%">
+                  <ng-container *ngIf="order.orderItemsProcessed; else notProessed">
+                    {{ order.orderItemsProcessed | sgDateTimeFormat }}
+                  </ng-container>
+                  <ng-template #notProessed>
+                    -
+                  </ng-template>
+                </mat-cell>
+              </ng-container>
+
+              <!-- BUTTONS COLUMN -->
+              <ng-container matColumnDef="buttons">
+                <mat-header-cell *matHeaderCellDef fxFlex></mat-header-cell>
+                <mat-cell *matCellDef="let order" fxFlex>
+                  <div class="buttons">
+                    <!-- <ng-container *ngIf="isAdmin$ | async">
+                      <button *ngIf="order.payment?.status !== 'PAID' && !isBankPaymentPending(order)"
+                              class="primary-button"
+                              (click)="openPayment(order)">
+                        {{ 'companyAdmin.billing.pay' | transloco }}
+                      </button>
+                      <button *ngIf="order.payment?.status !== 'PAID' && isBankPaymentPending(order)"
+                              class="primary-button"
+                              (click)="openPaymentInfo(order)">
+                        {{ 'companyAdmin.billing.paymentInfo' | transloco }}
+                      </button>
+                    </ng-container> -->
+
+                    <button mat-button color="accent" [routerLink]="['order-detail', order.sgOrderId]">
+                      {{ 'companyAdmin.billing.detail' | transloco }}
+                    </button>
+
+                    <!-- <button *ngIf="workingId !== order.sgOrderId; else spinner2" mat-icon-button [matMenuTriggerFor]="menu">
+                      <mat-icon>more_horiz</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item
+                              *ngFor="let invoice of (order.invoices || [])"
+                              (click)="downloadInvoice(order, invoice)">
+                        {{ ('enum.invoice.' + invoice.type) | transloco }}
+                      </button>
+                      <button mat-menu-item
+                              *ngIf="order && order?.status?.status !== 'DONE'"
+                              (click)="cancelOrder(order)">
+                        {{ 'companyAdmin.billing.cancel' | transloco }}
+                      </button>
+                    </mat-menu> -->
+                  </div>
+                </mat-cell>
+              </ng-container>
+
+              <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+              <mat-row *matRowDef="let order; columns: columns;"></mat-row>
+            </mat-table>
+          </div>
+          <mat-paginator [length]="numOrders > 0 ? numOrders: 0"
+                        [pageSize]="PAGE_SIZE"
+                        [pageSizeOptions]="pageSizeOptions"
+                        (page)="pageEvent$.next($event)">
+          </mat-paginator>
+        </ng-container>
+      </ng-container>
+    </mat-card>
+  </mat-tab>
+
+  <mat-tab [label]="'companyAdmin.billing.paymentMethod' | transloco" [disabled]="true">
+    <mat-card>
+      <!-- TODO -->
+    </mat-card>
+  </mat-tab>
+
+</mat-tab-group>
+
+<ng-template #spinner>
+  <div>
+    <mat-spinner mode="indeterminate" [diameter]="25" style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #spinner2>
+  <div style="width: 40px; display: inline-block">
+    <mat-progress-spinner [diameter]="16" mode="indeterminate" style="margin:0 auto;"></mat-progress-spinner>
+  </div>
+</ng-template>
+
+<ng-template #noOrders>
+  {{ 'companyAdmin.billing.noOrders' | transloco }}
+</ng-template>

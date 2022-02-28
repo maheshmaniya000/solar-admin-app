@@ -1,0 +1,17 @@
+<sg-toolbar>
+  <!-- LEFT -->
+  <sg-drawer-button class="drawer-button"></sg-drawer-button>
+  <div class="separator"></div>
+  <span class="title">
+    {{ route.data.nav?.name | transloco }}
+  </span>
+
+  <!-- RIGHT -->
+  <ng-container class="sg-toolbar-right">
+    <button mat-button (click)="compare()">
+      <mat-icon svgIcon="sg:sgf-compare"></mat-icon>
+      <span>{{ 'compare.addToCompare' | transloco }}</span>
+    </button>
+    <sg-settings-menu (openUnitSettings)="openUnitSettings()"></sg-settings-menu>
+  </ng-container>
+</sg-toolbar>

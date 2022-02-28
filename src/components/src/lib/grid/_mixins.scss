@@ -1,0 +1,25 @@
+@mixin track-positions($track-configs) {
+  @for $i from 1 through length($track-configs) {
+    $size: nth($track-configs, $i);
+
+    @if ($size) {
+      > :nth-child(#{$i}) {
+        grid-column-end: span $size;
+      }
+    }
+  }
+}
+
+@mixin row($leading-track-size, $track-configs) {
+  display: contents;
+
+  @include track-positions(join($leading-track-size, $track-configs));
+
+  &.no-leading-track {
+    @include track-positions($track-configs);
+
+    > :first-child {
+      grid-column-start: $leading-track-size + 1;
+    }
+  }
+}

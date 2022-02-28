@@ -1,0 +1,57 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'projectDetail.sunpath.modify' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="dialogRef.close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="sg-dialog-content auth-dialog-content">
+    <div fxLayout="row">
+      <div fxFlex>
+        <div class="sunpath">
+          <canvas #sunpath></canvas>
+        </div>
+        <div *ngIf="positionTranslateOpts$ | async; else noPosition" class="horizon-info" fxLayout="row">
+          <div fxFlex>
+            {{ 'projectDetail.sunpath.horizonAzimuth' | transloco:(positionTranslateOpts$ | async) }}
+          </div>
+          <div fxFlex>
+            {{ 'projectDetail.sunpath.horizonElevation' | transloco:(positionTranslateOpts$ | async) }}
+          </div>
+          <div fxFlex>
+            {{ 'projectDetail.sunpath.horizonHorizonElevation' | transloco:(positionTranslateOpts$ | async) }}
+          </div>
+        </div>
+        <ng-template #noPosition>
+          <div class="horizon-info" fxLayout="row">
+            <div fxFlex>&nbsp;</div>
+          </div>
+        </ng-template>
+      </div>
+      <div fxFlex fxLayout="column">
+        <textarea fxFlex #input [ngClass]="{'horizon-error-color': !isHorizonValid() }"
+                  cols="25" rows="30" (input)="onInputChange$.next($event.target.value)">
+        </textarea>
+      </div>
+    </div>
+
+    <div *ngIf="!isHorizonValid()" class="horizon-error horizon-error-color">
+      {{ 'projectDetail.sunpath.horizonInvalid' | transloco }}
+    </div>
+
+    <div class="horizon-actions">
+      <button mat-button (click)="undo()" [disabled]="this.historyStr.length === 0">{{ 'common.action.undo' | transloco }}</button>
+      <button mat-button (click)="redo()" [disabled]="this.redoHistoryStr.length === 0">{{ 'common.action.redo' | transloco }}</button>
+      <button mat-button (click)="setDefault()">{{ 'common.action.default' | transloco }}</button>
+      <button mat-button (click)="exportHorizon()" [disabled]="!isHorizonValid()">
+        {{ 'projectDetail.sunpath.exportHorizon' | transloco }}
+      </button>
+    </div>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button mat-button [disabled]="!isHorizonValid()" color="accent" style="width: 100%;" (click)="save()">
+      {{ 'common.action.save' | transloco }}
+    </button>
+  </div>
+</sg-dialog-deprecated>

@@ -1,0 +1,111 @@
+<mat-card *ngIf="companyDetailStore.viewModel$ | async as viewModel">
+  <mat-card-actions>
+    <ng-container *ngIf="!viewModel.updating; else updatingTemplate">
+      <sg-admin-view-company-tools></sg-admin-view-company-tools>
+    </ng-container>
+    <ng-template #updatingTemplate>
+      <mat-progress-spinner [diameter]="20" mode="indeterminate"></mat-progress-spinner>
+    </ng-template>
+  </mat-card-actions>
+  <mat-card-content>
+    <sg-admin-company-view [company]="company"></sg-admin-company-view>
+
+    <div *ngIf="viewModel.parent">
+      <h3>Parent company</h3>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span style="width: 75px">
+              <mat-icon class="-relative-icon" (click)="detailNavigationService.toCompanyAndSelect(viewModel.parent)"
+                >pageview</mat-icon
+              >
+              <mat-icon class="-relative-icon" *ngIf="viewModel.parent.isMainCompany">stars</mat-icon>
+            </span>
+            {{ viewModel.parent.name }}
+            <span *ngIf="viewModel.parent.groupName">({{ viewModel.parent.groupName }})</span>
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ viewModel.parent.VAT }}
+            <b style="color: red" *ngIf="viewModel.parent.deleted">DELETED</b>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <sg-admin-company-view [company]="viewModel.parent"></sg-admin-company-view>
+      </mat-expansion-panel>
+    </div>
+
+    <div>
+      <h3>Companies to which is this company PARENT</h3>
+      <div *ngIf="!viewModel.childrenEmpty; else noChildCompaniesTemplate">
+        <mat-expansion-panel *ngFor="let child of viewModel.children; let i = index">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span *ngIf="!child.removing; else removingChildTemplate" style="width: 105px">
+                <mat-icon
+                  class="checked-sub-company"
+                  [ngClass]="{ '-active': child.company.inspected, '-not-active': !child.company.inspected }"
+                  matTooltip="VERIFIED COMPANY: If this icon is red - it means this company data has been verified."
+                  matTooltipPosition="above"
+                  >beenhere</mat-icon
+                >
+
+                <mat-icon class="-relative-icon" (click)="detailNavigationService.toCompanyAndSelect(child.company)"
+                  >pageview</mat-icon
+                >
+                <mat-icon
+                  class="-relative-icon"
+                  (click)="companyDetailStore.removeChild(child.company)"
+                  matTooltip="Remove this company from similar companies (company will NOT BE DELETED)"
+                  matTooltipPosition="above"
+                  >delete</mat-icon
+                >
+              </span>
+              <ng-template #removingChildTemplate>
+                <mat-progress-spinner mode="indeterminate" [diameter]="30"></mat-progress-spinner>
+              </ng-template>
+              <span>
+                ({{ child.company.sgCompanyId }}) {{ child.company.name }}
+                <span *ngIf="child.company.groupName"> ({{ child.company.groupName }})</span>
+              </span>
+            </mat-panel-title>
+            <mat-panel-description>{{ child.company.VAT }}</mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <sg-admin-company-view [company]="child.company"></sg-admin-company-view>
+        </mat-expansion-panel>
+      </div>
+
+      <ng-template #noChildCompaniesTemplate>
+        <div><span>No Similar companies found</span></div>
+      </ng-template>
+
+      <div class="link-similar-companies">
+        <form novalidate *ngIf="!viewModel.updating; else addingChildTemplate">
+          <mat-form-field fxFlex="1 1 auto">
+            <input
+              matInput
+              placeholder="Find company by name or ID"
+              [matAutocomplete]="auto"
+              name="addCompanyToParent"
+              [formControl]="addChildFormControl"
+            />
+            <mat-autocomplete
+              #auto="matAutocomplete"
+              [displayWith]="companyRefToString"
+              (optionSelected)="addChild($event.option.value)"
+            >
+              <mat-option *ngFor="let company of filteredCompanies$ | async" [value]="company">
+                <small>
+                  <b>({{ company.sgCompanyId }})</b> {{ company.name }}
+                  <span *ngIf="company.groupName">({{ company.groupName }})</span>
+                </small>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+        <ng-template #addingChildTemplate>
+          <mat-progress-spinner mode="indeterminate" [diameter]="30"></mat-progress-spinner>
+        </ng-template>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

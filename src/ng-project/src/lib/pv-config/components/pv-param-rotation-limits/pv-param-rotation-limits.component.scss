@@ -1,0 +1,32 @@
+@import 'theme';
+
+@import 'mixins/pv-config-setting-panel';
+
+@include pv-config-setting-panel();
+
+.content {
+  margin-bottom: $sg-24 !important;
+
+  .row {
+    & > div {
+      display: inline-block;
+    }
+    .label {
+      width: 150px;
+    }
+    mat-form-field {
+      width: 60px;
+    }
+    &.error-margin {
+      margin-bottom: 20px;
+    }
+    .optimum {
+      color: map-get($accent, default);
+    }
+  }
+
+  button {
+    margin-top: $sg-24;
+    margin-left: 150px;
+  }
+}

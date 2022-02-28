@@ -1,0 +1,31 @@
+
+@import 'theme';
+
+img {
+  margin: 0 5px;
+}
+
+:host > div {
+  margin-right: 10px;
+  border: solid 1px map-get($primary, 300);
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.highlighted {
+  background-color: map-get($primary, 100);
+}
+
+.text {
+  margin: auto;
+  width: 260px;
+
+  div:first-child {
+    color: map-get($primary, 800);
+    @include text-ellipsis();
+  }
+  div:last-of-type {
+    color: map-get($primary, 700);
+    @include text-ellipsis();
+  }
+}

@@ -1,0 +1,14 @@
+<div class="container">
+  <sg-unit-value [value]="distance" [unit]="unit"></sg-unit-value>
+  <sg-unit-label [unit]="unit"></sg-unit-label>
+  <mat-icon class="delete" (click)="deleteLine.emit(layer)">delete</mat-icon>
+  <mat-icon
+    [(colorPicker)]="color"
+    cpOutputFormat="hex"
+    cpDisableInput="true"
+    cpAlphaChannel="disabled"
+    cpFallbackColor="#ffffff"
+    (colorPickerChange)="onChangeColor($event)"
+    class="color">color_lens
+  </mat-icon>
+</div>

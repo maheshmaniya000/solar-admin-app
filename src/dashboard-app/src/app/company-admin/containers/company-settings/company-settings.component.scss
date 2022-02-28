@@ -1,0 +1,33 @@
+@import 'theme';
+
+mat-card {
+  color: map-get($primary, 800);
+}
+
+mat-card-content {
+  display: grid;
+  font-size: $sg-16;
+
+  & > div {
+    margin-bottom: $sg-8;
+
+    & > div:first-child {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+.button-group {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    margin-left: $sg-12;
+  }
+}

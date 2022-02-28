@@ -1,0 +1,61 @@
+<div class="global-home-wrapper">
+  <sg-dashboard-header
+    [user]="user$ | async"
+    [company]="company$ | async"
+    [isCompanyAdmin]="isCompanyAdmin$ | async">
+  </sg-dashboard-header>
+
+  <div class="apps-wrapper">
+    <h3 class="title">Apps</h3>
+    <mat-card-content>
+      <mat-card>
+        <img class="apps-image" src="assets/img/icons/prospect.svg" />
+        <a class="project-title" href="/prospect/" target="_self">{{'enum.app.prospect' | transloco}}</a>
+        <div *ngIf="!!(userLicense$ | async)" class="subscription">
+          <p *ngIf="!isProspectSubscriptionExpired((company$ | async)?.prospectLicense)" class="subscription type">
+            {{ 'common.subscriptionType.' + (userLicense$ | async) | transloco }}
+          </p>
+          <p *ngIf="!!(company$ | async)?.prospectLicense && isProspectSubscriptionExpired((company$ | async)?.prospectLicense)" class="subscription expiration-info">
+            {{ 'common.subscriptionType.expired' | transloco:{ subscriptionType: (('common.subscriptionType.' + (userLicense$ | async)) | transloco) } }}
+          </p>
+        </div>
+      </mat-card>
+      <!-- TODO <mat-card>
+        <img class="apps-image" src="assets/img/icons/Evaluate.svg">
+        <a class="project-title" target="_self">{{ 'enum.app.evaluate' | transloco }}</a>
+      </mat-card>
+      <mat-card>
+        <img class="apps-image" src="assets/img/icons/Monitor.svg">
+        <a class="project-title" target="_self">{{ 'enum.app.monitor' | transloco }}</a>
+      </mat-card>
+      <mat-card>
+        <img class="apps-image" src="assets/img/icons/Forecast.svg">
+        <a class="project-title"  target="_self">{{ 'enum.app.forecast' | transloco }}</a>
+      </mat-card> -->
+      <mat-card *ngIf="hasSDATSubscription$ | async">
+        <img class="apps-image" src="assets/img/icons/app-icn-sdat.svg" />
+        <a class="project-title" [routerLink]="['/sdat']">{{ 'header.sdat' | transloco }}</a>
+      </mat-card>
+      <mat-card *ngIf="isSolargisAdmin$ | async">
+        <img class="apps-image" src="assets/img/icons/admin.svg" />
+        <a class="project-title" href="/admin/" target="_self">{{ 'header.admin' | transloco }}</a>
+      </mat-card>
+    </mat-card-content>
+  </div>
+
+  <div class="recent-project-wrapper">
+    <mat-card-content>
+      <mat-card-actions class="upper">
+        <h3 class="left title">{{ 'projectList.filter.toolbar.recent' | transloco }}</h3>
+        <!-- TODO (in design plan) <a class="right">All Projects</a> -->
+        <button *ngIf="(numberOfRecentProjects$ | async) > 0" mat-icon-button class="right" (click)="toggleRecentProjectView()">
+          <mat-icon [ngClass]="{ highlighted: showRecentProjectsTableView === false }">view_module</mat-icon>
+        </button>
+      </mat-card-actions>
+      <!-- <mat-card-actions class="lower"> -->
+      <!-- TODO show create form and edit this mat-card-content -->
+      <!-- </mat-card-actions> -->
+    </mat-card-content>
+    <sg-list-recent-projects [showRecentTable]="showRecentProjectsTableView"></sg-list-recent-projects>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div mat-dialog-title>
+  <button
+    *ngIf="closeIconButtonEnabled"
+    [mat-dialog-close]="undefined"
+    class="close-button"
+    mat-icon-button
+    data-test="close-button"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+  <h3>{{ titleTranslationKey | transloco }}</h3>
+</div>
+<mat-divider *ngIf="dividedContent" class="top-content-divider"></mat-divider>
+<mat-dialog-content [ngClass]="{ divided: dividedContent }">
+  <ng-content></ng-content>
+</mat-dialog-content>
+<mat-divider
+  *ngIf="dividedContent"
+  class="bottom-content-divider"
+></mat-divider>
+<ng-content select="mat-dialog-actions"></ng-content>
+<mat-dialog-actions *ngIf="!actionsDirective" align="end">
+  <ng-container *ngFor="let action of actions | async">
+    <button
+      *ngIf="!action.dismissing; else dismissingButton"
+      [disabled]="action.disabled"
+      [mat-dialog-close]="action.payload"
+      cdkFocusInitial
+      color="accent"
+      mat-flat-button
+      [attr.data-test]="action.dataTest"
+    >
+      {{ action.textTranslationKey | transloco }}
+    </button>
+    <ng-template #dismissingButton>
+      <button
+        [disabled]="action.disabled"
+        [mat-dialog-close]="action.payload"
+        color="accent"
+        mat-stroked-button
+        [attr.data-test]="action.dataTest"
+      >
+        {{ action.textTranslationKey | transloco }}
+      </button>
+    </ng-template>
+  </ng-container>
+</mat-dialog-actions>
+<ng-container *ngIf="footer">
+  <mat-divider class="footer-divider"></mat-divider>
+  <ng-content select="sg-dialog-footer"></ng-content>
+</ng-container>

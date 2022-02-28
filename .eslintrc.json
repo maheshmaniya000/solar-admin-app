@@ -1,0 +1,244 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx", "eslint-plugin-import", "eslint-plugin-jsdoc"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {
+        "@typescript-eslint/ban-ts-comment": "warn", // TODO switch to 'error' / remove when all resolved
+        "@typescript-eslint/consistent-type-assertions": "error",
+        "@typescript-eslint/dot-notation": "error",
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true
+          }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "no-public"
+          }
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        // TODO we want public methods ordered independent of whether they're decorated or not.
+        // i.e. @HostBinding before ng methods, other decorated/not-decorated methods after ng methods.
+        "@typescript-eslint/member-ordering": "error",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "default",
+            "format": ["camelCase", "UPPER_CASE"],
+            "filter": {
+              "regex": "^(_id|PVOUT)",
+              "match": false
+            }
+          },
+          {
+            "selector": "typeLike",
+            "format": ["PascalCase"]
+          }
+        ],
+        "@typescript-eslint/no-inferrable-types": [
+          "error",
+          {
+            "ignoreParameters": true,
+            "ignoreProperties": true
+          }
+        ],
+        "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/no-shadow": [
+          "error",
+          {
+            "hoist": "all"
+          }
+        ],
+        "@typescript-eslint/no-explicit-any": "warn", // TODO switch to 'error' / remove when all resolved
+        "@typescript-eslint/no-unsafe-assignment": "warn", // TODO switch to 'error' / remove when all resolved
+        "@typescript-eslint/no-unused-expressions": [
+          "error",
+          {
+            "allowTernary": true
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/prefer-for-of": "error",
+        "@typescript-eslint/prefer-function-type": "error",
+        "@typescript-eslint/prefer-readonly": "error",
+        "@typescript-eslint/unified-signatures": "error",
+        "complexity": "error",
+        "constructor-super": "error",
+        "eqeqeq": ["error", "always", {"null": "ignore"}],
+        "guard-for-in": "error",
+        "id-blacklist": [
+          "error",
+          "any",
+          "Number",
+          "number",
+          "String",
+          "string",
+          "Boolean",
+          "boolean",
+          "Undefined",
+          "undefined"
+        ],
+        "id-match": "error",
+        "import/no-deprecated": "warn",
+        "import/order": [
+          "error",
+          {
+            "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"], "object"],
+            "pathGroups": [
+              {
+                "pattern": "@solargis/**",
+                "group": "internal"
+              },
+              {
+                "pattern": "{admin-app,components,dashboard-app,ng-project,ng-shared,print-app,prospect-app,server,tools}/**",
+                "group": "internal",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": [],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc"
+            }
+          }
+        ],
+        "jsdoc/newline-after-description": "error",
+        "jsdoc/no-types": "error",
+        "max-classes-per-file": "error",
+        "max-depth": "error",
+        "no-bitwise": "error",
+        "no-caller": "error",
+        "no-console": [
+          "error",
+          {
+            "allow": [
+              "log",
+              "warn",
+              "dir",
+              "timeLog",
+              "assert",
+              "clear",
+              "count",
+              "countReset",
+              "group",
+              "groupEnd",
+              "table",
+              "dirxml",
+              "error",
+              "groupCollapsed",
+              "Console",
+              "profile",
+              "profileEnd",
+              "timeStamp",
+              "context"
+            ]
+          }
+        ],
+        "no-eval": "error",
+        "no-new-wrappers": "error",
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "rxjs/Rx",
+                "message": "Please import from rxjs"
+              },
+              {
+                "name": "@ngneat/spectator",
+                "message": "Please import from @ngneat/spectator/jest"
+              },
+              {
+                "name": "@solargis/types",
+                "message": "Please import from @solargis/types/feature"
+              }
+            ],
+            "patterns": [
+              {
+                "group": ["lodash", "lodash/*", "lodash-es/*"],
+                "message": "Please import from lodash-es"
+              },
+              {
+                "group": ["jsts", "jsts/*"],
+                "message": "Please import from JstsUtils"
+              }
+            ]
+          }
+        ],
+        "no-throw-literal": "error",
+        "no-undef-init": "error",
+        "no-underscore-dangle": [
+          "error",
+          {
+            "allow": ["_id"]
+          }
+        ],
+        "no-unreachable": "error",
+        "no-use-before-define": "error",
+        "object-shorthand": "error",
+        "one-var": ["error", "never"],
+        "radix": "error",
+
+        // TODO formatting rules. It is recommended to use a 3rd party formatter (like prettier) instead
+        "arrow-body-style": "error",
+        "arrow-parens": ["error", "as-needed"],
+        "curly": "error",
+        "eol-last": "error",
+        "jsdoc/check-alignment": "error",
+        "no-multiple-empty-lines": "error",
+        "max-len": [
+          "error",
+          {
+            "code": 140,
+            "ignorePattern": "^import"
+          }
+        ],
+        "new-parens": "error",
+        "no-trailing-spaces": "error",
+        "quote-props": ["error", "as-needed"],
+        "space-before-function-paren": [
+          "error",
+          {
+            "anonymous": "never",
+            "asyncArrow": "always",
+            "named": "never"
+          }
+        ],
+        "@typescript-eslint/member-delimiter-style": [
+          "error",
+          {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": false
+            }
+          }
+        ],
+        "@typescript-eslint/quotes": [
+          "error",
+          "single",
+          { "allowTemplateLiterals": true }
+        ],
+        "@typescript-eslint/semi": ["error", "always"],
+        "@typescript-eslint/type-annotation-spacing": "error"
+      }
+    },
+    {
+      "files": ["*.spec.ts", "*.mocks.ts"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+          "warn" // TODO switch to 'error' / remove when all resolved
+        ]
+      }
+    }
+  ]
+}

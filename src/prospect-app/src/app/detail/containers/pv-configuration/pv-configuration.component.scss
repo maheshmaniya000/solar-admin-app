@@ -1,0 +1,31 @@
+@import 'theme';
+
+mat-card-title, .title {
+  font-weight: bold;
+  font-size: $sg-24;
+  color: map-get($primary, default);
+  margin-bottom: $sg-16;
+}
+
+.section {
+  margin: $sg-16 0;
+  color: map-get($primary, 800);
+
+  & > div {
+    margin-bottom: $sg-8;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.row {
+  padding-top: $sg-24;
+}
+
+.buttons {
+  button {
+    margin-right: $sg-12;
+  }
+}

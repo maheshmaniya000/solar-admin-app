@@ -1,0 +1,8 @@
+@import 'theme';
+
+.note {
+  font-weight: bold;
+}
+
+.primary { @include sg-button(lg, red); }
+.secondary { @include sg-button(lg); }

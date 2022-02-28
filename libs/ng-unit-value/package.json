@@ -1,0 +1,13 @@
+{
+  "name": "@solargis/ng-unit-value",
+  "version": "8.3.0",
+  "description": "Solargis units and values components.",
+  "author": "Solargis",
+  "license": "ISC",
+  "dependencies": {
+    "@solargis/ng-translation": "^8.3.0"
+  },
+  "publishConfig": {
+    "directory": "../../dist/libs/ng-unit-value"
+  }
+}

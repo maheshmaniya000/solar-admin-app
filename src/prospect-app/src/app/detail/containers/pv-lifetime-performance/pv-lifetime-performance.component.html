@@ -1,0 +1,152 @@
+<div class="card-layout">
+  <!-- Summary !-->
+  <div class="card-big">
+    <sg-summary [text]="'projectDetail.pvPerformance.lifetimeSummary'" [energySystem]="energySystem$ | async" [hasData]="true">
+      <sg-summary-data-item class="left"
+        [layer]="pvcalcLayers.get('PVOUT_specific')"
+        [data]="yearlyData$ | async">
+        {{ 'project.data.longtermAverage' | transloco }}
+      </sg-summary-data-item>
+      <sg-summary-data-item class="right"
+        [layer]="pvcalcLayers.get('PR')"
+        [data]="yearlyData$ | async">
+        {{ 'project.data.longtermAverage' | transloco }}
+      </sg-summary-data-item>
+    </sg-summary>
+  </div>
+
+  <div class="card-small">
+    <mat-card>
+      <mat-card-title>{{ 'projectDetail.pvPerformance.lifetimeProduction' | transloco }}</mat-card-title>
+
+      <div sgScrollContainer="custom">
+        <div class="table-s">
+          <cdk-table #table [dataSource]="performanceTable$" class="data-table">
+
+            <ng-container cdkColumnDef="id">
+              <cdk-header-cell *cdkHeaderCellDef>{{ 'projectDetail.pvPerformance.endOfYear' | transloco }}</cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.id === 'avg'">{{ 'common.aggregation.avg' | transloco }}</ng-container>
+                <ng-container *ngIf="row.id === 'sum'">{{ 'common.aggregation.cumulative' | transloco }}</ng-container>
+                <ng-container *ngIf="row.id >= 0 ">
+                  <ng-container *ngIf="row.id === 0; else id">{{ 'projectDetail.pvPerformance.theoretical' | transloco }}</ng-container>
+                  <ng-template #id>{{ row.id }}</ng-template>
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="DEGRAD">
+              <cdk-header-cell *cdkHeaderCellDef>
+                {{ 'projectDetail.pvPerformance.degrad' | transloco }}
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="percentUnit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.DEGRAD !== null; else empty">
+                  <sg-unit-value [unit]="percentUnit" [value]="row.DEGRAD"></sg-unit-value>
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="PVOUT_specific">
+              <cdk-header-cell *cdkHeaderCellDef>
+                <sg-project-data-key key="PVOUT_specific"></sg-project-data-key>
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="pvcalcLayers.get('PVOUT_specific').unit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.PVOUT_specific !== null; else empty">
+                  <sg-unit-value
+                    [unit]="pvcalcLayers.get('PVOUT_specific').unit" [value]="row.PVOUT_specific">
+                  </sg-unit-value>
+                </ng-container>
+              </cdk-cell>
+
+            </ng-container>
+            <ng-container cdkColumnDef="PVOUT_total">
+              <cdk-header-cell *cdkHeaderCellDef>
+                <sg-project-data-key key="PVOUT_total"></sg-project-data-key>
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="pvcalcLayers.get('PVOUT_total').unit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.PVOUT_total !== null; else empty">
+                  <sg-unit-value
+                    [unit]="pvcalcLayers.get('PVOUT_total').unit" [value]="row.PVOUT_total">
+                  </sg-unit-value>
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="PR">
+              <cdk-header-cell *cdkHeaderCellDef>
+                <sg-project-data-key key="PR"></sg-project-data-key>
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="pvcalcLayers.get('PR').unit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.PR !== null; else empty">
+                  <sg-unit-value
+                    [unit]="pvcalcLayers.get('PR').unit" [value]="row.PR">
+                  </sg-unit-value>
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+            <cdk-row *cdkRowDef="let row; columns: columns" [ngClass]="{'highlighted': row.highlighted }"></cdk-row>
+          </cdk-table>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="card-small" style="padding-bottom: 2px;">
+    <mat-card class="yield tabs">
+      <mat-card-content>
+        <mat-tab-group color="accent" #tabGroup>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <sg-project-data-key key="PVOUT_specific"></sg-project-data-key>
+            </ng-template>
+            <div *ngIf="tabGroup.selectedIndex === 0">
+              <sg-highcharts [opts]="pvSpecificChart$ | async"
+                             [exportingOpts]="getExportChartOpts('PVOUT_specific') | async">
+              </sg-highcharts>
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <sg-project-data-key key="PVOUT_total"></sg-project-data-key>
+            </ng-template>
+            <div *ngIf="tabGroup.selectedIndex === 1">
+              <sg-highcharts [opts]="pvTotalChart$ | async"
+                             [exportingOpts]="getExportChartOpts('PVOUT_total') | async">
+              </sg-highcharts>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-title><sg-translation [str]="pvcalcLayers.get('PR').name"></sg-translation></mat-card-title>
+        <sg-highcharts [opts]="performanceRatioChart$ | async"
+                       [exportingOpts]="getExportChartOpts('PR') | async">
+        </sg-highcharts>
+    </mat-card>
+  </div>
+
+  <div class="card-big">
+    <sg-glossary [layers]="glossaryLayers$ | async"></sg-glossary>
+  </div>
+
+</div>
+
+<ng-template #empty>
+  -
+</ng-template>

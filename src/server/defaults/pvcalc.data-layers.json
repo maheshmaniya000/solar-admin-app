@@ -1,0 +1,213 @@
+{
+  "PVOUT_specific": {
+    "chart": { "color": "#cf3842", "min": 0 },
+    "group": "pvout",
+    "name": "Specific photovoltaic power output",
+    "resolution": {
+      "annual": {
+        "access": "free",
+        "unit": ["kWh/kWp", "annual"]
+      },
+      "monthly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": ["kWh/kWp", "monthly"]
+      },
+      "monthly-hourly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": "Wh/kWp"
+      }
+    }
+  },
+  "PVOUT_total": {
+    "access": "prospect:pvcalc:paid",
+    "chart": { "color": "#cf3842", "min": 0 },
+    "group": "pvout",
+    "name": "Total photovoltaic power output",
+    "resolution": {
+      "annual": {
+        "access": "free",
+        "unit": "kWh"
+      },
+      "monthly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": "kWh"
+      },
+      "monthly-hourly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": "Wh"
+      }
+    }
+  },
+  "PVOUT_share": {
+    "access": "prospect:pvcalc:paid",
+    "group": "pvout",
+    "name": "Share of photovoltaic power output per month",
+    "resolution": "monthly",
+    "unit": "%"
+  },
+  "PR": {
+    "chart": { "color": "#364863", "min": 0, "type": "line" },
+    "group": "pvout",
+    "name": "System performance ratio",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:pvcalc:paid" }
+    },
+    "unit": "%"
+  },
+  "CF": {
+    "access": "free",
+    "group": "pvout",
+    "name": "Capacity factor",
+    "resolution": "annual",
+    "unit": "%"
+  },
+  "GHI": {
+    "access": "prospect:pvcalc:paid",
+    "chart": { "color": "#186fb9", "min": 0 },
+    "group": "solar",
+    "name": "Global horizontal irradiation",
+    "resolution": {
+      "annual": {
+        "access": "free",
+        "unit": ["kWh/m2", "annual"]
+      },
+      "monthly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": ["kWh/m2", "monthly"]
+      },
+      "monthly-hourly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": "Wh/m2"
+      }
+    }
+  },
+  "DNI": {
+    "access": "prospect:pvcalc:paid",
+    "chart": { "color": "#e3a12c", "min": 0 },
+    "group": "solar",
+    "name": "Direct normal irradiation",
+    "resolution": {
+      "annual": {
+        "access": "free",
+        "unit": ["kWh/m2", "annual"]
+      },
+      "monthly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": ["kWh/m2", "monthly"]
+      },
+      "monthly-hourly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": "Wh/m2"
+      }
+    }
+  },
+  "DIF": {
+    "access": "prospect:pvcalc:paid",
+    "chart": { "color": "#62bdf4", "min": 0 },
+    "group": "solar",
+    "name": "Diffuse irradiation",
+    "resolution": {
+      "annual": {
+        "access": "free",
+        "unit": ["kWh/m2", "annual"]
+      },
+      "monthly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": ["kWh/m2", "monthly"]
+      },
+      "monthly-hourly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": "Wh/m2"
+      }
+    }
+  },
+  "D2G": {
+    "chart": { "color": "#62bdf4", "min": 0 },
+    "group": "solar",
+    "name": "Ratio of diffuse to global irradiation",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:pvcalc:paid" }
+    },
+    "unit": "0.000"
+  },
+  "GHI_season": {
+    "access": "prospect:pvcalc:paid",
+    "group": "solar",
+    "name": "GHI seasonality",
+    "resolution": "annual",
+    "codelist": { "-1": "Monthly GHI found 0" },
+    "unit": "0.0"
+  },
+  "DNI_season": {
+    "access": "prospect:pvcalc:paid",
+    "group": "solar",
+    "name": "DNI seasonality",
+    "resolution": "annual",
+    "codelist": { "-1": "Monthly DNI found 0" },
+    "unit": "0.0"
+  },
+  "GTI": {
+    "chart": { "color": "#94c34a", "min": 0 },
+    "group": "pvout",
+    "name": "Global tilted irradiation",
+    "resolution": {
+      "annual": {
+        "access": "free",
+        "unit": ["kWh/m2", "annual"]
+      },
+      "monthly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": ["kWh/m2", "monthly"]
+      },
+      "monthly-hourly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": "Wh/m2"
+      }
+    }
+  },
+  "GTI_opta": {
+    "access": "prospect:pvcalc:paid",
+    "chart": { "color": "#186fb9", "min": 0 },
+    "group": "solar",
+    "name": "Global tilted irradiation at optimum angle",
+    "resolution": {
+      "annual": {
+        "access": "free",
+        "unit": ["kWh/m2", "annual"]
+      },
+      "monthly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": ["kWh/m2", "monthly"]
+      },
+      "monthly-hourly": {
+        "access": "prospect:pvcalc:paid",
+        "unit": "Wh/m2"
+      }
+    }
+  },
+  "GTI_theoretical": {
+    "access": "free",
+    "chart": { "color": "#94c34a", "min": 0 },
+    "group": "losses",
+    "name": "Global tilted irradiation (theoretical)",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:pvcalc:paid" }
+    },
+    "unit": ["kWh/m2", "{{resolution}}"]
+  },
+  "TEMP": {
+    "access": "prospect:pvcalc:paid",
+    "chart": { "color": "#80429d", "type": "line" },
+    "group": "weather",
+    "name": "Air temperature",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:pvcalc:paid" },
+      "monthly-hourly": { "access": "prospect:pvcalc:paid" }
+    },
+    "unit": "°C"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "ELE": {
+    "access": "free",
+    "name": "Elevation",
+    "ncbin": "ELEVBATHY_3arcsec.elevation",
+    "unit": "m"
+  },
+  "PVOUT_csi": {
+    "chart": { "color": "#cf3842", "min": 0 },
+    "group": "pv",
+    "name": "PV cSi yield",
+    "ncbin": "PV_CSI_OPTA_LTA_{{resolution}}.PV",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:lta:paid" }
+    },
+    "unit": ["kWh/kWp", "{{resolution}}"]
+  },
+  "PVOUT_cdte": {
+    "access": "prospect:lta:all",
+    "chart": { "color": "#cf3842", "min": 0 },
+    "disabled": true,
+    "group": "pv",
+    "name": "PV CdTe yield",
+    "ncbin": "PV_CDTE_OPTA_LTA_{{resolution}}.PV",
+    "resolution": ["annual", "monthly"],
+    "unit": ["kWh/kWp", "{{resolution}}"]
+  },
+  "PVGAIN_cdte": {
+    "access": "prospect:lta:all",
+    "disabled": true,
+    "group": "pv",
+    "name": "Gain of CdTe over CSi modules",
+    "ncbin": "PV_CDTE_CSI_OPTA_diff_LTA_{{resolution}}.PV_GAIN",
+    "resolution": ["annual", "monthly"],
+    "unit": "%"
+  },
+  "GHI": {
+    "chart": { "color": "#186fb9", "min": 0 },
+    "group": "solar",
+    "name": "Global horizontal irradiation",
+    "ncbin": "GHI_LTA_{{resolution}}.GHI",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:lta:paid" }
+    },
+    "unit": ["kWh/m2", "{{resolution}}"]
+  },
+  "DNI": {
+    "chart": { "color": "#e3a12c", "min": 0 },
+    "group": "solar",
+    "name": "Direct normal irradiation",
+    "ncbin": "DNI_LTA_{{resolution}}.DNI",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:lta:paid" }
+    },
+    "unit": ["kWh/m2", "{{resolution}}"]
+  },
+  "DIF": {
+    "chart": { "color": "#62bdf4", "min": 0 },
+    "group": "solar",
+    "name": "Diffuse irradiation",
+    "ncbin": "DIF_LTA_{{resolution}}.DIF",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:lta:paid" }
+    },
+    "unit": ["kWh/m2", "{{resolution}}"]
+  },
+  "D2G": {
+    "chart": { "color": "#62bdf4", "min": 0 },
+    "group": "solar",
+    "name": "Ratio of diffuse to global irradiation",
+    "ncbin": "D2G_LTA_{{resolution}}.D2G",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:lta:paid" }
+    },
+    "unit": "0.000"
+  },
+  "GTI_opta": {
+    "chart": { "color": "#94c34a", "min": 0 },
+    "group": "solar",
+    "name": "GTI at optimum angle",
+    "ncbin": "GTI_OPTA_LTA_{{resolution}}.GTI",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:lta:paid" }
+    },
+    "unit": ["kWh/m2", "{{resolution}}"]
+  },
+  "OPTA": {
+    "access": "free",
+    "group": "solar",
+    "name": "Optimum angle",
+    "ncbin": "OPTA.opta",
+    "unit": "°"
+  },
+  "GHI_season": {
+    "access": "prospect:lta:paid",
+    "group": "solar",
+    "name": "GHI seasonality",
+    "ncbin": "GHI_SEASON_LTA.GHI_SEASON",
+    "codelist": { "-1": "Monthly GHI found 0" },
+    "unit": "0.0"
+  },
+  "DNI_season": {
+    "access": "prospect:lta:paid",
+    "group": "solar",
+    "name": "DNI seasonality",
+    "ncbin": "DNI_SEASON_LTA.DNI_SEASON",
+    "codelist": { "-1": "Monthly DNI found 0" },
+    "unit": "0.0"
+  },
+  "ALB": {
+    "access": "prospect:lta:all",
+    "chart": { "color": "#e06124", "max": 1, "min": 0, "type": "line" },
+    "group": "solar",
+    "name": "Albedo",
+    "resolution": {
+      "annual": {
+        "ncbin": "ALBEDO_LTA_yearly.albedo"
+      },
+      "monthly": {
+        "ncbin": "ALBEDO_LTA_monthly.albedo"
+      }
+    },
+    "unit": "0.00"
+  },
+  "TEMP": {
+    "chart": { "color": "#80429d", "type": "line" },
+    "group": "weather",
+    "name": "Air temperature",
+    "ncbin": "TEMP_LTA_{{resolution}}.temp_mean",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:lta:paid" }
+    },
+    "unit": "°C"
+  },
+  "WS": {
+    "access": "prospect:lta:paid",
+    "chart": { "color": "#09925f", "type": "line", "min": 0 },
+    "group": "weather",
+    "name": "Wind speed",
+    "ncbin": "WS_LTA_{{resolution}}.ws_mean",
+    "resolution": ["annual", "monthly"],
+    "unit": "m/s"
+  },
+  "RH": {
+    "access": "prospect:lta:all",
+    "chart": { "color": "#77cdcd", "type": "line", "min": 0 },
+    "group": "weather",
+    "name": "Relative humidity",
+    "ncbin": "RH_LTA_{{resolution}}.rh_mean",
+    "resolution": ["annual", "monthly"],
+    "unit": "%0"
+  },
+  "PWAT": {
+    "chart": { "color": "#186fb9", "min": 0 },
+    "access": "prospect:lta:all",
+    "group": "weather",
+    "name": "Precipitable water",
+    "ncbin": "PWAT_LTA_{{resolution}}.pwat_mean",
+    "resolution": ["annual", "monthly"],
+    "unit": "kg/m2"
+  },
+  "PREC": {
+    "access": "prospect:lta:all",
+    "chart": { "color": "#186fb9", "min": 0 },
+    "group": "weather",
+    "name": "Precipitation",
+    "ncbin": "PREC_LTA_{{resolution}}.prec_mean",
+    "resolution": ["annual", "monthly"],
+    "unit": "mm"
+  },
+  "SNOWD": {
+    "access": "prospect:lta:all",
+    "chart": { "color": "#abc9ed", "min": 0 },
+    "group": "weather",
+    "name": "Snow days",
+    "ncbin": "SNOWDAYS_LTA_{{resolution}}.snow_days",
+    "resolution": ["annual", "monthly"],
+    "codelist": { "-1": "occasional" },
+    "unit": "days"
+  },
+  "CDD": {
+    "chart": { "color": "#abc9ed", "min": 0, "type": "line" },
+    "group": "weather",
+    "name": "Cooling degree days",
+    "ncbin": "DEGREEDAYS_LTA_{{resolution}}.degree_day_cool",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:lta:paid" }
+    },
+    "unit": "° days"
+  },
+  "HDD": {
+    "chart": { "color": "#f1a2c6", "min": 0, "type": "line" },
+    "group": "weather",
+    "name": "Heating degree days",
+    "ncbin": "DEGREEDAYS_LTA_{{resolution}}.degree_day_heat",
+    "resolution": {
+      "annual": { "access": "free" },
+      "monthly": { "access": "prospect:lta:paid" }
+    },
+    "unit": "° days"
+  },
+  "POPUL": {
+    "access": "free",
+    "group": "land",
+    "name": "Population density",
+    "ncbin": "POPUL.population_density",
+    "unit": "inh./km2"
+  },
+  "LANDC": {
+    "access": "free",
+    "group": "land",
+    "name": "Landcover",
+    "ncbin": "LANDCOVER.land_cover",
+    "codelist": {
+      "301": "No data",
+      "305": "Post-flooding or irrigated cropland",
+      "306": "Mosaic cropland (>50%) / natural vegetation",
+      "307": "Mosaic natural vegetation (>50%) / cropland",
+      "308": "Tree cover, broadleaved, evergreen (>15%)",
+      "318": "Tree cover, mixed leaf type (broad- and needle-leaved)",
+      "319": "Mosaic tree and shrub (>50%) / herbaceous cover",
+      "320": "Mosaic herbaceous cover (>50%) / tree and shrub",
+      "324": "Grassland",
+      "325": "Lichens and mosses",
+      "330": "Tree cover, flooded, fresh or brackish water",
+      "331": "Tree cover, flooded, saline water",
+      "332": "Shrub or herbaceous cover, flooded",
+      "333": "Urban areas",
+      "337": "Water bodies",
+      "338": "Permanent snow and ice",
+      "302-304": "Cropland, rainfed",
+      "309-311": "Tree cover, broadleaved, deciduous (>15%)",
+      "312-314": "Tree cover, needle-leaved, evergreen (>15%)",
+      "315-317": "Tree cover, needle-leaved, deciduous (>15%)",
+      "321-323": "Shrubland",
+      "326-329": "Sparse vegetation (<15%)",
+      "334-336": "Bare areas"
+    },
+    "unit": "0"
+  },
+  "SLO": {
+    "access": "free",
+    "group": "land",
+    "name": "Slope",
+    "ncbin": "SLOPE_3arcsec.slope",
+    "unit": "°"
+  },
+  "AZI": {
+    "access": "free",
+    "group": "land",
+    "name": "Azimuth",
+    "ncbin": "AZIM_3arcsec.azim",
+    "codelist": {
+      "-1": "flat",
+      "-2": "quasi flat"
+    },
+    "unit": "°"
+  }
+}

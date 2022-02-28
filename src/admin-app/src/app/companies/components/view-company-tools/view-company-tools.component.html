@@ -1,0 +1,45 @@
+<ng-container *ngIf="companyDetailStore.viewModel$ | async as viewModel">
+  <button mat-icon-button routerLink="edit">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button
+          (click)="companyDetailStore.toggleIsMain()"
+          [ngClass]="{'-active': viewModel.entity.isMainCompany}"
+          [matTooltip]="viewModel.entity.isMainCompany ? 'MARK AS NOT MAIN (now is main)' : 'MARK AS MAIN (now is NOT main)'"
+          matTooltipPosition="above">
+    <mat-icon>stars</mat-icon>
+  </button>
+
+  <button mat-icon-button
+          (click)="companyDetailStore.toggleInspected()"
+          [ngClass]="{'-active': viewModel.entity.inspected}"
+          [matTooltip]="viewModel.entity.inspected ? 'MARK AS  NOT VERIFIED (now is verified)' : 'MARK AS VERIFIED (now is NOT verified)'"
+          matTooltipPosition="above">
+    <mat-icon>beenhere</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="companyDetailStore.toggleDeleted()"
+          [ngClass]="{'-active': viewModel.entity.deleted}"
+          matTooltip="DELETE COMPANY: If company is deleted - company would not be visible anywhere."
+          matTooltipPosition="above">
+    <mat-icon>delete</mat-icon>
+  </button>
+
+  <button mat-icon-button
+          (click)="companyDetailStore.toggleHistoric()"
+          [ngClass]="{'-active': viewModel.entity.historic}"
+          [matTooltip]="viewModel.entity.historic ? 'Unarchive' : 'Archive'"
+          matTooltipPosition="above">
+    <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+  </button>
+
+  <button mat-raised-button routerLink="prospect-license">
+    Prospect subscription
+  </button>
+  <button mat-raised-button routerLink="sdat-subscription">
+    SDAT subscription
+  </button>
+  <button mat-raised-button routerLink="api-contract">API</button>
+  <button mat-raised-button routerLink="tmy-subscriptions">TMY API</button>
+  <button mat-raised-button (click)="onShowOrdersClick(viewModel.entity.sgCompanyId)">Show orders</button>
+</ng-container>

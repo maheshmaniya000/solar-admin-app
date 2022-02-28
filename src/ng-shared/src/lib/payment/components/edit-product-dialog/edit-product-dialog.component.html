@@ -1,0 +1,81 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">
+    {{ 'payment.cart.edit' | transloco:{ productName: (getProductNameTranslation(product) | transloco)} }}
+  </div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button [disableRipple]="true" (click)="close(false)">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <div class="row bold" fxLayout>
+      <div fxFlex="0 0 250px">
+        {{ getProductNameTranslation(product) | transloco }}
+      </div>
+      <div fxFlex class="price">
+        <div class="price-value">
+          {{ product.price }} €
+        </div>
+      </div>
+    </div>
+
+    <div class="row" fxLayout>
+      <div fxFlex="250px">
+        {{ 'payment.cart.step1.subscription' | transloco }}:
+      </div>
+      <div fxFlex class="bold">
+        {{ 'payment.cart.step1.annual' | transloco }}
+      </div>
+    </div>
+
+    <div class="row" fxLayout>
+      <div fxFlex="250px">
+        {{ 'payment.cart.step1.users' | transloco }}
+      </div>
+      <div fxFlex class="users">
+        <div class="users-adjust">
+          <button mat-icon-button (click)="removeUser()" [disabled]="totalUsers <= MIN_USERS">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <mat-form-field>
+            <input class="bold" matInput [(ngModel)]="totalUsers" type="number" [min]="MIN_USERS" [max]="MAX_USERS" />
+          </mat-form-field>
+          <button mat-icon-button (click)="addUser()" [disabled]="totalUsers >= MAX_USERS">
+            <mat-icon>add</mat-icon>
+          </button>
+
+        </div>
+
+      </div>
+      <div fxFlex="200px" class="price">
+        {{ priceForUsers() }} €
+      </div>
+    </div>
+
+    <hr>
+    <div class="total-price-wrapper">
+      <div class="row total-price">
+        <div fxFlex>
+          {{ 'payment.cart.step1.withoutVAT' | transloco}}
+        </div>
+      </div>
+      <div class="row total-price">
+        <div fxFlex class="bold">
+          {{ 'payment.cart.step1.total' | transloco}}
+        </div>
+        <div fxFlex class="price">
+          {{ totalPrice() }} €
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button class="secondary-button" (click)="close(false)">{{ 'common.action.back' | transloco }}</button>
+    <button class="primary-button" (click)="close(true)">{{ 'common.action.change' | transloco }}</button>
+  </div>
+</sg-dialog-deprecated>

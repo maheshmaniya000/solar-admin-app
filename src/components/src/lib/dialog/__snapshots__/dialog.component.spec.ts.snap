@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogComponent component dialog actions custom input actions should match snapshot of a dialog with actions template created
+ from observable actions input 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+  actions={[Function Observable]}
+>
+  <sg-dialog>
+    <div
+      class="mat-dialog-title"
+      mat-dialog-title=""
+    >
+      <h3>
+      </h3>
+    </div>
+    <mat-dialog-content
+      class="mat-dialog-content"
+    />
+    <mat-dialog-actions
+      align="end"
+      class="mat-dialog-actions"
+    >
+      <button
+        color="accent"
+        data-test="dismiss-action-button"
+        disabled=""
+        mat-stroked-button=""
+      >
+         en.dismiss 
+      </button>
+      <button
+        cdkfocusinitial=""
+        color="accent"
+        data-test="ok-subscribe-action-button"
+        mat-flat-button=""
+      >
+         en.ok.subscribe 
+      </button>
+      <button
+        cdkfocusinitial=""
+        color="accent"
+        data-test="ok-but-do-not-subscribe-action-button"
+        mat-flat-button=""
+      >
+         en.ok.butDoNotsubscribe 
+      </button>
+    </mat-dialog-actions>
+  </sg-dialog>
+</ng-component>
+`;
+
+exports[`DialogComponent component dialog actions should match snapshot of a dialog with default actions template
+ created from non-observable default actions 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+>
+  <sg-dialog>
+    <div
+      class="mat-dialog-title"
+      mat-dialog-title=""
+    >
+      <h3>
+      </h3>
+    </div>
+    <mat-dialog-content
+      class="mat-dialog-content"
+    />
+    <mat-dialog-actions
+      align="end"
+      class="mat-dialog-actions"
+    >
+      <button
+        color="accent"
+        data-test="cancel-action-button"
+        mat-stroked-button=""
+      >
+         en.common.action.cancel 
+      </button>
+      <button
+        cdkfocusinitial=""
+        color="accent"
+        data-test="ok-action-button"
+        mat-flat-button=""
+      >
+         en.common.action.ok 
+      </button>
+    </mat-dialog-actions>
+  </sg-dialog>
+</ng-component>
+`;

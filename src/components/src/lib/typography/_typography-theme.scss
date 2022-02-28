@@ -1,0 +1,53 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $typography-config: mat.get-typography-config($theme-or-color-config);
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $accent: map-get($color-config, accent);
+
+  .mat-body,
+  .mat-body-1,
+  .mat-typography {
+    p {
+      @include mat.typography-level($typography-config, body-1);
+    }
+  }
+
+  .mat-h1,
+  .mat-typography h1 {
+    @include mat.typography-level($typography-config, display-2);
+  }
+
+  .mat-h2,
+  .mat-typography h2 {
+    @include mat.typography-level($typography-config, display-1);
+  }
+
+  .mat-h3,
+  .mat-typography h3 {
+    @include mat.typography-level($typography-config, headline);
+  }
+
+  .mat-h4,
+  .mat-typography h4 {
+    @include mat.typography-level($typography-config, title);
+  }
+
+  .mat-h5,
+  .mat-typography h5 {
+    @include mat.typography-level($typography-config, subheading-2);
+  }
+
+  .mat-h6,
+  .mat-typography h6 {
+    @include mat.typography-level($typography-config, subheading-1);
+  }
+
+  a {
+    color: mat.get-color-from-palette($accent);
+  }
+
+  ul {
+    @include mat.typography-level($typography-config, body-1);
+  }
+}

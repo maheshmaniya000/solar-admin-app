@@ -1,0 +1,70 @@
+@import 'theme';
+
+:host {
+  color: map-get($primary, 900);
+
+  .sidebar-search {
+    padding: $sg-8;
+  }
+
+  .sidebar-content {
+    padding: 0 $sg-24;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: $sg-48;
+    }
+  }
+
+  .multiple-projects {
+    color: map-get($primary, 900);
+    margin-top: $sg-48;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .site-buttons { // FIXME not used
+    & > button {
+      height: 40px;
+      margin: 0 $sg-4;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .vertical-space {
+    padding-top: $sg-16;
+  }
+
+  ::ng-deep .mat-tab-label {
+    @include mat-tabs();
+  }
+
+  ::ng-deep mat-tab-body .mat-tab-body-content {
+    width: 100%;
+  }
+  ::ng-deep .mat-tab-disabled .mat-tab-label-content {
+    color: map-get($primary, 400);
+  }
+
+  .tabs-wrapper {
+    max-width: calc(100vw - 48px);
+  }
+
+  [sgscrollcontainer] {
+    @media screen and (max-width: 959px) {
+      @include sg-scroll-container();
+
+      & > * {
+        min-width: 420px;
+      }
+    }
+  }
+}

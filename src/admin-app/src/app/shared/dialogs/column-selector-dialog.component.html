@@ -1,0 +1,26 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-close-button">
+    <button (click)="onCancelButtonClick()" [disableRipple]="true" mat-icon-button>
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-heading">
+    Select visible columns
+  </div>
+
+  <div class="sg-dialog-content">
+    <ul class="column-list">
+      <li *ngFor="let column of data.columns">
+        <mat-checkbox [checked]="column.selected" [value]="column.props" (change)="column.selected = $event.checked">
+          {{ column.label }}
+        </mat-checkbox>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button (click)="onCancelButtonClick()" class="secondary-button" mat-button>Close</button>
+    <button (click)="onConfirmButtonClick()" class="primary-button" mat-button>Confirm</button>
+  </div>
+</sg-dialog-deprecated>

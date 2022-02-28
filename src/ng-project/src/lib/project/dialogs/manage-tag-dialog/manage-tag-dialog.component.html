@@ -1,0 +1,53 @@
+<sg-dialog-deprecated [minWidth]="320">
+  <div class="sg-dialog-heading">{{ 'project.tags.manage' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="this.dialogRef.close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="sg-dialog-heading-content tag-dialog-new" >
+    <div class="row no-gutters">
+      <div class="col">
+        <input matInput
+               placeholder="{{ 'project.tags.newPlaceholder' | transloco }}"
+               [formControl]="tagNameControl"
+               (keyup.enter)="create()">
+      </div>
+      <button mat-icon-button class="secondary-button submit" (click)="create()">
+        <span>{{ 'project.tags.add' | transloco }}</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="sg-dialog-content tag-dialog-content">
+    <ng-container *ngIf="tags$ | async as tags; else notags">
+      <div *ngFor="let tag of tags; let i = index" class="tag d-flex align-items-center" [ngClass]="{'to-edit': editMode}">
+          <mat-icon>label</mat-icon>
+          <div *ngIf="selectedTagIndex !== i" class="mat-input-element">
+            {{ tag.tagName }}
+          </div>
+          <input *ngIf="selectedTagIndex === i"
+                  matInput class="mat-input-element selectedInput"
+                  placeholder="{{ tag.tagName }}"
+                  [formControl]="tagNameControl"
+                  (keyup.enter)="renameTag(tag)">
+          <button *ngIf="selectedTagIndex === i" mat-icon-button class="edit" (click)="renameTag(tag)">
+            <mat-icon>check</mat-icon>
+          </button>
+          <button *ngIf="selectedTagIndex !== i" mat-icon-button class="edit" (click)="selectedTagIndex = i">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button class="delete" (click)="delete(tag)">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+      </div>
+    </ng-container>
+    <ng-template #notags>
+      <div class="empty">{{ 'project.tags.none' | transloco }}</div>
+    </ng-template>
+  </div>
+
+  <div class="sg-dialog-actions tag-dialog-actions">
+    <button class="primary-button" (click)="this.dialogRef.close()">{{ 'common.action.close' | transloco }}</button>
+  </div>
+</sg-dialog-deprecated>

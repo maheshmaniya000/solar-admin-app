@@ -1,0 +1,148 @@
+<sg-toolbar>
+  <!-- LEFT -->
+  <button [routerLink]="['/list']" mat-menu-item class="back-icon">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <sg-project-name-with-status class="title" [project]="project"></sg-project-name-with-status>
+  <sg-project-chips *ngIf="freetrial" [freetrial]="freetrial"></sg-project-chips>
+  <ng-container *ngIf="!project" class="title" >{{ 'project.toolbar.siteDetail' | transloco }}</ng-container>
+
+  <!-- RIGHT -->
+  <ng-container class="sg-toolbar-right" *ngIf="project">
+    <div class="d-none d-sm-flex">
+        <button
+          mat-menu-item
+          [title]="'project.rename.title' | transloco"
+          (click)="renameProject()"
+          color="primary"
+          class="hide rename-button">
+          <mat-icon>create</mat-icon>
+        </button>
+
+      <div class="separator"></div>
+
+      <button *ngIf="projectToClaimFreetrial()" mat-button (click)="claimFreetrial()"
+              [title]="'project.action.claimFreetrial' | transloco">
+        <mat-icon>local_offer</mat-icon>
+        <span>{{ 'project.action.claimFreetrial' | transloco }}</span>
+      </button>
+
+      <button mat-button [title]="'compare.addToCompare' | transloco"
+              (click)="compare()"
+              [disabled]="!hasCompareAccess || !energySystemRef">
+        <mat-icon svgIcon="sg:sgf-compare"></mat-icon>
+        <span>{{ 'compare.addToCompare' | transloco }}</span>
+      </button>
+
+      <div class="separator"></div>
+
+      <button mat-icon-button (click)="addTo()" [title]="'project.toolbar.addTag' | transloco">
+        <mat-icon>label_outline</mat-icon>
+      </button>
+
+      <button *ngIf="project.status !== 'archived'" mat-icon-button [title]="'project.toolbar.archive' | transloco"
+              (click)="updateStatus('archived', true)">
+        <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+      </button>
+
+      <button *ngIf="project.status === 'archived'" mat-icon-button color="accent" [title]="'project.toolbar.unarchive' | transloco"
+              (click)="updateStatus('active')">
+        <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+      </button>
+
+      <button *ngIf="project.status === 'archived'" mat-icon-button [title]="'project.toolbar.delete' | transloco"
+              (click)="delete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <button *ngIf="transferAvailable$ | async" mat-icon-button [title]="'project.action.transfer' | transloco"
+              (click)="transfer()">
+        <mat-icon svgIcon="sg:sgf-transfer"></mat-icon>
+      </button>
+
+      <button mat-icon-button [title]="'export.title' | transloco" (click)="exportProject()">
+        <mat-icon>import_export</mat-icon>
+      </button>
+
+      <button *ngIf="updateDataAvailable$ | async" mat-icon-button [title]="'project.action.updateProjectData' | transloco"
+              (click)="openUpdateDataDialog()">
+        <mat-icon svgIcon="sg:sgf-reload"></mat-icon>
+      </button>
+
+      <sg-settings-menu component="detail"
+        (openUnitSettings)="openUnitSettings()"
+        (openSystemSettings)="openSystemSettings()"></sg-settings-menu>
+    </div>
+
+    <div class="d-block d-sm-none">
+      <mat-menu #actionMenu="matMenu">
+
+        <button mat-menu-item (click)="renameProject()" color="primary">
+          <mat-icon>create</mat-icon>
+          {{ 'project.toolbar.rename' | transloco }}
+        </button>
+
+        <button *ngIf="projectToClaimFreetrial()" mat-menu-item (click)="claimFreetrial()">
+          <mat-icon>local_offer</mat-icon>
+          {{ 'project.action.claimFreetrial' | transloco }}
+        </button>
+
+        <button *ngIf="updateDataAvailable$ | async" mat-menu-item (click)="openUpdateDataDialog()">
+          <mat-icon svgIcon="sg:sgf-reload"></mat-icon>
+          {{ 'project.action.updateProjectData' | transloco }}
+        </button>
+
+        <button mat-menu-item (click)="compare()" [disabled]="!hasCompareAccess || !energySystemRef">
+          <mat-icon svgIcon="sg:sgf-compare"></mat-icon>
+          {{ 'compare.addToCompare' | transloco }}
+        </button>
+
+        <button mat-menu-item (click)="addTo()">
+          <mat-icon>label_outline</mat-icon>
+          {{ 'project.toolbar.addTag' | transloco }}
+        </button>
+
+        <button *ngIf="project.status !== 'archived'" mat-menu-item (click)="updateStatus('archived', true)">
+          <mat-icon svgIcon="sg:sgf-reload"></mat-icon>
+          {{ 'project.toolbar.archive' | transloco }}
+        </button>
+
+        <button *ngIf="project.status === 'archived'" mat-menu-item color="accent" (click)="updateStatus('active')">
+          <mat-icon svgIcon="sg:sgf-reload"></mat-icon>
+          {{ 'project.toolbar.unarchive' | transloco }}
+        </button>
+
+        <button *ngIf="project.status === 'archived'" mat-menu-item (click)="delete()">
+          <mat-icon>delete</mat-icon>
+          {{ 'project.toolbar.delete' | transloco }}
+        </button>
+
+        <button *ngIf="transferAvailable$ | async" mat-menu-item (click)="transfer()">
+          <mat-icon svgIcon="sg:sgf-transfer"></mat-icon>
+          {{ 'project.action.transfer' | transloco }}
+        </button>
+
+        <button mat-menu-item (click)="exportProject()">
+          <mat-icon>import_export</mat-icon>
+          {{ 'export.title' | transloco }}
+        </button>
+
+        <mat-divider class="action-menu-divider"></mat-divider>
+
+        <div class="button-wrapper">
+
+          <button mat-menu-item (click)="openSystemSettings()">
+            <span>{{ 'projectDetail.settings.systemSettings' | transloco }}</span>
+          </button>
+          <button mat-menu-item (click)="openUnitSettings()">
+            <span>{{ 'project.dataSettings.unitSettings' | transloco }}</span>
+          </button>
+        </div>
+      </mat-menu>
+
+      <button mat-icon-button [matMenuTriggerFor]="actionMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </ng-container>
+</sg-toolbar>

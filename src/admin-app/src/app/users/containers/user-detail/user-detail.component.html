@@ -1,0 +1,14 @@
+<div *ngIf="userDetailStore.viewModel$ | async as viewModel">
+  <sg-fullscreen-dialog-toolbar
+    (onClose)="onCloseClick()"
+    [headline]="headerLabel[mode]"
+    [subheadline]="viewModel.entity | sgUserFullName"
+  ></sg-fullscreen-dialog-toolbar>
+  <sg-admin-user-view
+    *ngIf="mode === componentMode.view; else userEditorTemplate"
+    [user]="viewModel.entity"
+  ></sg-admin-user-view>
+  <ng-template #userEditorTemplate>
+    <sg-admin-user-editor [user]="viewModel.entity"></sg-admin-user-editor>
+  </ng-template>
+</div>

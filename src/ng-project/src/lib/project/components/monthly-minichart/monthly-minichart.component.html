@@ -1,0 +1,7 @@
+<ng-container *ngIf="renderer === 'native'">
+  <span *ngFor="let value of percentValues"
+        [ngStyle]="{'height': value + '%', 'width': (100 / percentValues.length) + '%', 'background-color': color}">
+  </span>
+</ng-container>
+
+<sg-highcharts *ngIf="renderer === 'highcharts'" [opts]="minichartOpts"></sg-highcharts>

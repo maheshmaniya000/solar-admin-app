@@ -1,0 +1,88 @@
+<div class="mobile-menu bootstrap" [ngClass]="{'active': active}">
+  <ng-container *ngIf="(currentApp$ | async) === 'prospect'">
+    <div class="tabs d-block">
+      <div *ngFor="let tabLink of prospectTabLinks">
+        <a mat-button
+           [disableRipple]="true"
+           [routerLink]="tabLink.link"
+           routerLinkActive="active"
+           (click)="closeMobileMenu.emit()">
+          <mat-icon svgIcon="{{ tabLink.icon }}"></mat-icon>
+          {{ tabLink.label | transloco | uppercase }}
+        </a>
+      </div>
+
+      <div>
+        <a mat-button
+           *ngIf="!!(selectedCompany$ | async)"
+           [disableRipple]="true"
+           routerLinkActive="active"
+           [routerLink]="['/compare']">
+          <mat-icon svgIcon="sg:sgf-compare2"></mat-icon>
+          {{ 'header.compare' | transloco | uppercase }}
+        </a>
+      </div>
+    </div>
+    <mat-divider class="d-block"></mat-divider>
+  </ng-container>
+
+  <ng-container *ngIf="(currentApp$ | async) === 'admin'">
+    <div class="tabs d-block d-md-none">
+      <div *ngFor="let tabLink of adminTabLinks">
+        <a mat-button
+           [disableRipple]="true"
+           [routerLink]="tabLink.link"
+           routerLinkActive="active"
+           (click)="closeMobileMenu.emit()">
+          <mat-icon>{{ tabLink.icon }}</mat-icon>
+          {{ tabLink.label | transloco | uppercase }}
+        </a>
+      </div>
+    </div>
+    <mat-divider class="d-block d-md-none"></mat-divider>
+  </ng-container>
+
+  <div class="links">
+    <!-- License button -->
+    <ng-container [ngSwitch]="prospectLicenseButton$ | async">
+      <ng-container *ngSwitchCase="'NONE'"></ng-container>
+      <div *ngSwitchCase="'FREETRIAL'" class="license-button-wrapper">
+        <button (click)="requestFreeTrial('prospect')" class="button">
+          {{ 'header.freeTrial' | transloco }}
+        </button>
+      </div>
+      <div *ngSwitchCase="'UPGRADE'" class="license-button-wrapper">
+        <button (click)="redirectToPricing()" class="button">
+          {{ 'header.upgrade' | transloco }}
+        </button>
+      </div>
+      <div *ngSwitchCase="'PRICING'" class="license-button-wrapper">
+        <button (click)="redirectToPricing()" class="button">
+          {{ 'header.pricing' | transloco }}
+        </button>
+      </div>
+    </ng-container>
+
+    <a class="link" target="_blank" href="https://solargis.com/about-us/contact/">{{ 'header.contact' | transloco }}</a>
+    <a class="link" target="_blank" href="https://solargis.com/docs/">{{ 'header.help' | transloco }}</a>
+    <div *ngIf="(isUserLoggedIn$ | async) === false" class="languages" [matMenuTriggerFor]="languagesMenu">
+      <span>{{ (currentLanguage$ | async)?.name }}</span>
+      <mat-icon>arrow_drop_down</mat-icon>
+    </div>
+    <mat-menu #languagesMenu="matMenu">
+      <button *ngFor="let language of languages" mat-menu-item
+              (click)="changeLang(language.lang)">
+        {{ language.name }}
+        <mat-icon *ngIf="(currentLanguage$ | async) === language">done</mat-icon>
+      </button>
+    </mat-menu>
+  </div>
+
+  <!--NOT Logged user: login-->
+  <ng-template #notLoggedUser>
+    <p><button class="button login-button" (click)="login(); closeMobileMenu.emit()">{{'header.login' | transloco}}</button></p>
+    <p><button class="button signin-button" (click)="registration(); closeMobileMenu.emit()">{{'header.signUp' | transloco}}</button></p>
+  </ng-template>
+</div>
+
+<div class="backdrop" [ngClass]="{'active': active}" (click)="closeMobileMenu.emit()"></div>

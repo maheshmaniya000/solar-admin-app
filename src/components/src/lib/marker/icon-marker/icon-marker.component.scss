@@ -1,0 +1,39 @@
+:host {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  svg {
+    width: 22px;
+    height: 33px;
+
+    path {
+      stroke-linejoin: round;
+      transform: translate(1px, 1px);
+    }
+
+    ellipse {
+      transform: translate(4px, 26px);
+    }
+
+    &.small {
+      width: 18px;
+      height: 26px;
+
+      path {
+        transform: scale(0.952) translate(1.5px, 1.5px);
+        stroke-width: 1.269px;
+      }
+
+      ellipse {
+        transform: scale(1.269) translate(1.5px, 19.5px);
+      }
+    }
+  }
+
+  .mat-icon {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+  }
+}

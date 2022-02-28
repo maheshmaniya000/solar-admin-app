@@ -1,0 +1,137 @@
+@import 'theme';
+
+:host > div {
+  background-color: map-get($primary, 100);
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  color: map-get($primary, 800);
+}
+
+.container {
+  width: 100%;
+  max-width: 1216px;
+  padding: 0 $sg-24;
+  margin: auto;
+  box-sizing: border-box;
+
+  .content-wrapper {
+    height: calc(100vh - #{ $sg-system-type-settings-offset });
+    overflow: auto;
+
+    .change {
+      &:hover {
+        color: map_get($sg-red, 500);
+      }
+    }
+
+    .restore {
+      font-size: 14px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  button {
+    &.primary-button {
+      margin: 8px 12px 0 0;
+    }
+  }
+
+  .pull-right {
+    button {
+      margin-left: 12px;
+      min-width: 100px;
+    }
+  }
+}
+
+.heading {
+  display: inline-block;
+  font-size: 16pt;
+  font-weight: bold;
+  color: map-get($primary, 500);
+}
+
+.heading-margin {
+  margin: $sg-32 0 $sg-16 0;
+}
+
+mat-card {
+  color: map-get($primary, 800);
+
+  .name {
+    margin-top: $sg-16;
+    font-weight: $font-weight-bold;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .desc {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  img {
+    width: 80%;
+    max-width: 144px;
+  }
+}
+
+mat-accordion {
+  mat-expansion-panel mat-expansion-panel-header {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  mat-panel-title, mat-panel-description {
+    font-size: 14px;
+    color: map-get($primary, 800);
+  }
+  mat-panel-title {
+    flex: 0 0 35%;
+    font-weight: $font-weight-bold;
+  }
+  ::ng-deep sup {
+    vertical-align: top;
+    font-size: 0.6em;
+  }
+}
+
+.actions {
+  margin-top: $sg-16;
+  margin-bottom: $sg-32;
+  button {
+    margin-right: 12px;
+  }
+}
+
+.unsaved {
+  background: map-get($primary, 200);
+  font-weight: $font-weight-medium;
+  color: map-get($primary, 600);
+  font-size: 11pt;
+  display: inline-block;
+  padding: 4px;
+  text-transform: uppercase;
+}
+
+// position unsaved-changes
+mat-expansion-panel {
+  position: relative;
+}
+
+.unsaved-panel {
+  position: absolute;
+  top: 11px;
+  right: 50px;
+}
+
+.error {
+  color:#ffc107;
+}
+
+.wrapper {
+  overflow-y: hidden;
+}
+

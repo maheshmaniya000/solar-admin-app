@@ -1,0 +1,14 @@
+<div>
+  <ng-container  *ngIf="!working; else loadingTemplate ">
+    <div style="min-height: 150px; padding-top: 40px; box-sizing: border-box;">
+      {{ 'payment.method.bankDesc' | transloco }}
+    </div>
+
+    <button class="primary-button" style="width: 100%;" (click)="confirm()">{{ 'common.action.confirm' | transloco }}</button>
+    <button class="secondary-button" style="width: 100%;" (click)="onChangeMethod.emit()">{{ 'payment.dialog.change' | transloco }}</button>
+  </ng-container>
+</div>
+
+<ng-template #loadingTemplate>
+  <mat-spinner [diameter]="48" style="margin: auto; margin-top: 50px" ></mat-spinner>
+</ng-template>

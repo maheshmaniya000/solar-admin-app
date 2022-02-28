@@ -1,0 +1,15 @@
+<ng-container *ngIf="orderDetailStore.viewModel$ | async as viewModel" [formGroup]="parentForm">
+  <h4>Currency</h4>
+  <mat-form-field>
+    <mat-select (selectionChange)="onCurrencyChanged($event)" [(value)]="selectedCurrency" [disabled]="viewModel.currencyChangeDisabled">
+      <mat-option [value]="'€'">€</mat-option>
+      <mat-option [value]="'$'">$</mat-option>
+      <mat-option [value]="customCurrency">other</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="isCustomCurrencyVisible()">
+    <mat-label>Currency</mat-label>
+    <input formControlName="currency" matInput/>
+  </mat-form-field>
+</ng-container>

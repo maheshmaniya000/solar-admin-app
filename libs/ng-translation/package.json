@@ -1,0 +1,10 @@
+{
+  "name": "@solargis/ng-translation",
+  "version": "8.3.0",
+  "description": "Solargis translation components, types in @solargis/types/translation.",
+  "author": "Solargis",
+  "license": "ISC",
+  "publishConfig": {
+    "directory": "../../dist/libs/ng-translation"
+  }
+}

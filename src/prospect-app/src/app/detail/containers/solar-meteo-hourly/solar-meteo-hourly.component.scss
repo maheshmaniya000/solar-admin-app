@@ -1,0 +1,50 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+
+  .mat-tab-body-content {
+    overflow: hidden;
+    margin-bottom: $sg-24;
+  }
+}
+
+.data-label {
+  font-weight: $font-weight-bold;
+  text-align: center;
+  padding-top: $sg-16;
+  padding-bottom: $sg-16;
+}
+
+.hourly-chart {
+  height: 230px;
+  margin-top: $sg-8;
+
+  .headline {
+    font-weight: $font-weight-bold;
+    font-size: 12pt;
+    color: map-get($primary, 800);
+    margin-bottom: $sg-8;
+  }
+}
+
+.charts-legend {
+  min-height: 40px;
+  line-height: 40px;
+  margin-top: $sg-8;
+}
+
+.hourly-charts-container {
+  position: relative;
+
+  .export-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+// important for firefox issue - https://github.com/solargis/solargis2-apps/pull/1500
+mat-tab-group {
+  min-height: 800px;
+}

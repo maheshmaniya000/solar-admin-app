@@ -1,0 +1,18 @@
+
+<mat-card>
+  <div class="headline">
+    <mat-icon>check_circle</mat-icon>
+    <span>{{ 'payment.cart.step2.name' | transloco }}</span>
+    <button mat-button color="accent" [routerLink]="['..', '2']" [queryParams]="{edit: '1'}">
+        <mat-icon>edit</mat-icon>&nbsp;{{ 'common.action.edit' | transloco }}
+    </button>
+  </div>
+
+  <div class="content" *ngIf="company">
+      <div class="company-name row">{{ company.name }}</div>
+      <div class="row">{{ 'payment.cart.step2.address' | transloco }}:
+        <b>{{ getBillingAddress(company) }}</b>
+      </div>
+      <div class="row" *ngIf="company.VAT">{{ 'user.company.field.VAT' | transloco }}: <b>{{ company.VAT }}</b></div>
+    </div>
+</mat-card>

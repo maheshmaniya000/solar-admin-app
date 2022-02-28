@@ -1,0 +1,14 @@
+{
+  "extends": ["../../.eslintrc-angular.json", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "apps/configurator/tsconfig.*?.json"
+        ]
+      }
+    }
+  ]
+}

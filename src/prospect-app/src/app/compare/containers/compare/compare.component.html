@@ -1,0 +1,57 @@
+
+<sg-drawer-layout *ngIf="hasPermission$ | async; else noPermission">
+  <ng-container class="navigation">
+    <sg-side-navigation
+      [path]="path$ | async"
+      [routes]="routes"
+      [allowedPaths]="allowedPaths$ | async"
+      (onSelect)="onRouteNavigation($event)"
+    ></sg-side-navigation>
+  </ng-container>
+  <ng-container class="content">
+    <sg-compare-toolbar [route]="route?.firstChild?.routeConfig"></sg-compare-toolbar>
+    <sg-alert-bar-container route="prospect/compare"></sg-alert-bar-container>
+
+    <ng-container *ngIf="(compareCount$ | async) > 0; else noItems">
+      <sg-compare-projects-toolbar
+        [compare]="compare$ | async"
+        (remove)="removeItem($event)"
+        (highlight)="highlightItem($event)"
+        (updateData)="openUpdateProjectDataDialog($event)"
+      ></sg-compare-projects-toolbar>
+
+      <div class="container">
+        <div class="inner-container" >
+          <div class="detail-content">
+              <sg-compare-warnings [items]="compare$ | async" [config]="warningsConfig$ | async"></sg-compare-warnings>
+              <router-outlet></router-outlet>
+          </div>
+        </div>
+        <sg-bottom-navigation
+          [path]="path$ | async"
+          [routes]="routes"
+          [allowedPaths]="allowedPaths$ | async"
+          (onSelect)="onRouteNavigation($event)"
+        ></sg-bottom-navigation>
+      </div>
+
+    </ng-container>
+  </ng-container>
+</sg-drawer-layout>
+
+<ng-template #noItems>
+  <div class="no-items">
+    <div>
+      <div>
+        {{ 'compare.empty' | transloco }}
+      </div>
+      <div class="button">
+        <button mat-button color="accent" (click)="addToCompare()">{{ 'compare.addProjects' | transloco }}</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noPermission>
+  <sg-compare-no-permissions></sg-compare-no-permissions>
+</ng-template>

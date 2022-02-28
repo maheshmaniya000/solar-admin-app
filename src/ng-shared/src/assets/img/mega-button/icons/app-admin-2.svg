@@ -1,0 +1,32 @@
+<svg id="app-admin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48.001" height="48" viewBox="0 0 48.001 48">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Subtraction_1" data-name="Subtraction 1" d="M319.916,368.142h-34v-48h48v34a10.1,10.1,0,0,0-3.458-2.911,9.89,9.89,0,0,0-4.542-1.089,10.011,10.011,0,0,0-10,10,9.91,9.91,0,0,0,1.089,4.543A10.091,10.091,0,0,0,319.916,368.142Z" transform="translate(-285.917 -320.142)" fill="#030504"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#314862"/>
+      <stop offset="0.719" stop-color="#6e7e90"/>
+      <stop offset="1" stop-color="#919dab"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b3bac5"/>
+      <stop offset="1" stop-color="#919dab"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_15411" data-name="Group 15411" transform="translate(0.001)">
+    <rect id="Rectangle_30912" data-name="Rectangle 30912" width="48" height="48" fill="none"/>
+    <g id="Mask_Group_18552" data-name="Mask Group 18552" clip-path="url(#clip-path)">
+      <g id="Group_18808" data-name="Group 18808" transform="translate(-739 -148)">
+        <path id="Path_7883" data-name="Path 7883" d="M44.961,38.1c-4.767,0-6.438-3.626-7.911-6.824-1.448-3.144-2.469-5.52-5.081-5.52s-3.633,2.376-5.081,5.52c-1.474,3.2-3.144,6.824-7.911,6.824.034.013-.019-2.46,0-2.492,3.495,0,4.7-3.1,6.105-6.143,1.345-2.92,2.869-6.3,6.887-6.3s5.542,3.378,6.887,6.3c1.4,3.041,2.61,6.143,6.105,6.143C44.961,35.609,44.988,38.116,44.961,38.1ZM32.966,16.125H30.908V17.96h2.058Zm0,3.365H30.908v1.835h2.058Zm0,8.706H30.908v1.835h2.058Zm0,3.365H30.908V33.4h2.058Zm0,3.365H30.908V36.76h2.058Zm0,3.365H30.908v1.835h2.058Z" transform="translate(728.027 143.875)" fill="#fff"/>
+        <path id="Path_7888" data-name="Path 7888" d="M22,0A22,22,0,1,1,0,22,22,22,0,0,1,22,0Z" transform="translate(741 150)" fill="url(#radial-gradient)"/>
+        <g id="Group_18770" data-name="Group 18770" transform="translate(741 156.285)">
+          <g id="Mask_Group_18545" data-name="Mask Group 18545" transform="translate(0 -0.285)">
+            <path id="Intersection_1" data-name="Intersection 1" d="M6.6,31.429A22,22,0,0,1,6.6,0H37.4a22,22,0,0,1,0,31.429Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+          </g>
+          <path id="gear-solid" d="M31.549,12.969a.641.641,0,0,0-.32-.55l-1.821-1.051A7.785,7.785,0,0,0,29.538,10a7.826,7.826,0,0,0-.13-1.368l1.821-1.051a.641.641,0,0,0,.32-.55c0-.551-1.64-3.869-2.495-3.869a.644.644,0,0,0-.322.086L26.907,4.3a7.5,7.5,0,0,0-2.369-1.367V.831a.628.628,0,0,0-.489-.618,9.584,9.584,0,0,0-4.021,0,.63.63,0,0,0-.489.618v2.1A7.5,7.5,0,0,0,17.17,4.3L15.344,3.248a.642.642,0,0,0-.322-.086c-.77,0-2.495,3.2-2.495,3.869a.641.641,0,0,0,.32.55l1.821,1.051a7.236,7.236,0,0,0,0,2.736l-1.821,1.051a.641.641,0,0,0-.32.55c0,.551,1.64,3.869,2.495,3.869a.645.645,0,0,0,.322-.086L17.169,15.7a7.481,7.481,0,0,0,2.369,1.365v2.1a.628.628,0,0,0,.489.618A9.67,9.67,0,0,0,22,20a10.046,10.046,0,0,0,2.011-.213.657.657,0,0,0,.524-.619v-2.1A7.487,7.487,0,0,0,26.907,15.7l1.825,1.054a.644.644,0,0,0,.322.086C29.823,16.836,31.549,13.637,31.549,12.969Zm-9.512.156A3.125,3.125,0,1,1,25.163,10,3.129,3.129,0,0,1,22.038,13.125Z" transform="translate(-0.527 5.715)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <path id="Path_10217" data-name="Path 10217" d="M10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18ZM11,6H9v5h2Zm0,6.5H9V14h2Z" transform="translate(30 30)" fill="#e30000"/>
+</svg>

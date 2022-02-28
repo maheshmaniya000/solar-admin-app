@@ -1,0 +1,120 @@
+
+@mixin cdk-table-s($highlight-last-row: true, $header-row-height: 64px) {
+  $params: (
+    font-size: 13px,
+    row-padding: 0 8px,
+    cell-padding: 6px 8px,
+  );
+
+  @include cdk-table($params, $highlight-last-row, $header-row-height);
+}
+
+@mixin cdk-table-m($highlight-last-row: true, $header-row-height: null) {
+  $params: (
+    font-size: 18px,
+    row-padding: 0 16px,
+    cell-padding: 8px 8px,
+  );
+
+  @include cdk-table($params, $highlight-last-row, $header-row-height);
+}
+
+@mixin cdk-table($params, $highlight-last-row: true, $header-row-height: null) {
+  cdk-table {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  cdk-header-row {
+    @if ($header-row-height) {
+      height: $header-row-height !important;
+    }
+
+    font-weight: $font-weight-bold;
+    background: map-get($primary, 100);
+    border-top: 1px solid map-get($primary, 300);
+  }
+  cdk-row {
+    min-height: 27px;
+    height: fit-content;
+
+    font-weight: $font-weight-regular;
+  }
+
+  cdk-row, cdk-header-row {
+    display: flex;
+    border-bottom: 1px solid map-get($primary, 300);
+    align-items: center;
+    padding: map-get($primary, row-padding);
+    color: map-get($primary, 800);
+    font-size: map-get($params, font-size);
+  }
+
+  cdk-cell, cdk-header-cell {
+    flex: 1;
+    align-self: flex-start;
+    padding: map-get($params, cell-padding);
+  }
+
+  cdk-row cdk-cell:first-of-type, cdk-header-cell:first-of-type {
+    text-align: left;
+  }
+
+  cdk-header-cell .subheader {
+    display: block;
+    color: map-get($primary, 500);
+    font-weight: $font-weight-regular;
+    font-size: map-get($params, font-size);
+  }
+
+  .label {
+    margin-top: 4px;
+    color: map-get($primary, 600);
+    font-weight: $font-weight-regular;
+  }
+
+  @if ($highlight-last-row) {
+    cdk-table cdk-row:last-of-type, .highlighted {
+      background: map-get($primary, 100);
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+@mixin sticky-table-scrolling() {
+  cdk-cell:first-of-type, cdk-header-cell:first-of-type {
+    text-align: left;
+    position: sticky;
+    left: 0;
+  }
+
+  cdk-header-cell:first-of-type {
+    background-color: #f4f5f7;
+    height: 75%;
+  }
+
+  cdk-cell:first-of-type {
+    background-color: white;
+  }
+
+  cdk-row:nth-last-child(1) cdk-cell:first-of-type {
+    background-color: #f4f5f7;
+  }
+}
+
+@mixin performance-table-color() {
+  cdk-row:nth-child(2) cdk-cell:first-of-type {
+    background-color: #f4f5f7;
+  }
+
+  cdk-row:nth-child(4) cdk-cell:first-of-type {
+    background-color: #f4f5f7;
+  }
+
+  cdk-row:nth-child(7) cdk-cell:first-of-type {
+    background-color: #f4f5f7;
+  }
+
+  cdk-row:nth-child(10) cdk-cell:first-of-type {
+    background-color: #f4f5f7;
+  }
+}

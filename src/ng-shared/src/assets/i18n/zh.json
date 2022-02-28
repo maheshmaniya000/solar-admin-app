@@ -1,0 +1,2139 @@
+{
+  "auth": {
+    "auth0": {
+      "recaptchaNotValid": "验证码无效，请再试一次。",
+      "registrationOk": "完成，请点击发送到您电子邮箱的验证链接确认注册。",
+      "unknown": "注册出错 - 请稍后再试",
+      "unknownError": "出了些问题...",
+      "emailAlreadyRegistred": "此邮箱地址已被用户注册",
+      "otpInvalid": "验证码无效"
+    },
+    "changePassword": {
+      "change": "更改",
+      "changePasswordOk": "密码已被更改",
+      "error": "用户名或密码错误",
+      "passwordConfirm": "确认新密码",
+      "recaptchaNotValid": "验证码无效，请再试一次。",
+      "tooManyAttempts": "账户已被锁定-输入错误密码次数过多",
+      "unknown": "更改密码时出错 - 请稍后再试"
+    },
+    "confirmTerms": {
+      "agree": "我同意",
+      "termsAgreeConfirm": "Solargis 使用条款及隐私声明",
+      "title": "接受使用条款",
+      "terms": "使用条款",
+      "contractualTerms": "关支付服务的一般合同条款",
+      "particularConditions": "特定条件"
+    },
+    "emailVerify": {
+      "error": "电子邮件验证失败",
+      "ok": "您的电子邮件已经确认，您现在可以登录了"
+    },
+    "forgotPassword": {
+      "changeOk": "密码已更改，您现在可以登录",
+      "error": "未知错误，请稍后再试",
+      "hint": "请输入您的电子邮件以帮助我们确认您的信息。",
+      "ok": "请检查您的电子邮件以获取进一步指示",
+      "recaptchaNotValid": "验证码无效，请再试一次。",
+      "returnToSignIn": "返回后登录",
+      "tokenNotValid": "此链接已被用于更改密码",
+      "tooManyAttempts": "帐户已被锁定，无法更改密码",
+      "userNotFound": "未找到此用户"
+    },
+    "fupRecaptcha": {
+      "title": "使用已达上限",
+      "info": "每分钟点击次数超过安全限制。登录或注册以解除此限制。"
+    },
+    "login": {
+      "create": "创建免费的Solargis帐户",
+      "error": "用户名或密码错误",
+      "tooManyAttempts": "账户已被锁定 - 输入错误密码次数过多",
+      "unknown": "登录时出错 - 请稍后再试",
+      "deletedUser": "此帐户已停用，请<a href=\"https://solargis.com/about-us/contact\">与我们联系</a>。",
+      "rememberMe": "存储账号",
+      "notVerified": "您的电邮未通过验证。请点击注册时发送给您的验证邮件，或者重新获取验证邮件。",
+      "notVerifiedAction": "重新获取验证邮件",
+      "notVerifiedConfirm": "已发送新的验证邮件"
+    },
+    "registration": {
+      "alreadyHaveAccount": "已经有账戶？",
+      "emailError": "请输入有效的电子邮件地址",
+      "emailPlaceholder": "工作电邮",
+      "firstNameError": "请输入您的名字",
+      "firstNamePlaceholder": "名",
+      "lastNameError": "请输入您的姓",
+      "lastNamePlaceholder": "姓",
+      "passwordConfirm": "重新输入密码",
+      "passwordError": "最少8个字符，至少一个大写字母和一个小写字母",
+      "passwordPlaceholder": "密码",
+      "passwordRequired": "需要您输入密码",
+      "passwordsNotEqual": "密码必须相同",
+      "termsAgree": "在创建账户之前，您需要同意Solargis的<a href='https://solargis.com/legal/' target='_blank' title='Conditions of Use and Privacy Notice'>使用条款以及隐私权声明</a>",
+      "title": "创建帐号",
+      "titleNewPassword": "新密码",
+      "titleOldPassword": "旧密码",
+      "companyError": "公司名必填",
+      "accountCreated": "帐户创建成功",
+      "accountCreatedAfterInvitation": "帐户创建完成，已关联公司",
+      "firstOrLastNameRequired": "请输入您的姓名，且不得含有空格",
+      "login": "登录",
+      "createUserAccount": "创建用户账号"
+    },
+    "expired": "操作超时，请重新登录。",
+    "newPassword": "您从“忘记密码”链接登录。 请设置新密码。",
+    "invitation": {
+      "info": "接受邀请后，您将创建一个 Solargis 帐户",
+      "text": "您受邀加入该公司。 接受邀请，即表示您同意成为该公司成员。",
+      "companyName": "公司名称",
+      "title": "接受邀请",
+      "accept": "接受",
+      "expiredText": "该公司对您的邀请已经过期，或是已经被后台管理员取消。请联系向您发送公司邀请的人。",
+      "expiredTitle": "公司邀请已过期"
+    },
+    "lambdaCaptcha": {
+      "label": "验证码显示"
+    },
+    "forbidden": "您没有权限访问 {url}"
+  },
+  "codelist": {
+    "LANDC": {
+      "301": "没有数据",
+      "305": "洪水过后或灌溉的农田",
+      "306": "混合农田（> 50％）/天然植被",
+      "307": "混合天然植被（> 50％）/农田",
+      "308": "林木植被，阔叶，常绿（> 15％）",
+      "318": "林木植被，混合叶型（阔叶和针叶）",
+      "319": "混合树和灌木（> 50％）/ 植被本覆盖",
+      "320": "混合植被覆盖（> 50％）/ 树和灌木",
+      "324": "草原",
+      "325": "地衣和苔蘚",
+      "330": "林木植被，灌溉水，淡水或咸水",
+      "331": "林木植被，灌溉水，海水",
+      "332": "灌木或植被覆盖，灌溉水",
+      "333": "城区",
+      "337": "水体",
+      "338": "常年的冰雪",
+      "302-304": "农田，雨水灌溉田",
+      "309-311": "林木植被，阔叶，落叶（> 15％）",
+      "312-314": "林木植被，针叶，常绿（> 15％）",
+      "315-317": "林木植被，针叶，落叶（> 15％）",
+      "321-323": "灌丛",
+      "326-329": "稀疏植被（<15％）",
+      "334-336": "裸地"
+    },
+    "AZI": {
+      "-1": "平面",
+      "-2": "几乎平坦"
+    },
+    "SNOWD": {
+      "-1": "偶然"
+    },
+    "DNI_season": {
+      "-1": "月度法向直接辐射为0"
+    },
+    "GHI_season": {
+      "-1": "月度水平面总辐射量为0"
+    }
+  },
+  "common": {
+    "action": {
+      "apply": "申请",
+      "back": "返回",
+      "cancel": "取消",
+      "change": "更改",
+      "choose": "选择",
+      "close": "关闭",
+      "collapseAll": "全部收起",
+      "compare": "比较",
+      "confirm": "确认",
+      "continue": "继续",
+      "delete": "删除",
+      "expandAll": "全部展开",
+      "invite": "邀请",
+      "manage": "管理",
+      "next": "下一页",
+      "ok": "确定",
+      "open": "打开",
+      "prev": "上一页",
+      "save": "保存",
+      "search": "搜索",
+      "selectAll": "全选",
+      "send": "发送",
+      "unselectAll": "取消全选",
+      "reload": "刷新",
+      "remove": "移除",
+      "edit": "编辑",
+      "redo": "重做",
+      "undo": "复原",
+      "default": "默认设置",
+      "calculate": "计算",
+      "saveValues": "保存数值",
+      "resetDefaults": "重置默认值",
+      "add": "添加",
+      "verify": "验证",
+      "launch": "启动",
+      "defaultView": "默认视图",
+      "moreInfo": "更多信息"
+    },
+    "aggregation": {
+      "avg": "平均",
+      "cumulative": "累计",
+      "sum": "日总和"
+    },
+    "cardinal": {
+      "east": "东",
+      "north": "北",
+      "south": "南",
+      "west": "西"
+    },
+    "confirmDialog": {
+      "body": "该操作无法撤销。是否继续？",
+      "heading": "确认操作",
+      "usure": "是否确定？"
+    },
+    "datetime": {
+      "date": "日期",
+      "timezone": "时区",
+      "lastChange": "上次变更"
+    },
+    "label": {
+      "settings": "设置",
+      "configureMapView": "地图查看设置",
+      "configureProjectsView": "项目查看设置"
+    },
+    "misc": {
+      "commingSoon": "此功能即将推出",
+      "help": "帮助",
+      "n/a": "非数值",
+      "noWidth": "您的屏幕分辨率太低，无法使用Solargis。要使用Solargis，您的屏幕分辨率至少需要1100像素。"
+    },
+    "paginator": {
+      "nextPage": "下一页",
+      "perPage": "每页项目",
+      "previousPage": "上一页",
+      "rangeLabel": "{startIndex} - {endIndex} 的 {length}",
+      "rangeLabelEmpty": "0 的 0"
+    },
+    "status": {
+      "disabled": "禁用",
+      "enabled": "启用"
+    },
+    "subscription": {
+      "prospect": "Prospect订阅",
+      "sdat": "SDAT 订阅"
+    },
+    "error": {
+      "subscriptionLayer": "订阅后可查看这些数据层",
+      "valueBetween": "数值必须介于{min}和{max}之间",
+      "failed": "操作无效",
+      "tooLarge": "数值过大",
+      "internal": "发生内部错误，请刷新页面。"
+    },
+    "subscriptionType": {
+      "FREE": "免费",
+      "UPGRADE": "将基础版 Prospect 升级至专业版",
+      "expired": "{subscriptionType}已过期",
+      "PROSPECT_PRO": "Prospect 专业版本",
+      "PROSPECT_BASIC": "Prospect 基础版本",
+      "PROSPECT_FREE_TRIAL": "免费试用",
+      "SDAT_PRO": "SDAT 专业版",
+      "SDAT_BASIC": "SDAT",
+      "SDAT_FREE_TRIAL": "SDAT 免费试用版"
+    },
+    "confirm": {
+      "no": "否",
+      "yes": "是"
+    },
+    "snackBar": {
+      "changesSaved": "变更信息已保存",
+      "couldNotSaveChange": "无法保存变更"
+    },
+    "alert": {
+      "freetrial": {
+        "available": "剩余试用项目",
+        "viewDetail": "•查看详细信息并激活试用项目",
+        "availableAction": "激活试用",
+        "assigned": "免费试用项目已用完",
+        "assignedAction": "升级到完整订阅",
+        "noSubscription": "请求免费试用并获取有关光伏发电的详细信息",
+        "noSubscriptionAction": "请求免费试用"
+      },
+      "subscription": {
+        "renewTrial": "升级",
+        "renew": "续订 Prospect",
+        "expired": "您的 Prospect 订阅已过期",
+        "expiredTrial": "Prospect 免费试用期已过"
+      }
+    },
+    "validation": {
+      "min": "最小值为 {min}",
+      "max": "最大值为 {max}",
+      "integer": "此字段仅支持整数",
+      "minDate": "最早日期为 {minDate}",
+      "maxDate": "最晚日期为 {maxDate}",
+      "pattern": "所填值与要求样式不匹配",
+      "required": "此为必填字段",
+      "maxLength": "最大长度为 {requiredLength} 个字符",
+      "minLength": "最小长度为 {requiredLength} 个字符",
+      "maxDecimals": "此字段最多支持小数点后 {maxDecimals} 位",
+      "phoneNumber": "电话号码无效。请使用以 + 开头的国际格式",
+      "maxDateRange": "日期最长时间范围是 {days} 天",
+      "naturalNumber": "此字段仅支持自然数",
+      "endDateInvalid": "结束日期早于开始日期",
+      "datepickerParse": "无法解析日期传值 \"{text}\"",
+      "startDateInvalid": "开始日期晚于结束日期",
+      "phoneNumberFormat": "电话号码无效。示例编号：{phoneNumberFormat}"
+    }
+  },
+  "companyAdmin": {
+    "billing": {
+      "allYears": "所有年份",
+      "deliveryDate": "交付日期",
+      "detail": "订单明细",
+      "errorDownloadingInvoice": "下载发票时出错",
+      "history": "订单历史记录",
+      "invoiceDownloaded": "已下载发票",
+      "noOrders": "还没有订单",
+      "orderDate": "订购日期",
+      "orderId": "订购",
+      "payment": "付款",
+      "paymentMethod": "付款方式",
+      "price": "价格",
+      "pay": "立刻付款",
+      "paymentInfo": "付款信息",
+      "cancel": "取消订单",
+      "status": "状态"
+    },
+    "nav": {
+      "billing": "结算和付款",
+      "orderDetail": "订单详情",
+      "overview": "概览",
+      "settings": "公司设置",
+      "subscriptions": "订阅",
+      "users": "用户",
+      "apiContracts": "应用程序接口",
+      "info": "客户信息"
+    },
+    "orderDetail": {
+      "contractNo": "合同编号",
+      "deliveryStatus": "交付日期",
+      "discount": "折扣",
+      "itemDesc": "商品描述",
+      "orderNo": "订单号",
+      "orderStatus": "订购",
+      "orderTitle": "订购",
+      "paymentStatus": "付款",
+      "price": "价格",
+      "purchaseOrderNo": "采购单号",
+      "sgOrderId": "订单编号",
+      "totalPrice": "总价",
+      "totalQty": "数量",
+      "unitPrice": "单价",
+      "vat": "增值税",
+      "users": "用户: {users}",
+      "valid": "有效期：从{from}到{to}",
+      "vatAmmount": "增值税金额",
+      "back": "返回账单&支付",
+      "freeText": "自由文本"
+    },
+    "subscription": {
+      "projectLimit": "剩余{remaining}个项目",
+      "unlimited": "无限",
+      "unlimitedProjects": "项目数量不限(fair use policy applies)",
+      "usersLimit": "{current} / {max}个用户",
+      "notice": "请注意：用户可能需要登出并再次登录才能访问已分配的订阅。",
+      "general": "常规",
+      "users": {
+        "name": "名称",
+        "none": "未发现用户。",
+        "title": "用户",
+        "email": "电子邮件",
+        "devices": "用户设备",
+        "tokenGenerationDate": "生成日期",
+        "action": "行动",
+        "generateToken": "生成令牌",
+        "regenerateToken": "重新生成令牌",
+        "deleteToken": "删除令牌"
+      }
+    },
+    "subscriptions": {
+      "empty": "您没有有效订阅",
+      "from": "有效期自",
+      "plan": "订阅计划",
+      "projectLimit": "已激活的项目",
+      "to": "有效期至",
+      "userLimit": "用户限制"
+    },
+    "users": {
+      "email": "电子邮件",
+      "enterEmail": "电子邮件",
+      "instructions": "将发送进一步说明到您的邮箱。",
+      "invitations": "公司邀请",
+      "inviteDesc": "请输入要邀请的用户的电子邮箱。",
+      "name": "名称",
+      "new": "邀请用户",
+      "role": "系统角色",
+      "status": "状态",
+      "validUntill": "有效期至",
+      "invalidEmail": "无效电子邮箱",
+      "addToSub": {
+        "note": "注意：如果已达到订阅中的限制用户数，则无法再添加用户",
+        "prospect": "添加此用户至 Prospect 订阅",
+        "noteFull": "注意：已达到限制用户数",
+        "sdat": "添加此用户至 SDAT 订阅"
+      },
+      "assign": {
+        "sdat": "分配到 SDAT 订阅",
+        "prospect": "分配到 Prospect 订阅"
+      },
+      "unassign": {
+        "sdat": "取消 SDAT 订阅分配",
+        "prospect": "取消 Prospect 订阅分配"
+      },
+      "alreadyInvited": "已邀请用户成为 { companyName } 帐户会员"
+    },
+    "api": {
+      "v1": {
+        "title": "API v1.1",
+        "name": "权限名称",
+        "empty": "您没有 API 权限，可申请免费试用。",
+        "prospect": {
+          "title": "Prospect"
+        },
+        "monitor": {
+          "title": "Monitor",
+          "hardLimit": "允许访问自{hardLimit}起 Monitor 数据",
+          "relativeLimitWindow": "允许访问截至{relativeLimitWindow}前 Monitor 数据",
+          "relativeLimitWindow_y": "年",
+          "relativeLimitWindow_m": "月",
+          "relativeLimitWindow_d": "日",
+          "dataSummarization": "数据概要",
+          "processingKeys": "数据处理密钥"
+        },
+        "forecast": {
+          "title": "预测",
+          "description": "预测{days}天后"
+        }
+      },
+      "v2": {
+        "title": "API v2"
+      },
+      "common": {
+        "navigation": {
+          "info": "信息",
+          "accessKeys": "访问密钥",
+          "stats": "统计数据"
+        },
+        "loading": "加载 API 访问权限......",
+        "title": "API 访问权限名称",
+        "freeTrialRequest": "申请免费试用",
+        "resources": "应用程序接口资源",
+        "rateLimit": {
+          "title": "频率限制（请求数）",
+          "description": "此访问权限有{rateLimit}个请求数"
+        },
+        "fup": "每{count}秒{perSeconds}次访问",
+        "validity": {
+          "title": "名称",
+          "description": "从{from}到{to}"
+        },
+        "access": {
+          "title": "访问权限",
+          "type": "访问权限类型：{type}",
+          "maxSites": "可访问站点数：{maxSites}",
+          "unlimitedMaxSites": "无限制",
+          "regions": "可访问地区：",
+          "sites": "可访问站点：",
+          "position": "纬度：{latitude}，经度{longitude}"
+        },
+        "token": {
+          "title": "访问密钥",
+          "create": "添加新访问密钥",
+          "errorCreating": "无法生成新访问密钥",
+          "revoking": "撤销中...",
+          "revokeConfirmHeader": "撤销访问密钥",
+          "revokeConfirmMessage": "是否确定撤销访问密钥？",
+          "revokeError": "无法撤消访问密钥"
+        },
+        "stats": {
+          "requestCount": "请求数（计次）",
+          "uniqueSitesCount": "独家站点数（计数）",
+          "uiuCount": "独家信息数（计量）",
+          "documentation": "您可通过 API 获取统计信息，请参阅<a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/default/get_stats\" target=\"_blank\" title=\"资料\">资料</a>。"
+        },
+        "apiDocumentation": "您可在<a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/ws/dataOperation\" target=\"_blank\" title=\"资料\">资料</a>中找到 Prospect/Monitor/Forecast 的 API 资料，并试用我们的 API。"
+      }
+    },
+    "sdatSubscription": {
+      "devices": {
+        "all": "所有设备",
+        "none": "未发现 SDAT 设备。",
+        "title": "设备",
+        "email": "电子邮件",
+        "active": "有效设备",
+        "company": "公司档案",
+        "disabled": "禁用设备",
+        "userName": "用户名",
+        "hostName": "主机名",
+        "lastAccess": "最近活动",
+        "registeredAt": "已注册",
+        "disableAction": "禁用设备",
+        "customName": "自定义名称",
+        "osFingerprint": "设备指纹"
+      },
+      "general": {
+        "type": "订阅类型",
+        "none": "不存在任何 SDAT 订阅。",
+        "users": "用户",
+        "notes": "备注",
+        "validTo": "有效期至",
+        "validFrom": "有效期自",
+        "deviceLimit": "每个用户的设备限制",
+        "offlineLimit": "离线限制",
+        "offlineLimitUnit": "小时数"
+      }
+    },
+    "prospectSubscription": {
+      "none": "您没有订阅 Prospect",
+      "users": "已激活的用户",
+      "validFrom": "有效期自 {date}",
+      "validUntil": "有效期至 {date}",
+      "subscription": "订阅",
+      "activatedProjects": "已激活的项目"
+    },
+    "overview": {
+      "prospectSubscription": {
+        "desc": "如果您有处于活动状态的 Solargis iMaps 或 pvPlanner 订阅，则可以在订阅期的剩余时间内兑换 Solargis Prospect 的付费访问权限。",
+        "snack": "请求已创建",
+        "button": "我已经拥有 iMaps 和 pvPlanner 订阅",
+        "dialog": "收到您的请求后，我们通常会在一个工作日内激活对Prospect 应用程序的付费访问权限。您将收到电子邮件通知。",
+        "confirmTerms": "我同意 Solargis <a href='https://solargis.com/legal/general-contractual-terms/' target='_blank' title='General contracts terms to the paid services'>有偿服务的一般合同条款</a> 和 <a href='https://solargis.com/legal/particular-terms-and-conditions/project-use/' target='_blank' title='Particular conditions'>专用条款</a>"
+      }
+    }
+  },
+  "compare": {
+    "addDialog": {
+      "noProjects": "没有可用的项目。 请先创建一个项目。",
+      "outOf": "选定的{projects}个项目超出数量限制（{max}个）",
+      "project": "项目",
+      "systemType": "系统类型",
+      "lastChange": "上次变更",
+      "systemSize": "系统大小"
+    },
+    "addProjects": "添加项目",
+    "compare": "比较",
+    "empty": "没有项目进行比较",
+    "endOfYear": "年底",
+    "listDialog": {
+      "added": "项目已成功添加到比较",
+      "open": "打开比较",
+      "projects": "比较中的当前项目："
+    },
+    "noPermission": "要使用比较，您需要先购买所选公司的订阅",
+    "noPvConfig": "部分项目未安装任何光伏配置",
+    "purchase": "购买订阅",
+    "replaceDialog": {
+      "msg": "比较已满。 请选择要替换的项目：",
+      "replace": "替换项目"
+    },
+    "addToCompare": "加入以进行比较",
+    "addPvSettings": "添加光伏配置",
+    "noFinanceConfig": "没有融资配置的项目已被过滤：",
+    "addFinanceSettings": "添加融资参数",
+    "noEconomyConfig": "有一些没有融资配置的项目",
+    "noLatestData": "部分项目数据未更新",
+    "updateProjectData": "更新项目数据"
+  },
+  "enum": {
+    "invoice": {
+      "CN": "下载收款通知单",
+      "INVOICE": "下载发票",
+      "INVOICE_FOR_PROFA": "下载发票",
+      "PROFA": "下载形式发票"
+    },
+    "orderPaymentStatus": {
+      "NOT_PAID": "未支付",
+      "PAID": "已支付",
+      "PAYMENT_FAILED": "支付失败",
+      "PENDING": "等待"
+    },
+    "orderPaymentType": {
+      "BANK": "银行",
+      "BRAINTREE": "使用银行卡支付",
+      "PAY_PAL": "PayPal",
+      "NO_PAYMENT": "无付款"
+    },
+    "orderStatus": {
+      "CANCELED": "已取消",
+      "DONE": "完成",
+      "IN_PROGRESS": "进行中",
+      "USER_STARTED": "已创建",
+      "EXPIRED": "已过期"
+    },
+    "app": {
+      "prospect": "Prospect",
+      "evaluate": "评估",
+      "monitor": "监控",
+      "forecast": "预报"
+    },
+    "horizon": {
+      "custom": "自定义地平线",
+      "default": "默认地平线"
+    }
+  },
+  "header": {
+    "admin": "Solargis 管理员",
+    "company-admin": "后台管理员",
+    "compare": "比较",
+    "contact": "联系",
+    "forgotPassword": "忘记密码？",
+    "help": "帮助",
+    "login": "登录",
+    "logout": "退出",
+    "map": "地图",
+    "pricing": "定价",
+    "projectDetail": "项目详情",
+    "projects": "站点",
+    "prospect": "Prospect",
+    "registration": "创建帐号",
+    "upgrade": "升级",
+    "user": {
+      "invoiceUsers": "邀请用户",
+      "adminConsole": "管理控制台",
+      "allCompanies": "所有公司帐户",
+      "switch": "切换到"
+    },
+    "freeTrial": "免费试用",
+    "evaluate": "Evaluate",
+    "newPassword": "新密码",
+    "instructions": "已发送指示",
+    "signUp": "注册",
+    "users": "用户",
+    "orders": "订单",
+    "products": "产品",
+    "companies": "公司",
+    "dashboard": "仪表板",
+    "sdat": "SDAT",
+    "administration": "{companyName} 管理",
+    "invoices": "发票"
+  },
+  "map": {
+    "layer": {
+      "mapbox-streets": {
+        "name": "地形图"
+      },
+      "solargis-cdd": {
+        "name": "降温度天数"
+      },
+      "solargis-d2g": {
+        "name": "散射比"
+      },
+      "solargis-dif": {
+        "name": "水平面散射辐射量"
+      },
+      "solargis-dni": {
+        "name": "法向直接辐射量"
+      },
+      "solargis-ele": {
+        "name": "海拔",
+        "shortName": "海拔"
+      },
+      "solargis-ghi": {
+        "name": "水平面总辐射量"
+      },
+      "solargis-gti": {
+        "name": "倾角总辐射量"
+      },
+      "solargis-gti_opta": {
+        "name": "最优倾角辐射量"
+      },
+      "solargis-hdd": {
+        "name": "升温度天数"
+      },
+      "solargis-landc": {
+        "name": "土地覆盖"
+      },
+      "solargis-opta": {
+        "name": "光伏组件的最优倾角"
+      },
+      "solargis-popul": {
+        "name": "人口密度"
+      },
+      "solargis-prec": {
+        "name": "降水(雨)"
+      },
+      "solargis-pvgain_cdte": {
+        "name": "CdTe 与 CSi 系统的增益比较"
+      },
+      "solargis-pvout_cdte": {
+        "name": "CdTe光伏发电量"
+      },
+      "solargis-pvout_csi": {
+        "name": "cSi光伏发电量"
+      },
+      "solargis-pwat": {
+        "name": "可降水量"
+      },
+      "solargis-rh": {
+        "name": "相对湿度"
+      },
+      "solargis-snowd": {
+        "name": "降雪天数"
+      },
+      "solargis-temp": {
+        "name": "气温"
+      },
+      "solargis-ws": {
+        "name": "风速"
+      },
+      "solargis-alb": {
+        "name": "表面反照率"
+      },
+      "solargis-azi": {
+        "name": "地形方位"
+      },
+      "solargis-slo": {
+        "name": "地形坡度"
+      },
+      "solargis-dni_season": {
+        "name": "季节性法向直接辐射"
+      },
+      "solargis-ghi_season": {
+        "name": "季节性水平面总辐射量"
+      },
+      "bing-satellite": {
+        "name": "卫星"
+      },
+      "mapbox-satellite": {
+        "name": "卫星"
+      }
+    },
+    "legend": {
+      "button": "图例"
+    },
+    "location": {
+      "error": {
+        "1": "地理位置被拒绝",
+        "2": "地理定位不可用",
+        "3": "地理定位已经超时"
+      },
+      "tryAgain": "再试一次"
+    },
+    "menu": {
+      "labels": "标签",
+      "selectLayer": "选择地图图层",
+      "marker": "标记值"
+    },
+    "zoom": {
+      "all": "缩放所有站点",
+      "selected": "缩放选定的站点"
+    },
+    "draw": {
+      "site": "地点",
+      "rectangle": "矩形",
+      "polygon": "多边形",
+      "distance": "距离"
+    },
+    "fullscreen": {
+      "fullscreen": "全屏幕"
+    }
+  },
+  "months": {
+    "apr": "四月",
+    "aug": "八月",
+    "dec": "十二月",
+    "feb": "二月",
+    "jan": "一月",
+    "jul": "七月",
+    "jun": "六月",
+    "mar": "三月",
+    "may": "五月",
+    "month": "月",
+    "nov": "十一月",
+    "oct": "十月",
+    "sep": "九月",
+    "yearly": "每年"
+  },
+  "project": {
+    "action": {
+      "archive": "存档",
+      "delete": "删除",
+      "transfer": "转移",
+      "claimFreetrial": "开通免费试用",
+      "unArchive": "解压",
+      "archiveText": "您想要存档所选择的项目吗？",
+      "unArchiveText": "您想要取消存档所选择的项目吗？",
+      "updateProjectData": "更新项目数据"
+    },
+    "data": {
+      "longtermAverage": "全周期年平均值",
+      "mapData": "地图数据",
+      "projectData": "项目数据",
+      "showMore": "更多",
+      "yearlyAverage": "年平均值",
+      "notLatest": "项目不是最新的"
+    },
+    "dataLayer": {
+      "CDD": {
+        "desc": "量化冷却建筑物所需的能源。“降温度天数”用于衡量外部气温高于特定地点日均气温（18℃）的程度（以度计）和时长（以天计）。 从每日数值中合计出年度值和月度值。",
+        "name": "降温度天数",
+        "shortName": "CDD"
+      },
+      "CF": {
+        "name": "容量因素",
+        "desc": "一年内实际电量输出与最大电量输出的比率，以％表示。 最大发电量为交流电装机容量乘一年内小时数；实际发电量为该项目每年输送电量。",
+        "shortName": "CF"
+      },
+      "D2G": {
+        "desc": "水平面散射辐射量除以总水平辐射量（DIF/GHI）",
+        "name": "散射比",
+        "shortName": "D2G"
+      },
+      "DIF": {
+        "desc": "水平散射辐照的年均、月均或日总量",
+        "name": "水平面散射辐射量",
+        "shortName": "DIF"
+      },
+      "DNI": {
+        "desc": "法向直接辐照的年均、月均或日总量",
+        "name": "法向直接辐射量",
+        "shortName": "DNI"
+      },
+      "DNI_season": {
+        "desc": "法向直接辐射量的最大和最小月平均值之比（月均值最大法向直接辐照除以月均值最小法向直接辐照）",
+        "name": "季节性法向直接辐射",
+        "shortName": "法向直接辐射季节"
+      },
+      "ELE": {
+        "desc": "海拔高于/低于海平面的地形高度",
+        "name": "地形海拔"
+      },
+      "GHI": {
+        "desc": "总辐照的年均、月均或日总量",
+        "name": "水平面总辐射量",
+        "shortName": "GHI"
+      },
+      "GHI_season": {
+        "desc": "水平面总辐照的最大和最小月平均值之比（月均值最大水平面总辐照除以月均值最小水平面总辐照）",
+        "name": "季节性总辐射",
+        "shortName": "水平面总辐射量 季节"
+      },
+      "GTI": {
+        "desc": "倾角辐照的年均、月均或日总量",
+        "name": "倾角总辐射量",
+        "shortName": "GTI"
+      },
+      "GTI_opta": {
+        "desc": "固定安装在最佳角度的光伏组件倾斜辐照的年均、月均或日均值",
+        "name": "最优倾角辐射量",
+        "shortName": "GTI opta"
+      },
+      "GTI_theoretical": {
+        "desc": "不考虑地形遮挡的倾斜面年均辐射、月均辐射或日均辐射值",
+        "name": "理论性倾角辐射量",
+        "shortName": "GTI 理论值"
+      },
+      "HDD": {
+        "desc": "量化加热建筑物所需的能源。“升温度天数”用于衡量外部气温高于特定地点日均气温（18℃）的程度（以度计）和时长（以天计）。 从每日数值中合计出年度值和月度值。",
+        "name": "升温度天数",
+        "shortName": "HDD"
+      },
+      "LANDC": {
+        "desc": "表示地表的主要类型（草地、森林、城市地区等）。",
+        "name": "土地覆盖"
+      },
+      "OPTA": {
+        "desc": "为最大限度地提高倾角总辐射量，固定式光伏组件赤道方向的最佳倾斜角度",
+        "name": "最优倾角"
+      },
+      "POPUL": {
+        "desc": "每单位面积平均居住量",
+        "name": "人口密度"
+      },
+      "PR": {
+        "desc": "光伏系统的單位交流电力输出与光伏阵列表面接收的倾角辐射量的比率 (单位光伏发电量除以倾角总辐射量) ",
+        "name": "系统效率",
+        "shortName": "PR"
+      },
+      "PREC": {
+        "desc": "平均年降水量和月降水量",
+        "name": "降水(雨)",
+        "shortName": "PREC"
+      },
+      "PVGAIN_cdte": {
+        "desc": "CdTe和cSi光伏系统年产量比（PVOUTcdte / PVOUTcsi）",
+        "name": "CdTe 与 CSi 系统的增益比较"
+      },
+      "PVOUT_cdte": {
+        "desc": "使用CdTe模块的光伏系统的年发电量。使用太阳辐射和气温数据计算",
+        "name": "CdTe光伏发电量"
+      },
+      "PVOUT_csi": {
+        "desc": "使用cSi模块的光伏系统的年发电量。使用太阳辐射和气温数据计算",
+        "name": "cSi光伏发电量"
+      },
+      "PVOUT_specific": {
+        "desc": "光伏发电系统年均和月均光伏发电量（交流电），按照装机容量1kWp的标准",
+        "name": "单位光伏发电量",
+        "shortName": "PVOUT 特定值"
+      },
+      "PVOUT_total": {
+        "desc": "总装机容量提供光伏发电（AC）的年和月平均值",
+        "name": "总光伏发电量",
+        "shortName": "PVOUT 总值"
+      },
+      "PWAT": {
+        "desc": "可降水量表示地上水汽含量，即该大气柱中的所有水分以雨水形式沉降后的深度",
+        "name": "可降水量",
+        "shortName": "PWAT"
+      },
+      "RH": {
+        "desc": "地上2米处的年均/月均相对湿度",
+        "name": "相对湿度",
+        "shortName": "RH"
+      },
+      "SNOWD": {
+        "desc": "降雪天数为雪水深度大于等于5毫米的天数",
+        "name": "降雪天数",
+        "shortName": "已降雪"
+      },
+      "TEMP": {
+        "desc": "在地面2米处的年均/月均/日均气温。 根据ERA-5模型的输出计算",
+        "name": "气温",
+        "shortName": "TEMP"
+      },
+      "WS": {
+        "desc": "地上10米处的年均/月均/日均风速",
+        "name": "风速",
+        "shortName": "WS"
+      },
+      "ALB": {
+        "desc": "太阳辐照由表面反射的部分。表面的出射度与入射度（水平面总辐射量）之比。",
+        "name": "表面反照率",
+        "shortName": "ALB"
+      },
+      "AZI": {
+        "desc": "朝基本方向的地形坡向，以度为单位，顺时针方向。 北= 0，东= 90，南= 180，西= 270。 不考虑平坦地形（坡度 &lt;2度）",
+        "name": "地形方位"
+      },
+      "SLO": {
+        "desc": "以度为单位的地形坡度（倾斜度）",
+        "name": "地形坡度"
+      },
+      "PV": {
+        "name": "光伏"
+      }
+    },
+    "dataSettings": {
+      "generalInfo": "基本信息",
+      "irradiation": "太阳辐射",
+      "latlng": "经纬度",
+      "length": "地形海拔",
+      "ltaDaily": "长期平均值",
+      "projectInfo": "站点信息",
+      "temperature": "气温",
+      "unitSettings": "单位设置",
+      "values": "值",
+      "tableSettings": "表格设置",
+      "mapViewSettings": "地图视图设置",
+      "projectViewSettings": "项目视图设置"
+    },
+    "field": {
+      "created": "已创建",
+      "name": "名称",
+      "rename": "重命名"
+    },
+    "filter": {
+      "allProjects": "当前项目",
+      "archived": "已存档",
+      "favorites": "收藏夹",
+      "recent": "最近",
+      "manageLabels": "管理标签"
+    },
+    "pvConfigStatus": {
+      "empty": "未设置光伏系统",
+      "hasPvSystem": "启用光伏系统配置",
+      "noPvSystem": "启用光伏系统配置"
+    },
+    "rename": {
+      "title": "重命名站点"
+    },
+    "selected": {
+      "addToProjects": "另存为项目",
+      "calculate": "计算",
+      "openDetail": "开启"
+    },
+    "share": {
+      "copied": "已复制",
+      "copyLink": "复制链接",
+      "share": "分享位置",
+      "shareLocation": "分享位置",
+      "text": "您可以将此共享链接发送给您的朋友以分享此位置。"
+    },
+    "sidebar": {
+      "clearSelection": "清空选项",
+      "listView": "显示列表",
+      "multiSelected": "已选择多个站点",
+      "noneSelected": "没有选择站点",
+      "projectsSelected": "您选择了{projects, plural, =1 {个站点} other {# 个站点}}"
+    },
+    "snackbar": {
+      "archive": "项目已存档",
+      "bulkArchive": "{projects}个项目已存档",
+      "bulkDelete": "{projects}个项目已删除",
+      "bulkUpdate": "{projects}个项目已更新",
+      "delete": "项目已删除",
+      "rename": "项目已重命名",
+      "save": "项目已保存",
+      "update": "项目已更新",
+      "bulkTransfer": "{projects}个项目已转移",
+      "transfer": "项目已转移",
+      "freetrialClaim": "本项目成功开通免费试用",
+      "updateData": "项目数据已更新"
+    },
+    "tags": {
+      "deleteHeading": "删除标签",
+      "deleteText": "确定删除{tagName}？",
+      "forbiddenName": "标签名称不能重复",
+      "minlength": "标签名称过短",
+      "name": "标签名称",
+      "new": "创建标签",
+      "none": "未创建标签",
+      "required": "请输入标签名称",
+      "labels": "标签",
+      "newPlaceholder": "新标签",
+      "add": "添加",
+      "manage": "管理标签",
+      "invalidCharText": "标签只能包括多种语言的文字字母、数字、空格（ ）、句号（。）、逗号（，）、连字符（-）、下划线（_）和括号（和）。",
+      "invalidCharHeading": "字母无效"
+    },
+    "timezone": {
+      "dstNotConsidered": "不考虑夏令时"
+    },
+    "toolbar": {
+      "addTag": "添加标签",
+      "archive": "存档",
+      "delete": "删除",
+      "favorite": "收藏夹",
+      "selected": "已选择：{projects}",
+      "selectedFirst": "首先选择",
+      "share": "分享",
+      "unarchive": "解压",
+      "siteDetail": "站点详情",
+      "rename": "重新命名",
+      "selectedProjects": "选择：{projects} / {allProjectsCount}"
+    },
+    "transfer": {
+      "title": "转移 {projects, plural, =1 {个站点} other {# 个站点}}",
+      "targetAccount": "目标账户",
+      "info": "通过转移项目，您将只传输项目信息（项目名称、位置等）和 PV 配置信息。 与该项目关联的任何报告将会丢失。 完成转移后，当前与之关联的帐户中将不会有该项目了。"
+    },
+    "exportChart": {
+      "exportTo": "导出为{格式}",
+      "pvConfig": "光伏配置"
+    },
+    "search": {
+      "searchLocations": "搜索位置",
+      "invalidCoordinatesMessage": "您已输入含有负数的坐标和基本方位。这不受支持，因为它可导致结果不明确。请重新输入明确的坐标。"
+    },
+    "updateProjectDialog": {
+      "note": "注：更新项目数据会删除已生成的报告。若您希望保存这些报告，请在更新项目数据前下载文件。",
+      "text": "该项目含有旧版Solargis数据库的太阳能资源与气象数据。选择更新，与项目相关的现有数据将被来自 Solargis 数据库的最新版数据替换。",
+      "title": "是否更新项目数据",
+      "nonUpdateData": "该项目含有并非最新的数据。",
+      "progressTitle": "项目数据更新中",
+      "downloadReports": "下载报告"
+    }
+  },
+  "projectDetail": {
+    "daylength": {
+      "autumnEquinox": "秋分",
+      "dayLengthHorizonCorrected": "日长，地平线校正[小时]",
+      "daylength": "日长[小时]",
+      "label": "日长和太阳天顶角",
+      "minimumZenitAngle": "最小天顶角[°]",
+      "vernalEquinox": "春分"
+    },
+    "economy": {
+      "form": {
+        "addLoan": "添加贷款",
+        "capacity": "安装容量",
+        "degradationFirst": "第一年衰减",
+        "degradationNext": "來年衰减",
+        "installationCost": "系统安装费用",
+        "interestRate": "利率",
+        "loan": "债务（贷款）",
+        "loanPeriod": "贷款期限",
+        "ownCapital": "自有资本",
+        "priceOfElectricity": "电价",
+        "removeLoan": "移除贷款",
+        "totalYield": "总光伏发电量 (第0年)",
+        "yearsOfOperation": "经营年限",
+        "loanEquity": "股权",
+        "accountingInfo": "会计信息",
+        "linearDeprecation": "线性税收折旧",
+        "annualOperationalCost": "年运营成本"
+      },
+      "label": {
+        "economicIndicators": "经济指标",
+        "inputs": "输入",
+        "outputs": "输出",
+        "payback": "盈亏平衡期",
+        "pvEconomy": "光伏系统经济",
+        "summary": "概要",
+        "overview": "概览"
+      },
+      "layer": {
+        "CAPEX": {
+          "desc": "从总系统成本中减去太阳能奖励后安装太阳能光伏系统所需的资金量",
+          "name": "投资成本"
+        },
+        "OPEX": {
+          "desc": "光伏发电系统的年度运营成本总和，以及其组件更换的年度分期付款",
+          "name": "运营成本"
+        },
+        "tariff": {
+          "desc": "太阳能电力出售给电网的合同价格。 购电协议通常用于商业光伏电站。",
+          "name": "购电协议 / 上网电价"
+        },
+        "ROIEquity": {
+          "desc": "光伏系统总投资回报率（ROI）对投资成本（CAPEX）的比率，零（0）表示盈亏平衡 （不计贴现率）",
+          "name": "投资回报率"
+        },
+        "unitSystemCosts": {
+          "name": "单位系统成本",
+          "desc": "每(千)瓦时光伏系统成本"
+        },
+        "incentiveOrRebate": {
+          "desc": "公共事业公司或政府提供的任何货币或税率奖励",
+          "name": "安装奖励或回扣"
+        },
+        "loanLinearPayment": {
+          "desc": "固定的贷款支付金额",
+          "name": "线性贷款还款"
+        },
+        "maintenanceReserve": {
+          "tooltip": "所有逆变器更换的成本。通常制造商的保修期在5 - 12年之间波动，并且在系统运行的典型长度（25年）内平均需要更换两次",
+          "desc": "每年更换硬件（主要为逆变器）所需的资金总额",
+          "name": "维护储备账户"
+        },
+        "LCOE": {
+          "desc": "光伏系统全生命周期的单位电力成本",
+          "name": "平准化电力成本"
+        },
+        "IRREquity": {
+          "desc": "从股东的角度看（不包括贷款）光伏系统的全生命周期内部收益率",
+          "name": "股权内部收益率"
+        },
+        "IRRProject": {
+          "name": "项目内部收益率",
+          "desc": "项目全周期内部收益率"
+        },
+        "discountRate": {
+          "desc": "内部收益率净现值计算中采用的贴现因子",
+          "name": "贴现率"
+        },
+        "taxesOnProfit": {
+          "name": "利润税",
+          "desc": "每年对利润征的税金"
+        },
+        "loanDebtToEquity": {
+          "desc": "债务与股权之间的比率",
+          "name": "债务股权比"
+        },
+        "OPEXInflationRate": {
+          "name": "运营成本通胀率",
+          "desc": "运营成本年增长率"
+        },
+        "linearDeprecation": {
+          "name": "线性税收折旧",
+          "desc": "由于老化衰退和一般耗损，资产价值随着时间推移而线性递减"
+        },
+        "tariffIndexationRate": {
+          "name": "补贴指数率",
+          "desc": "补贴价格年增长"
+        },
+        "inverterReplacementYear": {
+          "name": "逆变器更替年份",
+          "desc": "更替逆变器的操作年份，之后撤销维护储备账户（MRA）"
+        }
+      },
+      "table": {
+        "endOfYear": "年底",
+        "OPEX": "运营成本",
+        "EBIT": "EBIT",
+        "loan": "债务（贷款）",
+        "CAPEX": "投资成本",
+        "EBITDA": "EBITDA",
+        "revenue": "营收",
+        "netProfit": "净利",
+        "taxOnProfit": "利润税",
+        "PVOUT_total": "总光伏发电量",
+        "tariffIndexed": "价目表（索引）",
+        "PVOUT_specific": "具体光伏发电量",
+        "EBITDA_specific": "具体 EBITDA",
+        "loanInterestRate": "贷款利率",
+        "linearDeprecation": "线性折旧",
+        "cashFlowOperations": "现金流（运营）",
+        "maintenanceReserve": "维护储备账户",
+        "cashFlowNPVOperations": "运营端的现金流净现值",
+        "loanRepaymentInterest": "贷款还款（利息）",
+        "loanRepaymentPrincipal": "贷款还款（本金）",
+        "shareholderCashFlowNPV": "归股东的现金流净现值",
+        "shareholderCashFlowAvailable": "可供股东使用的现金流",
+        "annualCosts": "所有年度支出"
+      },
+      "guard": {
+        "text": "您编辑了该光伏系统的财务设置，是否保存？",
+        "heading": "有财务变更尚未保存"
+      },
+      "resetSaved": "重置为已保存数值",
+      "tariffGoalseek": {
+        "use": "代入数值",
+        "open": "按股权内部收益率计算",
+        "result": "计算值：",
+        "target": "目标股权内部收益率",
+        "explain": "通过调整收入资费（购电协议 / 上网电价）计算用户定义的股权内部收益，而所有其它输入参数保持不变。"
+      }
+    },
+    "error": {
+      "noProject": "没有选择站点。 请选择一个站点以查看站点详细信息。"
+    },
+    "glossary": {
+      "acronym": "缩写",
+      "explanation": "说明",
+      "name": "全名",
+      "title": "词汇表",
+      "unit": "单位"
+    },
+    "info": {
+      "address": "地址",
+      "coordinates": "坐标",
+      "country": "国家/地区",
+      "created": "已创建",
+      "edit": "编辑名称",
+      "elevation": "海拔",
+      "info": "站点信息",
+      "name": "站点名称",
+      "showOnMap": "在地图上显示"
+    },
+    "metadata": {
+      "doc": {
+        "documentation": "文档",
+        "methodology": "方法",
+        "simulation": "光伏能源模拟",
+        "uncertainty": "数据不确定性"
+      },
+      "method": {
+        "merging": "数据合并，清理，处理",
+        "postprocessing": "后处理",
+        "processing": "数据处理",
+        "simulation": "光伏仿真模型",
+        "solarModel": "太阳能模型"
+      },
+      "sources": {
+        "LANDC": "土地覆盖 CCI, v2.0.7",
+        "POPUL": "网格世界人口，第4版（GPWv4）",
+        "PREC": "GPCC数据库",
+        "PWAT": "CFSR和CFSv2数据库",
+        "SNOWD": "CFSR和CFSv2数据库",
+        "TEMP": "ERA-5模型",
+        "aerosolsMerra": "MERRA-2 和 MACC-II/CAMS 模型中的气溶胶",
+        "albedo": "MODIS和ERA-5数据库",
+        "region1": "GOES West卫星",
+        "region3": "Meteosat MFG和MSG卫星（PRIME）",
+        "region4": "Meteosat MFG和MSG卫星（IODC）",
+        "region5": "Meteosat MFG，MSG（IODC）和Himawari卫星",
+        "region6": "MTSAT和Himawari卫星",
+        "regionGeneral": "地球静止卫星Meteosat，GOES，MTSAT和HIMAWARI",
+        "wapourCSFR": "来自CSFR和GFS模型的水蒸气值",
+        "region2": "GOES East和GOES-R卫星",
+        "RHWSWD": "MERRA-2 和 CDFv2 模型"
+      },
+      "table": {
+        "method": "Solargis方法",
+        "source": "数据来源 <br>(组织)",
+        "period": "时间表示",
+        "updated": "最近更新",
+        "parameter": "参数"
+      },
+      "text": {
+        "row0": "时长：长达数月和数年的长期统计数据",
+        "row1": "一年以365天计算",
+        "text": "本报告根据 Solargis 开发和运行的高分辨率太阳能和气象数据库编写。报告中给出的数据参数用 Solargis 模型和算法计算。用作模型输入的数据，来源各不相同，说明如下：",
+        "version": "Solargis Prospect 数据库版本 {version}",
+        "latestMetadataVersion": "可用版本 {latestMetadataVersion} "
+      }
+    },
+    "nav": {
+      "hourlyProfiles": "每小时概况",
+      "lifetimePerformance": "全周期生产性能",
+      "metadata": "元数据",
+      "monthlyStatistics": "每月统计",
+      "overview": "概观",
+      "projectInfo": "站点信息",
+      "pvConfig": "光伏配置",
+      "pvElectricity": "光伏电力",
+      "pvLosses": "能量转换和系统损失",
+      "pvPerformance": "光伏性能",
+      "reports": "报告",
+      "solarMeteo": "太阳和气象",
+      "support": "支持",
+      "download": "下载",
+      "analysis": "分析",
+      "properties": "属性",
+      "data": "数据",
+      "finance": "融资"
+    },
+    "overview": {
+      "longtermPvPowerPotential": "长期光伏发电潜力（平均{years}年）",
+      "meteorologicalData": "气象资料",
+      "projectInfo": "站点信息",
+      "projectOverview": "项目概况",
+      "pvElectricityAndPerformance": "光伏电力和性能",
+      "solar": "太阳辐射",
+      "solarAndMeteo": "太阳和气象",
+      "systemType": "系统类型",
+      "theoreticalPvElectricityPotential": "理论光伏发电潜力（系统启动时）",
+      "title": "概览 - 太阳辐射和气象参数"
+    },
+    "pvConfig": {
+      "pvConfiguration": "光伏系统配置"
+    },
+    "pvElectricity": {
+      "hourlySummary": "如下所示，光伏电力生产概况计算为每个月的每小时数据平均值。 这显示了由天气以及一天中光伏系统配置导致的电力生产模式的变化。 应该注意的是：“平均每日概况”是一个理论概念，因为在大多数情况下，由于天气变化，一年中的每一天皆是特定的情况。",
+      "potential": "理论光伏发电潜力",
+      "summary": "光伏系统太阳能发电的理论估算，不考虑光伏组件和其他系统组件的长期老化和性能下降。"
+    },
+    "pvLosses": {
+      "electricSystemLosses": "电力系统损失",
+      "energyInput": "辐射量输入",
+      "energyLoss": "能量损失",
+      "lossDiagram": "损失图",
+      "solarLosses": "太阳能损失",
+      "summary": "光伏系统发电的理论年度具体估算，不考虑光伏组件和其他系统组件的长期老化和性能下降。 计算光伏系统启动生产的长期平均性能比（PR）。",
+      "title": "能量转换和相关损失",
+      "diagramDesc": "该图显示了光伏电力系统中，由能量转换所引起的损失",
+      "energy": "能量",
+      "energyLossOrGain": "辐射量损失/增益",
+      "absoluteValues": "绝对数值"
+    },
+    "pvPerformance": {
+      "degrad": "退化率",
+      "endOfYear": "年次",
+      "lifetimeProduction": "全周期光伏产量",
+      "lifetimeSummary": "光伏系统每年平均估算太阳能发电量。该值考虑了光伏系统配置，并且还考虑了由于老化和模块其他组件的性能下降导致的系统性能下降。特定功率输出的概念对于比较不同站点或光伏系统配置是有用的。性能比（PR）显示了光伏系统寿命期间的平均效率，同时考虑到系统性能的折损。",
+      "theoretical": "理论值"
+    },
+    "reports": {
+      "confirmDelete": "您确定要删除此报告吗？",
+      "empty": "没有保存的报告。要生成新报告, 请按 \"生成\" 按钮。",
+      "generate": "生成",
+      "status": {
+        "error": "生成报告时发生错误"
+      },
+      "table": {
+        "date": "完成",
+        "download": "下载",
+        "fileType": "文件类型",
+        "lang": "语言",
+        "name": "报告名称",
+        "no": "否",
+        "yes": "是",
+        "dateFormat": "日期格式",
+        "finance": "融资"
+      },
+      "title": "从当前配置生成报告。在项目配置更改之前, 将保留报吿。",
+      "finance": "包括融资"
+    },
+    "shared": {
+      "summary": "概要",
+      "noPvConfig": "仅计算日照和气象参数，不考虑光伏装置。"
+    },
+    "solarMeteo": {
+      "hourlySummary": "如下所示，太阳辐射和气温剖面计算为每个月所有小时数据的平均值。这些剖面图显示了白天关键气象参数的变化模式，这些变化由太阳天文学和地理位置决定。全球倾斜照射显示了光伏 模块的最佳倾斜表面如何影响平均一天中用于发电的太阳能资源的平均可用性。应该注意的是：“平均每日概况”是一个理论概念，因为在大多数情况下，由于天气变化，一年中的每一天皆是特定的情况。",
+      "optimumAzimuth": "最佳倾斜/GTI_opta 方位角",
+      "radiationTemperature": "太阳辐射和气象参数",
+      "summary": "决定太阳能发电的最重要的气象参数是太阳辐射，它为光伏发电系统提供燃料。 电力生产也受到空气温度的影响。 其他气象参数也会影响光伏系统的性能、可用性和折损。"
+    },
+    "sunpath": {
+      "axisAzimuth": "太阳方位角[°]",
+      "axisElevation": "太阳高度角[°]",
+      "civilTime": "民用时间",
+      "decemberSolstice": "冬至日",
+      "dstTime": "夏时制时间",
+      "equinox": "分点",
+      "juneSolstice": "夏至日",
+      "label": "站点地平线和太阳路径",
+      "modify": "修正地平线",
+      "module": "模块地平",
+      "solarTime": "太阳时",
+      "summerSolstice": "夏至",
+      "sunArea": "活动区域",
+      "sunpath": "太阳路径",
+      "terrain": "地平线",
+      "winterSolstice": "冬至",
+      "horizonInvalid": "地平线数值无效",
+      "horizonAzimuth": "方位角：{ azimuth }",
+      "horizonElevation": "海拔：{ elevation }",
+      "horizonHorizonElevation": "地平线标高：{ horizon }",
+      "exportHorizon": "导出到 HOR 文件"
+    },
+    "unsavedProjectDialog": {
+      "body": "要查看项目详细信息，需要保存当前项目。 你想保存这个项目吗？",
+      "heading": "未保存的项目",
+      "action": "保存并打开"
+    },
+    "pvLossesLayer": {
+      "capacityFactor": {
+        "name": "容量因素",
+        "desc": "一年中实际电能输出与给定时间段（通常为年）内最大电能输出之比，以％表示。 最大发电量为交流电装机容量乘以一年中的小时数，而实际发电量为光伏电站每年有效输送的电量。"
+      },
+      "energyStage": {
+        "ac_out_with_ac_losses": {
+          "name": "系统总体性能（初始）",
+          "desc": "光伏系统在运行启动时产生的理论电量。在此阶段，不考虑光伏模组的退化。"
+        },
+        "ac_out_with_ac_losses_and_snow_losses_and_availability_losses": {
+          "name": "系统总体性能（考虑到技术可用性和雪灾造成的损失）",
+          "desc": "考虑到降雪或故障导致的停止供电，光伏系统在运行启动时产生的电量。在此阶段，不考虑光伏模组的退化。"
+        },
+        "ghi": {
+          "name": "特定地点水平面总辐射量",
+          "desc": "受地平线和地貌影响而减少的理论水平面总辐射量。"
+        },
+        "ghi_theoretical": {
+          "name": "理论水平面总辐射量 (GHI)",
+          "desc": "由Solargis数值模型计算的理论水平面总辐射量，藉由云层透射率和大气状态使其参数化。"
+        },
+        "gti": {
+          "name": "倾角总辐射量(GTI)",
+          "desc": "总倾角辐射量的平均年、月或日总和（亦称为阵列平面辐射[POA]）"
+        },
+        "gti_eff": {
+          "name": "有效水平面散射辐射量",
+          "desc": "考虑光学损耗下，到达光伏模组表面的有效倾角辐射。"
+        }
+      },
+      "loss": {
+        "angularReflectivity": {
+          "name": "角度反射率",
+          "desc": "模组表面因角度反射率（入射角效应）的光学损耗，其影响取决于太阳的相对位置、模组的类型和表面清洁度。"
+        },
+        "conversionToSurfaceOfPvModules": {
+          "name": "转换至光伏组件表面",
+          "desc": "通过直射和散射分量，从特定位置的水平面总辐射量计算倾角辐射（亦称为阵列平面辐射）。"
+        },
+        "dirtDustAndSoiling": {
+          "name": "污垢、灰尘和污物",
+          "desc": "光伏模组表面污垢造成的日照流失。"
+        },
+        "interRowShading": {
+          "name": "行间阴影引起的电气损耗",
+          "desc": "模组互相遮挡日照导致的电力损耗。"
+        },
+        "inverters": {
+          "name": "逆变器（直流/ 交流）转换",
+          "desc": "从直流到交流电的转换效率造成的逆变器损耗。若逆变器内置变压器，则其效率也包含在此参数中。"
+        },
+        "mismatchAndCablingDC": {
+          "name": "直流部分的错配和布线",
+          "desc": "由于连接逆变器的不同模组最大功率点不匹配，以及直流互连和电缆中的热损耗造成的电力损耗。"
+        },
+        "powerTolarance": {
+          "name": "光伏组件的功率容差",
+          "desc": "由串接模组的功率容限不等所造成的电力损耗。具有较高功率容差的模组串接，则损耗更高。"
+        },
+        "snow": {
+          "name": "雪",
+          "desc": "光伏模组被雪覆盖造成的电力损耗。"
+        },
+        "solarIrradianceToDC": {
+          "name": "太阳辐射转换为直流电",
+          "desc": "半导体材料中，辐射量到光伏电力的转换。转换效率是非线性的，取决于辐照和温度分布"
+        },
+        "spectralCorrection": {
+          "name": "光谱校正",
+          "desc": "能量转换过程中，半导体材料和光谱之间不匹配导致的损失"
+        },
+        "technicalAvailablity": {
+          "name": "技术可用性",
+          "desc": "由于维护、故障或停机而关闭光伏电站所产生的发电损失。"
+        },
+        "terrainShading": {
+          "name": "地平线遮蔽（地形+地平线上物体）",
+          "desc": "受地形影响的理论水平面总辐射损失。通过分解 SRTM-3 DEM 和地平线高度来计算地形遮蔽。在此阶段，与附近建筑物、构造或植被等当地的遮蔽无关。"
+        },
+        "transformersAndAC": {
+          "name": "变压器和交流电缆损耗",
+          "desc": "外部中高压变压器电力损耗，以及交流电缆配线和连接的热损耗。该参数包括低压交流电缆的损耗，中（高）电压交流电缆（至电表的电网连接点），以及所有位于交流电路径设备的损耗。"
+        }
+      }
+    },
+    "data": {
+      "title": "以 CSV 格式导出每月平均数据，以便直接导入 PVsyst。",
+      "download": "下载",
+      "note": "备注：在 PVsyst 中，每小时的水平面总辐射量、水平面散射辐射量和 TEMP 数据是在导入月平均数据后综合生成的。典型年数据集的综合生成是一个数学过程，它会导致太阳辐照度与气温之间失去相关性。另外，人工时间序列中小时值的频率分布可能也无法代表气候的真实情况。由于太阳能发电系统的性能随太阳辐射和气温的变化而变化，利用综合小时数据集增加了太阳能模拟的不确定性。因此，我们建议使用 Solargis[时间序列或 TMY 数据集 | <a href='https://solargis.com/products/evaluate/overview' target='_blank'>https://solargis.com/products/evaluate/overview</a>]在 PVsyst 中进行模拟。"
+    },
+    "settings": {
+      "systemSettings": "系统设置"
+    },
+    "unlockDialog": {
+      "upgrade": "升级",
+      "mainTitle": "解锁所有功能",
+      "addPVConfig": "添加光伏配置",
+      "text": {
+        "reports": "针对您的电厂配置生成并下载一份正式的 Solargis Prospect 报告。将其共享给您的客户或投资方。我们的报告可提供多种语言。",
+        "download": "针对您的项目下载太阳和气象数据，以供在第 3 方工具中进行进一步分析。",
+        "solarMeteo": "访问您项目地点的太阳辐照度和气象数据的每月统计数据和每小时概况数据。",
+        "compareTool": "将多个地点的统计数据并排进行对比，来为您的电厂寻找最优的位置。",
+        "pvPerformance": "请见对损失的详解分析。",
+        "pvElectricity": "访问您项目配置的理论电力生产的每月统计数据和每小时概况数据。",
+        "finance": "优化您的项目融资："
+      },
+      "title": {
+        "reports": "报告",
+        "download": "管理标签",
+        "solarMeteo": "太阳和气象",
+        "compareTool": "比较工具",
+        "pvElectricity": "光伏电力",
+        "pvPerformance": "光伏性能",
+        "finance": "融资计算器"
+      },
+      "requestFreeTrial": "免费试用",
+      "activateFreeTrial": "激活免费试用",
+      "bulletPoints": {
+        "economyCalculator": {
+          "ROI": "ROI （投资回报率）",
+          "LCOE": "LCOE （平准化度电成本）",
+          "equity": "股权 IRR",
+          "project": "项目 IRR （内部回报率）"
+        }
+      }
+    }
+  },
+  "projectList": {
+    "filter": {
+      "toolbar": {
+        "archived": "已存档的项目",
+        "default": "现行项目",
+        "favorite": "收藏的项目",
+        "recent": "最近的项目",
+        "tag": "已标记的项目: {tags}"
+      }
+    }
+  },
+  "pvConfig": {
+    "action": {
+      "add": "添加光伏配置",
+      "change": "更改系统类型",
+      "edit": "修改光伏配置",
+      "optimum": "设定成最佳",
+      "restore": "恢复默认设置",
+      "save": "保存并计算光伏电力"
+    },
+    "error": {
+      "missing": "您没有在此站点上选择任何活动中的光伏系統。 要访问光伏数据，您需要添加一个光伏系統。",
+      "notFound": "找不到光伏系統"
+    },
+    "label": {
+      "chooseSystemType": "选择系统类型",
+      "copy": "从站点复制",
+      "default": "默认模板",
+      "systemType": "系统类型",
+      "unsaved": "未保存的变更",
+      "settings": "系统设置"
+    },
+    "params": {
+      "backtracking": {
+        "headline": "反向跟踪"
+      },
+      "cablingLosses": {
+        "ACCable": "交流电电缆损耗",
+        "ACCableShort": "交流电缆",
+        "DCCable": "直流电缆损失",
+        "DCCableShort": "直流电缆",
+        "DCMismatch": "直流错配损失",
+        "DCMismatchShort": "直流错配",
+        "headline": "线缆损失",
+        "setDefault": "设置默认值"
+      },
+      "colSpacing": {
+        "headline": "相对列间距",
+        "spacing": "相对列间距"
+      },
+      "inverter": {
+        "centralized": "集中式高效逆变器",
+        "headline": "逆变器类型",
+        "small": "小型逆变器",
+        "string": "組串式逆变器",
+        "efficiencyStr": "{inverterType} [{efficiency}% 欧标效率]",
+        "custom": "定制变频器"
+      },
+      "orientation": {
+        "azimuth": "方位",
+        "headline": "光伏组件的几何形状",
+        "tilt": "倾斜角度"
+      },
+      "pvModule": {
+        "ASI": "a-Si - 非晶硅",
+        "CDTE": "CdTe - 碲化镉",
+        "CIS": "CIS - 铜铟镓硒",
+        "CSI": "c-Si - 单/多晶硅",
+        "customDegradation": "按第一年{degradationFirstYear}％、往后每年{degradationNextYear}％的速率退化",
+        "degradation": "自定义性能退化率（RPD）",
+        "firstYear": "首年",
+        "headline": "光伏组件类型",
+        "nextYear": "来年"
+      },
+      "rowSpacing": {
+        "headline": "相对行间距",
+        "spacing": "相对行间距"
+      },
+      "snowSoilingLosses": {
+        "headline": "由积雪和污垢造成的光伏组件损耗",
+        "snowLosses": "积雪造成的月损耗",
+        "snowLossesShort": "积雪造成的月度损失",
+        "soilingLosses": "污垢造成的月损耗",
+        "soilingLossesShort": "灰尘造成的月度损失",
+        "snowLossesForm": "积雪损失",
+        "soilingLossesForm": "污垢损耗",
+        "soilingAsYearly": "改为输入年污染值"
+      },
+      "systemAvailability": {
+        "availability": "系统可用性",
+        "headline": "系统可用性"
+      },
+      "systemSize": {
+        "area": "已安装的光伏组件面积",
+        "capacity": "安装容量",
+        "headline": "系统大小"
+      },
+      "transformer": {
+        "headline": "变压器类型",
+        "highEfficiency": "高效率",
+        "none": "无",
+        "standard": "标准",
+        "lossStr": "{transformerType} [{loss}% 损耗]",
+        "custom": "定制变压器"
+      },
+      "rotationLimits": {
+        "val": "{east}°东, {west}°西",
+        "west": "西",
+        "east": "东",
+        "headline": "旋转极限"
+      }
+    },
+    "type": {
+      "buildingIntegrated": {
+        "desc": "光伏系统集成到住宅或商业建筑的立面或屋顶。光伏模块的方位角和倾斜是均匀的，不会相互遮挡。模块安装在建筑的围护结构中，因此背面通风非常有限。这种类型的光伏系统可以通过逆变器直接连接到低压电网，或者可以通过逆变器和配电变压器连接到中压电网。不考虑电力储存。",
+        "name": "光伏建筑一体化"
+      },
+      "groundFixed": {
+        "desc": "安装在水平地面上的大型商业光伏系统。 光伏模块的方位角和倾斜是均匀的，通常面向赤道并倾斜于最佳倾角，以最大化每年的能量产出。 模块固定安装在成排排列的倾斜结构上。 在低太阳角度期间，它们可能被前面的行部分遮蔽。 模块通风良好。 这种类型的光伏系统通过逆变器和配电变压器连接到中压或高压电网，也可以使用附加的变压器。 不考虑电力储存。",
+        "name": "地面式固定安装"
+      },
+      "noPvSystem": {
+        "desc": "仅计算太阳和气象参数。 没有考虑光伏配置。",
+        "name": "没有光伏系统"
+      },
+      "rooftopLargeFlat": {
+        "desc": "安装在商业或工业建筑的大型水平屋顶上的光伏系统。 光伏模块的方位角和倾斜是均匀的。 模块固定安装在倾斜结构上，连接到平屋顶并成排排列。 因此，在低太阳角度期间，模块可能被前面的行部分遮蔽。 安装方式使光伏模块能够通风，但是屋顶表面的热量可能会影响系统的性能。 这种类型的光伏系统可以通过逆变器直接连接到低压电网，或者通过逆变器和配电变压器连接到中压电网。 不考虑储能。",
+        "name": "屋顶平台"
+      },
+      "rooftopLargeTilted": {
+        "desc": "安装在商业或工业建筑的倾斜屋顶的光伏系统。 光伏模块的方位角和倾斜是均匀的，模块不会相互遮挡。 模块安装在连接到倾斜屋顶的导轨上，因此可以进行后侧通风。 该系统可以通过逆变器直接连接到低压电网，或者通过逆变器和配电变压器连接到中压电网。 不考虑储能。",
+        "name": "屋顶倾斜平台"
+      },
+      "rooftopSmall": {
+        "desc": "安装在住宅建筑的倾斜屋顶的光伏系统。 光伏模块的方位角和倾斜是均匀的，模块不会相互遮挡。 模块安装在连接到倾斜屋顶的导轨上，背面通风。 这种类型的系统通常通过逆变器直接连接到低压电网。 不考虑储能。",
+        "name": "住宅小型屋顶"
+      },
+      "trackerOneAxisHorizontalNS": {
+        "desc": "大型商用光伏系统安装于水平地面。南北向水平单轴追踪器搭载光伏组件。东西向追踪器均设置旋转极限。采用反向追踪算法，减少低日照角度期间的阵列间阴影损耗。模组通风良好。此类光伏系统通过逆变器和配电变压器连接中高压电网，可外接变压器。不考虑电能存储。",
+        "name": "平单轴跟踪系统"
+      },
+      "hydroMountedLargeScale": {
+        "desc": "此选项涵盖大型浮动式太阳能装置，模组安装在朝向赤道的塑料载台上。由于表面水的蒸发冷却，模组的温度较低。估计模组行列之间的不匹配度较高（水波浮动引起的失配），并且由鸟粪造成的脏污也更多。在此示例中，我们还考虑了串式逆变器和配电变压器。与大规模的地面安装式光伏装置相比，由于恶劣的环境，系统的预期可用性较低，并且发生各种故障类型的可能性更高。",
+        "name": "浮动光伏系统"
+      }
+    }
+  },
+  "toggle": {
+    "ltaDaily": {
+      "perDay": "{unit}每天"
+    }
+  },
+  "units": {
+    "DMS": "度分秒格式",
+    "celsius": "摄氏度",
+    "currencyAnnual": "{currency}/年",
+    "currencyMonthly": "{currency}/月",
+    "days": "天",
+    "decimal": "十进制",
+    "degreeDays": "日度差",
+    "fahrenheit": "华氏度",
+    "feet": "英尺",
+    "kWhAnnually": "千瓦时/年",
+    "meter": "米",
+    "perDay": "每日",
+    "perMonth": "每月",
+    "perYear": "每年",
+    "years": "年",
+    "inhabitants": "人",
+    "km": "km",
+    "m2": "m<sup>2</sup>",
+    "mm": "mm",
+    "Wh": "Wh",
+    "km2": "km<sup>2</sup>",
+    "kWh": "kWh",
+    "kWp": "kWp",
+    "m/s": "m/s",
+    "MWh": "MWh",
+    "MWp": "MWp",
+    "kg/m2": "kg/m<sup>2</sup>",
+    "MJ/m2": "MJ/m<sup>2</sup>",
+    "Wh/m2": "Wh/m<sup>2</sup>",
+    "kWh/m2": "kWh/m<sup>2</sup>",
+    "Wh/kWp": "Wh/kWp",
+    "kWh/kWp": "kWh/kWp",
+    "inh./km2": "人/平方公里"
+  },
+  "user": {
+    "company": {
+      "EUVATCheckInProgress": "正在检查公司增值税号",
+      "add": "添加公司帐户",
+      "field": {
+        "city": "城市",
+        "country": "国家",
+        "name": "公司名称",
+        "phone": "公司电话",
+        "state": "省份",
+        "street": "街道",
+        "zipCode": "邮政编号",
+        "VAT": "增值税",
+        "trial": "免费试用",
+        "billing": "添加帐单信息",
+        "companyName": "公司名称",
+        "companyOrOrganisationName": "公司 /组织名称",
+        "territory": "地区"
+      },
+      "invalidEUVat": "此税号无效。规范格式为 SKxxxxxxxxx",
+      "messages": {
+        "update-fail": "公司更新失败，请稍后再试！",
+        "update-ok": "公司已更新！",
+        "create-ok": "客户已创建！",
+        "create-fail": "公司创建失败，请稍后再试！",
+        "success-items": {
+          "name": "公司帐户“{name}”已创建",
+          "trial": "免费试用已开通",
+          "billing": "账单信息已添加",
+          "trialFailed": "免费试用开通失败"
+        },
+        "checkingVat": "检查增值税"
+      },
+      "none": "您没有任何公司帐户",
+      "profile": {
+        "name": "公司名称",
+        "projects": "正在进行的项目",
+        "role": "您的角色",
+        "updated": "更新",
+        "type": "帐户类型",
+        "switch": "切换公司",
+        "current": "当前公司",
+        "companyAccount": "公司账户",
+        "personalAccount": "个人账户"
+      },
+      "role": {
+        "ADMIN": "管理员",
+        "USER": "普通用户"
+      },
+      "similarExists": "我们发现类似的公司可能已经存在于我们的数据库中。如果贵公司已经存在我们将手动进行检查并通知您",
+      "status": {
+        "ACTIVE": "正在进行",
+        "SUSPENDED": "暂停",
+        "DELETED": "已删除"
+      },
+      "stepOf": "第{step}/{total}步",
+      "welcomeDialog": {
+        "assignedToCompany": "您已成功加入公司{companyName}",
+        "continue": "开始吧！",
+        "newCompany": "已成功创建{companyName}",
+        "purchase": "购买许可证",
+        "welcome": "欢迎{companyName}！"
+      },
+      "freeTrial": {
+        "assignSuccess": "成功分配免费试用到:{companyName}",
+        "info": "为了防止免费试用版被滥用，我们需要确认您的电话号码",
+        "code": "验证码",
+        "whatIs": "您可选择 1 个项目免费试用 Prospect 应用程序的全部功能。免费试用期为 14 天。",
+        "success": "创建项目并激活免费试用",
+        "sendAgain": "重新发送",
+        "phoneInvalid": "电话号码已注册或无效",
+        "otpInvalid": "OTP 代码无效",
+        "incorrectVerificationCode": "您输入的验证码不正确。请重试或申请新的验证码。"
+      },
+      "action": {
+        "add": "添加",
+        "create": "创建",
+        "verify": "验证",
+        "trialLater": "稍后试用",
+        "billingLater": "稍后添加帐单信息"
+      },
+      "phoneCodeIsString": "从菜单中选择国际区码",
+      "stateNotSelectedFromList": "从列表中选择州別",
+      "countryNotSelectedFromList": "从列表中选择国家",
+      "phoneInvalid": "电话号码无效",
+      "EUVATTerritoryHint": "如果您来自不使用增值税号的地区，请<a href='https://solargis.com/about-us/contact' target='_blank'>请联系我们。</a>",
+      "errors": {
+        "vatNotValid": "增值税不适用于 {vatPrefix}",
+        "vatIdSpacesForbidden": "增值税号之间不能包含空格"
+      },
+      "territoryNotSelectedFromList": "从列表中选择一个地区"
+    },
+    "profile": {
+      "account": "用户帐号",
+      "changeName": "更改名称",
+      "changePassword": "更改密码",
+      "companyAccounts": "公司账户",
+      "general": "常规",
+      "loginSecurity": "用戶及安全",
+      "my": "个人设置",
+      "notifications": "通知",
+      "overview": "概观",
+      "units": "单位",
+      "unselectCompany": "切换到个人账户",
+      "type": "个人账户",
+      "photo": "您的照片",
+      "addPhoto": "添加个人照片",
+      "lastChange": "上次变更",
+      "changeEmail": "更改电邮",
+      "changeUnitSettings": "更改单位设置",
+      "sdatDevices": "已注册的 SDAT 设备"
+    },
+    "selectCompany": {
+      "headline": "请选择一家公司",
+      "none": "未找到该公司。是否创建新公司？",
+      "noneAdmin": "未找到您任命管理员的公司。是否创建新公司？",
+      "admin": "找到您在下列公司任命管理员"
+    }
+  },
+  "payment": {
+    "dialog": {
+      "change": "更改付款方式",
+      "chooseMethod": "选择付款方式",
+      "headline": "订单总数：{sum}",
+      "payNow": "立刻付款{price}",
+      "resultHeadline": "付款结果"
+    },
+    "method": {
+      "bank": "银行汇款",
+      "card": "信用卡",
+      "bankDesc": "付款信息将显示在发票上。"
+    },
+    "thankYou": {
+      "detail": "查看订单明细",
+      "thankYou": "谢谢您！",
+      "thankYouBank": "感谢订购。款项到帐后，我们会处理该订单。",
+      "thankYouCard": "付款成功。您的订阅将即刻激活。"
+    },
+    "failed": {
+      "failed": "支付失败",
+      "failedText": "支付失败，请稍后重试或联系客服人员。"
+    },
+    "pricing": {
+      "pricing": "定价",
+      "choosePlan": "选择合适您的订阅",
+      "currentPlan": "当前版本",
+      "free": {
+        "price": "免费版",
+        "actionDesc": "演示 - 无需注册即可使用",
+        "info": "太阳能评估新手适用",
+        "feature1": "年均数据",
+        "feature2": "交互式太阳能资源图",
+        "action": "启动",
+        "feature3": "结果可靠、使用方便的光伏模拟工具"
+      },
+      "basic": {
+        "priceInfo": "每年 3 个以上用户",
+        "action": "订阅",
+        "actionDesc": "价格早知道",
+        "info": "商用屋顶项目团队的必备特性",
+        "feature1": "月均值和全年全天候概况",
+        "feature2": "下载XLSX/PDF版报告",
+        "feature3": "比较工具",
+        "feature4": "经济损失计算",
+        "feature5": "包含 3 名用户，额外用户每位 300 欧元",
+        "all": "免费版的所有功能，另附："
+      },
+      "pro": {
+        "priceInfo": "每年3个以上用户",
+        "action": "订阅",
+        "upgrade": "更新",
+        "actionDesc": "计算价格",
+        "info": "适用于大型项目专业人员的高级功能",
+        "feature1": "反照率数据可精确估测双面增益",
+        "feature2": "可降水和湿度数据可测算光谱损耗/增益",
+        "feature3": "雨雪日数据可估测污染与降雪损耗",
+        "feature4": "支持单轴追踪器和浮动光伏系统",
+        "feature5": "包含 3 名用户，额外用户每位 600 欧元",
+        "all": "基本版的所有功能，另附："
+      },
+      "table": {
+        "data": {
+          "albedo": {
+            "text": "表面反照率"
+          },
+          "compare": {
+            "help": "该工具可供4种不同项目比较结果",
+            "text": "比较工具"
+          },
+          "configure": {
+            "free": "仅固定安装系统",
+            "pro": "固定系统＋单轴追踪系统",
+            "text": "设置光伏系统"
+          },
+          "economy": {
+            "help": "用于计算投资报酬率，投资回收期，平准化电力成本等的简易工具",
+            "text": "经济计算器"
+          },
+          "report": {
+            "text": "下载 PDF/XLSX 版报告"
+          },
+          "solar": {
+            "help": "包含水平面总辐射量、散射辐射量和法向直接辐射量",
+            "text": "太阳能资源(水平面总辐射量, 水平面散射辐射量, 法向直接辐射)"
+          },
+          "features": "卖点",
+          "save": {
+            "text": "创建和保存项目"
+          },
+          "pv": {
+            "pro": "支持固定及单轴追踪系统",
+            "text": "光伏参数 (GTI, PVOUT)",
+            "help": "总倾角辐射量与光伏发电量",
+            "free": "仅固定倾斜系统",
+            "basic": "仅固定系统"
+          },
+          "meteo": {
+            "help": "大气温度、风速、降温度天数、升温度天数",
+            "text": "基本气象参数 (TEMP, WS, CDD, HDD)"
+          },
+          "dataParams": "数据参数",
+          "meteo2": {
+            "text": "降雨、降雪天数，相对湿度和可降水量"
+          },
+          "hourly": {
+            "text": "24 小时 x 12 月度档案",
+            "basic": "选定参数"
+          },
+          "annual": {
+            "text": "长期年均值"
+          },
+          "monthly": {
+            "text": "长期月均值"
+          },
+          "floating": {
+            "text": "支持模拟浮动式光伏发电量"
+          },
+          "dataAggregation": "数据汇总"
+        }
+      },
+      "alert": {
+        "body": "您当前已切换到个人帐户。 请在设置中选择您要使用的公司帐户进行下一步。",
+        "heading": "选择一家公司进行下一步"
+      }
+    },
+    "cart": {
+      "headline": "您的订单",
+      "empty": "购物车为空",
+      "edit": "编辑{productName}",
+      "step1": {
+        "name": "项目",
+        "withoutVAT": "价格不含增值税",
+        "total": "年订阅总额",
+        "back": "回到产品页面",
+        "purchaseOrder": "订单",
+        "purchaseOrderPlaceholder": "订单号",
+        "users": "拥有完全访问权限的用户",
+        "subscription": "订阅",
+        "remove": "确定删除该商品？",
+        "annual": "全年"
+      },
+      "step2": {
+        "name": "账单信息",
+        "address": "帐单地址"
+      },
+      "step3": {
+        "total": "订单总额",
+        "totalVAT": "订单总额(含增值税)",
+        "name": "付款",
+        "continue": "查看我的订单"
+      }
+    }
+  },
+  "report": {
+    "mapLink": "地图上的位置",
+    "contents": "目录",
+    "cover": {
+      "ProspectPv": {
+        "title": "光伏发电量初步评估报告",
+        "type": "PROSPECT光伏能源评估"
+      },
+      "ProspectSolar": {
+        "title": "现场太阳辐射的初步评估",
+        "type": "PROSPECT太阳能资源评估"
+      },
+      "customer": "公司",
+      "generated": "报告日期",
+      "generatedBy": "报告生成者",
+      "project": "项目",
+      "reportNr": "报告编号",
+      "reportType": "报告类型",
+      "tel": "tel"
+    },
+    "figure": "图形",
+    "hourlyDni": "法向直接辐射量 - 每小时平均值",
+    "hourlyGhi": "水平面总辐射量 - 每小时平均值",
+    "legal": {
+      "copyright": "本报告为© { currentYear } Solargis s.r.o.版权所有，保留所有权利。",
+      "email": "电子邮件",
+      "guarantee": "考虑到数据和计算的不确定性，Solargis s.r.o.不保证估计的准确性。尽可能最大限度地根据最佳可用数据，软件和知识评估天气参数和光伏发电的初步评估。 Solargis s.r.o.对因使用提供的报告而引起或声称产生的任何后果，直接，偶然，间接，或惩罚性损害不承担任何责任。",
+      "moreInfo": "有关完整光伏产量评估的更多信息，请访问：",
+      "registrationId": "注册ID",
+      "serviceProvider": "服务提供方",
+      "tel": "电话",
+      "terms": "请参阅以下有关支付服务的一般合同条款的全文：",
+      "title": "免责声明和法律信息",
+      "trademark": "Solargis®是Solargis s.r.o的商标。",
+      "uncertainty": "此报告显示了该光伏系统全生命周期的太阳能光伏电量估算，此估算对于初步项目评估来说足够准确。而对于大型项目规划和融资， 则需要更多信息，如：1.太阳辐射的统计分布和不确定性 2.光伏系统的详细技术规格 3.光伏发电的年际变化和P90不确定性 4.考虑到系统性能衰减的全周期光伏产量。",
+      "url": "网址",
+      "validationAuth": "真实性的验证",
+      "validationAuthText": "此PDF报告由Solargis. r. o.以电子方式签名",
+      "vatNr": "增值税号"
+    },
+    "location": "项目地点",
+    "ltaPvout": "光伏发电量 - 长期平均值",
+    "mapView": "详细地图视图",
+    "otherParams": "其他气象参数",
+    "slovakia": "斯洛伐克",
+    "solarParams": "太阳辐射和气象参数",
+    "table": "表格",
+    "dailyAvg": "每日平均值",
+    "hourlyGti": "总倾角辐射量 - 每小时平均值",
+    "hourlyPvoutSpecific": "单位光伏发电量 - 每小时平均值",
+    "hourlyPvoutTotal": "总光伏发电量 - 每小时平均值",
+    "hourlyTemp": "气温 - 每小时平均值",
+    "monthlySum": "每月总和",
+    "dailyStats": "每日统计",
+    "dailyGhiDniDif": "水平面总辐射量，法向直接辐射，水平面散射辐射量 - 日均值",
+    "solarDailySummary": "下列太阳辐射曲线为每个月所有小时数据的均值，表示每日水平面总辐射量的变化模式，每月分别计算。变化形式受当地地理、天文及气候影响。",
+    "glossary": {
+      "title": "缩写和词汇表",
+      "pv": "光伏发电参数",
+      "meteo": "气象参数",
+      "solar": "太阳能参数"
+    },
+    "freeTrialWatermark": "免费试用",
+    "annually": "每年"
+  },
+  "csvData": {
+    "T24": "T24 - 地面2米高度平均每日（24小时）气温。 根据ERA-5模型的输出计算(© 2019 ECMWF) [摄氏度]",
+    "WSm": "WSm - 在地面10米处的月均风速。 根据 MERRA-2 和 CFSv2 模型的输出计算(© {year} NOAA和NASA) [米/秒]",
+    "RHm": "RHm - 地上2米处的月均相对湿度。 根据 MERRA-2 和 CFSv2 模型的输出计算(© {year} NASA和NOAA) [%]",
+    "ALBm": "ALBm - 太阳辐照由表面反射的部分。表面的出射度与入射度（水平面总辐射量）之比。（源自NASA MODIS和ECMWF ERA-5）",
+    "data": "数据",
+    "HDDm": "HDDm - 量化加热建筑物所需的能源。 “升温度天数”衡量外部空气温度低于特定地点日均温度（18℃）的程度（以度为单位）和时长（以天计）。 从每日数值中合计出年度值和月度值。由 Solargis 根据气温数据计算 [日度差]",
+    "CDDm": "CDDm - 量化冷却建筑物所需的能源。 “降温度天数”衡量外部空气温度高于特定地点日均温度（18℃）的程度（以度为单位）和时长（以天计）。 从每日数值中合计出年度值和月度值。由 Solargis 根据气温数据计算 [日度差]",
+    "year": "年",
+    "DNIm": "DNIm - 法向直接辐射的平均月总和(© {year} Solargis) [千瓦时/平方米]",
+    "GHIm": "GHIm - 水平面总辐射量的平均月总和(© {year} Solargis) [千瓦时/平方米]",
+    "title": "太阳辐射与气象参数的长期月均值",
+    "PRECm": "PRECm - 来自 Global Precipitation Climatology 数据库的月平均降水量(© {year} DWD) [毫米]",
+    "Diffm": "Diffm - 散射辐射量的平均日总和(© {year} Solargis) [千瓦时/平方米]",
+    "PWATm": "PWATm - 可降水是大气柱中水蒸气的深度，前提是该柱中的所有水都以雨水的形式沉淀，它暗示了地面上的水分含量。根据CFSR和CFSv2模型的输出计算(© {year} NOAA) [公斤/平方米]",
+    "issued": "发行",
+    "SNOWDm": "SNOWDm - 降雪天数是指雪水深度等于或大于5毫米的天数。根据 CFSR 和 CFSv2 模型的输出计算(© 2019 NOAA) [天]",
+    "columns": "列",
+    "azimuth": "坡向",
+    "latitude": "纬度",
+    "siteName": "站点名称",
+    "encoding": "字符编码",
+    "longitude": "经度",
+    "elevation": "海拔",
+    "inclination": "坡度",
+    "reportNumber": "报告编号"
+  },
+  "export": {
+    "title": "导出项目",
+    "confirmText": "您是否想要将所选项目导出为 CSV 文件？",
+    "csvInfo": {
+      "exported": "已导出",
+      "ftpCompatible": "已导出 PV 配置的各项参数均在此处文档中提供描述"
+    }
+  },
+  "cookies": {
+    "cookie-banner": {
+      "text": "我们使用 Cookies 来在您访问我们网站时为您提供最佳体验。点击‘接受’或继续使用网站即代表您接受在您的浏览器中使用 Cookies。",
+      "accept": "接受",
+      "more-info": "更多信息"
+    }
+  },
+  "dashboard": {
+    "landingPage": {
+      "learnMore": "了解更多",
+      "titleHeader": "太阳能电力投资的天气数据和软件工具",
+      "footer": {
+        "news": "新闻",
+        "events": "活动",
+        "pricing": "定价",
+        "contactUs": "联系我们",
+        "releaseNotes": "发布说明",
+        "solargisHomepage": "Solargis 首页"
+      },
+      "subtitleCard": "App 正在研发中",
+      "monitor": {
+        "button": "API 服务",
+        "content": "定期更新 Solargis 数据，以监控光伏系统性能。",
+        "subtitleFirst": "每日或实时更新",
+        "subtitleThird": "API/FTP 访问",
+        "subtitleSecond": "最多可能持续 15 分钟的步骤"
+      },
+      "prospect": {
+        "content": "能够快速可靠判断项目可行性的太阳能电力展望工具。",
+        "subtitleFirst": "年度和月度平均数据",
+        "subtitleThird": "反照率、降雨和降雪数据",
+        "subtitleSecond": "每小时 (24) x 月度 (12) 概况"
+      },
+      "evaluate": {
+        "button": "订购 TS / TMY 数据",
+        "content": "如需高级能源建模和太阳能电厂设计优化。",
+        "subtitleFirst": "时间系列数据，更新至上个月",
+        "subtitleThird": "导入数据至 PVsyst、Helioscope、SAM 等。",
+        "subtitleSecond": "TMY P50、P90、Pxx"
+      },
+      "subtitleHeader": "为您的太阳能发电资产降低风险并最大化提高利润率",
+      "forecast": {
+        "button": "API 服务",
+        "content": "支持提前最多 10 天的太阳能发电预报。",
+        "subtitleFirst": "最多每 30 分钟更新一次的预报更新",
+        "subtitleThird": "API/FTP 访问",
+        "subtitleSecond": "最多可能持续 15 分钟的步骤"
+      }
+    },
+    "listRecentProjects": {
+      "noProjects": "您尚未创建项目"
+    },
+    "header": {
+      "quickLinks": "快速链接",
+      "apps": "应用程序"
+    },
+    "sdatManagement": {
+      "manuals": "手册",
+      "devices": "我的 SDAT 设备",
+      "download": "下载",
+      "subscription": "订阅",
+      "sdatHeader": "{{header.sdat}}"
+    }
+  }
+}

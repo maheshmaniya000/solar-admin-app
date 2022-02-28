@@ -1,0 +1,215 @@
+@import 'theme';
+
+.sg-header {
+  @include mat-toolbar-height($sg-header-height, $sg-toolbar-padding);
+
+  &.mat-toolbar {
+    height: $sg-header-height;
+    background-color: white;
+    border-bottom: 1px solid map-get($primary, 400);
+    padding: 0;
+  }
+
+  nav {
+    line-height: $sg-24;
+
+    .mat-tab-header-pagination {
+      display: none !important;
+    }
+  }
+
+  .logo {
+    position: relative;
+    margin-left: $sg-14;
+
+    .sg-logo {
+      position: relative;
+      margin: 0 8px 3px 0;
+    }
+
+    img {
+      height: $sg-18;
+
+      @include media-breakpoint-up(md) {
+        height: $sg-24;
+      };
+    }
+
+    .current-app {
+      font-size: 13px;
+      font-weight: $font-weight-bold;
+      color: map-get($primary, 800);
+
+      @include media-breakpoint-up(md) {
+        font-size: $sg-16;
+      }
+    }
+  }
+
+  .mat-tab-nav-bar, .mat-tab-header {
+    border-bottom: none;
+    height: 100%;
+    width: fit-content;
+    margin: 0 3%;
+
+    .mat-tab-link-container {
+      height: 100%;
+    }
+
+    .mat-tab-links {
+      height: 100%;
+
+      @media (max-width: 520px) {
+        display: none !important;
+      }
+
+      .mat-tab-link.mat-tab-disabled {
+        color: map-get($primary, 500);
+      }
+
+      & > a.mat-tab-link {
+        color: map-get($primary, 800);
+        opacity: 1;
+        height: 100%;
+        min-width: unset;
+        padding: 0;
+        margin: 0 $sg-16;
+      }
+
+      & > a.mat-tab-link:hover {
+        text-decoration: none;
+      }
+
+      .mat-ink-bar {
+        height: 4px;
+      }
+    }
+
+    .mat-tab-link.mat-tab-label-active {
+      color: map-get($accent, 500) !important;
+    }
+  }
+
+  .right-menu-group {
+    width: 100%;
+    height: 100%;
+    margin-right: $sg-14
+  }
+
+  .pricing, .contact {
+    font-size: $sg-14;
+    line-height: 19px;
+    color: map-get($primary, 700);
+    text-decoration: none;
+
+    padding: 0;
+    margin: 0 20px 0 0;
+
+    &:not([href]):not([tabindex]) {
+      color: map-get($primary, 700);
+    }
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+      color: map-get($primary, 700);
+    }
+  }
+
+  .languages {
+    font-size: $sg-14;
+    line-height: 19px;
+    color: map-get($primary, 700);
+    padding: 0;
+    margin: 0 8px 0 0;
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+
+    mat-icon {
+      line-height: 22px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .icon-link {
+    margin: 0 8px 0 0;
+    padding: 0 8px;
+    cursor: pointer;
+    position: relative;
+
+    .mat-icon {
+      height: 40px;
+      line-height: 40px;
+      color: map-get($primary, 700);
+      float: left;
+
+      &:hover {
+        color: map-get($primary, 700);
+      }
+    }
+  }
+
+  .account-overview {
+    cursor: pointer;
+  }
+
+  .login-button {
+    @include sg-button(xs);
+    margin: 0 12px 0 0;
+    line-height: 25px;
+  }
+
+  .signin-button {
+    @include sg-button(xs, red);
+    margin: 0;
+    line-height: 25px;
+  }
+
+  .licence-button {
+    @include sg-button(xs, red);
+    line-height: 15px;
+    margin: 0 20px 0 0;
+  }
+
+  .mat-divider {
+    border-top-color: map-get($primary, 200);
+  }
+
+  .d-md-block {
+    display: block !important;
+  }
+
+  .head-icon {
+    @include media-breakpoint-up(md) {
+      display: none !important;
+    }
+  }
+
+  .head-title {
+    @include media-breakpoint-down(sm) {
+      display: none !important;
+    }
+  }
+
+  .head-icon-admin {
+    @media (max-width: 600px) {
+      display: none !important;
+    }
+    @include media-breakpoint-up(lg) {
+      display: none !important;
+    }
+  }
+
+  .head-title-admin {
+    @include media-breakpoint-down(md) {
+      display: none !important;
+    }
+  }
+
+}

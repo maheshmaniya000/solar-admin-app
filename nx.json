@@ -1,0 +1,79 @@
+{
+  "npmScope": "solargis",
+  "affected": {
+    "defaultBase": "development"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "test-tsc", "e2e", "build-storybook"]
+      }
+    }
+  },
+  "targetDependencies": {
+    "test": [
+      {
+        "target": "generate-assets",
+        "projects": "dependencies"
+      }
+    ],
+    "build": [
+      {
+        "target": "generate-assets",
+        "projects": "dependencies"
+      },
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ],
+    "serve": [
+      {
+        "target": "generate-assets",
+        "projects": "dependencies"
+      }
+    ],
+    "storybook": [
+      {
+        "target": "generate-assets",
+        "projects": "dependencies"
+      }
+    ],
+    "build-storybook": [
+      {
+        "target": "generate-assets",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "admin": {},
+    "components": {},
+    "components-e2e": {
+      "implicitDependencies": ["components"]
+    },
+    "configurator": {},
+    "dashboard": {},
+    "evaluate": {},
+    "ng-analytics": {},
+    "ng-geosearch": {},
+    "ng-translation": {},
+    "ng-unit-value": {},
+    "print": {},
+    "project": {},
+    "prospect": {},
+    "server": {},
+    "shared": {},
+    "shared-e2e": {
+      "implicitDependencies": ["shared"]
+    }
+  }
+}

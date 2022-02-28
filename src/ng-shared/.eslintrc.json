@@ -1,0 +1,24 @@
+{
+  "extends": ["../../.eslintrc-angular.json", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "src/ng-shared/tsconfig.(lib|spec).json",
+          "src/ng-shared/.storybook/tsconfig.json"
+        ]
+      },
+      "rules":{
+        "max-classes-per-file": "warn" // TODO switch to 'error' / remove when all resolved
+      }
+    },
+    {
+      "files": ["*.stories.ts"],
+      "rules": {
+        "max-classes-per-file": "off"
+      }
+    }
+  ]
+}

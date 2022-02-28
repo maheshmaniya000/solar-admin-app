@@ -1,0 +1,82 @@
+<div *ngIf="!print; else printTable" sgScrollContainer>
+  <div>
+    <cdk-table [dataSource]="layers$">
+
+      <ng-container *ngIf="!noAcronym" cdkColumnDef="acronym">
+        <cdk-header-cell *cdkHeaderCellDef class="acronym">
+          {{ 'projectDetail.glossary.acronym' | transloco }}
+        </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let layer" class="acronym">
+          <sg-project-data-key [key]="layer.key"></sg-project-data-key>
+        </cdk-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="name">
+        <cdk-header-cell *cdkHeaderCellDef class="name">
+          {{ 'projectDetail.glossary.name' | transloco }}
+        </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let layer" class="name">
+          <sg-translation [str]="layer.name"></sg-translation>
+        </cdk-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="unit">
+        <cdk-header-cell *cdkHeaderCellDef class="unit">
+          {{ 'projectDetail.glossary.unit' | transloco }}
+        </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let layer" class="unit">
+          <sg-unit-toggle-label *ngIf="layer.unit; else nounit" [unit]="layer.unit"></sg-unit-toggle-label>
+          <ng-template #nounit>-</ng-template>
+        </cdk-cell>
+      </ng-container>
+
+      <ng-container cdkColumnDef="explanation">
+        <cdk-header-cell *cdkHeaderCellDef class="explanation">
+          {{ 'projectDetail.glossary.explanation' | transloco }}
+        </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let layer" class="explanation">
+          <sg-translation [str]="layer.desc"></sg-translation>
+        </cdk-cell>
+      </ng-container>
+
+      <cdk-header-row *cdkHeaderRowDef="columns()"></cdk-header-row>
+      <cdk-row *cdkRowDef="let id; columns: columns()"></cdk-row>
+    </cdk-table>
+  </div>
+</div>
+
+<ng-template #printTable>
+  <table>
+    <thead>
+      <tr><th class="top-space" colSpan="4"></th></tr>
+      <tr>
+        <th>{{ 'projectDetail.glossary.acronym' | transloco }}</th>
+        <th>{{ 'projectDetail.glossary.name' | transloco }}</th>
+        <th>{{ 'projectDetail.glossary.unit' | transloco }}</th>
+        <th>{{ 'projectDetail.glossary.explanation' | transloco }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let layer of layers$ | async">
+        <td>
+          <sg-project-data-key [key]="layer.key"></sg-project-data-key>
+        </td>
+        <td>
+          <sg-translation [str]="layer.name"></sg-translation>
+        </td>
+        <td>
+          <sg-unit-toggle-label *ngIf="layer.unit; else nounit" [unit]="layer.unit"></sg-unit-toggle-label>
+          <ng-template #nounit>-</ng-template>
+        </td>
+        <td>
+          <sg-translation [str]="layer.desc"></sg-translation>
+        </td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr><td class="bottom-space" colSpan="4"></td></tr>
+    </tfoot>
+  </table>
+</ng-template>

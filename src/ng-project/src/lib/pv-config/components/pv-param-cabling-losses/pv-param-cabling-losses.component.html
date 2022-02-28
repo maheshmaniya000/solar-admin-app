@@ -1,0 +1,34 @@
+<div class="content losses">
+  <form [formGroup]="form">
+    <div class="row" [ngClass]="{'error-margin': form.get('DCCable').invalid}">
+      <div class="label">{{ 'pvConfig.params.cablingLosses.DCCable' | transloco }}</div>
+      <mat-form-field floatLabel="never">
+        <input matInput type="number" placeholder="0" formControlName="DCCable" step="0.1" [min]="MIN" [max]="MAX">
+        <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN, max: MAX} }}</mat-error>
+      </mat-form-field>
+      <div class="unit">%</div>
+    </div>
+
+    <div class="row" [ngClass]="{'error-margin': form.get('DCMismatch').invalid}">
+      <div class="label">{{ 'pvConfig.params.cablingLosses.DCMismatch' | transloco }}</div>
+      <mat-form-field floatLabel="never">
+        <input matInput type="number" placeholder="0" formControlName="DCMismatch" step="0.1" [min]="MIN" [max]="MAX">
+        <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN, max: MAX} }}</mat-error>
+      </mat-form-field>
+      <div class="unit">%</div>
+    </div>
+
+    <div class="row" [ngClass]="{'error-margin': form.get('ACCable').invalid}">
+      <div class="label">{{ 'pvConfig.params.cablingLosses.ACCable' | transloco }}</div>
+      <mat-form-field floatLabel="never">
+        <input matInput type="number" placeholder="0" formControlName="ACCable" step="0.1" [min]="MIN" [max]="MAX">
+        <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN, max: MAX} }}</mat-error>
+      </mat-form-field>
+      <div class="unit">%</div>
+    </div>
+
+    <button mat-button class="primary-button-mini" (click)="setDefault()">
+      {{ 'pvConfig.params.cablingLosses.setDefault' | transloco }}
+    </button>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+@use '../icon/icon' as icon;
+
+mat-horizontal-stepper {
+  &.no-header .mat-horizontal-stepper-header-container {
+    display: none;
+  }
+
+  .mat-horizontal-content-container {
+    padding: 0;
+  }
+
+  .mat-step-icon .mat-icon {
+    @include icon.size(inline);
+  }
+
+  .actions {
+    display: flex;
+  }
+}

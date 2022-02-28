@@ -1,0 +1,50 @@
+@import 'theme';
+
+:host > div {
+  background-color: map-get($primary, 100);
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  color: map-get($primary, 800);
+}
+
+.container {
+  width: 100%;
+  max-width: 1216px;
+  padding: 0 $sg-24;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+::ng-deep {
+  .mat-tab-label {
+    @include mat-tabs();
+  }
+
+  ::ng-deep .mat-tab-body-content {
+    height: auto !important;
+  }
+}
+
+.content {
+  margin-top: $sg-24;
+
+  ::ng-deep mat-card {
+    // margin-left-right is needed to display card shadow
+    margin: $sg-24 3px;
+    padding: 0;
+  }
+
+  .no-templates {
+    color: map-get($primary, 800);
+    padding-top: 100px;
+    text-align: center;
+  }
+}
+
+.buttons {
+  padding-bottom: 42px;
+  button {
+    margin-right: 12px;
+  }
+}

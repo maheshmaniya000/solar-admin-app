@@ -1,0 +1,51 @@
+@import 'theme';
+
+.table-s {
+  margin-top: $sg-32;
+  width: max-content;
+
+  @include cdk-table-s(false, auto);
+
+  .cdk-column-label {
+    flex: 0 0 200px !important;
+  }
+  .cdk-column-unit {
+    flex: 0 0 100px !important;
+  }
+  .cdk-cell,
+  .cdk-header-cell {
+    width: 90px;
+  }
+  .cdk-header-cell {
+    background: map-get($primary, 100);
+  }
+  .cdk-cell {
+    margin: auto 0;
+  }
+  .number-cell {
+    text-align: right;
+  }
+  .sum-cell {
+    min-width: 100px;
+  }
+  .muted {
+    color: map-get($primary, 500);
+  }
+  .toggle {
+    margin-top: -4px;
+  }
+  .total .red {
+    color: map-get($accent, 400);
+  }
+
+  @include sticky-table-scrolling();
+
+  cdk-cell:first-of-type, cdk-header-cell:first-of-type {
+    max-width: 110px;
+  }
+
+  cdk-row:nth-last-child(1) cdk-cell:first-of-type {
+    background-color: white;
+  }
+
+}

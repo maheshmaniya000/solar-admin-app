@@ -1,0 +1,2139 @@
+{
+  "auth": {
+    "auth0": {
+      "recaptchaNotValid": "Mã Recaptcha không hợp lệ, vui lòng thử lại.",
+      "registrationOk": "Đã xong, vui lòng xác nhận đăng ký bằng cách nhấp vào liên kết xác thực được gửi đến email của bạn.",
+      "unknown": "Đã xảy ra lỗi trong khi đăng ký - vui lòng thử lại sau",
+      "unknownError": "Đã xảy ra lỗi...",
+      "emailAlreadyRegistred": "Người dùng có địa chỉ email này đã tồn tại.",
+      "otpInvalid": "Mã OTP đã được sử dụng hoặc không hợp lệ"
+    },
+    "changePassword": {
+      "change": "Thay đổi",
+      "changePasswordOk": "Mật khẩu đã được thay đổi",
+      "error": "Tên đăng nhập hoặc mật khẩu không đúng",
+      "passwordConfirm": "Xác nhận mật khẩu mới",
+      "recaptchaNotValid": "Mã Recaptcha không hợp lệ, vui lòng thử lại",
+      "tooManyAttempts": "Tài khoản đã bị khóa - bạn đã thử thay đổi mật khẩu quá nhiều lần với mật khẩu không chính xác",
+      "unknown": "Đã xảy ra lỗi khi thay đổi mật khẩu - vui lòng thử lại sau"
+    },
+    "confirmTerms": {
+      "agree": "Tôi đồng ý",
+      "termsAgreeConfirm": "Điều khoản sử dụng và Thông báo về quyền riêng tư của Solargis",
+      "title": "Chấp nhận Điều khoản sử dụng",
+      "terms": "Điều khoản sử dụng",
+      "contractualTerms": "Điều khoản hợp đồng chung đối với các dịch vụ trả phí",
+      "particularConditions": "Điều kiện cụ thể"
+    },
+    "emailVerify": {
+      "error": "Xác thực email không thành công",
+      "ok": "Email của bạn đã được xác nhận, bây giờ bạn có thể đăng nhập"
+    },
+    "forgotPassword": {
+      "changeOk": "Mật khẩu đã được thay đổi, bây giờ bạn có thể đăng nhập",
+      "error": "Lỗi không xác định, vui lòng thử lại sau",
+      "hint": "Nhập email của bạn để giúp chúng tôi nhận dạng bạn.",
+      "ok": "Vui lòng kiểm tra email của bạn để được hướng dẫn thêm",
+      "recaptchaNotValid": "Mã Recaptcha không hợp lệ, vui lòng thử lại",
+      "returnToSignIn": "Quay lại trang đăng nhập",
+      "tokenNotValid": "Liên kết đã được sử dụng để thay đổi mật khẩu",
+      "tooManyAttempts": "Tài khoản bị khóa và không thể thay đổi mật khẩu",
+      "userNotFound": "Không tìm thấy người dùng này"
+    },
+    "fupRecaptcha": {
+      "title": "Bạn đã đạt đến giới hạn",
+      "info": "Số lần nhấp chuột mỗi phút đã vượt quá giới hạn bảo mật. Hãy đăng nhập hoặc đăng ký để gỡ bỏ hạn chế này."
+    },
+    "login": {
+      "create": "Tạo tài khoản Solargis miễn phí của bạn",
+      "error": "Tên đăng nhập hoặc mật khẩu không đúng",
+      "tooManyAttempts": "Tài khoản đã bị khóa - bạn đã thử đăng nhập bằng mật khẩu không chính xác quá nhiều lần",
+      "unknown": "Đã xảy ra lỗi trong khi đăng nhập - vui lòng thử lại sau",
+      "deletedUser": "Tài khoản này đã bị vô hiệu hóa. Xin vui lòng <a href=\"https://solargis.com/about-us/contact\">liên hệ với chúng tôi.</a>",
+      "rememberMe": "Lưu thông tin đăng nhập",
+      "notVerified": "Email của bạn chưa được xác thực. Vui lòng mở email xác thực mà chúng tôi đã gửi cho bạn khi đăng ký tải khoản hoặc chúng tôi có thể tạo một email mới.",
+      "notVerifiedAction": "Gửi email xác thực mới",
+      "notVerifiedConfirm": "Email xác thực mới đã được gửi đi"
+    },
+    "registration": {
+      "alreadyHaveAccount": "Bạn đã có tài khoản?",
+      "emailError": "Vui lòng nhập địa chỉ email hợp lệ",
+      "emailPlaceholder": "Email công việc",
+      "firstNameError": "Bắt buộc phải có Tên",
+      "firstNamePlaceholder": "Tên",
+      "lastNameError": "Bắt buộc phải có Họ",
+      "lastNamePlaceholder": "Họ",
+      "passwordConfirm": "Nhập lại mật khẩu",
+      "passwordError": "Tối thiểu 8 ký tự, chứa ít nhất một chữ in hoa và một chữ in thường",
+      "passwordPlaceholder": "Mật khẩu",
+      "passwordRequired": "Bắt buộc phải có Mật khẩu",
+      "passwordsNotEqual": "Các mật khẩu phải giống nhau",
+      "termsAgree": "Tôi đồng ý với <a href='https://solargis.com/legal/solargis-apps-terms-of-use/' target='_blank' title='Conditions of Use and Privacy Notice'>Điều kiện sử dụng và Thông báo về quyền riêng tư</a> của Solargis",
+      "title": "Đăng ký tài khoản",
+      "titleNewPassword": "Mật khẩu mới",
+      "titleOldPassword": "Mật khẩu cũ",
+      "companyError": "Bắt buộc phải có Tên công ty",
+      "accountCreated": "Đã tạo tài khoản thành công",
+      "accountCreatedAfterInvitation": "Đã tạo tài khoản thành công và tham gia công ty",
+      "firstOrLastNameRequired": "Bắt buộc phải có Tên hoặc Họ và không được chỉ chứa khoảng trắng",
+      "login": "Đăng nhập",
+      "createUserAccount": "Tạo tài khoản người dùng"
+    },
+    "expired": "Bạn đã đăng xuất vì phiên của bạn đã hết hạn. Xin vui lòng đăng nhập lại.",
+    "newPassword": "Bạn đã đăng nhập từ đường liên kết nhắc mật khẩu.<br>Vui lòng đặt một mật khẩu mới.",
+    "invitation": {
+      "info": "Sau khi chấp nhận lời mời này, bạn sẽ được nhắc tạo tài khoản Solargis",
+      "text": "Bạn đã được mời trở thành thành viên của công ty. Bằng cách chấp nhận lời mời, bạn đồng ý trở thành thành viên của công ty.",
+      "companyName": "Tên công ty",
+      "title": "Chấp nhận lời mời",
+      "accept": "Chấp nhận",
+      "expiredText": "Lời mời gia nhập công ty của bạn đã hết hạn hoặc đã bị quản trị viên của công ty hủy bỏ. Vui lòng liên hệ với người đã gửi thư mời gia nhập công ty cho bạn.",
+      "expiredTitle": "Lời mời gia nhập công ty đã hết hạn"
+    },
+    "lambdaCaptcha": {
+      "label": "Nội dung Captcha"
+    },
+    "forbidden": "Bạn không được phép truy cập vào {url}"
+  },
+  "codelist": {
+    "LANDC": {
+      "301": "Không có dữ liệu",
+      "305": "Đất trồng trọt sau lũ lụt hoặc được tưới tiêu",
+      "306": "Đất trồng trọt hỗn hợp đa dạng (> 50%) / thảm thực vật tự nhiên",
+      "307": "Thảm thực vật tự nhiên hỗn hợp đa dạng (> 50%) / đất trồng trọt",
+      "308": "Cây che phủ, lá rộng, thường xanh (> 15%)",
+      "318": "Cây che phủ, loại lá hỗn hợp (lá rộng và lá kim)",
+      "319": "Cây và cây bụi hỗn hợp đa dạng (> 50%) / cây thân thảo",
+      "320": "Cây thân thảo hỗn hợp đa dạng che phủ (> 50%) / cây và cây bụi",
+      "324": "Đồng cỏ",
+      "325": "Địa y và rêu",
+      "330": "Cây che phủ, ngập nước, nước ngọt hoặc nước lợ",
+      "331": "Cây che phủ, ngập nước, nước mặn",
+      "332": "Cây bụi hoặc thân thảo, ngập nước",
+      "333": "Khu vực thành thị",
+      "337": "Vùng nước",
+      "338": "Băng tuyết vĩnh viễn",
+      "302-304": "Đất trồng trọt, phụ thuộc vào nước mưa",
+      "309-311": "Cây che phủ, lá rộng, rụng lá (> 15%)",
+      "312-314": "Cây che phủ, lá kim, thường xanh (> 15%)",
+      "315-317": "Cây che phủ, lá kim, rụng lá (> 15%)",
+      "321-323": "Vùng cây bụi",
+      "326-329": "Thảm thực vật thưa thớt (<15%)",
+      "334-336": "Đất trọc"
+    },
+    "AZI": {
+      "-1": "phẳng",
+      "-2": "gần phẳng"
+    },
+    "SNOWD": {
+      "-1": "thỉnh thoảng"
+    },
+    "DNI_season": {
+      "-1": "DNI hàng tháng bằng 0"
+    },
+    "GHI_season": {
+      "-1": "GHI hàng tháng bằng 0"
+    }
+  },
+  "common": {
+    "action": {
+      "apply": "Áp dụng",
+      "back": "Quay lại",
+      "cancel": "Hủy",
+      "change": "Thay đổi",
+      "choose": "Chọn",
+      "close": "Đóng",
+      "collapseAll": "Thu gọn tất cả",
+      "compare": "So sánh",
+      "confirm": "Xác nhận",
+      "continue": "Tiếp tục",
+      "delete": "Xóa",
+      "expandAll": "Mở rộng tất cả",
+      "invite": "Mời",
+      "manage": "Quản lý",
+      "next": "Tiếp",
+      "ok": "OK",
+      "open": "Mở",
+      "prev": "Trước",
+      "save": "Lưu",
+      "search": "Tìm kiếm",
+      "selectAll": "Chọn tất cả",
+      "send": "Gửi",
+      "unselectAll": "Bỏ chọn tất cả",
+      "reload": "Tải lại",
+      "remove": "Gỡ bỏ",
+      "edit": "Chỉnh sửa",
+      "redo": "Làm lại",
+      "undo": "Hoàn tác",
+      "default": "Đặt giá trị mặc định",
+      "calculate": "Tính",
+      "saveValues": "Lưu giá trị",
+      "resetDefaults": "Đặt lại giá trị mặc định",
+      "add": "Thêm",
+      "verify": "Xác thực",
+      "launch": "Khởi chạy",
+      "defaultView": "Chế độ xem mặc định",
+      "moreInfo": "Thêm thông tin"
+    },
+    "aggregation": {
+      "avg": "Trung bình",
+      "cumulative": "Tích lũy",
+      "sum": "Tổng"
+    },
+    "cardinal": {
+      "east": "Đông",
+      "north": "Bắc",
+      "south": "Nam",
+      "west": "Tây"
+    },
+    "confirmDialog": {
+      "body": "Bạn sẽ không thể hoàn tác thao tác này. Tiếp tục chứ?",
+      "heading": "Xác nhận thao tác",
+      "usure": "Bạn có chắc không?"
+    },
+    "datetime": {
+      "date": "Ngày",
+      "timezone": "Múi giờ",
+      "lastChange": "Thay đổi lần cuối"
+    },
+    "label": {
+      "settings": "Cài đặt",
+      "configureMapView": "Cài đặt chế độ xem bản đồ",
+      "configureProjectsView": "Cài đặt chế độ xem dự án"
+    },
+    "misc": {
+      "commingSoon": "Sắp ra mắt",
+      "help": "Trợ giúp",
+      "n/a": "Không áp dụng",
+      "noWidth": "Độ phân giải màn hình của bạn quá thấp để sử dụng Solargis. Để dùng Solargis, độ phân giải màn hình của bạn phải rộng ít nhất 1100 pixel."
+    },
+    "paginator": {
+      "nextPage": "Trang tiếp theo",
+      "perPage": "Số món hàng mỗi trang",
+      "previousPage": "Trang trước",
+      "rangeLabel": "{startIndex} - {endIndex} / {length}",
+      "rangeLabelEmpty": "0 / 0"
+    },
+    "status": {
+      "disabled": "Tắt",
+      "enabled": "Bật"
+    },
+    "subscription": {
+      "prospect": "Gói đăng ký Prospect",
+      "sdat": "Gói đăng ký SDAT"
+    },
+    "error": {
+      "subscriptionLayer": "Để xem các lớp dữ liệu này, bạn cần nâng cấp gói đăng ký Prospect của mình",
+      "valueBetween": "Giá trị phải nằm trong khoảng từ {min} đến {max}",
+      "failed": "Thao tác không thành không",
+      "tooLarge": "Giá trị này quá lớn",
+      "internal": "Đã xảy ra lỗi nội bộ. Bạn nên tải lại trang."
+    },
+    "subscriptionType": {
+      "FREE": "Miễn phí",
+      "UPGRADE": "Nâng cấp Prospect từ gói Cơ bản lên Pro",
+      "expired": "{subscriptionType} đã hết hạn",
+      "PROSPECT_PRO": "Prospect Pro",
+      "PROSPECT_BASIC": "Prospect Cơ bản",
+      "PROSPECT_FREE_TRIAL": "Bản dùng thử miễn phí",
+      "SDAT_PRO": "SDAT Pro",
+      "SDAT_BASIC": "Cục Định mức thuế và Thuế SDAT",
+      "SDAT_FREE_TRIAL": "SDAT Bản dùng thử miễn phí"
+    },
+    "confirm": {
+      "no": "Không",
+      "yes": "Có"
+    },
+    "snackBar": {
+      "changesSaved": "Thay đổi đã được lưu",
+      "couldNotSaveChange": "Không thể lưu thay đổi"
+    },
+    "alert": {
+      "freetrial": {
+        "available": "Có dự án dùng thử miễn phí",
+        "viewDetail": "• Xem chi tiết dự án và kích hoạt bản dùng thử miễn phí",
+        "availableAction": "Kích hoạt bản dùng thử miễn phí",
+        "assigned": "Bạn không còn dự án dùng thử miễn phí nào",
+        "assignedAction": "Nâng cấp lên gói đăng ký đầy đủ",
+        "noSubscription": "Yêu cầu bản dùng thử miễn phí để nhận được thông tin chi tiết về hoạt động sản xuất điện năng lượng mặt trời PV",
+        "noSubscriptionAction": "Yêu cầu bản dùng thử miễn phí"
+      },
+      "subscription": {
+        "renewTrial": "Nâng cấp",
+        "renew": "Gia hạn gói đăng ký Prospect của bạn",
+        "expired": "Gói đăng ký Prospect của bạn đã hết hạn",
+        "expiredTrial": "Bản dùng thử miễn phí Prospect của bạn đã hết hạn"
+      }
+    },
+    "validation": {
+      "min": "Giá trị tối thiểu là {min}",
+      "max": "Giá trị tối đa là {max}",
+      "integer": "Trường này chỉ hỗ trợ số nguyên",
+      "minDate": "Ngày tối thiểu là {minDate}",
+      "maxDate": "Ngày tối đa là {maxDate}",
+      "pattern": "Giá trị không khớp mẫu bắt buộc",
+      "required": "Trường này là bắt buộc",
+      "maxLength": "Độ dài tối đa là {requiredLength} ký tự",
+      "minLength": "Độ dài tối thiểu là {requiredLength} ký tự",
+      "maxDecimals": "Trường này hỗ trợ tối đa {maxDecimals} số thập phân",
+      "phoneNumber": "Số điện thoại không hợp lệ. Hãy sử dụng định dạng quốc tế bắt đầu bằng +",
+      "maxDateRange": "Khoảng ngày tối đa là {days} ngày",
+      "naturalNumber": "Trường này chỉ hỗ trợ số tự nhiên",
+      "endDateInvalid": "Ngày kết thúc là trước ngày bắt đầu",
+      "datepickerParse": "\"{text}\" không thể được phân tích là ngày",
+      "startDateInvalid": "Ngày bắt đầu sau ngày kết thúc",
+      "phoneNumberFormat": "Số điện thoại không hợp lệ. Số ví dụ: {phoneNumberFormat}"
+    }
+  },
+  "companyAdmin": {
+    "billing": {
+      "allYears": "Tất cả các năm",
+      "deliveryDate": "Ngày giao hàng",
+      "detail": "Thông tin đơn hàng",
+      "errorDownloadingInvoice": "Lỗi tải hóa đơn",
+      "history": "Lịch sử đơn hàng",
+      "invoiceDownloaded": "Đã tải xuống hóa đơn",
+      "noOrders": "Chưa có đơn đặt hàng",
+      "orderDate": "Ngày đặt hàng",
+      "orderId": "Đơn hàng",
+      "payment": "Thanh toán",
+      "paymentMethod": "Phương thức thanh toán",
+      "price": "Giá",
+      "pay": "Thanh toán ngay",
+      "paymentInfo": "Thông tin thanh toán",
+      "cancel": "Hủy đơn hàng",
+      "status": "Trạng thái"
+    },
+    "nav": {
+      "billing": "Lập hóa đơn và thanh toán",
+      "orderDetail": "Thông tin đơn hàng",
+      "overview": "Tổng quan",
+      "settings": "Cài đặt công ty",
+      "subscriptions": "Gói đăng ký",
+      "users": "Người dùng",
+      "apiContracts": "API",
+      "info": "Thông tin khách hàng"
+    },
+    "orderDetail": {
+      "contractNo": "Số hợp đồng",
+      "deliveryStatus": "Ngày giao hàng",
+      "discount": "Giảm giá",
+      "itemDesc": "Mô tả món hàng",
+      "orderNo": "Số đơn hàng",
+      "orderStatus": "Đơn hàng",
+      "orderTitle": "Đơn hàng",
+      "paymentStatus": "Thanh toán",
+      "price": "Giá",
+      "purchaseOrderNo": "Đơn đặt hàng",
+      "sgOrderId": "ID đơn hàng",
+      "totalPrice": "Tổng giá",
+      "totalQty": "Số lượng",
+      "unitPrice": "Đơn vị giá",
+      "vat": "VAT",
+      "users": "Người dùng: {users}",
+      "valid": "Hiệu lực: từ {from} đến {to}",
+      "vatAmmount": "Số tiền VAT",
+      "back": "Quay lại phần Lập hóa đơn và thanh toán",
+      "freeText": "Văn bản miễn phí"
+    },
+    "subscription": {
+      "projectLimit": "Còn {remaining} dự án",
+      "unlimited": "Không giới hạn",
+      "unlimitedProjects": "Số lượng dự án là không giới hạn (áp dụng chính sách sử dụng hợp lý)",
+      "usersLimit": "{current} / {max} người dùng",
+      "notice": "Lưu ý: Người dùng có thể phải đăng xuất và đăng nhập lại để có quyền truy cập vào gói đăng ký được chỉ định.",
+      "general": "Tổng quan",
+      "users": {
+        "name": "Tên",
+        "none": "Không tìm thấy người dùng.",
+        "title": "Người dùng",
+        "email": "Email",
+        "devices": "Thiết bị người dùng",
+        "tokenGenerationDate": "Ngày tạo",
+        "action": "Hành động",
+        "generateToken": "Tạo mã thông báo",
+        "regenerateToken": "Tạo lại mã thông báo",
+        "deleteToken": "Xóa mã thông báo"
+      }
+    },
+    "subscriptions": {
+      "empty": "Không có gói đăng ký đang hoạt động nào",
+      "from": "Có hiệu lực từ",
+      "plan": "Gói đăng ký",
+      "projectLimit": "Dự án đã kích hoạt",
+      "to": "Có hiệu lực đến",
+      "userLimit": "Giới hạn người dùng"
+    },
+    "users": {
+      "email": "Email",
+      "enterEmail": "Email",
+      "instructions": "Một email chứa các thông tin hướng dẫn thêm sẽ được gửi đến email được chỉ định.",
+      "invitations": "Lời mời gia nhập công ty",
+      "inviteDesc": "Vui lòng nhập email của người dùng để mời.",
+      "name": "Tên",
+      "new": "Mời người dùng",
+      "role": "Vai trò hệ thống",
+      "status": "Trạng thái",
+      "validUntill": "Có hiệu lực đến",
+      "invalidEmail": "Email không hợp lệ",
+      "addToSub": {
+        "note": "Lưu ý: Sẽ không thể thêm người dùng nếu bạn đã đạt đến số lượng người dùng tối đa trong gói đăng ký",
+        "prospect": "Thêm người dùng này vào gói đăng ký Prospect",
+        "noteFull": "Lưu ý: Bạn đã đạt đến số lượng người dùng tối đa trong gói đăng ký của mình",
+        "sdat": "Thêm người dùng này vào gói đăng ký SDAT"
+      },
+      "assign": {
+        "sdat": "Chỉ định cho gói đăng ký SDAT",
+        "prospect": "Chỉ định cho gói đăng ký Prospect"
+      },
+      "unassign": {
+        "sdat": "Bỏ chỉ định khỏi gói đăng ký SDAT",
+        "prospect": "Bỏ chỉ định khỏi gòi đăng ký Prospect"
+      },
+      "alreadyInvited": "Người dùng đã được mời làm thành viên của tài khoản { companyName }"
+    },
+    "api": {
+      "v1": {
+        "title": "API v1.1",
+        "name": "Tên hợp đồng",
+        "empty": "Công ty của bạn không có hợp đồng API. Bạn có thể yêu cầu Bản dùng thử miễn phí.",
+        "prospect": {
+          "title": "Prospect"
+        },
+        "monitor": {
+          "title": "Monitor",
+          "hardLimit": "Dữ liệu Monitor được phép từ {hardLimit}",
+          "relativeLimitWindow": "Dữ liệu Monitor được phép trong {relativeLimitWindow} gần nhất",
+          "relativeLimitWindow_y": "năm",
+          "relativeLimitWindow_m": "tháng",
+          "relativeLimitWindow_d": "ngày",
+          "dataSummarization": "Tóm tắt dữ liệu",
+          "processingKeys": "Mã khóa xử lý dữ liệu"
+        },
+        "forecast": {
+          "title": "Dự báo",
+          "description": "Được phép dự báo cho {days} ngày tới"
+        }
+      },
+      "v2": {
+        "title": "API v2"
+      },
+      "common": {
+        "navigation": {
+          "info": "Thông tin",
+          "accessKeys": "Khóa truy cập (mã thông báo)",
+          "stats": "Thống kê"
+        },
+        "loading": "Đang tải hợp đồng API ...",
+        "title": "Tiêu đề Hợp đồng API",
+        "freeTrialRequest": "Yêu cầu bản dùng thử miễn phí",
+        "resources": "Tài nguyên API",
+        "rateLimit": {
+          "title": "Giới hạn tốc độ (số lượng yêu cầu)",
+          "description": "Được phép gửi {rateLimit} yêu cầu cho hợp đồng này"
+        },
+        "fup": "{count} yêu cầu mỗi {perSeconds} giây",
+        "validity": {
+          "title": "Tiêu đề",
+          "description": "Từ {from} đến {to}"
+        },
+        "access": {
+          "title": "Quyền truy cập",
+          "type": "Loại quyền truy cập: {type}",
+          "maxSites": "Số địa điểm tối đa được phép: {maxSites}",
+          "unlimitedMaxSites": "Không giới hạn",
+          "regions": "Khu vực được phép:",
+          "sites": "Địa điểm được phép:",
+          "position": "Vĩ độ: {latitude}, Kinh độ {longitude}"
+        },
+        "token": {
+          "title": "Mã thông báo",
+          "create": "Thêm mã thông báo (khóa truy cập) mới",
+          "errorCreating": "Không thể tạo mã thông báo (khóa truy cập) mới",
+          "revoking": "Đang thu hồi...",
+          "revokeConfirmHeader": "Thu hồi khóa truy cập (mã thông báo)",
+          "revokeConfirmMessage": "Bạn có thực sự muốn thu hồi khóa truy cập (mã thông báo) cho Hợp đồng API không?",
+          "revokeError": "Không thể thu hồi khóa truy cập (mã thông báo)"
+        },
+        "stats": {
+          "requestCount": "Yêu cầu (số lượng)",
+          "uniqueSitesCount": "Địa điểm duy nhất (số lượng)",
+          "uiuCount": "Đơn vị thông tin duy nhất (số lượng)",
+          "documentation": "Bạn có thể lấy số liệu thống kê của mình qua API, vui lòng xem <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/default/get_stats\" target=\"_blank\" title=\"documentation\">tài liệu</a> này."
+        },
+        "apiDocumentation": "Bạn có thể tìm thấy tài liệu API prospect/monitor/dự báo (và cũng có thể thử API của chúng tôi) trong <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/ws/dataOperation\" target=\"_blank\" title=\"documentation\">tài liệu</a> này."
+      }
+    },
+    "sdatSubscription": {
+      "devices": {
+        "all": "Tất cả các thiết bị",
+        "none": "Không tìm thấy thiết bị SDAT nào.",
+        "title": "Thiết bị",
+        "email": "Email",
+        "active": "Thiết bị đang hoạt động",
+        "company": "Hồ sơ công ty",
+        "disabled": "Thiết bị đã vô hiệu hóa",
+        "userName": "Tên người dùng",
+        "hostName": "Tên máy chủ",
+        "lastAccess": "Hoạt động gần đây",
+        "registeredAt": "Đã đăng ký",
+        "disableAction": "Vô hiệu hóa thiết bị",
+        "customName": "Tên tùy chỉnh",
+        "osFingerprint": "Vân tay của thiết bị"
+      },
+      "general": {
+        "type": "Loại gói đăng ký",
+        "none": "Không tồn tại gói đăng ký SDAT nào.",
+        "users": "Người dùng",
+        "notes": "Ghi chú",
+        "validTo": "Có hiệu lực đến",
+        "validFrom": "Có hiệu lực từ",
+        "deviceLimit": "Giới hạn thiết bị mỗi người dùng",
+        "offlineLimit": "Giới hạn ngoại tuyến",
+        "offlineLimitUnit": "giờ"
+      }
+    },
+    "prospectSubscription": {
+      "none": "Không có gói đăng ký tiềm năng nào",
+      "users": "Người dùng đã kích hoạt",
+      "validFrom": "Có hiệu lực từ {date}",
+      "validUntil": "Có hiệu lực đến {date}",
+      "subscription": "Gói đăng ký",
+      "activatedProjects": "Dự án đã kích hoạt"
+    },
+    "overview": {
+      "prospectSubscription": {
+        "desc": "Nếu bạn sử dụng gói đăng ký Solargis iMaps hoặc pvPlanner đang hoạt động, bạn có thể đổi quyền truy cập trả phí vào Solargis Prospect trong thời gian còn lại của gói đăng ký.",
+        "snack": "Yêu cầu đã được tạo",
+        "button": "Tôi đã sở hữu gói đăng ký iMap và pvPlanner",
+        "dialog": "Khi nhận được yêu cầu của bạn, chúng tôi sẽ kích hoạt quyền truy cập trả phí vào ứng dụng Prospect, thường trong vòng một ngày làm việc. Bạn sẽ được thông báo qua email.",
+        "confirmTerms": "Tôi đồng ý với Solargis <a href='https://solargis.com/legal/general-contractual-terms/' target='_blank' title='General contracts terms to the paid services'>Các điều khoản hợp đồng chung đối với các dịch vụ trả phí</a> và <a href='https://solargis.com/legal/particular-terms-and-conditions/project-use/' target='_blank' title='Particular conditions'>Điều kiện cụ thể</a> của Solargis"
+      }
+    }
+  },
+  "compare": {
+    "addDialog": {
+      "noProjects": "Không có dự án nào khả dụng. Trước tiên hãy tạo một dự án",
+      "outOf": "Đã chọn { projects } dự án trong tối đa { max } dự án",
+      "project": "Dự án",
+      "systemType": "Loại hệ thống",
+      "lastChange": "Thay đổi lần cuối",
+      "systemSize": "Kích cỡ hệ thống"
+    },
+    "addProjects": "Thêm dự án",
+    "compare": "So sánh",
+    "empty": "Không có dự án nào trong công cụ So sánh",
+    "endOfYear": "Cuối năm",
+    "listDialog": {
+      "added": "Dự án đã được thêm thành công vào công cụ So sánh",
+      "open": "Mở công cụ So sánh",
+      "projects": "Các dự án hiện tại trong công cụ So sánh:"
+    },
+    "noPermission": "Để sử dụng công cụ So sánh, trước tiên bạn cần mua gói đăng ký cho công ty đã chọn",
+    "noPvConfig": "Có những dự án chưa được cài đặt bất kỳ cấu hình PV nào",
+    "purchase": "Mua gói đăng ký",
+    "replaceDialog": {
+      "msg": "Công cụ So sánh đã đầy. Vui lòng chọn một dự án để thay thế:",
+      "replace": "Thay thế dự án"
+    },
+    "addToCompare": "Thêm vào để so sánh",
+    "addPvSettings": "Thêm cấu hình PV",
+    "noFinanceConfig": "Có những dự án bị lọc ra không có bất kỳ bộ cấu hình tài chính nào:",
+    "addFinanceSettings": "Thêm thông số tài chính",
+    "noEconomyConfig": "Có những dự án không có bất kỳ cấu hình Tài chính nào",
+    "noLatestData": "Có những dự án chưa được cập nhật dữ liệu",
+    "updateProjectData": "Cập nhật dữ liệu dự án"
+  },
+  "enum": {
+    "invoice": {
+      "CN": "Tải về ghi chú tín dụng",
+      "INVOICE": "Tải hóa đơn về",
+      "INVOICE_FOR_PROFA": "Tải hóa đơn về",
+      "PROFA": "Tải hóa đơn chiếu lệ về"
+    },
+    "orderPaymentStatus": {
+      "NOT_PAID": "Chưa thanh toán",
+      "PAID": "Đã thanh toán",
+      "PAYMENT_FAILED": "Thanh toán không thành công",
+      "PENDING": "Đang chờ xử lý"
+    },
+    "orderPaymentType": {
+      "BANK": "Ngân hàng",
+      "BRAINTREE": "Thanh toán trực tuyến bằng thẻ",
+      "PAY_PAL": "PayPal",
+      "NO_PAYMENT": "Không có khoản thanh toán nào"
+    },
+    "orderStatus": {
+      "CANCELED": "Đã hủy",
+      "DONE": "Đã xong",
+      "IN_PROGRESS": "Đang xử lý",
+      "USER_STARTED": "Đã tạo",
+      "EXPIRED": "Đã hết hạn"
+    },
+    "app": {
+      "prospect": "Prospect",
+      "evaluate": "Đánh giá",
+      "monitor": "Monitor",
+      "forecast": "Dự báo"
+    },
+    "horizon": {
+      "custom": "Đường chân trời tùy chỉnh",
+      "default": "Đường chân trời mặc định"
+    }
+  },
+  "header": {
+    "admin": "Quản trị viên Solargis",
+    "company-admin": "Quản trị viên công ty",
+    "compare": "So sánh",
+    "contact": "Liên hệ",
+    "forgotPassword": "Bạn quên mật khẩu?",
+    "help": "Trợ giúp",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "map": "Bản đồ",
+    "pricing": "Giá",
+    "projectDetail": "Chi tiết dự án",
+    "projects": "Dự án",
+    "prospect": "Prospect",
+    "registration": "Tạo tài khoản",
+    "upgrade": "Nâng cấp",
+    "user": {
+      "invoiceUsers": "Mời người dùng",
+      "adminConsole": "Bảng điều khiển của quản trị viên",
+      "allCompanies": "Tất cả các công ty",
+      "switch": "Chuyển sang"
+    },
+    "freeTrial": "Bản dùng thử miễn phí",
+    "evaluate": "Đánh giá",
+    "newPassword": "Mật khẩu mới",
+    "instructions": "Đã gửi hướng dẫn",
+    "signUp": "Đăng ký",
+    "users": "Người dùng",
+    "orders": "Đơn hàng",
+    "products": "Sản phẩm",
+    "companies": "Công ty",
+    "dashboard": "Bảng điều khiển",
+    "sdat": "SDAT",
+    "administration": "Quản trị {companyName}",
+    "invoices": "Hoá đơn"
+  },
+  "map": {
+    "layer": {
+      "mapbox-streets": {
+        "name": "Địa hình"
+      },
+      "solargis-cdd": {
+        "name": "Nhiệt độ làm lạnh ngày"
+      },
+      "solargis-d2g": {
+        "name": "Tỷ lệ bức xạ khuếch tán so với tổng bức xạ"
+      },
+      "solargis-dif": {
+        "name": "Bức xạ ngang khuếch tán"
+      },
+      "solargis-dni": {
+        "name": "Bức xạ trực tiếp thông thường"
+      },
+      "solargis-ele": {
+        "name": "Độ cao",
+        "shortName": "Độ cao"
+      },
+      "solargis-ghi": {
+        "name": "Tổng bức xạ phương ngang"
+      },
+      "solargis-gti": {
+        "name": "Tổng bức xạ nghiêng"
+      },
+      "solargis-gti_opta": {
+        "name": "Tổng bức xạ nghiêng ở góc tối ưu"
+      },
+      "solargis-hdd": {
+        "name": "Nhiệt độ gia nhiệt ngày"
+      },
+      "solargis-landc": {
+        "name": "Lớp phủ mặt đất"
+      },
+      "solargis-opta": {
+        "name": "Độ nghiêng tối ưu của mô-đun PV"
+      },
+      "solargis-popul": {
+        "name": "Mật độ dân số"
+      },
+      "solargis-prec": {
+        "name": "Lượng mưa"
+      },
+      "solargis-pvgain_cdte": {
+        "name": "Mức thu được của mô-đun CdTe so với cSi"
+      },
+      "solargis-pvout_cdte": {
+        "name": "Sản lượng PV CdTe"
+      },
+      "solargis-pvout_csi": {
+        "name": "Sản lượng PV cSi"
+      },
+      "solargis-pwat": {
+        "name": "Nước ngưng tụ"
+      },
+      "solargis-rh": {
+        "name": "Độ ẩm tương đối"
+      },
+      "solargis-snowd": {
+        "name": "Ngày tuyết rơi"
+      },
+      "solargis-temp": {
+        "name": "Nhiệt độ không khí"
+      },
+      "solargis-ws": {
+        "name": "Vận tốc gió"
+      },
+      "solargis-alb": {
+        "name": "Albedo bề mặt"
+      },
+      "solargis-azi": {
+        "name": "Góc phương vị địa hình"
+      },
+      "solargis-slo": {
+        "name": "Độ dốc địa hình"
+      },
+      "solargis-dni_season": {
+        "name": "Tính mùa vụ của DNI"
+      },
+      "solargis-ghi_season": {
+        "name": "Tính mùa vụ của GHI"
+      },
+      "bing-satellite": {
+        "name": "Vệ tinh"
+      },
+      "mapbox-satellite": {
+        "name": "Vệ tinh"
+      }
+    },
+    "legend": {
+      "button": "Chú giải biểu tượng"
+    },
+    "location": {
+      "error": {
+        "1": "Định vị địa lý đã bị từ chối",
+        "2": "Định vị địa lý không khả dụng",
+        "3": "Định vị địa lý đã hết thời gian"
+      },
+      "tryAgain": "Thử lại"
+    },
+    "menu": {
+      "labels": "Nhãn bản đồ",
+      "selectLayer": "Chọn lớp bản đồ",
+      "marker": "Giá trị điểm đánh dấu"
+    },
+    "zoom": {
+      "all": "Thu phóng tất cả các dự án",
+      "selected": "Thu phóng các dự án đã chọn"
+    },
+    "draw": {
+      "site": "Địa điểm lắp đặt",
+      "rectangle": "Hình chữ nhật",
+      "polygon": "Đa giác",
+      "distance": "Khoảng cách"
+    },
+    "fullscreen": {
+      "fullscreen": "Toàn màn hình"
+    }
+  },
+  "months": {
+    "apr": "Tháng 4",
+    "aug": "Tháng 8",
+    "dec": "Tháng 12",
+    "feb": "Tháng 2",
+    "jan": "Tháng 1",
+    "jul": "Tháng 7",
+    "jun": "Tháng 6",
+    "mar": "Tháng 3",
+    "may": "Tháng 5",
+    "month": "Tháng",
+    "nov": "Tháng 11",
+    "oct": "Tháng 10",
+    "sep": "Tháng 9",
+    "yearly": "Hàng năm"
+  },
+  "project": {
+    "action": {
+      "archive": "Lưu trữ",
+      "delete": "Xóa",
+      "transfer": "Chuyển",
+      "claimFreetrial": "Kích hoạt Bản dùng thử miễn phí",
+      "unArchive": "Hủy lưu trữ",
+      "archiveText": "Bạn có muốn lưu trữ các dự án đã chọn không?",
+      "unArchiveText": "Bạn có muốn hủy lưu trữ các dự án đã chọn không?",
+      "updateProjectData": "Cập nhật dữ liệu dự án"
+    },
+    "data": {
+      "longtermAverage": "Trung bình hàng năm suốt vòng đời",
+      "mapData": "Dữ liệu bản đồ",
+      "projectData": "Dữ liệu dự án",
+      "showMore": "Hiển thị thêm",
+      "yearlyAverage": "Trung bình hàng năm",
+      "notLatest": "Dự án chưa được cập nhật"
+    },
+    "dataLayer": {
+      "CDD": {
+        "desc": "Định lượng mức năng lượng cần thiết để làm mát một tòa nhà. \"Nhiệt độ làm mát ngày\" là đại lượng thể hiện về lượng nhiệt (tính bằng độ) và khoảng thời gian (tính bằng ngày) mà nhiệt độ ngoài trời cao hơn nhiệt độ cụ thể trung bình hàng ngày cơ bản (18°C). Giá trị hàng năm và hàng tháng được tổng hợp từ giá trị hàng ngày",
+        "name": "Nhiệt độ làm lạnh ngày",
+        "shortName": "CDD"
+      },
+      "CF": {
+        "name": "Hệ số công suất",
+        "desc": "Tỷ lệ giữa sản lượng năng lượng điện thực tế trong một năm so với sản lượng năng lượng điện tối đa có thể đạt được trong một năm, được biểu thị bằng %. Sản lượng điện tối đa có thể đạt được bằng công suất lắp đặt AC nhân với số giờ trong một năm, còn sản lượng điện thực tế bằng lượng điện truyền đi hàng năm từ dự án.",
+        "shortName": "CF"
+      },
+      "D2G": {
+        "desc": "Tỷ lệ bức xạ ngang khuếch tán so với tổng bức xạ phương ngang (DIF/GHI)",
+        "name": "Tỷ lệ bức xạ khuếch tán so với tổng bức xạ",
+        "shortName": "D2G"
+      },
+      "DIF": {
+        "desc": "Tổng bức xạ ngang khuếch tán trung bình hàng năm, hàng tháng hoặc hàng ngày",
+        "name": "Bức xạ ngang khuếch tán",
+        "shortName": "DIF"
+      },
+      "DNI": {
+        "desc": "Bức xạ trực tiếp thông thường trung bình hàng năm, hàng tháng hoặc hàng ngày",
+        "name": "Bức xạ trực tiếp thông thường",
+        "shortName": "DNI"
+      },
+      "DNI_season": {
+        "desc": "Tỷ lệ giữa mức tối đa và tối thiểu của bức xạ trực tiếp thông thường trung bình hàng tháng (DNI_tháng_tối đa/DNI_tháng_tối thiểu)",
+        "name": "Tính mùa vụ của DNI",
+        "shortName": "DNI mùa"
+      },
+      "ELE": {
+        "desc": "Độ cao của bề mặt địa hình trên/dưới mực nước biển",
+        "name": "Độ cao địa hình"
+      },
+      "GHI": {
+        "desc": "Tổng bức xạ phương ngang trung bình hàng năm, hàng tháng hoặc hàng ngày",
+        "name": "Tổng bức xạ phương ngang",
+        "shortName": "GHI"
+      },
+      "GHI_season": {
+        "desc": "Tỷ lệ giữa mức tối đa và tối thiểu của tổng bức xạ phương ngang trung bình hàng tháng (GHI_tháng_tối đa/GHI_tháng_tối thiểu)",
+        "name": "Tính mùa vụ của GHI",
+        "shortName": "GHI mùa"
+      },
+      "GTI": {
+        "desc": "Tổng lượng bức xạ nghiêng trung bình hàng năm, hàng tháng hoặc hàng ngày",
+        "name": "Tổng bức xạ nghiêng",
+        "shortName": "GTI"
+      },
+      "GTI_opta": {
+        "desc": "Tổng lượng bức xạ nghiêng trung bình hàng năm, hàng tháng hoặc hàng ngày đối với các mô-đun PV được gắn cố định ở góc nghiêng tối ưu",
+        "name": "Tổng bức xạ nghiêng ở góc tối ưu",
+        "shortName": "GTI opta"
+      },
+      "GTI_theoretical": {
+        "desc": "Tổng lượng bức xạ nghiêng trung bình hàng năm, hàng tháng hoặc hàng ngày không tính đến bóng địa hình",
+        "name": "Tổng bức xạ nghiêng (lý thuyết)",
+        "shortName": "GTI lý thuyết"
+      },
+      "HDD": {
+        "desc": "Định lượng mức năng lượng cần thiết để làm ấm một tòa nhà. \"Nhiệt độ gia nhiệt ngày\" là đại lượng thể hiện về lượng nhiệt (tính bằng độ) và khoảng thời gian (tính bằng ngày) mà nhiệt độ ngoài trời thấp hơn nhiệt độ trung bình cụ thể hàng ngày cơ bản (18°C). Giá trị hàng năm và hàng tháng được tổng hợp từ giá trị hàng ngày",
+        "name": "Nhiệt độ gia nhiệt ngày",
+        "shortName": "HDD"
+      },
+      "LANDC": {
+        "desc": "Cho biết loại vật liệu che phủ chủ yếu trên bề mặt trái đất (cỏ, rừng, khu vực đô thị hóa, v.v.)",
+        "name": "Lớp phủ mặt đất"
+      },
+      "OPTA": {
+        "desc": "Độ nghiêng tối ưu của các mô-đun PV được lắp cố định hướng về phía Xích đạo để tối đa hóa đầu vào GTI",
+        "name": "Độ nghiêng tối ưu của mô-đun PV"
+      },
+      "POPUL": {
+        "desc": "Số cư dân bình quân trên một đơn vị diện tích",
+        "name": "Mật độ dân số"
+      },
+      "PR": {
+        "desc": "Tỷ lệ giữa sản lượng điện AC riêng của một hệ thống PV và tổng bức xạ nghiêng mà bề mặt của một mảng PV nhận được (PVOUT riêng/GTI)",
+        "name": "Tỷ lệ hiệu suất",
+        "shortName": "PR"
+      },
+      "PREC": {
+        "desc": "Tổng lượng mưa trung bình hàng năm và hàng tháng",
+        "name": "Lượng mưa",
+        "shortName": "PREC"
+      },
+      "PVGAIN_cdte": {
+        "desc": "Tỷ lệ sản lượng hàng năm giữa hệ thống PV dựa trên mô-đun CdTe và cSi (PVOUTcdte/PVOUTcsi)",
+        "name": "Mức thu được của mô-đun CdTe so với CSi"
+      },
+      "PVOUT_cdte": {
+        "desc": "Sản lượng hàng năm từ một hệ thống PV sử dụng mô-đun CdTe. Được tính toán bằng cách sử dụng dữ liệu bức xạ mặt trời và nhiệt độ không khí",
+        "name": "Sản lượng PV CdTe"
+      },
+      "PVOUT_csi": {
+        "desc": "Sản lượng hàng năm từ một hệ thống PV sử dụng mô-đun cSi. Được tính toán bằng cách sử dụng dữ liệu bức xạ mặt trời và nhiệt độ không khí",
+        "name": "Sản lượng PV cSi"
+      },
+      "PVOUT_specific": {
+        "desc": "Giá trị quang điện (AC) trung bình hàng năm và hàng tháng do hệ thống PV cung cấp và được chuẩn hóa thành 1 kWp công suất lắp đặt",
+        "name": "Sản lượng quang điện riêng",
+        "shortName": "PVOUT riêng"
+      },
+      "PVOUT_total": {
+        "desc": "Giá trị quang điện (AC) trung bình hàng năm và hàng tháng do tổng công suất lắp đặt của hệ thống PV tạo ra",
+        "name": "Tổng sản lượng quang điện",
+        "shortName": "PVOUT tổng"
+      },
+      "PWAT": {
+        "desc": "Nước ngưng tụ là độ sâu của hơi nước trong một cột khí quyển, nếu tất cả nước trong cột đó bị ngưng tụ dưới dạng nước mưa. Thông số này cho biết lượng ẩm trên mặt đất",
+        "name": "Nước ngưng tụ",
+        "shortName": "PWAT"
+      },
+      "RH": {
+        "desc": "Độ ẩm tương đối trung bình hàng năm hoặc hàng tháng ở độ cao 2 m so với mặt đất",
+        "name": "Độ ẩm tương đối",
+        "shortName": "RH"
+      },
+      "SNOWD": {
+        "desc": "Ngày tuyết rơi được tính là ngày có độ sâu nước tuyết tương đương hoặc cao hơn 5 mm",
+        "name": "Ngày tuyết rơi",
+        "shortName": "SNOWD"
+      },
+      "TEMP": {
+        "desc": "Nhiệt độ không khí trung bình hàng năm, hàng tháng và hàng ngày ở độ cao 2 m so với mặt đất",
+        "name": "Nhiệt độ không khí",
+        "shortName": "TEMP"
+      },
+      "WS": {
+        "desc": "Vận tốc gió trung bình hàng năm, hàng tháng và hàng ngày ở độ cao 10 m so với mặt đất",
+        "name": "Vận tốc gió",
+        "shortName": "WS"
+      },
+      "ALB": {
+        "desc": "Phần bức xạ mặt trời mà bề mặt phản xạ lại. Tỷ lệ giữa thông lượng bức xạ hắt lên so với lượng bức xạ hấp thụ (GHI) ở bề mặt",
+        "name": "Hệ số phản xạ bề mặt",
+        "shortName": "ALB"
+      },
+      "AZI": {
+        "desc": "Mặt định hướng địa hình ở các hướng chính, tính bằng độ và theo chiều kim đồng hồ. Bắc = 0, Đông = 90, Nam = 180, Tây = 270. Địa hình bằng phẳng (SLO <2 độ) không được xem xét",
+        "name": "Góc phương vị địa hình"
+      },
+      "SLO": {
+        "desc": "Độ dốc địa hình (độ nghiêng) tính bằng độ",
+        "name": "Độ dốc địa hình"
+      },
+      "PV": {
+        "name": "Quang điện"
+      }
+    },
+    "dataSettings": {
+      "generalInfo": "Thông tin chung",
+      "irradiation": "Bức xạ mặt trời",
+      "latlng": "Vĩ độ và kinh độ",
+      "length": "Độ cao địa hình",
+      "ltaDaily": "Trung bình dài hạn",
+      "projectInfo": "Thông tin dự án",
+      "temperature": "Nhiệt độ không khí",
+      "unitSettings": "Cài đặt đơn vị",
+      "values": "Giá trị",
+      "tableSettings": "Cài đặt bảng",
+      "mapViewSettings": "Cài đặt chế độ xem bản đồ",
+      "projectViewSettings": "Cài đặt chế độ xem dự án"
+    },
+    "field": {
+      "created": "Đã tạo",
+      "name": "Tên",
+      "rename": "Đổi tên"
+    },
+    "filter": {
+      "allProjects": "Dự án đang hoạt động",
+      "archived": "Đã lưu trữ",
+      "favorites": "Yêu thích",
+      "recent": "Gần đây",
+      "manageLabels": "Quản lý nhãn"
+    },
+    "pvConfigStatus": {
+      "empty": "Chưa đặt cấu hình hệ thống PV",
+      "hasPvSystem": "Cấu hình hệ thống PV đang hoạt động",
+      "noPvSystem": "Cấu hình hệ thống PV đang hoạt động"
+    },
+    "rename": {
+      "title": "Đổi tên dự án"
+    },
+    "selected": {
+      "addToProjects": "Lưu dưới dạng dự án",
+      "calculate": "Tính",
+      "openDetail": "Mở"
+    },
+    "share": {
+      "copied": "Đã sao chép",
+      "copyLink": "Sao chép liên kết",
+      "share": "Chia sẻ vị trí",
+      "shareLocation": "Chia sẻ vị trí",
+      "text": "Bạn có thể gửi liên kết này để chia sẻ vị trí này."
+    },
+    "sidebar": {
+      "clearSelection": "Xóa lựa chọn",
+      "listView": "Hiển thị chế độ xem danh sách",
+      "multiSelected": "Nhiều dự án được chọn",
+      "noneSelected": "Không có dự án nào được chọn",
+      "projectsSelected": "Bạn có {projects, plural, one {một dự án} other {# dự án}} được chọn"
+    },
+    "snackbar": {
+      "archive": "Dự án đã lưu trữ",
+      "bulkArchive": "{projects} dự án đã lưu trữ",
+      "bulkDelete": "{projects} dự án đã xóa",
+      "bulkUpdate": "{projects} dự án đã cập nhật",
+      "delete": "Dự án đã xóa",
+      "rename": "Dự án đã đổi tên",
+      "save": "Dự án đã lưu",
+      "update": "Dự án đã cập nhật",
+      "bulkTransfer": "{projects} dự án đã chuyển",
+      "transfer": "Dự án đã chuyển",
+      "freetrialClaim": "Đã kích hoạt thành công bản dùng thử miễn phí cho dự án",
+      "updateData": "Dữ liệu dự án đã cập nhật"
+    },
+    "tags": {
+      "deleteHeading": "Xóa nhãn",
+      "deleteText": "Bạn có chắc muốn xóa nhãn {tagName} không?",
+      "forbiddenName": "Tên nhãn phải là duy nhất",
+      "minlength": "Tên nhãn quá ngắn",
+      "name": "Tên nhãn",
+      "new": "Tạo tên nhãn",
+      "none": "Bạn chưa có nhãn nào được tạo",
+      "required": "Bắt buộc phải có Tên nhãn",
+      "labels": "Nhãn",
+      "newPlaceholder": "Nhãn mới",
+      "add": "Thêm",
+      "manage": "Quản lý nhãn",
+      "invalidCharText": "Nhãn chỉ có thể chứa các ký tự chữ cái đa ngôn ngữ, số, dấu cách ( ), dấu chấm ( . ), dấu phẩy ( , ), dấu gạch ngang ( - ), dấu gạch dưới ( _ ) và dấu ngoặc đơn ( và ).",
+      "invalidCharHeading": "Ký tự không hợp lệ"
+    },
+    "timezone": {
+      "dstNotConsidered": "Giờ tiết kiệm ánh sáng ban ngày không được tính đến"
+    },
+    "toolbar": {
+      "addTag": "Thêm nhãn",
+      "archive": "Lưu trữ",
+      "delete": "Xóa",
+      "favorite": "Yêu thích",
+      "selected": "Đã chọn: {projects}",
+      "selectedFirst": "Đã chọn đầu tiên",
+      "share": "Chia sẻ",
+      "unarchive": "Hủy lưu trữ",
+      "siteDetail": "Chi tiết địa điểm lắp đặt",
+      "rename": "Đổi tên",
+      "selectedProjects": "Đã chọn: {projects} / {allProjectsCount}"
+    },
+    "transfer": {
+      "title": "Chuyển {projects, plural, one {một dự án} other {# dự án}}",
+      "targetAccount": "Tài khoản mục tiêu",
+      "info": "Bằng cách chuyển một dự án, bạn sẽ chỉ chuyển thông tin dự án (tên dự án, vị trí, v.v.) và thông tin cấu hình PV. Mọi báo cáo liên quan đến dự án sẽ bị mất. Sau khi hoàn tất quá trình chuyển, dự án này sẽ không khả dụng trong tài khoản hiện đang liên kết với dự án."
+    },
+    "exportChart": {
+      "exportTo": "Xuất ra {format}",
+      "pvConfig": "Cấu hình PV"
+    },
+    "search": {
+      "searchLocations": "Tìm địa điểm",
+      "invalidCoordinatesMessage": "Bạn đã nhập tọa độ có chứa số âm và hướng chính âm. Toạ độ này không được hỗ trợ vì có thể dẫn đến kết quả không cụ thể. Vui lòng nhập lại tọa độ khác."
+    },
+    "updateProjectDialog": {
+      "note": "Lưu ý: Việc cập nhật dữ liệu dự án sẽ xóa các Báo cáo đã tạo. Nếu bạn muốn lưu lại, hãy tải xuống trước khi thực hiện cập nhật dữ liệu dự án.",
+      "text": "Dự án này có chứa các nguồn năng lượng mặt trời và dữ liệu địa hình từ phiên bản cơ sở dữ liệu cũ của Solargis. Bằng cách chọn cập nhật, tất cả dữ liệu hiện đi kèm với dự án sẽ được cập nhật lên phiên bản cơ sở dữ liệu mới nhất của Solargis.",
+      "title": "Cập nhật lại dữ liệu dự án?",
+      "nonUpdateData": "Dự án này có chứa dữ liệu chưa được cập nhật",
+      "progressTitle": "Đang cập nhật lại dữ liệu dự án",
+      "downloadReports": "Tải xuống báo cáo"
+    }
+  },
+  "projectDetail": {
+    "daylength": {
+      "autumnEquinox": "Điểm thu phân",
+      "dayLengthHorizonCorrected": "Độ dài ngày, đường chân trời đã được hiệu chỉnh [giờ]",
+      "daylength": "Độ dài ngày [giờ]",
+      "label": "Độ dài ngày và góc thiên đỉnh",
+      "minimumZenitAngle": "Góc thiên đỉnh nhỏ nhất [°]",
+      "vernalEquinox": "Điểm xuân phân"
+    },
+    "economy": {
+      "form": {
+        "addLoan": "Thêm khoản vay",
+        "capacity": "Công suất lắp đặt",
+        "degradationFirst": "Mức xuống cấp năm đầu tiên",
+        "degradationNext": "Mức xuống cấp các năm tiếp theo",
+        "installationCost": "Chi phí lắp đặt hệ thống",
+        "interestRate": "Lãi suất",
+        "loan": "Khoản vay",
+        "loanPeriod": "Thời gian vay",
+        "ownCapital": "Vốn chủ sở hữu",
+        "priceOfElectricity": "Giá điện",
+        "removeLoan": "Xóa khoản vay",
+        "totalYield": "PVOUT_tổng (năm 0)",
+        "yearsOfOperation": "Số năm hoạt động của dự án",
+        "loanEquity": "Vốn chủ sở hữu",
+        "accountingInfo": "Thông tin kế toán",
+        "linearDeprecation": "Khấu hao thuế tuyến tính",
+        "annualOperationalCost": "Chi phí hoạt động hàng năm"
+      },
+      "label": {
+        "economicIndicators": "Dòng tiền",
+        "inputs": "Đầu vào",
+        "outputs": "Đầu ra",
+        "payback": "Hoàn trả đơn giản",
+        "pvEconomy": "Tài chính hệ thống PV",
+        "summary": "Tóm tắt",
+        "overview": "Tổng quan"
+      },
+      "layer": {
+        "CAPEX": {
+          "desc": "Số vốn cần thiết để lắp đặt hệ thống điện PV mặt trời sau khi trừ đi các ưu đãi về năng lượng mặt trời khỏi tổng chi phí hệ thống",
+          "name": "CAPEX"
+        },
+        "OPEX": {
+          "desc": "Tổng chi phí vận hành hàng năm của hệ thống điện PV và các khoản trả góp hàng năm cho việc thay thế linh kiện",
+          "name": "OPEX"
+        },
+        "tariff": {
+          "desc": "Giá theo hợp đồng, mức giá bán điện mặt trời được tạo ra vào lưới điện. PPA thường được áp dụng cho các nhà máy điện PV thương mại",
+          "name": "Hợp đồng mua bán điện / Biểu giá FIT"
+        },
+        "ROIEquity": {
+          "desc": "Tỷ suất hoàn vốn trong suốt vòng đời của hệ thống PV so với chi phí đầu tư (CAPEX), trong đó số không (0) đánh dấu mức hòa vốn (tỷ lệ chiết khấu không được sử dụng)",
+          "name": "ROI"
+        },
+        "unitSystemCosts": {
+          "name": "Chi phí hệ thống đơn vị",
+          "desc": "Chi phí của hệ thống PV trên mỗi kWp (Wp)"
+        },
+        "incentiveOrRebate": {
+          "desc": "Mọi ưu đãi về tiền tệ hoặc thuế do công ty tiện ích hoặc chính phủ cung cấp",
+          "name": "Ưu đãi hoặc giảm giá lắp đặt"
+        },
+        "loanLinearPayment": {
+          "desc": "Số tiền thanh toán cố định cho một khoản vay",
+          "name": "Hoàn trả khoản vay tuyến tính"
+        },
+        "maintenanceReserve": {
+          "tooltip": "Chi phí thay thế tất cả các biến tần. Thông thường, thời gian bảo hành của nhà sản xuất dao động trong khoảng 5 – 12 năm và cần được thay thế trung bình 2 lần trong thời gian vận hành hệ thống điển hình (25 năm)",
+          "desc": "Số tiền cần thiết để thay thế phần cứng mỗi năm (chủ yếu là biến tần)",
+          "name": "Tài khoản dự phòng bảo trì"
+        },
+        "LCOE": {
+          "desc": "Chi phí của một đơn vị năng lượng trong suốt vòng đời của hệ thống PV",
+          "name": "LCOE"
+        },
+        "IRREquity": {
+          "desc": "Tỷ suất hoàn vốn nội bộ trong suốt vòng đời của hệ thống PV theo quan điểm của cổ đông (không bao gồm vốn vay)",
+          "name": "Vốn chủ sở hữu IRR"
+        },
+        "IRRProject": {
+          "name": "Dự án IRR",
+          "desc": "Tỷ suất hoàn vốn nội bộ trong suốt vòng đời của hệ thống PV của toàn bộ dự án"
+        },
+        "discountRate": {
+          "desc": "Hệ số chiết khấu được sử dụng để tính toán giá trị Ròng hiện tại cho IRR",
+          "name": "Tỷ lệ chiết khấu"
+        },
+        "taxesOnProfit": {
+          "name": "Thuế lợi nhuận",
+          "desc": "Mức thuế áp dụng hàng năm đối với lợi nhuận"
+        },
+        "loanDebtToEquity": {
+          "desc": "Tỷ lệ giữa nợ và vốn chủ sở hữu",
+          "name": "Tỷ lệ nợ trên vốn chủ sở hữu (tỷ số truyền)"
+        },
+        "OPEXInflationRate": {
+          "name": "Tỷ lệ lạm phát Opex",
+          "desc": "Mức tăng giá OPEX hàng năm"
+        },
+        "linearDeprecation": {
+          "name": "Khấu hao thuế tuyến tính",
+          "desc": "Mức suy giảm giá trị của một tài sản theo thời gian được áp dụng theo phương pháp tuyến tính, do sự lão hóa, xuống cấp và hao mòn nói chung"
+        },
+        "tariffIndexationRate": {
+          "name": "Tỷ suất lập chỉ mục biểu giá",
+          "desc": "Mức tăng biểu giá hàng năm"
+        },
+        "inverterReplacementYear": {
+          "name": "Năm thay thế biến tần",
+          "desc": "Năm hoạt động diễn ra việc thay thế biến tần, sau thời điểm đó tài khoản dự phòng bảo trì (MRA) bị giải thể"
+        }
+      },
+      "table": {
+        "endOfYear": "Cuối năm",
+        "OPEX": "OPEX",
+        "EBIT": "EBIT",
+        "loan": "Khoản vay",
+        "CAPEX": "CAPEX",
+        "EBITDA": "EBITDA",
+        "revenue": "Doanh thu",
+        "netProfit": "Lợi nhuận ròng",
+        "taxOnProfit": "Thuế tính trên lợi nhuận",
+        "PVOUT_total": "PVOUT_tổng",
+        "tariffIndexed": "Biểu giá (đã lập chỉ số)",
+        "PVOUT_specific": "PVOUT_riêng",
+        "EBITDA_specific": "EBITDA_riêng",
+        "loanInterestRate": "Lãi suất vay",
+        "linearDeprecation": "Khấu hao tuyến tính",
+        "cashFlowOperations": "Dòng tiền (hoạt động)",
+        "maintenanceReserve": "Tài khoản dự phòng bảo trì",
+        "cashFlowNPVOperations": "Dòng tiền NPV từ hoạt động kinh doanh",
+        "loanRepaymentInterest": "Hoàn trả khoản vay (lãi suất)",
+        "loanRepaymentPrincipal": "Hoàn trả khoản vay (gốc)",
+        "shareholderCashFlowNPV": "Dòng tiền NPV cho cổ đông",
+        "shareholderCashFlowAvailable": "Dòng tiền có sẵn cho cổ đông",
+        "annualCosts": "Tất cả các chi phí hàng năm"
+      },
+      "guard": {
+        "text": "Bạn đã chỉnh sửa các cài đặt tài chính cho hệ thống PV này. Bạn có muốn lưu các thay đổi này không?",
+        "heading": "Có những thay đổi về tài chính chưa được lưu"
+      },
+      "resetSaved": "Đặt lại từ các giá trị đã lưu",
+      "tariffGoalseek": {
+        "use": "Giá trị sử dụng",
+        "open": "Tính theo vốn chủ sở hữu IRR",
+        "result": "Giá trị đã tính:",
+        "target": "Vốn chủ sở hữu IRR mục tiêu",
+        "explain": "Tính đầu ra Vốn chủ sở hữu IRR cụ thể, do người dùng xác định bằng cách điều chỉnh đầu vào Thuế doanh thu (PPA/FiT), với tất cả các thông số đầu vào khác không thay đổi."
+      }
+    },
+    "error": {
+      "noProject": "Không có dự án nào được chọn. Vui lòng chọn một dự án để xem chi tiết."
+    },
+    "glossary": {
+      "acronym": "Từ viết tắt",
+      "explanation": "Giải thích",
+      "name": "Tên đầy đủ",
+      "title": "Bảng chú giải",
+      "unit": "Đơn vị"
+    },
+    "info": {
+      "address": "Địa chỉ",
+      "coordinates": "Tọa độ địa lý",
+      "country": "Quốc gia/Khu vực",
+      "created": "Đã tạo",
+      "edit": "Chỉnh sửa tên",
+      "elevation": "Độ cao",
+      "info": "Thông tin dự án",
+      "name": "Tên dự án",
+      "showOnMap": "Hiển thị trên bản đồ"
+    },
+    "metadata": {
+      "doc": {
+        "documentation": "Tài liệu",
+        "methodology": "Phương pháp",
+        "simulation": "Mô phỏng năng lượng PV",
+        "uncertainty": "Tính bất ổn định của dữ liệu"
+      },
+      "method": {
+        "merging": "Hợp nhất, dọn dẹp, xử lý dữ liệu",
+        "postprocessing": "Xử lý sau",
+        "processing": "Xử lí dữ liệu",
+        "simulation": "Mô hình mô phỏng PV",
+        "solarModel": "Mô hình điện mặt trời"
+      },
+      "sources": {
+        "LANDC": "Lớp phủ mặt đất CCI, v2.0.7",
+        "POPUL": "Biểu đồ dân số thế giới dạng lưới, phiên bản 4 (GPWv4)",
+        "PREC": "Cơ sở dữ liệu GPCC",
+        "PWAT": "Mô hình CFSR và CFSv2",
+        "SNOWD": "Mô hình CFSR và CFSv2",
+        "TEMP": "Mô hình ERA-5",
+        "aerosolsMerra": "Sol khí từ các mô hình MERRA-2 và MACC-II/CAMS",
+        "albedo": "Cơ sở dữ liệu MODIS và ERA-5",
+        "region1": "Vệ tinh GOES phía Tây",
+        "region3": "Vệ tinh Meteosat MFG và MSG (PRIME)",
+        "region4": "Vệ tinh Meteosat MFG và MSG (IODC)",
+        "region5": "Vệ tinh Meteosat MFG, MSG (IODC) và Himawari",
+        "region6": "Vệ tinh MTSAT và Himawari",
+        "regionGeneral": "Vệ tinh địa tĩnh Meteosat, GOES, MTSAT và HIMAWARI",
+        "wapourCSFR": "Hơi nước từ các mô hình CSFR và GFS",
+        "region2": "Vệ sinh GOES phía Đông và GOES-R",
+        "RHWSWD": "Mô hình MERRA-2 và CDFv2"
+      },
+      "table": {
+        "method": "Phương pháp Solargis",
+        "source": "Nguồn dữ liệu đầu vào <br>(Tổ chức)",
+        "period": "Thời gian trình bày",
+        "updated": "Cập nhật lần cuối",
+        "parameter": "Tham số"
+      },
+      "text": {
+        "row0": "Bước nhảy thời gian: Thống kê dài hạn hàng tháng và hàng năm",
+        "row1": "Các ước tính giả định một năm có 365 ngày",
+        "text": "Báo cáo này dựa trên cơ sở dữ liệu khí tượng và năng lượng mặt trời có độ phân giải cao do Solargis phát triển và vận hành. Các thông số dữ liệu được trình bày trong báo cáo này được tính toán bằng các mô hình và thuật toán của Solargis. Dữ liệu được sử dụng làm đầu vào cho các mô hình đến từ nhiều nguồn khác nhau. Các đặc điểm dữ liệu được giải thích như dưới đây.",
+        "version": "Cơ sở dữ liệu Solargis Prospect phiên bản {version}",
+        "latestMetadataVersion": "Phiên bản {latestMetadataVersion} đã sẵn có"
+      }
+    },
+    "nav": {
+      "hourlyProfiles": "Hồ sơ hàng giờ",
+      "lifetimePerformance": "Hiệu suất trọn đời",
+      "metadata": "Siêu dữ liệu",
+      "monthlyStatistics": "Thống kê hàng tháng",
+      "overview": "Tổng quan",
+      "projectInfo": "Thông tin dự án",
+      "pvConfig": "Cấu hình PV",
+      "pvElectricity": "Điện PV",
+      "pvLosses": "Chuyển đổi năng lượng và thất thoát hệ thống",
+      "pvPerformance": "Hiệu suất PV",
+      "reports": "Báo cáo",
+      "solarMeteo": "Khí tượng và năng lượng mặt trời",
+      "support": "Hỗ trợ",
+      "download": "Tải xuống",
+      "analysis": "Phân tích",
+      "properties": "Đặc tính",
+      "data": "Dữ liệu",
+      "finance": "Tài chính"
+    },
+    "overview": {
+      "longtermPvPowerPotential": "Tiềm năng điện PV dài hạn (trung bình {year} năm)",
+      "meteorologicalData": "Dữ liệu khí tượng",
+      "projectInfo": "Thông tin dự án",
+      "projectOverview": "Tổng quan dự án",
+      "pvElectricityAndPerformance": "Điện & hiệu suất PV",
+      "solar": "Bức xạ mặt trời",
+      "solarAndMeteo": "Khí tượng và năng lượng mặt trời",
+      "systemType": "Loại hệ thống",
+      "theoreticalPvElectricityPotential": "Tiềm năng điện PV lý thuyết (lúc khởi động hệ thống)",
+      "title": "Tổng quan - Các thông số khí tượng và bức xạ mặt trời"
+    },
+    "pvConfig": {
+      "pvConfiguration": "Cấu hình hệ thống PV"
+    },
+    "pvElectricity": {
+      "hourlySummary": "Các hồ sơ sản xuất điện PV (như hình bên dưới) được tính toán dưới dạng mức trung bình của toàn bộ dữ liệu theo giờ cho mỗi tháng. Các hồ sơ này biểu thị sự thay đổi trong mô hình sản xuất điện do thời tiết và cấu hình đã chọn của hệ thống PV trong thời gian một ngày. Cần lưu ý rằng \"hồ sơ trung bình hàng ngày\" là một khái niệm mang tính lý thuyết, vì trong phần lớn các trường hợp, hồ sơ thay đổi cụ thể theo từng ngày riêng lẻ trong năm do sự thay đổi của thời tiết.",
+      "potential": "Tiềm năng điện PV lý thuyết",
+      "summary": "Ước tính lý thuyết về sản lượng điện mặt trời của hệ thống quang điện mà không tính đến yếu tố lão hóa lâu dài và suy giảm hiệu suất của các mô-đun PV và các thành phần hệ thống khác."
+    },
+    "pvLosses": {
+      "electricSystemLosses": "Thất thoát hệ thống điện",
+      "energyInput": "Năng lượng đầu vào",
+      "energyLoss": "Năng lượng thất thoát",
+      "lossDiagram": "Sơ đồ thất thoát",
+      "solarLosses": "Năng lượng mặt trời thất thoát",
+      "summary": "Ước tính lý thuyết về sản lượng điện mặt trời cụ thể hàng năm của hệ thống quang điện mà không tính đến yếu tố lão hóa lâu dài và suy giảm hiệu suất của các mô-đun PV và các thành phần khác của hệ thống. Hệ số hiệu suất (PR) trung bình dài hạn được tính toán khi một hệ thống PV mới bắt đầu sản xuất.",
+      "title": "Chuyển đổi năng lượng và thất thoát liên quan",
+      "diagramDesc": "Biểu đồ thể hiện lượng thất thoát lý thuyết do chuyển đổi năng lượng trong hệ thống điện PV",
+      "energy": "Năng lượng",
+      "energyLossOrGain": "Năng lượng thất thoát/thu được",
+      "absoluteValues": "Giá trị tuyệt đối"
+    },
+    "pvPerformance": {
+      "degrad": "Tỷ lệ xuống cấp",
+      "endOfYear": "Cuối năm",
+      "lifetimeProduction": "Sản lượng điện PV suốt vòng đời",
+      "lifetimeSummary": "Ước tính sản lượng điện mặt trời trung bình hàng năm của một hệ thống quang điện. Giá trị này có xem xét yếu tố cấu hình hệ thống PV và cũng tính đến sự suy giảm hiệu suất hệ thống do lão hóa và sự xuống cấp của các mô-đun PV và các thành phần khác. Sản lượng điện PV riêng là một khái niệm rất hữu ích để so sánh giữa các dự án hoặc các cấu hình hệ thống PV khác nhau. Hệ số hiệu suất (PR) cho biết mức hiệu suất trung bình trong suốt vòng đời của hệ thống PV, có tính đến yếu tố hiệu suất của hệ thống bị suy giảm.",
+      "theoretical": "Lý thuyết"
+    },
+    "reports": {
+      "confirmDelete": "Bạn có chắc chắn muốn xóa báo cáo này không?",
+      "empty": "Không có báo cáo đã lưu nào. Để tạo một báo cáo mới, hãy nhấn nút Tạo.",
+      "generate": "Tạo",
+      "status": {
+        "error": "Lỗi khi tạo báo cáo"
+      },
+      "table": {
+        "date": "Đã tạo",
+        "download": "Tải xuống",
+        "fileType": "Loại tệp",
+        "lang": "Ngôn ngữ",
+        "name": "Tên báo cáo",
+        "no": "Không",
+        "yes": "Có",
+        "dateFormat": "Định dạng ngày tháng",
+        "finance": "Tài chính"
+      },
+      "title": "Tạo báo cáo từ cấu hình hiện tại. Các báo cáo sẽ được giữ lại cho đến khi cấu hình của dự án thay đổi.",
+      "finance": "Bao gồm phần tài chính"
+    },
+    "shared": {
+      "summary": "Tóm tắt",
+      "noPvConfig": "Chỉ các thông số năng lượng mặt trời và khí tượng được tính toán. Không có cấu hình PV nào được xem xét."
+    },
+    "solarMeteo": {
+      "hourlySummary": "Các hồ sơ nhiệt độ không khí và bức xạ mặt trời (như hình bên dưới) được tính dưới dạng mức trung bình của toàn bộ dữ liệu theo giờ cho mỗi tháng. Các hồ sơ này biểu thị mô hình thay đổi của các thông số khí tượng quan trọng trong ngày. Các mô hình này được xác định theo thiên văn và địa lý mặt trời của dự án. Tổng bức xạ nghiêng cho biết bề mặt nghiêng tối ưu của mô-đun quang điện ảnh hưởng như thế nào đến mức độ khả dụng trung bình của nguồn năng lượng mặt trời để sản xuất điện trong một ngày trung bình. Cần lưu ý rằng \"hồ sơ trung bình hàng ngày\" là một khái niệm mang tính lý thuyết, vì trong phần lớn các trường hợp, hồ sơ thay đổi cụ thể theo từng ngày riêng lẻ trong năm do sự thay đổi của thời tiết.",
+      "optimumAzimuth": "Độ nghiêng/góc phương vị tối ưu cho GTI_opta",
+      "radiationTemperature": "Các thông số khí tượng và bức xạ mặt trời",
+      "summary": "Thông số khí tượng quan trọng nhất theo từng dự án cụ thể quyết định sản lượng điện mặt trời là bức xạ mặt trời, để cung cấp năng lượng cho hệ thống điện PV. Sản lượng điện cũng chịu ảnh hưởng từ nhiệt độ không khí. Các thông số khí tượng khác cũng ảnh hưởng đến hiệu suất, tính khả dụng và sự lão hóa của hệ thống PV."
+    },
+    "sunpath": {
+      "axisAzimuth": "Góc phương vị mặt trời [°]",
+      "axisElevation": "Độ cao mặt trời [°]",
+      "civilTime": "Giờ chính thức",
+      "decemberSolstice": "Điểm chí tháng Mười hai",
+      "dstTime": "Giờ DST",
+      "equinox": "Điểm phân",
+      "juneSolstice": "Điểm chí tháng Sáu",
+      "label": "Đường chân trời của dự án và quỹ đạo mặt trời",
+      "modify": "Chỉnh sửa đường chân trời",
+      "module": "Đường chân trời mô-đun",
+      "solarTime": "Giờ mặt trời",
+      "summerSolstice": "Điểm hạ chí",
+      "sunArea": "Khu vực hoạt động",
+      "sunpath": "Quỹ đạo mặt trời",
+      "terrain": "Địa hình đường chân trời",
+      "winterSolstice": "Điểm đông chí",
+      "horizonInvalid": "Đường chân trời được chỉ định trong đầu vào không hợp lệ",
+      "horizonAzimuth": "Góc phương vị: { azimuth }",
+      "horizonElevation": "Độ cao: { elevation }",
+      "horizonHorizonElevation": "Độ cao đường chân trời: { horizon }",
+      "exportHorizon": "Xuất ra tệp HOR"
+    },
+    "unsavedProjectDialog": {
+      "body": "Để mở chi tiết Dự án, bạn cần lưu lại dự án hiện đang chọn. Bạn có muốn lưu dự án này không?",
+      "heading": "Dự án chưa lưu",
+      "action": "Lưu và mở"
+    },
+    "pvLossesLayer": {
+      "capacityFactor": {
+        "name": "Hệ số công suất",
+        "desc": "Tỷ lệ giữa sản lượng năng lượng điện thực tế trong một năm so với sản lượng năng lượng điện tối đa có thể đạt được trong một khoảng thời gian nhất định (thường là một năm), được biểu thị bằng %. Sản lượng điện tối đa có thể đạt được bằng công suất lắp đặt AC nhân với số giờ trong một năm, còn sản lượng điện thực tế bằng lượng điện truyền đi hàng năm từ dự án."
+      },
+      "energyStage": {
+        "ac_out_with_ac_losses": {
+          "name": "Tổng hiệu suất hệ thống (khi khởi động hệ thống)",
+          "desc": "Lượng điện lý thuyết do một hệ thống PV tạo ra khi bắt đầu hoạt động. Ở giai đoạn này, sự xuống cấp của các mô-đun PV không được tính đến."
+        },
+        "ac_out_with_ac_losses_and_snow_losses_and_availability_losses": {
+          "name": "Tổng hiệu suất của hệ thống khi xét đến tính khả dụng về mặt kỹ thuật và thất thoát do tuyết",
+          "desc": "Lượng điện lý thuyết do một hệ thống PV tạo ra khi bắt đầu hoạt động và có tính đến yếu tố ngừng sản xuất do tuyết rơi hoặc hỏng hóc. Ở giai đoạn này, sự xuống cấp của các mô-đun PV không được tính đến."
+        },
+        "ghi": {
+          "name": "Tổng bức xạ phương ngang theo địa điểm",
+          "desc": "Tổng bức xạ phương ngang lý thuyết trừ đi phần bức xạ bị chặn bởi các vật thể địa hình và đường chân trời ở xa."
+        },
+        "ghi_theoretical": {
+          "name": "Tổng bức xạ phương ngang (GHI) lý thuyết",
+          "desc": "Tổng bức xạ phương ngang tính theo phương pháp của Solargis dựa trên các mô hình số, sử dụng các tham số từ một tập hợp các dữ liệu đầu vào đặc trưng cho hệ số truyền sáng của đám mây và trạng thái của khí quyển."
+        },
+        "gti": {
+          "name": "Tổng bức xạ nghiêng (GTI)",
+          "desc": "Tổng bức xạ nghiêng trung bình hàng năm, hàng tháng hoặc hàng ngày (thường được gọi là Bức xạ Mặt phẳng mảng [POA])"
+        },
+        "gti_eff": {
+          "name": "GTI hiệu quả",
+          "desc": "Bức xạ nghiêng hiệu quả chiếu tới bề mặt của các mô-đun PV có xét đến thất thoát quang học."
+        }
+      },
+      "loss": {
+        "angularReflectivity": {
+          "name": "Phản xạ góc",
+          "desc": "Thất thoát quang học do phản xạ góc (hiệu ứng góc tới) trên bề mặt của mô-đun PV, trong đó cường độ của hiệu ứng phụ thuộc vào vị trí tương đối của mặt trời, mặt phẳng của mô-đun, loại và độ sạch của bề mặt mô-đun."
+        },
+        "conversionToSurfaceOfPvModules": {
+          "name": "Chuyển đổi sang bề mặt của mô-đun PV",
+          "desc": "Tính lượng bức xạ nghiêng (thường được gọi là bức xạ mặt phẳng mảng) dựa trên tổng bức xạ phương ngang theo địa điểm cụ thể thông qua các mức bức xạ trực tiếp và khuếch tán."
+        },
+        "dirtDustAndSoiling": {
+          "name": "Bụi bẩn",
+          "desc": "Bức xạ mặt trời bị thất thoát quang học ở bề mặt của mô-đun PV do ô nhiễm bề mặt."
+        },
+        "interRowShading": {
+          "name": "Thất thoát điện năng do che lấp giữa các hàng",
+          "desc": "Thất thoát điện năng do mức bức xạ bị giảm khi các hàng mô-đun PV phía trước chặn mất lượng bức xạ."
+        },
+        "inverters": {
+          "name": "Chuyển đổi trong biến tần (DC/AC)",
+          "desc": "Thất thoát trong biến tần do hiệu quả của quá trình chuyển đổi từ dòng điện một chiều sang dòng điện xoay chiều. Nếu biến tần có máy biến áp tích hợp, hiệu suất của máy biến áp được bao gồm trong thông số này."
+        },
+        "mismatchAndCablingDC": {
+          "name": "Tình trạng không khớp và dây cáp trong phần DC",
+          "desc": "Thất thoát điện năng do các điểm hoạt động MPP khác nhau của các mô-đun không khớp khi nối với biến tần và thất thoát do nhiệt trong các kết nối và dây cáp dòng điện một chiều (DC)."
+        },
+        "powerTolarance": {
+          "name": "Sai số công suất của mô-đun PV",
+          "desc": "Thất thoát điện năng do sai số công suất không đồng đều giữa các mô-đun cụ thể được kết nối trong chuỗi. Nếu các mô-đun có mức sai số công suất cao hơn được mắc nối tiếp, thì mức thất thoát càng cao."
+        },
+        "snow": {
+          "name": "Thất thoát do tuyết",
+          "desc": "Thất thoát sản lượng điện vào những lúc các mô-đun PV bị tuyết bao phủ."
+        },
+        "solarIrradianceToDC": {
+          "name": "Chuyển đổi bức xạ mặt trời thành DC trong các mô-đun",
+          "desc": "Chuyển đổi quang năng của bức xạ thành điện năng trong vật liệu bán dẫn. Hiệu suất chuyển đổi là phi tuyến tính và phụ thuộc vào sự phân bố của cả giá trị bức xạ và nhiệt độ"
+        },
+        "spectralCorrection": {
+          "name": "Sai lệch quang phổ",
+          "desc": "Thất thoát trong quá trình chuyển đổi năng lượng do sự không phù hợp về quang phổ giữa các đặc tính của vật liệu bán dẫn và quang phổ ánh sáng"
+        },
+        "technicalAvailablity": {
+          "name": "Tính khả dụng của hệ thống kỹ thuật",
+          "desc": "Thất thoát sản lượng điện khi nhà máy điện PV ngừng hoạt động do trạm biến áp địa phương bảo trì, gặp sự cố hoặc ngừng hoạt động."
+        },
+        "terrainShading": {
+          "name": "Độ che bóng đường chân trời (vật thể địa hình + đường chân trời)",
+          "desc": "Thất thoát trong tổng bức xạ phương ngang lý thuyết do các đặc điểm địa hình gây ra. Độ che bóng được tính bằng phương pháp phân tổ sử dụng SRTM-3 DEM và chiều cao đường chân trời. Phần bóng do các đặc điểm địa phương như các tòa nhà, công trình kiến trúc hoặc thảm thực vật lân cận không liên quan ở giai đoạn này."
+        },
+        "transformersAndAC": {
+          "name": "Thất thoát do máy biến áp và cáp AC",
+          "desc": "Thất thoát điện năng do biến áp MV hoặc HV bên ngoài và thất thoát nhiệt trong hệ thống cáp và dây nối dòng điện xoay chiều (AC). Thông số này bao gồm mức thất thoát trên cáp AC ở phía hạ áp, mức thất thoát trên cáp AC ở phía trung (cao) áp (đến tận điểm đấu nối của điện lưới với đồng hồ đo điện) và cả trên tất cả các thiết bị có trong đường dẫn của dòng điện AC do máy biến tần tạo ra."
+        }
+      }
+    },
+    "data": {
+      "title": "Xuất dữ liệu trung bình hàng tháng ở định dạng CSV để nhập trực tiếp vào PVsyst.",
+      "download": "Tải xuống",
+      "note": "Lưu ý: Trong PVsyst, dữ liệu GHI, DIF và TEMP hàng giờ được tổng hợp khi nhập dữ liệu trung bình hàng tháng. Khi tổng hợp tập dữ liệu năm điển hình, quá trình toán học này làm mất mối liên kết giữa bức xạ mặt trời và nhiệt độ không khí. Ngoài ra, sự phân bố tần suất của các giá trị hàng giờ trong chuỗi thời gian nhân tạo có thể không đại diện cho các điều kiện thực của khí hậu. Do hiệu suất của hệ thống điện mặt trời thay đổi theo lượng bức xạ mặt trời và nhiệt độ không khí, việc sử dụng tập dữ liệu tổng hợp theo giờ làm tăng độ ổn định của mô phỏng năng lượng mặt trời. Do đó, bạn nên sử dụng <a href='https://solargis.com/products/evaluate/overview' target='_blank'>Chuỗi thời gian hoặc bộ dữ liệu TMY</a> của Solargis để mô phỏng trong PVsyst."
+    },
+    "settings": {
+      "systemSettings": "Cài đặt hệ thống"
+    },
+    "unlockDialog": {
+      "upgrade": "Nâng cấp",
+      "mainTitle": "Mở khóa toàn bộ tính năng",
+      "addPVConfig": "Thêm cấu hình PV",
+      "text": {
+        "reports": "Tạo và tải xuống báo cáo Solargis Prospect chính thức cho cấu hình nhà máy điện của bạn. Hãy chia sẻ báo cáo này với khách hàng hoặc nhà đầu tư. Các báo cáo của chúng tôi được cung cấp bằng nhiều ngôn ngữ.",
+        "download": "Tải xuống dữ liệu khí tượng và năng lượng mặt trời của dự án của bạn để phân tích thêm trong các công cụ của bên thứ ba.",
+        "solarMeteo": "Truy cập số liệu thống kê hàng tháng và hồ sơ hàng giờ về lượng bức xạ mặt trời và dữ liệu khí tượng cho vị trí dự án của bạn.",
+        "compareTool": "So sánh song song số liệu thống kê của nhiều địa điểm để tìm ra vị trí tối ưu cho nhà máy của bạn.",
+        "pvPerformance": "Xem phân tích chi tiết các mức thất thoát.",
+        "pvElectricity": "Truy cập số liệu thống kê hàng tháng và hồ sơ hàng giờ về sản lượng điện lý thuyết cho cấu hình nhà máy của bạn.",
+        "finance": "Tối ưu hóa nguồn tài chính cho dự án của bạn:"
+      },
+      "title": {
+        "reports": "Báo cáo",
+        "download": "Tải xuống",
+        "solarMeteo": "Khí tượng và năng lượng mặt trời",
+        "compareTool": "Công cụ so sánh",
+        "pvElectricity": "Điện PV",
+        "pvPerformance": "Hiệu suất PV",
+        "finance": "Bộ tính toán tài chính"
+      },
+      "requestFreeTrial": "Yêu cầu bản dùng thử miễn phí",
+      "activateFreeTrial": "Kích hoạt bản dùng thử miễn phí",
+      "bulletPoints": {
+        "economyCalculator": {
+          "ROI": "ROI (Tỷ suất hoàn vốn)",
+          "LCOE": "LCOE (Chi phí sản xuất điện quy dẫn)",
+          "equity": "IRR vốn chủ sở hữu",
+          "project": "IRR (Tỷ suất hoàn vốn nội bộ) của dự án"
+        }
+      }
+    }
+  },
+  "projectList": {
+    "filter": {
+      "toolbar": {
+        "archived": "Dự án đã lưu trữ",
+        "default": "Dự án đang hoạt động",
+        "favorite": "Dự án yêu thích",
+        "recent": "Dự án gần đây",
+        "tag": "Nhãn: {tags}"
+      }
+    }
+  },
+  "pvConfig": {
+    "action": {
+      "add": "Thêm cấu hình PV",
+      "change": "Thay đổi loại hệ thống",
+      "edit": "Chỉnh sửa cấu hình PV",
+      "optimum": "Đặt mức tối ưu",
+      "restore": "Khôi phục cài đặt mặc định",
+      "save": "Lưu và tính toán"
+    },
+    "error": {
+      "missing": "Bạn không có bất kỳ cấu hình PV hiện hoạt nào được chọn trong dự án này. Để truy cập dữ liệu PV, bạn cần thêm vào một cấu hình.",
+      "notFound": "Không tìm thấy dự án nào có cấu hình"
+    },
+    "label": {
+      "chooseSystemType": "Chọn loại hệ thống",
+      "copy": "Sao chép từ dự án",
+      "default": "Mẫu mặc định",
+      "systemType": "Loại hệ thống",
+      "unsaved": "Thay đổi chưa lưu",
+      "settings": "Cài đặt hệ thống"
+    },
+    "params": {
+      "backtracking": {
+        "headline": "Truy hồi ngược"
+      },
+      "cablingLosses": {
+        "ACCable": "Thất thoát tại cáp AC",
+        "ACCableShort": "Cáp AC",
+        "DCCable": "Thất thoát tại cáp DC",
+        "DCCableShort": "Cáp DC",
+        "DCMismatch": "Thất thoát do cáp DC không khớp",
+        "DCMismatchShort": "Cáp DC không khớp",
+        "headline": "Thất thoát do cáp",
+        "setDefault": "Thiết lập giá trị mặc định"
+      },
+      "colSpacing": {
+        "headline": "Khoảng cách cột tương đối",
+        "spacing": "Khoảng cách cột tương đối"
+      },
+      "inverter": {
+        "centralized": "Biến tần hiệu suất cao tập trung",
+        "headline": "Loại biến tần",
+        "small": "Biến tần nhỏ",
+        "string": "Biến tần chuỗi",
+        "efficiencyStr": "{inverterType} [{efficiency}% hiệu suất châu Âu]",
+        "custom": "Tùy chỉnh biến tần"
+      },
+      "orientation": {
+        "azimuth": "Góc phương vị",
+        "headline": "Mô hình hình học của mô-đun PV",
+        "tilt": "Độ nghiêng"
+      },
+      "pvModule": {
+        "ASI": "a-Si - silicon vô định hình",
+        "CDTE": "CdTe - cadmium telluride",
+        "CIS": "CIS - đồng indium selenide",
+        "CSI": "c-Si - silicon tinh thể (đơn tinh thể hoặc đa tinh thể)",
+        "customDegradation": "với tỷ lệ xuống cấp là {degradationFirstYear}% trong năm đầu tiên và {degradationNextYear}% trong các năm tiếp theo",
+        "degradation": "Tốc độ suy giảm hiệu suất (RPD) tùy chỉnh",
+        "firstYear": "Năm đầu tiên",
+        "headline": "Loại mô-đun PV",
+        "nextYear": "Các năm tiếp theo"
+      },
+      "rowSpacing": {
+        "headline": "Khoảng cách hàng tương đối",
+        "spacing": "Khoảng cách hàng tương đối"
+      },
+      "snowSoilingLosses": {
+        "headline": "Thất thoát do tuyết và bụi bẩn tại các mô-đun PV",
+        "snowLosses": "Thất thoát hàng tháng do tuyết lên đến",
+        "snowLossesShort": "Thất thoát hàng tháng do tuyết lên đến",
+        "soilingLosses": "Thất thoát hàng tháng do bụi bẩn lên đến",
+        "soilingLossesShort": "Thất thoát hàng tháng do bụi bẩn lên đến",
+        "snowLossesForm": "Thất thoát do tuyết",
+        "soilingLossesForm": "Thất thoát do bụi bẩn",
+        "soilingAsYearly": "Tôi muốn nhập giá trị bụi bẩn hàng năm"
+      },
+      "systemAvailability": {
+        "availability": "Tính khả dụng của hệ thống",
+        "headline": "Tính khả dụng của hệ thống"
+      },
+      "systemSize": {
+        "area": "Khu vực lắp đặt các mô-đun PV",
+        "capacity": "Công suất lắp đặt",
+        "headline": "Kích cỡ hệ thống"
+      },
+      "transformer": {
+        "headline": "Loại biến áp",
+        "highEfficiency": "Biến áp hiệu suất cao",
+        "none": "Không có biến áp",
+        "standard": "Biến áp tiêu chuẩn",
+        "lossStr": "{transformerType} [{loss}% thất thoát]",
+        "custom": "Tùy chỉnh máy biến áp"
+      },
+      "rotationLimits": {
+        "val": "{east}° Đông, {west}° Tây",
+        "west": "Tây",
+        "east": "Đông",
+        "headline": "Giới hạn xoay"
+      }
+    },
+    "type": {
+      "buildingIntegrated": {
+        "desc": "Hệ thống quang điện được tích hợp vào mặt tiền hoặc mái của một tòa nhà dân cư hoặc thương mại. Góc phương vị và độ nghiêng của các mô-đun PV là đồng nhất. Các mô-đun không phủ bóng lên nhau. Các mô-đun được tích hợp vào bề mặt ngoài của tòa nhà, do đó việc thông gió mặt dưới rất hạn chế. Loại hệ thống PV này có thể được nối trực tiếp với lưới điện hạ áp thông qua một bộ biến tần hoặc có thể được nối với lưới điện trung áp thông qua một bộ biến tần và máy biến áp phân phối. Không có thiết bị lưu trữ điện nào được xem xét.",
+        "name": "Tích hợp vào tòa nhà"
+      },
+      "groundFixed": {
+        "desc": "Hệ thống quang điện thương mại quy mô lớn được đặt trên mặt đất bằng phẳng. Góc phương vị và độ nghiêng của các mô-đun PV là đồng nhất, thường hướng về phía Xích đạo và nghiêng ở độ nghiêng tối ưu để tối đa hóa sản lượng điện hàng năm. Các mô-đun được lắp cố định trên các cấu trúc nghiêng xếp thẳng hàng. Vào những lúc góc mặt trời xuống thấp, các mô-đun có thể bị các hàng nằm trước che đi một phần. Các mô-đun được thông gió tốt. Loại hệ thống PV này được nối với lưới điện trung áp hoặc cao áp thông qua một bộ biến tần và máy biến áp phân phối, đồng thời có thể sử dụng máy biến áp bổ sung. Không có thiết bị lưu trữ điện nào được xem xét.",
+        "name": "Lắp cố định trên mặt đất"
+      },
+      "noPvSystem": {
+        "desc": "Chỉ các thông số năng lượng mặt trời và khí tượng được tính toán. Không có cấu hình PV nào được xem xét.",
+        "name": "Không có hệ thống PV"
+      },
+      "rooftopLargeFlat": {
+        "desc": "Hệ thống quang điện được đặt trên phần mái ngang, diện tích lớn của một tòa nhà thương mại hoặc công nghiệp. Góc phương vị và độ nghiêng của các mô-đun PV là đồng nhất. Các mô-đun được lắp cố định trên các cấu trúc nghiêng, gắn vào phần mái bằng của tòa nhà và xếp thành hàng. Do đó, vào những lúc góc mặt trời xuống thấp, các mô-đun có thể bị các hàng nằm trước che đi một phần. Hình thức lắp đặt này cho phép thông gió cho các mô-đun PV, nhưng nhiệt từ bề mặt mái có thể ảnh hưởng đến hiệu suất của hệ thống PV. Loại hệ thống PV này có thể được nối trực tiếp với lưới điện hạ áp thông qua một bộ biến tần hoặc có thể được kết nối với lưới điện trung áp thông qua một bộ biến tần và máy biến áp phân phối. Không có thiết bị lưu trữ điện nào được xem xét.",
+        "name": "Mái bằng, diện tích lớn"
+      },
+      "rooftopLargeTilted": {
+        "desc": "Hệ thống quang điện được lắp trên phần mái nghiêng, diện tích lớn của một tòa nhà thương mại hoặc công nghiệp. Góc phương vị và độ nghiêng của các mô-đun PV là đồng nhất và các mô-đun không phủ bóng lên nhau. Các mô-đun được gắn trên đường ray và gắn vào phần mái nghiêng, do đó có thể thông gió từ phía sau. Hệ thống này có thể được nối trực tiếp với lưới điện hạ thế thông qua một bộ biến tần hoặc có thể được nối với lưới điện trung áp thông qua một bộ biến tần và máy biến áp phân phối. Không có thiết bị lưu trữ điện nào được xem xét.",
+        "name": "Mái nghiêng, diện tích lớn"
+      },
+      "rooftopSmall": {
+        "desc": "Hệ thống quang điện được lắp trên phần mái nghiêng của một tòa nhà dân cư. Góc phương vị và độ nghiêng của các mô-đun PV là đồng nhất và các mô-đun không phủ bóng lên nhau. Các mô-đun được lắp trên đường ray và gắn vào phần mái nghiêng, do đó cho phép thông gió từ phía sau. Loại hệ thống PV này thường được nối trực tiếp với lưới điện hạ áp thông qua một bộ biến tần. Không có thiết bị lưu trữ điện nào được xem xét.",
+        "name": "Mái diện tích nhỏ"
+      },
+      "trackerOneAxisHorizontalNS": {
+        "desc": "Hệ thống quang điện thương mại quy mô lớn được đặt trên mặt đất bằng phẳng. Các mô-đun PV được lắp trên hệ thống giá đỡ chỉnh hướng có một trục ngang cố định theo hướng Bắc-Nam. Phạm vi xoay của hệ thống giá đỡ giới hạn ở hướng Đông và Tây. Thuật toán truy hồi ngược được sử dụng để giảm thất thoát do bóng đổ giữa các hàng vào những lúc góc mặt trời xuống thấp. Các mô-đun được thông gió tốt. Loại hệ thống PV này được nối với lưới điện trung áp hoặc cao áp thông qua một bộ biến tần và máy biến áp phân phối, đồng thời có thể sử dụng một biến áp bổ sung. Không có thiết bị lưu trữ điện nào được xem xét.",
+        "name": "Hệ thống giá đỡ chỉnh hướng có 1 trục ngang"
+      },
+      "hydroMountedLargeScale": {
+        "desc": "Tùy chọn này bao gồm các hệ thống lắp đặt điện mặt trời nổi, quy mô lớn. Các mô-đun được lắp ráp trên phao nổi bằng nhựa, hướng về đường xích đạo. Các mô-đun có nhiệt độ hoạt động thấp hơn do được làm mát nhờ nước bề mặt bay hơi. Dự kiến sẽ xảy ra tình trạng chênh lệch cao hơn giữa các mô-đun trong một chuỗi (sự chênh lệch do sóng) và độ bụi bẩn cao hơn do phân chim. Trong hệ thống ví dụ này, có tính đến biến tần chuỗi và máy biến áp phân phối. So với cách lắp đặt hệ thống PV quy mô lớn trên mặt đất, tính khả dụng dự kiến của hệ thống thấp hơn do môi trường khắc nghiệt hơn, với xác suất xảy ra các loại lỗi cao hơn.",
+        "name": "PV nổi"
+      }
+    }
+  },
+  "toggle": {
+    "ltaDaily": {
+      "perDay": "{unit} mỗi ngày"
+    }
+  },
+  "units": {
+    "DMS": "DMS",
+    "celsius": "°C",
+    "currencyAnnual": "{currency}/hàng năm",
+    "currencyMonthly": "{currency}/hàng tháng",
+    "days": "ngày",
+    "decimal": "Thập phân",
+    "degreeDays": "nhiệt độ ngày",
+    "fahrenheit": "°F",
+    "feet": "ft",
+    "kWhAnnually": "kWh/hàng năm",
+    "meter": "m",
+    "perDay": "Hàng ngày",
+    "perMonth": "Hàng tháng",
+    "perYear": "Hàng năm",
+    "years": "năm",
+    "inhabitants": "inh.",
+    "km": "km",
+    "m2": "m<sup>2</sup>",
+    "mm": "mm",
+    "Wh": "Wh",
+    "km2": "km<sup>2</sup>",
+    "kWh": "kWh",
+    "kWp": "kWp",
+    "m/s": "m/s",
+    "MWh": "MWh",
+    "MWp": "MWp",
+    "kg/m2": "kg/m<sup>2</sup>",
+    "MJ/m2": "MJ/m<sup>2</sup>",
+    "Wh/m2": "Wh/m<sup>2</sup>",
+    "kWh/m2": "kWh/m<sup>2</sup>",
+    "Wh/kWp": "Wh/kWp",
+    "kWh/kWp": "kWh/kWp",
+    "inh./km2": "inh./km<sup>2</sup>"
+  },
+  "user": {
+    "company": {
+      "EUVATCheckInProgress": "Đang kiểm tra mã số VAT của công ty",
+      "add": "Tạo tài khoản khách hàng",
+      "field": {
+        "city": "Thành phố",
+        "country": "Quốc gia/Khu vực",
+        "name": "Tên",
+        "phone": "Số điện thoại",
+        "state": "Tiểu bang",
+        "street": "Đường",
+        "zipCode": "ZIP",
+        "VAT": "Mã số VAT",
+        "trial": "Yêu cầu bản dùng thử miễn phí",
+        "billing": "Thêm thông tin thanh toán",
+        "companyName": "Tên công ty",
+        "companyOrOrganisationName": "Tên Công ty / Tổ chức",
+        "territory": "Lãnh thổ"
+      },
+      "invalidEUVat": "Mã số VAT của công ty bạn vừa nhập không hợp lệ. Định dạng mã số VAT bắt buộc là SKxxxxxxxxx",
+      "messages": {
+        "update-fail": "Cập nhật công ty không thành công, vui lòng thử lại sau!",
+        "update-ok": "Công ty đã được cập nhật!",
+        "create-ok": "Khách hàng đã được tạo!",
+        "create-fail": "Tạo công ty không thành công, vui lòng thử lại sau!",
+        "success-items": {
+          "name": "Tài khoản công ty „{name}“ đã được tạo",
+          "trial": "Yêu cầu bản dùng thử miễn phí đã được chấp nhận",
+          "billing": "Thông tin thanh toán đã được thêm",
+          "trialFailed": "Không thể phê duyệt yêu cầu bản dùng thử miễn phí"
+        },
+        "checkingVat": "Đang kiểm tra VAT"
+      },
+      "none": "Bạn không có bất kỳ tài khoản công ty nào",
+      "profile": {
+        "name": "Tên công ty",
+        "projects": "Dự án đang hoạt động",
+        "role": "Vai trò của bạn",
+        "updated": "Đã cập nhật",
+        "type": "Loại",
+        "switch": "Chuyển công ty",
+        "current": "hiện tại",
+        "companyAccount": "Tài khoản công ty",
+        "personalAccount": "Tài khoản cá nhân"
+      },
+      "role": {
+        "ADMIN": "Quản trị viên",
+        "USER": "Người dùng thông thường"
+      },
+      "similarExists": "Chúng tôi nhận thấy có thể đã có một công ty tương tự tồn tại trong cơ sở dữ liệu của chúng tôi. Chúng tôi sẽ kiểm tra theo cách thủ công và thông báo cho bạn nếu công ty của bạn đã tồn tại.",
+      "status": {
+        "ACTIVE": "Đang hoạt động",
+        "SUSPENDED": "Đã đình chỉ",
+        "DELETED": "Đã xóa"
+      },
+      "stepOf": "Bước { step } / { total }",
+      "welcomeDialog": {
+        "assignedToCompany": "Bạn đã được thêm thành công vào công ty { companyName }",
+        "continue": "Bắt đầu thôi!",
+        "newCompany": "Công ty { companyName } đã được tạo thành công",
+        "purchase": "Mua gói đăng ký",
+        "welcome": "Chào mừng công ty { companyName }!"
+      },
+      "freeTrial": {
+        "assignSuccess": "Đã chỉ định thành công bản dùng thử miễn phí cho công ty: {companyName}",
+        "info": "Để tránh lạm dụng bản dùng thử miễn phí, chúng tôi cần xác nhận số điện thoại của bạn",
+        "code": "Mã xác nhận",
+        "whatIs": "Bản dùng thử miễn phí cho phép bạn kích hoạt đầy đủ các tính năng của ứng dụng Prospect cho 1 dự án mà bạn lựa chọn. Bản dùng thử miễn phí có hiệu lực trong 14 ngày",
+        "success": "Tạo dự án của bạn và kích hoạt bản dùng thử miễn phí cho một dự án.",
+        "sendAgain": "Gửi lại",
+        "phoneInvalid": "Số điện thoại đã được sử dụng hoặc không hợp lệ",
+        "otpInvalid": "Mã OTP không hợp lệ",
+        "incorrectVerificationCode": "Mã xác thực bạn đã nhập không chính xác. Vui lòng quay lại để nhập lại mã xác thực hoặc yêu cầu mã mới."
+      },
+      "action": {
+        "add": "Thêm",
+        "create": "Tạo",
+        "verify": "Xác thực",
+        "trialLater": "Yêu cầu bản dùng thử miễn phí sau",
+        "billingLater": "Thêm thông tin thanh toán sau"
+      },
+      "phoneCodeIsString": "Chọn đầu số điện thoại từ menu",
+      "stateNotSelectedFromList": "Chọn một tiểu bang từ danh sách",
+      "countryNotSelectedFromList": "Chọn một quốc gia từ danh sách",
+      "phoneInvalid": "Số điện thoại không hợp lệ",
+      "EUVATTerritoryHint": "Nếu bạn đến từ lãnh thổ không sử dụng ID VAT hợp lệ, hãy <a href='https://solargis.com/about-us/contact' target='_blank'>liên hệ với chúng tôi.</a>",
+      "errors": {
+        "vatNotValid": "VAT không hợp lệ cho {vatPrefix}",
+        "vatIdSpacesForbidden": "ID VAT phải không có dấu cách"
+      },
+      "territoryNotSelectedFromList": "Chọn một lãnh thổ từ danh sách"
+    },
+    "profile": {
+      "account": "Tài khoản người dùng",
+      "changeName": "Thay đổi tên",
+      "changePassword": "Thay đổi mật khẩu",
+      "companyAccounts": "Tài khoản công ty",
+      "general": "Tổng quan",
+      "loginSecurity": "Đăng nhập và bảo mật",
+      "my": "Hồ sơ của tôi",
+      "notifications": "Thông báo",
+      "overview": "Tổng quan",
+      "units": "Đơn vị",
+      "unselectCompany": "Chuyển sang tài khoản người dùng",
+      "type": "Tài khoản cá nhân",
+      "photo": "Ảnh của bạn",
+      "addPhoto": "Thêm ảnh hồ sơ",
+      "lastChange": "Thay đổi lần cuối",
+      "changeEmail": "Thay đổi email",
+      "changeUnitSettings": "Thay đổi cài đặt đơn vị",
+      "sdatDevices": "Thiết bị SDAT đã đăng ký"
+    },
+    "selectCompany": {
+      "headline": "Vui lòng chọn một công ty để tiếp tục",
+      "none": "Chúng tôi không tìm thấy bất kỳ công ty nào. Bạn có muốn tạo một công ty mới không?",
+      "noneAdmin": "Chúng tôi không tìm thấy bất kỳ công ty nào mà bạn được chỉ định làm quản trị viên. Bạn có muốn tạo một công ty mới không?",
+      "admin": "Chúng tôi đang hiển thị danh sách các công ty mà bạn được chỉ định làm quản trị viên"
+    }
+  },
+  "payment": {
+    "dialog": {
+      "change": "Thay đổi phương thức thanh toán",
+      "chooseMethod": "Chọn phương thức thanh toán",
+      "headline": "Tổng đơn hàng: {sum}",
+      "payNow": "Thanh toán ngay {price}",
+      "resultHeadline": "Kết quả thanh toán"
+    },
+    "method": {
+      "bank": "Thanh toán qua ngân hàng",
+      "card": "Thanh toán trực tuyến bằng thẻ",
+      "bankDesc": "Thông tin về thanh toán sẽ được hiển thị trong hóa đơn"
+    },
+    "thankYou": {
+      "detail": "Xem chi tiết đơn hàng",
+      "thankYou": "Xin cảm ơn!",
+      "thankYouBank": "Cảm ơn bạn đã đặt hàng. Đơn đặt hàng sẽ được xử lý sau khi chúng tôi nhận được khoản thanh toán qua ngân hàng của bạn.",
+      "thankYouCard": "Khoản thanh toán qua thẻ của bạn đã thành công. Sản phẩm của bạn sẽ sớm được kích hoạt."
+    },
+    "failed": {
+      "failed": "Thanh toán không thành công",
+      "failedText": "Chúng tôi đã không thể xử lý thanh toán của bạn. Vui lòng thử lại sau hoặc liên hệ với bộ phận hỗ trợ của chúng tôi."
+    },
+    "pricing": {
+      "pricing": "Giá",
+      "choosePlan": "Chọn gói Prospect phù hợp cho bạn",
+      "currentPlan": "Gói hiện tại",
+      "free": {
+        "price": "Gói miễn phí",
+        "actionDesc": "Bản demo – Có thể sử dụng mà không cần đăng ký",
+        "info": "Dành cho người mới bắt đầu thực hành đánh giá năng lượng mặt trời",
+        "feature1": "Dữ liệu trung bình hàng năm",
+        "feature2": "Bản đồ tài nguyên mặt trời tương tác",
+        "action": "Bắt đầu",
+        "feature3": "Công cụ mô phỏng PV thân thiện với người dùng và mang lại kết quả đáng tin cậy"
+      },
+      "basic": {
+        "priceInfo": "Bắt đầu với 3 người dùng / năm",
+        "action": "Đăng ký",
+        "actionDesc": "Tính ngay mức giá của bạn",
+        "info": "Các tính năng không thể thiếu cho các nhóm xử lý dự án thương mại trên tầng mái",
+        "feature1": "Trung bình hàng tháng và hồ sơ cấu hình 24 x 12",
+        "feature2": "Tải xuống báo cáo định dạng XLSX và PDF",
+        "feature3": "Công cụ so sánh",
+        "feature4": "Tính toán hiệu quả kinh tế",
+        "feature5": "Đã bao gồm 3 người dùng + € 300 cho mỗi người dùng bổ sung",
+        "all": "Tất cả các tính năng của gói Miễn phí, cộng với:"
+      },
+      "pro": {
+        "priceInfo": "Bắt đầu với 3 người dùng / năm",
+        "action": "Đăng ký",
+        "upgrade": "Nâng cấp",
+        "actionDesc": "Tính ngay mức giá của bạn",
+        "info": "Các tính năng nâng cao dành cho các chuyên gia làm việc với những dự án quy mô lớn",
+        "feature1": "Dữ liệu Albedo để ước tính chính xác mức thu được ở cả hai mặt",
+        "feature2": "Dữ liệu về nước và độ ẩm ngưng tụ để tính toán mức thất thoát/thu được do quang phổ",
+        "feature3": "Dữ liệu về lượng mưa và ngày tuyết rơi để ước tính lượng thất thoát do bụi bẩn và tuyết",
+        "feature4": "Hỗ trợ hệ thống giá đỡ chỉnh hướng 1 trục và hệ thống PV nổi",
+        "feature5": "Đã bao gồm 3 người dùng + € 600 cho mỗi người dùng bổ sung",
+        "all": "Tất cả các tính năng của gói Cơ bản, cộng với:"
+      },
+      "table": {
+        "data": {
+          "albedo": {
+            "text": "Albedo bề mặt"
+          },
+          "compare": {
+            "help": "Công cụ so sánh sản lượng cho tối đa 4 dự án khác nhau",
+            "text": "Công cụ so sánh"
+          },
+          "configure": {
+            "free": "Chỉ dành cho hệ thống gắn cố định",
+            "pro": "Hệ thống gắn cố định + Hệ thống giá đỡ chỉnh hướng 1 trục",
+            "text": "Định cấu hình hệ thống PV"
+          },
+          "economy": {
+            "help": "Công cụ đơn giản để tính ROI (Tỷ suất hoàn vốn), thời gian hoàn vốn, LCOE, v.v.",
+            "text": "Tính toán hiệu quả kinh tế"
+          },
+          "report": {
+            "text": "Tải xuống báo cáo định dạng PDF và XLSX"
+          },
+          "solar": {
+            "help": "Tổng bức xạ phương ngang, Bức xạ ngang khuếch tán và Bức xạ trực tiếp thông thường",
+            "text": "Các thông số tài nguyên mặt trời (GHI, DIF, DNI)"
+          },
+          "features": "Tính năng",
+          "save": {
+            "text": "Tạo và lưu dự án"
+          },
+          "pv": {
+            "pro": "Hệ thống nghiêng cố định và hệ thống giá đỡ chỉnh hướng 1 trục",
+            "text": "Các thông số PV (GTI, PVOUT)",
+            "help": "Tổng bức xạ nghiêng và sản lượng điện PV",
+            "free": "Chỉ hỗ trợ hệ thống nghiêng cố định",
+            "basic": "Chỉ hỗ trợ hệ thống nghiêng cố định"
+          },
+          "meteo": {
+            "help": "Nhiệt độ không khí, Vận tốc gió, Số ngày mát, Nhiệt độ gia nhiệt ngày",
+            "text": "Các thông số khí tượng cơ bản (TEMP, WS, CDD, HDD)"
+          },
+          "dataParams": "Các thông số dữ liệu",
+          "meteo2": {
+            "text": "Lượng mưa, Ngày tuyết rơi, Độ ẩm tương đối và Nước ngưng tụ"
+          },
+          "hourly": {
+            "text": "Hồ sơ cấu hình 24 x 12 (giờ x tháng)",
+            "basic": "Các thông số đã chọn"
+          },
+          "annual": {
+            "text": "Trung bình hàng năm dài hạn"
+          },
+          "monthly": {
+            "text": "Trung bình hàng tháng dài hạn"
+          },
+          "floating": {
+            "text": "Hỗ trợ cho hệ thống PV nổi"
+          },
+          "dataAggregation": "Tổng hợp dữ liệu"
+        }
+      },
+      "alert": {
+        "body": "Bạn hiện đã được chuyển sang tài khoản cá nhân của mình. Vui lòng chọn tài khoản công ty mà bạn muốn chỉ định gói đăng ký trong phần cài đặt để tiếp tục",
+        "heading": "Chọn một công ty để tiếp tục"
+      }
+    },
+    "cart": {
+      "headline": "Đơn đặt hàng của bạn",
+      "empty": "Giỏ hàng trống",
+      "edit": "Chỉnh sửa {productName}",
+      "step1": {
+        "name": "Món hàng",
+        "withoutVAT": "Giá chưa bao gồm VAT",
+        "total": "Tổng gói đăng ký theo năm",
+        "back": "Quay lại sản phẩm",
+        "purchaseOrder": "Đơn đặt hàng",
+        "purchaseOrderPlaceholder": "Số đơn hàng",
+        "users": "Người dùng có quyền truy cập đầy đủ",
+        "subscription": "Gói đăng ký",
+        "remove": "Bạn có muốn xóa mặt hàng này khỏi giỏ hàng không?",
+        "annual": "Hàng năm"
+      },
+      "step2": {
+        "name": "Thông tin thanh toán",
+        "address": "Địa chỉ thanh toán"
+      },
+      "step3": {
+        "total": "Tổng đơn đặt hàng",
+        "totalVAT": "Tổng đơn đặt hàng đã bao gồm VAT",
+        "name": "Thanh toán",
+        "continue": "Đi đến đơn đặt hàng của tôi"
+      }
+    }
+  },
+  "report": {
+    "mapLink": "Vị trí trên bản đồ",
+    "contents": "Nội dung",
+    "cover": {
+      "ProspectPv": {
+        "title": "Đánh giá sơ bộ về sản lượng quang điện",
+        "type": "Đánh giá của PROSPECT năng lượng PV"
+      },
+      "ProspectSolar": {
+        "title": "Đánh giá sơ bộ về bức xạ mặt trời tại địa điểm",
+        "type": "Đánh giá của PROSPECT về tài nguyên mặt trời"
+      },
+      "customer": "Khách hàng",
+      "generated": "Ngày tạo",
+      "generatedBy": "Người tạo",
+      "project": "Dự án",
+      "reportNr": "Số báo cáo",
+      "reportType": "Loại báo cáo",
+      "tel": "số điện thoại"
+    },
+    "figure": "Hình",
+    "hourlyDni": "Bức xạ trực tiếp thông thường - trung bình hàng giờ",
+    "hourlyGhi": "Tổng bức xạ phương ngang - trung bình hàng giờ",
+    "legal": {
+      "copyright": "Báo cáo này thuộc bản quyền của © { currentYear } Solargis s.r.o., mọi quyền được bảo lưu.",
+      "email": "Email",
+      "guarantee": "Cân nhắc đến tính bất ổn định của dữ liệu và công thức tính toán, Solargis s.r.o. không đảm bảo tính chính xác của các ước tính. Mọi phương pháp tối ưu đều đã được thực hiện để đánh giá các thông số thời tiết và đánh giá sơ bộ sản lượng quang điện dựa trên dữ liệu, phần mềm và kiến thức tốt nhất hiện có. Solargis s.r.o. sẽ không chịu trách nhiệm đối với bất kỳ thiệt hại trực tiếp, ngẫu nhiên, do hậu quả, gián tiếp hoặc mang tính răn đe phát sinh hoặc được cho là đã phát sinh từ việc sử dụng báo cáo được cung cấp.",
+      "moreInfo": "Có thể tìm thấy thêm thông tin về đánh giá năng suất PV đầy đủ tại:",
+      "registrationId": "ID đăng ký",
+      "serviceProvider": "Nhà cung cấp dịch vụ",
+      "tel": "Điện thoại",
+      "terms": "Xem toàn văn ĐIỀU KHOẢN HỢP ĐỒNG CHUNG ĐỐI VỚI Các DỊCH VỤ TRẢ PHÍ tại:",
+      "title": "Tuyên bố khước từ trách nhiệm và thông tin pháp lý",
+      "trademark": "Solargis® là thương hiệu của Solargis s.r.o.",
+      "uncertainty": "Báo cáo này thể hiện các ước tính về mức điện mặt trời trong giai đoạn khởi động và trong toàn bộ vòng đời của hệ thống PV. Các ước tính có độ chính xác đủ để dùng cho đánh giá dự án sơ bộ. Đối với việc lập kế hoạch và tài trợ cho các dự án lớn, cần có thêm thông tin: 1. Thống kê về sự phân bố và tính không ổn định của bức xạ mặt trời 2. Đặc điểm kỹ thuật chi tiết của hệ thống PV 3. Sự thay đổi giữa các năm và sự không ổn định về P90 của sản lượng PV 4. Sản lượng điện suốt vòng đời có tính đến mức suy giảm hiệu suất của các cấu phần PV.",
+      "url": "URL",
+      "validationAuth": "Xác nhận tính xác thực",
+      "validationAuthText": "Báo cáo PDF này được ký điện tử bởi Solargis s.r.o..",
+      "vatNr": "Mã số VAT"
+    },
+    "location": "Địa điểm dự án",
+    "ltaPvout": "Sản lượng điện PV - trung bình dài hạn",
+    "mapView": "Xem bản đồ chi tiết",
+    "otherParams": "Các thông số khí tượng khác",
+    "slovakia": "Slovakia",
+    "solarParams": "Các thông số khí tượng và bức xạ mặt trời",
+    "table": "Bảng",
+    "dailyAvg": "Trung bình hàng ngày",
+    "hourlyGti": "Tổng bức xạ nghiêng - trung bình hàng giờ",
+    "hourlyPvoutSpecific": "Sản lượng quang điện riêng – trung bình hàng giờ",
+    "hourlyPvoutTotal": "Tổng sản lượng quang điện – trung bình hàng giờ",
+    "hourlyTemp": "Nhiệt độ không khí - trung bình hàng giờ",
+    "monthlySum": "Tổng hàng tháng",
+    "dailyStats": "Thống kê hàng ngày",
+    "dailyGhiDniDif": "GHI, DNI, DIF - trung bình hàng ngày",
+    "solarDailySummary": "Các biểu đồ bức xạ mặt trời dưới đây được tính dưới dạng mức trung bình của toàn bộ dữ liệu theo giờ cho mỗi tháng. Các hồ sơ này biểu thị quy luật thay đổi của thông số GHI mỗi ngày và cho từng tháng riêng biệt. Các quy luật này thay đổi theo địa lý địa phương, thiên văn và khí hậu của địa điểm lắp đặt.",
+    "glossary": {
+      "title": "Từ viết tắt và bảng chú giải thuật ngữ",
+      "pv": "Thông số điện PV",
+      "meteo": "Thông số khí tượng",
+      "solar": "Thông số năng lượng mặt trời"
+    },
+    "freeTrialWatermark": "Bản dùng thử miễn phí",
+    "annually": "hàng năm"
+  },
+  "csvData": {
+    "T24": "T24 - Nhiệt độ không khí trung bình ngày (24 giờ) ở độ cao 2 m so với mặt đất. Được tính dựa trên kết quả đầu ra của mô hình ERA-5 (© 2019 ECMWF) [độ C]",
+    "WSm": "WSm - Vận tốc gió trung bình hàng tháng ở độ cao 10 m so với mặt đất. Được tính dựa trên kết quả đầu ra của các mô hình MERRA-2 và CFSv2 (© {year} NOAA và NASA) [m/s]",
+    "RHm": "RHm - Độ ẩm tương đối trung bình hàng tháng ở độ cao 2 m so với mặt đất. Được tính dựa trên kết quả đầu ra của các mô hình MERRA-2 và CFSv2 (© {year} NASA và NOAA) [%]",
+    "ALBm": "ALBm - Phần bức xạ mặt trời mà bề mặt phản xạ lại. Tỷ lệ giữa thông lượng bức xạ hắt lên so với lượng bức xạ hấp thụ (GHI) ở bề mặt. (Lấy từ NASA MODIS và ECMWF ERA-5) []",
+    "data": "Dữ liệu",
+    "HDDm": "HDDm - Định lượng mức năng lượng cần thiết để làm ấm một tòa nhà. \"Nhiệt độ gia nhiệt ngày\" là đại lượng thể hiện về lượng nhiệt (tính bằng độ) và khoảng thời gian (tính bằng ngày) mà nhiệt độ ngoài trời thấp hơn nhiệt độ trung bình cụ thể hàng ngày cơ bản (18°C). Giá trị hàng năm và hàng tháng được tổng hợp từ giá trị hàng ngày. Được Solargis tính toán dựa trên dữ liệu nhiệt độ không khí [nhiệt độ ngày]",
+    "CDDm": "CDDm - Định lượng mức năng lượng cần thiết để làm mát một tòa nhà. \"Nhiệt độ làm mát ngày\" là đại lượng thể hiện về lượng nhiệt (tính bằng độ) và khoảng thời gian (tính bằng ngày) mà nhiệt độ ngoài trời cao hơn nhiệt độ trung bình cụ thể hàng ngày cơ bản (18°C). Giá trị hàng năm và hàng tháng được tổng hợp từ giá trị hàng ngày. Được Solargis tính toán dựa trên dữ liệu nhiệt độ không khí [nhiệt độ ngày]",
+    "year": "Năm",
+    "DNIm": "DNIm - Tổng lượng bức xạ trực tiếp thông thường trung bình hàng tháng (© {year} Solargis) [kWh/m2]",
+    "GHIm": "GHIm - Tổng bức xạ phương ngang trung bình hàng tháng (© {year} Solargis) [kWh/m2]",
+    "title": "MỨC TRUNG BÌNH HÀNG THÁNG DÀI HẠN CỦA CÁC THÔNG SỐ KHÍ TƯỢNG VÀ BỨC XẠ MẶT TRỜI",
+    "PRECm": "PRECm - Tổng lượng mưa trung bình hàng tháng được lấy từ cơ sở dữ liệu Khí hậu lượng mưa toàn cầu (© {year} DWD) [mm]",
+    "Diffm": "Diffm - Tổng bức xạ ngang khuếch tán trung bình hàng tháng (© {year} Solargis) [kWh/m2]",
+    "PWATm": "PWATm - Nước ngưng tụ là độ sâu của hơi nước trong một cột khí quyển, nếu tất cả nước trong cột đó bị ngưng tụ dưới dạng nước mưa. Thông số này cho biết lượng ẩm trên mặt đất. Được tính dựa trên kết quả đầu ra của các mô hình CFSR và CFSv2 (© {year} NOAA) [kg/m2]",
+    "issued": "Đã phát hành",
+    "SNOWDm": "SNOWDm - Ngày tuyết rơi được tính là ngày có độ sâu nước tuyết tương đương hoặc cao hơn 5 mm. Được tính dựa trên kết quả đầu ra của các mô hình CFSR và CFSv2 (© 2019 NOAA) [ngày]",
+    "columns": "Cột",
+    "azimuth": "Góc phương vị của dốc",
+    "latitude": "Vĩ độ",
+    "siteName": "Tên địa điểm lắp đặt",
+    "encoding": "Mã hóa ký tự",
+    "longitude": "Kinh độ",
+    "elevation": "Độ cao",
+    "inclination": "Độ nghiêng của dốc",
+    "reportNumber": "Số báo cáo"
+  },
+  "export": {
+    "title": "Xuất dự án",
+    "confirmText": "Bạn có muốn xuất các dự án đã chọn sang tệp CSV không?",
+    "csvInfo": {
+      "exported": "Đã xuất",
+      "ftpCompatible": "Các thông số của cấu hình PV đã xuất được mô tả trong tài liệu tại đây"
+    }
+  },
+  "cookies": {
+    "cookie-banner": {
+      "text": "Chúng tôi sử dụng cookie để mang đến cho bạn trải nghiệm tốt nhất khi truy cập trang web của chúng tôi. Bằng cách nhấp vào nút 'Chấp nhận' hoặc bằng cách tiếp tục sử dụng trang web, bạn chấp nhận với việc sử dụng cookie trong trình duyệt của mình.",
+      "accept": "Chấp nhận",
+      "more-info": "Thông tin thêm"
+    }
+  },
+  "dashboard": {
+    "landingPage": {
+      "learnMore": "Tìm hiểu thêm",
+      "titleHeader": "Dữ liệu và phần mềm thời tiết để hỗ trợ đầu tư vào lĩnh vực điện mặt trời",
+      "footer": {
+        "news": "Tin tức",
+        "events": "Sự kiện",
+        "pricing": "Giá",
+        "contactUs": "Liên hệ với chúng tôi",
+        "releaseNotes": "Ghi chú phát hành",
+        "solargisHomepage": "Trang chủ Solargis"
+      },
+      "subtitleCard": "Ứng dụng đang trong giai đoạn phát triển",
+      "monitor": {
+        "button": "Dịch vụ API",
+        "content": "Nhận cập nhật thường xuyên về dữ liệu Solargis để giám sát hiệu suất của hệ thống quang điện.",
+        "subtitleFirst": "Cập nhật hàng ngày hoặc thời gian thực",
+        "subtitleThird": "Truy cập API/FTP",
+        "subtitleSecond": "Bước thời gian lên đến 15 phút"
+      },
+      "prospect": {
+        "content": "Công cụ khảo sát năng lượng mặt trời giúp đánh giá tiền khả thi cho dự án của bạn một cách nhanh chóng và đáng tin cậy.",
+        "subtitleFirst": "Dữ liệu trung bình hàng năm và hàng tháng",
+        "subtitleThird": "Dữ liệu về albedo, lượng mưa và tuyết",
+        "subtitleSecond": "Hồ sơ cấu hình hàng giờ (24) x hàng tháng (12)"
+      },
+      "evaluate": {
+        "button": "Dữ liệu TS / TMY đơn hàng",
+        "content": "Cho phép lập mô hình năng lượng nâng cao và tối ưu hóa thiết kế của các nhà máy điện mặt trời.",
+        "subtitleFirst": "Dữ liệu chuỗi thời gian, tính đến tháng trước",
+        "subtitleThird": "Nhập dữ liệu vào PVsyst, Helioscope, SAM, v.v.",
+        "subtitleSecond": "TMY P50, P90, Pxx"
+      },
+      "subtitleHeader": "Giảm bớt rủi ro và tối đa hóa lợi nhuận cho các tài sản năng lượng mặt trời của bạn",
+      "forecast": {
+        "button": "Dịch vụ API",
+        "content": "Dự báo sản lượng điện mặt trời cho tối đa 10 ngày tới.",
+        "subtitleFirst": "Cập nhật dự báo tối đa 30 phút một lần",
+        "subtitleThird": "Truy cập API/FTP",
+        "subtitleSecond": "Bước thời gian lên đến 15 phút"
+      }
+    },
+    "listRecentProjects": {
+      "noProjects": "Bạn không có dự án nào đã lưu"
+    },
+    "header": {
+      "quickLinks": "Liên kết nhanh",
+      "apps": "Ứng dụng"
+    },
+    "sdatManagement": {
+      "manuals": "Hướng dẫn sử dụng",
+      "devices": "Thiết bị SDAT của tôi",
+      "download": "Tải xuống",
+      "subscription": "Gói đăng ký",
+      "sdatHeader": "{{header.sdat}}"
+    }
+  }
+}

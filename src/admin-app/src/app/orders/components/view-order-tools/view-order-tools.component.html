@@ -1,0 +1,30 @@
+<ng-container *ngIf="orderDetailStore.viewModel$ | async as viewModel">
+    <button mat-icon-button routerLink="edit">
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <button
+      mat-raised-button
+      color="accent"
+      *ngIf="viewModel.downloadActualViesValidationVisible"
+      [disabled]="viewModel.downloadingActualVies"
+      (click)="orderDetailStore.downloadActualViesValidation()"
+    >
+      <mat-icon *ngIf="!viewModel.downloadingActualVies">playlist_add_check</mat-icon>
+      <mat-progress-spinner mode="indeterminate" [diameter]="25" *ngIf="viewModel.downloadingActualVies"> </mat-progress-spinner>
+      Download actual VIES verification
+    </button>
+
+  <div class="action">
+    <div class="expire" *ngIf="viewModel.entity.status.status === 'DONE'">
+      <button class="expire-button" mat-raised-button color="accent" (click)="orderDetailStore.expire()">Expire order</button>
+    </div>
+
+    <div *ngIf="viewModel.entity.status.status === 'IN_PROGRESS'">
+      <button mat-raised-button color="accent" *ngIf="!viewModel.changingStatus" (click)="orderDetailStore.cancelOrder()">
+        Cancel order
+      </button>
+      <mat-progress-spinner mode="indeterminate" *ngIf="viewModel.changingStatus" [diameter]="30"></mat-progress-spinner>
+    </div>
+  </div>
+</ng-container>

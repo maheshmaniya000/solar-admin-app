@@ -1,0 +1,7 @@
+<ng-container *transloco="let t">
+  <div class="image-container">
+    <img [src]="data.imageUrl" [alt]="t(data.imageAltTextTranslationKey ?? data.headerTranslationKey)" />
+  </div>
+  <div class="mat-display-2">{{ t(data.headerTranslationKey) }}</div>
+  <p *ngIf="data.textTranslationKey">{{ t(data.textTranslationKey) }}</p>
+</ng-container>

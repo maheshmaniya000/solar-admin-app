@@ -1,0 +1,10 @@
+@mixin mat-checkbox-size($size: 24px) {
+  ::ng-deep .mat-checkbox-inner-container {
+    height: $size;
+    width: $size;
+  }
+
+  ::ng-deep .mat-checkbox-label {
+    line-height: $size;
+  }
+}

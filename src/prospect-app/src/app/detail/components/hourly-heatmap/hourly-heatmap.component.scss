@@ -1,0 +1,24 @@
+@import 'theme';
+
+
+.table-s {
+  @include cdk-table-s(true, $sg-24);
+
+  cdk-cell, cdk-header-cell {
+    text-align: center !important;
+
+    @include media-breakpoint-down(md) {
+      padding: 4px;
+    }
+  }
+
+  cdk-row {
+    border-bottom: none;
+
+    @include media-breakpoint-down(md) {
+      min-height: 23px;
+    }
+  }
+
+  @include sticky-table-scrolling();
+}

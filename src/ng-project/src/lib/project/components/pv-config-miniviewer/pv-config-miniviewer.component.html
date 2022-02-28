@@ -1,0 +1,17 @@
+
+<ng-container *ngIf="size === 'showAll'">
+  <div class="sg-row">
+    <div class="left">{{ 'pvConfig.label.systemType' | transloco }}</div>
+    <div class="right">{{ 'pvConfig.type.' + pvConfig.type + '.name' | transloco }}</div>
+  </div>
+</ng-container>
+
+<div class="sg-row" *ngFor="let param of pvParams">
+  <div class="left">{{ 'pvConfig.params.' + param + '.headline' | transloco }}</div>
+  <div class="right">
+    <sg-pv-config-param-value [type]="param"
+                              [pvConfig]="pvConfig"
+                              [param]="pvConfig[param]">
+    </sg-pv-config-param-value>
+  </div>
+</div>

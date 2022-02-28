@@ -1,0 +1,116 @@
+<div class="card-layout" *transloco="let t">
+  <div class="card-big">
+    <mat-card>
+      <div>
+        {{ t('projectDetail.metadata.text.text')}}
+
+        <ul>
+          <li>{{ t('projectDetail.metadata.text.row0') }}</li>
+          <li>{{ t('projectDetail.metadata.text.row1') }}</li>
+          <li>{{ t('projectDetail.metadata.text.version', { version: prospectDatabaseVersion }) }}
+            <span *ngIf="latestProspectDatabaseVersion" class="latestMetadataColor">
+              ({{ t('projectDetail.metadata.text.latestMetadataVersion', { latestMetadataVersion: latestProspectDatabaseVersion }) }})
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="table-s">
+        <cdk-table [dataSource]="metadataTable">
+
+          <!-- PARAMETER -->
+          <ng-container cdkColumnDef="parameter">
+            <cdk-header-cell *cdkHeaderCellDef>
+              {{ t('projectDetail.metadata.table.parameter') }}
+            </cdk-header-cell>
+            <cdk-cell *cdkCellDef="let row">
+              {{ row.layerKey }}
+            </cdk-cell>
+          </ng-container>
+
+          <!-- SOURCES -->
+          <ng-container cdkColumnDef="sources">
+            <cdk-header-cell *cdkHeaderCellDef>
+              <span [innerHTML]="t('projectDetail.metadata.table.source')"></span>
+            </cdk-header-cell>
+            <cdk-cell *cdkCellDef="let row">
+              {{ row.layerMetadata.sources}}
+              <ng-container *ngIf="row?.diff?.sources">
+                <ng-container *ngFor="let source of row.diff.sources | keyvalue">
+                  <span class="latestMetadataNewLine">{{ source.value }}</span>
+                </ng-container>
+              </ng-container>
+            </cdk-cell>
+          </ng-container>
+
+          <!-- PERIOD -->
+          <ng-container cdkColumnDef="period">
+            <cdk-header-cell *cdkHeaderCellDef>
+              {{ t('projectDetail.metadata.table.period') }}
+            </cdk-header-cell>
+            <cdk-cell *cdkCellDef="let row">
+              <ng-template *ngTemplateOutlet="periodTemplate; context: {$implicit: row.layerMetadata?.period}"></ng-template>
+              <div class="latestMetadataNewLine" *ngIf="row?.diff?.period as period">
+                <ng-template *ngTemplateOutlet="periodTemplate; context: {$implicit: period}"></ng-template>
+              </div>
+            </cdk-cell>
+          </ng-container>
+
+          <!-- METHOD -->
+          <ng-container cdkColumnDef="method">
+            <cdk-header-cell *cdkHeaderCellDef>
+              {{ t('projectDetail.metadata.table.method') }}
+            </cdk-header-cell>
+            <cdk-cell *cdkCellDef="let row">
+              {{ row.layerMetadata.method }}
+              <ng-container *ngIf="row?.diff?.method">
+                <span class="latestMetadataNewLine">{{ row.diff.method }}</span>
+              </ng-container>
+            </cdk-cell>
+          </ng-container>
+
+          <!-- UPDATED -->
+          <ng-container cdkColumnDef="updated">
+            <cdk-header-cell *cdkHeaderCellDef>
+              {{ t('projectDetail.metadata.table.updated') }}
+            </cdk-header-cell>
+            <cdk-cell *cdkCellDef="let row">
+              {{ row.layerMetadata.updated }}
+              <ng-container *ngIf="row?.diff?.updated ">
+                <span class="latestMetadataNewLine">{{ row.diff.updated }}</span>
+              </ng-container>
+            </cdk-cell>
+          </ng-container>
+
+          <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+          <cdk-row *cdkRowDef="let row; columns: columns"></cdk-row>
+        </cdk-table>
+      </div>
+
+      <!-- DOCUMENTATION -->
+      <div class="doc">
+        <div class="headline">
+          {{ t('projectDetail.metadata.doc.documentation') }}
+        </div>
+        <div>
+          {{ t('projectDetail.metadata.doc.uncertainty') }}
+          <a [href]="uncertaintyUrl" target="_blank">{{ uncertaintyUrl }}</a>
+        </div>
+        <div>
+          {{ t('projectDetail.metadata.doc.methodology') }}
+          <a [href]="methodologyUrl" target="_blank">{{ methodologyUrl }}</a>
+        </div>
+        <div>
+          {{ t('projectDetail.metadata.doc.simulation') }}
+          <a [href]="simulationUrl" target="_blank">{{ simulationUrl }}</a>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<ng-template #periodTemplate let-period>
+  <span>{{ period?.from }}</span>
+  <span *ngIf="period?.to"> - </span>
+  {{ period?.to }}
+</ng-template>

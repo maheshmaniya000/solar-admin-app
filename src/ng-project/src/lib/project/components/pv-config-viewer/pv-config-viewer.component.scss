@@ -1,0 +1,39 @@
+@import 'theme';
+
+:host > div {
+  color: map-get($primary, 800);
+}
+
+.title {
+  margin-top: $sg-16;
+  font-weight: $font-weight-bold;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.desc {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+img {
+  width: 80%;
+  max-width: 144px;
+}
+
+.settings {
+  margin-top: $sg-24;
+  padding: $sg-8 0;
+  border-top: 1px solid map-get($primary, 300);
+  border-bottom: 1px solid map-get($primary, 300);
+
+  .row {
+    font-size: 13px;
+    line-height: $sg-20;
+    padding: 4px 0;
+
+    .name {
+      font-weight: $font-weight-bold;
+    }
+  }
+}

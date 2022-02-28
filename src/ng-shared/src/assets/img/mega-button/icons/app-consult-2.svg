@@ -1,0 +1,36 @@
+<svg id="app-consult" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Subtraction_1" data-name="Subtraction 1" d="M319.916,368.142h-34v-48h48v34a10.1,10.1,0,0,0-3.458-2.911,9.89,9.89,0,0,0-4.542-1.089,10.011,10.011,0,0,0-10,10,9.91,9.91,0,0,0,1.089,4.543A10.091,10.091,0,0,0,319.916,368.142Z" transform="translate(-285.916 -320.142)" fill="#030504"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#314862"/>
+      <stop offset="0.719" stop-color="#6e7e90"/>
+      <stop offset="1" stop-color="#919dab"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b3bac5"/>
+      <stop offset="1" stop-color="#919dab"/>
+    </linearGradient>
+  </defs>
+  <g id="Mask_Group_18556" data-name="Mask Group 18556" transform="translate(0 0)" clip-path="url(#clip-path)">
+    <g id="Group_18812" data-name="Group 18812">
+      <rect id="Rectangle_31819" data-name="Rectangle 31819" width="48" height="48" fill="none"/>
+      <g id="Group_18810" data-name="Group 18810" transform="translate(2 2)">
+        <rect id="Rectangle_34567" data-name="Rectangle 34567" width="32" height="32" transform="translate(8 8)" fill="none"/>
+        <rect id="Rectangle_37745" data-name="Rectangle 37745" width="44" height="44" fill="none"/>
+        <g id="Group_18802" data-name="Group 18802" transform="translate(-654 -901)">
+          <rect id="Rectangle_38359" data-name="Rectangle 38359" width="44" height="44" transform="translate(654 901)" fill="#adaeaf" opacity="0"/>
+          <path id="Path_7887" data-name="Path 7887" d="M22,0A22,22,0,1,1,0,22,22,22,0,0,1,22,0Z" transform="translate(654 901)" fill="url(#radial-gradient)"/>
+          <g id="Group_18769" data-name="Group 18769" transform="translate(654 907.285)">
+            <g id="Mask_Group_18545" data-name="Mask Group 18545" transform="translate(0 0)">
+              <path id="Intersection_1" data-name="Intersection 1" d="M6.6,31.429A22,22,0,0,1,6.6,0H37.4a22,22,0,0,1,0,31.429Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+            </g>
+            <path id="comment-check-solid" d="M11.266,31.1C5.507,31.1.876,34.893.876,39.571A7.514,7.514,0,0,0,3.2,44.895,10.364,10.364,0,0,1,.966,48.8a.316.316,0,0,0-.061.356.312.312,0,0,0,.3.194,9.408,9.408,0,0,0,5.726-2.093,12.458,12.458,0,0,0,4.374.79c5.759,0,10.39-3.793,10.39-8.435S17.025,31.1,11.266,31.1Zm3.674,6.863-3.91,4.562a.828.828,0,0,1-.7.305h-.037a.979.979,0,0,1-.691-.286L7.642,40.588a.977.977,0,0,1,1.382-1.382l1.209,1.209,3.223-3.761a.979.979,0,0,1,1.378-.106A1.024,1.024,0,0,1,14.939,37.963Z" transform="translate(10.959 -24.508)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <path id="Path_10232" data-name="Path 10232" d="M10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18ZM11,6H9v5h2Zm0,6.5H9V14h2Z" transform="translate(30 30)" fill="#e30000"/>
+</svg>

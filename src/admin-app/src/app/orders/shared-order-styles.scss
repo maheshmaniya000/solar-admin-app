@@ -1,0 +1,263 @@
+@import 'theme';
+
+mat-card {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 5px;
+  padding: 2em;
+  padding-bottom: 3em;
+}
+
+:host {
+  background-color: map-get($primary, 100);
+}
+
+:host > div {
+  max-height: calc(100vh - 50px);
+  overflow: auto;
+}
+
+::ng-deep .cdk-overlay-pane {
+  width: 600px;
+}
+
+.download button {
+  margin: 5px;
+
+  mat-icon {
+    margin: 0 10px 0 0;
+  }
+}
+
+#signDocument {
+  margin: 10px 0 0 50px;
+}
+
+h4 {
+  color: map-get($accent, 700);
+}
+
+#invoice-list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+
+    mat-progress-spinner {
+      margin: auto;
+    }
+
+    .invoice-button {
+      display: grid;
+      grid-template-columns: 8% minmax(290px, 340px);
+      line-height: $sg-20;
+      padding: $sg-4 0;
+
+      mat-icon {
+        align-self: center;
+        justify-self: center;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+      .invoice-code {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+.text-right {
+  text-align: right;
+}
+
+#user-company-control {
+  flex-wrap: wrap;
+
+  > div {
+    &:last-child {
+      min-width: 600px;
+    }
+    &:not(:last-child) {
+      margin-right: 25px;
+      min-width: 400px;
+    }
+
+    #users {
+      > div {
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
+      }
+      .hint {
+        font-size: 11px;
+      }
+      form > mat-form-field {
+        flex-grow: 1;
+        width: 50%;
+      }
+    }
+
+    #users-list {
+      margin-top: 20px;
+      span {
+        color: map-get($primary, 500);
+        &.error {
+          color: map-get($warn, 500);
+        }
+      }
+    }
+  }
+
+  h5 {
+    margin: 0;
+  }
+}
+
+#optional-fields {
+  #title-note {
+    width: 350px;
+    margin-right: $sg-20;
+  }
+  #codes {
+    width: 250px;
+  }
+}
+
+#orderItems {
+  margin-bottom: 15px;
+
+  .description {
+    min-width: 400px;
+  }
+
+  > div {
+    border-top: 1px dashed map-get($accent, 600);
+    padding: 15px 0 0 0;
+    flex-wrap: wrap;
+
+    &:last-child {
+      border-bottom: 1px dashed map-get($accent, 600);
+    }
+
+    > div {
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+
+      .three-row-container {
+        > div {
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+        .product-code {
+          color: map-get($accent, 700);
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .item-no {
+    color: map-get($accent, 700);
+    text-align: center;
+  }
+
+  .description {
+    > div:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 11px;
+      color: map-get($primary, 500);
+    }
+  }
+}
+
+.order-discount,.order-references,.currencies {
+  > div {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+.currencies {
+  mat-form-field {
+    width: 75px;
+  }
+}
+
+.total {
+  color: map-get($accent, 700);
+  text-align: right;
+  span {
+    font-weight: bold;
+  }
+}
+
+.download {
+  mat-icon {
+    cursor: pointer;
+  }
+}
+
+.shadow {
+  color: map-get($primary, 500);
+}
+
+.expire {
+  padding-top: $sg-12;
+  .expire-button {
+    padding-left: $sg-12;
+    max-width: 120px;
+  }
+}
+
+.smallRightInnfo {
+  font-size: smaller;
+  font-style: italic;
+  float: right;
+  margin: $sg-20 0 $sg-20 $sg-20;
+}
+
+.verticalCenter {
+  margin: auto;
+  height: min-content;
+}
+
+::ng-deep .te-basic-tools {
+  .angular-editor-toolbar  {
+    display: none;
+  }
+}
+
+::ng-deep mat-option.small {
+  span {
+    font-size: 11px;
+  }
+}
+
+.warning {
+  color: map-get($warn, 500);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.company-note {
+  margin-left: 28px;
+  border: orange 1px solid;
+  min-width: 250px;
+  padding: 0 $sg-16;
+}

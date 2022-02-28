@@ -1,0 +1,15 @@
+@import 'theme';
+
+mat-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: $sg-16;
+  max-width: 1000px;
+  margin: 32px auto auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}

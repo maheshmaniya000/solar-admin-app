@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangeRiderComponent component should render with correctly bound attributes 1`] = `
+<sg-range-rider
+  __ngContext__={[Function LRootView]}
+  activeIntervalConfig={[Function Object]}
+  riderLeftOffset={[Function Number]}
+  stops={[Function Array]}
+  value={[Function Number]}
+>
+  <div
+    class="rider"
+    style="left: 20%;"
+  /><div
+    class="active-interval"
+    style="width: 40%; left: 0%;"
+  />
+</sg-range-rider>
+`;

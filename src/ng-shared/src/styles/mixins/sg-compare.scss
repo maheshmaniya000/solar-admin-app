@@ -1,0 +1,28 @@
+$compare-0: #3F85F2;
+$compare-1: #DB4437;
+$compare-2: #F4B400;
+$compare-3: #94C34A;
+
+
+@mixin sg-compare() {
+  .compare-0 { background-color: $compare-0; }
+  .compare-1 { background-color: $compare-1; }
+  .compare-2 { background-color: $compare-2; }
+  .compare-3 { background-color: $compare-3; }
+  .compare-highlight-0 { background-color: #E7EFFD; }
+  .compare-highlight-1 { background-color: #FAE7E6; }
+  .compare-highlight-2 { background-color: #FDF5DF; }
+  .compare-highlight-3 { background-color: #F1F7E8; }
+}
+
+@mixin sg-compare-radio-buttons() {
+  .compare-radio-0 { @include sg-radio-buttons-color($compare-0); }
+  .compare-radio-1 { @include sg-radio-buttons-color($compare-1); }
+  .compare-radio-2 { @include sg-radio-buttons-color($compare-2); }
+  .compare-radio-3 { @include sg-radio-buttons-color($compare-3); }
+}
+
+@mixin sg-radio-buttons-color($color) {
+  .mat-radio-outer-circle { border-color: $color; }
+  .mat-radio-inner-circle { background-color: $color; }
+}

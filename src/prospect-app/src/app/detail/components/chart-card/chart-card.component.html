@@ -1,0 +1,45 @@
+<ng-container *ngIf="isMulti; else single">
+  <mat-card class="charts tabs" style="height: 100%">
+    <mat-card-content>
+      <mat-tab-group color="accent" [selectedIndex]="selectedTabIndex" (selectedTabChange)="tabIndexChange($event.index)">
+        <mat-tab *ngFor="let chart of charts; let i = index" [disabled]="!chart.hasPermission">
+          <ng-template mat-tab-label>
+            <sg-chart-card-label [layers]="chart.layers"></sg-chart-card-label>
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="limited-width-container" *ngIf="i === selectedTabIndex">
+              <sg-highcharts *ngIf="chart.hasPermission; else allDisabled"
+                             [opts]="chart.chart | async"
+                             [destroyOnChange]="true"
+                             [exportingOpts]="exportingOpts(chart.layers)">
+              </sg-highcharts>
+            </div>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
+<ng-template #single>
+  <mat-card>
+    <mat-card-title>
+      <sg-chart-card-label [layers]="charts[0].layers"></sg-chart-card-label>
+    </mat-card-title>
+    <div class="limited-width-container">
+      <sg-highcharts className="small-card"
+                     *ngIf="charts[0].hasPermission; else allDisabled"
+                     [opts]="charts[0].chart | async"
+                     [destroyOnChange]="true"
+                     [exportingOpts]="exportingOpts(charts[0].layers)">
+      </sg-highcharts>
+    </div>
+  </mat-card>
+</ng-template>
+
+<ng-template #allDisabled>
+  <div class="upgrade">
+    <div>{{ 'common.error.subscriptionLayer' | transloco }}</div>
+    <a [href]="prospectPricingUrl" target="_blank" mat-button color="accent">{{ 'header.upgrade' | transloco }}</a>
+  </div>
+</ng-template>

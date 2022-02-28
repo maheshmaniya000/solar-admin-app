@@ -1,0 +1,18 @@
+
+<mat-drawer-container>
+  <mat-drawer
+    [mode]="mode$ | async"
+    [opened]="opened$ | async"
+    (closedStart)="pushState('closed')"
+    (openedStart)="pushState('opened')"
+    fxFlex="240px">
+    <ng-content select=".navigation"></ng-content>
+  </mat-drawer>
+
+  <mat-drawer-content [ngClass]="{'shrank': (mode$ | async) === 'side' && (opened$ | async)}">
+    <div class="content" #content>
+      <ng-content select=".content"></ng-content>
+    </div>
+  </mat-drawer-content>
+
+</mat-drawer-container>

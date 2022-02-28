@@ -1,0 +1,23 @@
+@import 'theme';
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field, ::ng-deep .mat-checkbox-layout {
+  margin-bottom: $sg-16;
+}
+
+.similar-exists {
+  color: map-get($warn, 700);
+}
+
+::ng-deep .mat-option-text, ::ng-deep .mat-select-value-text  {
+  color: map-get($primary, 800);
+}
+
+#vat-id-hint {
+  .info {
+    padding-left: 7px;
+  }
+}

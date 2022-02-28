@@ -1,0 +1,26 @@
+<div class="content">
+  <mat-radio-group [formGroup]="form">
+    <div class="row" [ngClass]="{'error-margin': isCustom(type) && form.invalid}" *ngFor="let type of supportedInverterTypes">
+
+      <mat-radio-button (click)="setType(type)"
+                        [value]="type"
+                        [checked]="params.inverter === type">
+        {{ 'pvConfig.params.inverter.efficiencyStr' | transloco:{
+            efficiency: getInverterEfficiency({ inverter: type, customEfficiency: customEfficiency.value }),
+            inverterType: ('pvConfig.params.inverter.' + type | transloco)
+          }
+        }}
+      </mat-radio-button>
+
+      <ng-container *ngIf="isCustom(type)">
+        <mat-form-field floatLabel="never">
+          <input matInput formControlName="customEfficiency" type="number"
+                 step="0.1"
+                 (input)="setType(type)">
+          <mat-error *ngIf="form.invalid">{{ 'common.error.valueBetween' | transloco: { min: 80, max: 100 } }}</mat-error>
+        </mat-form-field>
+        <div class="unit">%</div>
+      </ng-container>
+    </div>
+  </mat-radio-group>
+</div>

@@ -1,0 +1,99 @@
+<div [ngClass]="{'show-input': showSearch}">
+  <button (click)="inputToggle()" class="toggle-button" [ngClass]="[showSearch ? '' : 'hidden']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <mat-card class="search">
+    <div fxLayout="row">
+      <mat-form-field appearance="none">
+        <div class="input-wrapper">
+          <div class="input-search-container">
+            <button mat-icon-button (click)="searchResults()">
+              <mat-icon>search</mat-icon>
+            </button>
+            <input #searchInput
+                  matInput
+                  placeholder="{{ 'project.search.searchLocations' | transloco }}"
+                  [matAutocomplete]="auto"
+                  (keydown.enter)="searchResults()"
+                  (keydown.escape)="stopSearch()"
+                  [formControl]="searchControl">
+
+            <mat-autocomplete #auto [displayWith]="autocompleteToString.bind(this)">
+              <!-- Search history !-->
+              <ng-container *ngIf="!searchInput.value && (filteredSites$ | async) === null">
+                <mat-option *ngFor="let historyItem of searchHistory$ | async | slice:0:5" [value]="historyItem"
+                            (onSelectionChange)="onSelectFromHistory()">
+                  <div class="icon">
+                    <mat-icon>history</mat-icon>
+                  </div>
+                  <div class="history">
+                    <div>
+                      <div>{{ historyItem }}</div>
+                    </div>
+                  </div>
+                </mat-option>
+              </ng-container>
+
+              <!-- Search results !-->
+              <ng-container *ngIf="searchInput.value && allowAutocomplete">
+                <mat-option *ngFor="let project of filteredProjects | slice: 0: 3" [value]="project"
+                            (onSelectionChange)="selectProject(project)">
+                  <div class="icon">
+                    <mat-icon [svgIcon]="'sg:sgf-inbox-outline'"></mat-icon>
+                  </div>
+                  <div class="placemark">
+                    <div>
+                      <div>
+                        {{ project | sgProjectName }}
+                        <ng-container *ngIf="project.name">({{ project.site?.place?.placemark | sgPlacemarkPart:"name" }})</ng-container>
+                      </div>
+                      <small>
+                        {{ project.site?.place?.placemark?.address }}
+                      </small>
+                    </div>
+                  </div>
+                </mat-option>
+
+                <ng-container *ngIf="componentName === 'map' && !isInvalidCoordinate">
+                  <mat-option *ngFor="let site of (filteredSites$ | async) | slice:0:3" [value]="site"
+                              (onSelectionChange)="selectSite(site)">
+                    <div class="icon">
+                      <mat-icon>location_on</mat-icon>
+                    </div>
+                    <div class="placemark">
+                      <div>
+                        <div *ngIf="site.point?.parsed; else geocoded">
+                          <sg-unit-value [unit]="latlngUnit" [value]="site.point"></sg-unit-value>
+                        </div>
+                        <ng-template #geocoded>
+                          <div>{{ site.place?.placemark | sgPlacemarkPart:"name" }}</div>
+                        </ng-template>
+                        <small>
+                          {{ site.place?.placemark?.address }}
+                        </small>
+                      </div>
+                    </div>
+                  </mat-option>
+                </ng-container>
+                <ng-container *ngIf="isInvalidCoordinate">
+                  <mat-option class="invalid-message">
+                    <mat-icon color="warn">warning</mat-icon>
+                      {{ 'project.search.invalidCoordinatesMessage' | transloco }}
+                  </mat-option>
+                </ng-container>
+              </ng-container>
+            </mat-autocomplete>
+
+            <button mat-icon-button matSuffix *ngIf="searchControl.value" (click)="stopSearch()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-form-field>
+    </div>
+  </mat-card>
+  <button (click)="inputToggle()" class="toggle-button" [ngClass]="[showSearch ? 'hidden' : '']" mat-icon-button color="primary">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>

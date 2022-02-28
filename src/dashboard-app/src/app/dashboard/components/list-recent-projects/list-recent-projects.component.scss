@@ -1,0 +1,173 @@
+@import 'theme';
+
+mat-card {
+  padding: 0px;
+}
+
+table {
+  width: 100%;
+  box-shadow: none;
+
+  mat-header-row {
+    border-bottom: 1px solid map-get($sg-gray, 300);
+    min-height: 35px;
+
+    .mat-header-cell {
+      justify-self: start;
+      font-size: $sg-14;
+      color: map-get($primary, 900);
+      padding-right: 0px;
+    }
+  }
+
+  mat-row {
+    min-height: 41px;
+  }
+
+  mat-cell {
+    color: map-get($primary, 900);
+    min-width: 0;
+    padding-right: 20px;
+
+    .name, .address {
+      @include text-ellipsis();
+      white-space: nowrap;
+      line-height: 40px;
+    }
+
+    & a {
+      color: map-get($primary, 900);
+      text-decoration: none;
+      @include text-ellipsis();
+      line-height: 40px;
+    }
+
+    & mat-icon {
+      font-size: $sg-18;
+    }
+
+    & sg-unit-label {
+      margin-left: $sg-4;
+    }
+  }
+
+  .mat-column-name {
+    width: 20px;
+  }
+
+  .mat-column-address {
+    width: 24%;
+
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+
+  .mat-column-coordinates {
+    width: 22%;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .mat-column-capacity {
+    width: 10%;
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+
+  .mat-column-updatedTs {
+    width: 20%;
+  }
+}
+
+.wrapper-card {
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(216px, 1fr));
+  grid-gap: 1rem;
+
+  @include media-breakpoint-down(xs) {
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  }
+
+  .recent-project-cards {
+    @include media-breakpoint-down(xs) {
+      display: grid;
+      grid-template-columns: 45% 55%;
+      grid-gap: 1rem;
+    }
+
+    mat-card-content {
+      .main-image {
+        margin: 0px auto;
+        width: 100%;
+      }
+
+      mat-card-title {
+        font-size: $sg-14;
+        @include text-ellipsis();
+        width: 100%;
+      }
+
+      mat-card-subtitle {
+        color: map-get($primary, 900);
+        @include text-ellipsis();
+        width: 100%;
+      }
+
+      &.text {
+        .value {
+          white-space: nowrap;
+
+          @include media-breakpoint-down(xs) {
+            display: none;
+          }
+        }
+
+        .address {
+          margin-bottom: $sg-8;
+        }
+
+        a {
+          color: #212123;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+mat-paginator {
+  float: right;
+  color: map-get($sg-gray, 700);
+
+  .mat-form-field-infix {
+    .mat-select-value {
+      padding-top: 3px;
+      span {
+        color: map-get($sg-gray, 700);
+        font-size: $sg-12;
+        padding-left: $sg-4;
+      }
+    }
+
+    .mat-select-arrow {
+      color: map-get($sg-gray, 700);
+    }
+  }
+
+  .mat-form-field-underline {
+    background-color: map-get($sg-gray, 700);
+  }
+}
+
+sg-trademark {
+  float: left;
+  padding: $sg-20;
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}

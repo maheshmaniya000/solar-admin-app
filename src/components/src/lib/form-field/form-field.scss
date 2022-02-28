@@ -1,0 +1,112 @@
+@use '../icon/icon' as icon;
+
+$horizontal-spacing: 8px;
+
+mat-form-field {
+  width: 100%;
+
+  &.mat-form-field {
+    display: block;
+  }
+
+  &.mat-form-field-appearance-outline {
+    ::placeholder {
+      transition: none;
+      font-style: italic;
+    }
+
+    .mat-form-field-wrapper {
+      margin: 0;
+      padding-bottom: 0;
+    }
+
+    .mat-form-field-outline {
+      top: 0;
+    }
+
+    .mat-form-field-outline-start {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .mat-form-field-outline-end {
+      border-radius: 0 4px 4px 0;
+    }
+
+    .mat-form-field-outline-thick {
+      .mat-form-field-outline-start,
+      .mat-form-field-outline-end,
+      .mat-form-field-outline-gap {
+        border-width: 1px;
+      }
+    }
+
+    &[doNotAppendFormError].mat-form-field-invalid {
+      &:not(.mat-focused) .mat-form-field-outline {
+        opacity: 1;
+
+        &.mat-form-field-outline-thick {
+          opacity: 0;
+        }
+      }
+    }
+
+    .mat-form-field-flex {
+      align-items: center;
+      margin-top: 0;
+      padding: 0 $horizontal-spacing;
+    }
+
+    .mat-form-field-infix {
+      padding: 5px 0;
+      border-top: none;
+    }
+
+    .mat-form-field-subscript-wrapper {
+      position: static;
+      top: 0;
+      margin-top: 4px;
+      padding: 0;
+      font-size: 100%;
+    }
+
+    &.ng-untouched,
+    &.ng-valid,
+    &.ng-pending {
+      &.no-hint .mat-form-field-subscript-wrapper {
+        display: none;
+      }
+    }
+
+    .mat-form-field-prefix,
+    .mat-form-field-suffix {
+      position: static;
+
+      .mat-icon {
+        @include icon.size(default);
+      }
+    }
+
+    &:not(.mat-form-field-appearance-legacy) {
+      .mat-form-field-prefix,
+      .mat-form-field-suffix {
+        .mat-icon-button {
+          display: block;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+
+    .mat-form-field-prefix {
+      margin-right: $horizontal-spacing;
+    }
+
+    .mat-form-field-suffix {
+      margin-left: $horizontal-spacing;
+    }
+
+    .mat-form-field-label-wrapper {
+      display: none;
+    }
+  }
+}

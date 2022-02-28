@@ -1,0 +1,66 @@
+<div class="content-sec">
+    <div class="save-btn" align="right">
+        <button routerLink="/list/companies/sg2%7C11726/add" mat-button class="secondary-button">Create Api Contract</button>
+    </div>
+    <div class="tableContent">
+        <mat-table [dataSource]="subscriptions$" matSort style="width: 100%;">
+
+            <ng-container matColumnDef="subscriptionType">
+                <mat-header-cell class="column-name" *matHeaderCellDef>
+                    Subscription type
+                    <div mat-sort-header="subscriptionType"></div>
+                </mat-header-cell>
+                <mat-cell class="name" *matCellDef="let subscription" fxLayout>
+                    <div class="name" fxFlex="grow">{{ subscription.subscriptionType }}</div>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <mat-header-cell class="column-name" *matHeaderCellDef>
+                    Status
+                </mat-header-cell>
+                <mat-cell class="name" *matCellDef="let subscription" fxLayout>
+                    <div class="name" fxFlex="grow">{{ subscription.status }}</div>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="calls">
+                <mat-header-cell class="column-name" *matHeaderCellDef>
+                    Calls
+                </mat-header-cell>
+                <mat-cell class="name" *matCellDef="let subscription" fxLayout>
+                    <div class="name" fxFlex="grow">{{ subscription.remainingCalls }}/<span>{{ subscription.calls }}</span></div>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="expiryDate">
+                <mat-header-cell class="column-name" *matHeaderCellDef>
+                    Expiration Date
+                    <div mat-sort-header="expiryDate"></div>
+                </mat-header-cell>
+                <mat-cell class="name" *matCellDef="let subscription" fxLayout>
+                    <div class="name" fxFlex="grow">{{ subscription.expiryDate | sgDateTimeFormat:'dateTime' }}</div>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="details">
+                <mat-header-cell class="column-name" *matHeaderCellDef>
+                    Details
+                </mat-header-cell>
+                <mat-cell class="name" *matCellDef="let subscription" fxLayout>
+                    <div class="name" fxFlex="grow">{{ subscription.details }}</div>
+                </mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="columns; sticky: true"></mat-header-row>
+            <mat-row *matRowDef="let subscription; columns: columns" (click)="onRowClicked(subscription)"
+                [ngClass]="{'-active': (selected$ | async)?.sgSubscriptionId === subscription.sgSubscriptionId}">
+            </mat-row>
+        </mat-table>
+    </div>
+
+    <mat-paginator [length]="count$ | async" [pageSize]="(page$ | async)?.size" [pageIndex]="(page$ | async)?.index"
+        [pageSizeOptions]="pageSizeOptions" (page)="onPageChanged($event)">
+    </mat-paginator>
+</div>

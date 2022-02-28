@@ -1,0 +1,19 @@
+<button class="bootstrap" mat-button (click)="click($event)"
+        [class.highlighted]="isActive"
+        [class.rotate-arrow-icon]="!isExpanded"
+        [class.icon-highlighted]="isExpanded && isActive">
+  <div class="navigation-item-container d-flex align-items-center">
+    <mat-icon matListIcon *ngIf="!isChild" mat-button (click)="clickOnArrow($event)"
+              [class.rotate-arrow-icon]="!isExpanded"
+              [class.arrow-icon-invisible]="!hasChildren || (!isExpanded && route.data.nav.hideNavArrowWhenNotExpanded)"
+    >arrow_drop_down</mat-icon>
+    <mat-icon matListIcon *ngIf="route.data?.nav?.icon" class="icon">{{ route.data.nav.icon }}</mat-icon>
+    <mat-icon matListIcon *ngIf="route.data?.nav?.svgIcon" class="icon" [svgIcon]="route.data.nav.svgIcon"></mat-icon>
+    <div class="d-flex justify-content-between align-items-center label-lock">
+      <p [class.label-child]="isChild" class="label">{{ route.data.nav?.name | transloco }}</p>
+      <div *ngIf="isLocked">
+        <mat-icon class="lock-icon">lock</mat-icon>
+      </div>
+    </div>
+  </div>
+</button>

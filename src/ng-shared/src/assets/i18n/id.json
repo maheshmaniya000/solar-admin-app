@@ -1,0 +1,2139 @@
+{
+  "auth": {
+    "auth0": {
+      "recaptchaNotValid": "Recaptcha tidak valid, silakan coba lagi.",
+      "registrationOk": "Selesai, konfirmasi pendaftaran dengan mengeklik tautan verifikasi yang dikirim ke email Anda.",
+      "unknown": "Terjadi kesalahan saat pendaftaran - silakan coba lagi nanti",
+      "unknownError": "Terjadi kesalahan...",
+      "emailAlreadyRegistred": "Pengguna dengan alamat email ini sudah ada.",
+      "otpInvalid": "OTP telah digunakan atau tidak valid"
+    },
+    "changePassword": {
+      "change": "Ubah",
+      "changePasswordOk": "Kata sandi telah diubah",
+      "error": "Nama pengguna atau kata sandi salah",
+      "passwordConfirm": "Konfirmasi kata sandi baru",
+      "recaptchaNotValid": "Recaptcha tidak valid, silakan coba lagi",
+      "tooManyAttempts": "Akun telah terkunci - terlalu banyak upaya untuk mengubah kata sandi dengan kata sandi yang salah",
+      "unknown": "Terjadi kesalahan saat mengubah kata sandi - silakan coba lagi nanti"
+    },
+    "confirmTerms": {
+      "agree": "Saya setuju",
+      "termsAgreeConfirm": "Persyaratan Penggunaan dan Pemberitahuan Privasi Solargis",
+      "title": "Terima Persyaratan penggunaan",
+      "terms": "Persyaratan Penggunaan",
+      "contractualTerms": "Persyaratan Kontrak Umum untuk layanan berbayar",
+      "particularConditions": "Ketentuan khusus"
+    },
+    "emailVerify": {
+      "error": "Verifikasi email gagal",
+      "ok": "Email Anda telah dikonfirmasi, kini Anda dapat masuk"
+    },
+    "forgotPassword": {
+      "changeOk": "Kata sandi telah diubah, kini Anda dapat masuk",
+      "error": "Kesalahan tidak diketahui, silakan coba lagi nanti",
+      "hint": "Masukkan email Anda untuk membantu kami mengidentifikasi Anda.",
+      "ok": "Harap periksa email Anda untuk instruksi lebih lanjut",
+      "recaptchaNotValid": "Recaptcha tidak valid, silakan coba lagi",
+      "returnToSignIn": "Kembali untuk masuk",
+      "tokenNotValid": "Tautan telah digunakan untuk mengubah kata sandi",
+      "tooManyAttempts": "Akun terkunci dan tidak dapat mengubah kata sandi",
+      "userNotFound": "Pengguna tersebut belum ditemukan"
+    },
+    "fupRecaptcha": {
+      "title": "Anda telah mencapai batas",
+      "info": "Jumlah klik per menit melebihi batas keamanan. Masuk atau daftar untuk menghilangkan pembatasan ini."
+    },
+    "login": {
+      "create": "Buat akun Solargis gratis Anda",
+      "error": "Nama pengguna atau kata sandi salah",
+      "tooManyAttempts": "Akun telah terkunci - terlalu banyak upaya untuk masuk dengan kata sandi yang salah",
+      "unknown": "Terjadi kesalahan saat masuk - silakan coba lagi nanti",
+      "deletedUser": "Akun ini dinonaktifkan. Harap <a href=\"https://solargis.com/about-us/contact\">hubungi kami.</a>",
+      "rememberMe": "Ingat saya",
+      "notVerified": "Email Anda tidak diverifikasi. Buka email verifikasi yang kami kirimkan saat Anda mendaftar atau kami dapat membuatkan yang baru.",
+      "notVerifiedAction": "Kirim email verifikasi baru",
+      "notVerifiedConfirm": "Email verifikasi baru telah dikirim"
+    },
+    "registration": {
+      "alreadyHaveAccount": "Sudah memiliki akun?",
+      "emailError": "Harap masukkan alamat email yang valid",
+      "emailPlaceholder": "Email kerja",
+      "firstNameError": "Nama wajib diisi",
+      "firstNamePlaceholder": "Nama depan",
+      "lastNameError": "Nama belakang wajib diisi",
+      "lastNamePlaceholder": "Nama belakang",
+      "passwordConfirm": "Masukkan Kembali kata sandi",
+      "passwordError": "Min. 8 karakter, setidaknya terdiri satu huruf besar dan satu huruf kecil",
+      "passwordPlaceholder": "Kata sandi",
+      "passwordRequired": "Kata sandi wajib diisi",
+      "passwordsNotEqual": "Kata sandi harus sama",
+      "termsAgree": "Saya menyetujui <a href='https://solargis.com/legal/solargis-apps-terms-of-use/' target='_blank' title=\"Ketentuan Penggunaan dan Pemberitahuan Privasi\">Ketentuan Penggunaan dan Pemberitahuan Privasi</a>Solargis",
+      "title": "Pendaftaran",
+      "titleNewPassword": "Kata sandi baru",
+      "titleOldPassword": "Kata sandi lama",
+      "companyError": "Nama perusahaan wajib diisi",
+      "accountCreated": "Pembuatan akun berhasil diselesaikan",
+      "accountCreatedAfterInvitation": "Pembuatan akun berhasil diselesaikan dan perusahaan telah bergabung",
+      "firstOrLastNameRequired": "Nama atau Nama belakang wajib diisi dan tidak boleh hanya berisi spasi kosong",
+      "login": "Masuk",
+      "createUserAccount": "Buat akun pengguna"
+    },
+    "expired": "Anda telah keluar karena sesi kedaluwarsa. Silakan masuk lagi.",
+    "newPassword": "Anda masuk dari tautan Lupa kata sandi saya.<br>Silakan atur kata sandi baru.",
+    "invitation": {
+      "info": "Menerima undangan ini berarti Anda akan diminta untuk membuat akun Solargis",
+      "text": "Anda telah diundang untuk menjadi anggota perusahaan. Dengan menerima undangan, Anda setuju untuk menjadi anggota perusahaan.",
+      "companyName": "Nama perusahaan",
+      "title": "Terima undangan",
+      "accept": "Terima",
+      "expiredText": "Undangan Anda ke perusahaan telah kedaluwarsa atau dibatalkan oleh admin perusahaan. Harap hubungi orang yang telah mengirimi Anda undangan perusahaan.",
+      "expiredTitle": "Undangan perusahaan kedaluwarsa"
+    },
+    "lambdaCaptcha": {
+      "label": "Ekspresi captcha"
+    },
+    "forbidden": "Anda tidak diizinkan untuk mengakses {url}"
+  },
+  "codelist": {
+    "LANDC": {
+      "301": "Data tidak tersedia",
+      "305": "Lahan pertanian pasca-banjir atau irigasi",
+      "306": "Lahan pertanian mosaik (>50%) / vegetasi alami",
+      "307": "Vegetasi alami mosaik (>50%) / lahan pertanian",
+      "308": "Tutupan pohon, berdaun lebar, hijau sepanjang tahun (>15%)",
+      "318": "Tutupan pohon, tipe daun campuran (berdaun lebar dan berdaun jarum)",
+      "319": "Pohon dan semak mosaik (>50%) / tutupan tanaman herba",
+      "320": "Tutupan tanaman herba mosaik (>50%) / pohon dan semak",
+      "324": "Padang rumput",
+      "325": "Liken dan lumut",
+      "330": "Tutupan pohon, banjir, air tawar atau payau",
+      "331": "Tutupan pohon, banjir, air asin",
+      "332": "Semak atau tutupan tanaman herba, banjir",
+      "333": "Daerah perkotaan",
+      "337": "Badan air",
+      "338": "Salju dan es permanen",
+      "302-304": "Lahan pertanian, tadah hujan",
+      "309-311": "Tutupan pohon, berdaun lebar, daun gugur (>15%)",
+      "312-314": "Tutupan pohon, berdaun jarum, hijau sepanjang tahun (>15%)",
+      "315-317": "Tutupan pohon, berdaun jarum, daun gugur (>15%)",
+      "321-323": "Semak belukar",
+      "326-329": "Vegetasi yang jarang (<15%)",
+      "334-336": "Area kosong"
+    },
+    "AZI": {
+      "-1": "datar",
+      "-2": "kuasi datar"
+    },
+    "SNOWD": {
+      "-1": "berkala"
+    },
+    "DNI_season": {
+      "-1": "DNI bulanan ditemukan 0"
+    },
+    "GHI_season": {
+      "-1": "GHI bulanan ditemukan 0"
+    }
+  },
+  "common": {
+    "action": {
+      "apply": "Terapkan",
+      "back": "Kembali",
+      "cancel": "Batalkan",
+      "change": "Ubah",
+      "choose": "Pilih",
+      "close": "Tutup",
+      "collapseAll": "Ciutkan semua",
+      "compare": "Bandingkan",
+      "confirm": "Konfirmasi",
+      "continue": "Lanjutkan",
+      "delete": "Hapus",
+      "expandAll": "Perbesar semua",
+      "invite": "Undang",
+      "manage": "Kelola",
+      "next": "Berikutnya",
+      "ok": "OK",
+      "open": "Buka",
+      "prev": "Sebelumnya",
+      "save": "Simpan",
+      "search": "Cari",
+      "selectAll": "Pilih semua",
+      "send": "Kirim",
+      "unselectAll": "Batal pilih semua",
+      "reload": "Muat ulang",
+      "remove": "Hapus",
+      "edit": "Edit",
+      "redo": "Ulangi",
+      "undo": "Urungkan",
+      "default": "Atur default",
+      "calculate": "Hitung",
+      "saveValues": "Simpan nilai",
+      "resetDefaults": "Atur ulang nilai default",
+      "add": "Tambah",
+      "verify": "Verifikasi",
+      "launch": "Luncurkan",
+      "defaultView": "Tampilan default",
+      "moreInfo": "Info Lebih Lanjut"
+    },
+    "aggregation": {
+      "avg": "Rata-rata",
+      "cumulative": "Kumulatif",
+      "sum": "Jumlah"
+    },
+    "cardinal": {
+      "east": "Timur",
+      "north": "Utara",
+      "south": "Selatan",
+      "west": "Barat"
+    },
+    "confirmDialog": {
+      "body": "Tindakan ini tidak dapat dibatalkan. Lanjutkan?",
+      "heading": "Konfirmasi tindakan",
+      "usure": "Apakah Anda yakin?"
+    },
+    "datetime": {
+      "date": "Tanggal",
+      "timezone": "Zona waktu",
+      "lastChange": "Perubahan terakhir"
+    },
+    "label": {
+      "settings": "Pengaturan",
+      "configureMapView": "Pengaturan tampilan peta",
+      "configureProjectsView": "Pengaturan tampilan proyek"
+    },
+    "misc": {
+      "commingSoon": "Segera hadir",
+      "help": "Bantuan",
+      "n/a": "N/A",
+      "noWidth": "Resolusi layar Anda terlalu rendah untuk menggunakan Solargis. Untuk menggunakan Solargis, resolusi layar Anda harus memiliki lebar minimal 1100 piksel."
+    },
+    "paginator": {
+      "nextPage": "Halaman berikutnya",
+      "perPage": "Item per halaman",
+      "previousPage": "Halaman sebelumnya",
+      "rangeLabel": "{startIndex} - {endIndex} dari {length}",
+      "rangeLabelEmpty": "0 dari 0"
+    },
+    "status": {
+      "disabled": "Dinonaktifkan",
+      "enabled": "Diaktifkan"
+    },
+    "subscription": {
+      "prospect": "Langganan Prospect",
+      "sdat": "Langganan SDAT"
+    },
+    "error": {
+      "subscriptionLayer": "Untuk melihat lapisan data ini, Anda harus melakukan peningkatan ke langganan Prospect",
+      "valueBetween": "Nilai harus antara {min} dan {max}",
+      "failed": "Tindakan gagal",
+      "tooLarge": "Nilai ini terlalu besar",
+      "internal": "Terjadi kesalahan internal. Anda mungkin perlu memuat ulang halaman."
+    },
+    "subscriptionType": {
+      "FREE": "Gratis",
+      "UPGRADE": "Peningkatan Prospect dari Dasar ke Pro",
+      "expired": "Kedaluwarsa {subscriptionType}",
+      "PROSPECT_PRO": "Prospect Pro",
+      "PROSPECT_BASIC": "Prospect Dasar",
+      "PROSPECT_FREE_TRIAL": "Uji coba gratis",
+      "SDAT_PRO": "SDAT Pro",
+      "SDAT_BASIC": "SDAT",
+      "SDAT_FREE_TRIAL": "Uji coba SDAT gratis"
+    },
+    "confirm": {
+      "no": "Tidak",
+      "yes": "Ya"
+    },
+    "snackBar": {
+      "changesSaved": "Perubahan telah disimpan",
+      "couldNotSaveChange": "Tidak dapat menyimpan perubahan"
+    },
+    "alert": {
+      "freetrial": {
+        "available": "Proyek uji coba gratis yang tersedia",
+        "viewDetail": "• Lihat detail proyek dan aktifkan uji coba gratis",
+        "availableAction": "Aktifkan uji coba gratis",
+        "assigned": "Anda tidak lagi memiliki proyek uji coba gratis yang tersisa",
+        "assignedAction": "Tingkatkan ke langganan penuh",
+        "noSubscription": "Minta uji coba gratis dan dapatkan informasi terperinci tentang pembangkit listrik fotovoltaik (PV)",
+        "noSubscriptionAction": "Minta uji coba gratis"
+      },
+      "subscription": {
+        "renewTrial": "Tingkatkan",
+        "renew": "Perbarui langganan Prospect Anda",
+        "expired": "Langganan Prospect Anda telah kedaluwarsa",
+        "expiredTrial": "Uji coba gratis Prospect Anda telah kedaluwarsa"
+      }
+    },
+    "validation": {
+      "min": "Nilai minimum adalah {min}",
+      "max": "Nilai maksimum adalah {max}",
+      "integer": "Bidang ini hanya mendukung bilangan bulat",
+      "minDate": "Tanggal minimum adalah {minDate}",
+      "maxDate": "Tanggal maksimum adalah {maxDate}",
+      "pattern": "Nilai tidak sesuai dengan pola yang diwajibkan",
+      "required": "Bidang ini wajib diisi",
+      "maxLength": "Panjang maksimum adalah {requiredLength} karakter",
+      "minLength": "Panjang minimum adalah {requiredLength} karakter",
+      "maxDecimals": "Bidang ini mendukung maksimum {maxDecimals} tempat desimal",
+      "phoneNumber": "Nomor telepon tidak valid. Harap gunakan format internasional yang dimulai dengan +",
+      "maxDateRange": "Rentang tanggal maksimum adalah {days} hari",
+      "naturalNumber": "Bidang ini hanya mendukung bilangan asli",
+      "endDateInvalid": "Tanggal akhir sebelum tanggal mulai",
+      "datepickerParse": "\"{text}\" tidak dapat diuraikan menjadi tanggal",
+      "startDateInvalid": "Tanggal mulai setelah tanggal akhir",
+      "phoneNumberFormat": "Nomor telepon tidak valid. Contoh nomor: {phoneNumberFormat}"
+    }
+  },
+  "companyAdmin": {
+    "billing": {
+      "allYears": "Semua tahun",
+      "deliveryDate": "Tanggal pengiriman",
+      "detail": "Detail pesanan",
+      "errorDownloadingInvoice": "Terjadi kesalahan saat mengunduh faktur",
+      "history": "Riwayat pesanan",
+      "invoiceDownloaded": "Faktur diunduh",
+      "noOrders": "Belum ada pesanan",
+      "orderDate": "Tanggal pesanan",
+      "orderId": "Pesanan",
+      "payment": "Pembayaran",
+      "paymentMethod": "Metode Pembayaran",
+      "price": "Harga",
+      "pay": "Bayar sekarang",
+      "paymentInfo": "Informasi pembayaran",
+      "cancel": "Batalkan pesanan",
+      "status": "Status"
+    },
+    "nav": {
+      "billing": "Penagihan &amp; pembayaran",
+      "orderDetail": "Detail pesanan",
+      "overview": "Tinjauan",
+      "settings": "Pengaturan perusahaan",
+      "subscriptions": "Langganan",
+      "users": "Pengguna",
+      "apiContracts": "API",
+      "info": "Info pelanggan"
+    },
+    "orderDetail": {
+      "contractNo": "Nomor kontrak",
+      "deliveryStatus": "Tanggal pengiriman",
+      "discount": "Diskon",
+      "itemDesc": "Deskripsi item",
+      "orderNo": "Nomor pesanan",
+      "orderStatus": "Pesanan",
+      "orderTitle": "Pesanan",
+      "paymentStatus": "Pembayaran",
+      "price": "Harga",
+      "purchaseOrderNo": "Pesanan pembelian",
+      "sgOrderId": "ID pesanan",
+      "totalPrice": "Total harga",
+      "totalQty": "Kuantitas",
+      "unitPrice": "Harga satuan",
+      "vat": "PPN",
+      "users": "Pengguna: {users}",
+      "valid": "Masa berlaku: sejak {from} hingga {to}",
+      "vatAmmount": "Jumlah PPN",
+      "back": "Kembali ke Penagihan &amp; pembayaran",
+      "freeText": "Teks bebas"
+    },
+    "subscription": {
+      "projectLimit": "Sisa {remaining} proyek",
+      "unlimited": "Tak terbatas",
+      "unlimitedProjects": "Jumlah proyek tidak dibatasi (kebijakan penggunaan wajar berlaku)",
+      "usersLimit": "{current} dari {max} pengguna",
+      "notice": "Pemberitahuan: Pengguna mungkin perlu keluar dan masuk lagi untuk mendapatkan akses ke langganan yang ditetapkan.",
+      "general": "Umum",
+      "users": {
+        "name": "Nama",
+        "none": "Tidak ada pengguna yang ditemukan.",
+        "title": "Pengguna",
+        "email": "Email",
+        "devices": "Perangkat pengguna",
+        "tokenGenerationDate": "Tanggal pembuatan",
+        "action": "Tindakan",
+        "generateToken": "Hasilkan token",
+        "regenerateToken": "Buat ulang token",
+        "deleteToken": "Hapus token"
+      }
+    },
+    "subscriptions": {
+      "empty": "Tidak ada langganan yang aktif",
+      "from": "Berlaku sejak",
+      "plan": "Paket langganan",
+      "projectLimit": "Proyek yang diaktifkan",
+      "to": "Berlaku pada",
+      "userLimit": "Batas pengguna"
+    },
+    "users": {
+      "email": "Email",
+      "enterEmail": "Email",
+      "instructions": "Email yang berisi instruksi lebih lanjut akan dikirim ke email yang ditentukan.",
+      "invitations": "Undangan perusahaan",
+      "inviteDesc": "Harap masukkan email pengguna yang akan diundang.",
+      "name": "Nama",
+      "new": "Undang pengguna",
+      "role": "Peran sistem",
+      "status": "Status",
+      "validUntill": "Berlaku hingga",
+      "invalidEmail": "Email tidak valid",
+      "addToSub": {
+        "note": "Catatan: Pengguna tidak akan ditambahkan jika Anda telah mencapai jumlah maksimum pengguna dalam langganan",
+        "prospect": "Tambahkan pengguna ini ke langganan Prospect",
+        "noteFull": "Catatan: Anda telah mencapai jumlah maksimum pengguna dalam langganan",
+        "sdat": "Tambahkan pengguna ini ke langganan SDAT"
+      },
+      "assign": {
+        "sdat": "Tetapkan ke langganan SDAT",
+        "prospect": "Tetapkan ke langganan Prospect"
+      },
+      "unassign": {
+        "sdat": "Batalkan penetapan dari langganan SDAT",
+        "prospect": "Batalkan penetapan dari langganan Prospect"
+      },
+      "alreadyInvited": "Pengguna telah diundang untuk menjadi anggota akun { companyName }"
+    },
+    "api": {
+      "v1": {
+        "title": "API v1.1",
+        "name": "Nama kontrak",
+        "empty": "Perusahaan Anda tidak memiliki kontrak API. Anda dapat meminta uji coba gratis.",
+        "prospect": {
+          "title": "Prospect"
+        },
+        "monitor": {
+          "title": "Monitor",
+          "hardLimit": "Monitor data yang diizinkan dari {hardLimit}",
+          "relativeLimitWindow": "Monitor data yang diizinkan untuk {relativeLimitWindow} terakhir",
+          "relativeLimitWindow_y": "tahun",
+          "relativeLimitWindow_m": "bulan",
+          "relativeLimitWindow_d": "hari",
+          "dataSummarization": "Ringkasan data",
+          "processingKeys": "Kunci Pemrosesan Data"
+        },
+        "forecast": {
+          "title": "Prakiraan",
+          "description": "Prakiraan diizinkan selama {days} hari ke depan"
+        }
+      },
+      "v2": {
+        "title": "API v2"
+      },
+      "common": {
+        "navigation": {
+          "info": "Informasi",
+          "accessKeys": "Kunci akses (token)",
+          "stats": "Statistik"
+        },
+        "loading": "Memuat kontrak API ...",
+        "title": "Judul Kontrak API",
+        "freeTrialRequest": "Minta uji coba gratis",
+        "resources": "Sumber API",
+        "rateLimit": {
+          "title": "Batas tarif (jumlah permintaan)",
+          "description": "{rateLimit} permintaan diizinkan untuk kontrak ini"
+        },
+        "fup": "{count} permintaan per {perSeconds} detik",
+        "validity": {
+          "title": "Judul",
+          "description": "Sejak {from} hingga {to}"
+        },
+        "access": {
+          "title": "Akses",
+          "type": "Jenis akses: {type}",
+          "maxSites": "Situs maksimum yang diizinkan: {maxSites}",
+          "unlimitedMaxSites": "Tak terbatas",
+          "regions": "Wilayah yang diizinkan:",
+          "sites": "Situs yang diizinkan:",
+          "position": "Lintang: {latitude}, Bujur {longitude}"
+        },
+        "token": {
+          "title": "Token",
+          "create": "Tambahkan token baru (kunci akses)",
+          "errorCreating": "Tidak dapat membuat token baru (kunci akses)",
+          "revoking": "Mencabut...",
+          "revokeConfirmHeader": "Kunci akses (token) dicabut",
+          "revokeConfirmMessage": "Anda yakin ingin mencabut kunci akses (token) untuk Kontrak API?",
+          "revokeError": "Kunci akses (token) tidak dapat dicabut"
+        },
+        "stats": {
+          "requestCount": "Permintaan (jumlah)",
+          "uniqueSitesCount": "Situs khusus (jumlah)",
+          "uiuCount": "Unit Informasi Khusus (jumlah)",
+          "documentation": "Anda bisa mendapatkan statistik Anda melalui API, lihat <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/default/get_stats\" target=\"_blank\" title=\" dokumentasi \">dokumentasi</a>."
+        },
+        "apiDocumentation": "Anda dapat menemukan dokumentasi API Prospect/pemantauan/prakiraan (dan juga mencoba API kami) dalam <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/ws/dataOperation\" target=\"_blank\" title=\"dokumentasi\">dokumentasi</a> ini."
+      }
+    },
+    "sdatSubscription": {
+      "devices": {
+        "all": "Semua perangkat",
+        "none": "Tidak ada perangkat SDAT yang ditemukan.",
+        "title": "Perangkat",
+        "email": "Email",
+        "active": "Perangkat aktif",
+        "company": "Profil Perusahaan",
+        "disabled": "Perangkat yang dinonaktifkan",
+        "userName": "Nama pengguna",
+        "hostName": "Nama host",
+        "lastAccess": "Aktivitas terbaru",
+        "registeredAt": "Terdaftar",
+        "disableAction": "Nonaktifkan perangkat",
+        "customName": "Nama kustom",
+        "osFingerprint": "Sidik jari perangkat"
+      },
+      "general": {
+        "type": "Tipe langganan",
+        "none": "Tidak ada langganan SDAT.",
+        "users": "Pengguna",
+        "notes": "Catatan",
+        "validTo": "Berlaku pada",
+        "validFrom": "Berlaku sejak",
+        "deviceLimit": "Batas perangkat per pengguna",
+        "offlineLimit": "Batas offline",
+        "offlineLimitUnit": "jam"
+      }
+    },
+    "prospectSubscription": {
+      "none": "Tidak ada langganan Prospect",
+      "users": "Pengguna yang diaktifkan",
+      "validFrom": "Berlaku sejak {date}",
+      "validUntil": "Berlaku hingga {date}",
+      "subscription": "Langganan",
+      "activatedProjects": "Proyek yang diaktifkan"
+    },
+    "overview": {
+      "prospectSubscription": {
+        "desc": "Jika Anda memiliki langganan Solargis iMaps atau pvPlanner yang aktif, Anda dapat menukarkan akses berbayar ke Solargis Prospect selama sisa periode langganan Anda.",
+        "snack": "Permintaan dibuat",
+        "button": "Saya sudah berlangganan iMaps dan pvPlanner",
+        "dialog": "Setelah menerima permintaan Anda, biasanya kami akan mengaktifkan akses berbayar ke aplikasi Prospect dalam satu hari kerja. Anda akan mendapat pemberitahuan melalui email.",
+        "confirmTerms": "Saya menyetujui <a href='https://solargis.com/legal/general-contractual-terms/' target='_blank' title=\"Persyaratan kontrak umum untuk layanan berbayar\">Persyaratan kontrak umum untuk layanan berbayar</a> dan <a href='https://solargis.com/legal/particular-terms-and-conditions/project-use/' target='_blank' title=\"Ketentuan khusus\"> Ketentuan khusus</a> Solargis"
+      }
+    }
+  },
+  "compare": {
+    "addDialog": {
+      "noProjects": "Tidak ada proyek yang tersedia. Harap buat proyek terlebih dahulu",
+      "outOf": "Proyek { projects } yang dipilih dari maksimum { max }",
+      "project": "Proyek",
+      "systemType": "Tipe sistem",
+      "lastChange": "Perubahan terakhir",
+      "systemSize": "Ukuran sistem"
+    },
+    "addProjects": "Tambahkan proyek",
+    "compare": "Bandingkan",
+    "empty": "Tidak ada proyek yang Dibandingkan",
+    "endOfYear": "Akhir tahun",
+    "listDialog": {
+      "added": "Proyek berhasil ditambahkan untuk Dibandingkan",
+      "open": "Buka perbandingan",
+      "projects": "Proyek saat ini dalam Perbandingan:"
+    },
+    "noPermission": "Untuk menggunakan perbandingan, Anda harus berlangganan untuk perusahaan yang dipilih terlebih dahulu",
+    "noPvConfig": "Terdapat proyek yang tidak memiliki konfigurasi PV yang terpasang",
+    "purchase": "Beli langganan",
+    "replaceDialog": {
+      "msg": "Perbandingan telah penuh. Silakan pilih proyek yang akan diganti:",
+      "replace": "Ganti proyek"
+    },
+    "addToCompare": "Tambahkan untuk membandingkan",
+    "addPvSettings": "Tambahkan konfigurasi PV",
+    "noFinanceConfig": "Terdapat proyek terfilter yang tidak memiliki set konfigurasi keuangan:",
+    "addFinanceSettings": "Tambahkan parameter keuangan",
+    "noEconomyConfig": "Terdapat proyek yang tidak memiliki Konfigurasi keuangan",
+    "noLatestData": "Terdapat proyek yang tidak memiliki data terkini",
+    "updateProjectData": "Perbarui data proyek"
+  },
+  "enum": {
+    "invoice": {
+      "CN": "Unduh catatan kredit",
+      "INVOICE": "Unduh faktur",
+      "INVOICE_FOR_PROFA": "Unduh faktur",
+      "PROFA": "Unduh faktur proforma"
+    },
+    "orderPaymentStatus": {
+      "NOT_PAID": "Belum dibayar",
+      "PAID": "Dibayar",
+      "PAYMENT_FAILED": "Pembayaran gagal",
+      "PENDING": "Tertunda"
+    },
+    "orderPaymentType": {
+      "BANK": "Bank",
+      "BRAINTREE": "Pembayaran online dengan kartu",
+      "PAY_PAL": "PayPal",
+      "NO_PAYMENT": "Tidak ada pembayaran"
+    },
+    "orderStatus": {
+      "CANCELED": "Dibatalkan",
+      "DONE": "Selesai",
+      "IN_PROGRESS": "Sedang berlangsung",
+      "USER_STARTED": "Dibuat",
+      "EXPIRED": "Kedaluwarsa"
+    },
+    "app": {
+      "prospect": "Prospect",
+      "evaluate": "Evaluasi",
+      "monitor": "Monitor",
+      "forecast": "Prakiraan"
+    },
+    "horizon": {
+      "custom": "Cakrawala kustom",
+      "default": "Cakrawala default"
+    }
+  },
+  "header": {
+    "admin": "Admin Solargis",
+    "company-admin": "Admin perusahaan",
+    "compare": "Bandingkan",
+    "contact": "Hubungi",
+    "forgotPassword": "Lupa kata sandi Anda?",
+    "help": "Bantuan",
+    "login": "Masuk",
+    "logout": "Keluar",
+    "map": "Peta",
+    "pricing": "Penetapan harga",
+    "projectDetail": "Detail proyek",
+    "projects": "Proyek",
+    "prospect": "Prospect",
+    "registration": "Buat akun",
+    "upgrade": "Tingkatkan",
+    "user": {
+      "invoiceUsers": "Undang pengguna",
+      "adminConsole": "Konsol admin",
+      "allCompanies": "Semua perusahaan",
+      "switch": "Beralih ke"
+    },
+    "freeTrial": "Uji coba gratis",
+    "evaluate": "Evaluasi",
+    "newPassword": "Kata sandi baru",
+    "instructions": "Instruksi dikirim",
+    "signUp": "Daftar",
+    "users": "Pengguna",
+    "orders": "Pesanan",
+    "products": "Produk",
+    "companies": "Perusahaan",
+    "dashboard": "Dasbor",
+    "sdat": "SDAT",
+    "administration": "Administrasi {companyName}",
+    "invoices": "Faktur"
+  },
+  "map": {
+    "layer": {
+      "mapbox-streets": {
+        "name": "Topografi"
+      },
+      "solargis-cdd": {
+        "name": "Hari derajat pendinginan"
+      },
+      "solargis-d2g": {
+        "name": "Rasio persebaran terhadap iradiasi global"
+      },
+      "solargis-dif": {
+        "name": "Iradiasi horizontal persebaran"
+      },
+      "solargis-dni": {
+        "name": "Iradiasi normal langsung"
+      },
+      "solargis-ele": {
+        "name": "Elevasi",
+        "shortName": "Elevasi"
+      },
+      "solargis-ghi": {
+        "name": "Iradiasi horizontal global"
+      },
+      "solargis-gti": {
+        "name": "Iradiasi kemiringan global"
+      },
+      "solargis-gti_opta": {
+        "name": "Iradiasi kemiringan global pada sudut optimal"
+      },
+      "solargis-hdd": {
+        "name": "Hari derajat pemanasan"
+      },
+      "solargis-landc": {
+        "name": "Tutupan lahan"
+      },
+      "solargis-opta": {
+        "name": "Kemiringan optimal modul PV"
+      },
+      "solargis-popul": {
+        "name": "Kepadatan penduduk"
+      },
+      "solargis-prec": {
+        "name": "Pengendapan (curah hujan)"
+      },
+      "solargis-pvgain_cdte": {
+        "name": "Keuntungan CdTe dibanding modul cSi"
+      },
+      "solargis-pvout_cdte": {
+        "name": "Hasil PV CdTe"
+      },
+      "solargis-pvout_csi": {
+        "name": "Hasil PV cSi"
+      },
+      "solargis-pwat": {
+        "name": "Air yang dapat diendapkan"
+      },
+      "solargis-rh": {
+        "name": "Kelembaban relatif"
+      },
+      "solargis-snowd": {
+        "name": "Hari bersalju"
+      },
+      "solargis-temp": {
+        "name": "Suhu udara"
+      },
+      "solargis-ws": {
+        "name": "Kecepatan angin"
+      },
+      "solargis-alb": {
+        "name": "Albedo permukaan"
+      },
+      "solargis-azi": {
+        "name": "Azimut medan"
+      },
+      "solargis-slo": {
+        "name": "Kemiringan medan"
+      },
+      "solargis-dni_season": {
+        "name": "DNI Musiman"
+      },
+      "solargis-ghi_season": {
+        "name": "GHI Musiman"
+      },
+      "bing-satellite": {
+        "name": "Satelit"
+      },
+      "mapbox-satellite": {
+        "name": "Satelit"
+      }
+    },
+    "legend": {
+      "button": "Legenda"
+    },
+    "location": {
+      "error": {
+        "1": "Geolokasi telah ditolak",
+        "2": "Geolokasi tidak tersedia",
+        "3": "Waktu geolokasi telah habis"
+      },
+      "tryAgain": "Coba lagi"
+    },
+    "menu": {
+      "labels": "Label peta",
+      "selectLayer": "Pilih lapisan peta",
+      "marker": "Nilai penanda"
+    },
+    "zoom": {
+      "all": "Perbesar semua proyek",
+      "selected": "Perbesar proyek yang dipilih"
+    },
+    "draw": {
+      "site": "Situs",
+      "rectangle": "Persegi panjang",
+      "polygon": "Poligon",
+      "distance": "Jarak"
+    },
+    "fullscreen": {
+      "fullscreen": "Layar penuh"
+    }
+  },
+  "months": {
+    "apr": "Apr",
+    "aug": "Agu",
+    "dec": "Des",
+    "feb": "Feb",
+    "jan": "Jan",
+    "jul": "Jul",
+    "jun": "Jun",
+    "mar": "Mar",
+    "may": "Mei",
+    "month": "Bulan",
+    "nov": "Nov",
+    "oct": "Okt",
+    "sep": "Sep",
+    "yearly": "Tahunan"
+  },
+  "project": {
+    "action": {
+      "archive": "Arsip",
+      "delete": "Hapus",
+      "transfer": "Transfer",
+      "claimFreetrial": "Aktifkan Uji coba gratis",
+      "unArchive": "Batalkan pengarsipan",
+      "archiveText": "Apakah Anda ingin mengarsipkan proyek yang dipilih?",
+      "unArchiveText": "Apakah Anda ingin membatalkan pengarsipan proyek yang dipilih?",
+      "updateProjectData": "Perbarui data proyek"
+    },
+    "data": {
+      "longtermAverage": "Rata-rata tahunan masa pakai",
+      "mapData": "Data peta",
+      "projectData": "Data proyek",
+      "showMore": "Tampilkan lebih banyak",
+      "yearlyAverage": "Rata-rata tahunan",
+      "notLatest": "Proyek tidak diperbarui"
+    },
+    "dataLayer": {
+      "CDD": {
+        "desc": "Mengukur kebutuhan energi yang dibutuhkan untuk mendinginkan bangunan. \"Hari derajat pendinginan\" adalah ukuran berapa banyak (dalam derajat), dan untuk berapa lama (dalam hari), suhu udara luar lebih tinggi dari suhu rata-rata harian dasar tertentu (18°C). Nilai tahunan dan bulanan digabungkan dari nilai harian",
+        "name": "Hari derajat pendinginan",
+        "shortName": "CDD"
+      },
+      "CF": {
+        "name": "Faktor kapasitas",
+        "desc": "Rasio output energi listrik aktual selama setahun hingga kemunginan output energi listrik maksimum selama setahun dinyatakan dalam %. Kemungkinan produksi daya maksimum adalah kapasitas AC terpasang dikalikan jumlah jam dalam setahun, sedangkan produksi aktual adalah jumlah listrik yang disalurkan setiap tahun dari proyek.",
+        "shortName": "CF"
+      },
+      "D2G": {
+        "desc": "Rasio iradiasi horizontal persebaran dan iradiasi horizontal global (DIF/GHI)",
+        "name": "Rasio persebaran terhadap iradiasi global",
+        "shortName": "D2G"
+      },
+      "DIF": {
+        "desc": "Jumlah rata-rata tahunan, bulanan, atau harian dari iradiasi horizontal persebaran",
+        "name": "Iradiasi horizontal persebaran",
+        "shortName": "DIF"
+      },
+      "DNI": {
+        "desc": "Jumlah rata-rata tahunan, bulanan atau harian dari iradiasi normal langsung",
+        "name": "Iradiasi normal langsung",
+        "shortName": "DNI"
+      },
+      "DNI_season": {
+        "desc": "Rasio rata-rata bulanan maksimum dan minimum dari iradiasi normal langsung (DNI_month_max/DNI_month_min)",
+        "name": "DNI Musiman",
+        "shortName": "Musim DNI"
+      },
+      "ELE": {
+        "desc": "Elevasi permukaan tanah di atas/di bawah permukaan laut",
+        "name": "Elevasi medan"
+      },
+      "GHI": {
+        "desc": "Jumlah rata-rata tahunan, bulanan atau harian dari iradiasi horizontal global",
+        "name": "Iradiasi horizontal global",
+        "shortName": "GHI"
+      },
+      "GHI_season": {
+        "desc": "Rasio rata-rata bulanan maksimum dan minimum dari iradiasi horizontal global (DNI_month_max/DNI_month_min)",
+        "name": "GHI Musiman",
+        "shortName": "Musim GHI"
+      },
+      "GTI": {
+        "desc": "Jumlah rata-rata tahunan, bulanan atau harian dari iradiasi kemiringan global",
+        "name": "Iradiasi kemiringan global",
+        "shortName": "GTI"
+      },
+      "GTI_opta": {
+        "desc": "Jumlah rata-rata tahunan, bulanan, atau harian dari iradiasi kemiringan global untuk modul PV yang dipasang secara tetap pada sudut optimal",
+        "name": "Iradiasi kemiringan global pada sudut optimal",
+        "shortName": "Opta GTI"
+      },
+      "GTI_theoretical": {
+        "desc": "Jumlah rata-rata tahunan, bulanan, atau harian dari iradiasi kemiringan global tanpa mempertimbangkan naungan medan",
+        "name": "Iradiasi kemiringan global (teoretis)",
+        "shortName": "GTI teoretis"
+      },
+      "HDD": {
+        "desc": "Menghitung kebutuhan energi yang dibutuhkan untuk memanaskan bangunan. \"Hari derajat pemanasan\" adalah ukuran berapa banyak (dalam derajat), dan untuk berapa lama (dalam hari), suhu udara luar lebih rendah dari suhu rata-rata harian dasar tertentu (18°C). Nilai tahunan dan bulanan digabungkan dari nilai harian",
+        "name": "Hari derajat pemanasan",
+        "shortName": "HDD"
+      },
+      "LANDC": {
+        "desc": "Menunjukkan jenis material yang ada di permukaan (rumput, hutan, daerah perkotaan, dll.)",
+        "name": "Tutupan lahan"
+      },
+      "OPTA": {
+        "desc": "Kemiringan optimal modul PV yang dipasang secara tetap yang menghadap ke arah Equator diatur untuk memaksimalkan input GTI",
+        "name": "Kemiringan optimal modul PV"
+      },
+      "POPUL": {
+        "desc": "Rata-rata jumlah penduduk per satuan luas",
+        "name": "Kepadatan penduduk"
+      },
+      "PR": {
+        "desc": "Rasio antara output listrik AC spesifik dari sistem PV dan iradiasi kemiringan global yang diterima oleh permukaan array PV (PVOUTspecific/GTI)",
+        "name": "Rasio kinerja",
+        "shortName": "PR"
+      },
+      "PREC": {
+        "desc": "Jumlah pengendapan rata-rata tahunan dan bulanan",
+        "name": "Pengendapan (curah hujan)",
+        "shortName": "PREC"
+      },
+      "PVGAIN_cdte": {
+        "desc": "Rasio antara hasil tahunan sistem PV berdasarkan modul CdTe dan cSi (PVOUTcdte/PVOUTcsi)",
+        "name": "Keuntungan CdTe dibanding modul CSi"
+      },
+      "PVOUT_cdte": {
+        "desc": "Hasil tahunan dari sistem PV yang menggunakan modul CdTe. Dihitung menggunakan data radiasi surya dan suhu udara",
+        "name": "Hasil PV CdTe"
+      },
+      "PVOUT_csi": {
+        "desc": "Hasil tahunan dari sistem PV yang menggunakan modul cSi. Dihitung menggunakan data radiasi surya dan suhu udara",
+        "name": "Hasil PV cSi"
+      },
+      "PVOUT_specific": {
+        "desc": "Nilai rata-rata tahunan dan bulanan listrik fotovoltaik (AC) yang dihasilkan oleh sistem PV dan dinormalisasi menjadi 1 kWp dari kapasitas terpasang",
+        "name": "Output daya fotovoltaik khusus",
+        "shortName": "Khusus PVOUT"
+      },
+      "PVOUT_total": {
+        "desc": "Nilai rata-rata tahunan dan bulanan listrik fotovoltaik (AC) yang dihasilkan total kapasitas terpasang sistem PV",
+        "name": "Output daya fotovoltaik total",
+        "shortName": "PVOUT_total"
+      },
+      "PWAT": {
+        "desc": "Air yang dapat diendapkan berarti kedalaman uap air dalam kolom atmosfer, jika semua air di kolom tersebut diendapkan sebagai hujan. Ini menunjukkan jumlah kelembaban di atas tanah",
+        "name": "Air yang dapat diendapkan",
+        "shortName": "PWAT"
+      },
+      "RH": {
+        "desc": "Kelembaban relatif tahunan atau bulanan rata-rata pada ketinggian 2 m di atas tanah",
+        "name": "Kelembaban relatif",
+        "shortName": "RH"
+      },
+      "SNOWD": {
+        "desc": "Hari bersalju dihitung sebagai hari dengan kedalaman air salju yang setara atau lebih tinggi dari 5 mm",
+        "name": "Hari bersalju",
+        "shortName": "SNOWD"
+      },
+      "TEMP": {
+        "desc": "Suhu udara rata-rata tahunan, bulanan, dan harian pada ketinggian 2 m di atas permukaan tanah",
+        "name": "Suhu udara",
+        "shortName": "TEMP"
+      },
+      "WS": {
+        "desc": "Rata-rata kecepatan angin tahunan, bulanan, dan harian pada ketinggian 10 m di atas permukaan tanah",
+        "name": "Kecepatan angin",
+        "shortName": "WS"
+      },
+      "ALB": {
+        "desc": "Fraksi radiasi surya yang dipantulkan oleh permukaan. Rasio fluks radiasi <i>upwelling</i> ke <i>downwelling</i> (GHI) di permukaan",
+        "name": "Albedo permukaan",
+        "shortName": "ALB"
+      },
+      "AZI": {
+        "desc": "Aspek medan ke arah mata angin dalam derajat, searah jarum jam. Utara=0, Timur=90, Selatan=180, Barat=270. Medan datar (SLO < 2 derajat) tidak dipertimbangkan",
+        "name": "Azimut medan"
+      },
+      "SLO": {
+        "desc": "Kemiringan medan (kemiringan) dalam derajat",
+        "name": "Kemiringan medan"
+      },
+      "PV": {
+        "name": "Fotovoltaik"
+      }
+    },
+    "dataSettings": {
+      "generalInfo": "Informasi umum",
+      "irradiation": "Radiasi surya",
+      "latlng": "Lintang dan bujur",
+      "length": "Elevasi medan",
+      "ltaDaily": "Rata-rata jangka panjang",
+      "projectInfo": "Info proyek",
+      "temperature": "Suhu udara",
+      "unitSettings": "Pengaturan unit",
+      "values": "Nilai",
+      "tableSettings": "Pengaturan tabel",
+      "mapViewSettings": "Pengaturan tampilan peta",
+      "projectViewSettings": "Pengaturan tampilan proyek"
+    },
+    "field": {
+      "created": "Dibuat",
+      "name": "Nama",
+      "rename": "Ganti nama"
+    },
+    "filter": {
+      "allProjects": "Proyek aktif",
+      "archived": "Diarsipkan",
+      "favorites": "Favorit",
+      "recent": "Terkini",
+      "manageLabels": "Kelola label"
+    },
+    "pvConfigStatus": {
+      "empty": "Konfigurasi sistem PV tidak disetel",
+      "hasPvSystem": "Konfigurasi sistem PV aktif",
+      "noPvSystem": "Konfigurasi sistem PV aktif"
+    },
+    "rename": {
+      "title": "Ganti nama proyek"
+    },
+    "selected": {
+      "addToProjects": "Simpan sebagai proyek",
+      "calculate": "Hitung",
+      "openDetail": "Buka"
+    },
+    "share": {
+      "copied": "Disalin",
+      "copyLink": "Salin tautan",
+      "share": "Berbagi lokasi",
+      "shareLocation": "Berbagi lokasi",
+      "text": "Anda dapat mengirim tautan ini untuk membagikan lokasi."
+    },
+    "sidebar": {
+      "clearSelection": "Hapus pilihan",
+      "listView": "Tampilkan tampilan daftar",
+      "multiSelected": "Beberapa proyek dipilih",
+      "noneSelected": "Tidak ada proyek yang dipilih",
+      "projectsSelected": "Anda memiliki {projects, plural, one {satu proyek} other {# proyek}} yang dipilih"
+    },
+    "snackbar": {
+      "archive": "Proyek diarsipkan",
+      "bulkArchive": "{projects} proyek diarsipkan",
+      "bulkDelete": "{projects} proyek dihapus",
+      "bulkUpdate": "{projects} proyek diperbarui",
+      "delete": "Proyek dihapus",
+      "rename": "Proyek berganti nama",
+      "save": "Proyek disimpan",
+      "update": "Proyek diperbarui",
+      "bulkTransfer": "{projects} proyek ditransfer",
+      "transfer": "Proyek ditransfer",
+      "freetrialClaim": "Uji coba gratis berhasil diaktifkan di proyek ini",
+      "updateData": "Data proyek diperbarui"
+    },
+    "tags": {
+      "deleteHeading": "Hapus label",
+      "deleteText": "Apakah Anda yakin akan menghapus label {tagName}?",
+      "forbiddenName": "Nama label harus unik",
+      "minlength": "Nama label terlalu pendek",
+      "name": "Nama label",
+      "new": "Buat label",
+      "none": "Anda tidak memiliki label yang dibuat",
+      "required": "Nama label wajib diisi",
+      "labels": "Label",
+      "newPlaceholder": "Label baru",
+      "add": "Tambah",
+      "manage": "Kelola label",
+      "invalidCharText": "Label hanya boleh berisi karakter alfabet multibahasa, angka, spasi ( ), titik ( . ), koma ( , ), tanda hubung ( - ), garis bawah ( _ ), dan tanda kurung ( dan ).",
+      "invalidCharHeading": "Karakter salah"
+    },
+    "timezone": {
+      "dstNotConsidered": "Waktu musim panas tidak dipertimbangkan"
+    },
+    "toolbar": {
+      "addTag": "Tambahkan label",
+      "archive": "Arsip",
+      "delete": "Hapus",
+      "favorite": "Favorit",
+      "selected": "Dipilih: {projects}",
+      "selectedFirst": "Dipilih terlebih dahulu",
+      "share": "Bagikan",
+      "unarchive": "Batalkan pengarsipan",
+      "siteDetail": "Detail situs",
+      "rename": "Ganti nama",
+      "selectedProjects": "Dipilih: {projects} / {allProjectsCount}"
+    },
+    "transfer": {
+      "title": "Transfer {projects, plural, one {proyek} other {# proyek}}",
+      "targetAccount": "Akun target",
+      "info": "Dengan mentransfer proyek, Anda hanya akan mentransfer informasi proyek (nama proyek, lokasi, dll.) dan informasi konfigurasi PV. Setiap laporan yang terkait dengan proyek akan hilang. Setelah transfer selesai, proyek ini tidak akan tersedia di akun yang saat ini terkait dengan proyek."
+    },
+    "exportChart": {
+      "exportTo": "Ekspor ke {format}",
+      "pvConfig": "Konfigurasi PV"
+    },
+    "search": {
+      "searchLocations": "Cari lokasi",
+      "invalidCoordinatesMessage": "Anda telah memasukkan koordinat yang berisi angka negatif dan arah mata angin. Ini tidak didukung karena dapat memberikan hasil yang ambigu. Harap masukkan koordinat yang jelas."
+    },
+    "updateProjectDialog": {
+      "note": "Catatan: Pembaruan data proyek akan mengakibatkan penghapusan laporan yang dihasilkan. Jika Anda ingin menyimpannya, unduh sebelum memperbarui data proyek.",
+      "text": "Proyek ini berisi data sumber daya surya dan meteo dari versi lama basis data Solargis. Dengan memilih pembaruan, data yang ada terkait dengan proyek akan diganti dengan data dari versi terbaru dari basis data Solargis.",
+      "title": "Perbarui data proyek?",
+      "nonUpdateData": "Proyek ini berisi data yang tidak diperbarui.",
+      "progressTitle": "Memperbarui data proyek",
+      "downloadReports": "Unduh laporan"
+    }
+  },
+  "projectDetail": {
+    "daylength": {
+      "autumnEquinox": "ekuinoks musim gugur",
+      "dayLengthHorizonCorrected": "Panjang hari, cakrawala terkoreksi [jam]",
+      "daylength": "Panjang hari [jam]",
+      "label": "Panjang hari dan sudut puncak surya",
+      "minimumZenitAngle": "Sudut puncak minimum [°]",
+      "vernalEquinox": "Ekuinoks verna"
+    },
+    "economy": {
+      "form": {
+        "addLoan": "Tambahkan pinjaman",
+        "capacity": "Kapasitas terpasang",
+        "degradationFirst": "Degradasi tahun pertama",
+        "degradationNext": "Degradasi tahun berikutnya",
+        "installationCost": "Biaya pemasangan sistem",
+        "interestRate": "Suku bunga",
+        "loan": "Pinjaman",
+        "loanPeriod": "Periode pinjaman",
+        "ownCapital": "Modal pribadi",
+        "priceOfElectricity": "Harga listrik",
+        "removeLoan": "Hapus pinjaman",
+        "totalYield": "PVOUT_total (tahun 0)",
+        "yearsOfOperation": "Tahun operasi proyek",
+        "loanEquity": "Ekuitas",
+        "accountingInfo": "Informasi akuntansi",
+        "linearDeprecation": "Depresiasi pajak linier",
+        "annualOperationalCost": "Biaya operasional tahunan"
+      },
+      "label": {
+        "economicIndicators": "Arus kas",
+        "inputs": "Input",
+        "outputs": "Output",
+        "payback": "Pengembalian sederhana",
+        "pvEconomy": "Keuangan sistem PV",
+        "summary": "Ringkasan",
+        "overview": "Tinjauan"
+      },
+      "layer": {
+        "CAPEX": {
+          "desc": "Jumlah modal yang dibutuhkan untuk memasang sistem PV surya setelah dikurangi insentif surya dari total biaya sistem",
+          "name": "CAPEX"
+        },
+        "OPEX": {
+          "desc": "Jumlah biaya operasional tahunan sistem tenaga PV, dan angsuran tahunan yang sama untuk penggantian komponennya",
+          "name": "OPEX"
+        },
+        "tariff": {
+          "desc": "Harga kontrak, di mana listrik tenaga surya yang dihasilkan dijual ke grid. PPA biasa diterapkan untuk pembangkit listrik PV komersial",
+          "name": "Perjanjian pembelian daya / Tarif masuk"
+        },
+        "ROIEquity": {
+          "desc": "Pengembalian investasi untuk masa pakai sistem PV relatif terhadap biaya investasi (CAPEX), di mana nol (0) menandai titik impas (tingkat diskonto tidak digunakan)",
+          "name": "ROI"
+        },
+        "unitSystemCosts": {
+          "name": "Biaya sistem unit",
+          "desc": "Biaya sistem PV per kWp (Wp)"
+        },
+        "incentiveOrRebate": {
+          "desc": "Insentif moneter atau pajak apa pun yang ditawarkan oleh perusahaan utilitas atau pemerintah",
+          "name": "Insentif atau rabat pemasangan"
+        },
+        "loanLinearPayment": {
+          "desc": "Jumlah pembayaran tetap untuk pinjaman",
+          "name": "Pembayaran pinjaman linier"
+        },
+        "maintenanceReserve": {
+          "tooltip": "Biaya semua penggantian inverter. Biasanya, garansi pabrik berfluktuasi antara 5 – 12 tahun dan harus diganti rata-rata 2x selama jangka waktu pengoperasian sistem (25 tahun)",
+          "desc": "Jumlah kontribusi tahunan atas uang yang dibutuhkan untuk penggantian perangkat keras (terutama inverter)",
+          "name": "Akun cadangan pemeliharaan"
+        },
+        "LCOE": {
+          "desc": "Biaya satu unit energi selama masa pakai sistem PV",
+          "name": "LCOE"
+        },
+        "IRREquity": {
+          "desc": "Tingkat pengembalian internal selama masa pakai sistem PV dari perspektif pemegang saham (tidak termasuk pinjaman)",
+          "name": "Ekuitas IRR"
+        },
+        "IRRProject": {
+          "name": "Proyek IRR",
+          "desc": "Tingkat pengembalian internal selama masa pakai sistem PV dari keseluruhan proyek"
+        },
+        "discountRate": {
+          "desc": "Faktor diskon yang digunakan dalam Perhitungan nilai bersih saat ini untuk IRR",
+          "name": "Nilai diskon"
+        },
+        "taxesOnProfit": {
+          "name": "Pajak atas laba",
+          "desc": "Pajak atas laba yang diterapkan setiap tahun"
+        },
+        "loanDebtToEquity": {
+          "desc": "Rasio antara utang dan ekuitas",
+          "name": "Rasio utang terhadap ekuitas (gearing)"
+        },
+        "OPEXInflationRate": {
+          "name": "Tingkat inflasi OPEX",
+          "desc": "Kenaikan tahunan harga OPEX"
+        },
+        "linearDeprecation": {
+          "name": "Depresiasi pajak linier",
+          "desc": "Pengurangan yang diterapkan secara linier dalam nilai aset dari waktu ke waktu, karena penuaan, degradasi, dan keausan umum"
+        },
+        "tariffIndexationRate": {
+          "name": "Tingkat indeksasi tarif",
+          "desc": "Kenaikan harga tarif tahunan"
+        },
+        "inverterReplacementYear": {
+          "name": "Tahun penggantian inverter",
+          "desc": "Tahun operasional ketika penggantian inverter akan dilakukan, setelah itu akun cadangan pemeliharaan (MRA) dihapus"
+        }
+      },
+      "table": {
+        "endOfYear": "Akhir tahun",
+        "OPEX": "OPEX",
+        "EBIT": "EBIT",
+        "loan": "Pinjaman",
+        "CAPEX": "CAPEX",
+        "EBITDA": "EBITDA",
+        "revenue": "Pendapatan",
+        "netProfit": "Laba bersih",
+        "taxOnProfit": "Pajak atas laba",
+        "PVOUT_total": "PVOUT_total",
+        "tariffIndexed": "Tarif (diindeks)",
+        "PVOUT_specific": "PVOUT_specific",
+        "EBITDA_specific": "EBITDA_khusus",
+        "loanInterestRate": "Suku bunga pinjaman",
+        "linearDeprecation": "Depresiasi linier",
+        "cashFlowOperations": "Arus kas (operasi)",
+        "maintenanceReserve": "Akun cadangan pemeliharaan",
+        "cashFlowNPVOperations": "NPV Arus kas dari operasi",
+        "loanRepaymentInterest": "Pembayaran pinjaman (bunga)",
+        "loanRepaymentPrincipal": "Pembayaran pinjaman (pokok)",
+        "shareholderCashFlowNPV": "Arus kas NPV untuk pemegang saham",
+        "shareholderCashFlowAvailable": "Arus kas yang tersedia untuk pemegang saham",
+        "annualCosts": "Semua pengeluaran tahunan"
+      },
+      "guard": {
+        "text": "Anda telah mengedit pengaturan keuangan untuk sistem PV ini. Apakah Anda ingin menyimpannya?",
+        "heading": "Keuangan memiliki perubahan yang belum disimpan"
+      },
+      "resetSaved": "Atur ulang dari nilai yang disimpan",
+      "tariffGoalseek": {
+        "use": "Gunakan nilai",
+        "open": "Hitung berdasarkan ekuitas IRR",
+        "result": "Nilai yang dihitung:",
+        "target": "Targetkan ekuitas IRR",
+        "explain": "Perhitungan untuk output Ekuitas IRR tertentu yang ditentukan pengguna dengan menyesuaikan input Tarif Pendapatan (PPA/FiT), sedangkan semua parameter input lainnya akan tetap tidak berubah."
+      }
+    },
+    "error": {
+      "noProject": "Tidak ada proyek yang dipilih. Silakan pilih proyek untuk melihat detail proyek."
+    },
+    "glossary": {
+      "acronym": "Akronim",
+      "explanation": "Penjelasan",
+      "name": "Nama lengkap",
+      "title": "Glosarium",
+      "unit": "Unit"
+    },
+    "info": {
+      "address": "Alamat",
+      "coordinates": "Koordinat Geografis",
+      "country": "Negara/Wilayah",
+      "created": "Dibuat",
+      "edit": "Edit nama",
+      "elevation": "Elevasi",
+      "info": "Info proyek",
+      "name": "Nama proyek",
+      "showOnMap": "Tampilkan di peta"
+    },
+    "metadata": {
+      "doc": {
+        "documentation": "Dokumentasi",
+        "methodology": "Metodologi",
+        "simulation": "Simulasi energi PV",
+        "uncertainty": "Ketidakpastian data"
+      },
+      "method": {
+        "merging": "Penggabungan data, pembersihan, pemrosesan",
+        "postprocessing": "Pasca-pemrosesan",
+        "processing": "Pemrosesan data",
+        "simulation": "Model simulasi PV",
+        "solarModel": "Solar model"
+      },
+      "sources": {
+        "LANDC": "CCI tutupan lahan, v2.0.7",
+        "POPUL": "<i>Gridded Population of the World</i>, versi 4 (GPWv4)",
+        "PREC": "basis data GPCC",
+        "PWAT": "Model CFSR dan CFSv2",
+        "SNOWD": "Model CFSR dan CFSv2",
+        "TEMP": "Model ERA-5",
+        "aerosolsMerra": "Aerosol dari model MERRA-2 dan MACC-II/CAMS",
+        "albedo": "Basis data MODIS dan ERA-5",
+        "region1": "Satelit GOES West",
+        "region3": "Satelit Meteosat MFG dan MSG (PRIME)",
+        "region4": "Satelit Meteosat MFG dan MSG (IODC)",
+        "region5": "Satelit Meteosat MFG, MSG (IODC) dan Himawari",
+        "region6": "Satelit MTSAT dan Himawari",
+        "regionGeneral": "Satelit geostasioner Meteosat, GOES, MTSAT dan HIMAWARI",
+        "wapourCSFR": "Uap air dari model CSFR dan GFS",
+        "region2": "Satelit GOES East dan GOES-R",
+        "RHWSWD": "Model MERRA-2 dan CDFv2"
+      },
+      "table": {
+        "method": "Metode Solargis",
+        "source": "Sumber input data <br>(Organisasi)",
+        "period": "Representasi waktu",
+        "updated": "Terakhir diperbarui",
+        "parameter": "Parameter"
+      },
+      "text": {
+        "row0": "Langkah waktu: Statistik jangka panjang bulanan dan tahunan",
+        "row1": "Estimasi mengasumsikan bahwa satu tahun memiliki 365 hari",
+        "text": "Laporan ini didasarkan pada basis data surya dan meteorologi beresolusi tinggi yang dikembangkan dan dioperasikan oleh Solargis. Parameter data yang disajikan dalam laporan ini dihitung dengan model dan algoritma Solargis. Data yang digunakan sebagai input untuk model ini berasal dari sumber yang berbeda. Karakteristik data dijelaskan di bawah ini.",
+        "version": "Versi basis data Prospect Solargis {version}",
+        "latestMetadataVersion": "Versi {latestMetadataVersion} tersedia"
+      }
+    },
+    "nav": {
+      "hourlyProfiles": "Profil per jam",
+      "lifetimePerformance": "Kinerja selama masa pakai",
+      "metadata": "Metadata",
+      "monthlyStatistics": "Statistik bulanan",
+      "overview": "Tinjauan",
+      "projectInfo": "Info proyek",
+      "pvConfig": "Konfigurasi PV",
+      "pvElectricity": "Listrik PV",
+      "pvLosses": "Konversi energi dan kerugian sistem",
+      "pvPerformance": "Kinerja PV",
+      "reports": "Laporan",
+      "solarMeteo": "Surya dan meteorologi",
+      "support": "Dukungan",
+      "download": "Unduh",
+      "analysis": "Analisis",
+      "properties": "Properti",
+      "data": "Data",
+      "finance": "Keuangan"
+    },
+    "overview": {
+      "longtermPvPowerPotential": "Potensi daya PV jangka panjang (rata-rata {years} tahun)",
+      "meteorologicalData": "Data meteorologi",
+      "projectInfo": "Info proyek",
+      "projectOverview": "Tinjauan proyek",
+      "pvElectricityAndPerformance": "Listrik &amp; kinerja PV",
+      "solar": "Radiasi surya",
+      "solarAndMeteo": "Surya dan meteorologi",
+      "systemType": "Tipe sistem",
+      "theoreticalPvElectricityPotential": "Potensi listrik PV teoretis (saat permulaan sistem)",
+      "title": "Tinjauan - radiasi matahari dan parameter meteorologi"
+    },
+    "pvConfig": {
+      "pvConfiguration": "Konfigurasi sistem PV"
+    },
+    "pvElectricity": {
+      "hourlySummary": "Profil produksi daya PV, yang ditunjukkan di bawah, dihitung sebagai rata-rata semua data per jam untuk setiap bulan. Profil tersebut memberikan indikasi atas perubahan pola produksi daya karena cuaca dan konfigurasi yang dipilih dari sistem PV dalam satu hari. Perlu diketahui bahwa \"profil harian rata-rata\" adalah konsep teoretis, karena dalam sebagian besar kasus, suatu profil dikhususkan untuk setiap hari dalam setahun karena variabilitas cuaca.",
+      "potential": "Potensi listrik PV teoretis",
+      "summary": "Estimasi teoretis dari produksi listrik tenaga surya oleh sistem fotovoltaik tanpa mempertimbangkan penuaan jangka panjang dan penurunan kinerja modul PV serta komponen sistem lainnya."
+    },
+    "pvLosses": {
+      "electricSystemLosses": "Kerugian sistem kelistrikan",
+      "energyInput": "Input energi",
+      "energyLoss": "Kerugian energi",
+      "lossDiagram": "Diagram kerugian",
+      "solarLosses": "Kerugian surya",
+      "summary": "Estimasi khusus tahunan teoretis dari produksi listrik tenaga surya yang dihasilkan sistem fotovoltaik tanpa mempertimbangkan penuaan jangka panjang dan penurunan kinerja modul PV serta komponen sistem lainnya. Rasio kinerja rata-rata jangka panjang (PR) dihitung untuk produksi awal sistem PV.",
+      "title": "Konversi energi dan kerugian terkait",
+      "diagramDesc": "Diagram menunjukkan kerugian teoretis karena konversi energi dalam sistem tenaga PV",
+      "energy": "Energi",
+      "energyLossOrGain": "Kerugian/perolehan energi",
+      "absoluteValues": "Nilai mutlak"
+    },
+    "pvPerformance": {
+      "degrad": "Tingkat degradasi",
+      "endOfYear": "Akhir tahun",
+      "lifetimeProduction": "Produksi listrik PV selama masa pakai",
+      "lifetimeSummary": "Estimasi rata-rata tahunan dari produksi listrik tenaga surya yang dihasilkan sistem fotovoltaik. Nilai ini mempertimbangkan konfigurasi sistem PV dan  memperhitungkan penurunan kinerja sistem akibat penuaan dan penurunan kinerja modul PV serta komponen lainnya. Konsep output daya PV khusus berguna untuk membandingkan proyek yang berbeda atau konfigurasi sistem PV. Rasio kinerja (PR) menunjukkan efisiensi rata-rata selama masa pakai sistem PV, dengan mempertimbangkan penurunan kinerja sistem.",
+      "theoretical": "Teoretis"
+    },
+    "reports": {
+      "confirmDelete": "Apakah Anda yakin ingin menghapus laporan ini?",
+      "empty": "Tidak ada laporan yang disimpan. Untuk membuat laporan baru, tekan tombol Buat.",
+      "generate": "Buat",
+      "status": {
+        "error": "Kesalahan saat membuat laporan"
+      },
+      "table": {
+        "date": "Dibuat",
+        "download": "Unduh",
+        "fileType": "Jenis<i> file</i>",
+        "lang": "Bahasa",
+        "name": "Nama laporan",
+        "no": "Tidak",
+        "yes": "Ya",
+        "dateFormat": "Format tanggal",
+        "finance": "Keuangan"
+      },
+      "title": "Buat laporan dari konfigurasi saat ini. Laporan akan disimpan sampai konfigurasi proyek berubah.",
+      "finance": "Sertakan keuangan"
+    },
+    "shared": {
+      "summary": "Ringkasan",
+      "noPvConfig": "Hanya parameter surya dan meteorologi yang dihitung. Tidak ada konfigurasi PV yang dipertimbangkan."
+    },
+    "solarMeteo": {
+      "hourlySummary": "Radiasi surya dan profil suhu udara, yang ditunjukkan di bawah, dihitung sebagai rata-rata semua data per jam untuk setiap bulan. Profil tersebut memberikan indikasi perubahan pola parameter meteorologi utama pada siang hari. Pola-pola ini ditentukan berdasarkan astronomi matahari dan geografi proyek. Iradiasi kemiringan global menunjukkan bagaimana permukaan modul fotovoltaik yang dimiringkan secara optimal memengaruhi ketersediaan rata-rata sumber daya surya untuk produksi listrik selama satu hari rata-rata. Perlu diketahui bahwa \"profil harian rata-rata\" adalah konsep teoretis, karena dalam sebagian besar kasus, suatu profil dikhususkan untuk setiap hari dalam setahun karena variabilitas cuaca.",
+      "optimumAzimuth": "Kemiringan/azimut optimal untuk GTI_opta",
+      "radiationTemperature": "Radiasi matahari dan parameter meteorologi",
+      "summary": "Parameter meteorologi khusus proyek yang paling penting sebagai penentu produksi listrik tenaga surya adalah radiasi surya, yang menjadi bahan bakar sistem tenaga PV. Produksi daya juga dipengaruhi oleh suhu udara. Parameter meteorologi lainnya juga memengaruhi kinerja, ketersediaan dan penuaan sistem PV."
+    },
+    "sunpath": {
+      "axisAzimuth": "Azimut surya [°]",
+      "axisElevation": "Elevasi matahari [°]",
+      "civilTime": "Waktu sipil",
+      "decemberSolstice": "Titik balik matahari bulan Desember",
+      "dstTime": "Waktu musim panas (DST)",
+      "equinox": "Ekuinoks",
+      "juneSolstice": "Titik balik matahari bulan Juni",
+      "label": "Cakrawala proyek dan jalur matahari",
+      "modify": "Ubah cakrawala",
+      "module": "Cakrawala modul",
+      "solarTime": "Waktu surya",
+      "summerSolstice": "Titik balik matahari musim panas",
+      "sunArea": "Area aktif",
+      "sunpath": "Jalur matahari",
+      "terrain": "Cakrawala medan",
+      "winterSolstice": "Titik balik matahari musim dingin",
+      "horizonInvalid": "Horizon yang ditentukan dalam input tidak valid",
+      "horizonAzimuth": "Azimut: { azimuth }",
+      "horizonElevation": "Elevasi: { elevation }",
+      "horizonHorizonElevation": "Elevasi cakrawala: { horizon }",
+      "exportHorizon": "Ekspor ke <i>file </i>HOR"
+    },
+    "unsavedProjectDialog": {
+      "body": "Untuk membuka detail Proyek, proyek yang Anda pilih saat ini perlu disimpan. Apakah Anda ingin menyimpan proyek ini?",
+      "heading": "Proyek belum disimpan",
+      "action": "Simpan dan buka"
+    },
+    "pvLossesLayer": {
+      "capacityFactor": {
+        "name": "Faktor kapasitas",
+        "desc": "Rasio output energi listrik aktual selama setahun hingga kemungkinan output energi listrik maksimum selama periode waktu tertentu (biasanya tahun) dinyatakan dalam %. Kemungkinan produksi daya maksimum adalah kapasitas AC terpasang dikalikan dengan jumlah jam dalam setahun, sedangkan produksi aktual adalah jumlah listrik yang disalurkan secara efektif setiap tahun oleh pembangkit listrik PV"
+      },
+      "energyStage": {
+        "ac_out_with_ac_losses": {
+          "name": "Kinerja sistem total (saat permulaan sistem)",
+          "desc": "Jumlah teoretis listrik yang dihasilkan oleh sistem PV pada permulaan operasi. Pada tahap ini, degradasi modul PV tidak diperhitungkan."
+        },
+        "ac_out_with_ac_losses_and_snow_losses_and_availability_losses": {
+          "name": "Kinerja sistem total mempertimbangkan ketersediaan teknis dan kerugian karena salju",
+          "desc": "Jumlah listrik yang dihasilkan oleh sistem PV pada awal operasi dengan mempertimbangkan tidak tersedianya produksi karena salju atau kegagalan. Pada tahap ini, degradasi modul PV tidak diperhitungkan."
+        },
+        "ghi": {
+          "name": "Khusus situs iradiasi horizontal global",
+          "desc": "Iradiasi horizontal global teoretis dikurangi dengan porsi iradiasi yang terhalang oleh objek horizon dan medan jauh."
+        },
+        "ghi_theoretical": {
+          "name": "Iradiasi horizontal global (GHI) teoretis",
+          "desc": "Iradiasi horizontal global yang dihitung dengan metode Solargis dari model numerik, yang diparameterisasi dengan serangkaian input yang mencirikan transmitansi awan dan keadaan atmosfer."
+        },
+        "gti": {
+          "name": "Iradiasi kemiringan global (GTI)",
+          "desc": "Jumlah rata-rata tahunan, bulanan atau harian dari iradiasi kemiringan global (sering disebut sebagai iradiasi Dataran array (<i>Plain of array)</i> [POA])"
+        },
+        "gti_eff": {
+          "name": "GTI efektif",
+          "desc": "Iradiasi kemiringan efektif yang mencapai permukaan modul PV dengan mempertimbangkan kerugian optik."
+        }
+      },
+      "loss": {
+        "angularReflectivity": {
+          "name": "Reflektifitas sudut",
+          "desc": "Kerugian optik dari reflektifitas sudut (sudut efek insiden) pada permukaan modul PV di mana besarnya efek tergantung pada posisi relatif matahari, bidang modul, serta jenis dan kebersihan permukaan modul."
+        },
+        "conversionToSurfaceOfPvModules": {
+          "name": "Konversi ke permukaan modul PV",
+          "desc": "Perhitungan iradiasi kemiringan (sering disebut sebagai iradiasi dataran array<i> (plain of array</i>) dari iradiasi horizontal global khusus lokasi melalui komponen langsung dan disebarkan."
+        },
+        "dirtDustAndSoiling": {
+          "name": "Lumpur, debu, dan kotoran",
+          "desc": "Kerugian optik radiasi surya pada tingkat permukaan modul PV karena polusi permukaan."
+        },
+        "interRowShading": {
+          "name": "Kerugian listrik karena naungan antar baris",
+          "desc": "Kerugian listrik akibat penurunan iradiasi, yang disebabkan oleh deretan modul PV sebelumnya yang menghalangi iradiasi."
+        },
+        "inverters": {
+          "name": "Konversi inverter (arus searah (DC)/ arus bolak-balik (AC))",
+          "desc": "Kerugian pada inverter karena efisiensi proses konversi dari arus searah ke arus bolak-balik. Jika inverter berisi trafo bawaan, efisiensinya termasuk dalam parameter ini."
+        },
+        "mismatchAndCablingDC": {
+          "name": "Ketidaksesuaian dan pemasangan kabel di bagian arus searah (DC)",
+          "desc": "Kerugian listrik karena ketidaksesuaian titik operasi MPP yang berbeda dari modul yang terhubung ke inverter dan kehilangan panas pada interkoneksi dan kabel arus searah (DC)."
+        },
+        "powerTolarance": {
+          "name": "Toleransi daya modul fotovoltaik (PV)",
+          "desc": "Kerugian listrik karena toleransi daya yang tidak sama dari modul tertentu yang terhubung dalam rangkaian. Jika modul dengan toleransi daya yang lebih tinggi dihubungkan secara seri, maka kerugian akan lebih tinggi."
+        },
+        "snow": {
+          "name": "Kerugian karena salju",
+          "desc": "Kerugian produksi listrik selama periode waktu ketika modul PV tertutup salju."
+        },
+        "solarIrradianceToDC": {
+          "name": "Konversi radiasi surya ke DC dalam modul",
+          "desc": "Konversi fotovoltaik dari iradiasi menjadi listrik dalam bahan semikonduktor. Efisiensi konversi tidak linier dan tergantung pada distribusi nilai iradiasi dan suhu"
+        },
+        "spectralCorrection": {
+          "name": "Koreksi spektral",
+          "desc": "Kerugian dalam proses konversi energi yang disebabkan oleh ketidaksesuaian spektral antara sifat bahan semikonduktor dan spektrum cahaya"
+        },
+        "technicalAvailablity": {
+          "name": "Ketersediaan teknis",
+          "desc": "Kerugian produksi listrik yang diakibatkan oleh pemadaman pembangkit listrik PV karena pemeliharaan, kegagalan, atau pemadaman gardu induk lokal."
+        },
+        "terrainShading": {
+          "name": "Bayangan cakrawala (medan + objek cakrawala)",
+          "desc": "Kerugian dalam iradiasi horizontal global teoretis yang karena karakteristik medan. Bayangan dihitung berdasarkan disagregasi menggunakan SRTM-3 DEM dan tinggi cakrawala. Bayangan dari karakteristik lokal seperti bangunan, struktur atau vegetasi di dekatnya tidak relevan pada tahap ini."
+        },
+        "transformersAndAC": {
+          "name": "Kerugian pengkabelan trafo dan arus bolak-balik (AC)",
+          "desc": "Kerugian listrik trafo tegangan menengah (MV) atau tegangan tinggi (HV) eksternal dan kerugian panas pada pengkabelan dan sambungan arus bolak-balik (AC). Parameter ini mencakup kerugian di kabel AC pada sisi tegangan rendah, kerugian di kabel AC pada sisi tegangan menengah (tinggi) (hingga titik penyambungan grid dengan meteran listrik), dan juga pada semua perangkat yang berada pada jalur arus AC yang dihasilkan oleh inverter."
+        }
+      }
+    },
+    "data": {
+      "title": "Ekspor data rata-rata bulanan dalam format CSV untuk mengimpor langsung ke PVsyst.",
+      "download": "Unduh",
+      "note": "Catatan: Di PVsyst, data GHI, DIF, dan TEMP per jam dibuat secara sintetis saat mengimpor data rata-rata bulanan. Pembuatan sintetis dari set data pada tahun biasa adalah proses matematika yang mengakibatkan hilangnya koherensi antara radiasi surya dan suhu udara. Begitu juga, distribusi frekuensi nilai per jam dalam rangkaian waktu buatan yang dihasilkan mungkin tidak mewakili kondisi iklim yang sebenarnya. Karena kinerja sistem tenaga surya berbeda dengan radiasi surya dan suhu udara, penggunaan set data per jam sintetis meningkatkan ketidakpastian simulasi energi surya. Oleh karena itu disarankan untuk menggunakan Solargis <a href='https://solargis.com/products/evaluate/overview' target='_blank'>Serangkaian waktu atau set data TMY</a> untuk simulasi di PVsyst."
+    },
+    "settings": {
+      "systemSettings": "Pengaturan sistem"
+    },
+    "unlockDialog": {
+      "upgrade": "Tingkatkan",
+      "mainTitle": "Buka kunci semua fitur",
+      "addPVConfig": "Tambahkan konfigurasi PV",
+      "text": {
+        "reports": "Buat dan unduh laporan resmi Prospect Solargis untuk konfigurasi pembangkit listrik Anda. Bagikan kepada klien atau investor Anda. Laporan kami tersedia dalam berbagai bahasa.",
+        "download": "Unduh data surya dan meteorologi proyek Anda untuk analisis lebih lanjut di alat pihak ke-3.",
+        "solarMeteo": "Akses statistik bulanan dan profil per jam dari radiasi surya dan data meteorologi untuk lokasi proyek Anda.",
+        "compareTool": "Bandingkan statistik beberapa situs secara berdampingan untuk menemukan lokasi optimal bagi pembangkit Anda.",
+        "pvPerformance": "Lihat analisis detail kerugian.",
+        "pvElectricity": "Akses statistik bulanan dan profil per jam dari produksi listrik teoretis untuk konfigurasi pembangkit Anda.",
+        "finance": "Optimalkan pembiayaan proyek Anda:"
+      },
+      "title": {
+        "reports": "Laporan",
+        "download": "Unduh",
+        "solarMeteo": "Surya dan meteorologi",
+        "compareTool": "Bandingkan alat",
+        "pvElectricity": "Listrik PV",
+        "pvPerformance": "Kinerja PV",
+        "finance": "Kalkulator keuangan"
+      },
+      "requestFreeTrial": "Minta uji coba gratis",
+      "activateFreeTrial": "Aktifkan uji coba gratis",
+      "bulletPoints": {
+        "economyCalculator": {
+          "ROI": "ROI (Pengembalian investasi)",
+          "LCOE": "LCOE (Biaya energi yang diratakan)",
+          "equity": "IRR Ekuitas",
+          "project": "IRR Proyek (Tingkat pengembalian internal)"
+        }
+      }
+    }
+  },
+  "projectList": {
+    "filter": {
+      "toolbar": {
+        "archived": "Proyek yang diarsipkan",
+        "default": "Proyek aktif",
+        "favorite": "Proyek favorit",
+        "recent": "Proyek terbaru",
+        "tag": "Label: {tags}"
+      }
+    }
+  },
+  "pvConfig": {
+    "action": {
+      "add": "Tambahkan konfigurasi PV",
+      "change": "Ubah tipe sistem",
+      "edit": "Edit konfigurasi PV",
+      "optimum": "Tetapkan yang optimal",
+      "restore": "Kembalikan pengaturan default",
+      "save": "Simpan dan hitung"
+    },
+    "error": {
+      "missing": "Anda tidak memiliki konfigurasi PV aktif yang dipilih pada proyek ini. Untuk mengakses data PV, Anda harus menambahkannya.",
+      "notFound": "Tidak ada proyek dengan konfigurasi yang ditemukan"
+    },
+    "label": {
+      "chooseSystemType": "Pilih tipe sistem",
+      "copy": "Salin dari proyek",
+      "default": "Templat default",
+      "systemType": "Tipe sistem",
+      "unsaved": "Perubahan yang belum disimpan",
+      "settings": "Pengaturan sistem"
+    },
+    "params": {
+      "backtracking": {
+        "headline": "Lacak balik"
+      },
+      "cablingLosses": {
+        "ACCable": "Kerugian pengkabelan AC",
+        "ACCableShort": "Pengkabelan AC",
+        "DCCable": "Kerugian pada pengkabelan DC",
+        "DCCableShort": "Pengkabelan DC",
+        "DCMismatch": "Kerugian karena ketidaksesuaian DC",
+        "DCMismatchShort": "Ketidaksesuaian DC",
+        "headline": "Kerugian pengkabelan",
+        "setDefault": "Atur default"
+      },
+      "colSpacing": {
+        "headline": "Jarak kolom relatif",
+        "spacing": "Jarak kolom relatif"
+      },
+      "inverter": {
+        "centralized": "Inverter efisiensi tinggi terpusat",
+        "headline": "Jenis inverter",
+        "small": "Inverter kecil",
+        "string": "Inverter rangkaian",
+        "efficiencyStr": "{inverterType} [{efficiency}% efisiensi Euro]",
+        "custom": "Inverter kustom"
+      },
+      "orientation": {
+        "azimuth": "Azimut",
+        "headline": "Geometri modul PV",
+        "tilt": "Kemiringan"
+      },
+      "pvModule": {
+        "ASI": "a-Si - silikon amorf",
+        "CDTE": "CdTe - kadmium telurida",
+        "CIS": "CIS - tembaga indium selenida",
+        "CSI": "c-Si - silikon kristal (mono atau polikristalin)",
+        "customDegradation": "dengan {degradationFirstYear}% tahun pertama dan {degradationNextYear}% degradasi tahun berikutnya",
+        "degradation": "Tingkat kustom penurunan kinerja (RPD)",
+        "firstYear": "Tahun pertama",
+        "headline": "Jenis modul PV",
+        "nextYear": "Tahun berikutnya"
+      },
+      "rowSpacing": {
+        "headline": "Jarak baris relatif",
+        "spacing": "Jarak baris relatif"
+      },
+      "snowSoilingLosses": {
+        "headline": "Kerugian karena salju dan kotoran pada modul PV",
+        "snowLosses": "Kerugian karena salju bulanan hingga",
+        "snowLossesShort": "Kerugian karena salju bulanan hingga",
+        "soilingLosses": "Kerugian karena kotoran bulanan hingga",
+        "soilingLossesShort": "Kerugian karena kotoran bulanan hingga",
+        "snowLossesForm": "Kerugian karena salju",
+        "soilingLossesForm": "Kerugian karena kotoran",
+        "soilingAsYearly": "Saya lebih suka memasukkan nilai kotoran tahunan"
+      },
+      "systemAvailability": {
+        "availability": "Ketersediaan sistem",
+        "headline": "Ketersediaan sistem"
+      },
+      "systemSize": {
+        "area": "Area modul PV yang terpasang",
+        "capacity": "Kapasitas terpasang",
+        "headline": "Ukuran sistem"
+      },
+      "transformer": {
+        "headline": "Jenis trafo",
+        "highEfficiency": "Trafo efisiensi tinggi",
+        "none": "Tanpa trafo",
+        "standard": "Trafo standar",
+        "lossStr": "{transformerType} [{loss}% kerugian]",
+        "custom": "Trafo kustom"
+      },
+      "rotationLimits": {
+        "val": "{east}° Timur , {west}° Barat",
+        "west": "Barat",
+        "east": "Timur",
+        "headline": "Batas rotasi"
+      }
+    },
+    "type": {
+      "buildingIntegrated": {
+        "desc": "Sistem fotovoltaik terintegrasi ke dalam fasad atau atap bangunan tempat tinggal atau komersial. Azimut dan kemiringan modul PV adalah homogen. Modul tidak saling menaungi. Modul terintegrasi ke dalam selubung bangunan, sehingga ventilasi sisi belakang sangat terbatas. Jenis sistem PV ini dapat secara langsung dihubungkan ke jaringan tegangan rendah melalui inverter, atau dapat dihubungkan ke jaringan tegangan menengah melalui inverter dan trafo distribusi. Tidak ada penyimpanan listrik yang dipertimbangkan.",
+        "name": "Bangunan terintegrasi"
+      },
+      "groundFixed": {
+        "desc": "Sistem fotovoltaik komersial skala besar yang dipasang di tanah yang rata. Azimut dan kemiringan modul PV adalah homogen, biasanya menghadap ke Khatulistiwa dan cenderung memiliki kemiringan optimal guna memaksimalkan hasil energi tahunan. Modul dipasang secara tetap pada struktur kemiringan yang disejajarkan dalam beberapa baris. Selama sudut matahari rendah, mereka mungkin sebagian dinaungi oleh baris sebelumnya. Modul berventilasi baik. Jenis sistem PV ini terhubung ke jaringan tegangan menengah atau tinggi melalui inverter dan trafo distribusi, trafo tambahan juga dapat digunakan. Tidak ada penyimpanan listrik yang dipertimbangkan.",
+        "name": "Terpasang tetap di tanah"
+      },
+      "noPvSystem": {
+        "desc": "Hanya parameter surya dan meteorologi yang dihitung. Tidak ada konfigurasi PV yang dipertimbangkan.",
+        "name": "Tidak ada sistem PV"
+      },
+      "rooftopLargeFlat": {
+        "desc": "Sistem fotovoltaik dipasang pada atap horizontal luas bangunan komersial atau industri. Azimut dan kemiringan modul PV adalah homogen. Modul dipasang secara tetap pada struktur kemiringan, melekat pada atap datar dan disejajarkan dalam beberapa barisan. Jadi, selama sudut matahari rendah, modul mungkin sebagian dinaungi oleh baris sebelumnya. Pemasangan memungkinkan ventilasi modul PV, tetapi pemanasan dari permukaan atap dapat memengaruhi kinerja sistem PV. Jenis sistem PV ini dapat secara langsung dihubungkan ke jaringan tegangan rendah melalui inverter, atau ini dapat dihubungkan ke jaringan tegangan menengah melalui inverter dan trafo distribusi. Tidak ada penyimpanan listrik yang dipertimbangkan.",
+        "name": "Atap datar dari atap luas"
+      },
+      "rooftopLargeTilted": {
+        "desc": "Sistem fotovoltaik dipasang pada atap miring luas bangunan komersial atau industri. Azimut dan kemiringan modul PV adalah homogen dan modul tidak saling menaungi. Modul dipasang pada rel yang dipasang pada atap miring, sehingga dimungkinkan ventilasi sisi belakang. Sistem ini dapat secara langsung dihubungkan ke jaringan tegangan rendah melalui inverter, atau dapat dihubungkan ke jaringan tegangan menengah melalui inverter dan trafo distribusi. Tidak ada penyimpanan listrik yang dipertimbangkan.",
+        "name": "Atap miring dari atap luas"
+      },
+      "rooftopSmall": {
+        "desc": "Sistem fotovoltaik dipasang pada atap miring bangunan tempat tinggal. Azimut dan kemiringan modul PV adalah homogen dan modul tidak saling menaungi. Modul dipasang pada rel yang dipasang pada atap miring, sehingga memungkinkan ventilasi sisi belakang. Sistem PV jenis ini biasanya terhubung langsung ke jaringan tegangan rendah melalui inverter. Tidak ada penyimpanan listrik yang dipertimbangkan.",
+        "name": "Atap kecil"
+      },
+      "trackerOneAxisHorizontalNS": {
+        "desc": "Sistem fotovoltaik komersial skala besar yang dipasang di tanah yang rata. Modul PV dipasang pada pelacak dengan satu sumbu horizontal terikat Utara-Selatan. Batas rotasi untuk pelacak diberikan untuk arah Timur dan Barat. Algoritma pelacakan balik digunakan untuk mengurangi kehilangan bayangan antar baris pada saat sudut matahari rendah. Modul berventilasi baik. Jenis sistem PV ini terhubung ke jaringan tegangan menengah atau tinggi melalui inverter dan trafo distribusi, trafo tambahan juga dapat digunakan. Tidak ada penyimpanan listrik yang dipertimbangkan.",
+        "name": "Pelacak dengan 1 sumbu horizontal"
+      },
+      "hydroMountedLargeScale": {
+        "desc": "Opsi ini mencakup pemasangan PV surya terapung besar. Dianggap bahwa modul dirakit pada ponton apung plastik yang berorientasi ke arah khatulistiwa. Modul memiliki suhu operasi yang lebih rendah karena pendinginan dari penguapan air permukaan. Ketidaksesuaian yang lebih tinggi antara modul dalam rangkaian (ketidaksesuaian yang disebabkan oleh gelombang) dan kotoran yang lebih tinggi karena kotoran burung diperkirakan. Dalam contoh pemasangan ini, inverter untaian dan trafo distribusi dipertimbangkan. Dibandingkan dengan pemasangan PV di tanah skala besar, ketersediaan sistem diperkirakan lebih rendah karena lingkungan yang lebih keras, dengan kemungkinan lebih tinggi terjadinya berbagai jenis kegagalan.",
+        "name": "PV terapung"
+      }
+    }
+  },
+  "toggle": {
+    "ltaDaily": {
+      "perDay": "{unit} per hari"
+    }
+  },
+  "units": {
+    "DMS": "DMS",
+    "celsius": "°C",
+    "currencyAnnual": "{currency}/tahunan",
+    "currencyMonthly": "{currency}/bulanan",
+    "days": "hari",
+    "decimal": "Desimal",
+    "degreeDays": "hari derajat",
+    "fahrenheit": "°F",
+    "feet": "ft",
+    "kWhAnnually": "kWh/tahunan",
+    "meter": "m",
+    "perDay": "Harian",
+    "perMonth": "Bulanan",
+    "perYear": "Tahunan",
+    "years": "tahun",
+    "inhabitants": "pend.",
+    "km": "km",
+    "m2": "m<sup>2</sup>",
+    "mm": "mm",
+    "Wh": "Wh",
+    "km2": "km<sup>2</sup>",
+    "kWh": "kWh",
+    "kWp": "kWp",
+    "m/s": "m/s",
+    "MWh": "MWh",
+    "MWp": "MWp",
+    "kg/m2": "kg/m<sup>2</sup>",
+    "MJ/m2": "MJ/m<sup>2</sup>",
+    "Wh/m2": "Wh/m<sup>2</sup>",
+    "kWh/m2": "kWh/m<sup>2</sup>",
+    "Wh/kWp": "Wh/kWp",
+    "kWh/kWp": "kWh/kWp",
+    "inh./km2": "pend./km<sup>2</sup>"
+  },
+  "user": {
+    "company": {
+      "EUVATCheckInProgress": "Pemeriksaan ID PPN perusahaan sedang berlangsung",
+      "add": "Buat akun pelanggan",
+      "field": {
+        "city": "Kota",
+        "country": "Negara/Wilayah",
+        "name": "Nama",
+        "phone": "Nomor telepon",
+        "state": "Negara",
+        "street": "Jalan",
+        "zipCode": "ZIP",
+        "VAT": "ID PPN",
+        "trial": "Minta uji coba gratis",
+        "billing": "Tambahkan info penagihan",
+        "companyName": "Nama perusahaan",
+        "companyOrOrganisationName": "Nama Perusahaan / Organisasi",
+        "territory": "Territory"
+      },
+      "invalidEUVat": "ID PPN perusahaan yang dimasukkan tidak valid. Format ID PPN yang diperlukan adalah SKxxxxxxxxx",
+      "messages": {
+        "update-fail": "Pembaruan perusahaan gagal, silakan coba lagi nanti!",
+        "update-ok": "Perusahaan telah diperbarui!",
+        "create-ok": "Pelanggan telah dibuat!",
+        "create-fail": "Pembuatan perusahaan gagal, silakan coba lagi nanti!",
+        "success-items": {
+          "name": "Akun perusahaan „{name}“ dibuat",
+          "trial": "Permintaan uji coba gratis disetujui",
+          "billing": "Info penagihan ditambahkan",
+          "trialFailed": "Permintaan uji coba gratis tidak dapat disetujui"
+        },
+        "checkingVat": "Memeriksa PPN"
+      },
+      "none": "Anda tidak memiliki akun perusahaan",
+      "profile": {
+        "name": "Nama perusahaan",
+        "projects": "Proyek aktif",
+        "role": "Peran Anda",
+        "updated": "Diperbarui",
+        "type": "Tipe",
+        "switch": "Beralih perusahaan",
+        "current": "saat ini",
+        "companyAccount": "akun perusahaan",
+        "personalAccount": "Akun pribadi"
+      },
+      "role": {
+        "ADMIN": "Admin",
+        "USER": "Pengguna reguler"
+      },
+      "similarExists": "Kami telah mendeteksi bahwa perusahaan serupa mungkin sudah ada dalam basis data kami. Kami akan melakukan pemeriksaan secara manual dan memberi tahu Anda jika perusahaan Anda sudah ada.",
+      "status": {
+        "ACTIVE": "Aktif",
+        "SUSPENDED": "Ditangguhkan",
+        "DELETED": "Dihapus"
+      },
+      "stepOf": "Langkah { step } dari { total }",
+      "welcomeDialog": {
+        "assignedToCompany": "Anda telah berhasil ditambahkan ke perusahaan { companyName }",
+        "continue": "Ayo!",
+        "newCompany": "Perusahaan { companyName } berhasil dibuat",
+        "purchase": "Beli langganan",
+        "welcome": "Selamat datang { companyName }!"
+      },
+      "freeTrial": {
+        "assignSuccess": "Uji coba gratis berhasil ditetapkan ke perusahaan: {companyName}",
+        "info": "Untuk mencegah penyalahgunaan uji coba gratis, kami perlu mengonfirmasi nomor telepon Anda",
+        "code": "Kode verifikasi",
+        "whatIs": "Uji coba gratis memungkinkan Anda mengaktifkan fitur lengkap dari aplikasi Prospect untuk 1 proyek pilihan Anda. Uji coba gratis berlaku selama 14 hari",
+        "success": "Buat proyek Anda dan aktifkan uji coba gratis untuk satu proyek.",
+        "sendAgain": "Kirim lagi",
+        "phoneInvalid": "Nomor telepon telah digunakan atau tidak valid",
+        "otpInvalid": "Kode OTP tidak valid",
+        "incorrectVerificationCode": "Kode verifikasi yang Anda masukkan salah. Silakan kembali untuk memasukkan kembali kode verifikasi atau meminta yang baru."
+      },
+      "action": {
+        "add": "Tambah",
+        "create": "Buat",
+        "verify": "Verifikasi",
+        "trialLater": "Minta uji coba gratis nanti",
+        "billingLater": "Tambahkan info penagihan nanti"
+      },
+      "phoneCodeIsString": "Pilih awalan telepon dari menu",
+      "stateNotSelectedFromList": "Pilih negara bagian dari daftar",
+      "countryNotSelectedFromList": "Pilih negara dari daftar",
+      "phoneInvalid": "Telepon tidak valid",
+      "EUVATTerritoryHint": "Jika Anda berasal dari wilayah yang tidak menggunakan ID PPN, harap <a href='https://solargis.com/about-us/contact' target='_blank'>hubungi kami.</a>",
+      "errors": {
+        "vatNotValid": "PPN tidak berlaku untuk {vatPrefix}",
+        "vatIdSpacesForbidden": "ID PPN tidak boleh memiliki spasi"
+      },
+      "territoryNotSelectedFromList": "Pilih wilayah dari daftar"
+    },
+    "profile": {
+      "account": "Akun pengguna",
+      "changeName": "Ubah nama",
+      "changePassword": "Ubah kata sandi",
+      "companyAccounts": "Akun perusahaan",
+      "general": "Umum",
+      "loginSecurity": "Masuk dan keamanan",
+      "my": "Profil saya",
+      "notifications": "Pemberitahuan",
+      "overview": "Tinjauan",
+      "units": "Unit",
+      "unselectCompany": "Beralih ke akun pengguna",
+      "type": "Akun pribadi",
+      "photo": "Foto Anda",
+      "addPhoto": "Tambahkan foto profil",
+      "lastChange": "Perubahan terakhir",
+      "changeEmail": "Ubah email",
+      "changeUnitSettings": "Ubah pengaturan unit",
+      "sdatDevices": "Perangkat SDAT terdaftar"
+    },
+    "selectCompany": {
+      "headline": "Silakan pilih perusahaan untuk melanjutkan",
+      "none": "Kami tidak menemukan perusahaan apa pun. Apakah Anda ingin membuat yang baru?",
+      "noneAdmin": "Kami tidak menemukan perusahaan tempat Anda ditugaskan sebagai admin. Apakah Anda ingin membuat yang baru?",
+      "admin": "Kami menampilkan daftar perusahaan tempat Anda ditugaskan sebagai admin"
+    }
+  },
+  "payment": {
+    "dialog": {
+      "change": "Ubah cara pembayaran",
+      "chooseMethod": "Pilih cara pembayaran",
+      "headline": "Jumlah pesanan: {sum}",
+      "payNow": "Bayar {price} sekarang",
+      "resultHeadline": "Hasil pembayaran"
+    },
+    "method": {
+      "bank": "Pembayaran bank",
+      "card": "Pembayaran online dengan kartu",
+      "bankDesc": "Informasi tentang pembayaran akan ditampilkan dalam faktur"
+    },
+    "thankYou": {
+      "detail": "Lihat detail pesanan",
+      "thankYou": "Terima kasih!",
+      "thankYouBank": "Terima kasih atas pesanan Anda. Pesanan akan diproses setelah kami menerima pembayaran bank Anda.",
+      "thankYouCard": "Pembayaran kartu Anda berhasil. Produk Anda akan segera diaktifkan."
+    },
+    "failed": {
+      "failed": "Pembayaran gagal",
+      "failedText": "Kami tidak dapat memproses pembayaran Anda. Silakan coba lagi nanti atau hubungi dukungan kami."
+    },
+    "pricing": {
+      "pricing": "Penetapan harga",
+      "choosePlan": "Pilih Prospect yang tepat untuk Anda",
+      "currentPlan": "Paket saat ini",
+      "free": {
+        "price": "Paket gratis",
+        "actionDesc": "Demo – Tersedia juga tanpa pendaftaran",
+        "info": "Bagi mereka yang memulai penilaian energi surya",
+        "feature1": "Data rata-rata tahunan",
+        "feature2": "Peta sumber daya surya interaktif",
+        "action": "Mulai",
+        "feature3": "Alat simulasi PV yang mudah digunakan dan memberikan hasil andal"
+      },
+      "basic": {
+        "priceInfo": "Dimulai dengan 3 pengguna / tahun",
+        "action": "Berlangganan",
+        "actionDesc": "Hitung harga Anda sekarang",
+        "info": "Fitur yang harus dimiliki untuk tim yang mengerjakan proyek atap komersial",
+        "feature1": "Rata-rata bulanan dan profil 24 x 12",
+        "feature2": "Unduhan laporan XLSX dan PDF",
+        "feature3": "Bandingkan alat",
+        "feature4": "Kalkulator ekonomi",
+        "feature5": "3 pengguna termasuk + € 300 per pengguna tambahan",
+        "all": "Semua fitur dari paket Gratis, ditambah:"
+      },
+      "pro": {
+        "priceInfo": "Dimulai dengan 3 pengguna / tahun",
+        "action": "Berlangganan",
+        "upgrade": "Tingkatkan",
+        "actionDesc": "Hitung harga Anda sekarang",
+        "info": "Fitur canggih untuk profesional yang mengerjakan proyek skala besar",
+        "feature1": "Data albedo untuk estimasi keuntungan <i>bifacial</i> yang akurat",
+        "feature2": "Data air dan kelembaban yang dapat diendapkan untuk perhitungan kerugian/perolehan spektral",
+        "feature3": "Data curah hujan dan hari bersalju untuk estimasi kerugian karena kotoran dan salju",
+        "feature4": "Dukungan untuk pelacak 1-sumbu dan sistem PV terapung",
+        "feature5": "3 pengguna termasuk + € 600 per pengguna tambahan",
+        "all": "Semua fitur dari paket Dasar, ditambah:"
+      },
+      "table": {
+        "data": {
+          "albedo": {
+            "text": "Albedo permukaan"
+          },
+          "compare": {
+            "help": "Alat untuk membandingkan output hingga 4 proyek berbeda",
+            "text": "Bandingkan alat"
+          },
+          "configure": {
+            "free": "Hanya sistem pemasangan tetap",
+            "pro": "Sistem pelacak + 1 sumbu tetap",
+            "text": "Konfigurasi sistem PV"
+          },
+          "economy": {
+            "help": "Alat sederhana untuk perhitungan ROI, periode pengembalian, LCOE, dll.",
+            "text": "Kalkulator ekonomi"
+          },
+          "report": {
+            "text": "Unduhan laporan PDF dan XLSX"
+          },
+          "solar": {
+            "help": "Iradiasi horizontal global, iradiasi horizontal persebaran, dan iradiasi normal langsung",
+            "text": "Parameter sumber daya surya (GHI, DIF, DNI)"
+          },
+          "features": "Fitur",
+          "save": {
+            "text": "Buat dan simpan proyek"
+          },
+          "pv": {
+            "pro": "Pelacak kemiringan tetap dan 1 sumbu",
+            "text": "Parameter PV (GTI, PVOUT)",
+            "help": "Iradiasi kemiringan global dan output listrik PV",
+            "free": "Hanya sistem miring tetap",
+            "basic": "Hanya sistem miring tetap"
+          },
+          "meteo": {
+            "help": "Suhu udara, Kecepatan angin, Hari derajat pendinginan, Hari derajat pemanasan",
+            "text": "Parameter meteorologi dasar (TEMP, WS, CDD, HDD)"
+          },
+          "dataParams": "Parameter data",
+          "meteo2": {
+            "text": "Curah hujan, Hari bersalju, Kelembaban relatif, dan Air yang dapat diendapkan"
+          },
+          "hourly": {
+            "text": "Profil 24 x 12 (per jam x per bulan)",
+            "basic": "Parameter yang dipilih"
+          },
+          "annual": {
+            "text": "Rata-rata tahunan jangka panjang"
+          },
+          "monthly": {
+            "text": "Rata-rata bulanan jangka panjang"
+          },
+          "floating": {
+            "text": "Dukungan untuk PV terapung"
+          },
+          "dataAggregation": "Agregasi data"
+        }
+      },
+      "alert": {
+        "body": "Saat ini Anda dialihkan ke akun pribadi. Pilih akun perusahaan yang ingin Anda tetapkan langganannya di pengaturan untuk melanjutkan",
+        "heading": "Pilih perusahaan untuk melanjutkan"
+      }
+    },
+    "cart": {
+      "headline": "Pesanan Anda",
+      "empty": "Keranjang kosong",
+      "edit": "Edit {productName}",
+      "step1": {
+        "name": "Item",
+        "withoutVAT": "Harga belum termasuk PPN",
+        "total": "Total langganan tahunan",
+        "back": "Kembali ke produk",
+        "purchaseOrder": "Pesanan pembelian",
+        "purchaseOrderPlaceholder": "Nomor pesanan",
+        "users": "Pengguna dengan akses penuh",
+        "subscription": "Langganan",
+        "remove": "Apakah Anda ingin menghapus item ini dari keranjang?",
+        "annual": "Tahunan"
+      },
+      "step2": {
+        "name": "Info tagihan",
+        "address": "Alamat tagihan"
+      },
+      "step3": {
+        "total": "Jumlah pesanan",
+        "totalVAT": "Jumlah pesanan termasuk PPN",
+        "name": "Pembayaran",
+        "continue": "Ke pesanan saya"
+      }
+    }
+  },
+  "report": {
+    "mapLink": "Lokasi di peta",
+    "contents": "Konten",
+    "cover": {
+      "ProspectPv": {
+        "title": "Penilaian awal produksi listrik fotovoltaik",
+        "type": "Ulasan energi PROSPECT PV"
+      },
+      "ProspectSolar": {
+        "title": "Penilaian awal radiasi surya situs",
+        "type": "Ulasan sumber daya surya PROSPECT"
+      },
+      "customer": "Pelanggan",
+      "generated": "Laporan dibuat",
+      "generatedBy": "Dibuat oleh",
+      "project": "Proyek",
+      "reportNr": "Nomor laporan",
+      "reportType": "Jenis laporan",
+      "tel": "tel"
+    },
+    "figure": "Angka",
+    "hourlyDni": "Iradiasi normal langsung - rata-rata per jam",
+    "hourlyGhi": "Iradiasi horizontal global - rata-rata per jam",
+    "legal": {
+      "copyright": "Laporan ini adalah hak cipta © { currentYear } Solargis s.r.o., semua hak dilindungi undang-undang.",
+      "email": "Email",
+      "guarantee": "Mengingat ketidakpastian data dan perhitungan, Solargis s.r.o. tidak menjamin keakuratan estimasi. Penilaian parameter cuaca dan penilaian awal produksi listrik fotovoltaik telah dilakukan semaksimal mungkin berdasarkan data, perangkat lunak, dan pengetahuan terbaik yang tersedia. Solargis s.r.o. tidak bertanggung jawab atas kerugian langsung, insidental, konsekuensial, tidak langsung, atau hukuman yang timbul atau diduga timbul dari penggunaan laporan yang diberikan.",
+      "moreInfo": "Informasi lebih lanjut tentang penilaian hasil PV lengkap dapat ditemukan di:",
+      "registrationId": "ID Pendaftaran",
+      "serviceProvider": "Penyedia layanan",
+      "tel": "Telepon",
+      "terms": "Lihat teks lengkap PERSYARATAN KONTRAK UMUM ATAS LAYANAN BERBAYAR di:",
+      "title": "Penafian dan informasi hukum",
+      "trademark": "Solargis® adalah merek dagang Solargis s.r.o.",
+      "uncertainty": "Laporan ini menampilkan estimasi tenaga surya pada fase awal dan sepanjang masa pakai sistem PV. Estimasi tersebut cukup akurat untuk penilaian proyek awal. Untuk perencanaan dan pembiayaan proyek besar, diperlukan lebih banyak informasi: 1. Distribusi statistik dan ketidakpastian radiasi surya 2. Spesifikasi terperinci dari sistem PV 3. Variabilitas antar-tahunan dan ketidakpastian P90 dari produksi PV 4. Produksi energi selama masa pakai dengan mempertimbangkan penurunan kinerja komponen PV.",
+      "url": "URL",
+      "validationAuth": "Validasi keaslian",
+      "validationAuthText": "Laporan PDF ini ditandatangani secara elektronik oleh Solargis s.r.o..",
+      "vatNr": "ID PPN"
+    },
+    "location": "Lokasi proyek",
+    "ltaPvout": "Output daya PV – rata-rata jangka panjang",
+    "mapView": "Tampilan peta terperinci",
+    "otherParams": "Parameter meteorologi lainnya",
+    "slovakia": "Slovakia",
+    "solarParams": "Radiasi matahari dan parameter meteorologi",
+    "table": "Tabel",
+    "dailyAvg": "Rata-rata harian",
+    "hourlyGti": "Iradiasi miring global - rata-rata per jam",
+    "hourlyPvoutSpecific": "Output daya fotovoltaik spesifik – rata-rata per jam",
+    "hourlyPvoutTotal": "Total output daya fotovoltaik – rata-rata per jam",
+    "hourlyTemp": "Suhu udara - rata-rata per jam",
+    "monthlySum": "Jumlah bulanan",
+    "dailyStats": "Statistik harian",
+    "dailyGhiDniDif": "GHI, DNI, DIF - rata-rata harian",
+    "solarDailySummary": "Profil radiasi surya di bawah ini dihitung sebagai rata-rata dari semua data per jam untuk setiap bulan. Profil ini memberikan indikasi perubahan pola GHI per hari, secara terpisah untuk setiap bulan. Pola-pola ini didorong oleh geografi lokal, astronomi dan iklim situs.",
+    "glossary": {
+      "title": "Akronim dan glosarium",
+      "pv": "Parameter listrik PV",
+      "meteo": "Parameter meteorologi",
+      "solar": "Parameter surya"
+    },
+    "freeTrialWatermark": "Uji coba gratis",
+    "annually": "tahunan"
+  },
+  "csvData": {
+    "T24": "T24 - Suhu udara rata-rata diurnal (24 jam) pada ketinggian 2 m di atas tanah. Dihitung dari output model ERA-5 (© 2019 ECMWF) [deg. C]",
+    "WSm": "WSm - Rata-rata kecepatan angin bulanan pada ketinggian 10 m di atas tanah. Dihitung dari output model MERRA-2 dan CFSv2 (© {year} NOAA dan NASA) [m/s]",
+    "RHm": "RHm - Kelembaban relatif bulanan rata-rata pada ketinggian 2 m di atas tanah. Dihitung dari output model MERRA-2 dan CFSv2 (© {year} NASA dan NOAA) [%]",
+    "ALBm": "ALBm - Fraksi radiasi surya yang dipantulkan oleh permukaan. Rasio fluks radiasi <i>upwelling </i>ke<i> downwelling</i> (GHI) di permukaan. (Berasal dari NASA MODIS dan ECMWF ERA-5) []",
+    "data": "Data",
+    "HDDm": "HDDm - Mengukur kebutuhan energi yang dibutuhkan untuk memanaskan bangunan. \"Hari derajat pemanasan\" adalah ukuran berapa banyak (dalam derajat), dan untuk berapa lama (dalam hari), suhu udara luar lebih rendah dari suhu rata-rata harian dasar tertentu (18°C). Nilai tahunan dan bulanan digabungkan dari nilai harian. Dihitung oleh Solargis dari data suhu udara [hari derajat]",
+    "CDDm": "CDDm - Mengukur kebutuhan energi yang dibutuhkan untuk mendinginkan bangunan. \"Hari derajat pendinginan\" adalah ukuran berapa banyak (dalam derajat), dan untuk berapa lama (dalam hari), suhu udara luar lebih tinggi dari suhu rata-rata harian dasar tertentu (18°C). Nilai tahunan dan bulanan digabungkan dari nilai harian. Dihitung oleh Solargis dari data suhu udara [hari derajat]",
+    "year": "Tahun",
+    "DNIm": "DNIm - Jumlah rata-rata bulanan iradiasi normal langsung (© {year} Solargis) [kWh/m2]",
+    "GHIm": "GHIm - Jumlah rata-rata bulanan penyinaran horizontal global (© {year} Solargis) [kWh/m2]",
+    "title": "RATA-RATA BULAN JANGKA PANJANG RADIASI SURYA DAN PARAMETER METEOROLOGI",
+    "PRECm": "PRECm - Jumlah rata-rata pengendapan bulanan yang diperoleh dari basis data Klimatologi Pengendapan Global (© {year} DWD) [mm]",
+    "Diffm": "Diffm - Jumlah harian rata-rata iradiasi horizontal persebaran (© {year} Solargis) [kWh/m2]",
+    "PWATm": "PWATm - Air yang dapat diendapkan berarti kedalaman uap air dalam kolom atmosfer, jika semua air di kolom tersebut diendapkan sebagai hujan. Ini menunjukkan jumlah kelembaban di atas tanah. Dihitung dari output model CFSR dan CFSv2 (© {year} NOAA) [kg/m2]",
+    "issued": "Diterbitkan",
+    "SNOWDm": "SNOWDm - Hari bersalju dihitung sebagai hari dengan kedalaman air salju yang setara atau lebih tinggi dari 5 mm. Dihitung dari output model CFSR dan CFSv2 (© 2019 NOAA) [hari]",
+    "columns": "Kolom",
+    "azimuth": "Azimut lereng",
+    "latitude": "Lintang",
+    "siteName": "Nama situs",
+    "encoding": "Pengkodean karakter",
+    "longitude": "Bujur",
+    "elevation": "Elevasi",
+    "inclination": "Kemiringan lereng",
+    "reportNumber": "Nomor laporan"
+  },
+  "export": {
+    "title": "Ekspor proyek",
+    "confirmText": "Apakah Anda ingin mengekspor proyek yang dipilih ke <i>file</i> CSV?",
+    "csvInfo": {
+      "exported": "Diekspor",
+      "ftpCompatible": "Parameter konfigurasi PV yang diekspor dijelaskan dalam dokumentasi di sini"
+    }
+  },
+  "cookies": {
+    "cookie-banner": {
+      "text": "Kami menggunakan <i>cookie </i>untuk memberikan Anda pengalaman terbaik saat mengunjungi situs web kami. Dengan mengeklik 'Terima' atau dengan melanjutkan penggunaan situs web, Anda menerima penggunaan <i>cookie</i> di <i>browser</i> Anda.",
+      "accept": "Terima",
+      "more-info": "Info lebih lanjut"
+    }
+  },
+  "dashboard": {
+    "landingPage": {
+      "learnMore": "Pelajari lebih lanjut",
+      "titleHeader": "Data cuaca dan perangkat lunak untuk investasi tenaga surya",
+      "footer": {
+        "news": "Berita",
+        "events": "Kegiatan",
+        "pricing": "Penetapan harga",
+        "contactUs": "Hubungi kami",
+        "releaseNotes": "Catatan rilis",
+        "solargisHomepage": "Beranda Solargis"
+      },
+      "subtitleCard": "Aplikasi sedang dalam pengembangan",
+      "monitor": {
+        "button": "Layanan API",
+        "content": "Dapatkan pembaruan reguler dari data Solargis untuk memantau kinerja sistem fotovoltaik.",
+        "subtitleFirst": "Pembaruan harian atau waktu nyata",
+        "subtitleThird": "Akses API/FTP",
+        "subtitleSecond": "Langkah waktu hingga 15 menit"
+      },
+      "prospect": {
+        "content": "Alat prospeksi tenaga surya untuk pra-kelayakan proyek yang cepat dan andal.",
+        "subtitleFirst": "Data rata-rata tahunan dan bulanan",
+        "subtitleThird": "Data Albedo, curah hujan, dan salju",
+        "subtitleSecond": "Profil per jam (24) x bulanan (12)"
+      },
+      "evaluate": {
+        "button": "TS pesanan / data TMY",
+        "content": "Untuk pemodelan energi tingkat lanjut dan optimalisasi desain pembangkit listrik tenaga surya.",
+        "subtitleFirst": "Data deret waktu, hingga bulan lalu",
+        "subtitleThird": "Impor data ke PVsyst, Helioscope, SAM, dll.",
+        "subtitleSecond": "TMY P50, P90, Pxx"
+      },
+      "subtitleHeader": "Kurangi risiko dan maksimalkan profitabilitas aset energi surya Anda",
+      "forecast": {
+        "button": "Layanan API",
+        "content": "Perkiraan tenaga surya hingga 10 hari ke depan.",
+        "subtitleFirst": "Pembaruan perkiraan hingga setiap 30 menit",
+        "subtitleThird": "Akses API/FTP",
+        "subtitleSecond": "Langkah waktu hingga 15 menit"
+      }
+    },
+    "listRecentProjects": {
+      "noProjects": "Anda tidak memiliki proyek yang tersimpan"
+    },
+    "header": {
+      "quickLinks": "Tautan cepat",
+      "apps": "Aplikasi"
+    },
+    "sdatManagement": {
+      "manuals": "Panduan",
+      "devices": "Perangkat SDAT saya",
+      "download": "Unduh",
+      "subscription": "Langganan",
+      "sdatHeader": "{{header.sdat}}"
+    }
+  }
+}

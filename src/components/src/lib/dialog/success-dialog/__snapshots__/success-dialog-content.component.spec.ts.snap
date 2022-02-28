@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuccessDialogContentComponent component should match snapshot with the provided image alt text 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+  data={[Function Object]}
+>
+  <div
+    class="image-container"
+  >
+    <img
+      alt="en.some.successAltText"
+      src="some-image.jpg"
+    />
+  </div><div
+    class="mat-display-2"
+  >
+    en.some.successHeader
+  </div><p>
+    en.some.successText
+  </p>
+</ng-component>
+`;
+
+exports[`SuccessDialogContentComponent component should match snapshot with the provided success text 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+  data={[Function Object]}
+>
+  <div
+    class="image-container"
+  >
+    <img
+      alt="en.some.successHeader"
+      src="some-image.jpg"
+    />
+  </div><div
+    class="mat-display-2"
+  >
+    en.some.successHeader
+  </div><p>
+    en.some.successText
+  </p>
+</ng-component>
+`;
+
+exports[`SuccessDialogContentComponent component should match snapshot without the provided success text 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+  data={[Function Object]}
+>
+  <div
+    class="image-container"
+  >
+    <img
+      alt="en.some.successHeader"
+      src="some-image.jpg"
+    />
+  </div><div
+    class="mat-display-2"
+  >
+    en.some.successHeader
+  </div>
+</ng-component>
+`;

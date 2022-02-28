@@ -1,0 +1,44 @@
+<div class="map-menu">
+  <ng-container *ngIf="currentLayerDef && (satelliteLayer || streetLayer)">
+    <div class="map-menu__button">
+      <mat-card (click)="quickSwitchLayer()">
+        <mat-card-content fxLayout="row" fxLayoutAlign="center">
+          <mat-icon fxFlex="40px" fxFlexAlign="center">satellite</mat-icon>
+          <span class="map-menu-label" *ngIf="currentLayerDef" fxFlex="1 1">
+            <sg-translation *ngIf="satelliteLayer && currentLayerDef._id !== satelliteMapLayerId else street"
+                            [str]="satelliteLayer.name"
+                            [key]="'map.layer.' + satelliteLayer._id + '.name'">
+            </sg-translation>
+            <ng-template #street>
+              <sg-translation [str]="streetLayer.name"
+                              [key]="'map.layer.' + streetLayer._id + '.name'">
+              </sg-translation>
+            </ng-template>
+          </span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+  <mat-toolbar *ngIf="openMapSelectorVisible">
+    <mat-card (click)="openMapSelectorDialog()">
+      <mat-card-content fxLayout="row" fxLayoutAlign="center">
+        <mat-icon fxFlex="40px" fxFlexAlign="center">layers</mat-icon>
+        <span class="map-menu-label" *ngIf="currentLayerDef" fxFlex="1 1">
+          <ng-container *ngIf="currentLayerDef.shortName; else layerName">
+            <sg-translation
+              [str]="currentLayerDef.shortName"
+              [key]="'map.layer.' + currentLayerDef._id + '.shortName'">
+            </sg-translation>
+          </ng-container>
+          <ng-template #layerName>
+            <sg-translation
+              [str]="currentLayerDef.name"
+              [key]="'map.layer.' + currentLayerDef._id + '.name'">
+            </sg-translation>
+          </ng-template>
+        </span>
+        <mat-icon fxFlex="40px" fxFlexAlign="center">keyboard_arrow_down</mat-icon>
+      </mat-card-content>
+    </mat-card>
+  </mat-toolbar>
+</div>

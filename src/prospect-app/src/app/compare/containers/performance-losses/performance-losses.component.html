@@ -1,0 +1,62 @@
+<div class="card-layout">
+  <ng-container *ngIf="hasCompareItems$ | async">
+    <div class="card-big">
+      <mat-card>
+        <div class="table-title">
+          <mat-card-title>
+            {{ 'projectDetail.pvLosses.energyLoss' | transloco }}
+          </mat-card-title>
+          <mat-slide-toggle
+            color="accent"
+            (change)="toggleValues($event)">
+            {{ 'projectDetail.pvLosses.absoluteValues' | transloco }}
+          </mat-slide-toggle>
+        </div>
+
+        <mat-card-content>
+          <div sgScrollContainer="md">
+            <div class="table-s" *ngIf="dataSource$ | async">
+              <cdk-table [dataSource]="dataSource$">
+
+                <!-- LABEL -->
+                <ng-container cdkColumnDef="label">
+                  <cdk-header-cell *cdkHeaderCellDef fxFlex="400px">
+                    {{ 'projectDetail.pvLosses.energyLoss' | transloco }}
+                    <div class="muted"><sg-unit-toggle-label [unit]="unit"></sg-unit-toggle-label></div>
+                  </cdk-header-cell>
+                  <cdk-cell *cdkCellDef="let row" fxFlex="400px">
+                    {{ row.key === 'emptyRow' ? '' : translateRowKey(row) | transloco }}
+                  </cdk-cell>
+                </ng-container>
+
+                <!-- DATA -->
+                <ng-container *ngFor="let item of compare; let i = index">
+                  <ng-container [cdkColumnDef]="i.toString()">
+                    <cdk-header-cell *cdkHeaderCellDef>
+                      <div class="table-header">{{ item.project | sgProjectName }}</div>
+                      <div class="compare-{{ item.colorIndex }} compare-strip"></div>
+                    </cdk-header-cell>
+                    <cdk-cell *cdkCellDef="let row"
+                              class="right {{ item.highlighted ? 'compare-highlight-' + item.colorIndex : '' }} ">
+                      <ng-container *ngIf="row.key === 'ghi_theoretical' || row[i] == null; else unitValue">
+                        {{ row.key === 'ghi_theoretical' || row.diagramKey === 'solarLosses' ? '-' : '' }}
+                      </ng-container>
+                      <ng-template #unitValue>
+                        <sg-unit-value [unit]="unit" [value]="row[i]"></sg-unit-value>
+                      </ng-template>
+                    </cdk-cell>
+                  </ng-container>
+                </ng-container>
+
+                <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+                <cdk-row *cdkRowDef="let row; columns: columns"
+                  [ngClass]="{'highlighted': isRefRow(row) }"
+                ></cdk-row>
+              </cdk-table>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+</div>

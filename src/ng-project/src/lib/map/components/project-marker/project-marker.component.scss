@@ -1,0 +1,268 @@
+@import 'theme';
+
+@mixin fill-color($color) {
+  & {
+    background-color: $color;
+
+    .sg-marker-fill {
+      fill: $color;
+    }
+  }
+}
+
+@mixin project-marker-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  $width: 44px;
+  $height: $sg-24;
+
+  $height-unsaved: 44px;
+  $height-multiselect: 44px;
+
+  $width-hover: 174px;
+  $height-hover: 44px;
+
+  :host ::ng-deep {
+    .marker-big-container {
+      height: $height-hover;
+    }
+    .marker-small-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .marker-content-container {
+      // box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+      border-radius: 3px;
+      color: white;
+      border: white solid 2px;
+
+      // sizing
+      width: $width;
+      height: $height;
+      &:not(.saved), &.mouseover:not(.saved) {
+        height: $height-unsaved;
+      }
+      &.multiselect-active {
+        height: $height-multiselect;
+      }
+      &.mouseover.saved {
+        width: $width-hover;
+        height: $height-hover;
+      }
+
+      &.save-disable.saved {
+        height: $height;
+      }
+      &.save-disable.saved.mouseover {
+        height: $height-hover;
+      }
+      &.save-disable.mouseover.selected {
+        height: $height-multiselect;
+      }
+      &.save-disable.multiselect-active.saved {
+        height: $height-multiselect;
+      }
+
+      &.small-marker.saved, &.small-marker.selected {
+        position: relative;
+        width: 22px;
+        height: $sg-24;
+        left: $sg-12;
+      }
+
+      &.small-marker.selected.mouseover {
+        height: $height-hover;
+      }
+
+      &.small-marker.saved.mouseover {
+        position: static;
+        width: $width-hover;
+        height: $height-hover;
+      }
+
+      &.mouseover {
+        position: static;
+      }
+
+      &.mouseover.add-btn-active {
+        position: relative;
+      }
+
+      // coloring
+      @include fill-color(#2d3a4d);
+      &.mouseover {
+        @include fill-color(#4d5b73);
+      }
+      &.selected {
+        @include fill-color(map-get($accent, 600));
+      }
+      &.selected.mouseover {
+        @include fill-color(map-get($accent, 500));
+      }
+    }
+
+    .left {
+      width: $width;
+      height: auto;
+      float: left;
+      clear: left;
+      background-color: inherit;
+
+      .action {
+        position: absolute;
+        bottom: $height;
+        padding-top: 6px;
+
+        height: $sg-16;
+        width: $width;
+        text-align: center;
+        // ADD ICON
+        mat-icon {
+          font-size: 17px;
+          width: $sg-16;
+          height: $sg-16;
+        }
+
+        // SELECT CHECKBOX
+        mat-checkbox {
+          display: inline-block;
+          color: white;
+          bottom: 2px;
+          position: relative;
+
+          .mat-checkbox-inner-container {
+            width: $sg-12;
+            height: $sg-12;
+          }
+          .mat-checkbox-frame {
+            background: white;
+          }
+          .mat-checkbox-background {
+            background: white !important;
+          }
+          .mat-checkbox-checkmark-path {
+            stroke: map-get($accent, default) !important;
+            stroke-width: $sg-4;
+          }
+        }
+      }
+
+      .value {
+        position: absolute;
+        bottom: 0;
+        font-weight: $font-weight-medium;
+        font-size: 13px;
+        line-height: 2em;
+        text-align: center;
+        width: inherit;
+      }
+    }
+
+    mat-progress-spinner {
+      display: inline-block;
+    }
+
+    .action {
+      &.multiselect.small-marker {
+        left: -11px;
+        top: -2px;
+      }
+    }
+
+    .action.small-marker-spinner {
+      left: -10px;
+      top: 1px;
+    }
+
+    .action.add {
+      position: static;
+      &.small-add {
+        width: 21px;
+        position: absolute;
+        top: -2px;
+      }
+    }
+
+    .mouseover {
+      .action {
+        &.multiselect {
+          left: 2px;
+          &.small-marker {
+            top: 2px;
+          }
+        }
+      }
+    }
+
+    .right {
+      float: right;
+      background: white;
+      height: $height-hover;
+      width: $width-hover - $width;
+
+      .right-container {
+        padding-left: $sg-8;
+
+        .placemark {
+          display: inline-block;
+          margin-top: $sg-8;
+
+          width: 96px;
+          height: 30px;
+
+          overflow: hidden;
+
+          line-height: $sg-14;
+          font-weight: $font-weight-regular;
+          font-size: $sg-12;
+          color: map-get($primary, 900);
+        }
+
+        .detail {
+          display: inline-block;
+          position: absolute;
+          bottom: 2px;
+          height: $height-hover;
+          width: $sg-24;
+          border-left: 1px solid map-get($primary, 300);
+
+          button {
+            margin-left: -8px;
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+
+    #arrow {
+      position: absolute;
+      left: 19px;
+      width: $sg-14;
+      bottom: -8px;
+
+      .sg-marker-border{
+        fill:#FFFFFF;
+      }
+    }
+  }
+}
+
+@include project-marker-theme($theme);
+
+
+.arr {
+  @include fill-color(#2d3a4d);
+
+  &-mouseover {
+    @include fill-color(#4d5b73);
+  }
+  &-selected {
+    @include fill-color(map-get($accent, 600));
+  }
+}
+
+.arr-mouseover.arr-selected {
+  @include fill-color(map-get($accent, 500));
+}

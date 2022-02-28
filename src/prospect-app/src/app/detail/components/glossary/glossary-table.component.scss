@@ -1,0 +1,90 @@
+@import 'theme';
+
+@include cdk-table-s(false);
+
+.cdk-table-s {
+  max-width: 300px !important;
+}
+
+.acronym {
+  max-width: 100px;
+
+  @include media-breakpoint-down(md) {
+    max-width: 50px;
+  }
+}
+
+.name {
+  max-width: 250px;
+
+  @include media-breakpoint-down(md) {
+    max-width: 120px;
+  }
+}
+
+.unit {
+  max-width: 120px;
+  // TODO: fix this hack: table unit is not properly aligned
+  padding-top: 3px;
+
+  @include media-breakpoint-down(md) {
+    max-width: 100px;
+  }
+}
+
+.explanation {
+  @include media-breakpoint-down(md) {
+    max-width: 100%;
+  }
+}
+
+
+// print table
+table {
+  font-size: 11px;
+  color: map-get($primary, 800);
+  text-align: left;
+  margin-top: -($sg-12);
+  border-collapse: separate;
+  border-spacing: 0 0;
+
+  thead, tbody {
+    vertical-align: top;
+  }
+
+  thead {
+    th {
+      font-weight: $font-weight-bold;
+      background: map-get($primary, 100);
+      border-top: 1px solid map-get($primary, 300);
+      border-bottom: 1px solid map-get($primary, 300);
+      padding: 6px $sg-4;
+    }
+
+    th.top-space {
+      background: none;
+      border: 0;
+      padding: $sg-12 0 0 0;
+    }
+  }
+
+  td {
+     border-bottom: 1px solid map-get($primary, 300);
+     padding: 6px $sg-4;
+   }
+
+  td.bottom-space {
+    border: 0;
+    padding: 0 0 40px 0;
+  }
+}
+
+[sgscrollcontainer] {
+  @media screen and (max-width: 959px) {
+    @include sg-scroll-container();
+
+    & > * {
+      min-width: 540px;
+    }
+  }
+}

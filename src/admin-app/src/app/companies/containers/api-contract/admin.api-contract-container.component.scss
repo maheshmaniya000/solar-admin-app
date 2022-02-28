@@ -1,0 +1,78 @@
+@import 'theme';
+
+mat-card {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 32px;
+}
+
+:host {
+  background-color: map-get($primary, 100);
+  height: 100%;
+}
+
+::ng-deep .cdk-overlay-pane {
+  width: 600px;
+}
+
+.toolbar {
+  margin-top: 20px;
+}
+
+.w-100 {
+  width: 100%;
+}
+.text-right {
+  text-align: right;
+}
+.space-between >:not(:last-child) {
+  margin-right: 20px;
+}
+
+.spinner-with-text {
+  display: inline-block;
+  mat-progress-spinner {
+    display: inline-block;
+    margin-right: 7px;
+  }
+  h4 {
+    display: inline-block;
+    color: map-get($primary, 500);
+  }
+}
+
+.loading-container {
+  margin-top: 25px;
+  div:first-child {
+    margin-right: 15px;
+  }
+  h3 {
+    margin: 0;
+    color: map-get($primary, 500);
+  }
+}
+
+.existing-api-contracts {
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.new-api-contract {
+  margin-top: 20px;
+}
+
+.token {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.text-right {
+  text-align: right;
+}

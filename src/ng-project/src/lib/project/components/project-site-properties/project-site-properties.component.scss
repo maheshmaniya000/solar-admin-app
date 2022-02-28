@@ -1,0 +1,28 @@
+@import 'theme';
+
+.sg-row {
+  color: map-get($primary, 800);
+  display: flex;
+  padding: 6px 8px;
+  vertical-align: center;
+  margin: auto;
+  font-size: 13px;
+
+  .unit-toggle {
+    white-space: normal;
+  }
+}
+
+.sg-border > .sg-row {
+  border-bottom: 1px solid map-get($primary, 300);
+}
+
+.left {
+  flex: 0 0 35%;
+  font-weight: $font-weight-bold;
+}
+
+.right {
+  flex: auto;
+  margin: auto;
+}

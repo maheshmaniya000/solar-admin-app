@@ -1,0 +1,23 @@
+@import 'theme';
+
+:host {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.title-note,
+.codes {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-note {
+  margin-left: 28px;
+  border: 1px solid map-get($primary, 500);
+  padding: 0 $sg-16;
+
+  .mat-form-field {
+    width: 100%;
+  }
+}

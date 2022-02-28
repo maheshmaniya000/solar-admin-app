@@ -1,0 +1,81 @@
+<mat-tab-group>
+  <mat-tab [label]="'companyAdmin.api.v1.title' | transloco">
+    <mat-card>
+
+      <ng-container *ngIf="v1ApiContractCount !== -1; else spinner">
+        <ng-container *ngIf="v1ApiContractCount > 0; else noV1APIContracts">
+          <mat-table [dataSource]="v1DataSource$">
+
+            <!-- NAME COLUMN -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef fxFlex>
+                {{ 'companyAdmin.api.v1.name' | transloco }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row; let i = index" fxFlex class="bold">
+                <span [hidden]="row.title">API #{{ (i+1) }}</span>
+                <span [hidden]="!row.title">{{row.title}}</span>
+              </mat-cell>
+            </ng-container>
+
+            <!-- TYPE COLUMN -->
+            <ng-container matColumnDef="type">
+              <mat-header-cell *matHeaderCellDef fxFlex>
+                {{ 'companyAdmin.api.common.resources' | transloco }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row" fxFlex>
+                <mat-chip-list>
+                  <mat-chip color="primary" selected *ngIf="row.pvPlannerContract">
+                    {{ 'companyAdmin.api.v1.prospect.title' | transloco }}
+                  </mat-chip>
+                  <mat-chip color="primary" selected *ngIf="row.dataDeliveryContract && row.dataDeliveryContract.historic">
+                    {{ 'companyAdmin.api.v1.monitor.title' | transloco }}
+                  </mat-chip>
+                  <mat-chip color="primary" selected *ngIf="row.dataDeliveryContract && row.dataDeliveryContract.forecast">
+                    {{ 'companyAdmin.api.v1.forecast.title' | transloco }}
+                  </mat-chip>
+                </mat-chip-list>
+              </mat-cell>
+            </ng-container>
+
+            <!-- OPEN COLUMN -->
+            <ng-container matColumnDef="open">
+              <mat-header-cell *matHeaderCellDef fxFlex="1 1 100px"></mat-header-cell>
+              <mat-cell *matCellDef="let row" fxFlex="1 1 100px">
+                <button mat-button color="accent" [routerLink]="['api-contract-detail', row['id']]">
+                  {{ 'common.action.open' | transloco }}
+                </button>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="v1Columns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: v1Columns;"
+            ></mat-row>
+          </mat-table>
+        </ng-container>
+      </ng-container>
+
+    </mat-card>
+  </mat-tab>
+
+  <mat-tab disabled>
+    <ng-template mat-tab-label>
+      <span class="right-margin">{{ 'companyAdmin.api.v2.title' | transloco }}</span>
+      <mat-chip-list>
+        <mat-chip color="accent" selected>{{ 'common.misc.commingSoon' | transloco }}</mat-chip>
+      </mat-chip-list>
+    </ng-template>
+    {{ 'common.misc.commingSoon' | transloco }}
+  </mat-tab>
+
+</mat-tab-group>
+
+<ng-template #spinner>
+  <div>
+    <mat-progress-spinner [diameter]="50" mode="indeterminate" style="margin:0 auto;"></mat-progress-spinner>
+  </div>
+</ng-template>
+
+<ng-template #noV1APIContracts>
+  {{ 'companyAdmin.api.v1.empty' | transloco }}
+  <button mat-raised-button color="accent">{{ 'companyAdmin.api.common.freeTrialRequest' | transloco }}</button>
+</ng-template>

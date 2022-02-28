@@ -1,0 +1,10 @@
+@forward 'mixins';
+@use 'variables';
+
+$default-icon-size: map-get(variables.$sg-icon-size, default);
+
+mat-icon.mat-icon {
+  width: $default-icon-size;
+  height: $default-icon-size;
+  line-height: $default-icon-size;
+}

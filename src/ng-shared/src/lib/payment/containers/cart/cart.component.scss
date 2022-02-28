@@ -1,0 +1,114 @@
+@import 'theme';
+
+:host {
+  width: 100%;
+}
+
+:host > div {
+  background-color: #f9fafc;
+  margin-top: -18px;
+  min-height: calc(100vh - #{$sg-toolbar-height});
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 792px;
+  margin: auto;
+
+  ::ng-deep {
+    mat-card {
+      .main-card {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+h1 {
+  padding: 43px 0 0 12px;
+  margin-bottom: 36px;
+  color: #222d3d;
+  font-size: 28px;
+}
+
+.steps {
+  margin-bottom: 20px;
+  padding-left: 12px;
+  color: #44a987;
+
+  .step {
+    display: block;
+    position: relative;
+    margin: 0 15px 0 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+
+    mat-icon {
+      position: absolute;
+      left: -31px;
+      top: -4px;
+    }
+  }
+
+  .step.inactive {
+    color: #d0d5db;
+  }
+}
+
+::ng-deep {
+  .actions {
+    button {
+      height: 38px;
+      margin-top: 8px;
+      font-size: 11px;
+      & + button {
+        margin-left: 12px;
+      }
+    }
+    background-color: #ffffff;
+    position: sticky;
+    bottom: 0;
+    height: 96px;
+  }
+}
+
+@media (min-width: 390px) {
+  .steps {
+    .step {
+      display: inline;
+      margin-left: 0;
+    }
+
+    .step + .step {
+      margin-left: 30px;
+    }
+  }
+  ::ng-deep {
+    .actions {
+      button {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+mat-card {
+  padding: 32px;
+
+  > div {
+    margin-top: 40px;
+    text-align: center;
+
+    > div {
+      color: #939dac;
+      font-size: 28px;
+    }
+  }
+
+  button {
+    margin-top: $sg-32;
+  }
+}
+
+

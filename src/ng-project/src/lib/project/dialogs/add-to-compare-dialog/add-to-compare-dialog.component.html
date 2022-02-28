@@ -1,0 +1,109 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'compare.addToCompare' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+
+    <div class="input-wrapper">
+      <mat-icon>search</mat-icon>
+      <input type="text" placeholder="Search" (keyup)="applyFilter($event)">
+    </div>
+    <div class="table-wrapper">
+      <table cdk-table [dataSource]="dataSource" matSort>
+        <!-- CHECKED COLUMN -->
+        <ng-container cdkColumnDef="checked">
+          <th cdk-header-cell *cdkHeaderCellDef></th>
+          <td cdk-cell *cdkCellDef="let row" class="check-cell">
+            <mat-checkbox
+              (click)="$event.stopPropagation()"
+              (change)="onItemChange(row)"
+              [checked]="isSelected(row)"
+              [disabled]="!isSelected(row) && selected.size >= COMPARE_MAX_PROJECTS"
+            ></mat-checkbox>
+          </td>
+        </ng-container>
+
+
+        <ng-container cdkColumnDef="latestData">
+          <th cdk-header-cell *cdkHeaderCellDef></th>
+          <td cdk-cell *cdkCellDef="let row" class="latest-data-cell">
+            <mat-icon *ngIf="!row.latestData" [matTooltip]="'project.data.notLatest' | transloco" [svgIcon]="'sg:sgf-status-dot'"></mat-icon>
+          </td>
+        </ng-container>
+
+        <!-- NAME COLUMN -->
+        <ng-container cdkColumnDef="name">
+          <th [ngClass]="{'header-active': sort.active === 'name'}" cdk-header-cell *cdkHeaderCellDef mat-sort-header>
+            {{'compare.addDialog.project' | transloco}}
+          </th>
+          <td cdk-cell *cdkCellDef="let row" class="name-cell">{{row.name}}</td>
+        </ng-container>
+
+        <!-- SYSTEM TYPE COLUMN -->
+        <ng-container cdkColumnDef="systemType">
+          <th [ngClass]="{'header-active': sort.active === 'systemType'}" cdk-header-cell *cdkHeaderCellDef
+              mat-sort-header>{{'compare.addDialog.systemType' | transloco}}</th>
+          <td cdk-cell *cdkCellDef="let row" class="system-type-cell">
+          <span *ngIf="!!row.systemType; else notAvailable">
+            {{ row.systemType }}
+          </span>
+          </td>
+        </ng-container>
+
+        <!-- SYSTEM SIZE COLUMN -->
+        <ng-container cdkColumnDef="installedSizeValue">
+          <th class="system-size-header"
+              [ngClass]="{'header-active': sort.active === 'installedSizeValue'}" cdk-header-cell *cdkHeaderCellDef
+              mat-sort-header>{{'compare.addDialog.systemSize' | transloco}}</th>
+          <td cdk-cell *cdkCellDef="let row" class="system-size-cell">
+            <ng-container *ngIf="!!row.pvConfig; else notAvailable">
+              <sg-unit-value class="value" [unit]="installedPowerUnit" [value]="pvInstalledPower(row.pvConfig)"></sg-unit-value>
+              &nbsp;
+              <sg-unit-label [unit]="installedPowerUnit"></sg-unit-label>
+            </ng-container>
+          </td>
+        </ng-container>
+
+        <!-- LAST CHANGE COLUMN -->
+        <ng-container cdkColumnDef="lastChange">
+          <th [ngClass]="{'header-active': sort.active === 'lastChange'}" cdk-header-cell *cdkHeaderCellDef
+              mat-sort-header>{{'compare.addDialog.lastChange' | transloco}}</th>
+          <td cdk-cell *cdkCellDef="let row"> {{row.lastChange | sgDateTimeFormat:"dateTime"}} </td>
+        </ng-container>
+
+        <tr cdk-header-row *cdkHeaderRowDef="columns; sticky: true" class="header-row"></tr>
+        <tr cdk-row
+            *cdkRowDef="let row; columns: columns;"
+            [ngClass]="{'selected': isSelected(row), 'row-hover': !isSelected(row) && selected.size < COMPARE_MAX_PROJECTS}"
+            (click)="onItemChange(row)">
+        </tr>
+      </table>
+    </div>
+    <div class="table-footer-wrapper">
+      <div class="select-info" [ngClass]="{'reached-limit': selected.size === COMPARE_MAX_PROJECTS}">
+        {{ 'compare.addDialog.outOf' | transloco:{max: COMPARE_MAX_PROJECTS, projects: selected.size} }}
+      </div>
+      <mat-paginator (page)="setPageSize($event)" [pageSize]="pageSize$ | async" [pageSizeOptions]="[5, 10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+
+    <ng-template #notAvailable>
+      <span> - </span>
+    </ng-template>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <div class="button-wrapper">
+      <button class="secondary-button" (click)="closeDialog()">
+        {{ 'common.action.cancel' | transloco  }}
+      </button>
+      <button class="primary-button" (click)="save()">
+        {{ actionButtonLabel | transloco }}
+      </button>
+    </div>
+
+  </div>
+</sg-dialog-deprecated>

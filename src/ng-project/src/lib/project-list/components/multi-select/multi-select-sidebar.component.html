@@ -1,0 +1,8 @@
+<mat-list fxFlex>
+  <mat-list-item *ngFor="let project of selectedProjects" fxLayout="row">
+    <mat-checkbox [checked]="true"
+                  (change)="onUnselect.emit(project._id)">
+    </mat-checkbox>
+    <div>{{ project | sgProjectName }}</div>
+  </mat-list-item>
+</mat-list>

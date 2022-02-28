@@ -1,0 +1,7 @@
+
+<mat-toolbar>
+  <button mat-icon-button (click)="onClose.emit()"><mat-icon>close</mat-icon></button>
+  <span>{{ headline }}</span>
+  <span class="divider" *ngIf="subheadline">•</span>
+  <span class="projectname">{{ subheadline }}</span>
+</mat-toolbar>

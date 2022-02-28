@@ -1,0 +1,49 @@
+@import 'theme';
+
+:host {
+  width: 100%;
+
+  & > div {
+    height: $sg-32;
+    width: 100%;
+    font-size: $sg-14;
+    align-items: center;
+    color: map-get($primary, 900);
+
+    .value {
+      padding: 0 $sg-8;
+      text-align: end;
+    }
+
+    .monthly-minichart {
+      height: $sg-20;
+    }
+
+    .codelist-value {
+      padding: 0 $sg-16;
+      // @include text-ellipsis();
+    }
+
+    sg-project-data-key {
+      font-weight: bold;
+    }
+
+    &.selectedMapLayer {
+      color: map-get($accent, 500);
+    }
+
+    &.selectMap {
+      cursor: pointer;
+
+      & > div > mat-icon {
+        color: map-get($primary, 500);
+      }
+    }
+
+    & > div > mat-icon {
+      @include mat-icon-size($sg-18);
+    }
+
+  }
+
+}

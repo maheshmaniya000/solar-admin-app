@@ -1,0 +1,444 @@
+<div class="card-layout">
+
+  <!-- HEADING STATISTICS !-->
+  <div class="card-big bootstrap">
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ 'projectDetail.economy.label.summary' | transloco }}</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="results-container row">
+        <sg-summary-data-item class="item col-12 col-sm-6 col-md-3 pb-1 pb-sm-0" [layer]="layers.get('IRRProject')" [data]="(stats$ | async)?.IRRProject">
+        </sg-summary-data-item>
+
+        <sg-summary-data-item class="item col-12 col-sm-6 col-md-3 pb-1 pb-sm-0" [layer]="layers.get('IRREquity')" [data]="(stats$ | async)?.IRREquity">
+        </sg-summary-data-item>
+
+        <sg-summary-data-item class="item col-12 col-sm-6 col-md-3 pb-1 pb-sm-0" [layer]="layers.get('ROIEquity')" [data]="(stats$ | async)?.ROIEquity">
+        </sg-summary-data-item>
+
+        <sg-summary-data-item class="item col-12 col-sm-6 col-md-3" [layer]="layers.get('LCOE')" [data]="(stats$ | async)?.LCOE">
+        </sg-summary-data-item>
+
+      </div>
+    </mat-expansion-panel>
+  </div>
+
+  <!-- OUTPUTS !-->
+  <div class="card-big">
+    <mat-card class="outputs">
+      <div>
+        <!-- <div class="section">
+          <div class="heading">
+            {{ 'projectDetail.economy.label.payback' | transloco }}
+          </div>
+          <sg-highcharts [opts]="chart$ | async"></sg-highcharts>
+        </div> -->
+        <div class="section">
+          <div class="heading" fxLayout="row">
+            <div fxFlex>
+              {{ 'projectDetail.economy.label.economicIndicators' | transloco }}
+            </div>
+            <div fxFlex="40px" style="margin-top: -12px;">
+              <a mat-icon-button routerLink="results"><mat-icon>open_in_new</mat-icon></a>
+            </div>
+          </div>
+
+          <div sgScrollContainer>
+            <sg-economy-calculator-table [economy$]="economy$" [shorten]="true"></sg-economy-calculator-table>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- inputs !-->
+  <div class="section-title">{{ 'projectDetail.economy.label.inputs' | transloco }}</div>
+
+  <!-- FORM !-->
+  <div class="card-big">
+    <mat-card class="inputs">
+      <mat-card-content>
+          <div>
+            <form [formGroup]="form" class="bootstrap">
+
+              <!-- FORM -> PRICE OF ELECTRICITY !-->
+              <div class="section">
+                <div class="heading">
+                  {{ 'projectDetail.economy.form.priceOfElectricity' | transloco }}
+                </div>
+                <div class="data">
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('tariff').invalid }">
+                    <label for="tariff" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.layer.tariff.name' | transloco }}
+                    </label>
+
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput sgUnitValueInput sgInputLocaleFormatter [unit]="unit('tariff')" formControlName="tariff" type="number" step="0.01">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto">
+                      <sg-unit-toggle-label [unit]="unit('tariff')"></sg-unit-toggle-label>
+                    </span>
+                    <span class="col-auto"><button mat-button color="accent" (click)="tariffGoalseek()" [disabled]="readonly$ | async">{{ 'projectDetail.economy.tariffGoalseek.open' | transloco }}</button></span>
+                  </div>
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('tariffIndexationRate').invalid }">
+                    <label for="tariffIndexationRate" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.layer.tariffIndexationRate.name' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput formControlName="tariffIndexationRate" type="number" step="0.1">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto">
+                      <sg-unit-label [unit]="unit('tariffIndexationRate')"></sg-unit-label>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FORM -> SYSTEM INSTALLATION COSTS !-->
+              <div class="section">
+                <div class="heading">
+                  {{ 'projectDetail.economy.form.installationCost' | transloco }}
+                </div>
+
+                <div class="data">
+                  <div class="row no-gutters">
+                    <span class="col-12 col-sm-6">{{ 'pvConfig.params.systemSize.capacity' | transloco }}</span>
+                    <span class="col-auto">
+                      <sg-unit-value [unit]="unit('installedPower')"
+                                     [value]="(systemConfig$ | async)?.pvInstalledPower">
+                      </sg-unit-value>
+                    </span>
+                    <span class="col-auto"><sg-unit-toggle-label [unit]="unit('installedPower')"></sg-unit-toggle-label></span>
+                    <span class="col-auto"><button mat-button [routerLink]="['..', 'configure', 'editor']">{{ 'common.action.edit' | transloco }}</button></span>
+                  </div>
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('installationCosts').invalid }">
+                    <label for="installationCosts" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.form.installationCost' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput sgInputLocaleFormatter formControlName="installationCosts" type="number" step="50">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('installationCosts')"></sg-unit-label></span>
+                  </div>
+
+                  <div class="row no-gutters">
+                    <span class="col-12 col-sm-6 more-padding">{{ 'projectDetail.economy.layer.unitSystemCosts.name' | transloco }}</span>
+                    <span class="col-auto"><sg-unit-value [unit]="unit('unitSystemCosts')" [value]="(parameters$ | async)?.unitSystemCosts"></sg-unit-value></span>
+                    <span class="col-auto"><sg-unit-toggle-label [unit]="unit('unitSystemCosts')"></sg-unit-toggle-label></span>
+                  </div>
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('incentiveOrRebate').invalid }">
+                    <label for="incentiveOrRebate" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.layer.incentiveOrRebate.name' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput sgInputLocaleFormatter formControlName="incentiveOrRebate" type="number" step="50">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('incentiveOrRebate')"></sg-unit-label></span>
+                  </div>
+
+                  <div class="row no-gutters">
+                    <span class="col-12 col-sm-6">{{ 'projectDetail.economy.layer.CAPEX.name' | transloco }}</span>
+                    <span class="col-auto"><sg-unit-value [unit]="unit('CAPEX')" [value]="(parameters$ | async)?.CAPEX"></sg-unit-value></span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('CAPEX')"></sg-unit-label></span>
+                  </div>
+
+                  <!-- LOAN FINANCING !-->
+                  <div class="loan">
+                    <button mat-button (click)="toggleLoan()" [disabled]="readonly$ | async">
+                      <ng-container *ngIf="(hasLoan$ | async) === false; else closeLoan">
+                        <mat-icon>keyboard_arrow_down</mat-icon>
+                        {{ 'projectDetail.economy.form.addLoan' | transloco }}
+                      </ng-container>
+                      <ng-template #closeLoan>
+                        <mat-icon>keyboard_arrow_up</mat-icon>
+                        {{ 'projectDetail.economy.form.removeLoan' | transloco }}
+                      </ng-template>
+                    </button>
+                  </div>
+
+                  <ng-container *ngIf="hasLoan$ | async">
+                    <div class="row no-gutters" [ngClass]="{error: form.get('loan').invalid }">
+                      <label for="loan" class="col-12 col-sm-6">{{ 'projectDetail.economy.form.loan' | transloco }}</label>
+                      <span class="col-auto">
+                        <mat-form-field>
+                          <input matInput sgInputLocaleFormatter formControlName="loan" type="number" step="50">
+                        </mat-form-field>
+                      </span>
+                      <span class="col-auto">
+                        <sg-unit-label [unit]="unit('loan')"></sg-unit-label>
+                      </span>
+                    </div>
+
+                    <div class="row no-gutters">
+                      <span class="col-12 col-sm-6">
+                        {{ 'projectDetail.economy.form.loanEquity' | transloco }}
+                      </span>
+                      <span class="col-auto">
+                        <sg-unit-value
+                          [unit]="unit('loanEquity')"
+                          [value]="(parameters$ | async)?.loanEquity">
+                        </sg-unit-value>
+                      </span>
+                      <span class="col-auto">
+                        <sg-unit-label [unit]="unit('loanEquity')"></sg-unit-label>
+                      </span>
+                    </div>
+
+                    <div class="row no-gutters">
+                      <span class="more-padding col-12 col-sm-6">{{ 'projectDetail.economy.layer.loanDebtToEquity.name' | transloco }}</span>
+                      <span class="col-auto"><sg-unit-value [unit]="unit('loanDebtToEquity')" [value]="(parameters$ | async)?.loanDebtToEquity"></sg-unit-value></span>
+                      <span class="col-auto"><sg-unit-toggle-label [unit]="unit('loanDebtToEquity')"></sg-unit-toggle-label></span>
+                    </div>
+
+                    <div class="row no-gutters" [ngClass]="{error: form.get('loanInterestRate').invalid }">
+                      <label for="loanInterestRate" class="col-12 col-sm-6">
+                        {{ 'projectDetail.economy.form.interestRate' | transloco }}
+                      </label>
+                      <span class="col-auto">
+                        <mat-form-field>
+                          <input matInput formControlName="loanInterestRate" type="number" step="0.1">
+                        </mat-form-field>
+                      </span>
+                      <span class="col-auto">
+                        <sg-unit-label [unit]="unit('loanInterestRate')"></sg-unit-label>
+                      </span>
+                    </div>
+
+                    <div class="row no-gutters" [ngClass]="{error: form.get('loanPeriod').invalid }">
+                      <label for="loanPeriod" class="col-12 col-sm-6">
+                        {{ 'projectDetail.economy.form.loanPeriod' | transloco }}
+                      </label>
+                      <span class="col-auto">
+                        <mat-form-field>
+                          <input matInput formControlName="loanPeriod" type="number" step="1">
+                        </mat-form-field>
+                      </span>
+                      <span class="col-auto">
+                        <sg-unit-label [unit]="unit('loanPeriod')"></sg-unit-label>
+                      </span>
+                    </div>
+
+                    <div class="row no-gutters">
+                      <span class="more-padding col-12 col-sm-6">{{ 'projectDetail.economy.layer.loanLinearPayment.name' | transloco }}</span>
+                      <span class="col-auto"><sg-unit-value [unit]="unit('loanLinearPayment')" [value]="(parameters$ | async)?.loanLinearPayment"></sg-unit-value></span>
+                      <span class="col-auto"><sg-unit-toggle-label [unit]="unit('loanLinearPayment')"></sg-unit-toggle-label></span>
+                    </div>
+
+                  </ng-container>
+                </div>
+              </div>
+
+              <!-- OPERATIONAL COSTS !-->
+              <div class="section">
+                <div class="heading">
+                  {{ 'projectDetail.economy.form.annualOperationalCost' | transloco }}
+                </div>
+
+                <div class="data">
+                  <div class="row no-gutters" [ngClass]="{error: form.get('annualOperationalCost').invalid }">
+                    <label for="annualOperationalCost" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.form.annualOperationalCost' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput sgInputLocaleFormatter formControlName="annualOperationalCost" type="number" step="10">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto">
+                      <sg-unit-label [unit]="unit('annualOperationalCost')"></sg-unit-label>
+                    </span>
+                  </div>
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('maintenanceReserve').invalid }">
+                    <label for="maintenanceReserve" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.layer.maintenanceReserve.name' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput sgInputLocaleFormatter formControlName="maintenanceReserve" type="number" step="10">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto">
+                      <sg-unit-label [unit]="unit('maintenanceReserve')"></sg-unit-label>
+                    </span>
+                    <!-- <span class="tooltip-parent col-auto">
+                      <sg-unit-label [unit]="unit('maintenanceReserve')"></sg-unit-label>
+                      <mat-icon
+                        matTooltip="{{ 'projectDetail.economy.layer.maintenanceReserve.tooltip' | transloco }}"
+                        class="tooltip">help_outline</mat-icon>
+                    </span> -->
+                  </div>
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('inverterReplacementYear').invalid }" class="more-padding">
+                    <label for="inverterReplacementYear" class="more-padding col-12 col-sm-6">
+                      {{ 'projectDetail.economy.layer.inverterReplacementYear.name' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput formControlName="inverterReplacementYear" type="number" step="1">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto">
+                      <sg-unit-label [unit]="unit('inverterReplacementYear')"></sg-unit-label>
+                    </span>
+                  </div>
+
+                  <div class="row no-gutters">
+                    <span class="col-12 col-sm-6">{{ 'projectDetail.economy.layer.OPEX.name' | transloco }}</span>
+                    <span class="col-auto">
+                      <sg-unit-value [unit]="unit('OPEX')" [value]="(parameters$ | async)?.OPEX"></sg-unit-value>
+                    </span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('OPEX')"></sg-unit-label></span>
+                  </div>
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('OPEXInflationRate').invalid }">
+                    <label for="OPEXInflationRate" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.layer.OPEXInflationRate.name' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput formControlName="OPEXInflationRate" type="number" step="0.1">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('OPEXInflationRate')"></sg-unit-label></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="heading">
+                    {{ 'projectDetail.economy.form.accountingInfo' | transloco }}
+                </div>
+                <div class="data">
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('discountRate').invalid }">
+                    <label for="discountRate" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.layer.discountRate.name' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput formControlName="discountRate" type="number" step="0.1">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('discountRate')"></sg-unit-label></span>
+                  </div>
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('taxesOnProfit').invalid }">
+                    <label for="taxesOnProfit" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.layer.taxesOnProfit.name' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput formControlName="taxesOnProfit" type="number" step="0.1">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('taxesOnProfit')"></sg-unit-label></span>
+                  </div>
+
+                  <div class="row no-gutters" [ngClass]="{error: form.get('linearDeprecationPeriod').invalid }">
+                    <label for="linearDeprecation" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.form.linearDeprecation' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput formControlName="linearDeprecationPeriod" type="number" step="1">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('linearDeprecationPeriod')"></sg-unit-label></span>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="heading">
+                  {{ 'projectDetail.pvConfig.pvConfiguration' | transloco }}
+                </div>
+
+                <div class="data">
+                  <div class="row no-gutters" [ngClass]="{error: form.get('yearsOfOperation').invalid }">
+                    <label for="yearsOfOperation" class="col-12 col-sm-6">
+                      {{ 'projectDetail.economy.form.yearsOfOperation' | transloco }}
+                    </label>
+                    <span class="col-auto">
+                      <mat-form-field>
+                        <input matInput formControlName="yearsOfOperation" type="number" step="1">
+                      </mat-form-field>
+                    </span>
+                    <span class="col-auto">{{ 'units.years' | transloco }}</span>
+                  </div>
+
+                  <div class="row no-gutters">
+                    <span class="col-12 col-sm-6">{{ 'pvConfig.params.systemAvailability.headline' | transloco }}</span>
+                    <span class="col-auto"><sg-unit-value [unit]="unit('systemAvailability')" [value]="(systemConfig$ | async)?.pvAvailabilityYearly"></sg-unit-value></span>
+                    <span class="col-auto"><sg-unit-toggle-label [unit]="unit('systemAvailability')"></sg-unit-toggle-label></span>
+                    <span class="col-auto"><button mat-button [routerLink]="['..', 'configure', 'editor']">{{ 'common.action.edit' | transloco }}</button></span>
+                  </div>
+
+                  <div class="row no-gutters">
+                    <span class="col-12 col-sm-6">{{ 'projectDetail.economy.form.totalYield' | transloco }}</span>
+                    <span class="col-auto"><sg-unit-value [unit]="unit('PVOUT_total')" [value]="(pvcalcAnnual$ | async)?.PVOUT_total"></sg-unit-value></span>
+                    <span class="col-auto"><sg-unit-toggle-label [unit]="unit('PVOUT_total')"></sg-unit-toggle-label></span>
+                  </div>
+
+                  <div class="row no-gutters">
+                    <span class="col-12 col-sm-6">{{ 'projectDetail.economy.form.degradationFirst' | transloco }}</span>
+                    <span class="col-auto">{{ (systemConfig$ | async)?.pvModuleDegradationFirstYear }}</span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('degradation')"></sg-unit-label></span>
+                    <span class="col-auto"><button mat-button [routerLink]="['..', 'configure', 'editor']">{{ 'common.action.edit' | transloco }}</button></span>
+                  </div>
+
+                  <div class="row no-gutters">
+                    <span class="col-12 col-sm-6">{{ 'projectDetail.economy.form.degradationNext' | transloco }}</span>
+                    <span class="col-auto">{{ (systemConfig$ | async)?.pvModuleDegradation }}</span>
+                    <span class="col-auto"><sg-unit-label [unit]="unit('degradation')"></sg-unit-label></span>
+                    <span class="col-auto"><button mat-button [routerLink]="['..', 'configure', 'editor']">{{ 'common.action.edit' | transloco }}</button></span>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+            <div class="buttons">
+              <button mat-button color="accent" (click)="saveValues()" [disabled]="form.invalid || !isChanged">
+                {{ 'common.action.saveValues' | transloco }}
+              </button>
+              <button mat-button color="accent" (click)="resetInitialValues()" [disabled]="!isChanged">
+                {{ 'projectDetail.economy.resetSaved' | transloco }}
+              </button>
+              <button mat-button color="accent" (click)="resetDefaultValues()" [disabled]="readonly$ | async">
+                {{ 'common.action.resetDefaults' | transloco }}
+              </button>
+            </div>
+          </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="card-big glossary">
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ 'projectDetail.glossary.title' | transloco }}</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="heading">{{ 'projectDetail.economy.label.inputs' | transloco }}</div>
+      <sg-glossary-table [layers]="inputLayers" [noAcronym]="true" [noSort]="true"></sg-glossary-table>
+
+      <div class="heading margin">{{ 'projectDetail.economy.label.outputs' | transloco }}</div>
+      <sg-glossary-table [layers]="outputLayers" [noAcronym]="true" [noSort]="true"></sg-glossary-table>
+
+    </mat-expansion-panel>
+  </div>
+</div>

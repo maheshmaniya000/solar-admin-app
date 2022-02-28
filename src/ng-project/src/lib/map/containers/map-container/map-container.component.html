@@ -1,0 +1,32 @@
+<sg-drawer-layout>
+  <ng-container class="navigation">
+    <sg-project-filter></sg-project-filter>
+  </ng-container>
+
+  <ng-container class="content">
+
+    <ng-container *ngIf="isMulti$ | async; else mapToolbar">
+      <sg-multi-select-toolbar component="map" ngClass.gt-sm="static"></sg-multi-select-toolbar>
+    </ng-container>
+
+    <sg-alert-bar-container route="prospect/map"></sg-alert-bar-container>
+
+    <div class="container"
+         fxLayout="column" fxLayout.gt-sm="row"
+         [ngStyle]="{'height': 'calc(100% - 48px - ' + (alertBarHeight$ | async) + 'px);'}">
+      <div [fxFlex]="mapViewHeight + 'px'" fxFlex.gt-sm="auto">
+        <sg-map-view></sg-map-view>
+      </div>
+
+      <aside fxFlex="none" [fxFlex.gt-sm]="mapSidebarWidth + 'px'">
+        <sg-map-sidebar [searchedProjects]="projects"></sg-map-sidebar>
+      </aside>
+    </div>
+  </ng-container>
+</sg-drawer-layout>
+
+<ng-template #mapToolbar>
+  <sg-project-toolbar
+    (foundProjects)="foundProjects($event)"
+    componentName="map" ngClass.gt-sm="static"></sg-project-toolbar>
+</ng-template>

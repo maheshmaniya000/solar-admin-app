@@ -1,0 +1,70 @@
+<mat-card *ngrxLet="company$; let company">
+  <ng-container *ngIf="(editMode$ | async); else noedit">
+    <div *ngIf="!isSaving; else spinner">
+      <sg-company-form
+        [initValues]="company"
+        (company)="editedCompany = $event"
+        [checkSimilarCompany]="false">
+      </sg-company-form>
+      <div class="button-group" *transloco="let t; read: 'common.action'">
+        <button class="secondary-button" (click)="editMode$.next(false)">
+          {{ t('cancel') }}
+        </button>
+        <button class="primary-button" [disabled]="!editedCompany" (click)="save()">
+          {{ t('save') }}
+        </button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noedit>
+    <div class="pull-right" style="height: 140px;">
+      <button mat-icon-button (click)="editMode$.next(true)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+
+    <mat-card-content>
+      <ng-container *ngTemplateOutlet="info; context: { $implicit: { translation: 'name', value: company?.name } }">
+      </ng-container>
+      <ng-container *ngTemplateOutlet="info; context: { $implicit: { translation: 'phone', value: company?.phone } }">
+      </ng-container>
+      <ng-container *ngIf="company?.VAT_ID">
+        <ng-container *ngTemplateOutlet="info; context: { $implicit: { translation: 'VAT', value: company.VAT_ID } }">
+        </ng-container>
+      </ng-container>
+      <ng-container *ngTemplateOutlet="info; context: { $implicit: { translation: 'city', value: company?.city } }">
+      </ng-container>
+      <ng-container *ngTemplateOutlet="info; context: { $implicit: { translation: 'street', value: company?.street } }">
+      </ng-container>
+      <ng-container *ngTemplateOutlet="info; context: { $implicit: { translation: 'zipCode', value: company?.zipCode } }">
+      </ng-container>
+      <ng-container *ngTemplateOutlet="info; context: { $implicit: { translation: 'country', value: company?.country?.name } }">
+      </ng-container>
+      <ng-container *ngIf="company?.state?.name">
+        <ng-container *ngTemplateOutlet="info; context: { $implicit: { translation: 'state', value: company.state.name } }">
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="company?.territory?.name">
+        <ng-container *ngTemplateOutlet="info; context: { $implicit: { translation: 'territory', value: company.territory.name } }">
+        </ng-container>
+      </ng-container>
+    </mat-card-content>
+
+  </ng-template>
+</mat-card>
+
+<ng-template #info let-customerInfo>
+  <div class="container">
+    <div>{{ 'user.company.field.' + customerInfo.translation | transloco }}</div>
+    <div>{{ customerInfo.value || '-' }}</div>
+  </div>
+</ng-template>
+
+<ng-template #spinner>
+  <div fxLayout fxLayoutAlign="center center">
+    <div fxFlex="nogrow">
+      <mat-spinner *ngIf="isSaving" [diameter]="35"></mat-spinner>
+    </div>
+  </div>
+</ng-template>

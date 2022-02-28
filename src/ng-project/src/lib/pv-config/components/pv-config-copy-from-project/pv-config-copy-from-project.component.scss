@@ -1,0 +1,150 @@
+@import 'theme';
+
+.search {
+  border-radius: $sg-4;
+  max-width: 320px;
+  margin: $sg-24;
+  padding-top: $sg-20;
+
+  form {
+    border: 1px solid map-get($sg-gray, 300);
+    height: $sg-36;
+    border-radius: 5px;
+  }
+
+  mat-icon {
+    color: map-get($sg-gray, 800);
+    line-height: $sg-36;
+    margin: 0 10px;
+    vertical-align: middle;
+    display: inline;
+  }
+
+  input {
+    &::placeholder {
+      color: map-get($sg-gray, 600);
+    }
+  }
+
+  ::ng-deep {
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-infix {
+      border-top: 0.5em;
+      font: 14px/19px Roboto;
+      font-weight: normal;
+      color: map-get($sg-gray, 800);
+      background-color: rgba(0, 0, 0, 0);
+      width: calc(100% - 50px);
+    }
+    .mat-form-field-flex {
+      padding: 2px 0px;
+    }
+    .mat-form-field-wrapper{
+      padding: 0px;
+    }
+  }
+}
+
+.table {
+  @include cdk-table-m(false);
+  min-height: 420px;
+
+  ::ng-deep mat-icon {
+    position: absolute;
+    margin-left: 15px;
+  }
+
+  cdk-header-row {
+    font-size: $sg-13;
+    background-color: #ffffff;
+    border-top: 0;
+    font-weight: bold;
+  }
+
+  cdk-row {
+    font-size: $sg-13;
+  }
+
+  .name, .config-type {
+    @include text-ellipsis();
+  }
+
+  // .system-size {
+  //   text-align: right;
+  // }
+
+  ::ng-deep .cdk-column-checked {
+    box-sizing: content-box;
+  }
+
+  cdk-row:hover {
+    background-color: map-get($primary, 300);
+    cursor: pointer !important;
+  }
+
+  .selected {
+    background-color: map-get($primary, 200);
+  }
+  cdk-row.disabled:hover {
+    background-color: white;
+    cursor: default !important;
+  }
+
+  mat-table {
+    .header-active {
+      color: #{ $sg-table-header-active };
+
+      ::ng-deep {
+        .mat-sort-header-arrow {
+          color: #{ $sg-table-header-active };
+        }
+      }
+    }
+  }
+}
+
+.paginator {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+  * {
+    color: map-get($primary, 800);
+  }
+
+  ::ng-deep {
+
+    .mat-paginator-container {
+      align-items: baseline;
+    }
+
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-infix {
+      border: 1px solid map-get($sg-gray, 400);
+      border-radius: $sg-4;
+      width: $sg-56;
+      height: $sg-24;
+      padding: 5px 0 0 0;
+
+      .mat-select-value {
+        padding: 3px 0 0 0;
+        span {
+          color: map-get($sg-gray, 700);
+          font-size: $sg-12;
+          padding-left: $sg-4;
+        }
+      }
+
+      .mat-select-arrow {
+        color: map-get($sg-gray, 700);
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import 'theme';
+
+:host {
+  font-size: unset;
+  font-weight: unset;
+  line-height: unset;
+}
+
+mat-icon {
+  color: map-get($primary, 600);
+}
+.favorite {
+  color: $sg-favorite !important;
+}
+
+.small {
+  @include mat-icon-button-size(21px, 18px);
+}
+.tiny {
+  @include mat-icon-button-size(18px, 16px);
+}

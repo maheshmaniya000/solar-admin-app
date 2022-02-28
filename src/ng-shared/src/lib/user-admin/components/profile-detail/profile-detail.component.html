@@ -1,0 +1,95 @@
+<div class="container">
+
+  <!-- User avatar prepared for future
+  <sg-user-company-avatar></sg-user-company-avatar> -->
+
+  <sg-personal-info-form #personalInfo [user]="user"></sg-personal-info-form>
+
+  <div class="row align-items-baseline email">
+    <div class="col-12 col-sm-4 label">{{ 'companyAdmin.users.email' | transloco }}</div>
+    <div class="col-12 col-sm-8">
+      <p class="label last-change">{{ user?.email }}</p>
+    </div>
+  </div>
+
+  <div class="row login">
+    <div class="col-12 col-sm-4 label">{{ 'user.profile.loginSecurity' | transloco }}</div>
+    <div class="col-12 col-sm-8">
+      <div class="row">
+        <div class="col-12 col-sm label last-change">
+          {{ 'user.profile.lastChange' | transloco }}: {{user?.updated | sgDateTimeFormat}}
+        </div>
+        <span class="col-12 col-sm-auto change-password-btn"
+              (click)="onChangePassword.emit()">
+          {{ 'user.profile.changePassword' | transloco }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row languages-menu">
+    <div class="col-12 col-sm-4 label">{{ 'projectDetail.reports.table.lang' | transloco }}</div>
+    <div class="col-12 col-sm-8">
+      <span class="d-flex align-items-center label languages" [matMenuTriggerFor]="languagesMenu">
+        <div>{{ (currentLanguage$ | async)?.name }}</div>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </span>
+
+      <mat-menu #languagesMenu="matMenu">
+        <button *ngFor="let language of languages" mat-menu-item
+                (click)="changeLang(language.lang)">
+          {{ language.name }}
+          <mat-icon *ngIf="(currentLanguage$ | async) === language">done</mat-icon>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <div class="row date-settings">
+    <div class="col-12 col-sm-4 label">{{ 'projectDetail.reports.table.dateFormat' | transloco }}</div>
+    <div class="col-12 col-sm-8">
+      <span class="d-flex align-items-center label date-format" [matMenuTriggerFor]="dateFormatsMenu">
+        <div>{{ (currentDateFormat$ | async)?.label }}
+        <span class="muted">
+          ({{ now | date: (currentDateFormat$ | async)?.format }})
+        </span>
+        </div>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </span>
+
+      <mat-menu #dateFormatsMenu>
+        <button *ngFor="let format of availableDateFormats" mat-menu-item (click)="changeDateFormat(format.format)">
+          {{ format.label }}
+          <span class="muted">
+            ({{ now | date: format.format }})
+          </span>
+          <mat-icon *ngIf="(currentDateFormat$ | async).format === format.format">done</mat-icon>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <div class="row unit-settings">
+    <div class="col-12 col-sm-4 label">{{ 'project.dataSettings.unitSettings' | transloco }}</div>
+    <div class="col-12 col-sm-8">
+      <span class="change-units-btn" (click)="onChangeUnitToggles.emit()">
+        {{ 'user.profile.changeUnitSettings' | transloco }}
+      </span>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+</div>
+
+<div class="save-btn">
+  <button *ngIf="!personalInfo.isWorking"
+          (click)="personalInfo.changeName()"
+          [ngClass]="{'btn-disabled': personalInfo?.form.hasError('invalidFirstNameOrLastName')}">
+    {{ 'common.action.save' | transloco }}
+  </button>
+
+  <span *ngIf="personalInfo.isWorking" class="loading">
+    <mat-spinner [diameter]="40"></mat-spinner>
+  </span>
+
+</div>

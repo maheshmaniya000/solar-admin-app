@@ -1,0 +1,74 @@
+<div class="card-layout">
+  <!-- Summary !-->
+  <div class="card-big">
+    <sg-summary [text]="'projectDetail.solarMeteo.hourlySummary'" [energySystem]="energySystem$ | async" [hasData]="false">
+    </sg-summary>
+  </div>
+
+  <!-- Data charts !-->
+  <div class="card-big bootstrap">
+    <mat-card class="tabs">
+      <mat-tab-group color="accent" #chartsTabGroup>
+        <mat-tab *ngFor="let chart of chartsData$ | async; let tabId = index">
+          <ng-template mat-tab-label>
+            <ng-container *ngFor="let layer of chart.layers; let last = last">
+              <sg-project-data-key [key]="layer.key"></sg-project-data-key>
+              <span *ngIf="!last">&nbsp;+&nbsp;</span>
+            </ng-container>
+          </ng-template>
+          <div class="hourly-charts-container">
+            <div #hourlyCharts>
+              <div class="row no-gutters" *ngIf="chartsTabGroup.selectedIndex === tabId">
+                <div *ngFor="let series of chart.series; let i = index;" class="col-12 col-md-6 col-lg-4 col-xl-3 hourly-chart">
+                  <div class="headline">{{ months[i] | transloco }}</div>
+                  <sg-highcharts [opts]="series" [reflow]="true"></sg-highcharts>
+                </div>
+              </div>
+              <div class="charts-legend row no-gutters">
+                <sg-highcharts class="col" [opts]="chart.legend" [destroyOnChange]="true"></sg-highcharts>
+                <div class="charts-timezone col-auto" #chartsTimezone>
+                  <sg-timezone [timezone]="timezone$ | async"></sg-timezone>
+                </div>
+              </div>
+            </div>
+
+            <button mat-icon-button [matMenuTriggerFor]="actionMenu" class="export-button">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+
+            <mat-menu #actionMenu="matMenu">
+              <sg-export-chart-button (exportChart)="exportCharts(tabId, chart.layers)"></sg-export-chart-button>
+            </mat-menu>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+
+  <!-- Heatmaps !-->
+  <div class="card-big">
+    <mat-card class="tabs">
+      <mat-tab-group color="accent">
+        <mat-tab *ngFor="let heatmap of (heatmaps$ | async)">
+          <ng-template mat-tab-label>
+            <sg-project-data-key [key]="heatmap.layer.key"></sg-project-data-key>
+          </ng-template>
+          <div class="data-label">
+            <sg-translation [str]="heatmap.layer.name"></sg-translation>
+            <sg-unit-toggle-label [unit]="heatmap.layer.unit"></sg-unit-toggle-label>
+          </div>
+          <sg-hourly-heatmap
+            [data]="heatmap.data"
+            [layer]="heatmap.layer"
+            [stats]="heatmap.stats"
+          ></sg-hourly-heatmap>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+
+  <!-- Support info !-->
+  <div class="card-big">
+    <sg-glossary [layers]="glossaryLayers$ | async"></sg-glossary>
+  </div>
+</div>

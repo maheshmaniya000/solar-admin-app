@@ -1,0 +1,10 @@
+@import 'theme';
+
+mat-card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+mat-progress-spinner {
+  display: inline-block;
+}

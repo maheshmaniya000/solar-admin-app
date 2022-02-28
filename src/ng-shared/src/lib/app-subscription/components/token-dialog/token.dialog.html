@@ -1,0 +1,53 @@
+<form>
+    <sg-dialog-deprecated style="position: relative;">
+      <div class="sg-dialog-heading">Your token</div>
+      <div class="sg-dialog-close-button" >
+        <button mat-icon-button (click)="close()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="sg-dialog-content auth-dialog-content">
+        <div class="row">
+          <div class="col-12 row">
+            <div class="col-4">
+              <b>Token ID:</b>
+            </div>
+            <div class="col-8">
+
+              <b>sif98jsdfjds98fjsd9f9ds8f9s8djf98jsd98fjsd9f</b>
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4">
+              <b>Generate Token:</b>
+            </div>
+            <div class="col-8">
+
+              <b>sif98jsdfjds98fjsd9f9ds8f9s8djf98jsd98fjsd9f</b>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="sg-dialog-actions auth-dialog-actions">
+        <button class="primary-button dialog-close-button" (click)="close()">
+          Close
+        </button>
+        <button class="primary-button">
+          Copy
+        </button>
+        <button class="primary-button">
+          Download
+        </button>
+      </div>
+
+    </sg-dialog-deprecated>
+  </form>
+  
+  <ng-template #spinner>
+    <div style="overflow: hidden;">
+      <mat-spinner [diameter]="64" color="accent" style="margin: auto;"></mat-spinner>
+    </div>
+  </ng-template>
+  

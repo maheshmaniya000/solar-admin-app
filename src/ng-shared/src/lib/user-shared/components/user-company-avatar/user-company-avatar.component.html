@@ -1,0 +1,13 @@
+<div class="bootstrap">
+  <div class="d-flex align-items-center user-item">
+    <p class="col-4 profile-label">{{'user.profile.photo' | transloco}}</p>
+    <div mat-menu-item class="user-avatar" [ngClass]="{'selected': !company}">
+      <div class="d-flex">
+        <div>
+          <mat-icon>account_circle</mat-icon>
+        </div>
+        <span class="photo-btn">{{'user.profile.addPhoto' | transloco}}</span>
+      </div>
+    </div>
+  </div>
+</div>

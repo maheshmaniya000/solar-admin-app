@@ -1,0 +1,15 @@
+<h3 *ngIf="displayTitle">{{ 'companyAdmin.api.common.freeTrialRequest' | transloco }}</h3>
+
+<sg-phone-form-field [trial]="true"
+                     [required]="true"
+                     [phone]="phone" [phoneCode]="phoneCode"
+                     (phoneChange)="phoneField.setValue($event)"
+                     (phoneCodeChange)="phoneCodeField.setValue($event)">
+</sg-phone-form-field>
+
+<sg-captcha
+  #otpCaptcha
+  class="recaptcha-registration"
+  action="otp_check"
+  (onSuccess)="handleOTPCaptcha($event)">
+</sg-captcha>

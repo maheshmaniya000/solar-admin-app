@@ -1,0 +1,34 @@
+@use '../../icon/icon' as icon;
+@use '../mixins';
+
+mat-button-toggle-group.sg-tool-button-toggle-group {
+  &.mat-button-toggle-group-appearance-standard {
+    border-radius: 3px;
+    @include mixins.side-attachments();
+  }
+
+  .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    padding: 8px;
+  }
+
+  &.medium,
+  &.small {
+    .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+      padding: 4px;
+    }
+
+    &.small {
+      .mat-icon {
+        @include icon.size(inline);
+      }
+
+      .mat-button-toggle-focus-overlay {
+        border-bottom-width: 24px;
+      }
+    }
+  }
+
+  .sub-group {
+    display: contents;
+  }
+}

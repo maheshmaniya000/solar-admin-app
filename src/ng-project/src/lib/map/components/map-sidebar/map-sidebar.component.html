@@ -1,0 +1,78 @@
+<div fxLayout="column" *transloco="let t">
+
+  <div fxFlex class="sidebar-content">
+    <ng-container *ngIf="(selectedProjectsCount$ | async) === 0">
+      <sg-search-results *ngIf="searchResults$ | async"
+                         [searchResults]="searchResults$ | async"
+                         [highlightIndex]="searchHighlightIndex$ | async"
+                         [searchedProjects]="searchedProjects"
+                         (onSelectSite)="selectSiteFromSearch($event)"
+                         (onSelectProject)="onSelectProject($event)">
+      </sg-search-results>
+    </ng-container>
+
+    <ng-container *ngIf="showProject$ | async">
+
+      <sg-selected-project [project]="project$ | async"
+                           [freetrial]="projectFreetrial$ | async"
+                           [hasDataCoverage]="(ltaData$ | async)?.annual?.data?.GHI"
+                           (onSaveProject)="saveProject(true)"
+                           (exportProject)="exportProject()">
+      </sg-selected-project>
+
+      <div class="tabs-wrapper">
+        <mat-tab-group [selectedIndex]="dataTabIndex$ | async" (selectedIndexChange)="dataTabChange($event)">
+          <mat-tab [label]="t('project.data.mapData')">
+            <div sgScrollContainer="custom">
+              <sg-project-data
+                [project$]="project$"
+                [dataset]="ltaDataset"
+                [data]="ltaData$ | async"
+                [inProgress]="ltaDataInProgress$ | async"
+                [selectedKeys]="selectedLtaKeys$ | async"
+                [mapLayers]="mapLayers$ | async"
+                [mapLayerId]="mapLayerId$ | async"
+                (onSelectMap)="selectMap($event)">
+              </sg-project-data>
+            </div>
+          </mat-tab>
+          <mat-tab [label]="t('project.data.projectData')" [disabled]="projectTemporal$ | async">
+            <div sgScrollContainer="custom">
+              <sg-project-data
+                [project$]="project$"
+                [dataset]="pvcalcDataset"
+                [data]="pvcalcData$ | async"
+                [hideMissingKeys]="true"
+                [inProgress]="pvcalcDataInProgress$ | async"
+                [selectedKeys]="selectedPvcalcKeys$ | async"
+                [mapLayers]="mapLayers$ | async"
+                [mapLayerId]="mapLayerId$ | async"
+                (onSelectMap)="selectMap($event)">
+              </sg-project-data>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="(selectedProjectsCount$ | async) !== 0">
+      <div class="multiple-projects">
+        <div>{{ t('project.sidebar.projectsSelected', { projects: (selectedProjectsCount$ | async)}) }}</div>
+        <p>
+          <button mat-button color="accent" [routerLink]="'../list'">
+            {{ t('project.sidebar.listView') }}
+          </button>
+          <button mat-button color="accent" (click)="clearSelection()">
+            {{ t('project.sidebar.clearSelection') }}
+          </button>
+        </p>
+        <sg-multi-select-sidebar
+          [selectedProjects]="selectedProjects$ | async"
+          (onUnselect)="unselectProject($event)">
+        </sg-multi-select-sidebar>
+      </div>
+    </ng-container>
+
+  </div>
+
+</div>

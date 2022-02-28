@@ -1,0 +1,17 @@
+<div class="content">
+    <mat-radio-group >
+      <mat-radio-button
+        (click)="setEnabled(true)"
+        [value]="true"
+        [checked]="params.enabled">
+        {{ 'common.status.enabled' | transloco }}
+      </mat-radio-button>
+
+      <mat-radio-button
+        (click)="setEnabled(false)"
+        [value]="false"
+        [checked]="!params.enabled">
+        {{ 'common.status.disabled' | transloco }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>

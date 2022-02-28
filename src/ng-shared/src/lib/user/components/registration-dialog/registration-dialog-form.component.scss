@@ -1,0 +1,11 @@
+@import 'theme';
+
+  .mat-form-field {
+    .invalid-field {
+      border: 1px solid map-get($accent, 500);
+    }
+  }
+
+  .mat-error {
+    font-size: $sg-12;
+  }

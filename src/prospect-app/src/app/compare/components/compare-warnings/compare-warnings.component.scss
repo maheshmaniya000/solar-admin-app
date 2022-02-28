@@ -1,0 +1,52 @@
+@import 'theme';
+
+mat-icon {
+  $size: 80px;
+  font-size: $size;
+  width: $size;
+  height: $size;
+  display: block;
+  margin: auto;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+:host ::ng-deep  {
+   @include sg-detail-card-layout(map-get($primary, 800));
+
+  .mat-list-item-content {
+    color: map-get($primary, 800) !important;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.warning-icon-wrapper {
+  margin: auto;
+}
+
+.bootstrap {
+  min-height: $sg-20;
+  line-height: $sg-20;
+  padding: $sg-8 $sg-24;
+  background-color: #fef9db;
+  font-size: $sg-13;
+  color: map-get($primary, 800);
+  max-width: 100vw;
+  box-sizing: border-box;
+
+  @include media-breakpoint-down(sm) {
+    line-height: $sg-16;
+    padding: $sg-4 $sg-8;
+    font-size: 10px;
+  }
+
+  mat-icon {
+    @include mat-icon-size(20px);
+    float: left;
+  }
+}

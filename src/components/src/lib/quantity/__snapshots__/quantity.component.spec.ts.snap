@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuantityComponent component should render simple html elements that are part of the unit property 1`] = `
+<sg-quantity
+  __ngContext__={[Function LRootView]}
+  subTitle={[Function Object]}
+  title={[Function Object]}
+  unitHtml={[Function String]}
+  value={[Function Number]}
+>
+  <div
+    class="title"
+    style="height: 18px;"
+  >
+     some title 
+  </div><div
+    class="sub-title"
+    style="height: 36px;"
+  >
+     some sub title 
+  </div><div>
+    <span
+      class="value"
+    >
+      129.37
+    </span>
+    <span
+      class="unit"
+    >
+      Wh/m
+      <sup>
+        2
+      </sup>
+    </span>
+  </div>
+</sg-quantity>
+`;
+
+exports[`QuantityComponent component should render with correctly bound attributes and styles 1`] = `
+<sg-quantity
+  __ngContext__={[Function LRootView]}
+  subTitle={[Function Object]}
+  title={[Function Object]}
+  unitHtml={[Function String]}
+  value={[Function Number]}
+>
+  <div
+    class="title"
+    style="height: 18px;"
+  >
+     some title 
+  </div><div
+    class="sub-title"
+    style="height: 36px;"
+  >
+     some sub title 
+  </div><div>
+    <span
+      class="value"
+    >
+      129.37
+    </span>
+    <span
+      class="unit"
+    >
+      km
+    </span>
+  </div>
+</sg-quantity>
+`;

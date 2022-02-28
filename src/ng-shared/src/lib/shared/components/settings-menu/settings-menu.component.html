@@ -1,0 +1,17 @@
+<div class="settings-menu-container">
+  <button mat-icon-button [matMenuTriggerFor]="menu"
+    [title]="'common.label.settings' | transloco">
+    <mat-icon svgIcon="sg:sgf-gear"></mat-icon>
+  </button>
+  <mat-menu #menu>
+    <button *ngIf="componentName === 'map' || componentName === 'list'" mat-menu-item (click)="openLayerSettings.emit()">
+      {{ (componentName === 'map' ? 'common.label.configureMapView' : 'common.label.configureProjectsView') | transloco }}
+    </button>
+    <button *ngIf="componentName === 'detail'" mat-menu-item (click)="openSystemSettings.emit()">
+      <span>{{ 'projectDetail.settings.systemSettings' | transloco }}</span>
+    </button>
+    <button mat-menu-item (click)="openUnitSettings.emit()">
+      <span>{{ 'project.dataSettings.unitSettings' | transloco }}</span>
+    </button>
+  </mat-menu>
+</div>

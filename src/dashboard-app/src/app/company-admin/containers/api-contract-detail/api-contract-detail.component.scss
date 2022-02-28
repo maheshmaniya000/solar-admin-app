@@ -1,0 +1,71 @@
+@import 'theme';
+
+mat-card {
+  color: map-get($primary, 800);
+}
+
+mat-card-content {
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: $font-weight-bold;
+}
+
+.row {
+  margin: 8px 0;
+}
+
+mat-divider + div {
+  margin-top: 16px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+.margin-bottom {
+  margin-bottom: 15px;
+}
+
+h4 {
+  margin: 0;
+}
+
+.tokens {
+  mat-progress-spinner {
+    display: inline-block;
+    margin-right: 7px;
+  }
+  .token {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+.note {
+  margin-top: 25px;
+  ::ng-deep p {
+    margin: 0;
+    padding-top: 7px;
+    font-size: 14px;
+    a {
+      color: map-get($accent, 500);
+      text-decoration: none;
+      &:hover {
+         text-decoration: underline;
+      }
+    }
+  }
+}

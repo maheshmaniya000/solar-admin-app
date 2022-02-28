@@ -1,0 +1,25 @@
+@import 'theme';
+
+.status {
+  width: $sg-12;
+  height: $sg-12;
+  border-radius: 50%;
+  background: map-get($primary, lighter);
+}
+
+.status.active {
+  background: $sg-active;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.mat-cell, .mat-header-cell, .mat-footer-cell {
+  white-space: nowrap;
+  padding: 0 5px;
+}
+
+.status-column, .actions-column {
+  width: 25px;
+}

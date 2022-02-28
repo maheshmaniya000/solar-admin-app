@@ -1,0 +1,11 @@
+<div mat-menu-item class="user-avatar" [ngClass]="{'selected': !company}">
+  <div fxLayout="row">
+    <div fxFlex="58px">
+      <mat-icon>account_circle</mat-icon>
+    </div>
+    <div fxFlex class="desc">
+      <div class="name">{{ user.email }}</div>
+      <div *ngIf="!!company" class="email">{{ company.name }}</div>
+    </div>
+  </div>
+</div>

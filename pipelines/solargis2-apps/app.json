@@ -1,0 +1,137 @@
+{
+  "name": "solargis2-apps",
+  "scripts": {},
+  "env": {
+    "API_BASE": {
+      "required": true
+    },
+    "AUTH0_API_MANAGEMENT_URL": {
+      "required": true
+    },
+    "AUTH0_CLIENT_ID": {
+      "required": true
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_DEFAULT_REGION": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "BASE_URL": {
+      "required": true
+    },
+    "COMPANY_JWT_SECRET": {
+      "required": true
+    },
+    "DYNAMODB_URI": {
+      "required": true
+    },
+    "DYNAMODB_PREFIX": {
+      "required": true
+    },
+    "FUP_SPECIFIC_USER_CONFIG": {
+      "required": true
+    },
+    "FUP_STATIC_CONFIG": {
+      "required": true
+    },
+    "IPSTACK_KEY": {
+      "required": true
+    },
+    "IPSTACK_URL": {
+      "required": true
+    },
+    "MAP_CENTER": {
+      "required": true
+    },
+    "MAPBOX_ACCESS_TOKEN": {
+      "required": true
+    },
+    "MAPBOX_URL_TEMPLATE": {
+      "required": true
+    },
+    "MAPDATA_BASE_URI": {
+      "required": true
+    },
+    "NODE_MODULES_CACHE": {
+      "required": true
+    },
+    "NOMINATIM_ENABLED": {
+      "required": false
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "required": true
+    },
+    "NPM_TOKEN": {
+      "required": true
+    },
+    "OPENCAGE_KEY": {
+      "required": false
+    },
+    "RECAPTCHA_PUBLIC_KEY": {
+      "required": true
+    },
+    "RECAPTCHA_SECRET_KEY": {
+      "required": true
+    },
+    "S3_MAP_LEGEND_TEMPLATE": {
+      "required": true
+    },
+    "S3_MAP_URL_TEMPLATE": {
+      "required": true
+    },
+    "SENTRY_AUTH_TOKEN": {
+      "required": true
+    },
+    "SENTRY_DSN": {
+      "required": true
+    },
+    "SENTRY_ORG": {
+      "required": true
+    },
+    "SENTRY_PROJECT": {
+      "required": true
+    },
+    "SENTRY_BUILD_PATH": {
+      "required": true
+    },
+    "SSH_KEY": {
+      "required": true
+    },
+    "TIMEZONEDB_KEY": {
+      "required": true
+    },
+    "TIMEZONEDB_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "https://github.com/solargis/ssh-private-key-buildpack"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-multi-procfile"
+    },
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/solargis/heroku-buildpack-run"
+    },
+    {
+      "url": "https://github.com/ianpurvis/heroku-buildpack-version"
+    },
+    {
+      "url": "https://github.com/solargis/buildpack-sentry-sourcemaps"
+    }
+  ]
+}

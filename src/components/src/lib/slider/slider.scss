@@ -1,0 +1,11 @@
+mat-slider {
+  &.mat-slider-horizontal {
+    height: 20px;
+    width: 100%;
+    min-width: 0;
+
+    .mat-slider-wrapper {
+      top: 9px;
+    }
+  }
+}

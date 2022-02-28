@@ -1,0 +1,88 @@
+@import 'theme';
+
+@import 'mixins/sg-compare';
+
+:host ::ng-deep {
+  @include sg-compare-radio-buttons();
+}
+
+.projects {
+  border-left: 1px solid map-get($primary, 300);
+  max-width: $content-container-width;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.project {
+  height: 100%;
+  padding: 10px 15px;
+  border-right: 1px solid map-get($primary, 300);
+  border-bottom: 1px solid map-get($primary, 300);
+  cursor: pointer;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .dot {
+    width: 40px;
+    padding-left: 10px;
+  }
+
+  .desc-wrapper {
+    max-width: calc(100% - 120px);
+    margin-left: $sg-4;
+  }
+
+  .desc {
+    text-align: left;
+    max-height: 44px;
+    @include text-ellipsis();
+  }
+
+  .pvConfig {
+    font-weight: $font-weight-regular;
+    font-size: $sg-14;
+    line-height: $sg-18;
+  }
+
+  .row {
+    flex-wrap: nowrap;
+  }
+
+  .noConfig {
+    @include media-breakpoint-down(xs) {
+      -webkit-columns: 2 200px;
+      -moz-columns: 2 200px;
+      columns: 2 200px;
+    }
+
+    button {
+      height: 22px;
+      min-height: $sg-14;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0;
+      padding: 0 6px;
+      margin: 0;
+      @include text-ellipsis();
+
+      @include media-breakpoint-down(xs) {
+        margin: $sg-4 0;
+      }
+    }
+  }
+}
+
+.inline {
+  display: inline;
+}
+
+.fat-row {
+  height: 64px;
+}
+
+@include media-breakpoint-up(md) {
+  .no-bottom-border { border-bottom: none; }
+}

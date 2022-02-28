@@ -1,0 +1,113 @@
+@import 'theme';
+
+$none: #a5adba;
+$progress: #c31e20;
+
+#order-workflow {
+
+  .toolbar {
+    margin: 0 20px;
+    float: right;
+  }
+
+  .workflowLine {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  ol.paymentFirst li { width: 17%; }
+  ol.paymentFirst li:first-of-type { width: 11%; }
+  ol.paymentFirst li:last-of-type { width: 21%; }
+  ol.deliveryFirst li { width: 20%; }
+  ol.deliveryFirst li:first-of-type { width: 14%; }
+  ol.deliveryFirst li:last-of-type { width: 26%; }
+
+  ol li div { width: 90%; }
+  ol li:first-of-type div { width: 150%; }
+
+  ol {
+    padding: 50px 10px;
+    margin: 0;
+    min-width: 1000px;
+
+    li {
+      display: inline-block;
+      height: 4px;
+      background: $none;
+
+      div {
+        position: relative;
+        display: inline-block;
+        height: 50px;
+
+        .event,.point {
+          left: 43%;
+        }
+
+        .event {
+          position: absolute;
+          width: 100%;
+          margin-top: 15px;
+          font-size: 14px;
+
+          .email {
+            font-size: smaller;
+          }
+          p {
+            margin: 0;
+            span {
+              display: block;
+            }
+          }
+        }
+
+        .point {
+          content: "";
+          top: -9px;
+          display: block;
+          width: 15px;
+          height: 15px;
+          border: 4px solid $none;
+          border-radius: 10px;
+          position: absolute;
+          background-color: white;
+        }
+      }
+
+      &.workflow-pro-forma {
+        display: inline-block;
+      }
+
+      &.done {
+        background-color: $progress;
+        div {
+          .point {
+            background-color: $progress;
+            border: 4px solid $progress;
+          }
+        }
+      }
+
+      &:first-child div {
+        .event, .point {
+          left: 0;
+        }
+      }
+
+      &:last-child div {
+        .point {
+          left: 100%;
+        }
+        .event {
+          width: calc(60% + 35px);
+          margin-left: -10%;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+.dateStatus {
+  font-size: 14px;
+}

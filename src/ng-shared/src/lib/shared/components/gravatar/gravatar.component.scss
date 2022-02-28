@@ -1,0 +1,25 @@
+:host {
+  text-align: center;
+
+  .gravatar {
+    height: 70px;
+    width: 70px;
+    background-size: cover;
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+  }
+
+  .avatar {
+    justify-self: center;
+
+    ::ng-deep div {
+      font-size: 26px;
+      text-align: center;
+      line-height: 70px;
+      height: 70px;
+      width: 70px;
+      margin: auto;
+    }
+  }
+}

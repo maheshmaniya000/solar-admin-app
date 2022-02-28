@@ -1,0 +1,195 @@
+<mat-toolbar class="sg-header bootstrap">
+
+  <div class="d-flex logo align-items-center">
+    <button mat-icon-button class="icon-link d-xl-none" (click)="openMobileMenu($event)">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <a href="/dashboard/" target="_self" class="sg-logo">
+      <img src="assets/img/solargis.svg">
+    </a>
+
+    <p class="current-app m-0" *ngIf="(currentAppTranslateKey$ | async) !== 'header.company-admin'; else companyAdminHeader">
+      {{ (currentAppTranslateKey$ | async) | transloco }}
+    </p>
+
+    <ng-template #companyAdminHeader>
+      <p class="current-app m-0">{{ 'header.administration' | transloco: { companyName: (company$ | async)?.name } }}</p>
+    </ng-template>
+  </div>
+
+  <ng-container *ngIf="(currentApp$ | async) === 'prospect'">
+    <nav mat-tab-nav-bar aria-label="prospect navigation links" color="accent" class="d-none d-md-block">
+      <a mat-tab-link
+         *ngFor="let tabLink of prospectTabLinks"
+         [disableRipple]="true"
+         [routerLink]="tabLink.link"
+         routerLinkActive #rla="routerLinkActive"
+         [active]="rla.isActive">
+         <mat-icon class="head-icon" svgIcon="{{ tabLink.icon }}"></mat-icon>
+        <div class="head-title">{{ tabLink.label | transloco | uppercase }}</div>
+      </a>
+
+      <a mat-tab-link
+         *ngIf="!!(company$ | async)"
+         [routerLink]="['compare']"
+         [disableRipple]="true"
+         routerLinkActive #rla="routerLinkActive"
+         [routerLinkActiveOptions]="{ exact: true }"
+         [active]="rla.isActive ||isCompareActive()">
+         <mat-icon class="head-icon" svgIcon="sg:sgf-compare2"></mat-icon>
+         <div class="head-title">{{ 'header.compare' | transloco | uppercase }}</div>
+      </a>
+    </nav>
+  </ng-container>
+
+  <ng-container *ngIf="(currentApp$ | async) === 'admin'">
+    <nav mat-tab-nav-bar aria-label="prospect navigation links" color="accent" class="d-none d-md-block">
+      <a mat-tab-link
+         *ngFor="let tabLink of adminTabLinks"
+         [disableRipple]="true"
+         (click)="adminTabClick(tabLink.link)"
+         [active]="isAdminTabActive(tabLink.link)">
+         <mat-icon class="head-icon-admin">{{ tabLink.icon }}</mat-icon>
+         <div class="head-title-admin">{{ tabLink.label | transloco | uppercase }}</div>
+      </a>
+    </nav>
+  </ng-container>
+
+  <div class="d-none d-xl-flex justify-content-end align-items-center right-menu-group">
+
+    <!-- License button -->
+    <ng-container [ngSwitch]="(prospectLicenseButton$ | async)">
+      <ng-container *ngSwitchCase="'NONE'"></ng-container>
+      <button *ngSwitchCase="'FREETRIAL'"
+              (click)="requestFreeTrial('prospect')"
+              class="licence-button"
+              data-test="freetrial-button">
+        {{ 'header.freeTrial' | transloco }}
+      </button>
+      <button *ngSwitchCase="'UPGRADE'"
+              (click)="redirectToUpgrade()"
+              class="licence-button">
+        {{ 'header.upgrade' | transloco }}
+      </button>
+      <button *ngSwitchCase="'PRICING'"
+              (click)="redirectToPricing()"
+              class="licence-button">
+        {{ 'header.pricing' | transloco }}
+      </button>
+    </ng-container>
+
+    <!--contact button - always-->
+    <a class="contact" target="_blank" href="https://solargis.com/about-us/contact/">{{ 'header.contact' | transloco }}</a>
+
+    <!--Languages menu - always-->
+    <ng-container *ngIf="(user$ | async) === undefined">
+      <div class="d-flex align-items-center languages" [matMenuTriggerFor]="languagesMenu">
+        <p>{{ (currentLanguage$ | async)?.name }}</p>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </div>
+      <mat-menu #languagesMenu="matMenu">
+        <button *ngFor="let language of languages" mat-menu-item
+                (click)="changeLang(language.lang)">
+          {{ language.name }}
+          <mat-icon *ngIf="(currentLanguage$ | async) === language">done</mat-icon>
+        </button>
+      </mat-menu>
+    </ng-container>
+
+
+    <!--Help button - always-->
+    <a class="icon-link" target="_blank" href="https://solargis.com/docs/"><mat-icon>help_outline</mat-icon></a>
+
+    <!-- App switch button -->
+    <ng-container *ngIf="!!(currentApp$ | async)">
+      <a class="icon-link" (click)="openAppMenu($event)">
+        <mat-icon>apps</mat-icon>
+        <sg-app-menu
+          *ngIf="isAppMenuActive"
+          [currentApp]="currentApp$ | async"
+          [isCompanyAdmin]="isCompanyAdmin$ | async"
+          [isSolargisAdmin]="isSolargisAdmin$ | async">
+        </sg-app-menu>
+      </a>
+    </ng-container>
+
+    <!--Notifications button - only for logged user-->
+    <!-- <a *ngIf="user$ | async" mat-icon-button color="primary">
+      <mat-icon>notifications</mat-icon>
+    </a> -->
+
+    <!--Logged user: logout + change password-->
+    <ng-container *ngIf="(isAccountOverviewReady$ | async); else spinner">
+      <div class="d-flex align-items-center account-overview" *ngIf="user$ | async; else notLoggedUser">
+
+        <sg-account-overview
+          (click)="openAccountMenu($event)"
+          [company]="selectedCompany$ | async"
+          [user]="userData$ | async">
+        </sg-account-overview>
+
+        <sg-account-menu
+          *ngIf="isAccountMenuActive"
+          [companyList]="companyListWithUser$ | async"
+          [selected]="selectedCompany$ | async"
+          [sgAccountId]="(user$ | async).sgAccountId"
+          [user]="userData$ | async">
+        </sg-account-menu>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="d-flex d-xl-none justify-content-end align-items-center right-menu-group">
+    <!-- App switch button -->
+    <ng-container *ngIf="!!(currentApp$ | async)">
+      <a class="icon-link" (click)="openAppMenu($event)">
+        <mat-icon>apps</mat-icon>
+        <sg-app-menu
+          *ngIf="isAppMenuActive"
+          [currentApp]="currentApp$ | async"
+          [isCompanyAdmin]="isCompanyAdmin$ | async"
+          [isSolargisAdmin]="isSolargisAdmin$ | async">
+        </sg-app-menu>
+      </a>
+    </ng-container>
+
+    <!-- Account switch button -->
+    <ng-container *ngIf="(isAccountOverviewReady$ | async); else spinner">
+      <div class="d-flex align-items-center account-overview" *ngIf="user$ | async; else notLoggedUser">
+        <sg-account-overview
+          (click)="openAccountMenu($event)"
+          [hideOnSmallScreen]="true"
+          [company]="selectedCompany$ | async"
+          [user]="userData$ | async">
+        </sg-account-overview>
+
+        <sg-account-menu
+          *ngIf="isAccountMenuActive"
+          [companyList]="companyListWithUser$ | async"
+          [selected]="selectedCompany$ | async"
+          [sgAccountId]="(user$ | async).sgAccountId"
+          [user]="userData$ | async">
+        </sg-account-menu>
+      </div>
+    </ng-container>
+
+  </div>
+</mat-toolbar>
+
+<sg-mobile-menu
+  [active]="isMobileMenuActive"
+  (closeMobileMenu)="isMobileMenuActive = false">
+</sg-mobile-menu>
+
+<ng-template #spinner>
+  <div style="overflow: hidden;">
+    <mat-spinner [diameter]="22" color="accent" style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>
+
+<!--NOT Logged user: login-->
+<ng-template #notLoggedUser>
+  <button class="button login-button" data-test="login-button" (click)="login()">{{'header.login' | transloco}}</button>
+  <button class="button signin-button" data-test="signup-button" (click)="registration()">{{'header.signUp' | transloco}}</button>
+</ng-template>

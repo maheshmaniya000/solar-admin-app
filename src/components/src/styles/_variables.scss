@@ -1,0 +1,29 @@
+@use 'palette';
+
+// These are public color variables.
+// When updating this, please update also SgScssVariables class in scss-variables.ts
+$sg-colors: (
+  status: (
+    error: map-get(palette.$sg-bright-red, 500),
+    success: map-get(palette.$sg-green, 500),
+    warning: map-get(palette.$sg-yellow, 500)
+  )
+);
+
+$sg-status-colors: map-get($sg-colors, status);
+
+$sg-icon-size: (
+  default: 20px,
+  inline: 16px
+);
+
+$sg-slider-transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+
+$sg-button-height: (
+  basic: 24px,
+  small: 28px,
+  medium: 32px,
+  large: 36px
+);
+
+$sg-button-icon-spacing: 4px;

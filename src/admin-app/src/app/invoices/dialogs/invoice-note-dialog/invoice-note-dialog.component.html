@@ -1,0 +1,31 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">Edit Note</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content auth-dialog-content">
+    <form [formGroup]="form" novalidate>
+      <mat-form-field class="w-100">
+        <textarea placeholder="Note" formControlName="note"
+                  matInput
+                  cdkTextareaAutosize
+                  cdkAutosizeMinRows="3"
+                  cdkAutosizeMaxRows="6"
+        ></textarea>
+    </mat-form-field>
+    </form>
+  </div>
+
+
+  <div class="sg-dialog-actions auth-dialog-actions">
+    <button mat-button type="button" class="secondary-button" (click)="close()">
+      <span>Cancel</span>
+    </button>
+    <button mat-button type="button" class="primary-button" (click)="save()">
+      Save
+    </button>
+  </div>
+</sg-dialog-deprecated>

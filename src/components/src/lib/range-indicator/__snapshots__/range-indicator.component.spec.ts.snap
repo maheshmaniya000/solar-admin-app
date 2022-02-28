@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangeIndicatorComponent component should correctly render when \`value\` is equal to \`target\` 1`] = `
+<sg-range-indicator
+  __ngContext__={[Function LRootView]}
+  barColorClass={[Function String]}
+  barWidth={[Function Number]}
+  max={[Function Number]}
+  min="0"
+  target={[Function Number]}
+  targetPosition={[Function Number]}
+  value={[Function Number]}
+>
+  <div
+    aria-readonly="true"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="50"
+    class="equal"
+    role="slider"
+    style="width: 50%;"
+  /><div
+    class="target"
+    style="left: 50%;"
+  />
+</sg-range-indicator>
+`;
+
+exports[`RangeIndicatorComponent component should correctly render when \`value\` is greater than \`target\` 1`] = `
+<sg-range-indicator
+  __ngContext__={[Function LRootView]}
+  barColorClass={[Function String]}
+  barWidth={[Function Number]}
+  max={[Function Number]}
+  min="0"
+  target={[Function Number]}
+  targetPosition={[Function Number]}
+  value={[Function Number]}
+>
+  <div
+    aria-readonly="true"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="50"
+    class="greater"
+    role="slider"
+    style="width: 50%;"
+  /><div
+    class="target"
+    style="left: 20%;"
+  />
+</sg-range-indicator>
+`;
+
+exports[`RangeIndicatorComponent component should correctly render when \`value\` is less than \`target\` 1`] = `
+<sg-range-indicator
+  __ngContext__={[Function LRootView]}
+  barColorClass={[Function String]}
+  barWidth={[Function Number]}
+  max={[Function Number]}
+  min="0"
+  target={[Function Number]}
+  targetPosition={[Function Number]}
+  value={[Function Number]}
+>
+  <div
+    aria-readonly="true"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="50"
+    class="less"
+    role="slider"
+    style="width: 50%;"
+  /><div
+    class="target"
+    style="left: 80%;"
+  />
+</sg-range-indicator>
+`;

@@ -1,0 +1,96 @@
+@use '~@angular/material' as mat;
+@import 'theme';
+
+.landing-page-card {
+  mat-card {
+    padding: $sg-24;
+    box-shadow: none !important;
+    display: grid;
+    background-color: white;
+    border: 1px solid map-get($primary, 400);
+  }
+
+  mat-card-actions {
+    margin: 0px;
+    align-self: end;
+
+    a {
+      padding: $sg-8 $sg-12;
+      text-decoration: none;
+    }
+  }
+
+  mat-card-header {
+    height: $sg-56;
+
+    mat-card-title {
+      font-weight: $font-weight-bold;
+      color: map-get($primary, 800);
+      font-size: $sg-24;
+      margin: 0px 0px $sg-4 $sg-8;
+    }
+
+    mat-card-subtitle {
+      text-transform: uppercase;
+      border: 1px solid map-get($primary, 500);
+      border-radius: 3px;
+      font-size: 10px;
+      margin: 0px $sg-8 !important;
+      color: map-get($primary, 600);
+      padding: 3px;
+      font-weight: 600;
+    }
+
+    &::ng-deep {
+      img {
+        height: $sg-48;
+      }
+    }
+  }
+
+  mat-card-content {
+    font-size: $sg-14;
+    margin: $sg-20 0px;
+    color: map-get($primary, 800);
+
+    .content {
+      min-height: $sg-32;
+
+      .accent-link {
+        color: map-get(mat.$red-palette, 600);
+        text-decoration: none;
+      }
+    }
+
+    .subtitles {
+      padding-top: 10px;
+
+      mat-card-subtitle {
+        margin: 0px;
+        color: map-get($primary, 800);
+
+        img {
+          width: $sg-14;
+          padding-right: $sg-4;
+        }
+
+        p {
+          overflow: hidden;
+          margin: 0px;
+          vertical-align: top;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  mat-card-actions {
+    margin: 0px;
+    align-self: end;
+
+    a {
+      padding: $sg-8 $sg-12;
+      text-decoration: none;
+    }
+  }
+}

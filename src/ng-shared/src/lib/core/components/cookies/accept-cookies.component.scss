@@ -1,0 +1,53 @@
+@import 'theme';
+
+:host {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 1000;
+  border: 1px solid map-get($primary, 300);
+  border-bottom: 0;
+  padding: $sg-16 $sg-32;
+  display: grid;
+  grid-template-columns: auto;
+
+  @include media-breakpoint-up(lg) {
+    width: 80%;
+    left: 7%;
+    grid-template-columns: auto 300px;
+  }
+
+  p {
+    color: map-get($primary, 800);
+    line-height: $sg-24;
+    font-size: $sg-16;
+    margin: 0;
+
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+
+  .buttons-wrapper {
+    justify-self: center;
+
+    button {
+      float: right;
+      margin: 10px;
+
+      @include media-breakpoint-down(md) {
+        float: none;
+      }
+    }
+
+    .secondary-button {
+      a {
+        color: map-get($accent, 500);
+        text-decoration: none;
+      }
+    }
+  }
+}
+

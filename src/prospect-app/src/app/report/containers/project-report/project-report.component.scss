@@ -1,0 +1,486 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+
+  * {
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  mat-card-title {
+    display: none;
+  }
+
+  sg-highcharts {
+    .chart.small-card {
+      height: auto;
+
+      .highcharts-container, .highcharts-container svg {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+
+    &.pv-chart .highcharts-axis-title b {
+      font-weight: normal;
+      font-size: 9px;
+    }
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+  }
+
+  .sunpath > div, .daylength > div {
+    min-height: 300px;
+  }
+
+  sg-glossary-table, sg-prospect-metadata, sg-hourly-heatmap, sg-economy-calculator-table {
+    cdk-cell, cdk-header-cell {
+      padding-top: $sg-4 !important;
+      padding-bottom: $sg-4 !important;
+      font-size: 11px;
+      line-height: initial;
+
+      .subheader {
+        font-size: inherit;
+      }
+    }
+
+    cdk-header-row {
+      height: auto !important;
+    }
+
+    cdk-row {
+      min-height: 21px !important;
+    }
+  }
+
+  sg-project-annual-overview .row, sg-economy-overview .row {
+    .right {
+      margin-top: 0 !important;
+
+      sg-unit-value {
+        float: left;
+      }
+    }
+  }
+
+  sg-project-info-table .row .left-padding {
+    padding-left: $sg-4;
+  }
+
+  sg-hourly-heatmap {
+    cdk-cell, cdk-header-cell {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  sg-loss-arrow {
+    overflow: hidden;
+
+    .loss-arrow.pv, .loss-arrow-gain.pv, .loss-arrow.gti, .loss-arrow-gain.gti {
+      border-width: 8px !important;
+    }
+  }
+}
+
+.print-view {
+  overflow: hidden;
+  counter-reset: title;
+  width: $print-page-width !important;
+  margin: 0 auto;
+
+  .page-header {
+    display: none;
+  }
+
+  a {
+    color: map-get($accent, default);
+    text-decoration: none;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .section-title {
+    color: map-get($primary, 500);
+    padding: $sg-20 $sg-4 10px $sg-4;
+    font-size: 10.5pt;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &::before {
+      content: counter(title);
+      counter-increment: title;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    &.not-indexed::before {
+      content: "";
+      counter-increment: none;
+      padding-right: 0;
+    }
+  }
+
+  .hidden-on-screen {
+    display: none;
+  }
+
+  .card-layout {
+    counter-reset: tableIndex figureIndex;
+    display: block;
+    page-break-before: always;
+    min-height: $print-layout-min-height;
+
+    .card-small {
+      display: inline-block;
+      width: 50%;
+    }
+
+    .card-small, .card-medium, .card-big {
+      margin-bottom: 0;
+    }
+
+    ::ng-deep sg-indexed-title[type="table"] {
+      counter-increment: tableIndex;
+
+      mat-card-title .index {
+        font-weight: bold;
+
+        &::after {
+          content: " " counter(title) "." counter(tableIndex) ": ";
+        }
+      }
+    }
+
+    ::ng-deep sg-indexed-title[type="figure"] {
+      counter-increment: figureIndex;
+
+      mat-card-title .index {
+        font-weight: bold;
+
+        &::after {
+          content: " " counter(title) "." counter(figureIndex) ": ";
+        }
+      }
+    }
+  }
+
+  ::ng-deep .table-s {
+    min-width: auto !important;
+    margin: 0;
+  }
+
+  ::ng-deep .mat-card {
+    margin-top: $sg-20 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  ::ng-deep .total-perf {
+    display: inline !important;
+  }
+
+  ::ng-deep sg-pv-config-viewer {
+    .large .left-column {
+      flex: 0 0 220px !important;
+    }
+    .heading {
+      width: auto !important;
+    }
+  }
+
+  ::ng-deep sg-snow-soiling-losses-table {
+    .cdk-cell, .cdk-header-cell {
+      max-width: 39px !important;
+    }
+  }
+
+  ::ng-deep sg-economy-calculator-table {
+    .cdk-cell, .cdk-header-cell {
+      flex: 0 0 14% !important;
+      width: auto !important;
+
+      .label {
+        word-break: break-all;
+      }
+
+      sg-unit-toggle-label {
+        white-space: normal;
+      }
+
+      &.cdk-column-year {
+        flex: 0 0 8% !important;
+      }
+
+      &.cdk-column-PVOUT_total {
+        flex: 0 0 15% !important;
+      }
+
+      &.cdk-column-EBITDA_specific, &.cdk-column-PVOUT_specific {
+        flex: 0 0 10% !important;
+      }
+    }
+
+    .cdk-row:last-of-type {
+      background-color: map-get($primary, 100);
+
+      .cdk-cell {
+        font-weight: $font-weight-bold;
+        background-color: map-get($primary, 100) !important;
+      }
+    }
+  }
+
+  .hourly-chart {
+    display: inline-block;
+    width: 25%;
+    height: auto;
+    margin-top: $sg-8;
+
+    .headline {
+      font-weight: $font-weight-bold;
+      margin-bottom: $sg-8;
+    }
+  }
+
+  .azimuth {
+    margin-top: 10px;
+  }
+
+  .charts-legend {
+    overflow: hidden;
+    margin-top: 10px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      float: left;
+      list-style: none;
+
+      li {
+        float: left;
+        margin-right: 10px;
+
+        i {
+          display: inline-block;
+          width: $sg-8;
+          height: $sg-8;
+          border-radius: $sg-4;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    sg-timezone {
+      float: right;
+    }
+  }
+
+}
+
+@media print {
+  .print-view {
+    & > table {
+      page-break-inside: auto;
+
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+    }
+
+    .page-header {
+      display: block;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border-bottom: 1px solid map-get($primary, 300);
+      padding-top: $print-space-top;
+      padding-bottom: $sg-16;
+      background-color: white;
+
+      .watermark {
+        position: fixed;
+        font-size: 230px;
+        transform: rotate(63deg);
+        color: rgba(0,0,0, 0.04);
+        top: 380px;
+        left: -130px;
+        white-space: nowrap;
+        max-width: 156%;
+      }
+
+      .sg-logo {
+        float: left;
+        height: $sg-24;
+      }
+
+      .right {
+        line-height: $sg-24;
+        float: right;
+      }
+    }
+
+    .section-title {
+      font-size: 24px;
+      text-transform: none;
+      color: map-get($accent, default);
+      padding-bottom: 0;
+      width: 100%;
+      display: block;
+    }
+
+    .hidden-on-screen {
+      display: block;
+    }
+  }
+
+  ::ng-deep {
+    * {
+      font-size: $sg-12;
+      color: black;
+    }
+
+    div.main {
+      height: auto !important;
+    }
+
+    .container {
+      height: auto !important;
+      min-height: auto !important;
+      background-color: white !important;
+    }
+
+    mat-drawer-container .content {
+      height: auto !important;
+
+      .inner-container {
+        padding: 0;
+      }
+    }
+
+    sg-header, sg-detail-toolbar, sg-bottom-navigation, mat-card.no-pv-config, sg-alert-bar-container {
+      display: none !important;
+    }
+
+    .print-view {
+      .card-layout:not(:first-of-type) {
+        padding-top: 100px;
+      }
+
+      .mat-card {
+        page-break-inside: avoid;
+
+        mat-card-title {
+          display: block;
+          font-size: $sg-12;
+          color: black;
+          font-weight: normal;
+          padding-bottom: 6px;
+        }
+      }
+
+      .card-big.breakable, .card-small.breakable {
+        .mat-card {
+          page-break-inside: auto;
+        }
+      }
+
+      .page-break {
+        page-break-before: always;
+      }
+
+      cdk-cell, cdk-header-cell {
+        font-size: 11px;
+
+        sg-project-data-key, sg-unit-label *, sg-unit-toggle-label * {
+          font-size: 11px;
+          margin: 0;
+          padding: 0;
+        }
+
+        sg-project-data-key small {
+          font-size: 10px;
+        }
+      }
+
+      sg-economy-calculator-table {
+        .cdk-cell, .cdk-header-cell {
+          font-size: 9px;
+
+          sg-unit-value-inner, sg-unit-label span, sg-unit-toggle-label span {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .toggle mat-icon {
+        display: none;
+      }
+
+      .large .left-column {
+        -webkit-flex: 0 0 184px !important;
+        flex: 0 0 184px !important;
+      }
+
+      sg-pv-config-viewer .settings {
+        padding: 0 !important;
+
+        .right-column, .left-column {
+          margin-left: $sg-8 !important;
+        }
+      }
+
+      sup {
+        font-size: $sg-8;
+      }
+
+      .filling-container {
+        height: 200px;
+      }
+
+      sg-highcharts .highcharts-container {
+        width: 100% !important;
+        height: auto !important;
+
+        .highcharts-axis-title {
+          top: 75px !important;
+        }
+
+        svg {
+          height: auto !important;
+        }
+      }
+
+      sg-glossary-table {
+        .cdk-header-cell.name, .cdk-cell.name {
+          max-width: 130px !important;
+        }
+
+        .cdk-header-cell.unit, .cdk-cell.unit {
+          max-width: $sg-80 !important;
+        }
+      }
+
+      .glossary-top-space {
+        padding-top: 100px;
+      }
+
+      .disclaimer {
+        overflow: hidden;
+      }
+    }
+  }
+}

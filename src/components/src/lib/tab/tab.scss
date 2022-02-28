@@ -1,0 +1,18 @@
+.mat-tab-header {
+  border-bottom: none;
+
+  .mat-tab-label,
+  .mat-tab-link {
+    min-width: auto;
+    padding: 0;
+    text-transform: uppercase;
+
+    &:not(:last-of-type) {
+      margin-right: 24px;
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}

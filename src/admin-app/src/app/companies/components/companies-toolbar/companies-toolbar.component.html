@@ -1,0 +1,84 @@
+<sg-toolbar *ngIf="(multiselectActive$ | async) === false; else multiselectTemplate">
+  <span class="title pr-2">Companies</span>
+  <div class="separator d-none d-lg-block"></div>
+  <ng-container *ngIf="filter$ | async as filter">
+    <sg-admin-toolbar-search [search]="filter.vat" (searchChange)="updateFilter({vat: $event})" placeholder="VAT ID search"></sg-admin-toolbar-search>
+    <mat-slide-toggle
+      (change)="updateFilter({ sg2Eligible: $event.checked })"
+      [checked]="filter.sg2Eligible"
+      class="d-none d-lg-block pl-2 pr-1"
+    >
+      Show only SG2 Eligible
+    </mat-slide-toggle>
+    <mat-slide-toggle
+      (change)="updateFilter({ nonHistoric: !$event.checked })"
+      [checked]="!filter.nonHistoric"
+      class="d-none d-lg-block pl-2 pr-1"
+    >
+      Show also archived
+    </mat-slide-toggle>
+    <mat-slide-toggle (change)="updateFilter({ deleted: $event.checked })" [checked]="filter.deleted" class="d-none d-lg-block pl-2 pr-1">
+      Show deleted
+    </mat-slide-toggle>
+    <mat-slide-toggle
+      (change)="updateFilter({ isMainCompany: $event.checked })"
+      [checked]="filter.isMainCompany"
+      class="d-none d-lg-block pl-2"
+    >
+      Show only MAIN
+    </mat-slide-toggle>
+  </ng-container>
+
+  <ng-container class="sg-toolbar-right">
+    <div class="d-none d-sm-flex">
+      <button routerLink="add" mat-button title="Create new company">
+        <mat-icon>add_circle_outline</mat-icon>
+        <span>Create new company</span>
+      </button>
+    </div>
+    <sg-admin-export-table-data (exportData)="exportCompanyList()"></sg-admin-export-table-data>
+  </ng-container>
+</sg-toolbar>
+
+<ng-template #multiselectTemplate>
+  <sg-toolbar>
+    <button (click)="onClearMultiselectClick()" class="pull-right" mat-icon-button>
+      <mat-icon>close</mat-icon>
+    </button>
+    <div class="text pr-2">
+      {{ 'project.toolbar.selected' | transloco: { projects: (selectedCompanies$ | async).length } }}
+    </div>
+
+    <ng-container class="sg-toolbar-right">
+      <mat-progress-spinner *ngIf="companiesToolbarStore.bulkUpdating$ | async" [diameter]="30" mode="indeterminate"></mat-progress-spinner>
+
+      <button (click)="companiesToolbarStore.bulkChangeHistoric(false)" mat-button color="accent" title="Unarchive">
+        <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+      </button>
+      <button (click)="companiesToolbarStore.bulkChangeHistoric(true)" mat-icon-button title="Archive">
+        <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+      </button>
+      <sg-admin-export-table-data (exportData)="exportCompanyList()"></sg-admin-export-table-data>
+      <div class="separator"></div>
+      <div class="d-none d-sm-flex">
+        <form class="d-flex align-items-center pl-2" novalidate>
+          <input
+            [matAutocomplete]="auto"
+            class="search-input"
+            [formControl]="assignCompanyToParentFormControl"
+            name="addCompanyToParent"
+            placeholder="Choose parent company"
+          />
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="assignToParent($event.option.value)" [displayWith]="companyRefToString">
+            <mat-option *ngFor="let company of filteredCompanies$ | async" [value]="company">
+              <small
+                ><b>({{ company.sgCompanyId }})</b> {{ company.name }}
+                <span *ngIf="company.groupName">({{ company.groupName }})</span></small
+              >
+            </mat-option>
+          </mat-autocomplete>
+        </form>
+      </div>
+    </ng-container>
+  </sg-toolbar>
+</ng-template>

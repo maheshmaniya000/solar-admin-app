@@ -1,0 +1,19 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $typography-config: mat.get-typography-config($theme-or-color-config);
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $primary: map-get($color-config, primary);
+  $background: map-get($color-config, background);
+
+  sg-page-bar {
+    .line {
+      background-color: mat.get-color-from-palette($primary, darker);
+    }
+
+    .content {
+      background-color: mat.get-color-from-palette($background, app-bar);
+      @include mat.typography-level($typography-config, caption);
+    }
+  }
+}

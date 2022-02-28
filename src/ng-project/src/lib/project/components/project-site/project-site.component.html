@@ -1,0 +1,15 @@
+
+<div fxLayout="row" fxLayout.lt-md="column-reverse" class="info-container">
+
+  <!-- left data column !-->
+  <div fxFlex class="data-grid">
+    <sg-project-site-properties [project]="project" [showBorders]="false"></sg-project-site-properties>
+  </div>
+
+  <!-- right column - map !-->
+  <div fxFlex>
+    <div class="minimap" *ngIf="layerDef">
+      <sg-project-site-minimap [site]="project.site" [layerDef]="layerDef"></sg-project-site-minimap>
+    </div>
+  </div>
+</div>

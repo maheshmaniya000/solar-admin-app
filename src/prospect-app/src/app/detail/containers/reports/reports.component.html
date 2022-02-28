@@ -1,0 +1,143 @@
+<div class="card-layout">
+  <!-- Summary !-->
+
+  <div class="card-big">
+    <mat-card>
+      <div class="title">{{ 'projectDetail.reports.title' | transloco }}</div>
+      <form [formGroup]="form">
+        <mat-form-field>
+          <mat-select formControlName="type">
+            <mat-option *ngFor="let type of reportTypes" [value]="type">
+              {{ type }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="lang" panelClass="higher-select-panel">
+            <mat-option *ngFor="let lang of availableLanguages" [value]="lang.lang">
+              {{ lang.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-checkbox formControlName="economy" *ngIf="hasPvConfig$ | async">
+          {{ 'projectDetail.reports.finance' | transloco }}
+        </mat-checkbox>
+
+        <button class="primary-button" (click)="createReport()" *ngIf="!generateButtonDisabled">
+          {{ 'projectDetail.reports.generate' | transloco }}
+        </button>
+        <ng-container *ngIf="generateButtonDisabled">
+            <mat-spinner [diameter]="20" style="display: inline-block; margin-left: 15px;"></mat-spinner>
+        </ng-container>
+      </form>
+      <mat-divider></mat-divider>
+
+      <ng-container *ngIf="(reports$ | async) === false">
+        <div>
+          <mat-spinner [diameter]="32" style="margin:8px auto;"></mat-spinner>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="(reports$ | async)?.length === 0">
+        <div class="noReport">
+          {{ 'projectDetail.reports.empty' | transloco }}
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="(reports$ | async)?.length > 0">
+        <div class="table-container">
+          <mat-table [dataSource]="reports$">
+
+            <!-- NAME COLUMN -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef fxFlex>
+                {{ 'projectDetail.reports.table.name' | transloco }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let report" fxFlex>
+                <div class="name">{{ getReportFileName(projectName, report) }}</div>
+              </mat-cell>
+            </ng-container>
+
+            <!-- FILE TYPE COLUMN -->
+            <ng-container matColumnDef="fileType">
+              <mat-header-cell *matHeaderCellDef fxFlex="1 1 10%">
+                {{ 'projectDetail.reports.table.fileType' | transloco }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let report" fxFlex="1 1 10%">
+                {{ report.type | uppercase }}
+              </mat-cell>
+            </ng-container>
+
+            <!-- LANG COLUMN -->
+            <ng-container matColumnDef="lang">
+              <mat-header-cell *matHeaderCellDef fxFlex="1 1 12%">
+                {{ 'projectDetail.reports.table.lang' | transloco }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let report" fxFlex="1 1 12%">
+                {{ languageMap[report.lang] }}
+              </mat-cell>
+            </ng-container>
+
+            <!-- ECONOMY COLUMN -->
+            <ng-container matColumnDef="economy">
+              <mat-header-cell *matHeaderCellDef fxFlex="1 1 10%">
+                {{ 'projectDetail.reports.table.finance' | transloco }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let report" fxFlex="1 1 10%">
+                {{ (report.economy ? 'projectDetail.reports.table.yes' : 'projectDetail.reports.table.no') | transloco }}
+              </mat-cell>
+            </ng-container>
+
+            <!-- DATE COLUMN -->
+            <ng-container matColumnDef="date">
+              <mat-header-cell *matHeaderCellDef fxFlex="1 1 15%">
+                {{ 'projectDetail.reports.table.date' | transloco }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let report" fxFlex="1 1 15%">
+                <ng-container *ngIf="getStatus(report) === 'GENERATING';">
+                  <mat-spinner [diameter]="18"></mat-spinner>
+                </ng-container>
+                <div *ngIf="getStatus(report) === 'FAILED'" class="error-generating">
+                  {{ 'projectDetail.reports.status.error' | transloco }}
+                </div>
+                <ng-container *ngIf="getStatus(report) === 'READY'">
+                  {{ report.created | sgDateTimeFormat:'dateTime' }}
+                </ng-container>
+              </mat-cell>
+            </ng-container>
+
+            <!-- DOWNLOAD COLUMN -->
+            <ng-container matColumnDef="download">
+              <mat-header-cell *matHeaderCellDef fxFlex="1 1 15%"></mat-header-cell>
+              <mat-cell *matCellDef="let report" fxFlex="1 1 15%">
+                <button mat-button color="accent"
+                  *ngIf="getStatus(report) === 'READY'"
+                  (click)="downloadReport(report)">
+                  {{ 'projectDetail.reports.table.download' | transloco }}
+                </button>
+              </mat-cell>
+            </ng-container>
+
+            <!-- DELETE COLUMN -->
+            <ng-container matColumnDef="delete">
+              <mat-header-cell *matHeaderCellDef fxFlex="1 1 40px"></mat-header-cell>
+              <mat-cell *matCellDef="let report" fxFlex="1 1 40px">
+                <button mat-icon-button color="primary"
+                  *ngIf="getStatus(report) === 'READY'"
+                  (click)="deleteReport(report)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+            <mat-row *matRowDef="let report; columns: tableColumns;"
+            ></mat-row>
+          </mat-table>
+        </div>
+      </ng-container>
+    </mat-card>
+  </div>
+</div>

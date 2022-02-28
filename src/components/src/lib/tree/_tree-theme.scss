@@ -1,0 +1,25 @@
+@use '~@angular/material/core/density/private/compatibility';
+@use '~@angular/material/tree/tree-variables';
+
+@mixin _sg-tree-node-height($density-scale) {
+  $height: compatibility.private-density-prop-value(
+    tree-variables.$density-config,
+    $density-scale,
+    height
+  );
+
+  min-height: $height;
+  height: $height;
+}
+
+@mixin theme($theme-or-color-config) {
+  .mat-tree {
+    .mat-tree-node {
+      @include _sg-tree-node-height(-4);
+    }
+
+    &.high-dense .mat-tree-node {
+      @include _sg-tree-node-height(-6);
+    }
+  }
+}

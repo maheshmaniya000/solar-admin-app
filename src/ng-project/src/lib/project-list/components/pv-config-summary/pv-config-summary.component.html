@@ -1,0 +1,8 @@
+<div *ngIf="pvConfig">
+  {{ 'pvConfig.type.' + pvConfig.type + '.name' | transloco }}
+  <ng-container *ngIf="pvInstalledPower">
+    •
+    <sg-unit-value [unit]="installedPowerUnit" [value]="pvInstalledPower" [opts]="{ noFormat: true }"></sg-unit-value>
+    <sg-unit-label [unit]="installedPowerUnit"></sg-unit-label>
+  </ng-container>
+</div>

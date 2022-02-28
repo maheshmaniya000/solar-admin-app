@@ -1,0 +1,29 @@
+<div class="container bootstrap">
+  <div class="content row no-gutters">
+    <div *ngIf="prev" class="nav {{next ? 'col-6' : 'col-12'}}">
+      <button mat-button color="accent" (click)="onSelect.emit(prev)">
+        <mat-icon>arrow_back</mat-icon>
+        {{ 'common.action.prev' | transloco }}
+      </button>
+      <div class="label label-left">
+        <ng-container *ngIf="prevParent">
+          {{ prevParent.data.nav?.name | transloco }}:
+        </ng-container>
+        {{ prev.data.nav?.name | transloco }}
+      </div>
+    </div>
+
+    <div *ngIf="next" class="nav text-right {{prev ? 'col-6' : 'col-12'}}">
+      <button mat-button color="accent" (click)="onSelect.emit(next)">
+        {{ 'common.action.next' | transloco }}
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+      <div class="label label-right">
+        <ng-container *ngIf="nextParent">
+          {{ nextParent.data.nav?.name | transloco }}:
+        </ng-container>
+        {{ next.data.nav?.name | transloco }}
+      </div>
+    </div>
+  </div>
+</div>

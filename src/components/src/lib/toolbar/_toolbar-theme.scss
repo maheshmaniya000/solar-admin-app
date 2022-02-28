@@ -1,0 +1,59 @@
+@use '~@angular/material' as mat;
+@use '~@angular/material/core/density/private/compatibility';
+@use '~@angular/material/toolbar/toolbar-variables';
+
+@mixin _sg-toolbar-row-height($density-scale) {
+  $height: compatibility.private-density-prop-value(
+    toolbar-variables.$desktop-density-config,
+    $density-scale,
+    height
+  );
+
+  &.mat-toolbar-multiple-rows {
+    min-height: $height;
+  }
+
+  mat-toolbar-row:first-of-type,
+  &.mat-toolbar-single-row {
+    height: $height;
+  }
+}
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $typography-config: mat.get-typography-config($theme-or-color-config);
+  $background: map-get($color-config, background);
+
+  mat-toolbar {
+    @include _sg-toolbar-row-height(-2);
+    border-bottom: 1px solid mat.get-color-from-palette($background, status-bar);
+
+    &.mat-toolbar {
+      @include mat.typography-level($typography-config, display-1);
+    }
+
+    mat-toolbar-row:not(:first-of-type) {
+      @include mat.typography-level($typography-config, caption);
+      white-space: normal;
+    }
+
+    &.small {
+      @include _sg-toolbar-row-height(-4);
+      @include mat.typography-level($typography-config, body-2);
+      background-color: mat.get-color-from-palette($background, dialog);
+    }
+
+    &.extra-small {
+      @include mat.typography-level($typography-config, subheading-1);
+      @include _sg-toolbar-row-height(-6);
+    }
+
+    .mat-toolbar-row {
+      height: auto;
+    }
+
+    .toolbar-button {
+      @include mat.typography-level($typography-config, body-1);
+    }
+  }
+}

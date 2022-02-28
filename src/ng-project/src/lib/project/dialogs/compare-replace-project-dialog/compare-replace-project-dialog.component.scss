@@ -1,0 +1,61 @@
+@import 'theme';
+
+button {
+  width: 100%;
+}
+
+.msg {
+  margin-bottom: 16px;
+}
+
+.mat-list-item {
+  height: 60px !important;
+  width: 430px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid map_get($sg-gray, 400);
+
+  li {
+    line-height: 40px;
+    border-bottom: 1px solid map_get($sg-gray, 400);
+    color: map_get($sg-gray, 800);
+
+    mat-radio-button {
+      width: 100%;
+
+      ::ng-deep {
+        .mat-radio-label-content {
+          width: 100%
+        }
+      }
+
+      .project-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 14px;
+        justify-content: space-between;
+
+        > div {
+          margin: 0 16px;
+        }
+
+        .name {
+          font-weight: $font-weight-medium;
+          min-width: 200px;
+        }
+        .type-wrapper {
+          min-width: 200px;
+          .type {
+            font-weight: $font-weight-regular;
+          }
+
+        }
+
+      }
+    }
+
+  }
+}

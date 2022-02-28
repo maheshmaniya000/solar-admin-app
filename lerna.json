@@ -1,0 +1,25 @@
+{
+  "packages": [
+    "libs/*"
+  ],
+  "version": "8.3.0",
+  "command": {
+    "publish": {
+      "message": "chore(release): publish",
+      "allowBranch": [
+        "master",
+        "development",
+        "prerelease",
+        "feature/*"
+      ],
+      "ignoreChanges": [
+        "*.snap",
+        "*.spec.ts",
+        "*.md"
+      ]
+    },
+    "clean": {
+      "yes": true
+    }
+  }
+}

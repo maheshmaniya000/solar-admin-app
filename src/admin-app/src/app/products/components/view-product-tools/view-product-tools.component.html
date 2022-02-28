@@ -1,0 +1,19 @@
+<ng-container *ngIf="productDetailStore.viewModel$ | async as viewModel">
+  <button mat-icon-button routerLink="edit">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button (click)="productDetailStore.deleteProduct()">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button
+    *ngIf="viewModel.entity"
+    (click)="productDetailStore.toggleDisabled()"
+    matTooltipPosition="above"
+    [matTooltip]="!viewModel.entity?.disabled ? 'MARK AS DISABLE (now is enabled)' : 'MARK AS ENABLE (now is disabled)'"
+    [ngClass]="{ '-active': !viewModel.entity?.disabled }"
+    mat-icon-button
+  >
+    <mat-icon *ngIf="!viewModel.entity.disabled">visibility</mat-icon>
+    <mat-icon *ngIf="viewModel.entity.disabled">visibility_off </mat-icon>
+  </button>
+</ng-container>

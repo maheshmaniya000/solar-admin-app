@@ -1,0 +1,23 @@
+<div>
+  <ng-container *ngIf="!fullscreenLoading; else loadingTemplate">
+    <div id="dropin-container"></div>
+    <!-- <div *ngIf="!!error">
+      {{ error }}
+    </div> -->
+    <button
+      *ngIf="dropInInstance"
+      class="primary-button"
+      [disabled]="processingPayment"
+      (click)="pay()"
+      style="width: 100%;">
+      {{ 'payment.dialog.payNow' | transloco:{ price: price } }}
+    </button>
+    <button *ngIf="dropInInstance" class="secondary-button" style="width: 100%;" (click)="onChangeMethod.emit()">
+      {{ 'payment.dialog.change' | transloco }}
+    </button>
+  </ng-container>
+</div>
+
+<ng-template #loadingTemplate>
+  <mat-spinner [diameter]="48" style="margin: auto; margin-top: 50px" ></mat-spinner>
+</ng-template>

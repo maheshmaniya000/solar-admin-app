@@ -1,0 +1,243 @@
+<div *ngIf="!loading">
+  <h1>{{ 'payment.pricing.pricing' | transloco }}</h1>
+  <h2>{{ 'payment.pricing.choosePlan' | transloco }}</h2>
+
+  <!-- <mat-tab-group>
+    <mat-tab [label]="'enum.app.prospect' | transloco"> -->
+  <div class="plans">
+    <!-- FREE PLAN -->
+    <div class="plan">
+      <div class="subscription">{{ 'common.subscriptionType.FREE' | transloco }}</div>
+      <div class="price">{{ 'payment.pricing.free.price' | transloco }}</div>
+      <div class="price-info">&nbsp;</div>
+
+      <div class="current-plan" *ngIf="licenseType === 'FREE_TRIAL'">
+        {{ 'payment.pricing.currentPlan' | transloco }}
+      </div>
+
+      <div class="first-row" fxLayout="row">
+        <div fxFlex>{{ 'payment.pricing.free.info' | transloco }}</div>
+      </div>
+
+      <button class="primary-button" *ngIf="(isLoggedIn$ | async) === false"
+        (click)="getStarted()">{{ 'payment.pricing.free.action' | transloco }}</button>
+      <div class="button" *ngIf="isLoggedIn$ | async"></div>
+
+      <ng-container *ngIf="isDemoEnabled">
+        <a [routerLink]="['/']" class="button-text">{{ 'payment.pricing.free.actionDesc' | transloco }}</a>
+      </ng-container>
+      <ng-container *ngIf="!isDemoEnabled">
+        <a class="button-text button-text-disabled">{{ 'payment.pricing.free.actionDesc' | transloco }}</a>
+      </ng-container>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.free.feature1' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.free.feature2' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.free.feature3' | transloco }}</div>
+      </div>
+
+    </div>
+
+    <!-- BASIC PLAN -->
+    <div class="plan">
+      <div class="subscription">{{ getProductNameTranslation(basic) | transloco }}</div>
+      <div class="price">{{ basic.price }} €</div>
+      <div class="price-info">{{ 'payment.pricing.basic.priceInfo' | transloco }}</div>
+
+      <div class="current-plan" *ngIf="licenseType === 'BASIC'">
+        {{ 'payment.pricing.currentPlan' | transloco }}
+      </div>
+
+      <div class="first-row" fxLayout="row">
+        <div fxFlex>{{ 'payment.pricing.basic.info' | transloco }}</div>
+      </div>
+
+      <button class="primary-button" [disabled]="!isBasicOfferEnabled" color="accent"
+        (click)="addToCart(basic)">{{ 'payment.pricing.basic.action' | transloco }}</button>
+
+      <ng-container *ngIf="isBasicOfferEnabled">
+        <a (click)="addToCart(basic, true)" class="button-text">{{ 'payment.pricing.basic.actionDesc' | transloco }}</a>
+      </ng-container>
+      <ng-container *ngIf="!isBasicOfferEnabled">
+        <a class="button-text button-text-disabled">{{ 'payment.pricing.basic.actionDesc' | transloco }}</a>
+      </ng-container>
+
+      <div class="row all" fxLayout="row">
+        <div fxFlex>{{ 'payment.pricing.basic.all' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.basic.feature1' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.basic.feature2' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.basic.feature3' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.basic.feature4' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.basic.feature5' | transloco }}</div>
+      </div>
+    </div>
+
+    <!-- PRO PLAN -->
+    <div class="plan">
+      <div class="subscription">{{ getProductNameTranslation(proOffer) | transloco }}</div>
+      <div class="price">
+        <ng-container *ngIf="licenseType !== 'BASIC'">
+          {{ proOffer?.price }} €
+        </ng-container>
+        <ng-container *ngIf="licenseType === 'BASIC'">
+          {{ upgrade.price }} €
+        </ng-container>
+      </div>
+      <div class="price-info">{{ 'payment.pricing.pro.priceInfo' | transloco }}</div>
+
+      <div class="current-plan" *ngIf="licenseType === 'PRO'">
+        {{ 'payment.pricing.currentPlan' | transloco }}
+      </div>
+
+      <div class="first-row" fxLayout="row">
+        <div fxFlex>{{ 'payment.pricing.pro.info' | transloco }}</div>
+      </div>
+
+      <button class="primary-button" color="accent" [disabled]="!isProOfferEnabled" (click)="addToCart(proOffer)">
+        <ng-container *ngIf="licenseType !== 'BASIC'">
+          {{ 'payment.pricing.pro.action' | transloco }}
+        </ng-container>
+        <ng-container *ngIf="licenseType === 'BASIC'">
+          {{ 'payment.pricing.pro.upgrade' | transloco }}
+        </ng-container>
+      </button>
+
+      <ng-container *ngIf="isProOfferEnabled && licenseType !== 'BASIC'">
+        <a (click)="addToCart(proOffer, true)" class="button-text">
+          {{ 'payment.pricing.pro.actionDesc' | transloco }}
+        </a>
+      </ng-container>
+      <ng-container *ngIf="isProOfferEnabled && licenseType === 'BASIC'">
+        <a class="button-text button-text-disabled">
+          {{ 'payment.pricing.pro.actionDesc' | transloco }}
+        </a>
+      </ng-container>
+      <ng-container *ngIf="!isProOfferEnabled">
+        <a class="button-text button-text-disabled">{{ 'payment.pricing.pro.actionDesc' | transloco }}</a>
+      </ng-container>
+
+      <div class="row all" fxLayout="row">
+        <div fxFlex>{{ 'payment.pricing.pro.all' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.pro.feature1' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.pro.feature2' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.pro.feature3' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.pro.feature4' | transloco }}</div>
+      </div>
+
+      <div class="row" fxLayout="row">
+        <mat-icon color="accent" fxFlex="40px">done</mat-icon>
+        <div fxFlex>{{ 'payment.pricing.pro.feature5' | transloco }}</div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="payment-table-wrapper">
+    <div class="table">
+      <!-- HEADER -->
+      <div class="row" fxLayout="row">
+        <div [fxFlex]="tableSpacing[0]"></div>
+        <div [fxFlex]="tableSpacing[1]"></div>
+        <div [fxFlex]="tableSpacing[2]" class="headline">{{ 'common.subscriptionType.FREE' | transloco }}</div>
+        <div [fxFlex]="tableSpacing[3]" class="headline">{{ 'common.subscriptionType.PROSPECT_BASIC' | transloco }}</div>
+        <div [fxFlex]="tableSpacing[4]" class="headline">{{ 'common.subscriptionType.PROSPECT_PRO' | transloco }}</div>
+      </div>
+
+      <ng-container *ngFor="let row of table">
+        <ng-container *ngIf="row.type === 'section'">
+          <div class="row section-row" fxLayout="row">
+            <div fxFlex="40px">
+              <mat-icon color="accent">{{ row.icon | transloco }}</mat-icon>
+            </div>
+            <div fxFlex="auto" class="section-text">{{ row.text | transloco }}</div>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="row.type === 'row'">
+          <div class="row" fxLayout="row">
+            <div [fxFlex]="tableSpacing[0]">{{ row.text | transloco }}</div>
+
+            <div [fxFlex]="tableSpacing[1]" class="center info">
+              <mat-icon *ngIf="row.help" [matTooltip]="row.help | transloco">help_outline</mat-icon>
+            </div>
+
+            <div [fxFlex]="tableSpacing[2]" class="center">
+              <ng-container *ngIf="row.freeText">{{ row.freeText | transloco }}</ng-container>
+              <mat-icon *ngIf="row.freeIcon" [color]="row.freeIcon === 'done' ? 'accent' : 'primary'">{{ row.freeIcon }}
+              </mat-icon>
+            </div>
+
+            <div [fxFlex]="tableSpacing[3]" class="center">
+              <ng-container *ngIf="row.basicText">{{ row.basicText | transloco }}</ng-container>
+              <mat-icon *ngIf="row.basicIcon" [color]="row.basicIcon === 'done' ? 'accent' : 'primary'">
+                {{ row.basicIcon }}</mat-icon>
+            </div>
+
+            <div [fxFlex]="tableSpacing[4]" class="center">
+              <ng-container *ngIf="row.proText">{{ row.proText | transloco }}</ng-container>
+              <mat-icon *ngIf="row.proIcon" [color]="row.proIcon === 'done' ? 'accent' : 'primary'">{{ row.proIcon }}
+              </mat-icon>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+
+  <!-- </mat-tab>
+    <mat-tab [label]="'enum.app.evaluate' | transloco" disabled></mat-tab>
+    <mat-tab [label]="'enum.app.monitor' | transloco" disabled></mat-tab>
+    <mat-tab [label]="'enum.app.forecast' | transloco" disabled></mat-tab>
+  </mat-tab-group> -->
+</div>
+
+<div *ngIf="loading">
+  <mat-spinner [diameter]="40" style="margin: auto; margin-top: 40%"></mat-spinner>
+</div>

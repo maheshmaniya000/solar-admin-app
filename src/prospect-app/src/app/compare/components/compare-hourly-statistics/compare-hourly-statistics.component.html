@@ -1,0 +1,51 @@
+<mat-card class="bootstrap">
+  <mat-card-title>
+    <div class="row no-gutters">
+      <div class="col">
+        <sg-project-data-key [key]="layer.key"></sg-project-data-key>
+      </div>
+      <div class="col-auto">
+        <button mat-icon-button style="margin-top: -8px" (click)="onClose.emit()"><mat-icon>close</mat-icon></button>
+      </div>
+    </div>
+  </mat-card-title>
+  <div *ngIf="(loading$ | async) === false; else loading">
+    <div class="hourly-charts-container">
+      <div #hourlyCharts>
+        <div class="row no-gutters">
+          <div *ngFor="let series of charts$ | async; let i = index;" class="col-12 col-md-6 col-lg-4 col-xl-3 hourly-chart">
+            <div class="headline">{{ months[i] | transloco }}</div>
+            <sg-highcharts [opts]="series" [destroyOnChange]="true" [reflow]="true"></sg-highcharts>
+          </div>
+        </div>
+
+        <div class="charts-legend row no-gutters">
+          <sg-highcharts class="col" [opts]="legend$ | async" [destroyOnChange]="true" *ngIf="legend$ | async"></sg-highcharts>
+          <div class="col-auto">
+            <sg-unit-toggle-label [unit]="layer.unit"></sg-unit-toggle-label>
+          </div>
+        </div>
+      </div>
+
+      <button mat-icon-button [matMenuTriggerFor]="actionMenu" class="export-button">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #actionMenu="matMenu">
+        <sg-export-chart-button (exportChart)="exportCharts()"></sg-export-chart-button>
+      </mat-menu>
+    </div>
+
+    <!-- TODO -->
+    <div *ngFor="let item of (compare$ | async)" class="timezone">
+      {{ item.project | sgProjectName }} :
+      <sg-timezone [timezone]="item.project.site.timezone"></sg-timezone>
+    </div>
+  </div>
+</mat-card>
+
+<ng-template #loading>
+  <div style="overflow: hidden;">
+    <mat-spinner [diameter]="22" color="accent" style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>

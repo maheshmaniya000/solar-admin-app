@@ -1,0 +1,60 @@
+<div class="card">
+  <sg-cart-products-recap></sg-cart-products-recap>
+</div>
+<div class="card">
+  <sg-cart-company-recap></sg-cart-company-recap>
+</div>
+
+<mat-card class="main-card">
+  <div class="headline">
+    <mat-icon>arrow_right_alt</mat-icon>
+    <span>{{ 'payment.cart.step3.name' | transloco }}</span>
+  </div>
+
+  <div class="content" *ngIf="!!order; else spinner">
+    <div class="prices">
+      <div fxLayout>
+        <div fxFlex="50%" class="left">
+          {{ 'payment.cart.step3.total' | transloco }}
+        </div>
+        <div fxFlex="25%" class="right">
+          {{ order.price }} €
+        </div>
+        <div fxFlex="30%"></div>
+      </div>
+      <ng-container *ngIf="(VAT$ | async) > 0">
+        <div fxLayout>
+          <div fxFlex="50%" class="left">
+            {{ 'user.company.field.VAT' | transloco }}
+          </div>
+          <div fxFlex="20%" class="right">
+              {{ order.VAT }}%
+          </div>
+          <div fxFlex="30%"></div>
+        </div>
+        <div fxLayout>
+          <div fxFlex="50%" class="left">
+            {{ 'payment.cart.step3.totalVAT' | transloco }}
+          </div>
+          <div fxFlex="20%" class="right">
+              {{ getVATprice() }} €
+          </div>
+          <div fxFlex="30%"></div>
+        </div>
+      </ng-container>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="payment-wrapper">
+      <sg-payment-wrapper [order]="order" (onFinish)="finish($event)"></sg-payment-wrapper>
+    </div>
+
+    <div class="actions">
+      <button class="secondary-button" [routerLink]="['..', '2']">{{ 'common.action.back' | transloco }}</button>
+    </div>
+  </div>
+
+</mat-card>
+
+<ng-template #spinner>
+  <mat-spinner [diameter]="48" style="margin: auto; margin-top: 40px" ></mat-spinner>
+</ng-template>

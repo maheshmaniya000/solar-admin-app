@@ -1,0 +1,39 @@
+@use 'sass:math';
+@import 'theme';
+
+.select-payment {
+  max-width: 300px;
+  margin: auto;
+}
+
+.payment-method {
+  $size: 130px;
+
+  width: $size;
+  flex: 0 0 $size;
+
+  border: 1px solid map-get($primary, 300);
+  border-radius: 5px;
+
+  margin-bottom: 5px;
+
+  &:hover {
+    background: map-get($primary, 200);
+    cursor: pointer;
+  }
+
+  img {
+    $imgSize: 90px;
+    width: $imgSize;
+    height: $imgSize;
+    margin: 0 math.div($size - $imgSize, 2);
+  }
+
+  div {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center;
+    color: map-get($accent, 600);
+  }
+}

@@ -1,0 +1,45 @@
+<sg-dialog-deprecated *transloco="let t">
+  <div class="sg-dialog-heading">{{ t(dialogTitle) }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <mat-tab-group [selectedIndex]="dataTabIndex$ | async" (selectedIndexChange)="dataTabChange($event)">
+      <mat-tab [label]="t('project.data.mapData')">
+        <div *ngFor='let layerKey of ltaKeys' class="tab-row d-flex align-items-center">
+          <mat-checkbox [(ngModel)]='isSelectedLta[layerKey]' labelPosition='start' [disabled]="isDisabledLta[layerKey]">
+            <sg-project-data-key [key]="layerKey"></sg-project-data-key>&nbsp;-&nbsp;
+            <sg-translation [str]='ltaDataset.annual.get(layerKey).name'></sg-translation>
+          </mat-checkbox>
+          <mat-icon *ngIf="isDisabledLta[layerKey]">lock</mat-icon>
+        </div>
+        <div class="tab-actions">
+          <button mat-button (click)="selectAll('lta', true)">{{ t('common.action.selectAll') }}</button>
+          <button mat-button (click)="selectAll('lta', false)">{{ t('common.action.unselectAll') }}</button>
+        </div>
+      </mat-tab>
+
+      <mat-tab [label]="t('project.data.projectData')">
+        <div *ngFor='let layerKey of pvcalcKeys' class="tab-row">
+          <mat-checkbox [(ngModel)]='isSelectedPvcalc[layerKey]' labelPosition='start' [disabled]="isDisabledPvcalc[layerKey]">
+            <sg-project-data-key [key]="layerKey"></sg-project-data-key>&nbsp;-&nbsp;
+            <sg-translation [str]='pvcalcDataset.annual.get(layerKey).name'></sg-translation>
+          </mat-checkbox>
+          <mat-icon *ngIf="isDisabledPvcalc[layerKey]">lock</mat-icon>
+        </div>
+        <div class="tab-actions">
+          <button mat-button (click)="selectAll('pvcalc', true)">{{ t('common.action.selectAll') }}</button>
+          <button mat-button (click)="selectAll('pvcalc', false)">{{ t('common.action.unselectAll') }}</button>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button class="secondary-button" data-test="cancel-button" (click)='closeDialog()'>{{ t('common.action.cancel') }}</button>
+    <button class="primary-button" data-test="ok-button" (click)='saveDialog()'>{{ t('common.action.ok') }}</button>
+  </div>
+</sg-dialog-deprecated>

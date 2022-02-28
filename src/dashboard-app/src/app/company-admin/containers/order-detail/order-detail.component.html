@@ -1,0 +1,220 @@
+
+<div class="order-detail">
+  <mat-toolbar>
+    <button mat-icon-button [routerLink]="['/company-admin/billing/']" class="back-icon">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="navigation-back">{{ 'companyAdmin.orderDetail.back' | transloco }}</span>
+  </mat-toolbar>
+
+  <mat-card>
+    <mat-card-content *ngIf="!!order; else loading" sgScrollContainer="md">
+      <section>
+        <div fxLayout class="row">
+          <div fxFlex="40%" class="bold">
+            {{ 'companyAdmin.orderDetail.sgOrderId' | transloco }}
+          </div>
+          <div fxFlex>
+            {{ order.sgOrderId }}
+          </div>
+        </div>
+
+        <div fxLayout class="row" *ngIf="order.purchaseOrderNo">
+          <div fxFlex="40%" class="bold">
+            {{ 'companyAdmin.orderDetail.purchaseOrderNo' | transloco }}
+          </div>
+          <div fxFlex >
+            {{ order.purchaseOrderNo }}
+          </div>
+        </div>
+
+        <div fxLayout class="row" *ngIf="order.contractNo">
+          <div fxFlex="40%" class="bold">
+            {{ 'companyAdmin.orderDetail.contractNo' | transloco }}
+          </div>
+          <div fxFlex>
+            {{ order.contractNo }}
+          </div>
+        </div>
+
+        <div fxLayout class="row" *ngIf="order.freeText">
+          <div fxFlex="40%" class="bold">
+            {{ 'companyAdmin.orderDetail.freeText' | transloco }}
+          </div>
+          <div fxFlex>
+            {{ order.freeText }}
+          </div>
+        </div>
+
+        <div fxLayout class="row">
+          <div fxFlex="40%" class="bold">
+            {{ 'companyAdmin.orderDetail.paymentStatus' | transloco }}
+          </div>
+          <div fxFlex>
+            {{ ('enum.orderPaymentStatus.' + order.payment?.status) | transloco }}
+            <ng-container *ngIf="order.payment?.status !== 'NOT_PAID'">
+              , {{ ('enum.orderPaymentType.' + order.payment.type) | transloco }}
+              , {{ order.payment.updated?.ts | sgDateTimeFormat }}
+            </ng-container>
+          </div>
+        </div>
+
+        <div fxLayout class="row">
+          <div fxFlex="40%" class="bold">
+            {{ 'companyAdmin.orderDetail.deliveryStatus' | transloco }}
+          </div>
+          <ng-container *ngIf="order.orderItemsProcessed; else none">
+            {{ order.orderItemsProcessed | sgDateTimeFormat }}
+          </ng-container>
+          <ng-template #none>
+            -
+          </ng-template>
+        </div>
+
+
+        <div fxLayout class="row">
+          <div fxFlex="40%" class="bold">
+            {{ 'companyAdmin.orderDetail.orderStatus' | transloco }}
+          </div>
+          <div fxFlex>
+            {{ ('enum.orderStatus.' + order.status.status) | transloco }}
+            <ng-container *ngIf="order.payment?.status !== 'IN_PROGRESS'">
+              , {{ order.status.author?.ts | sgDateTimeFormat }}
+            </ng-container>
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- ITEMS -->
+        <div fxLayout class="bold row">
+          <div fxFlex="5%">#</div>
+          <div fxFlex="35%">{{ 'companyAdmin.orderDetail.itemDesc' | transloco }}</div>
+          <div fxFlex="15%">{{ 'companyAdmin.orderDetail.totalQty' | transloco }}</div>
+          <div fxFlex="15%">{{ 'companyAdmin.orderDetail.unitPrice' | transloco }}</div>
+          <div fxFlex="15%">{{ 'companyAdmin.orderDetail.discount' | transloco }}</div>
+          <div fxFlex="15%">{{ 'companyAdmin.orderDetail.price' | transloco }}</div>
+        </div>
+
+        <ng-container *ngFor="let item of order.orderItems; let i = index">
+          <div fxLayout class="row">
+            <div fxFlex="5%">{{ i + 1 }}</div>
+            <div fxFlex="35%">
+              <div>{{ getProductNameTranslation(item.originalProduct) | transloco }}</div>
+              <div *ngIf="item.config?.subscription">
+                {{ 'companyAdmin.orderDetail.valid' | transloco:{
+                  from: (item.config.subscription.from | sgDateTimeFormat), to: (item.config.subscription.to | sgDateTimeFormat)
+                } }}
+              </div>
+              <div *ngIf="item.config?.totalUsers">
+                {{ 'companyAdmin.orderDetail.users' | transloco:{ users: item.config.totalUsers} }}
+              </div>
+            </div>
+            <div fxFlex="15%">{{ item.quantity }}</div>
+            <div fxFlex="15%">{{ item.price }} {{ order.currency }}</div>
+            <div fxFlex="15%">
+              <ng-container *ngIf="item.discount?.amount">
+                {{ item.discount.amount }} {{ order.currency }}
+              </ng-container>
+              <ng-container *ngIf="item.discount?.percent">
+                {{ item.discount.percent }} %
+              </ng-container>
+            </div>
+            <div fxFlex="15%">{{ getItemPriceWithDiscount(item) }} {{ order.currency }}</div>
+          </div>
+        </ng-container>
+
+        <mat-divider></mat-divider>
+
+        <!-- END ITEMS -->
+
+        <!-- <div fxLayout class="row" *ngIf="order.VAT">
+          <div fxFlex="85%" class="bold">
+            {{ 'companyAdmin.orderDetail.totalQty' | transloco }}
+          </div>
+          <div fxFlex>
+            {{ order.orderItems.length }}
+          </div>
+        </div> -->
+
+        <div fxLayout class="row" *ngIf="order.discount && (order.discount.amount || order.discount.percent)">
+          <div fxFlex="85%" class="bold">
+            {{ 'companyAdmin.orderDetail.discount' | transloco }}
+          </div>
+          <div fxFlex>
+            <ng-container *ngIf="order.discount.amount">
+              {{ order.discount.amount }} {{ order.currency }}
+            </ng-container>
+            <ng-container *ngIf="order.discount.percent">
+              {{ order.discount.percent }} %
+            </ng-container>
+          </div>
+        </div>
+
+        <div fxLayout class="row" *ngIf="order.VAT_ID">
+          <div fxFlex="85%" class="bold">
+            {{ 'companyAdmin.orderDetail.vat' | transloco }}
+          </div>
+          <div fxFlex>
+            <span>{{ order.VAT_ID }} %</span>
+          </div>
+        </div>
+
+        <div fxLayout class="row" *ngIf="order.VAT_ID">
+          <div fxFlex="85%" class="bold">
+            {{ 'companyAdmin.orderDetail.vatAmmount' | transloco }}
+          </div>
+          <div fxFlex>
+            <span>{{ getVATprice() }} {{ order.currency }}</span>
+          </div>
+        </div>
+
+        <div fxLayout class="row">
+          <div fxFlex="85%" class="bold">
+            {{ 'companyAdmin.orderDetail.totalPrice' | transloco }}
+          </div>
+          <div fxFlex class="bold">
+            {{ order.price }} {{ order.currency }}
+          </div>
+        </div>
+      </section>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <ng-container *ngIf="order && !downloading; else spinner">
+        <!-- <button *ngIf="order.payment?.status !== 'PAID' && (isAdmin$ | async)"
+                color="accent"
+                class="primary-button"
+                (click)="openPayment()">
+          <ng-container *ngIf="isBankPaymentPending(order); else noBankPending">
+              {{ 'companyAdmin.billing.paymentInfo' | transloco }}
+          </ng-container>
+          <ng-template #noBankPending>
+              {{ 'companyAdmin.billing.pay' | transloco }}
+          </ng-template>
+        </button> -->
+
+        <!-- <button mat-button *ngIf="order.payment?.status !== 'PAID'" (click)="cancelOrder()" class="secondary-button">
+          {{ 'companyAdmin.billing.cancel' | transloco }}
+        </button>
+
+        <button mat-button *ngFor="let invoice of (order.invoices || [])" [disabled]="downloading" class="secondary-button"
+                (click)="downloadInvoice(invoice)">
+          {{ ('enum.invoice.' + invoice.type) | transloco }}
+        </button> -->
+      </ng-container>
+    </mat-card-actions>
+  </mat-card>
+
+  <ng-template #spinner>
+    <div>
+      <mat-progress-spinner [diameter]="24" mode="indeterminate"></mat-progress-spinner>
+    </div>
+  </ng-template>
+
+  <ng-template #loading>
+    <div>
+      <mat-progress-spinner [diameter]="24" mode="indeterminate" style="margin: auto;"></mat-progress-spinner>
+    </div>
+  </ng-template>
+</div>

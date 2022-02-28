@@ -1,0 +1,95 @@
+<mat-card>
+  <div class="search">
+    <form [formGroup]="form">
+      <mat-form-field floatLabel="never">
+        <span matPrefix><mat-icon>search</mat-icon></span>
+        <input matInput
+          [placeholder]="'common.action.search' | transloco"
+          formControlName="query">
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div sgScrollContainer="md">
+    <div class="table">
+      <mat-table [dataSource]="dataSource$" matSort (matSortChange)="sortData($event)">
+          <!-- CHECKED COLUMN -->
+          <ng-container matColumnDef="checked">
+            <cdk-header-cell *matHeaderCellDef fxFlex="0 0 64px"></cdk-header-cell>
+            <cdk-cell *matCellDef="let row; let i = index;" fxFlex="0 0 64px">
+              <mat-icon color="accent" *ngIf="row.project._id === selected">checked</mat-icon>
+              <mat-icon *ngIf="row.disabled">lock</mat-icon>
+            </cdk-cell>
+          </ng-container>
+
+          <!-- NAME COLUMN -->
+          <ng-container matColumnDef="name">
+            <cdk-header-cell *matHeaderCellDef fxFlex="1 1 auto" mat-sort-header [ngClass]="{'header-active': order.active === 'name'}">
+              <div>{{ 'user.company.field.companyName' | transloco }}</div>
+            </cdk-header-cell>
+            <cdk-cell *matCellDef="let row" fxFlex="1 1 auto">
+              <div class="name">{{ row.project | sgProjectName }}</div>
+            </cdk-cell>
+          </ng-container>
+
+          <!-- SYSTEM SIZE COLUMN -->
+          <ng-container matColumnDef="systemSize">
+            <cdk-header-cell *matHeaderCellDef fxFlex="1 1 15%" mat-sort-header [ngClass]="{'header-active': order.active === 'systemSize'}">
+              <div>{{ 'pvConfig.params.systemSize.headline' | transloco }}</div>
+            </cdk-header-cell>
+            <cdk-cell *matCellDef="let row" fxFlex="1 1 15%">
+              <div>
+                <ng-container *ngIf="row.pvConfig.type !== 'noPvSystem'; else noPvSystem">
+                  <sg-unit-value [unit]="installedPowerUnit" [value]="pvInstalledPower(row.pvConfig)"></sg-unit-value>
+                  &nbsp;
+                  <sg-unit-label [unit]="installedPowerUnit"></sg-unit-label>
+                </ng-container>
+              </div>
+            </cdk-cell>
+          </ng-container>
+
+          <!-- SYSTEM TYPE COLUMN -->
+          <ng-container matColumnDef="systemType">
+            <cdk-header-cell *matHeaderCellDef fxFlex="1 1 25%" mat-sort-header [ngClass]="{'header-active': order.active === 'systemType'}">
+              <div>{{ 'projectDetail.overview.systemType' | transloco }}</div>
+            </cdk-header-cell>
+            <cdk-cell *matCellDef="let row" fxFlex="1 1 25%" class="config-type">
+              <div>{{ 'pvConfig.type.' + row.pvConfig.type + '.name' | transloco }}</div>
+            </cdk-cell>
+          </ng-container>
+
+          <!-- CREATED COLUMN -->
+          <ng-container matColumnDef="created">
+            <cdk-header-cell *matHeaderCellDef fxFlex="1 1 15%" mat-sort-header [ngClass]="{'header-active': order.active === 'created'}">
+              <div>{{ 'project.field.created' | transloco }}</div>
+            </cdk-header-cell>
+            <cdk-cell *matCellDef="let row" fxFlex="1 1 15%">
+              <div>
+                {{ row.project.created?.ts | sgDateTimeFormat }}
+              </div>
+            </cdk-cell>
+          </ng-container>
+
+        <cdk-header-row *matHeaderRowDef="columns"></cdk-header-row>
+        <cdk-row *matRowDef="let row; columns: columns; let i = index;"
+          (click)="!row.disabled && select(row)"
+          [ngClass]="{'selected': row.project._id === selected, 'disabled': row.disabled}"
+        ></cdk-row>
+      </mat-table>
+
+      <div class="paginator">
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 20, 50, 100]"
+          [length]="(searchResults$ | async).length"
+          [pageSize]="defaultPageSize"
+          (page)="changePage($event)"
+          showFirstLastButtons>
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+<ng-template #noPvSystem>
+  -
+</ng-template>

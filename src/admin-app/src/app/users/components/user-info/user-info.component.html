@@ -1,0 +1,9 @@
+<ng-container *ngIf="userViewStore.viewModel$ | async as viewModel">
+  <section>
+    <ng-container *ngFor="let prop of props">
+      <span>{{ prop.label }}</span>
+      <span>{{ viewModel.user[prop.key] }}</span>
+    </ng-container>
+  </section>
+  <sg-admin-origin-data [entity]="viewModel.user"></sg-admin-origin-data>
+</ng-container>

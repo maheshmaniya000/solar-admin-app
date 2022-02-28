@@ -1,0 +1,2139 @@
+{
+  "auth": {
+    "auth0": {
+      "recaptchaNotValid": "reCAPTCHAリキャプチャが無効です。再度お試しください。",
+      "registrationOk": "完了しました。メールに送信される確認用リンクをクリックし、登録を確認してください。",
+      "unknown": "登録中にエラーが発生しました - しばらくしてから、再度お試しください。",
+      "unknownError": "問題が発生しました...",
+      "emailAlreadyRegistred": "このメールアドレスのユーザは既に存在します。",
+      "otpInvalid": "OTP 使用中または無効"
+    },
+    "changePassword": {
+      "change": "変更する",
+      "changePasswordOk": "パスワードが変更されました",
+      "error": "ユーザー名またはパスワードが正しくありません",
+      "passwordConfirm": "新しいパスワードの確認",
+      "recaptchaNotValid": "reCAPTCHAリキャプチャが無効です。再度お試しください",
+      "tooManyAttempts": "不正なパスワードを使用してパスワード変更を試みて失敗した回数が超過したためアカウントはロックされました。",
+      "unknown": "パスワード変更中にエラーが発生しました - しばらくしてから、再度お試しください。"
+    },
+    "confirmTerms": {
+      "agree": "同意",
+      "termsAgreeConfirm": "Solargisの利用規約およびプライバシーに関する方針",
+      "title": "利用規約に同意してください",
+      "terms": "利用規約",
+      "contractualTerms": "有料サービスの一般契約条項",
+      "particularConditions": "特別条件"
+    },
+    "emailVerify": {
+      "error": "メールの確認に失敗しました",
+      "ok": "メールが確認されました。今からログインできます。"
+    },
+    "forgotPassword": {
+      "changeOk": "パスワード変更されました。今からログインできます",
+      "error": "原因不明のエラーが発生しました。しばらくしてから、再度お試しください。",
+      "hint": "認証のためメールアドレスを入力してください。",
+      "ok": "今後の手順については、メールをご確認ください",
+      "recaptchaNotValid": "reCAPTCHAリキャプチャが無効です。再度お試しください。",
+      "returnToSignIn": "サインインに戻る",
+      "tokenNotValid": "リンクは既にパスワード変更に使用されています",
+      "tooManyAttempts": "アカウントがロックされ、パスワードを変更できません",
+      "userNotFound": "ユーザーが見つかりませんでした"
+    },
+    "fupRecaptcha": {
+      "title": "ロボットによる操作でないことを確認する",
+      "info": "1分あたりのクリック回数がセキュリティ上限を超えました。ログインまたはサインアップするとこの制限はなくなります。"
+    },
+    "login": {
+      "create": "Solargisの無料アカウントを作成します",
+      "error": "ユーザー名またはパスワードが正しくありません",
+      "tooManyAttempts": "不正なパスワードを使用してパスワード変更を試みて失敗した回数が超過したためアカウントはロックされました。",
+      "unknown": "ログイン中にエラーが発生しました - しばらくしてから、再度お試しください",
+      "deletedUser": "このアカウントが停止中になっています。こちらから<a href=\"https://solargis.com/about-us/contact\">お問い合わせください。</a>",
+      "rememberMe": "自分の情報を記憶する",
+      "notVerified": "メールアドレスが未認証です。ご登録時に送られている認証メールを開封して下さい。或いは、認証メールを再送信致します。",
+      "notVerifiedAction": "認証メールを再送信してください。",
+      "notVerifiedConfirm": "認証メールが再送信済み。"
+    },
+    "registration": {
+      "alreadyHaveAccount": "すでにアカウントをお持ちですか。",
+      "emailError": "有効なメールアドレスを入力してください",
+      "emailPlaceholder": "会社のメールアドレス",
+      "firstNameError": "名前を入れてください",
+      "firstNamePlaceholder": "姓",
+      "lastNameError": "姓を入れてください",
+      "lastNamePlaceholder": "姓",
+      "passwordConfirm": "パスワードを再入力する",
+      "passwordError": "最低8文字、少なくとも大文字1つと小文字1つ",
+      "passwordPlaceholder": "パスワード",
+      "passwordRequired": "パスワードを入れてください",
+      "passwordsNotEqual": "パスワードは同じものを入れてください",
+      "termsAgree": "Solargisの <a href='https://solargis.com/legal/solargis-apps-terms-of-use/' target='_blank' title='Conditions of Use and Privacy Notice'>利用条件およびプライバシーに関する方針</a> に同意します。",
+      "title": "ユーザーアカウントの作成",
+      "titleNewPassword": "新しいパスワード",
+      "titleOldPassword": "古いパスワード",
+      "companyError": "会社名が必要です",
+      "accountCreated": "アカウント作成が正常に完了しました",
+      "accountCreatedAfterInvitation": "アカウント作成が正常に完了しました。会社に参加しました。",
+      "firstOrLastNameRequired": "氏名が必要で、空白にはできません",
+      "login": "サインイン",
+      "createUserAccount": "ユーザーアカウントの作成"
+    },
+    "expired": "セッションの有効期限が切れたためログアウトしました。再度ログインを試みてください。",
+    "newPassword": "「パスワードを忘れた場合」リンクからログインしています。<br>新しいパスワードを設定してください。",
+    "invitation": {
+      "info": "この招待に承諾すると、Solargisアカウントの作成を求めるプロンプトが表示されます。",
+      "text": "会社のメンバーになるよう招待されました。この招待に応じた場合、同意されたものとみなされます。",
+      "companyName": "会社名",
+      "title": "招待を受ける",
+      "accept": "同意",
+      "expiredText": "会社への招待は期限切れになっているか、会社の管理者によってキャンセルされました。会社への招待を送付した担当者に連絡してください。",
+      "expiredTitle": "会社の招待状が期限切れです"
+    },
+    "lambdaCaptcha": {
+      "label": "キャプチャの文字列"
+    },
+    "forbidden": "{url} にアクセスすることができません。"
+  },
+  "codelist": {
+    "LANDC": {
+      "301": "データなし",
+      "305": "氾濫後または灌漑農地",
+      "306": "モザイク状農地 (>50%) / 自然植生",
+      "307": "モザイク状自然植生 (>50%) / 農地",
+      "308": "木陰、広葉樹、常緑樹 (>15%)",
+      "318": "木陰、広葉樹と針葉樹の混合 ",
+      "319": "モザイク状森林、低木 (>50%) / 草葉の陰",
+      "320": "モザイク状草葉の陰 (>50%) / 木と低木",
+      "324": "草原",
+      "325": "地衣類と蘚類",
+      "330": "木陰、浸水、黒みがかった淡水",
+      "331": "木陰、浸水、塩水",
+      "332": "低木または草葉の陰、浸水",
+      "333": "市街地",
+      "337": "水域",
+      "338": "万年雪と万年氷",
+      "302-304": "農地、天水",
+      "309-311": "木陰、広葉樹、落葉樹 (>15%)",
+      "312-314": "木陰、針葉樹、常緑樹 (>15%)",
+      "315-317": "木陰、針葉樹、落葉樹 (>15%)",
+      "321-323": "灌木地",
+      "326-329": "疎な植生 (<15%)",
+      "334-336": "裸地"
+    },
+    "AZI": {
+      "-1": "平地",
+      "-2": "準平原"
+    },
+    "SNOWD": {
+      "-1": "不定期"
+    },
+    "DNI_season": {
+      "-1": "月ごとの直達日射量は0"
+    },
+    "GHI_season": {
+      "-1": "月ごとの全天日射量は0"
+    }
+  },
+  "common": {
+    "action": {
+      "apply": "適用",
+      "back": "前に戻る",
+      "cancel": "取り消す",
+      "change": "変更する",
+      "choose": "選択する",
+      "close": "閉じる",
+      "collapseAll": "すべて縮小",
+      "compare": "比較する",
+      "confirm": "確認する",
+      "continue": "次へ",
+      "delete": "削除する",
+      "expandAll": "全部を展開する",
+      "invite": "招待する",
+      "manage": "管理する",
+      "next": "次",
+      "ok": "OK",
+      "open": "開く",
+      "prev": "前",
+      "save": "保存する",
+      "search": "検索する",
+      "selectAll": "すべてを選択する",
+      "send": "送信する",
+      "unselectAll": "すべての選択を削除する",
+      "reload": "再読み込み",
+      "remove": "削除する",
+      "edit": "編集する",
+      "redo": "やり直す",
+      "undo": "元に戻す",
+      "default": "デフォルト設定",
+      "calculate": "計算する",
+      "saveValues": "値を保存する",
+      "resetDefaults": "デフォルト値を再設定する",
+      "add": "追加する",
+      "verify": "検証する",
+      "launch": "着手",
+      "defaultView": "デフォルトビュー",
+      "moreInfo": "詳細"
+    },
+    "aggregation": {
+      "avg": "平均",
+      "cumulative": "累積",
+      "sum": "合計"
+    },
+    "cardinal": {
+      "east": "東",
+      "north": "北",
+      "south": "南",
+      "west": "西"
+    },
+    "confirmDialog": {
+      "body": "この操作は元に戻せません。続けますか。",
+      "heading": "アクションを確認します",
+      "usure": "よろしいですか。"
+    },
+    "datetime": {
+      "date": "日付",
+      "timezone": "時間帯",
+      "lastChange": "最終変更"
+    },
+    "label": {
+      "settings": "設定",
+      "configureMapView": "マップビューの設定",
+      "configureProjectsView": "プロジェクトビューの設定"
+    },
+    "misc": {
+      "commingSoon": "カミングスーン",
+      "help": "ヘルプ",
+      "n/a": "該当なし",
+      "noWidth": "Solargisを利用するには解像度が低すぎます。Solargisを利用するには、解像度を1100ピクセル以上にする必要があります。"
+    },
+    "paginator": {
+      "nextPage": "次のページ",
+      "perPage": "ページごとのアイテム数",
+      "previousPage": "前のページ",
+      "rangeLabel": "{startIndex} - {length} の {endIndex}",
+      "rangeLabelEmpty": "0 の 0"
+    },
+    "status": {
+      "disabled": "無効な",
+      "enabled": "有効"
+    },
+    "subscription": {
+      "prospect": "Prospect サブスクリプション",
+      "sdat": "SDAT サブスクリプション"
+    },
+    "error": {
+      "subscriptionLayer": "これらのデータ層を見るには、Prospectのサブスクリプションをアップグレードする必要があります",
+      "valueBetween": "数値は{min}から{max}までの間でなければなりません",
+      "failed": "アクションが失敗しました",
+      "tooLarge": "値が大きすぎます",
+      "internal": "内部エラーが発生しました。このページの再読み込みが必要かもしれません。"
+    },
+    "subscriptionType": {
+      "FREE": "無料",
+      "UPGRADE": "Prospectをベーシックからプロにアップグレードする",
+      "expired": "期限切れ {subscriptionType}",
+      "PROSPECT_PRO": "Prospect プロ",
+      "PROSPECT_BASIC": "Prospect ベーシック",
+      "PROSPECT_FREE_TRIAL": "無料トライアル",
+      "SDAT_PRO": "SDAT プロ",
+      "SDAT_BASIC": "SDAT",
+      "SDAT_FREE_TRIAL": "SDAT 無料トライアル"
+    },
+    "confirm": {
+      "no": "いいえ",
+      "yes": "はい"
+    },
+    "snackBar": {
+      "changesSaved": "変更内容が保存されました",
+      "couldNotSaveChange": "変更を保存できませんでした"
+    },
+    "alert": {
+      "freetrial": {
+        "available": "利用可能な無料トライアルのプロジェクト",
+        "viewDetail": "• プロジェクト詳細を表示して無料トライアルを有効にする。",
+        "availableAction": "無料トライアルを有効にする",
+        "assigned": "残りの無料トライアルのプロジェクトはありません",
+        "assignedAction": "完全サブスクリプションにアップグレードする",
+        "noSubscription": "無料トライアルを請求してPV発電について詳細な情報を取得する。",
+        "noSubscriptionAction": "無料トライアルを申し込む"
+      },
+      "subscription": {
+        "renewTrial": "アップグレード",
+        "renew": "Prospectのサブスクリプションを更新する。",
+        "expired": "Prospectのサブスクリプションは期限切れになりました。",
+        "expiredTrial": "Prospectの無料トライアルの期限が終了しました"
+      }
+    },
+    "validation": {
+      "min": "最小値は {min}",
+      "max": "最大値は {max}",
+      "integer": "このフィールドは整数のみサポートしています",
+      "minDate": "最小限の日付は {minDate}",
+      "maxDate": "最大限の日付は {maxDate}",
+      "pattern": "値が要求されたパターンと一致しない",
+      "required": "このフィールドは必須です",
+      "maxLength": "最大の長さは {requiredLength} 文字です",
+      "minLength": "最小の長さは {requiredLength} 文字です",
+      "maxDecimals": "このフィールドは、小数点以下の最大 {maxDecimals} 桁数をサポートしています",
+      "phoneNumber": "電話番号が無効です。+で始まる国際フォーマットを使用してください",
+      "maxDateRange": "日付の最大範囲は {days} 日です",
+      "naturalNumber": "このフィールドは自然数のみサポートしています",
+      "endDateInvalid": "終了日が開始日より前になる",
+      "datepickerParse": "「{text}」は現在まで解析できません",
+      "startDateInvalid": "開始日が終了日より後になる",
+      "phoneNumberFormat": "無効な電話番号。例の番号：{phoneNumberFormat}"
+    }
+  },
+  "companyAdmin": {
+    "billing": {
+      "allYears": "すべての年",
+      "deliveryDate": "納期",
+      "detail": "注文の詳細",
+      "errorDownloadingInvoice": "インボイスのダウンロードエラー",
+      "history": "注文履歴",
+      "invoiceDownloaded": "ダウンロードされたインボイス",
+      "noOrders": "注文はまだなし",
+      "orderDate": "発注日",
+      "orderId": "注文する",
+      "payment": "支払い",
+      "paymentMethod": "支払い方法",
+      "price": "価格",
+      "pay": "今すぐ支払う",
+      "paymentInfo": "お支払い情報",
+      "cancel": "注文を取り消す",
+      "status": "ステータス"
+    },
+    "nav": {
+      "billing": "課金決済",
+      "orderDetail": "注文の詳細",
+      "overview": "概説",
+      "settings": "会社設定",
+      "subscriptions": "サブスクリプション",
+      "users": "ユーザー",
+      "apiContracts": "API",
+      "info": "顧客情報"
+    },
+    "orderDetail": {
+      "contractNo": "契約番号",
+      "deliveryStatus": "納期",
+      "discount": "割引",
+      "itemDesc": "アイテムの説明",
+      "orderNo": "受注番号",
+      "orderStatus": "注文",
+      "orderTitle": "注文する",
+      "paymentStatus": "支払い",
+      "price": "価格",
+      "purchaseOrderNo": "購買注文番号",
+      "sgOrderId": "受注ID",
+      "totalPrice": "合計金額",
+      "totalQty": "数量",
+      "unitPrice": "単価",
+      "vat": "VAT付加価値税",
+      "users": "ユーザー{users}",
+      "valid": "有効: {from}から{to}まで",
+      "vatAmmount": "付加価値税額",
+      "back": "課金決済に戻る",
+      "freeText": "自由文"
+    },
+    "subscription": {
+      "projectLimit": "残りのプロジェクト",
+      "unlimited": "無制限",
+      "unlimitedProjects": "プロジェクト数に制限はありません(フェアユースポリシー適用）",
+      "usersLimit": "{max} のユーザーの {current}",
+      "notice": "注: 割り当て済みのサブスクリプションにアクセスするには、ユーザーがログアウトし、再度ログインする必要がある場合があります。",
+      "general": "全般",
+      "users": {
+        "name": "名前",
+        "none": "ユーザーが見つかりません。",
+        "title": "ユーザー",
+        "email": "メールアドレス",
+        "devices": "ユーザーデバイス",
+        "tokenGenerationDate": "生成日",
+        "action": "アクション",
+        "generateToken": "トークンを生成する",
+        "regenerateToken": "トークンを再生成する",
+        "deleteToken": "トークンを削除する"
+      }
+    },
+    "subscriptions": {
+      "empty": "有効なサブスクリプションはありません",
+      "from": "から有効",
+      "plan": "サブスクリプションプラン",
+      "projectLimit": "有効にしたプロジェクト",
+      "to": "有効期限",
+      "userLimit": "ユーザー制限"
+    },
+    "users": {
+      "email": "メール",
+      "enterEmail": "メール",
+      "instructions": "詳細な手順が記載されたメールがご登録のメールアドレスに届きます。",
+      "invitations": "会社の招待状",
+      "inviteDesc": "ユーザーのメールアドレスを入力して、招待してください。",
+      "name": "名前",
+      "new": "ユーザーを招待する",
+      "role": "システムの役割",
+      "status": "ステータス",
+      "validUntill": "有効期限",
+      "invalidEmail": "メールアドレスが無効です",
+      "addToSub": {
+        "note": "注記: サブスクリプション内にユーザーの最大数に達したためユーザーを追加することができません。",
+        "prospect": "このユーザーを Prospect サブスクリプションに追加",
+        "noteFull": "注記: サブスクリプション内にユーザーの最大数に達しました。",
+        "sdat": "このユーザーを SDAT サブスクリプションに追加"
+      },
+      "assign": {
+        "sdat": "SDAT サブスクリプションに割り当てる",
+        "prospect": "Prospect サブスクリプションに割り当てる"
+      },
+      "unassign": {
+        "sdat": "SDAT サブスクリプションから割り当て解除",
+        "prospect": "Prospect サブスクリプションから割り当て解除"
+      },
+      "alreadyInvited": "ユーザーは既に { companyName } アカウントのメンバーに招待されています。"
+    },
+    "api": {
+      "v1": {
+        "title": "API v1.1",
+        "name": "契約名",
+        "empty": "貴社にはAPI接続契約がありません。無料トライアルを申し込むことができます。",
+        "prospect": {
+          "title": "Prospect"
+        },
+        "monitor": {
+          "title": "監視する",
+          "hardLimit": "{hardLimit}から許可されたデータを監視する",
+          "relativeLimitWindow": "直近の{relativeLimitWindow}で許可された監視データ",
+          "relativeLimitWindow_y": "年",
+          "relativeLimitWindow_m": "カ月",
+          "relativeLimitWindow_d": "日",
+          "dataSummarization": "データ要約",
+          "processingKeys": "データ処理キー"
+        },
+        "forecast": {
+          "title": "予測",
+          "description": "{days}日先の予測"
+        }
+      },
+      "v2": {
+        "title": "API v2"
+      },
+      "common": {
+        "navigation": {
+          "info": "情報",
+          "accessKeys": "アクセスキー(トークン）",
+          "stats": "統計"
+        },
+        "loading": "APIの連絡先をロード中...",
+        "title": "API 契約 タイトル",
+        "freeTrialRequest": "無料トライアルを申し込む",
+        "resources": "API リソース",
+        "rateLimit": {
+          "title": "レート制限 (リクエスト数)",
+          "description": "この契約に {rateLimit} の許可されているリクエスト"
+        },
+        "fup": "{count} のリクエスト {perSeconds} 一秒の当たり",
+        "validity": {
+          "title": "タイトル",
+          "description": "{from}から{to}まで"
+        },
+        "access": {
+          "title": "アクセスする",
+          "type": "アクセスの種類: {type}",
+          "maxSites": "最大許容サイト数:{maxSites}",
+          "unlimitedMaxSites": "無制限",
+          "regions": "許容領域:",
+          "sites": "許容サイト:",
+          "position": "緯度: {latitude}、経度{longitude}"
+        },
+        "token": {
+          "title": "トークン",
+          "create": "新しいトークン（アクセスキー）を追加",
+          "errorCreating": "新規トークン（アクセスキー）を生成することができません",
+          "revoking": "取り消し中...",
+          "revokeConfirmHeader": "アクセスキー（トークン）の削除",
+          "revokeConfirmMessage": "APIの連絡先のアクセスキー（トークン）を本当に取り消しますか。",
+          "revokeError": "アクセスキー（トークン）は削除できませんでした"
+        },
+        "stats": {
+          "requestCount": "リクエスト（数）",
+          "uniqueSitesCount": "特徴的な場所 (数)",
+          "uiuCount": "固有情報ユニット（数）",
+          "documentation": "APIを通して統計を取ることができます。こちらから <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/default/get_stats\" target=\"_blank\"title=\"documentation\">ドキュメント</a>"
+        },
+        "apiDocumentation": "将来性 /監視/予測 APIドキュメントを見ることができます。（弊社のAPIもご覧ください）こちらから<a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/ws/dataOperaion\"target='_blank\" title=\"documentation'>ドキュメント</a>"
+      }
+    },
+    "sdatSubscription": {
+      "devices": {
+        "all": "すべてのデバイス",
+        "none": "SDAT デバイスが見つかりません。",
+        "title": "デバイス",
+        "email": "電子メール",
+        "active": "有効なデバイス",
+        "company": "会社のプロフィール",
+        "disabled": "無効なデバイス",
+        "userName": "ユーザー名",
+        "hostName": "ホスト名",
+        "lastAccess": "最近のアクティビティ",
+        "registeredAt": "登録済み",
+        "disableAction": "デバイスを無効にする",
+        "customName": "カスタム名",
+        "osFingerprint": "デバイスの指紋"
+      },
+      "general": {
+        "type": "サブスクリプションタイプ",
+        "none": "SDAT サブスクリプションは存在しません。",
+        "users": "ユーザー",
+        "notes": "注意",
+        "validTo": "有効期限",
+        "validFrom": "有効開始日",
+        "deviceLimit": "ユーザーごとのデバイス制限",
+        "offlineLimit": "オフライン制限",
+        "offlineLimitUnit": "時間"
+      }
+    },
+    "prospectSubscription": {
+      "none": "Prospectのサブスクリプションはありません",
+      "users": "アクティブ化されたユーザー",
+      "validFrom": "{date} から有効",
+      "validUntil": "{date} まで有効",
+      "subscription": "サブスクリプション",
+      "activatedProjects": "アクティブ化されたプロジェクト"
+    },
+    "overview": {
+      "prospectSubscription": {
+        "desc": "有効なSolargis iMaps または pv プランナーサブスクリプションをお持ちの方は、サブスクリプションの残り期間のSolargis Prospect の支払い済みアクセスを買い戻すことができます。",
+        "snack": "作成されたリクエスト",
+        "button": "既にiMapsとpvプランナーサブスクリプションを持っています",
+        "dialog": "リクエストの受け取り後、1営業日以内にProspect appの有料アクセスを作動します。メールでお知らせいたします。",
+        "confirmTerms": "Solargisに同意する <a href='https://solargis.com/legal/general-contractual-terms/'target='_blank' title='General contracts terms to be paid services'>有料サービスの一般契約条件</a>"
+      }
+    }
+  },
+  "compare": {
+    "addDialog": {
+      "noProjects": "使用できるプロジェクトがありません。まず、プロジェクトを作成してください。",
+      "outOf": "最大{ max }つのプロジェクトの中から { projects }つ を選択",
+      "project": "プロジェクト",
+      "systemType": "システムタイプ",
+      "lastChange": "最終変更",
+      "systemSize": "システムのサイズ"
+    },
+    "addProjects": "プロジェクトを追加",
+    "compare": "比較する",
+    "empty": "比較リストの中にプロジェクトはありません。",
+    "endOfYear": "年末",
+    "listDialog": {
+      "added": "プロジェクトが比較リストに追加されました",
+      "open": "比較リストを開く",
+      "projects": "比較リストから現在のプロジェクト"
+    },
+    "noPermission": "比較機能を使うには、先ず厳選された会社のサブスクリプションを購入する必要があります",
+    "noPvConfig": "PV設定が組み込まれていないプロジェクトがあります",
+    "purchase": "購入とサブスクリプション",
+    "replaceDialog": {
+      "msg": "比較リストがいっぱいです。交換するプロジェクトを選択してください。",
+      "replace": "プロジェクトを交換する"
+    },
+    "addToCompare": "比較リストに追加する",
+    "addPvSettings": "PV設定を追加",
+    "noFinanceConfig": "ファイナンス設定のないプロジェクトがフィルターによって除外されました：",
+    "addFinanceSettings": "ファイナンスパラメータを追加",
+    "noEconomyConfig": "ファイナンス設定のないプロジェクトがあります。",
+    "noLatestData": "最新のデータがないプロジェクトがあります",
+    "updateProjectData": "プロジェクトデータを更新"
+  },
+  "enum": {
+    "invoice": {
+      "CN": "クレジットノートをダウンロードする",
+      "INVOICE": "インボイスをダウンロードする",
+      "INVOICE_FOR_PROFA": "インボイスをダウンロードする",
+      "PROFA": "プロフォーマインボイスをダウンロードする"
+    },
+    "orderPaymentStatus": {
+      "NOT_PAID": "未払い",
+      "PAID": "支払い済み",
+      "PAYMENT_FAILED": "支払いが失敗しました",
+      "PENDING": "保留中"
+    },
+    "orderPaymentType": {
+      "BANK": "銀行",
+      "BRAINTREE": "クレジットカード",
+      "PAY_PAL": "PayPal",
+      "NO_PAYMENT": "支払いなし"
+    },
+    "orderStatus": {
+      "CANCELED": "取り消し済み",
+      "DONE": "完了",
+      "IN_PROGRESS": "進行中",
+      "USER_STARTED": "作成済み",
+      "EXPIRED": "期限切れ"
+    },
+    "app": {
+      "prospect": "将来性",
+      "evaluate": "評価する",
+      "monitor": "監視する",
+      "forecast": "予測"
+    },
+    "horizon": {
+      "custom": "カスタム地平線",
+      "default": "地平線のデフォルト設定"
+    }
+  },
+  "header": {
+    "admin": "Solargisの管理者",
+    "company-admin": "会社の管理者",
+    "compare": "比較する",
+    "contact": "連絡",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "help": "ヘルプ",
+    "login": "サインイン",
+    "logout": "サインアウト",
+    "map": "マップ",
+    "pricing": "価格設定",
+    "projectDetail": "プロジェクトの詳細",
+    "projects": "プロジェクト",
+    "prospect": "Prospect",
+    "registration": "アカウントを作成する",
+    "upgrade": "更新する",
+    "user": {
+      "invoiceUsers": "ユーザーを招待する",
+      "adminConsole": "管理コンソール",
+      "allCompanies": "すべての企業",
+      "switch": "へ切り替え"
+    },
+    "freeTrial": "無料トライアル",
+    "evaluate": "評価する",
+    "newPassword": "新しいパスワード",
+    "instructions": "指示が送付済み",
+    "signUp": "サインアップ",
+    "users": "ユーザー",
+    "orders": "注文",
+    "products": "製品",
+    "companies": "企業",
+    "dashboard": "ダッシュボード",
+    "sdat": "SDAT",
+    "administration": "{companyName} の管理",
+    "invoices": "請求書"
+  },
+  "map": {
+    "layer": {
+      "mapbox-streets": {
+        "name": "マップ"
+      },
+      "solargis-cdd": {
+        "name": "冷房度日数"
+      },
+      "solargis-d2g": {
+        "name": "全天日射量に対する散乱率"
+      },
+      "solargis-dif": {
+        "name": "散乱日射量"
+      },
+      "solargis-dni": {
+        "name": "直達日射量"
+      },
+      "solargis-ele": {
+        "name": "高度",
+        "shortName": "標高"
+      },
+      "solargis-ghi": {
+        "name": "全天日射量"
+      },
+      "solargis-gti": {
+        "name": "斜面日射量"
+      },
+      "solargis-gti_opta": {
+        "name": "最適角における斜面日射量"
+      },
+      "solargis-hdd": {
+        "name": "暖房 度 日数"
+      },
+      "solargis-landc": {
+        "name": "土地被覆"
+      },
+      "solargis-opta": {
+        "name": "PVモジュールの最適傾斜"
+      },
+      "solargis-popul": {
+        "name": "人口密度"
+      },
+      "solargis-prec": {
+        "name": "降水量"
+      },
+      "solargis-pvgain_cdte": {
+        "name": "cSi モジュールに CdTeを増す"
+      },
+      "solargis-pvout_cdte": {
+        "name": "PV CdTE 収益"
+      },
+      "solargis-pvout_csi": {
+        "name": "PV cSI 収益"
+      },
+      "solargis-pwat": {
+        "name": "可降水量"
+      },
+      "solargis-rh": {
+        "name": "相対湿度"
+      },
+      "solargis-snowd": {
+        "name": "降雪日"
+      },
+      "solargis-temp": {
+        "name": "気温"
+      },
+      "solargis-ws": {
+        "name": "風速"
+      },
+      "solargis-alb": {
+        "name": "地表面アルベド"
+      },
+      "solargis-azi": {
+        "name": "方位角"
+      },
+      "solargis-slo": {
+        "name": "地形傾斜"
+      },
+      "solargis-dni_season": {
+        "name": "DNIの季節性"
+      },
+      "solargis-ghi_season": {
+        "name": "全天日射量 季節性"
+      },
+      "bing-satellite": {
+        "name": "人工衛星"
+      },
+      "mapbox-satellite": {
+        "name": "人工衛星"
+      }
+    },
+    "legend": {
+      "button": "凡例"
+    },
+    "location": {
+      "error": {
+        "1": "ジオロケーションが拒否されました",
+        "2": "ジオロケーションが利用できません",
+        "3": "ジオロケーションがタイムアウトになりました"
+      },
+      "tryAgain": "もう一度試す"
+    },
+    "menu": {
+      "labels": "ラベル",
+      "selectLayer": "マップレイヤを選ぶ",
+      "marker": "マーカー値"
+    },
+    "zoom": {
+      "all": "すべてのプロジェクトを絞り込む",
+      "selected": "選択されたプロジェクトを絞り込む"
+    },
+    "draw": {
+      "site": "敷地",
+      "rectangle": "長方形",
+      "polygon": "多角形",
+      "distance": "距離"
+    },
+    "fullscreen": {
+      "fullscreen": "フルスクリーン"
+    }
+  },
+  "months": {
+    "apr": "4月",
+    "aug": "8月",
+    "dec": "12月",
+    "feb": "2月",
+    "jan": "1月",
+    "jul": "7月",
+    "jun": "6月",
+    "mar": "3月",
+    "may": "5月",
+    "month": "月",
+    "nov": "11月",
+    "oct": "10月",
+    "sep": "9月",
+    "yearly": "年ごと"
+  },
+  "project": {
+    "action": {
+      "archive": "アーカイブする",
+      "delete": "削除する",
+      "transfer": "転送する",
+      "claimFreetrial": "無料トライアルを有効にする",
+      "unArchive": "解凍",
+      "archiveText": "選択したプロジェクトをアーカイブしますか？",
+      "unArchiveText": "選択したプロジェクトのアーカイブを解除しますか？",
+      "updateProjectData": "プロジェクトデータを更新"
+    },
+    "data": {
+      "longtermAverage": "長期年間平均",
+      "mapData": "地図データ",
+      "projectData": "プロジェクトデータ",
+      "showMore": "もっと見る",
+      "yearlyAverage": "年間平均",
+      "notLatest": "プロジェクトが最新ではありません"
+    },
+    "dataLayer": {
+      "CDD": {
+        "desc": "建物を冷やすために必要なエネルギー需要を定量化する。「冷房デグリーデー」は、どのくらい (度)、どれくらい長く (日数)、外気温度がある特定期間内の日平均気温 (18℃)より高くなるかを測定したもの。毎年と毎月の数値が毎日の数値から集計される。",
+        "name": "冷房度日数",
+        "shortName": "CDD"
+      },
+      "CF": {
+        "name": "設備利用率",
+        "desc": "1年間に最大で可能な電気エネルギー出力に対する、1年間の実際の電気エネルギー出力の割合は％で示される。最大で可能な発電量は、AC設備容量×一年間の時間数であるのに対し、実際の発電量は、1年間でプロジェクトからの配電された電気の量となる。",
+        "shortName": "CF"
+      },
+      "D2G": {
+        "desc": "散乱日射量と全天日射量の割合 (DIF/GHI)。",
+        "name": "全天日射量に対する散乱率",
+        "shortName": "D2G"
+      },
+      "DIF": {
+        "desc": "散乱日射の日ごと、月ごと、年間平均の合計",
+        "name": "散乱日射量",
+        "shortName": "DIF"
+      },
+      "DNI": {
+        "desc": "直達日射の日ごと、月ごと、年間平均の合計",
+        "name": "直達日射量",
+        "shortName": "DNI"
+      },
+      "DNI_season": {
+        "desc": "直達日射量の最大と最小の月平均の割合 (DNI_month_max/DNI_month_min)",
+        "name": "DNIの季節性",
+        "shortName": "DNIの季節"
+      },
+      "ELE": {
+        "desc": "海面以上/以下の地形表面の高度",
+        "name": "地形標高"
+      },
+      "GHI": {
+        "desc": "全天日射の日ごと、月ごと、年間平均の合計",
+        "name": "全天日射量",
+        "shortName": "GHI"
+      },
+      "GHI_season": {
+        "desc": "全天日射量の最大と最小の月平均の割合 (GHI_month_max/GHI_month_min)",
+        "name": "GHI 季節性",
+        "shortName": "GHI 季節"
+      },
+      "GTI": {
+        "desc": "斜面日射の日ごと、月ごと、年間平均の合計",
+        "name": "斜面日射量",
+        "shortName": "GTI"
+      },
+      "GTI_opta": {
+        "desc": "最適角でフィックスマウントされたPVモジュールの斜面日射の日ごと、月ごと、年間平均の合計",
+        "name": "最適角における斜面日射量",
+        "shortName": "GTI opta"
+      },
+      "GTI_theoretical": {
+        "desc": "地形的遮光を考慮しない斜面日射の日ごと、月ごと、年間平均の合計",
+        "name": "斜面日射量 (理論上)",
+        "shortName": "GTI 理論上"
+      },
+      "HDD": {
+        "desc": "建物を温めるために必要なエネルギー需要を定量化する。「暖房デグリーデー」は、どのくらい (度)、どれくらい長く(日数)、外気温度がある特定期間内の日平均気温 (18℃)より低くなるかを測定したもの。毎年と毎月の数値が毎日の数値から集計される。",
+        "name": "暖房デグリーデー",
+        "shortName": "HDD"
+      },
+      "LANDC": {
+        "desc": "地表面において広範囲を占める物質の種類を示す (草、森林、市街地など）。",
+        "name": "土地被覆"
+      },
+      "OPTA": {
+        "desc": "GTI入力を最大化するために、赤道の方向に向けて固定取り付けのPVモジュールの最適傾斜を設定する",
+        "name": "PVモジュールの最適傾斜"
+      },
+      "POPUL": {
+        "desc": "人口密度",
+        "name": "人口密度"
+      },
+      "PR": {
+        "desc": "PVシステムの特有の交流電気と太陽電池アレイ表面から受光された斜面日射量との比率 (PVOUTspecific/GTI)",
+        "name": "性能比",
+        "shortName": "PR"
+      },
+      "PREC": {
+        "desc": "平均年間および月間総降水量",
+        "name": "雨量",
+        "shortName": "PREC"
+      },
+      "PVGAIN_cdte": {
+        "desc": "CdTeとcSi モジュールに基づいたPVシステムの年間収率の比 (PVOUTcdte/PVOUTTcsi)",
+        "name": "CSiモジュールに対してCdTeの利得"
+      },
+      "PVOUT_cdte": {
+        "desc": "CdTeモジュールを使用したPVシステムの年間収率。日射と気温データを用いて算出される",
+        "name": "PV CdTe 収率"
+      },
+      "PVOUT_csi": {
+        "desc": "cSi モジュールを使用したPVシステムからの年間収率。日射と気温データを用いて算出される",
+        "name": "PV cSi 収率"
+      },
+      "PVOUT_specific": {
+        "desc": "PVシステムにより供給されて1 kWpの設備容量に正規化された太陽光発電電力(AC)の年間平均値および月平均値",
+        "name": "特有の太陽光発電出力",
+        "shortName": "PVOUT specific"
+      },
+      "PVOUT_total": {
+        "desc": "PVシステムの総発電容量により供給される太陽光発電電力(AC)の年間平均値および月平均値",
+        "name": "総合太陽光発電出力",
+        "shortName": "PVOUT total"
+      },
+      "PWAT": {
+        "desc": "可降水量とは、大気柱にある全ての水が雨として降った場合の、当大気柱にある水蒸気の深さであり、地上の水分量を示す。",
+        "name": "可降水量",
+        "shortName": "PWAT"
+      },
+      "RH": {
+        "desc": "地上2mにおける相対湿度の年間平均および月平均。",
+        "name": "相対湿度",
+        "shortName": "RH"
+      },
+      "SNOWD": {
+        "desc": "降雪日は、積雪水当量が5mm以上となる日として算出されている。",
+        "name": "降雪日",
+        "shortName": "SNOWD"
+      },
+      "TEMP": {
+        "desc": "地上2mにおける気温の年間平均、月平均、日平均",
+        "name": "気温",
+        "shortName": "TEMP"
+      },
+      "WS": {
+        "desc": "地上10mにおける風速の年間平均、月平均、日平均",
+        "name": "風速",
+        "shortName": "WS"
+      },
+      "ALB": {
+        "desc": "地表面で反射される日射の一部。地表面において上昇流から下降流の（全天日射量）の放射流束の割合。",
+        "name": "地表面アルベド",
+        "shortName": "ALB"
+      },
+      "AZI": {
+        "desc": "方位角は、基本方位に対して時計回り。北=0、東=90、南=180、西=270。平地（SLO < 2度）は、考慮されていない",
+        "name": "方位角"
+      },
+      "SLO": {
+        "desc": "地形の傾き（傾斜）（度）",
+        "name": "地形傾斜"
+      },
+      "PV": {
+        "name": "太陽光発電"
+      }
+    },
+    "dataSettings": {
+      "generalInfo": "一般情報",
+      "irradiation": "日射",
+      "latlng": "緯度と経度",
+      "length": "地形標高",
+      "ltaDaily": "長期平均",
+      "projectInfo": "プロジェクト情報",
+      "temperature": "気温",
+      "unitSettings": "ユニット設定",
+      "values": "設定値",
+      "tableSettings": "テーブル設定",
+      "mapViewSettings": "マップビューの設定",
+      "projectViewSettings": "プロジェクトビューの設定"
+    },
+    "field": {
+      "created": "作成済み",
+      "name": "名前",
+      "rename": "名前を変更する"
+    },
+    "filter": {
+      "allProjects": "有効なプロジェクト",
+      "archived": "アーカイブ済み",
+      "favorites": "お気に入り",
+      "recent": "最近の",
+      "manageLabels": "ラベルの管理"
+    },
+    "pvConfigStatus": {
+      "empty": "太陽光発電システムの構成が設定されていません。",
+      "hasPvSystem": "有効なPVシステムの設定",
+      "noPvSystem": "有効なPVシステムの設定"
+    },
+    "rename": {
+      "title": "プロジェクト名を変更する"
+    },
+    "selected": {
+      "addToProjects": "プロジェクトとして保存する",
+      "calculate": "計算します",
+      "openDetail": "開く"
+    },
+    "share": {
+      "copied": "コピー済み",
+      "copyLink": "リンクをコピー",
+      "share": "位置情報を共有する",
+      "shareLocation": "位置情報を共有する",
+      "text": "位置情報を共有するにこのリンクを送信することができます。"
+    },
+    "sidebar": {
+      "clearSelection": "選択をクリア",
+      "listView": "リスト表示を見せる",
+      "multiSelected": "複数のプロジェクトは選択されています。",
+      "noneSelected": "プロジェクトは選択されていません。",
+      "projectsSelected": "{projects}プロジェクトが選択されています。"
+    },
+    "snackbar": {
+      "archive": "アーカイブ済みプロジェクト",
+      "bulkArchive": "{projects} のアーカイブ済みプロジェクト",
+      "bulkDelete": "{projects} の削除済みプロジェクト",
+      "bulkUpdate": "{projects} の更新済みプロジェクト",
+      "delete": "プロジェクトは削除されました。",
+      "rename": "プロジェクト名が変更されました。",
+      "save": "プロジェクトは保存されました。",
+      "update": "プロジェクトは更新されました。",
+      "bulkTransfer": "{projects} の転送済みプロジェクト",
+      "transfer": "転送済みプロジェクト",
+      "freetrialClaim": "無料トライアルプロジェクトが申し込まれました",
+      "updateData": "プロジェクトデータは更新されました"
+    },
+    "tags": {
+      "deleteHeading": "ラベルを削除する",
+      "deleteText": "ラベル {tagName} を削除してもよろしいですか？",
+      "forbiddenName": "ラベル名は固有にする必要があります。",
+      "minlength": "ラベル名が短すぎます。",
+      "name": "ラベル名",
+      "new": "ラベルを作成する",
+      "none": "ラベルが作成されていません。",
+      "required": "ラベル名が必要です。",
+      "labels": "ラベル",
+      "newPlaceholder": "新しいラベル",
+      "add": "追加する",
+      "manage": "ラベルの管理",
+      "invalidCharText": "ラベルには、多言語のアルファベット、数字、スペース ()、ピリオド(.)、コンマ(,)、ハイフン(-)、アンダーバー(_)、そして括弧(および)のみ含めることができます。",
+      "invalidCharHeading": "無効な文字"
+    },
+    "timezone": {
+      "dstNotConsidered": "夏時間は考慮されません。"
+    },
+    "toolbar": {
+      "addTag": "ラベルを追加",
+      "archive": "アーカイブする",
+      "delete": "削除する",
+      "favorite": "お気に入り",
+      "selected": "選択した: {projects}",
+      "selectedFirst": "最初に選択した",
+      "share": "共有する",
+      "unarchive": "解凍する",
+      "siteDetail": "サイトの詳細",
+      "rename": "名前を変更する",
+      "selectedProjects": "選択済: {projects} / {allProjectsCount}"
+    },
+    "transfer": {
+      "title": "{projects}アーカイブ済みプロジェクト を転送する",
+      "targetAccount": "対象アカウント",
+      "info": "プロジェクトを転送すると、プロジェクト情報（プロジェクト名、場所など）および PV 構成情報のみ転送されます。プロジェクトに関連するレポートはすべて失われます。転送が完了すると、このプロジェクトは、関連付けられている現在のアカウントでは利用できなくなります。"
+    },
+    "exportChart": {
+      "exportTo": "{format}でのエクスポート",
+      "pvConfig": "PV設定"
+    },
+    "search": {
+      "searchLocations": "検索場所",
+      "invalidCoordinatesMessage": "マイナスの数値および方位を含む座標を入力しました。 不明瞭な結果を招く可能性があるため、これはサポートされていません。 代わりに明確な座標を入力してください。"
+    },
+    "updateProjectDialog": {
+      "note": "注： このプロジェクトデータを更新すると、生成されたレポートは削除されます。 残しておく場合は、プロジェクトデータを更新する前にレポートをダウンロードしてしてください。",
+      "text": "このプロジェクトには旧バージョンのSolargisデータベースの太陽光資源と気象データが含まれています。更新を選択すると、最新バージョンのSolargisデータベースのデータに置き換えられます。",
+      "title": "プロジェクトデータを更新しますか？",
+      "nonUpdateData": "このプロジェクトには最新ではないデータが含まれています。",
+      "progressTitle": "プロジェクトデータの更新",
+      "downloadReports": "レポートをダウンロード"
+    }
+  },
+  "projectDetail": {
+    "daylength": {
+      "autumnEquinox": "秋分",
+      "dayLengthHorizonCorrected": "日長、修正地平線 [時間]",
+      "daylength": "日長 [時間]",
+      "label": "日長および太陽天頂角",
+      "minimumZenitAngle": "最小天頂角 [°]",
+      "vernalEquinox": "春分"
+    },
+    "economy": {
+      "form": {
+        "addLoan": "貸付を追加",
+        "capacity": "設備容量",
+        "degradationFirst": "初年度の劣化",
+        "degradationNext": "今後数年間の劣化",
+        "installationCost": "システムの設置費用",
+        "interestRate": "金利",
+        "loan": "貸付",
+        "loanPeriod": "貸付期間",
+        "ownCapital": "自己資本",
+        "priceOfElectricity": "電力価格",
+        "removeLoan": "貸付を外す",
+        "totalYield": "PVOUT_total (year 0)",
+        "yearsOfOperation": "プロジェクトの操業年数",
+        "loanEquity": "純資産価格",
+        "accountingInfo": "会計情報",
+        "linearDeprecation": "定額法減価償却",
+        "annualOperationalCost": "年間の運用コスト"
+      },
+      "label": {
+        "economicIndicators": "キャッシュ・フロー",
+        "inputs": "入力",
+        "outputs": "出力",
+        "payback": "単純回収期間法",
+        "pvEconomy": "PVシステムのファイナンス",
+        "summary": "まとめ",
+        "overview": "概説"
+      },
+      "layer": {
+        "CAPEX": {
+          "desc": "太陽光発電システムのトータルコストからソーラーインセンティブを減算した後の太陽光発電システムを設置するのに必要な資本金の額",
+          "name": "設備投資"
+        },
+        "OPEX": {
+          "desc": "太陽光発電システムに関わる年間運転費用と同一視される部品交換の年間分割払い",
+          "name": "営業費"
+        },
+        "tariff": {
+          "desc": "発電した太陽光発電力が系統に売電される契約価格。通常、PPA (電力購入契約) は商業太陽光発電所に適用されます。",
+          "name": "電力購入契約／固定価格買取制度"
+        },
+        "ROIEquity": {
+          "desc": "投資費用 (資本的支出) に対するPVシステムの寿命期間中の投資利益率、ゼロ(0)が損得分岐点を示す (割引率は不使用) 。",
+          "name": "ROI"
+        },
+        "unitSystemCosts": {
+          "name": "ユニットシステム費",
+          "desc": "kWp (Wp) あたりのPVシステムコスト"
+        },
+        "incentiveOrRebate": {
+          "desc": "公益事業会社、または政府から提供されたあらゆる金銭的なインセンティブ、または税制上の優遇措置",
+          "name": "インセンティブまたはリベートを設ける"
+        },
+        "loanLinearPayment": {
+          "desc": "ローンの定額支払い",
+          "name": "定額ローン返済"
+        },
+        "maintenanceReserve": {
+          "tooltip": "すべてのインバータ交換の費用。通常、メーカーの保証は5～12年間の間で変動し、典型的なシステム運用（25年間）中に平均で2回交換する必要があります。",
+          "desc": "ハードウェア交換（主にインバータ）に必要な毎年の金額",
+          "name": "保全予備費"
+        },
+        "LCOE": {
+          "desc": "PVシステムライフサイクルにわたってエネルギー単位のコスト",
+          "name": "LCOE"
+        },
+        "IRREquity": {
+          "desc": "株主の視点から見たPVシステムの寿命期間中の内部収益率 （融資を除く）",
+          "name": "エクイティIRR"
+        },
+        "IRRProject": {
+          "name": "プロジェクトIRR",
+          "desc": "全プロジェクトのPVシステムの寿命期間中の内部収益率"
+        },
+        "discountRate": {
+          "desc": "IRRの正味現在価値の計算に使用した割引係数",
+          "name": "割引率"
+        },
+        "taxesOnProfit": {
+          "name": "収益税",
+          "desc": "利益に対する年間税金"
+        },
+        "loanDebtToEquity": {
+          "desc": "負債比率",
+          "name": "負債資本率 (ギアリング)"
+        },
+        "OPEXInflationRate": {
+          "name": "Opexインフレ率",
+          "desc": "運用コストの年間増加"
+        },
+        "linearDeprecation": {
+          "name": "税務上の定額減価償却",
+          "desc": "経年劣化、または一般的な摩耗や損傷により、時間をかけて失われる価値の低下"
+        },
+        "tariffIndexationRate": {
+          "name": "関税スライド率",
+          "desc": "関税価格の年間増加"
+        },
+        "inverterReplacementYear": {
+          "name": "インバーター交換の年",
+          "desc": "インバータ交換の作業を実施する年で、作業後に保全引当金 (MEA) より差し引かれる"
+        }
+      },
+      "table": {
+        "endOfYear": "年末",
+        "OPEX": "営業費",
+        "EBIT": "EBIT",
+        "loan": "貸付",
+        "CAPEX": "設備投資",
+        "EBITDA": "EBITDA",
+        "revenue": "収入",
+        "netProfit": "純利益",
+        "taxOnProfit": "収益税",
+        "PVOUT_total": "PVOUT_total",
+        "tariffIndexed": "関税 (物価スライド制)",
+        "PVOUT_specific": "PVOUT_specific",
+        "EBITDA_specific": "EBITDA_specific",
+        "loanInterestRate": "貸出金利",
+        "linearDeprecation": "定額償却法",
+        "cashFlowOperations": "キャッシュ・フロー(営業活動）",
+        "maintenanceReserve": "保全予備費",
+        "cashFlowNPVOperations": "NPV 営業活動からのキャッシュフロー",
+        "loanRepaymentInterest": "ローン返済 (利息)",
+        "loanRepaymentPrincipal": "ローン返済 (元本)",
+        "shareholderCashFlowNPV": "NPV 株主のキャッシュフロー",
+        "shareholderCashFlowAvailable": "株主が利用できるキャッシュフロー",
+        "annualCosts": "全年間費用"
+      },
+      "guard": {
+        "text": "本PVシステムのファイナンス設定を編集されました。これを保存しますか。",
+        "heading": "ファイナンスに保存されていない変更があります"
+      },
+      "resetSaved": "保存された値を再設定",
+      "tariffGoalseek": {
+        "use": "使用価値",
+        "open": "IRR エクイティで計算",
+        "result": "計算値:",
+        "target": "目標エクイティIRR",
+        "explain": "収入関税 (PPA/FiT) の入力を調整することにより、ユーザーが設定したエクイティIRRの算出値、その他の入力パラメータは変更しない場合"
+      }
+    },
+    "error": {
+      "noProject": "いずれのプロジェクトが選択されていません。プロジェクト詳細を表示するには、プロジェクトを選択してください。"
+    },
+    "glossary": {
+      "acronym": "略語",
+      "explanation": "説明",
+      "name": "氏名",
+      "title": "用語解説",
+      "unit": "ユニット"
+    },
+    "info": {
+      "address": "住所",
+      "coordinates": "地理的座標",
+      "country": "国/地域",
+      "created": "作成済み",
+      "edit": "名前を編集する",
+      "elevation": "高度",
+      "info": "プロジェクト情報",
+      "name": "プロジェクト名",
+      "showOnMap": "地図上に表示する"
+    },
+    "metadata": {
+      "doc": {
+        "documentation": "ドキュメント",
+        "methodology": "方法論",
+        "simulation": "太陽光発電エネルギーのシムレーション",
+        "uncertainty": "データの不確実性"
+      },
+      "method": {
+        "merging": "データのマージ・クリーニング・処理",
+        "postprocessing": "後処理",
+        "processing": "データ処理",
+        "simulation": "PV シミュレーションモデル",
+        "solarModel": "ソーラーモデル"
+      },
+      "sources": {
+        "LANDC": "土地被覆CCI、v2.0.7",
+        "POPUL": "グリッド世界人口、バージョン4 (GPWv4)",
+        "PREC": "GPCC データベース",
+        "PWAT": "CFSR および CDFv2 モデル",
+        "SNOWD": "CFSR および CDFv2 モデル",
+        "TEMP": "ERA-5 モデル",
+        "aerosolsMerra": "MERRA-2 および MACC-II/CAMS モデルからのエーロゾル",
+        "albedo": "MODIS および ERA-5 の データベース",
+        "region1": "GOES West の人口衛星 ",
+        "region3": "メテオサット MFG および MSG 衛星 (PRIME)",
+        "region4": "メテオサット MFG および MSG 衛星 (IODC)",
+        "region5": "メテオサット MFG、MSG (IODC) および衛星ひまわり",
+        "region6": "MTSAT および衛星ひまわり",
+        "regionGeneral": "静止衛星 メテオサット、GOES、MTSAT およびひまわり",
+        "wapourCSFR": "CSFR および GFSモジュールからの水蒸気",
+        "region2": "GOES East および GOES-R 衛星",
+        "RHWSWD": "MERRA-2 および CDFv2 モデル"
+      },
+      "table": {
+        "method": "Solargisメソッド",
+        "source": "データ入力のソース<br>(組織)",
+        "period": "時刻表記",
+        "updated": "最終更新",
+        "parameter": "パラメータ"
+      },
+      "text": {
+        "row0": "時間ステップ: 毎月と毎年の長期統計",
+        "row1": "1年を365日として推定",
+        "text": "この報告書は、Solargisが開発、操作する高解像度の太陽光および気象データベースに基づいています。この報告書にあるデータパラメーターは、Solargisモデルとアルゴリズムにより計算されています。モデルにインプットとして使用されているデータは異なる情報源からのものです。データの特質の説明は以下の通りです。",
+        "version": "Solargis Prospect データベース版 {version}",
+        "latestMetadataVersion": "バージョン {latestMetadataVersion} を入手できます"
+      }
+    },
+    "nav": {
+      "hourlyProfiles": "毎時間のプロファイル",
+      "lifetimePerformance": "生涯能力",
+      "metadata": "メタデータ",
+      "monthlyStatistics": "月間統計",
+      "overview": "概説",
+      "projectInfo": "プロジェクト情報",
+      "pvConfig": "PV設定",
+      "pvElectricity": "太陽光発電による電力",
+      "pvLosses": "エネルギー変換とシステム損失",
+      "pvPerformance": "太陽光発電のパフォーマンス",
+      "reports": "報告書",
+      "solarMeteo": "太陽光と流星",
+      "support": "サポート",
+      "download": "ダウンロード",
+      "analysis": "分析",
+      "properties": "プロパティ",
+      "data": "データ",
+      "finance": "ファイナンス"
+    },
+    "overview": {
+      "longtermPvPowerPotential": "長期太陽光発電の将来性（平均{years}年）",
+      "meteorologicalData": "気象データ",
+      "projectInfo": "プロジェクト情報",
+      "projectOverview": "プロジェクトの概要",
+      "pvElectricityAndPerformance": "太陽光発電と太陽光発電のパフォーマンス",
+      "solar": "日射",
+      "solarAndMeteo": "太陽光と流星",
+      "systemType": "システムの種類",
+      "theoreticalPvElectricityPotential": "理論上の太陽光発電の将来性（システム始動時）",
+      "title": "概要 - 日射と気象パラメーター"
+    },
+    "pvConfig": {
+      "pvConfiguration": "PVシステムの設定"
+    },
+    "pvElectricity": {
+      "hourlySummary": "下記に示すPV発電プロファイルは、各月の毎時間ごとのデータの平均として算出される。このプロファイルは、1日の間に天候やPVシステムの選択された設定により変化する発電パターンの目安となる。「平均日間プロファイル」は、あくまでも理論であり、ほとんどの場合、プロファイルは、気象変動があるため、1年間のそれぞれの日により異なることに留意する必要がある。",
+      "potential": "理論上の太陽光発電の将来性",
+      "summary": "太陽光システムによるソーラー電力生産の理論上の推定で、長期エージング、PVモジュールやその他システム部品の性能劣化を考慮しないもの。"
+    },
+    "pvLosses": {
+      "electricSystemLosses": "電気システムの損失",
+      "energyInput": "エネルギー入力",
+      "energyLoss": "エネルギー損失",
+      "lossDiagram": "損失の図表",
+      "solarLosses": "太陽光損失",
+      "summary": "太陽光システムによるソーラー電力生産の理論上の具体的な年間推定で、長期エージング、PVモジュールやその他システム部品の性能劣化を考慮しないもの。PVシステムの生産開始が長期平均性能比(PR)として算出されています。",
+      "title": "エネルギー変換とそれに関する損失",
+      "diagramDesc": "ダイアグラムは太陽光発電システムにおけるエネルギー変換による理論損失を示します。",
+      "energy": "エネルギー",
+      "energyLossOrGain": "エネルギー損失/利得",
+      "absoluteValues": "絶対値"
+    },
+    "pvPerformance": {
+      "degrad": "劣化率",
+      "endOfYear": "年末",
+      "lifetimeProduction": "寿命期間中のPV電力生産",
+      "lifetimeSummary": "太陽光システムによるソーラー電力生産の年間平均の推定。この値には、PVシステムの設定およびエージング、PVモジュールやその他の部品の性能劣化によるシステム性能の低下も考慮されている。異なるプロジェクトまたはPVシステムの設定を比較するには具体的なPV発電出力のコンセプトが有益である。性能比(PR)は、システム性能の低下を考慮したPVシステムの寿命期間中の平均効率を示す。",
+      "theoretical": "理論上の"
+    },
+    "reports": {
+      "confirmDelete": "このレポートを削除してもよろしいですか？",
+      "empty": "保存済みの報告書はありません。新しい報告書を作成するには、作成ボタンを押してください。",
+      "generate": "作成する",
+      "status": {
+        "error": "報告書作成エラー"
+      },
+      "table": {
+        "date": "作成済み",
+        "download": "ダウンロード",
+        "fileType": "ファイルの種類",
+        "lang": "言語",
+        "name": "報告書名",
+        "no": "いいえ",
+        "yes": "はい",
+        "dateFormat": "日付形式",
+        "finance": "ファイナンス"
+      },
+      "title": "現在の設定から報告書を作成する。報告書は、プロジェクトの設定変更まで保存されます。",
+      "finance": "ファイナンスを含む"
+    },
+    "shared": {
+      "summary": "まとめ",
+      "noPvConfig": "太陽光と気象パラメーターのみが算出される。PV設定は考慮されない。"
+    },
+    "solarMeteo": {
+      "hourlySummary": "下記に示す日射と気温プロファイルは、各月の毎時間ごとのデータの平均として算出される。プロファイルは、日中の主要な気象パラメータの変化パターンの目安となる。これらのパターンは、太陽天文学および照射対象の地形により決まる。傾斜日射量は、平均的な日中において、太陽光発電モジュールの最適傾斜面が発電に必要な太陽源の平均稼働率にどのように影響するのかを示す。「平均日間プロファイル」は、あくまでも理論であり、ほとんどの場合、プロファイルは、気象変動があるため、1年間のそれぞれの日により異なることに留意する必要がある。",
+      "optimumAzimuth": "GTI_optaの最適 傾斜/方位角",
+      "radiationTemperature": "日射と気象パラメーター",
+      "summary": "太陽光発電の決め手となる最も重要なプロジェクト固有の気象パラメータは、日射であり、太陽光発電の動力源となる。気温も発電に影響を与える。その他の気象パラメーターも、PVシステムの性能、稼働率、エージングに影響する。"
+    },
+    "sunpath": {
+      "axisAzimuth": "太陽方位角 [°]",
+      "axisElevation": "太陽高度 [°]",
+      "civilTime": "常用時",
+      "decemberSolstice": "12月の冬至",
+      "dstTime": "サマータイム",
+      "equinox": "分点",
+      "juneSolstice": "6月の至点",
+      "label": "水平線と太陽軌道の照射",
+      "modify": "地平線を修正する",
+      "module": "太陽光モジュールの水平線",
+      "solarTime": "太陽時",
+      "summerSolstice": "夏至",
+      "sunArea": "有効な領域",
+      "sunpath": "太陽の通り道",
+      "terrain": "地平線",
+      "winterSolstice": "冬至",
+      "horizonInvalid": "入力で指定された水平線は無効です",
+      "horizonAzimuth": "方位角: { azimuth }",
+      "horizonElevation": "高度: { elevation }",
+      "horizonHorizonElevation": "地平線の高度: { horizon }",
+      "exportHorizon": "HORファイルにエクスポートする"
+    },
+    "unsavedProjectDialog": {
+      "body": "プロジェクトの詳細を開くには、現在選択されているプロジェクトを保存する必要があります。このプロジェクトを保存しますか。",
+      "heading": "保存されていないプロジェクト",
+      "action": "保存して開く"
+    },
+    "pvLossesLayer": {
+      "capacityFactor": {
+        "name": "設備利用率",
+        "desc": "特定の期間（通常は年）に最大で可能な電気エネルギーの出力に対する、1年の実際の電気エネルギー出力の割合が％で示される。最大で可能な発電量は、AC設備容量×1年間の時間数であるのに対し、実際の発電量は、1年間でPV発電所により配電された電気の量となる。"
+      },
+      "energyStage": {
+        "ac_out_with_ac_losses": {
+          "name": "トータルシステム性能（システム起動時）",
+          "desc": "稼働開始時にPVシステムにより生み出された理論上の電力量。この段階では、PVモジュール劣化は考慮されない。"
+        },
+        "ac_out_with_ac_losses_and_snow_losses_and_availability_losses": {
+          "name": "雪による損失や可用性を考慮したトータルシステム性能",
+          "desc": "稼働開始時にPVシステムにより生み出された電力量で、雪や故障により稼働できない場合を考慮したもの。この段階では、PVモジュールの劣化は考慮されない。"
+        },
+        "ghi": {
+          "name": "全天日射量特定場所",
+          "desc": "理論上の全天日射量で、地域に存在する物体や水平線により遮断された照射を一部削減したもの。"
+        },
+        "ghi_theoretical": {
+          "name": "全天日射量 (GHI) 理論上",
+          "desc": "雲の透過率や大気の状態を特徴づける一連の入力によってパラメータ化された数値モデルよりSolargisの方法で算出した全天日射量。"
+        },
+        "gti": {
+          "name": "斜面日射量 (GTI)",
+          "desc": "斜面日射の日ごと、月ごと、年間平均の合計（アレイ面 [POA] 日射とも呼ばれます）"
+        },
+        "gti_eff": {
+          "name": "GTI 有効",
+          "desc": "PVモジュールの表面に達する有効な斜面日射で光損失が考慮されたもの。"
+        }
+      },
+      "loss": {
+        "angularReflectivity": {
+          "name": "角の反射率",
+          "desc": "影響の大きさが太陽の相対位置、モジュールの平面、またモジュール面の種類やきれいさにより変わる、PVモジュールの表面における角度反射率 (入射角による影響) による光損失"
+        },
+        "conversionToSurfaceOfPvModules": {
+          "name": "太陽電池モジュールの表面への変換",
+          "desc": "直達で散乱な成分を介して、サイト固有の全天日射からの斜面日射（アレイ面日射とも呼ばれる）の計算"
+        },
+        "dirtDustAndSoiling": {
+          "name": "汚れ、ホコリおよび汚損",
+          "desc": "表面の汚れのため、PVモジュールの表面における太陽放射の光損失。"
+        },
+        "interRowShading": {
+          "name": "列間遮光による電気損失",
+          "desc": "前列のPVモジュールが放射を遮ることが原因で放射が減少することによる電力損失。"
+        },
+        "inverters": {
+          "name": "インバーター (直流/交流) 変換",
+          "desc": "直流から交流への変換過程の効率によるインバーターの損失。インバーターに組み込み型変圧器が搭載されている場合は、このパラメーターに効率が含まれる。"
+        },
+        "mismatchAndCablingDC": {
+          "name": "直流部分の不一致やケーブル配線",
+          "desc": "インバーターに接続されたモジュールのMPP動作の起点が異なるミスマッチによる電力損失と直接電流（DC)の配線、ケーブルにおける熱損失"
+        },
+        "powerTolarance": {
+          "name": "PVモジュールの電力公差",
+          "desc": "同等でない電力公差をもつ特定のモジュール同士が電線で連結しているために起こる電力損失。電力公差が高いモジュールが順繰りに連結された場合、損失が高くなる。"
+        },
+        "snow": {
+          "name": "雪による損失",
+          "desc": "PVモジュールが雪で覆われた期間の電力生産の損失。"
+        },
+        "solarIrradianceToDC": {
+          "name": "太陽電池モジュールに太陽放射をDCへの変換",
+          "desc": "半導体材料における照射の光起電力変換。変換効率は、非線型であり、照射と温度双方の分散次第である。"
+        },
+        "spectralCorrection": {
+          "name": "スペクトル補正",
+          "desc": "半導体の材料の性質と光スペクトル間のスペクトルミスマッチにより引き起こされるエネルギー変換の損失"
+        },
+        "technicalAvailablity": {
+          "name": "稼働率",
+          "desc": "現地の変電所が保全、故障、活動停止のため、太陽光発電所の一時休業により被る電力生産の損失。"
+        },
+        "terrainShading": {
+          "name": "遠遮光（地域に存在する物体+水平線）",
+          "desc": "地形特徴による理論上の全天日射量の損失。遮光は、地平線の高さとSRTM-3 DEMを使用した分解により算出される。付近の建物や構造物、植物などの現地の特徴による遮光は、この段階では関連性はない。"
+        },
+        "transformersAndAC": {
+          "name": "変圧器とACケーブルの損失",
+          "desc": "交流(AC)ケーブルや接続における熱損失や外部MVまたはHV変圧器の電流損失。このパラメーターには、低電圧ケーブルにおける損失、中（高）電圧ケーブルにおける損失(電気メーターがあるグリッド接続点まで）、さらにインバーターで生み出される交流電流の回路にある全ての装置におけるものも含む。"
+        }
+      }
+    },
+    "data": {
+      "title": "ダイレクトインポートのためにCSV形式で月平均データをPVsystまでエクスポートする。",
+      "download": "ダウンロード",
+      "note": "注: PVsystでは、1時間ごとのGHI、DIF、TEMPデータは月ごとの平均データのインポート時に合成的に生成されます。典型的な年のデータセットの合成的な生成は数学的なプロセスで、太陽の放射照度と気温の間に一貫性の欠如が生じます。また、結果として生ずる人工的な時系列内での時間ごとの値の度数分布は、気候の実際の状態を表さない可能性があります。太陽光発電システムのパフォーマンスは、太陽の放射照度と気温によって変化するので、合成した時間ごとのデータセットは太陽エネルギーのシミュレーションの不確実性を増長します。 そのため、PVsystでのシミュレーションにはSolargis <a href='https://solargis.com/products/evaluate/overview' target='_blank'>時系列またはTMYデータセット</a> を使用することをお勧めします。"
+    },
+    "settings": {
+      "systemSettings": "システム設定"
+    },
+    "unlockDialog": {
+      "upgrade": "更新する",
+      "mainTitle": "全機能のロック解除",
+      "addPVConfig": "PV設定を追加",
+      "text": {
+        "reports": "発電所の設定に関する公式のSolargis Prospect報告書を生成してダウンロードします。 クライアントや投資家と共有してください。 私たちの報告書は複数の言語で利用可能です。",
+        "download": "サードパーティのツールでさらに分析するために、プロジェクトの太陽光および気象データをダウンロードします。",
+        "solarMeteo": "プロジェクト場所の太陽日射量および気象データの毎月の統計と毎時間のプロファイルにアクセスします。",
+        "compareTool": "複数のサイトの統計を並べて比較し、プラントに最適な場所を見つけます。",
+        "pvPerformance": "損失の詳細な内訳分析を表示します。",
+        "pvElectricity": "プラント設定の理論的な発電量の毎月の統計と毎時間のプロファイルにアクセスします。",
+        "finance": "プロジェクトファイナンスの最適化:"
+      },
+      "title": {
+        "reports": "報告書",
+        "download": "ダウンロード",
+        "solarMeteo": "太陽光と気象",
+        "compareTool": "比較ツール",
+        "pvElectricity": "太陽光発電による電力",
+        "pvPerformance": "太陽光発電のパフォーマンス",
+        "finance": "ファイナンス計算機"
+      },
+      "requestFreeTrial": "無料トライアルを申し込む",
+      "activateFreeTrial": "無料トライアルを有効にする",
+      "bulletPoints": {
+        "economyCalculator": {
+          "ROI": "ROI (Return on Investment (投資利益率))",
+          "LCOE": "LCOE (Levelized Cost of Energy (均等化発電原価))",
+          "equity": "エクイティIRR",
+          "project": "プロジェクトIRR (Internal Rate of Return (内部収益率))"
+        }
+      }
+    }
+  },
+  "projectList": {
+    "filter": {
+      "toolbar": {
+        "archived": "アーカイブ済みプロジェクト",
+        "default": "有効なプロジェクト",
+        "favorite": "お気に入りのプロジェクト",
+        "recent": "最近のプロジェクト",
+        "tag": "タグの付いたプロジェクト: {tags}"
+      }
+    }
+  },
+  "pvConfig": {
+    "action": {
+      "add": "PV設定を追加",
+      "change": "システムの種類を変更する",
+      "edit": "PV設定を編集する",
+      "optimum": "最適な設定をする",
+      "restore": "デフォルト設定を復元する",
+      "save": "保存してPV電力を計算する"
+    },
+    "error": {
+      "missing": "このプロジェクトにはアクティブなPV設定が選択されていません。PVデータにアクセスするには、設定を追加する必要があります。",
+      "notFound": "設定付きのプロジェクトが見つかりませんでした。"
+    },
+    "label": {
+      "chooseSystemType": "システムの種類を選択する",
+      "copy": "プロジェクトからコピー",
+      "default": "デフォルトテンプレート",
+      "systemType": "システムの種類",
+      "unsaved": "保存されていない変更",
+      "settings": "システム設定"
+    },
+    "params": {
+      "backtracking": {
+        "headline": "バックトラック"
+      },
+      "cablingLosses": {
+        "ACCable": "AC ケーブル配線の損失",
+        "ACCableShort": "AC ケーブル配線",
+        "DCCable": "DCケーブルで配線の損失",
+        "DCCableShort": "DCケーブル配線",
+        "DCMismatch": "DCミスマッチによる損失",
+        "DCMismatchShort": "DCミスマッチ",
+        "headline": "ケーブル配線の損失",
+        "setDefault": "デフォルト設定"
+      },
+      "colSpacing": {
+        "headline": "列の間隔",
+        "spacing": "列の間隔"
+      },
+      "inverter": {
+        "centralized": "集中型の高効率インバーター",
+        "headline": "インバーターの種類",
+        "small": "小型",
+        "string": "ストリングインバーター",
+        "efficiencyStr": "{inverterType} [{efficiency}% ユーロ効率]",
+        "custom": "カスタムインバータ"
+      },
+      "orientation": {
+        "azimuth": "方位角",
+        "headline": "PVモジュールの形状",
+        "tilt": "チルト"
+      },
+      "pvModule": {
+        "ASI": "a-Si - アモルファスシリコン",
+        "CDTE": "CdTe - カドミウムテルライド",
+        "CIS": "CIS - セレン化銅インジウム",
+        "CSI": "c-Si - 結晶シリコン（単結晶または多結晶）",
+        "customDegradation": "1年目{degradarionFirstYear}%、2年目以降{degradationNextYear}%の低下を含む",
+        "degradation": "性能低下率 (RPD)のカスタムレート",
+        "firstYear": "1年目",
+        "headline": "PVモジュールの種類",
+        "nextYear": "2年目以降"
+      },
+      "rowSpacing": {
+        "headline": "行の間隔",
+        "spacing": "行の間隔"
+      },
+      "snowSoilingLosses": {
+        "headline": "PVモジュールの雪による損失および汚れ損失",
+        "snowLosses": "毎月の雪による損失 最大",
+        "snowLossesShort": "毎月の雪による損失 最大",
+        "soilingLosses": "毎月の汚れ損失 最大",
+        "soilingLossesShort": "毎月の汚れ損失 最大",
+        "snowLossesForm": "雪による損失",
+        "soilingLossesForm": "汚れ損失",
+        "soilingAsYearly": "1年の汚損値を入力したい"
+      },
+      "systemAvailability": {
+        "availability": "システム稼働率",
+        "headline": "システム稼働率"
+      },
+      "systemSize": {
+        "area": "太陽電池モジュールが設置した範囲",
+        "capacity": "設備容量",
+        "headline": "システムのサイズ"
+      },
+      "transformer": {
+        "headline": "変圧器の種類",
+        "highEfficiency": "高効率",
+        "none": "なし",
+        "standard": "スタンダード",
+        "lossStr": "{transformerType} [{loss}% 損失]",
+        "custom": "カスタムトランス"
+      },
+      "rotationLimits": {
+        "val": "{east}° 東 , {west}° 西",
+        "west": "西",
+        "east": "東",
+        "headline": "回転制限"
+      }
+    },
+    "type": {
+      "buildingIntegrated": {
+        "desc": "太陽光発電システムで、住宅建築または商業ビルの正面もしくは屋根に一体化されたもの。PVモジュールの方位角とチルトは、構造が同じ。モジュール同士が遮光することはない。モジュールは、建物外面に統合されているため、後部の通風はかなり制限される。この種類のPVシステムは、インバーターを介して、低電圧グリッドに直接接続するか、またはインバーターと配電変圧器を介して、中/高電圧グリッドに接続することができる。",
+        "name": "屋根一体型"
+      },
+      "groundFixed": {
+        "desc": "大型商業用太陽光発電システムで、平地に設置されたもの。PVモジュールの方位角とチルトは、構造が同じで、たいていの場合、赤道に向かっており、年間エネルギー収益を最大化するために、最適な傾斜に傾けられている。モジュールは、列に並んだ傾斜構造にフィックスマウントされる。太陽の角度が低い期間は、前列がモジュールを部分的に遮光する可能性がある。モジュールの通風は良好。この種類のPVシステムは、インバーターと配電変圧器を介して、中/高電圧グリッドに接続される。さらに変圧器を追加して使用することもできる。電力貯蔵は考慮されていない。",
+        "name": "地上フィックスマウント型"
+      },
+      "noPvSystem": {
+        "desc": "太陽光および気象パラメーターのみを算出。PV設定は考慮されていない。",
+        "name": "PVシステムなし"
+      },
+      "rooftopLargeFlat": {
+        "desc": "太陽光発電システムで、商業ビルまたは工業用建物の広く水平な屋根に設置されたもの。PVモジュールの方位角とチルトは構造が同じ。モジュールは、平屋根に設置され、列に並んだ傾斜構造にフィックスマウントされる。そのため、太陽の角度が低い期間は、前列がモジュールを部分的に遮光する可能性がある。取り付けにより、PVモジュールの通風が可能となるが、屋根の表面からの熱がPVシステムの性能に影響を与える可能性がある。この種類のPVシステムは、インバーターを介して低圧送電網に直接接続するか、またはインバーターと配電変圧器を介して、中/高圧送電網に接続することができる。",
+        "name": "屋上 広い平屋根"
+      },
+      "rooftopLargeTilted": {
+        "desc": "太陽光発電システムで、商業ビルまたは工業用建物の、広く傾斜した屋根に設置されたもの。PVモジュールの方位角とチルトは、構造が同じで、モジュール同士が遮光することはない。モジュールは、傾斜した屋根に付けられたレールに組付けられるため、後部の通風が可能。このシステムは、インバーターを介して低圧送電網に直接接続するか、またはインバーターと配電変圧器を介して、中/高圧送電網に接続することもできる。電力貯蔵は考慮されていない。",
+        "name": "屋上 広い傾斜屋根"
+      },
+      "rooftopSmall": {
+        "desc": "太陽光発電システムで、住宅建築の傾斜屋根に設置されたもの。PVモジュールの方位角とチルトは、構造が同じで、モジュール同士が遮光することはない。モジュールは、傾斜屋根に付けられたレールに取り付けられるため、後部の通風が可能である。この種類のPVシステムは、通常インバーターを介して低圧送電網に直接接続される。電力貯蔵は考慮されていない。",
+        "name": "屋上 小さい"
+      },
+      "trackerOneAxisHorizontalNS": {
+        "desc": "大型商業用太陽光発電システムで、平地に設置されたもの。PVモジュールは、南北回りの水平1軸トラッカーに組付けられる。トラッカーの回転限度は、東-60度、西60度となっている。バックトラッキングのアルゴリズムは、太陽の角度が低い期間の、列間の遮光損失を低減するために使用される。モジュールの通風は良好。この種類のPVシステムは、インバーターと配電変圧器を介して、中/高圧送電網に接続される。さらに変圧器を追加して使用することもできる。電力貯蔵は考慮されていない。",
+        "name": "水平1軸トラッカー"
+      },
+      "hydroMountedLargeScale": {
+        "desc": "このオプションは多数の海上太陽光発電システムの導入をカバーしています。回路部品はプラスチック製のボート上に取り付けられ、赤道の方角に向けられる見込みです。回路部品は表面の水の蒸発による冷却によって低い温度に保たれています。鳥の落下によって回路内の不整合や汚染がい凝ることがあると予想されます。この試験導入では、ストリングインバータと配電変圧器の使用が考えられています。厳しい環境において様々なエラーが起こる可能性が高いので、大規模な地上太陽光発電に比べてこのシステムの利用率は低く見積もられています。",
+        "name": "水上太陽光発電"
+      }
+    }
+  },
+  "toggle": {
+    "ltaDaily": {
+      "perDay": "1日当たりの {unit}"
+    }
+  },
+  "units": {
+    "DMS": "DMS",
+    "celsius": "℃",
+    "currencyAnnual": "{currency}/毎年",
+    "currencyMonthly": "{currency}/毎月",
+    "days": "日",
+    "decimal": "小数点",
+    "degreeDays": "デグリーデー",
+    "fahrenheit": "℉",
+    "feet": "フィート",
+    "kWhAnnually": "kWh/年ごと",
+    "meter": "m",
+    "perDay": "日単位",
+    "perMonth": "月ごと",
+    "perYear": "年ごと",
+    "years": "年",
+    "inhabitants": "居住者",
+    "km": "km",
+    "m2": "m<sup>2</sup>",
+    "mm": "mm",
+    "Wh": "Wh",
+    "km2": "km<sup>2</sup>",
+    "kWh": "kWh",
+    "kWp": "kWp",
+    "m/s": "m/s",
+    "MWh": "MWh",
+    "MWp": "MWp",
+    "kg/m2": "kg/m<sup>2</sup>",
+    "MJ/m2": "MJ/m<sup>2</sup>",
+    "Wh/m2": "Wh/m<sup>2</sup>",
+    "kWh/m2": "kWh/m<sup>2</sup>",
+    "Wh/kWp": "Wh/kWp",
+    "kWh/kWp": "kWh/kWp",
+    "inh./km2": "人口./km<sup>2</sup>"
+  },
+  "user": {
+    "company": {
+      "EUVATCheckInProgress": "会社のVAT（付加価値税）IDは確認中です",
+      "add": "観客アカウントの作成",
+      "field": {
+        "city": "市町村",
+        "country": "国/地域",
+        "name": "名前",
+        "phone": "電話番号",
+        "state": "都道府県",
+        "street": "番地",
+        "zipCode": "郵便番号",
+        "VAT": "付加価値税",
+        "trial": "無料トライアルを申し込む",
+        "billing": "請求情報を追加",
+        "companyName": "会社名",
+        "companyOrOrganisationName": "会社 / 組織名",
+        "territory": "地域"
+      },
+      "invalidEUVat": "入力された付加価値税登録番号VATは無効です。書式は、SKxxxxxxxxx でなければなりません。",
+      "messages": {
+        "update-fail": "会社の更新に失敗しました。後でもう一度試してください。",
+        "update-ok": "会社が更新されています。",
+        "create-ok": "観客アカウントが作成済み!",
+        "create-fail": "会社の作成に失敗しました。後でもう一度試してください。",
+        "success-items": {
+          "name": "会社アカウント „{name}“ が作成されました",
+          "trial": "無料トライアルの申請が承認されました。",
+          "billing": "課金情報が追加されました",
+          "trialFailed": "無料トライアル要求を承認できません。"
+        },
+        "checkingVat": "VAT付加価値税の確認"
+      },
+      "none": "企業アカウントはありません。",
+      "profile": {
+        "name": "会社名",
+        "projects": "有効なプロジェクト",
+        "role": "役職",
+        "updated": "更新済み",
+        "type": "タイプ",
+        "switch": "会社を切り替える",
+        "current": "現在の",
+        "companyAccount": "会社アカウント",
+        "personalAccount": "個人アカウント"
+      },
+      "role": {
+        "ADMIN": "管理者",
+        "USER": "正規ユーザー"
+      },
+      "similarExists": "データベースに同様の会社が既に存在しています。再度確認後、貴社が既に存在しているかどうか、ご連絡させていただきます。",
+      "status": {
+        "ACTIVE": "有効な",
+        "SUSPENDED": "一時中断",
+        "DELETED": "削除済"
+      },
+      "stepOf": "{ total } ステップ中 { step }",
+      "welcomeDialog": {
+        "assignedToCompany": "会社 { companyName } に追加されました。",
+        "continue": "行く！",
+        "newCompany": "会社 { companyName } が正常に作成されました",
+        "purchase": "購入とサブスクリプション",
+        "welcome": "{ companyName } さん、ようこそ！"
+      },
+      "freeTrial": {
+        "assignSuccess": "無料トライアルが会社:{companyName}にアサインされました",
+        "info": "無料トライアルの誤使用を防ぐために、電話番号の確認が求められます。",
+        "code": "確認コード",
+        "whatIs": "無料トライアル (14日間) により、ご選択された1つのプロジェクトに、Prospectアプリケーションの全機能をアクティベートすることができます。",
+        "success": "プロジェクトを作成し、1つのプロジェクトに無料トライアルを有効にする。",
+        "sendAgain": "再度送信する",
+        "phoneInvalid": "使用中または無効の電話番号",
+        "otpInvalid": "OTP番号は無効です",
+        "incorrectVerificationCode": "入力した確認コードが正しくありません。戻って再度入力するか、新しい確認コードを要求してください。"
+      },
+      "action": {
+        "add": "追加する",
+        "create": "作成",
+        "verify": "検証する",
+        "trialLater": "後で無料トライアルを申し込む",
+        "billingLater": "後で請求情報を追加"
+      },
+      "phoneCodeIsString": "メニューから市外局番を選んでください。",
+      "stateNotSelectedFromList": "州選択リストから選んでください。",
+      "countryNotSelectedFromList": "国選択リストから選んでください。",
+      "phoneInvalid": "無効な電話番号",
+      "EUVATTerritoryHint": "付加価値税を使用していない地域のお客様は、<a href='https://solargis.com/about-us/contact' target='_blank'>お問い合わせください。</a>",
+      "errors": {
+        "vatNotValid": "VAT付加価値税は{vatPrefix}には無効です",
+        "vatIdSpacesForbidden": "付加価値税にはスペースを入れないでください"
+      },
+      "territoryNotSelectedFromList": "地域選択リストから選んでください"
+    },
+    "profile": {
+      "account": "ユーザーアカウント",
+      "changeName": "名前を変更する",
+      "changePassword": "パスワード変更",
+      "companyAccounts": "会社アカウント",
+      "general": "全般",
+      "loginSecurity": "ログインとセキュリティ",
+      "my": "マイプロフィール",
+      "notifications": "通知",
+      "overview": "概説",
+      "units": "ユニット",
+      "unselectCompany": "ユーザーアカウントに切り替える",
+      "type": "個人アカウント",
+      "photo": "写真",
+      "addPhoto": "プロフィール写真を追加",
+      "lastChange": "最終変更",
+      "changeEmail": "メールアドレスを変更する",
+      "changeUnitSettings": "ユニット設定の変更",
+      "sdatDevices": "登録済みの SDAT デバイス"
+    },
+    "selectCompany": {
+      "headline": "会社を選択し、次に進んでください",
+      "none": "会社を見つけることができませんでした。新しく作成しますか。",
+      "noneAdmin": "管理者として割り当てられている会社を見つけることができませんでした。新しく作成しますか。",
+      "admin": "管理者として割り当てられている会社のリストを表示しています。"
+    }
+  },
+  "payment": {
+    "dialog": {
+      "change": "支払い方法を変更する",
+      "chooseMethod": "支払い方法を選択する",
+      "headline": "注文金額: {sum}",
+      "payNow": "今すぐ{price}支払う",
+      "resultHeadline": "支払い結果"
+    },
+    "method": {
+      "bank": "銀行支払い",
+      "card": "クレジットカード",
+      "bankDesc": "支払いに関する情報は請求書に表示されます"
+    },
+    "thankYou": {
+      "detail": "注文の詳細を見る",
+      "thankYou": "ありがとうございました！",
+      "thankYouBank": "ご注文ありがとうございます。支払いを受け取り後、注文手続きが継続されます。",
+      "thankYouCard": "カードでのお支払いが完了しました。しばらくすると、製品が有効になります。"
+    },
+    "failed": {
+      "failed": "支払いエラー",
+      "failedText": "お支払いを処理できませんでした。しばらくしてからもう一度お試しいただくか、弊社のサポートまでご連絡ください。"
+    },
+    "pricing": {
+      "pricing": "価格設定",
+      "choosePlan": "あなたにとって正しい将来性を選択する",
+      "currentPlan": "現在の計画",
+      "free": {
+        "price": "プリ―プラン",
+        "actionDesc": "デモ版 - 登録なしでも利用できます",
+        "info": "太陽エネルギー評価を始められた方へ",
+        "feature1": "年間平均データ",
+        "feature2": "太陽探査用インタラクティブマップ",
+        "action": "始める",
+        "feature3": "信頼できる結果が得られる、使いやすいPVシミュレーションツール"
+      },
+      "basic": {
+        "priceInfo": "1年につきユーザー3名と開始",
+        "action": "サブスクライブする",
+        "actionDesc": "今すぐ価格を計算する",
+        "info": "商業用屋上プロジェクトで作業を行うチームに不可欠な機能",
+        "feature1": "月間平均と24×12プロファイル",
+        "feature2": "XLSX と PDF 報告書 ダウンロード",
+        "feature3": "比較ツール",
+        "feature4": "経済計算機",
+        "feature5": "3ユーザーライセンス付属 + 1追加ユーザーごとに300ユーロ",
+        "all": "無料プランの全機能に加える:"
+      },
+      "pro": {
+        "priceInfo": "1年につきユーザー3名と開始",
+        "action": "サブスクライブする",
+        "upgrade": "アップグレードする",
+        "actionDesc": "今すぐ価格を計算する",
+        "info": "大規模プロジェクトに取り組んでいるプロフェショナル向けの高度な機能",
+        "feature1": "Bifacial Gainの正確な概算のためのアルベドデータ",
+        "feature2": "スペクトル損失/利得の算出用可降水量データ",
+        "feature3": "汚れ損失および雪による損失の概算のための降水・降雪データ",
+        "feature4": "一軸トラッカーシステムおよびプローティングPVシステム用サポート",
+        "feature5": "3ユーザーライセンス付属 + 1追加ユーザーごとに600ユーロ",
+        "all": "基本プランの全機能に加える:"
+      },
+      "table": {
+        "data": {
+          "albedo": {
+            "text": "地表面アルベド"
+          },
+          "compare": {
+            "help": "最大で4つの異なるプロジェクトの出力比較ツール",
+            "text": "比較ツール"
+          },
+          "configure": {
+            "free": "フィックスマウントシステムのみ",
+            "pro": "フィックス1軸式トラッカーシステム",
+            "text": "PVシステムの構成"
+          },
+          "economy": {
+            "help": "投資収益率、回収期間、均等化発電原価などを算出する簡易ツール",
+            "text": "経済計算"
+          },
+          "report": {
+            "text": "PDF と XLSX 報告書 ダウンロード"
+          },
+          "solar": {
+            "help": "全天日射量、散乱日射量、直達日射量、斜面日射量を含む",
+            "text": "太陽光資源パラメータ(GHI、DIF、DNI)"
+          },
+          "features": "機能",
+          "save": {
+            "text": "プロジェクトの作成および保存"
+          },
+          "pv": {
+            "pro": "固定の角度トラッカーおよび一軸トラッカー",
+            "text": "PVパラメータ (GTI、PVOUT)",
+            "help": "斜面日射量および太陽光発電出力",
+            "free": "固定の角度システムのみ",
+            "basic": "固定の角度システムのみ"
+          },
+          "meteo": {
+            "help": "気温、風速、冷房度日数、暖房度日数",
+            "text": "基本気象パラメータ (TEMP、WS、CDD、HDD)"
+          },
+          "dataParams": "データパラメータ",
+          "meteo2": {
+            "text": "降雨、降雪日、相対湿度、可降水量"
+          },
+          "hourly": {
+            "text": "24 × 12 (時間単位 × 月単位) のプロフィール",
+            "basic": "選択されたパラメータ"
+          },
+          "annual": {
+            "text": "長期的な年平均"
+          },
+          "monthly": {
+            "text": "長期的な月平均"
+          },
+          "floating": {
+            "text": "水上太陽光発電の対応"
+          },
+          "dataAggregation": "データ集計"
+        }
+      },
+      "alert": {
+        "body": "ただ今、個人アカウントを使用中です。続行するには設定でサブスクリプションを割り当てたい企業アカウントを選んでください。",
+        "heading": "続行するにはには企業を選んでください。"
+      }
+    },
+    "cart": {
+      "headline": "ご注文",
+      "empty": "カートは空です",
+      "edit": "編集{productName}",
+      "step1": {
+        "name": "アイテム",
+        "withoutVAT": "付加価値税なしの価格",
+        "total": "年間サブスクリプションの合計",
+        "back": "プロダクトに戻る",
+        "purchaseOrder": "発注書",
+        "purchaseOrderPlaceholder": "注文番号",
+        "users": "フルアクセスを許可したユーザー",
+        "subscription": "サブスクリプション",
+        "remove": "カートからこの商品を削除しますか。",
+        "annual": "年間の"
+      },
+      "step2": {
+        "name": "請求先情報",
+        "address": "請求先住所"
+      },
+      "step3": {
+        "total": "注文金額",
+        "totalVAT": "付加価値税込みの注文金額",
+        "name": "支払い",
+        "continue": "注文を見る"
+      }
+    }
+  },
+  "report": {
+    "mapLink": "地図上の位置",
+    "contents": "コンテンツ",
+    "cover": {
+      "ProspectPv": {
+        "title": "太陽光発電の事前評価",
+        "type": "PROSPECT PV エネルギー評価"
+      },
+      "ProspectSolar": {
+        "title": "敷地日射照度の事前評価",
+        "type": "PROSPECT 太陽光資源"
+      },
+      "customer": "顧客",
+      "generated": "作成済み報告書",
+      "generatedBy": "作成者",
+      "project": "プロジェクト",
+      "reportNr": "報告書番号",
+      "reportType": "報告書の種類",
+      "tel": "電話"
+    },
+    "figure": "図",
+    "hourlyDni": "直達日射強度 - 時間平均",
+    "hourlyGhi": "全天日射量 - 時間平均",
+    "legal": {
+      "copyright": "この報告書の著作権はすべて © { currentYear } Solargis s.r.o.,に帰属します。",
+      "email": "メール",
+      "guarantee": "データおよび計算の不確実性を考慮すると、Solargis は推定値の精度の確保をいたしません。利用可能な最良のデータ、ソフトウェアおよび知識に基づいた、気象パラメータの評価と太陽光発電量の事前評価のために最大限の努力を払いました。Solargisは、提供されるレポートの使用から生じたこと、または生じたと主張されることによる直接的、事故的、結果的、間接的、あるいは懲罰的な損害に対する一切の責任を負いません。",
+      "moreInfo": "完全なPV収率評価について詳しい情報はこちら:",
+      "registrationId": "登録 ID",
+      "serviceProvider": "サービスプロバイダ",
+      "tel": "電話",
+      "terms": "迅速なサービスの一般契約条項の全文を見るにはこちらから:",
+      "title": "免責事項および法的情報",
+      "trademark": "Solargis®は、Solargis s.r.o.の登録商標マークです",
+      "uncertainty": "この報告書は、PVシステムの寿命期間中と始動期間における太陽光の推定を示したものです。この推定は、プロジェクトの事前評価としては十分に正確なものです。さらに大きいプロジェクト計画や資金繰りには、詳しい情報が必要となります: 1. 統計分布および太陽光の不確実性 2. PVシステムの詳細仕様 3. 経年変動性とPV生産のP90不確実性 4. PV部品の性能劣化を考慮したエネルギー生産の寿命",
+      "url": "URL",
+      "validationAuth": "信頼性確認",
+      "validationAuthText": "このPDF報告書は、Solargis s.r.o.によって電子署名されています。",
+      "vatNr": "VAT番号"
+    },
+    "location": "プロジェクト所在地",
+    "ltaPvout": "PV 発電出力 - 長期間平均",
+    "mapView": "詳細なマップビュー",
+    "otherParams": "その他の気象パラメーター",
+    "slovakia": "スロバキア",
+    "solarParams": "太陽光と気象パラメーター",
+    "table": "表",
+    "dailyAvg": "1日平均",
+    "hourlyGti": "斜面日射量 - 1時間平均",
+    "hourlyPvoutSpecific": "特定の太陽光発電出力 - 1時間平均",
+    "hourlyPvoutTotal": "全体の太陽光発電出力 - 1時間平均",
+    "hourlyTemp": "気温 - 時間平均",
+    "monthlySum": "毎月合計",
+    "dailyStats": "毎日の統計",
+    "dailyGhiDniDif": "GHI、DNI、DIF の日平均",
+    "solarDailySummary": "下記の日射プロファイルは、月あたりの全時間データの平均として算出される。プロファイルにより、1日あたりのGHIパターンが月別にどのように変わっているのかについて、徴候を示します。これらのパターンは、現地の地理、天文学や場所の気候などによるものです。",
+    "glossary": {
+      "title": "略語と用語集",
+      "pv": "太陽光発電のパラメータ",
+      "meteo": "気象パラメータ",
+      "solar": "ソーラーパラメータ"
+    },
+    "freeTrialWatermark": "無料トライアル",
+    "annually": "毎年"
+  },
+  "csvData": {
+    "T24": "T24 - 地上2mの日中平均気温(24時間)。ERA-5 モデル出力から算出 (© 2019 ECMWF) [deg. C]",
+    "WSm": "WSm - 地上10mの月平均風速。MERRA-2 並びに CFSv2モデル出力から算出 (© {year} NOAA並びにNASA) [m/s]",
+    "RHm": "RHm - 地上2mの月平均相対湿度。MERRA-2 並びに CFSv2モデル出力から算出 (© {year} NASA並びにNOAA) [%]",
+    "ALBm": "ALBm - 地表面で反射した太陽日射の割合。地表で上昇流から沈降流（全天日射量）までの放射フラックスの比率。（NASA MODIS および ECMWF ERA-5から導出）[]",
+    "data": "データ",
+    "HDDm": "HDDm - 建物を温めるために必要なエネルギー需要を定量化する。「暖房デグリーデー」は、どのくらい (度)、どれくらい長く(日数)、外気温度がある特定期間内の日平均気温 (18℃)より低くなるかを測定したもの。毎年および毎月の数値が毎日の数値から集計される。Solargisにより気温データから算出 [degree days]",
+    "CDDm": "CDDm - 建物を冷やすために必要なエネルギー需要を定量化する。「冷房デグリーデー」は、どのくらい (度)、どれくらい長く (日数)、外気温度がある特定期間内の日平均気温 (18℃)より高くなるかを測定したもの。毎年および毎月の数値が毎日の数値から集計される。Solargisにより気温データから算出 [degree days]",
+    "year": "年",
+    "DNIm": "DNIm - 直達日射量の月平均の合計 (© {year} Solargis) [kWh/m2]",
+    "GHIm": "GHIm - 全天日射量の月平均の合計 (© {year} Solargis) [kWh/m2]",
+    "title": "日射および気象パラメーターの長期月平均",
+    "PRECm": "PRECm - 世界降水気候データベースから得られた降水量の月平均の合計 (© {year} DWD) [mm]",
+    "Diffm": "Diffm - 散乱日射量の日平均の合計 (© {year} Solargis) [kWh/m2]",
+    "PWATm": "PWATm - 可降水量とは、大気柱にあるすべての水が雨として降れば、当大気柱にある水蒸気の深さ。地上の水分量を示す。CFSR 並びに CFSv2 モデル出力から算出 (© {year} NOAA) [kg/m2]",
+    "issued": "発行済み",
+    "SNOWDm": "SNOWDm - 降雪日とは、積雪の深さが5mm以上になった日として算出されている。CFSR 並びに CFSv2 モデル出力から算出 (© 2019 NOAA) [days]",
+    "columns": "列",
+    "azimuth": "傾斜方位角",
+    "latitude": "緯度",
+    "siteName": "用地名",
+    "encoding": "文字符号化",
+    "longitude": "経度",
+    "elevation": "高度",
+    "inclination": "斜面の傾斜度",
+    "reportNumber": "報告書番号"
+  },
+  "export": {
+    "title": "プロジェクトのエクスポート",
+    "confirmText": "選択したプロジェクトをCSVファイルにエクスポートしますか？",
+    "csvInfo": {
+      "exported": "エクスポート",
+      "ftpCompatible": "エクスポートされたPV設定のパラメーターは、ここのドキュメントに記載されています"
+    }
+  },
+  "cookies": {
+    "cookie-banner": {
+      "text": "私たちのウェブサイトにアクセスしている間、最高の体験を提供できるようにクッキーを使用しています。 「Accept(同意)」をクリックするか、ウェブサイトの使用をし続けると、ブラウザでのクッキーの使用に同意したことになります。",
+      "accept": "同意",
+      "more-info": "詳細"
+    }
+  },
+  "dashboard": {
+    "landingPage": {
+      "learnMore": "更なる詳細",
+      "titleHeader": "太陽光発電投資のための気象データとソフトウェア",
+      "footer": {
+        "news": "お知らせ",
+        "events": "イベント",
+        "pricing": "価格設定",
+        "contactUs": "連絡先",
+        "releaseNotes": "リリースノート",
+        "solargisHomepage": "Solargisホームページ"
+      },
+      "subtitleCard": "アプリは開発中です",
+      "monitor": {
+        "button": "API サービス",
+        "content": "太陽光発電システムの性能監視のために、Solargisデータの定期的な更新を受信します。",
+        "subtitleFirst": "毎日またはリアルタイムの更新",
+        "subtitleThird": "API/FTP アクセス",
+        "subtitleSecond": "最大15分の時間ステップ"
+      },
+      "prospect": {
+        "content": "迅速で信頼性の高いプロジェクトの実現可能性のための太陽光探査ツール。",
+        "subtitleFirst": "年間および毎月平均データ",
+        "subtitleThird": "アルベド、降水量、雪のデータ",
+        "subtitleSecond": "毎時（24）x 毎月（12）のプロファイル"
+      },
+      "evaluate": {
+        "button": "TS/TMYデータの注文",
+        "content": "太陽光発電所の高度なエネルギーモデリングと設計最適化用。",
+        "subtitleFirst": "前の月までの時系列データ",
+        "subtitleThird": "PVsyst、Helioscope、SAMなどにデータをインポート",
+        "subtitleSecond": "TMY P50、P90、Pxx"
+      },
+      "subtitleHeader": "リスクを低減し、太陽エネルギー資産の収益性を最大化",
+      "forecast": {
+        "button": "API サービス",
+        "content": "最大10日間先の太陽光発電予測。",
+        "subtitleFirst": "最大30分ごとの予測の更新",
+        "subtitleThird": "API/FTP アクセス",
+        "subtitleSecond": "最大15分の時間ステップ"
+      }
+    },
+    "listRecentProjects": {
+      "noProjects": "まだプロジェクトを作成していません"
+    },
+    "header": {
+      "quickLinks": "クイックリンク",
+      "apps": "アプリ"
+    },
+    "sdatManagement": {
+      "manuals": "マニュアル",
+      "devices": "マイ SDAT デバイス",
+      "download": "ダウンロード",
+      "subscription": "サブスクリプション",
+      "sdatHeader": "{{header.sdat}}"
+    }
+  }
+}

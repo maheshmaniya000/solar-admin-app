@@ -1,0 +1,69 @@
+<ng-container [formGroup]="parentForm">
+  <div class="item-no">
+    <div>Item no.{{ index + 1 }}</div>
+    <div [hidden]="!removable">
+      <button mat-button mat-icon-button aria-label="Remove" (click)="remove.emit(index)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-form-field>
+    <input type="number" placeholder="Quantity" matInput formControlName="quantity" min="0" oninput="validity.valid||(value='')" />
+  </mat-form-field>
+
+  <div class="product">
+    <mat-form-field class="span-2">
+      <mat-label>Product</mat-label>
+      <mat-select formControlName="product" [required]="true" (selectionChange)="onProductSelectionChanged($event)">
+        <mat-option *ngFor="let product of products" [value]="product.code">
+          ({{ product.code }}) {{ product.category }} {{ product.title }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Price</mat-label>
+      <input type="number" matInput formControlName="basePrice" required />
+      <span matSuffix>{{ orderDetailStore.currency$ | async }}</span>
+    </mat-form-field>
+
+    <p *ngIf="isProductSelected()" class="product-code">
+      Code: <strong>{{ getSelectedProductCode() }}</strong>
+    </p>
+
+    <sg-admin-order-discount class="span-2"
+      [parentForm]="getDiscountFormGroup()"
+      [currency]="orderDetailStore.currency$ | async"
+    ></sg-admin-order-discount>
+  </div>
+
+  <!--MIDDLE PART with DESCRIPTION-->
+  <div class="description">
+    <div>
+      <p>Description ENG*</p>
+      <angular-editor class="te-basic-tools" id="{{ index }}-descENG" formControlName="descriptionENG" [config]="editorConfigENG">
+      </angular-editor>
+    </div>
+    <div>
+      <p>Description SK*</p>
+      <angular-editor class="te-basic-tools" id="{{ index }}-descSK" formControlName="descriptionSK" [config]="editorConfigSK">
+      </angular-editor>
+    </div>
+  </div>
+
+  <!--RIGHT PART with MEMO FIELD-->
+  <div style="display: none">
+    <mat-form-field class="w-100">
+      <textarea
+        placeholder="Memo field"
+        formControlName="memoField"
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="8"
+      >
+      </textarea>
+    </mat-form-field>
+  </div>
+</ng-container>

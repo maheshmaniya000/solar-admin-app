@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/libs/ng-unit-value",
+  "lib": {
+    "entryFile": "src/index.ts",
+    "umdModuleIds": {
+      "@ngneat/transloco": "ngneat.transloco",
+      "@solargis/types/utils": "@solargis/types/utils",
+      "@solargis/dataset-core": "@solargis/dataset-core",
+      "@solargis/units": "@solargis/units",
+      "@solargis/ng-translation": "@solargis/ng-translation",
+      "lodash-es/isEqual": "lodash-es/isEqual"
+    }
+  },
+  "allowedNonPeerDependencies": ["@solargis/ng-translation"]
+}

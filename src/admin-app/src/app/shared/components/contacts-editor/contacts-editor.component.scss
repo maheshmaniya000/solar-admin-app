@@ -1,0 +1,21 @@
+@import 'theme';
+
+.contact {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr 1fr min-content;
+  column-gap: $sg-8;
+
+  ::ng-deep {
+    .mat-form-field-infix {
+      width: 100%;
+    }
+  }
+
+  mat-error {
+    grid-column: 1 / span 6;
+  }
+
+  .active {
+    color: map-get($accent, 600);
+  }
+}

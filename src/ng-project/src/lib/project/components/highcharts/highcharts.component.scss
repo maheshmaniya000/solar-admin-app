@@ -1,0 +1,28 @@
+.small-card {
+  width: 100%;
+  height: auto;
+}
+
+// flex sizing issues:
+// https://github.com/highcharts/highcharts/issues/8312
+// https://github.com/highcharts/highcharts/issues/6427
+
+:host {
+  position: relative;
+  display: block;
+
+  button {
+    position: absolute;
+    top: 8px;
+    right: 0;
+  }
+}
+
+.chart {
+  width: 100%;
+
+  & > ::ng-deep div {
+    overflow: hidden;
+    flex-basis: 0;
+  }
+}

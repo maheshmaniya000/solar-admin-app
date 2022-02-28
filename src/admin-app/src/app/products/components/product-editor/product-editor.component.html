@@ -1,0 +1,74 @@
+<form [formGroup]="form" novalidate>
+  <div fxLayout="column" class="single-block">
+    <div fxFlex class="data-grid">
+      <div fxLayout="row">
+        <mat-form-field class="-full-width">
+          <mat-label>Code</mat-label>
+          <input matInput formControlName="code" required />
+          <mat-error *ngIf="getCodeFormControl().hasError('required')">This field is required</mat-error>
+          <mat-error *ngIf="getCodeFormControl().hasError('code-exists')">Product code already exists</mat-error>
+          <mat-hint *ngIf="(getCodeFormControl().statusChanges | async) === 'PENDING'">
+            <mat-progress-spinner mode="indeterminate" [diameter]="15"></mat-progress-spinner>
+            Checking code
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field class="-full-width">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" required />
+          <mat-error *ngIf="getTitleFormControl().hasError('required')">This field is required</mat-error>
+          <mat-error *ngIf="getTitleFormControl().hasError('maxLength')">The maximum number of characters is exceeded</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field class="-full-width">
+          <mat-label>Description SK</mat-label>
+          <textarea matInput formControlName="descriptionSK" rows="5" required></textarea>
+          <mat-error *ngIf="getDescriptionSkFormControl().hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field class="-full-width">
+          <mat-label>Description ENG</mat-label>
+          <textarea matInput formControlName="descriptionENG" rows="5" required></textarea>
+          <mat-error *ngIf="getDescriptionEngFormControl().hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row">
+        <mat-form-field class="-full-width" required>
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="category" required>
+            <mat-option value="PROSPECT">{{ 'PROSPECT' }}</mat-option>
+            <mat-option value="EVALUATE - Pay per order">{{ 'EVALUATE - Pay per order' }}</mat-option>
+            <mat-option value="EVALUATE - Subscriptions">{{ 'EVALUATE - Subscriptions' }}</mat-option>
+            <mat-option value="FORECAST">{{ 'FORECAST' }}</mat-option>
+            <mat-option value="MONITOR">{{ 'MONITOR' }}</mat-option>
+            <mat-option value="CONSULTANCY  - standard">{{ 'CONSULTANCY  - standard' }}</mat-option>
+            <mat-option value="CONSULTANCY - customized">{{ 'CONSULTANCY - customized' }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="getCategoryFormControl().hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div>
+      <div fxFlex class="data-grid">
+        <div fxLayout="row">
+          <mat-form-field class="-full-width">
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="price" type="number" />
+          </mat-form-field>
+        </div>
+        <div fxLayout="row">
+          <mat-form-field class="-full-width">
+            <mat-label>Tech spec</mat-label>
+            <textarea matInput formControlName="techSpec" rows="10" class="consoleFont"></textarea>
+            <mat-error *ngIf="getTechSpecFormControl().hasError('badJsonFormat')">Bad JSON format</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

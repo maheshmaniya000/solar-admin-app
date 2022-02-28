@@ -1,0 +1,42 @@
+<div class="content orientation" ngClass.lt-sm="small">
+  <form [formGroup]="form">
+
+    <div fxLayout="column" fxLayout.gt-xs="row">
+      <div class="row" fxFlex>
+        <div class="label">{{ 'pvConfig.params.orientation.azimuth' | transloco }}</div>
+        <mat-form-field floatLabel="never">
+          <input matInput placeholder="0" formControlName="azimuth" type="number" [min]="MIN_AZIMUTH" [max]="MAX_AZIMUTH" (keydown.enter)="$event.preventDefault()">
+          <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN_AZIMUTH, max: MAX_AZIMUTH} }}</mat-error>
+        </mat-form-field>
+        &nbsp;<div class="unit">°</div>
+
+        <div class="orientation-minimap-container img" fxHide fxShow.gt-xs>
+          <img [src]="imgSrc" class="orientation-minimap">
+          <div class="azimuth-container">
+            <img src="assets/pvparam/azimuth-compass.png" class="compass">
+            <img src="assets/pvparam/azimuth-arrow.svg" class="arrow" [ngStyle]="{'transform': cssRotate(params.azimuth) }">
+          </div>
+        </div>
+        </div>
+
+      <div fxFlex>
+        <div class="row">
+          <div class="label">{{ 'pvConfig.params.orientation.tilt' | transloco }}</div>
+          <mat-form-field floatLabel="never">
+            <input matInput placeholder="0" formControlName="tilt" type="number" [min]="MIN_TILT" [max]="MAX_TILT" (keydown.enter)="$event.preventDefault()">
+            <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN_TILT, max: MAX_TILT} }}</mat-error>
+          </mat-form-field>
+          &nbsp;<div class="unit">°</div>
+        </div>
+
+        <div class="img-tilt-container img" fxHide fxShow.gt-xs>
+          <div class="img-tilt-inner" [ngStyle]="{'transform': cssRotate(params.tilt + 90) }"></div>
+        </div>
+        <button mat-button class="primary-button-mini" (click)="setOptimum()" ngClass.lt-sm="small">
+          {{ 'pvConfig.action.optimum' | transloco }}
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,81 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'header.login' | transloco }}</div>
+  <div class="sg-dialog-close-button" *ngIf="!data?.fromInvitation">
+    <button mat-icon-button  [disableRipple]="true" (click)="close()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content auth-dialog-content">
+    <!-- Result message after registration process -->
+    <div *ngIf="loginError" class="error">
+      <mat-error>
+        <span [innerHtml]="'auth.login.' + loginError | transloco"></span>
+      </mat-error>
+    </div>
+
+    <!-- Send a new verification email -->
+    <div *ngIf="loginError === 'notVerified'" style="margin-bottom: 24px;">
+      <sg-captcha #captcha action="verify_email" (onSuccess)="handleCaptcha($event)"></sg-captcha>
+      <button *ngIf="!isSendingEmail; else spinner" mat-button color="accent" (click)="sendNewVerificationEmail()" [disabled]="!captcha">
+        {{ 'auth.login.notVerifiedAction' | transloco }}
+      </button>
+    </div>
+
+    <p *ngIf="data?.fromInvitation && data?.email">
+      {{ 'Authorize that your' | transloco }} <strong>{{ data?.email }}</strong> {{ 'account will be associated with company.' | transloco }}
+    </p>
+
+    <form [formGroup]="form" (keydown.enter)="clickOnEnter($event)" novalidate class="row">
+      <div class="col-12" [hidden]="data?.opts && data?.opts.disableEmailEdit && data?.email">
+        <mat-form-field floatLabel="always">
+          <mat-label>{{ 'auth.registration.emailPlaceholder' | transloco }}</mat-label>
+          <input class="input" type="email" autocomplete="username" matInput name="email" formControlName="email"/>
+          <mat-error>{{ 'auth.registration.emailError' | transloco }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12">
+        <mat-form-field floatLabel="always">
+          <mat-label>{{ 'auth.registration.passwordPlaceholder' | transloco }}</mat-label>
+          <input class="input" type="password" autocomplete="current-password" matInput name="password" formControlName="password"/>
+          <mat-error *ngIf="password.hasError('required')">{{ 'auth.registration.passwordRequired' | transloco }}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+
+    <div style="margin-top: 8px;">
+      <mat-checkbox [checked]="true" (change)="rememberMe = $event.checked">{{ 'auth.login.rememberMe' | transloco }}</mat-checkbox>
+    </div>
+
+  </div>
+
+
+  <div class="sg-dialog-actions auth-dialog-actions">
+    <button type="submit"
+            *ngIf="!showSpinner; else spinner"
+            (click)="loginAction()"
+            class="primary"
+            data-test="dialog-login-button"
+            [disabled]="form.invalid || !form.dirty">
+            {{ 'header.login' | transloco }}
+    </button>
+  </div>
+
+  <div class="sg-dialog-footer auth-dialog-footer" *ngIf="!opts.disableDialogSwitch">
+    <div *ngIf="opts.showTermsAndConditions">
+      <sg-terms-and-conditions ></sg-terms-and-conditions>
+      <mat-checkbox [(ngModel)]="confirmed">
+        <p class="info-text" [innerHtml]="'auth.confirmTerms.termsAgreeConfirm' | transloco"></p>
+      </mat-checkbox>
+    </div>
+    <p><a role="button" (click)="openForgotPassword()">{{ 'header.forgotPassword' | transloco }}</a></p>
+    <p><a role="button" (click)="openRegistration()" title="Sign up">{{ 'auth.login.create' | transloco }}</a></p>
+  </div>
+</sg-dialog-deprecated>
+
+<ng-template #spinner>
+  <div style="overflow: hidden;">
+    <mat-spinner [diameter]="22" color="accent" style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>

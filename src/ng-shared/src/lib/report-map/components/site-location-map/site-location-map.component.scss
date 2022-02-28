@@ -1,0 +1,19 @@
+@import 'theme';
+
+.site-map {
+  position: relative;
+
+  .map {
+    width: 100%;
+  }
+
+  .marker {
+    margin-left: -32px;
+    margin-top: -48px;
+    width: 64px;
+    height: 48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}

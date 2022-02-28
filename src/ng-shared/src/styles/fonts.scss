@@ -1,0 +1,81 @@
+
+@mixin generate-fonts($app) {
+  /** Material icons
+    * https://google.github.io/material-design-icons/
+  */
+  @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src:  local('Material Icons'),
+          local('MaterialIcons-Regular'),
+          url('/#{$app}/assets/fonts/material/icons.woff2') format('woff2'),
+          url('/#{$app}/assets/fonts/material/icons.woff') format('woff'),
+          url('/#{$app}/assets/fonts/material/icons.ttf') format('truetype');
+  }
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+  /** Roboto
+  * Generated from https://google-webfonts-helper.herokuappUrl.com/fonts/roboto?subsets=cyrillic-ext,cyrillic,latin,latin-ext
+  */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'),
+        url('/#{$app}/assets/fonts/roboto/roboto-v20-latin-ext_latin_cyrillic_cyrillic-ext-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('/#{$app}/assets/fonts/roboto/roboto-v20-latin-ext_latin_cyrillic_cyrillic-ext-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'), local('Roboto-Medium'),
+        url('/#{$app}/assets/fonts/roboto/roboto-v20-latin-ext_latin_cyrillic_cyrillic-ext-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('/#{$app}/assets/fonts/roboto/roboto-v20-latin-ext_latin_cyrillic_cyrillic-ext-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Bold'), local('Roboto-Bold'),
+        url('/#{$app}/assets/fonts/roboto/roboto-v20-latin-ext_latin_cyrillic_cyrillic-ext-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('/#{$app}/assets/fonts/roboto/roboto-v20-latin-ext_latin_cyrillic_cyrillic-ext-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  /**
+    We're not including any Noto Sans CJK fonts
+    Noto Sans CJK - Font for Chinesse/Japanese/Korean
+    These fonts are way too large to be embedded
+    https://www.quora.com/How-can-I-embed-large-CJK-fonts-in-CSS
+
+    If Noto Sans CJK is installed on the computer, we'll use it
+    Otherwise let the browser use any other CJK font.
+  */
+
+  body {
+    // see "./fonts.scss"
+    font-family: 'Roboto', 'Noto Sans', 'Noto Sans CJK JP', 'Noto Sans CJK CN', 'Noto Sans CJK KO', 'Helvetica Neue', sans-serif;
+  
+    // fonts on OSX looks more consistent with other systems
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}

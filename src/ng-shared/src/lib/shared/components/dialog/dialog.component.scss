@@ -1,0 +1,214 @@
+@import 'theme';
+
+// has an impact globally.
+::ng-deep {
+  .cdk-overlay-pane {
+    max-width: 100vw !important;
+  }
+
+  .mat-dialog-content {
+    max-height: calc(90vh - 200px) !important;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  ::ng-deep { // Making the modal fullscreen in mobiles
+    .cdk-overlay-pane {
+      max-height: 100vh !important;
+    }
+
+    .dialog-container:not(.with-min-width) .mat-dialog-content {
+      max-height: unset !important;
+    }
+  }
+
+  .dialog-wrapper {
+    width: 100% !important;
+    min-width: 320px !important;
+  }
+}
+
+.dialog-container {
+  .dialog-wrapper {
+    padding-bottom: $sg-14;
+  }
+
+  width: 100%;
+  height: 100vh;
+
+  &.with-min-width {
+    width: auto !important;
+    height: auto;
+  }
+
+  & > div {
+    overflow: hidden;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 560px;
+    height: auto;
+
+    &.large {
+      width: auto;
+    }
+  }
+}
+
+:host ::ng-deep {
+ color: map-get($primary, 900);
+
+  .title {
+    font-size: $sg-18;
+    line-height: 24px;
+    padding: 24px 32px 0 32px;
+    overflow: hidden;
+
+    .heading {
+      font-weight: $font-weight-bold;
+    }
+
+    .close-dialog:not(:empty) {
+      margin-right: 16px;
+
+      button {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        float: left;
+        outline: none;
+
+        mat-icon {
+          color: map-get($primary, 800);
+          float: left;
+          line-height: 24px;
+        }
+      }
+
+      .mat-button-focus-overlay {
+        background: none;
+        transition: none;
+      }
+    }
+  }
+
+  .content {
+    padding: 0 32px;
+    width: 100%;
+  }
+
+  mat-dialog-actions {
+    min-height: unset;
+    justify-content: flex-end;
+  }
+
+  .actions {
+    width: 100%;
+    min-height: 36px;
+    padding: 0 32px 24px 32px;
+      hr {
+        margin: 0 0 10px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    button {
+      line-height: 36px;
+      margin-left: 12px;
+    }
+  }
+
+  .with-min-width {
+    .actions button {
+      float: right;
+      width: auto;
+      margin-bottom: 0;
+
+      &:not(:first-child) {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .actions:empty {
+    display: none;
+  }
+
+  mat-dialog-content, .mat-dialog-actions:last-child, .mat-dialog-title {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .mat-dialog-title {
+    margin-top: 14px;
+  }
+
+  mat-dialog-content {
+    margin: 12px 0 0;
+  }
+
+  .footer {
+    width: 100%;
+
+    span {
+      font-size: $sg-14;
+      line-height: 18px;
+      color: map_get($accent, 500);
+    }
+  }
+
+  .footer:empty {
+    display: none;
+  }
+
+  .mat-form-field-invalid {
+    .mat-form-field-label {
+      color: map-get($accent, 500);
+    }
+    .mat-form-field-ripple {
+      background-color: map-get($accent, 500);
+    }
+  }
+}
+
+@media (min-width: 760px) {
+  .mat-dialog-content {
+    margin: 34px 0 0 0;
+  }
+
+  mat-dialog-content, .mat-dialog-actions:last-child, .mat-dialog-title {
+    margin: 5px 0 0 0;
+    padding: 0;
+  }
+
+
+  .dialog-container {
+    .dialog-wrapper {
+      padding-bottom: 0;
+    }
+  }
+
+  :host ::ng-deep {
+    .sg-dialog-actions {
+      margin: 40px 0 0 0;
+
+    }
+    .mat-dialog-title {
+      margin-top: 5px;
+    }
+  }
+}
+
+::ng-deep {
+  .sg-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.scroll-header ::ng-deep .mat-tab-header{
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}

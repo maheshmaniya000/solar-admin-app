@@ -1,0 +1,25 @@
+@use '~@angular/material' as mat;
+@use 'variables';
+@use '../icon/icon' as icon;
+
+@mixin theme($theme-or-color-config) {
+  $typography-config: mat.get-typography-config($theme-or-color-config);
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $foreground: map-get($color-config, foreground);
+
+  button {
+    &.mat-stroked-button,
+    &.mat-flat-button {
+      @include mat.typography-level($typography-config, button);
+    }
+
+    &.mat-stroked-button {
+      border-color: mat.get-color-from-palette($foreground, divider);
+    }
+
+    &.mat-button {
+      @include mat.typography-level($typography-config, caption);
+      font-weight: mat.font-weight($typography-config, body-2);
+    }
+  }
+}

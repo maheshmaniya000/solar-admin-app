@@ -1,0 +1,30 @@
+<ng-container *ngIf="companyViewStore.state$ | async as state">
+  <h3>Info</h3>
+  <sg-admin-company-info [company]="company"></sg-admin-company-info>
+  <sg-admin-origin-data [entity]="company"></sg-admin-origin-data>
+
+  <div *ngIf="company.sgCompanyId">
+    <h3>Contacts</h3>
+    <sg-admin-contacts-table [contacts]="company.contacts"></sg-admin-contacts-table>
+
+    <h3>
+      Users
+      <button (click)="companyViewStore.assignSubCompaniesUsersToParentCompany(company)" mat-raised-button>Assign all users from sub companies</button>
+    </h3>
+
+    <ng-container *ngIf="!state.updatingUsers; else updatingUsersTemplate" class="users">
+      <div *ngFor="let user of state.users">
+        <button mat-icon-button (click)="detailNavigationService.toUser(user)">
+          <mat-icon>pageview</mat-icon>
+        </button>
+
+        {{ user | sgUserFullName }} ({{ user.sgAccountId }}) ({{ user.role}}) ({{ user.status
+        }})
+      </div>
+    </ng-container>
+
+    <ng-template #updatingUsersTemplate>
+      <mat-progress-spinner [diameter]="20" mode="indeterminate"></mat-progress-spinner>
+    </ng-template>
+  </div>
+</ng-container>

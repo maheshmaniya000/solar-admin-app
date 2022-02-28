@@ -1,0 +1,130 @@
+<div>
+  <sg-fullscreen-dialog-toolbar headline="SDAT subscription" subheadline="Admin" (onClose)="onCloseClick()"></sg-fullscreen-dialog-toolbar>
+
+  <ng-container *ngIf="hasSDATSubscription$ | async; else noSubscription">
+    <mat-tab-group (selectedIndexChange)="selectedIndexChange($event)">
+      <mat-tab label="General">
+        <mat-card>
+          <form [formGroup]="form">
+            <div>
+              From:
+              <mat-form-field>
+                <input matInput formControlName="from" [matDatepicker]="fromPicker">
+                <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+                <mat-datepicker #fromPicker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div>
+              To:
+              <mat-form-field>
+                <input matInput formControlName="to" [matDatepicker]="toPicker">
+                <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+                <mat-datepicker #toPicker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div>
+              Subscription type:
+              <mat-form-field>
+                <mat-select formControlName="type">
+                  <mat-option *ngFor="let subscriptionType of subscriptionTypes" [value]="subscriptionType">
+                    {{ 'common.subscriptionType.' + subscriptionType | transloco }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div>
+              Users limit:
+              <mat-form-field>
+                <input matInput formControlName="usersLimit" type="number" step="1">
+              </mat-form-field>
+            </div>
+
+            <div>
+              Devices per user:
+              <mat-form-field>
+                <input matInput formControlName="devicesPerUser" type="number" step="1">
+              </mat-form-field>
+            </div>
+
+            <div>
+              Offline duration limit:
+              <mat-form-field>
+                <input matInput formControlName="offlineDuration" type="number" step="1">
+              </mat-form-field>
+              <span>hours</span>
+            </div>
+          </form>
+        </mat-card>
+
+        <ng-container *ngTemplateOutlet="toolbar; context: { canDelete: true }"></ng-container>
+      </mat-tab>
+
+      <mat-tab label="Allocated users">
+        <sg-app-subscription-users
+          *ngIf="(companyUsers$ | async)?.length > 0; else noUsers"
+          [users]="companyUsers$ | async"
+          [selectedUsers]="selectedUsers"
+          [devices]="companyDevices$ | async"
+          [devicesPerUser]="(subscription$ | async)?.devicesPerUser"
+          (selectUser)="selectUser($event.id, $event.checked)"
+          (selectAllUsers)="selectAllUsers($event)"
+          (clickOnUser)="filterDevicesByUser($event)">
+        </sg-app-subscription-users>
+
+        <ng-container *ngTemplateOutlet="toolbar; context: { canDelete: false }"></ng-container>
+      </mat-tab>
+
+      <mat-tab label="Registered devices">
+        <sg-sdat-subscription-devices
+          *ngIf="(companyDevices$ | async)?.length > 0; else noDevices"
+          [devices]="companyDevices$ | async"
+          [users]="companyUser$ | async"
+          [filter]="filterUser"
+          [columns]="['userName', 'email', 'customName', 'hostName', 'osFingerprint']"
+          (resetFilter)="filterUser = null"
+          (updateDevice)="updateAppDevice($event)">
+        </sg-sdat-subscription-devices>
+      </mat-tab>
+    </mat-tab-group>
+  </ng-container>
+</div>
+
+<ng-template #noSubscription>
+  <mat-card class="no-license" *ngIf="!loading; else spinner">
+    No SDAT subscription exists.
+    <button mat-button color="accent" (click)="createSDATSubscription()">Add subscription</button>
+  </mat-card>
+</ng-template>
+
+<ng-template #noUsers>
+  <mat-card class="no-license"> No users found. </mat-card>
+</ng-template>
+
+<ng-template #noDevices>
+  <mat-card class="no-license"> No devices found. </mat-card>
+</ng-template>
+
+<ng-template #toolbar let-canDelete="canDelete">
+  <div class="toolbar">
+    <button mat-raised-button color="accent" *ngIf="!savingOrDeleting" [disabled]="(tooManyUsers$ | async) || form.invalid" (click)="save()">
+      Save & Close
+    </button>
+    <button mat-raised-button color="accent" *ngIf="(subscription$ | async) && !savingOrDeleting && canDelete" (click)="delete()">
+      Delete SDAT subscription
+    </button>
+
+    <mat-progress-spinner mode="indeterminate" *ngIf="savingOrDeleting" [diameter]="30"></mat-progress-spinner>
+  </div>
+  <div *ngIf="tooManyUsers$ | async" class="userLimit">
+    {{ 'companyAdmin.subscription.tooManyUsers' | transloco: { userLimit: this.form.value.usersLimit } }}
+  </div>
+</ng-template>
+
+<ng-template #spinner>
+  <div style="overflow: hidden">
+    <mat-spinner mode="indeterminate" [diameter]="25" style="margin: auto"></mat-spinner>
+  </div>
+</ng-template>

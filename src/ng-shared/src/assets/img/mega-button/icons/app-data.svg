@@ -1,0 +1,27 @@
+<svg id="app-data" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#314862"/>
+      <stop offset="0.719" stop-color="#6e7e90"/>
+      <stop offset="1" stop-color="#919dab"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b3bac5"/>
+      <stop offset="1" stop-color="#919dab"/>
+    </linearGradient>
+  </defs>
+  <rect id="Rectangle_30912" data-name="Rectangle 30912" width="48" height="48" fill="none"/>
+  <g id="Group_18771" data-name="Group 18771" transform="translate(-556 -899)">
+    <rect id="Rectangle_38358" data-name="Rectangle 38358" width="44" height="44" transform="translate(558 901)" fill="#adaeaf" opacity="0"/>
+    <path id="Path_7886" data-name="Path 7886" d="M22,0A22,22,0,1,1,0,22,22,22,0,0,1,22,0Z" transform="translate(558 901)" fill="url(#radial-gradient)"/>
+    <g id="Group_18768" data-name="Group 18768" transform="translate(558 907.285)">
+      <g id="Mask_Group_18545" data-name="Mask Group 18545" transform="translate(0 0)">
+        <path id="Intersection_1" data-name="Intersection 1" d="M6.6,31.429A22,22,0,0,1,6.6,0H37.4a22,22,0,0,1,0,31.429Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+      </g>
+      <g id="Group_18801" data-name="Group 18801" transform="translate(-2 -48.149)">
+        <path id="binary-solid" d="M4.5,15.75H3.937v-4.5a1.127,1.127,0,0,0-.421-.878,1.034,1.034,0,0,0-.948-.219l-1.687.375a1.125,1.125,0,1,0,.488,2.2l.319-.071v3.1H1.125a1.125,1.125,0,0,0,0,2.25H4.5a1.125,1.125,0,1,0,0-2.25ZM9,5.625a1.125,1.125,0,0,0,0,2.25h3.375a1.125,1.125,0,0,0,0-2.25h-.563v-4.5a1.124,1.124,0,0,0-1.369-1.1L8.755.4a1.125,1.125,0,1,0,.488,2.2l.319-.071v3.1Zm2.8,4.5H9.547a2.253,2.253,0,0,0-2.25,2.25V15.75A2.253,2.253,0,0,0,9.547,18H11.8a2.253,2.253,0,0,0,2.25-2.25V12.375A2.252,2.252,0,0,0,11.8,10.125ZM9.547,15.75V12.375H11.8V15.75Zm-3.8-13.5A2.253,2.253,0,0,0,3.5,0H1.249A2.253,2.253,0,0,0-1,2.25V5.625a2.253,2.253,0,0,0,2.25,2.25H3.5a2.253,2.253,0,0,0,2.25-2.25Zm-4.5,3.375V2.25H3.5V5.625Z" transform="translate(13.705 54.863)" fill="#fff"/>
+        <path id="binary-solid-2" data-name="binary-solid" d="M5.5,15.75H4.937v-4.5a1.127,1.127,0,0,0-.421-.878,1.034,1.034,0,0,0-.948-.219l-1.687.375a1.125,1.125,0,1,0,.488,2.2l.319-.071v3.1H2.125a1.125,1.125,0,0,0,0,2.25H5.5a1.125,1.125,0,1,0,0-2.25Zm1.25-13.5A2.253,2.253,0,0,0,4.5,0H2.249A2.253,2.253,0,0,0,0,2.25V5.625a2.253,2.253,0,0,0,2.25,2.25H4.5a2.253,2.253,0,0,0,2.25-2.25Zm-4.5,3.375V2.25H4.5V5.625Z" transform="translate(28.705 54.863)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

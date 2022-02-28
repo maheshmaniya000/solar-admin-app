@@ -1,0 +1,28 @@
+:host {
+  height: 100%;
+  display: block;
+}
+
+:host > div {
+  height: 100%;
+  width: 100%;
+}
+
+.tableContent {
+  width: 100%;
+  max-height: calc(100% - 60px);
+  overflow: scroll;
+}
+
+.tableContent > mat-table {
+  min-width: min-content;
+}
+
+mat-cell, mat-header-cell {
+  min-width: 150px;
+  text-overflow: ellipsis;
+}
+
+mat-header-cell {
+  background-color: inherit;
+}

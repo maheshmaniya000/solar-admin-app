@@ -1,0 +1,51 @@
+<div class="table-s pvLosses-table">
+  <cdk-table #table [dataSource]="lossesDiagram" class="data-table losses-chart">
+
+    <ng-container cdkColumnDef="sumLabel">
+      <cdk-header-cell *cdkHeaderCellDef>
+        <sg-loss-header [data]="annualPvCalcData"
+                        [layer]="annualLayers.get('PR')">
+        </sg-loss-header>
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <sg-loss-arrow [loss]="row"></sg-loss-arrow>
+        <div *ngIf="isRefRow(row)">
+          <span>{{ translateRowKey(row) | transloco }}:</span>
+          <span class="sumLabel-value">
+                  <div class="total-perf"><sg-unit-value [unit]="unitByGroup(row.group)" [value]="row.energy"></sg-unit-value></div>
+                  <sg-unit-label [unit]="unitByGroup(row.group)"></sg-unit-label>
+                </span>
+        </div>
+      </cdk-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="loss">
+      <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <ng-container *ngIf="!isRefRow(row)">
+          <sg-unit-value [unit]="percentUnit" [value]="row.lossPercent"></sg-unit-value>
+          <sg-unit-label [unit]="percentUnit"></sg-unit-label>
+        </ng-container>
+      </cdk-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="lossLabel">
+      <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <ng-container *ngIf="isRefRow(row) && row.diagramKey">
+          {{ 'projectDetail.pvLosses.' + row.diagramKey | transloco }}
+        </ng-container>
+        <ng-container *ngIf="!isRefRow(row)">
+          {{ translateRowKey(row) | transloco }}
+        </ng-container>
+      </cdk-cell>
+    </ng-container>
+
+    <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+    <cdk-row *cdkRowDef="let row; columns: columns" [ngClass]="{'highlighted': isRefRow(row)}">
+    </cdk-row>
+
+  </cdk-table>
+  <div class="diagram-desc">
+    {{ 'projectDetail.pvLosses.diagramDesc' | transloco }}
+  </div>
+</div>

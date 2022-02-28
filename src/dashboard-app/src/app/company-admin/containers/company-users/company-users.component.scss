@@ -1,0 +1,30 @@
+@import 'theme';
+
+@include sg-detail-card-layout(map-get($primary, 800));
+
+.primary-button {
+  margin: 26px 0 26px 4px;
+  max-height: 32px;
+
+    .mat-icon {
+      font-size: 20px;
+    }
+}
+
+.mat-card-title {
+  font-size: 20px;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.mat-select {
+  width: 75%;
+}
+
+.email {
+  padding-right: 20px;
+}

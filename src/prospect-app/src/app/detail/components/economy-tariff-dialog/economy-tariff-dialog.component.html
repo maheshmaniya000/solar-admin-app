@@ -1,0 +1,54 @@
+
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">
+    {{ 'projectDetail.economy.tariffGoalseek.open' | transloco }}
+  </div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button  [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <div class="exp">
+      {{ 'projectDetail.economy.tariffGoalseek.explain' | transloco }}
+    </div>
+
+    <form [formGroup]="form">
+      <div fxLayout>
+        <div fxFlex="40%">
+          {{ 'projectDetail.economy.tariffGoalseek.target' | transloco }}
+        </div>
+        <div fxFlex>
+            <mat-form-field>
+              <input matInput formControlName="IRREquity" type="number" step="0.1">
+            </mat-form-field>
+        </div>
+        <div fxFlex="20%">
+          <sg-unit-label [unit]="unit"></sg-unit-label>
+        </div>
+      </div>
+    </form>
+
+    <div *ngIf="result" class="result">
+      {{ 'projectDetail.economy.tariffGoalseek.result' | transloco }}
+      <sg-unit-value [unit]="tariffUnit" [value]="result"></sg-unit-value>&nbsp;
+      <sg-unit-label [unit]="tariffUnit"></sg-unit-label>
+    </div>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button *ngIf="!calculating && !result" (click)="calculate()" class="primary-button" [disabled]="form.invalid">
+      {{ 'common.action.calculate' | transloco }}
+    </button>
+    <div *ngIf="calculating">
+      <mat-spinner [diameter]="16" style="margin: auto;"></mat-spinner>
+    </div>
+    <button *ngIf="result" mat-button (click)="closeDialog(result)" color="accent">
+      {{ 'projectDetail.economy.tariffGoalseek.use' | transloco }}
+      <sg-unit-value [unit]="tariffUnit" [value]="result"></sg-unit-value>&nbsp;
+      <sg-unit-label [unit]="tariffUnit"></sg-unit-label>
+    </button>
+  </div>
+
+</sg-dialog-deprecated>

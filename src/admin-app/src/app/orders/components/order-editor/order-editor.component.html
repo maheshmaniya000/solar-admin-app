@@ -1,0 +1,29 @@
+<mat-card *ngIf="orderDetailStore.viewModel$ | async as viewModel">
+  <mat-card-content>
+    <form [formGroup]="formGroup">
+      <sg-admin-order-company-editor [parentForm]="formGroup"></sg-admin-order-company-editor>
+      <sg-admin-order-contacts [formArray]="getContactsFormArray()"></sg-admin-order-contacts>
+      <sg-admin-order-currency [parentForm]="formGroup"></sg-admin-order-currency>
+      <sg-admin-order-title-and-codes [parentForm]="formGroup"></sg-admin-order-title-and-codes>
+      <sg-admin-order-items-editor [formArray]="getOrderItemsFormArray()"></sg-admin-order-items-editor>
+      <sg-admin-order-discount
+        [currency]="orderDetailStore.currency$ | async"
+        [parentForm]="getDiscountFormGroup()"
+        header="Discount for order"
+      ></sg-admin-order-discount>
+      <sg-admin-order-vat-and-total [formGroup]="formGroup"></sg-admin-order-vat-and-total>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button
+      (click)="viewModel.saved ? orderDetailStore.update() : orderDetailStore.create()"
+      [disabled]="viewModel.saveDisabled"
+      color="accent"
+      mat-raised-button
+    >
+      <mat-spinner *ngIf="viewModel.updating" [diameter]="15" style="display: inline-block"> </mat-spinner>
+      Save & Close
+    </button>
+  </mat-card-actions>
+</mat-card>

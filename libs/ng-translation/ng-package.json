@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/libs/ng-translation",
+  "lib": {
+    "entryFile": "src/index.ts",
+    "umdModuleIds": {
+      "@ngneat/transloco": "ngneat.transloco",
+      "@solargis/types/translation": "@solargis/types/translation"
+    }
+  }
+}

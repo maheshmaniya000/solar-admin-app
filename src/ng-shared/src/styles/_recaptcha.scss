@@ -1,0 +1,11 @@
+.recaptcha-registration {
+  > div {
+    > div {
+      width: 100% !important;
+      iframe {
+        transform: scale(1.32);
+        transform-origin: 0 0;
+      }
+    }
+  }
+}

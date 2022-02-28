@@ -1,0 +1,12 @@
+
+:host {
+  width: 100%;
+}
+
+:host > div {
+  min-height: 200px;
+}
+
+button + button {
+  margin-top: 8px;
+}

@@ -1,0 +1,56 @@
+<sg-fullscreen-dialog-toolbar headline="View tokens" subheadline="Admin" (onClose)="onCloseClick()"></sg-fullscreen-dialog-toolbar>
+<div class="content-sec">
+  <div class="tableContent">
+    <mat-table [dataSource]="dataSource$" matSort style="width: 100%">
+        <!-- TOKEN ID COLUMN -->
+        <ng-container matColumnDef="tokenId">
+          <mat-header-cell  class="column-name" *matHeaderCellDef >
+            {{ 'companyAdmin.subscription.users.tokenId' | transloco }}
+          </mat-header-cell>
+          <mat-cell class="name" *matCellDef="let user" fxLayout>
+            <div class="name" fxFlex="grow">{{ user.tokenId }}</div>
+          </mat-cell>
+        </ng-container>
+  
+        <!-- GENERATION DATE COLUMN -->
+        <ng-container matColumnDef="generationDate">
+          <mat-header-cell  class="column-name" *matHeaderCellDef>
+            {{ 'companyAdmin.subscription.users.tokenGenerationDate' | transloco }}
+          </mat-header-cell>
+          <mat-cell class="name" *matCellDef="let user" fxLayout>
+            <div class="name" fxFlex="grow">{{ user.generationDate | sgDateTimeFormat:'dateTime' }}</div>
+          </mat-cell>
+        </ng-container>
+      
+        <!-- ACTION COLUMN -->
+        <ng-container matColumnDef="action">
+          <mat-header-cell  class="column-name" *matHeaderCellDef mat-sort-header>
+            {{ 'companyAdmin.subscription.users.action' | transloco }}
+          </mat-header-cell>
+          <mat-cell class="name" *matCellDef="let user" fxLayout>
+            <div class="name" fxFlex="grow">{{ 'companyAdmin.subscription.users.regenerateToken' | transloco }}</div>
+            <div class="name" fxFlex="grow">{{ 'companyAdmin.subscription.users.deleteToken' | transloco }}</div>
+          </mat-cell>
+        </ng-container>
+
+         
+        <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+        <mat-row *matRowDef="let user; columns: columns"></mat-row>
+      </mat-table>
+      <ng-container *ngTemplateOutlet="toolbar; context: { canDelete: true }"></ng-container>
+      <mat-paginator [pageSize]="10"></mat-paginator>
+  </div>
+  <ng-template #toolbar let-canDelete="canDelete">
+    <div class="toolbar">
+      <button mat-raised-button color="accent" *ngIf="!savingOrDeleting" (click)="onCloseClick()">
+        Close 
+      </button>
+      <button mat-raised-button color="accent" *ngIf="!savingOrDeleting && canDelete">
+        New token
+      </button>
+  
+      <mat-progress-spinner mode="indeterminate" *ngIf="savingOrDeleting" [diameter]="30"></mat-progress-spinner>
+    </div>
+  </ng-template>
+</div>
+  

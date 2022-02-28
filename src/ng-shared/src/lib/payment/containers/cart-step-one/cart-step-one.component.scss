@@ -1,0 +1,71 @@
+@import 'theme';
+
+
+mat-card {
+  padding: 32px;
+
+  .headline {
+    color: #44A987;
+    position: relative;
+
+    mat-icon {
+      position: absolute;
+    }
+
+    span {
+      margin-left: 24px + 16px;
+      color: #222D3D;
+      font-size: 20px;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .content {
+    padding: 32px 0;
+    color: #222D3D;
+
+    .order-item {
+      background-color: map-get($primary, 100);
+      padding: 24px;
+
+      .item-name {
+        font-weight: $font-weight-bold;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+    }
+
+    .order-item + .order-item {
+      border-top: 1px solid map-get($primary, 300);
+    }
+
+    .purchase-order {
+      margin-top: 24px;
+      height: 66px;
+
+      form {
+        display: inline-block;
+        margin-left: 32px;
+      }
+    }
+
+    .price {
+      max-width: 404px;;
+      margin: 20px 24px 20px 0;
+
+      .vat {
+        font-size: 14px;
+        color: #364863;
+      }
+      .total {
+        font-size: 20px;
+        margin: 10px 0;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  .actions {
+    text-align: right;
+  }
+}

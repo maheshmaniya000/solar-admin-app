@@ -1,0 +1,18 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.table-s {
+  @include cdk-table-s();
+  @include sticky-table-scrolling();
+
+  cdk-cell:first-of-type, cdk-header-cell:first-of-type {
+    min-width: 16%;
+  }
+}
+
+cdk-cell, cdk-header-cell {
+  text-align: right;
+}

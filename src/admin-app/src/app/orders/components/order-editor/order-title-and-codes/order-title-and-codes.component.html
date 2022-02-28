@@ -1,0 +1,56 @@
+<ng-container [formGroup]="parentForm">
+  <div class="title-note">
+    <h4>Order title</h4>
+    <mat-form-field>
+      <mat-label>Order title</mat-label>
+      <input formControlName="orderTitle" matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Order title SK</mat-label>
+      <input formControlName="orderTitleSK" matInput />
+    </mat-form-field>
+  </div>
+
+  <div class="codes">
+    <h4>Order codes for invoice</h4>
+    <mat-form-field>
+      <mat-label>Purchase Order No</mat-label>
+      <input formControlName="purchaseOrderNo" matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Free text</mat-label>
+      <input formControlName="freeText" matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Contract No</mat-label>
+      <input formControlName="contractNo" matInput />
+    </mat-form-field>
+  </div>
+
+  <ng-container *ngIf="orderDetailStore.viewModel$ | async as viewModel">
+    <div class="company-note">
+      <h4>Internal notes</h4>
+      <mat-form-field>
+        <mat-label>Order note</mat-label>
+        <textarea
+          cdkAutosizeMaxRows="6"
+          cdkAutosizeMinRows="3"
+          cdkTextareaAutosize
+          formControlName="note"
+          matInput
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field *ngIf="viewModel?.companyNote">
+        <mat-label>Company note</mat-label>
+        <textarea
+          cdkAutosizeMaxRows="6"
+          cdkAutosizeMinRows="3"
+          cdkTextareaAutosize
+          disabled
+          matInput
+          [value]="viewModel.companyNote"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </ng-container>
+</ng-container>

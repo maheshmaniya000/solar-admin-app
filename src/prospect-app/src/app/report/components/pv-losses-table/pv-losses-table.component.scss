@@ -1,0 +1,117 @@
+@import 'theme';
+
+.table-container {
+  overflow: auto;
+  width: 100%;
+}
+
+.table-s {
+  @include cdk-table-s(true, auto);
+
+  cdk-cell, cdk-header-cell {
+    text-align: right;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 11px;
+    line-height: initial;
+
+    .subheader {
+      font-size: inherit;
+    }
+  }
+
+  cdk-row {
+    min-height: 21px;
+  }
+
+  .footer {
+    height: auto !important;
+  }
+}
+
+
+.pvLosses-table {
+  cdk-header-cell, cdk-cell {
+    align-content: end;
+    @media screen {
+      flex: 0 1 80px;
+    }
+  }
+
+  .cdk-column-label {
+    align-content: start;
+    flex: 1;
+  }
+
+  .cdk-column-solarEnergy      { flex: 0 0 62px; box-sizing: border-box; padding-left: 0; }
+  .cdk-column-solarEnergyDelta { flex: 0 0 97px; box-sizing: border-box; padding-left: 0; }
+  .cdk-column-pvEnergy         { flex: 0 0 90px; box-sizing: border-box; padding-left: 0; }
+  .cdk-column-pvEnergyDelta    { flex: 0 0 97px; box-sizing: border-box; padding-left: 0; }
+  .cdk-column-lossPercent      { flex: 0 0 62px; box-sizing: border-box; padding-left: 0; }
+  .cdk-column-pr               { flex: 0 0 37px; box-sizing: border-box; padding-left: 0; }
+
+  .cdk-column-sumLabel {
+    flex: 0 1 300px;
+  }
+
+  .cdk-column-loss {
+    flex: 0 1 70px;
+  }
+
+  .cdk-column-lossLabel {
+    flex: 1;
+    text-align: left;
+  }
+
+  .sumLabel-value {
+    font-weight: normal;
+  }
+
+  cdk-cell.cdk-column-sumLabel {
+    align-self: stretch;
+
+    & > div {
+      position: absolute;
+      z-index: 10;
+    }
+
+    sg-loss-arrow {
+      position: absolute;
+      display: flex;
+      flex-flow: row;
+      margin: -6px -8px;
+      z-index: 5;
+    }
+  }
+
+  cdk-header-cell.cdk-column-sumLabel {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .losses-chart {
+    cdk-row, cdk-header-row {
+      padding-left: 0px;
+    }
+
+    cdk-header-row {
+      background: none;
+    }
+  }
+}
+
+.diagram-desc {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.footer {
+  height: $sg-32 !important;
+  line-height: $sg-32 - 2 * 6px;
+}
+
+.total-perf {
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  padding: 0 0.2em 0 0.5em;
+}

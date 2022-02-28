@@ -1,0 +1,112 @@
+<div class="card-layout">
+
+  <div class="card-big">
+    <sg-summary [text]="'projectDetail.pvElectricity.summary'" [energySystem]="energySystem$ | async" [hasData]="true">
+      <sg-summary-data-item class="left"
+        [layer]="pvcalcDataset.annual.get('PVOUT_specific')"
+        [data]="annual$ | async">
+        {{ 'project.data.yearlyAverage' | transloco }}
+      </sg-summary-data-item>
+      <sg-summary-data-item class="right"
+        [layer]="pvcalcDataset.annual.get('PVOUT_total')"
+        [data]="annual$ | async">
+        {{ 'project.data.yearlyAverage' | transloco }}
+      </sg-summary-data-item>
+    </sg-summary>
+  </div>
+
+  <div class="card-small">
+    <mat-card>
+      <mat-card-title>{{ 'projectDetail.pvElectricity.potential' | transloco }}</mat-card-title>
+
+      <div sgScrollContainer="sm">
+        <div class="table-s">
+          <cdk-table #table [dataSource]="dataSource" class="data-table">
+
+            <ng-container cdkColumnDef="month">
+              <cdk-header-cell *cdkHeaderCellDef>{{ 'months.month' | transloco }}</cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">{{ row.month | transloco }}</cdk-cell>
+            </ng-container>
+
+            <ng-container *ngFor="let column of dataColumns" [cdkColumnDef]="column">
+              <cdk-header-cell *cdkHeaderCellDef>
+                <sg-project-data-key [key]="pvcalcDataset.monthly.get(column).key"></sg-project-data-key>
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="pvcalcDataset.monthly.get(column).unit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <sg-unit-value
+                  [unit]="unit(column, row.monthIndex)"
+                  [value]="row[column]"
+                  [opts]="{ slot: row.monthIndex }">
+                </sg-unit-value>
+              </cdk-cell>
+            </ng-container>
+
+            <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+            <cdk-row *cdkRowDef="let row; columns: columns"></cdk-row>
+          </cdk-table>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+
+  <div class="card-small">
+    <mat-card class="tabs">
+      <mat-card-content>
+        <mat-tab-group color="accent" [selectedIndex]="selectedTabIndex" (selectedTabChange)="tabIndexChange($event.index)">
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <sg-project-data-key key="GTI"></sg-project-data-key> +
+              <sg-project-data-key key="TEMP"></sg-project-data-key>
+            </ng-template>
+            <ng-template matTabContent>
+              <div *ngIf="selectedTabIndex === 0">
+                <sg-highcharts [opts]="GTI_TEMPChart$ | async"
+                               [exportingOpts]="getExportChartOpts(['GTI', 'TEMP']) | async">
+                </sg-highcharts>
+              </div>
+            </ng-template>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <sg-project-data-key key="PVOUT_total"></sg-project-data-key>
+            </ng-template>
+            <ng-template matTabContent>
+              <div *ngIf="selectedTabIndex === 1">
+                <sg-highcharts [opts]="PVOUTtotalChart$ | async"
+                               [exportingOpts]="getExportChartOpts(['PVOUT_total']) | async">
+                </sg-highcharts>
+              </div>
+            </ng-template>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <sg-project-data-key key="PVOUT_specific"></sg-project-data-key>
+              +
+              <sg-project-data-key key="PR"></sg-project-data-key>
+            </ng-template>
+            <ng-template matTabContent>
+              <div *ngIf="selectedTabIndex === 2">
+                <sg-highcharts [opts]="PVOUTspecificChart$ | async"
+                               [exportingOpts]="getExportChartOpts(['PVOUT_specific', 'PR']) | async">
+                </sg-highcharts>
+              </div>
+            </ng-template>
+          </mat-tab>
+
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Support info !-->
+  <div class="card-big">
+    <sg-glossary [layers]="pvcalcLayers"></sg-glossary>
+  </div>
+
+</div>

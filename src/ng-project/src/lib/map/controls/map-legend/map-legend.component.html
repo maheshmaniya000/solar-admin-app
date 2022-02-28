@@ -1,0 +1,28 @@
+<mat-card *ngIf="legendUrl">
+  <button mat-button *ngIf="legendOpened$ | async" (click)="toggleLegend('closed')">
+    <span>{{ layer?.shortName }}</span>
+    <div class="legend">
+      <sg-map-legend-canvas *ngIf="this.legendUrl?.endsWith('.grass'); else legendImg"
+                            [legendUrl]="legendUrl"
+                            [dataKey]="layer?.dataKey"
+                            [lang]="selectedLang$ | async"
+                            [unitToggle]="unitToggle$ | async">
+      </sg-map-legend-canvas>
+      <ng-template #legendImg>
+        <img src="{{ legendUrl }}">
+      </ng-template>
+    </div>
+    <hr>
+    <div class="legend">
+      <span>{{ 'map.legend.button' | transloco }}</span>
+      <mat-icon>expand_more</mat-icon>
+    </div>
+  </button>
+
+  <button mat-button (click)="toggleLegend('opened')" [hidden]="!!(legendOpened$ | async)">
+    <div class="legend">
+      <span>{{ 'map.legend.button' | transloco }}</span>
+      <mat-icon>expand_less</mat-icon>
+    </div>
+  </button>
+</mat-card>

@@ -1,0 +1,13 @@
+[
+  {
+    "_id": "bing-satellite",
+    "access": "free",
+    "zoom": { "min": 1, "max": 19 },
+    "name": { "translate": true },
+    "options": {
+      "bingMapsKey": "{{env.BING_MAPS_KEY}}",
+      "type": "AerialWithLabelsOnDemand"
+    },
+    "labels": { "included": true }
+  }
+]

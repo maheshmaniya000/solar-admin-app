@@ -1,0 +1,11 @@
+form {
+  display: grid;
+  grid-template-columns: 2fr min-content min-content max-content;
+  grid-column-gap: 1rem;
+  align-items: center;
+}
+
+mat-progress-spinner {
+  display: inline-block;
+}
+

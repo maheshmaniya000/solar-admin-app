@@ -1,0 +1,124 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.table-s {
+  @include cdk-table-s();
+  text-align: right;
+
+  cdk-header-cell, cdk-cell {
+    align-content: end;
+    flex: 0 1 80px;
+  }
+
+  cdk-header-cell {
+    white-space: nowrap;
+  }
+
+  .cdk-column-label {
+    align-content: start;
+    flex: 1;
+  }
+
+  .cdk-column-solarEnergy      { flex: 0 0 120px }
+  .cdk-column-solarEnergyDelta { flex: 0 0 100px }
+  .cdk-column-pvEnergy         { flex: 0 0 150px }
+  .cdk-column-pvEnergyDelta    { flex: 0 0 100px }
+  .cdk-column-lossPercent      { flex: 0 0 80px }
+  .cdk-column-pr               { flex: 0 0 60px }
+
+  .cdk-column-sumLabel {
+    flex: 2;
+  }
+
+  .cdk-column-loss {
+    flex: 0 1 70px;
+  }
+
+  .cdk-column-lossLabel {
+    flex: 1;
+    text-align: left;
+  }
+
+  .sumLabel-value {
+    font-weight: normal;
+  }
+
+  cdk-cell.cdk-column-sumLabel {
+    align-self: stretch;
+
+    & > div {
+      position: relative;
+      z-index: 10;
+    }
+
+    sg-loss-arrow {
+      position: absolute;
+      display: flex;
+      flex-flow: row;
+      margin: -6px -8px;
+      z-index: 5;
+    }
+  }
+
+  cdk-header-cell.cdk-column-sumLabel {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .losses-chart {
+    cdk-row, cdk-header-row {
+      padding-left: 0px;
+    }
+
+    cdk-header-row {
+      background: none;
+      height: 28px !important;
+    }
+  }
+}
+
+.diagram-desc {
+  margin-top: 16px;
+  font-size: 14px;
+
+  @include media-breakpoint-up(sm) {
+    text-align: right;
+  }
+}
+
+.footer {
+  height: $sg-32 !important;
+  line-height: $sg-32 - 2 * 6px;
+}
+
+.total-perf {
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  padding: 0 0.2em 0 0.5em;
+}
+
+.energy-conversion-data{
+  min-width: 900px;
+
+  @include sticky-table-scrolling();
+  @include performance-table-color();
+
+  cdk-cell:first-of-type, cdk-header-cell:first-of-type {
+    min-width: 10%;
+
+    @include media-breakpoint-down(md) {
+      max-width: 15%;
+    }
+  }
+
+  cdk-row:nth-last-child(6) cdk-cell:first-of-type {
+    background-color: #f4f5f7;
+  }
+
+  cdk-row:nth-last-child(3) cdk-cell:first-of-type {
+    background-color: #f4f5f7;
+  }
+}

@@ -1,0 +1,55 @@
+@import 'theme';
+
+.app-menu {
+  display: block;
+  background: white;
+  right: 8px;
+  top: 36px;
+  z-index: 1001;
+  width: 224px;
+  padding: 8px 0;
+  position: absolute;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+
+  .app-menu-item {
+    color: map-get($sg-gray, 800);
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    line-height: 20px;
+    display: block;
+    min-height: 48px;
+    white-space: normal;
+
+    &:hover {
+      text-decoration: none;
+      color: map-get($sg-gray, 800);
+      background: map-get($sg-gray, 100);
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 12px;
+    }
+
+    .apps-icon {
+      color: map-get($sg-gray, 800);
+      visibility: hidden;
+      vertical-align: middle;
+      margin: 0 16px;
+    }
+
+    .apps-icon-selected {
+      visibility: visible;
+    }
+  }
+
+  .app-menu-item-disabled {
+    color: map-get($sg-gray, 500);
+    pointer-events: none;
+
+    &:hover {
+      color: map-get($sg-gray, 500);
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import 'theme';
+
+.user-item{
+  padding-bottom: 8px;
+}
+
+:host > div {
+
+  .mat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 50px !important;
+  }
+
+  .desc {
+    line-height: 110%;
+    margin: auto;
+
+    .name {
+      width: 100%;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+}
+
+.profile-label {
+  font-size: $sg-14;
+  font-weight: $font-weight-regular;
+  line-height: 20px;
+  color: map-get($primary, 800);
+
+  margin: 0;
+  padding: 0;
+}
+
+.photo-btn {
+  font-size: $sg-14;
+  font-weight: $font-weight-regular;
+  line-height: 24px;
+  color: map-get($primary, 800);
+
+  margin-left: 12px;
+  align-self: center;
+  text-decoration: underline;
+  cursor: pointer;
+}

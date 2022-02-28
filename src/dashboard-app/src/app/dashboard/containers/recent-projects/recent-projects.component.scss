@@ -1,0 +1,133 @@
+@use '~@angular/material' as mat;
+@import 'theme';
+
+.global-home-wrapper {
+  width: 80%;
+  transform: translate(12%);
+
+  @include media-breakpoint-down(xs) {
+    width: 90%;
+    transform: translate(5%);
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 70%;
+    transform: translate(21%);
+  }
+}
+
+.apps-wrapper {
+  padding: $sg-24 0px;
+
+  mat-card-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    grid-gap: 1rem;
+
+    @include media-breakpoint-down(xs) {
+      grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+    }
+
+    mat-card {
+      background-color: map-get($sg-gray, 100);
+      box-shadow: none;
+      border-radius: 5px;
+      display: grid;
+      grid-template-columns: 30% auto;
+      justify-self: stretch;
+
+      @include media-breakpoint-down(xs) {
+        grid-template-columns: auto;
+      }
+
+      .apps-image {
+        width: 48px;
+        align-self: center;
+        justify-self: center;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+      .project-title {
+        font-size: $sg-18;
+        align-self: center;
+        text-align: center;
+        text-decoration: none;
+        color: map-get($primary, 800);
+        font-weight: bold;
+      }
+
+      .subscription {
+        grid-column-start: 2;
+        text-align: center;
+        font-size: $sg-12;
+        font-weight: $font-weight-regular;
+        line-height: 18px;
+
+        &.type {
+          color: map-get($primary, 600);
+          margin: 0;
+        }
+
+        &.expiration-info {
+          color: map-get($accent, default);
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.recent-project-wrapper {
+  margin-bottom: $sg-48;
+
+  mat-card-content {
+    mat-card-actions {
+      display: grid;
+      grid-template-columns: 50% 50%;
+
+      a {
+        color: map-get(mat.$red-palette, 600);
+      }
+
+      .left {
+        justify-self: start;
+        align-self: center;
+      }
+
+      .right {
+        justify-self: end;
+        align-self: center;
+      }
+
+      .mat-form-field-flex {
+        border: 5px solid red;
+      }
+
+      &.upper {
+        button {
+          background: inherit;
+          border: none;
+          outline: 0px;
+
+          mat-icon {
+            color: map-get($primary, 800);
+
+            &.highlighted {
+              color: map-get(mat.$red-palette, 600);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+mat-card-actions {
+  margin: 0px;
+}
+
+.title {
+  color: map-get($primary, 900);
+  font-size: $sg-20;
+}

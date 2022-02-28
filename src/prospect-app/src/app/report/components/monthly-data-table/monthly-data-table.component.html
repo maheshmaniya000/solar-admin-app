@@ -1,0 +1,42 @@
+<cdk-table #table [dataSource]="dataSource" class="data-table">
+
+  <ng-container cdkColumnDef="month">
+    <cdk-header-cell *cdkHeaderCellDef>{{ 'months.month' | transloco }}</cdk-header-cell>
+    <cdk-cell *cdkCellDef="let row">{{ monthTranslationKey(row.monthIndex) | transloco }}</cdk-cell>
+  </ng-container>
+
+  <ng-container *ngFor="let key of dataColumns" [cdkColumnDef]="key">
+    <!-- normal value -->
+    <ng-container *ngIf="key.indexOf('-d') < 0">
+      <cdk-header-cell *cdkHeaderCellDef fxLayout="column">
+        <sg-project-data-key [key]="key"></sg-project-data-key>
+        <div class="aggregation" *ngIf="dataColumns.indexOf(key + '-d') > 0">{{ 'report.monthlySum' | transloco }}</div>
+        <div class="subheader">
+          <sg-unit-label *ngIf="unit(key) as u" [unit]="u"></sg-unit-label>
+        </div>
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <sg-unit-value *ngIf="unit(key, row.monthIndex) as u" [unit]="u" [value]="row[key]" [codelist]="layer(key)?.codelist"
+                       [opts]="{ slot: row.monthIndex }"></sg-unit-value>
+      </cdk-cell>
+    </ng-container>
+
+    <!-- daily sum value -->
+    <ng-container *ngIf="key.indexOf('-d') >= 0">
+      <cdk-header-cell *cdkHeaderCellDef fxLayout="column">
+        <sg-project-data-key [key]="clearKey(key)"></sg-project-data-key>
+        <div class="aggregation">{{ 'report.dailyAvg' | transloco }}</div>
+        <div class="subheader">
+          <sg-unit-label *ngIf="dailyAvgUnit(key) as u" [unit]="u"></sg-unit-label>
+        </div>
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <sg-unit-value *ngIf="dailyAvgUnit(key) as u" [unit]="u" [value]="row[key]" [codelist]="layer(key)?.codelist"
+                       [opts]="{ slot: row.monthIndex }"></sg-unit-value>
+      </cdk-cell>
+    </ng-container>
+  </ng-container>
+
+  <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+  <cdk-row *cdkRowDef="let row; columns: columns"></cdk-row>
+</cdk-table>

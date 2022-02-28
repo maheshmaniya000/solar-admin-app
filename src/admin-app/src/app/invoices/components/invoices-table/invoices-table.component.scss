@@ -1,0 +1,72 @@
+@import 'theme';
+
+:host-context > * {
+  width: calc(100% - 8px);
+}
+
+:host-context {
+  height: 100%;
+}
+
+mat-row, mat-header-row, mat-footer-row {
+  padding-left: $sg-20;
+
+  mat-cell:first-of-type, mat-header-cell:first-of-type, mat-footer-cell:first-of-type {
+    padding-left: 0;
+  }
+}
+
+mat-cell button {
+  margin: $sg-4;
+  padding: 2px $sg-8;
+  line-height: normal;
+}
+
+.tableContent {
+  max-height: calc(100vh - 176px);
+}
+
+.column-name {
+  font-weight: normal;
+}
+
+mat-footer-row .column-name {
+  font-weight: bold;
+}
+
+.column-name, .column-name > div {
+  white-space: nowrap;
+}
+
+.column-name > div {
+  padding: 0 5px;
+
+  &.name.price {
+    text-align: right;
+    padding: 0 20px 0 0;
+  }
+
+  &.name {
+    line-height: normal;
+  }
+
+  &.invoice-id {
+    color: map-get($accent, 500);
+    font-weight: $font-weight-bold;
+  }
+}
+
+.invoice-items {
+  * {
+    vertical-align: middle;
+  }
+  ul {
+    margin: 5px 0 5px 5px;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      line-height: 22px;
+    }
+  }
+}

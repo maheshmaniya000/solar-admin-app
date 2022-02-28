@@ -1,0 +1,27 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'auth.invitation.title' | transloco }}</div>
+
+  <div class="sg-dialog-content auth-dialog-content">
+    <p>{{ 'auth.invitation.text' | transloco }}</p>
+    <div class="invitation-summary">
+      <div class="row">
+        <div class="col-4 field">{{ 'auth.invitation.companyName' | transloco }}</div>
+        <div class="col-8">{{ data?.companyName }}</div>
+      </div>
+      <div class="row">
+        <div class="col-4 field">{{ 'auth.registration.emailPlaceholder' | transloco }}</div>
+        <div class="col-8">{{ data?.email }}</div>
+      </div>
+      <div class="info" *ngIf="data?.notRegistered">
+        <mat-icon>info_outline</mat-icon>
+        {{ 'auth.invitation.info' | transloco }}
+      </div>
+    </div>
+  </div>
+
+  <div class="sg-dialog-actions auth-dialog-actions">
+    <button type="button" class="primary" (click)="accept()">
+      {{ 'auth.invitation.accept' | transloco }}
+    </button>
+  </div>
+</sg-dialog-deprecated>

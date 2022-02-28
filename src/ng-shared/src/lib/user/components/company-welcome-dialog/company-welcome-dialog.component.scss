@@ -1,0 +1,31 @@
+@import 'theme';
+
+:host > div {
+  width: 400px;
+  height: fit-content;
+  padding: $sg-16;
+
+  color: map-get($primary, 800);
+}
+
+.headline {
+  font-weight: $font-weight-bold;
+  font-size: 30px;
+  text-align: center;
+  margin: $sg-16 0;
+}
+
+.desc {
+  text-align: center;
+  margin: $sg-16 0;
+}
+
+button {
+  min-width: 300px;
+  margin: auto;
+  display: block;
+}
+
+mat-divider {
+  margin: $sg-16 0;
+}

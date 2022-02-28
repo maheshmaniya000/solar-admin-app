@@ -1,0 +1,186 @@
+@use '~@angular/material' as mat;
+@import 'theme';
+
+// https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
+
+@mixin search-input-theme($theme) {
+  $foreground: map-get($theme, foreground);
+
+  :host {
+    margin: 0 $sg-12;
+  }
+
+  @media (min-width: 430px) {
+    :host {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    :host {
+      width: 410px;
+    }
+  }
+
+  mat-card {
+    max-height: 33px;
+    padding: 0;
+    display: none;
+
+    &.search {
+      box-shadow: none;
+    }
+
+    mat-form-field {
+      width: 100%;
+
+      ::ng-deep {
+        .mat-form-field-infix {
+          padding: 0px;
+          border: 0px;
+        }
+      }
+    }
+
+    .input-wrapper {
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: row;
+      box-sizing: border-box;
+      display: flex;
+      border: solid 1px map_get($sg-gray, 400);
+      border-radius: $sg-4;
+
+      .input-search-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+      }
+
+      input {
+        width: calc(100% - 20px);
+        border: none;
+        color: map-get($primary, 900);
+        border-radius: $sg-4;
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+
+      input::placeholder {
+        color: map-get($primary, 600);
+      }
+
+      mat-icon {
+        color: map-get($primary, 600);
+      }
+    }
+  }
+
+  mat-option {
+    line-height: unset;
+    border-top: solid 1px map_get($sg-gray, 400);
+
+    & > div {
+      padding-top: 5px;
+    }
+
+    & > small {
+      font-weight: bold;
+      font-size: 9pt;
+      color: mat.get-color-from-palette($foreground, secondary-text);
+    }
+
+    & > div {
+      width: 100%;
+    }
+
+    .icon {
+      display: inline-block;
+      width: $sg-36;
+      height: 100%;
+
+      mat-icon {
+        top: $sg-12;
+        position: absolute;
+        color: map-get($primary, 600);
+      }
+    }
+
+    .placemark, .history {
+      display: inline-block;
+      width: 100px;
+      height: 100%;
+      color: map-get($primary, 900);
+      font-weight: $font-weight-medium;
+
+      small {
+        color: map-get($primary, 600);
+      }
+    }
+
+    // align content of .history and .placemark
+    .history > div {
+      top: 15px;
+      position: absolute;
+    }
+    .placemark > div {
+      position: absolute;
+      top: 6px;
+    }
+
+    &.invalid-message {
+      height: auto;
+      white-space: normal;
+      padding: $sg-8;
+      font-size: $sg-14;
+      color: map-get($primary, 900);
+      background-color: #fef9db;
+    }
+
+    mat-icon {
+      @include mat-icon-size($sg-20);
+      float: left;
+      color: map-get($primary, 800);
+    }
+  }
+}
+
+@include search-input-theme($theme);
+
+@media (min-width: 440px) {
+  .toggle-button {
+    display: none;
+  }
+  mat-card {
+    display: block;
+  }
+}
+
+.show-input {
+  .toggle-button {
+    display: inline-block;
+  }
+  mat-card {
+    display: inline-block;
+    width: 210px;
+    animation-name: input-toggler-show;
+    animation-duration: .3s;
+  }
+}
+
+@keyframes input-toggler-show {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 210px
+  }
+}
+
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,36 @@
+<mat-form-field [customErrors]="notSelectedFromListCustomError">
+  <input
+    matInput
+    type="text"
+    [matAutocomplete]="auto"
+    [formControl]="inputControl"
+    [placeholder]="placeholder"
+    required
+    (blur)="onBlur()"
+  />
+  <mat-icon matSuffix>search</mat-icon>
+  <mat-hint *ngIf="hint">{{hint}}</mat-hint>
+</mat-form-field>
+<mat-autocomplete #auto="matAutocomplete" [autoActiveFirstOption]="true" [displayWith]="companyRefToString">
+  <mat-option *ngIf="status === 'searching'; else optionsTemplate" disabled>
+    <em>Searching...</em>
+  </mat-option>
+
+  <ng-template #optionsTemplate>
+    <mat-option *ngFor="let company of companies" [value]="company">
+      <small>
+        <b>({{ company.sgCompanyId }})</b> {{ company.name }}
+        <ng-container *ngIf="company.groupName">[{{ company.groupName }}] </ng-container>
+        <ng-container *ngIf="company.VAT_ID">- {{ company.VAT_ID }} </ng-container>
+        ({{ company.country?.name }} -
+        <ng-container *ngIf="company.state?.name">{{ company.state.name }} - </ng-container>
+        <ng-container *ngIf="company.territory?.name">{{ company.territory.name }} - </ng-container>
+        {{ company.city }} {{ company.zipCode }}, {{ company.street }})
+      </small>
+    </mat-option>
+  </ng-template>
+
+  <mat-option *ngIf="status === 'noResults'" disabled>
+    <b>No results found</b>
+  </mat-option>
+</mat-autocomplete>

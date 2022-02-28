@@ -1,0 +1,86 @@
+@import 'theme';
+
+.container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - #{ $sg-system-type-offset });
+}
+
+mat-list ::ng-deep {
+  .mat-list-item-content {
+    flex-direction: row-reverse !important;
+  }
+
+  .mat-list-item, mat-radio-button, .mat-radio-label {
+    width: 100%;
+    height: 64px;
+  }
+
+  .mat-radio-label-content {
+    padding-left: $sg-16;
+    padding-right: $sg-8;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  mat-radio-button, .mat-radio-label {
+
+    .name, .desc {
+      @include text-ellipsis();
+    }
+
+    .name {
+      color: map-get($primary, 800);
+      font-size: 16px !important;
+      font-weight: $font-weight-medium;
+    }
+
+    .desc {
+      color: map-get($primary, 600);
+      font-size: 13px !important;
+      font-weight: $font-weight-regular;
+    }
+  }
+
+  mat-radio-button.mat-radio-disabled {
+    .name {
+      color: map-get($primary, 600);
+    }
+    .desc {
+      color: map-get($primary, 400);
+    }
+  }
+
+  mat-list-item:hover {
+    background-color: map-get($primary, 300);
+  }
+
+  .selected {
+    background-color: map-get($primary, 200);
+  }
+}
+
+.badge {
+  margin-top: -7px;
+
+  span {
+    font-size: 12px;
+    background: map-get($primary, 800);
+    padding: 1px;
+    border: map-get($primary, 800) 1px solid;
+    border-radius: 4px;
+    color: white;
+  }
+  mat-icon, span {
+    display: inline-block;
+  }
+  mat-icon {
+    $size: 21px;
+    font-size: $size;
+    width: $size;
+    height: $size;
+    position: relative;
+    bottom: -6px;
+  }
+}
+

@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-actions>
+    <ng-container *ngIf="userDetailStore.viewModel$ | async as viewModel">
+      <ng-container *ngIf="!viewModel.updating; else updatingTemplate">
+        <sg-admin-view-user-tools></sg-admin-view-user-tools>
+      </ng-container>
+      <ng-template #updatingTemplate>
+        <mat-progress-spinner [diameter]="20" mode="indeterminate"></mat-progress-spinner>
+      </ng-template>
+    </ng-container>
+  </mat-card-actions>
+  <mat-card-content>
+    <sg-admin-user-info></sg-admin-user-info>
+    <sg-admin-user-companies></sg-admin-user-companies>
+    <sg-admin-user-assign-to-company></sg-admin-user-assign-to-company>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,41 @@
+<ng-container *ngIf="!page">
+  <sg-select-payment-method (onSelect)="selectPaymentMethod($event)"></sg-select-payment-method>
+</ng-container>
+
+<ng-container *ngIf="page === 'card' || page === 'bank'">
+  <div *ngIf="page === 'card'">
+    <sg-braintree-dropin
+      [sgAccountId]="sgAccountId$ | async"
+      [sgCompanyId]="sgCompanyId$ | async"
+      [sgOrderId]="order.sgOrderId"
+      [price]="orderSumStr"
+      (onSuccess)="onBraintreeSuccess($event)"
+      (onChangeMethod)="page = null"
+    ></sg-braintree-dropin>
+  </div>
+
+  <div *ngIf="page === 'bank'">
+    <sg-bank-transfer-payment
+      [sgAccountId]="sgAccountId$ | async"
+      [sgCompanyId]="sgCompanyId$ | async"
+      [sgOrderId]="order.sgOrderId"
+      [price]="orderSumStr"
+      (onSuccess)="setPage('thank-you')"
+      (onChangeMethod)="page = null"
+    ></sg-bank-transfer-payment>
+  </div>
+
+  <!-- <button style="width: 100%" mat-button (click)="page = null">{{ 'common.action.back' | transloco }}</button> -->
+</ng-container>
+
+<ng-container *ngIf="page === 'thank-you'">
+  <sg-payment-thank-you [paymentMethod]="paymentMethod"></sg-payment-thank-you>
+</ng-container>
+
+<ng-container *ngIf="page === 'payment-failed'">
+  <sg-payment-failed></sg-payment-failed>
+</ng-container>
+
+<ng-container *ngIf="page === 'loading'">
+    <mat-spinner [diameter]="48" style="margin: auto; margin-top: 50px" ></mat-spinner>
+</ng-container>

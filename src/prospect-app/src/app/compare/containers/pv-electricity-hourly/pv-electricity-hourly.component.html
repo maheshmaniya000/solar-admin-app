@@ -1,0 +1,23 @@
+<div class="card-layout">
+  <div class="card-big chips">
+    <sg-chips-selector
+      (onSelect)="onSelect($event)"
+      [defaultSelectedChips]="defaultSelectedChips"
+      [layers]="layers"
+      [layersWithPerm]="layersWithPerm$ | async"
+    ></sg-chips-selector>
+  </div>
+
+  <ng-container *ngIf="hasCompareItems$ | async">
+    <ng-container *ngFor="let layer of layersWithPerm$ | async">
+      <div class="card-big" *ngIf="selectedChips[layer.key]">
+        <sg-compare-hourly-statistics
+          [data$]="data$"
+          [compare$]="compare$"
+          [layer]="layer"
+          (onClose)="selectedChips[layer.key] = false"
+        ></sg-compare-hourly-statistics>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

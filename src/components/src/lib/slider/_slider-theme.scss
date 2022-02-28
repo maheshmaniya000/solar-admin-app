@@ -1,0 +1,21 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $foreground: map-get($color-config, foreground);
+
+  mat-slider {
+    &.single-point {
+      .mat-slider-track-fill {
+        background-color: mat.get-color-from-palette($foreground, slider-off);
+      }
+
+      &:hover,
+      &.cdk-focused {
+        .mat-slider-track-fill {
+          background-color: mat.get-color-from-palette($foreground, slider-off-active);
+        }
+      }
+    }
+  }
+}

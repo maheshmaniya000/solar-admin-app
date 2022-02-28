@@ -1,0 +1,58 @@
+<sg-dialog-deprecated [large]="true">
+  <div class="sg-dialog-heading">{{ 'companyAdmin.users.new' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button  [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <div class="invite-desc">
+      {{ 'companyAdmin.users.inviteDesc' | transloco }}
+    </div>
+    <form [formGroup]="group">
+      <mat-form-field fxFlex="1 1 auto">
+        <input matInput type="email" [placeholder]="'companyAdmin.users.enterEmail' | transloco"
+               name="email" formControlName="email" (keyup.enter)="saveDialog()"/>
+        <mat-error>{{ 'companyAdmin.users.invalidEmail' | transloco }}</mat-error>
+      </mat-form-field>
+    </form>
+    <ng-container *ngTemplateOutlet="checkbox; context: { app: 'prospect' }"></ng-container>
+    <ng-container *ngTemplateOutlet="checkbox; context: { app: 'sdat' }"></ng-container>
+    <div class="invite-desc">
+      {{ 'companyAdmin.users.instructions' | transloco }}
+    </div>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <ng-container *ngIf="!working; else spinner">
+      <button class="secondary-button" (click)='closeDialog()'>
+        {{ 'common.action.cancel' | transloco | uppercase }}
+      </button>
+      <button class="primary-button" (click)='saveDialog()' [disabled]="!group.valid">
+        {{ 'common.action.invite' | transloco | uppercase }}
+      </button>
+    </ng-container>
+  </div>
+</sg-dialog-deprecated>
+
+
+<ng-template #spinner>
+  <div style="overflow: hidden;">
+    <mat-spinner [diameter]="22" color="accent" style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #checkbox let-app="app">
+  <div class="checkbox" *ngIf="getSubscription(app) as subscription">
+    <mat-checkbox [checked]="hasAppsSubscriptionSpot[app]"
+                  [disabled]="!hasAppsSubscriptionSpot[app]"
+                  (change)="addToAppsSubscription[app] = $event.checked">
+      {{ 'companyAdmin.users.addToSub.' + app | transloco }}
+      <span class="note">
+        ({{ ('companyAdmin.users.addToSub.note' + (hasAppsSubscriptionSpot[app] ? '' : 'Full')) | transloco }}
+        - {{ 'companyAdmin.subscription.usersLimit' | transloco:{ current: subscription.assignedUsers?.length || 0, max: subscription.usersLimit } }})
+      </span>
+    </mat-checkbox>
+  </div>
+</ng-template>

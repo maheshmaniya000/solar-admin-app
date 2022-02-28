@@ -1,0 +1,32 @@
+<div sgScrollContainer="md">
+  <div class="table-s">
+    <cdk-table #table [dataSource]="dataSource" [trackBy]="trackByIndex">
+
+      <!-- ID column !-->
+      <ng-container cdkColumnDef="id">
+        <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row">
+          <ng-container *ngIf="!row.isLastRow">{{ row.hour }} - {{ row.hour + 1 }}</ng-container>
+          <ng-container *ngIf="row.isLastRow">{{ 'common.aggregation.' + layer.unit.aggregation | transloco }}</ng-container>
+        </cdk-cell>
+      </ng-container>
+
+      <!-- Monthly data !-->
+      <ng-container *ngFor="let column of monthColumns" [cdkColumnDef]="column">
+        <cdk-header-cell *cdkHeaderCellDef>
+          {{ months[column] | transloco }}
+        </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" [ngStyle]="{'background-color': getColor(row[column], row.isLastRow) }">
+          <ng-container *ngIf="displayValue(row[column]); else invalid">
+            <sg-unit-value [value]="row[column]" [unit]="layer.unit"></sg-unit-value>
+          </ng-container>
+        </cdk-cell>
+      </ng-container>
+
+      <cdk-header-row *cdkHeaderRowDef="columns$ | async"></cdk-header-row>
+      <cdk-row *cdkRowDef="let row; columns: columns$ | async"></cdk-row>
+    </cdk-table>
+  </div>
+</div>
+
+<ng-template #invalid>-</ng-template>

@@ -1,0 +1,40 @@
+@import 'theme';
+
+.data-label {
+  font-weight: $font-weight-bold;
+  text-align: center;
+  padding-top: $sg-16;
+  padding-bottom: $sg-16;
+}
+
+.hourly-chart {
+  height: 230px;
+  margin-top: $sg-8;
+
+  .headline {
+    font-weight: $font-weight-bold;
+    font-size: 12pt;
+    color: map-get($primary, 800);
+    margin-bottom: $sg-8;
+  }
+}
+
+.charts-legend {
+  min-height: 40px;
+  line-height: 40px;
+  margin-top: $sg-8;
+}
+
+.timezone ::ng-deep {
+  font-size: 14px;
+}
+
+.hourly-charts-container {
+  position: relative;
+
+  .export-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

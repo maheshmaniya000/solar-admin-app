@@ -1,0 +1,48 @@
+@import 'theme';
+
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.sunpath, .daylength {
+  height: 87%;
+
+  canvas {
+    width: 100%;
+  }
+}
+
+.sunpath canvas {
+  height: 340px;
+
+  @include media-breakpoint-up(sm) {
+    height: 381px;
+  }
+}
+.daylength canvas {
+  height: 320px;
+
+  @include media-breakpoint-up(sm) {
+    height: 417px;
+  }
+}
+
+.card-small {
+  height: fit-content;
+}
+
+.badge {
+  text-align: center;
+  font-size: $sg-12;
+  background: map-get($primary, 800);
+  padding: 4px;
+  border: map-get($primary, 800) 1px solid;
+  border-radius: 10px;
+  color: white;
+  margin: auto 0 auto 8px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 15px;
+  }
+}

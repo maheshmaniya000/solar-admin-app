@@ -1,0 +1,26 @@
+@import 'theme';
+
+.container {
+  height: 100%;
+
+  @media screen and (min-width: 960px) { // fxFlex is dumb and doesn't provide breakpoints as Bootstrap does
+    height: 100%;
+  }
+}
+
+aside {
+  overflow-y: auto;
+
+  router-outlet[name=sidebar] {
+    border: 3px solid blue;
+    display: none;
+  }
+}
+
+mat-drawer-container {
+  height: 100%;
+}
+
+mat-drawer {
+  border-right: solid 1px map-get($primary, 300);
+}

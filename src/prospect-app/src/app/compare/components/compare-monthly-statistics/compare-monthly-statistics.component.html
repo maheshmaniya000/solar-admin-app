@@ -1,0 +1,88 @@
+<mat-card class="bootstrap">
+  <mat-card-title>
+    <div class="row no-gutters">
+      <div class="col">
+        <sg-project-data-key [key]="layer.key"></sg-project-data-key>
+      </div>
+      <div class="col-auto">
+        <button mat-icon-button style="margin-top: -8px" (click)="onClose.emit()"><mat-icon>close</mat-icon></button>
+      </div>
+    </div>
+  </mat-card-title>
+  <div class="row no-gutters" *ngIf="(loading$ | async) === false; else loading">
+    <!-- TABLE -->
+    <div class="col-12 col-lg-6">
+      <div sgScrollContainer="sm" *ngIf="compareChanged$ | async">
+        <div class="table-s">
+          <cdk-table [dataSource]="table$">
+
+              <!-- MONTH COLUMN -->
+              <ng-container cdkColumnDef="month">
+                <cdk-header-cell *cdkHeaderCellDef>
+                  <div>{{'project.dataLayer.' + layer.key + '.name' | transloco}}</div>
+                  <div class="muted"><sg-unit-toggle-label [unit]="layer.unit"></sg-unit-toggle-label></div>
+                </cdk-header-cell>
+                <cdk-cell *cdkCellDef="let row">
+                  {{ row.month | transloco }}
+                </cdk-cell>
+              </ng-container>
+
+              <!-- DATA COLUMNS -->
+              <ng-container *ngFor="let item of (compare$ | async); let i = index">
+                <ng-container [cdkColumnDef]="i.toString()">
+                  <cdk-header-cell *cdkHeaderCellDef>
+                    <div class="table-header">{{ item.project | sgProjectName:25 }}</div>
+                    <div class="compare-{{ item.colorIndex }} compare-strip"></div>
+                  </cdk-header-cell>
+                  <cdk-cell
+                    *cdkCellDef="let row"
+                    [ngClass]="[i === row.highlightIndex && !row?.roundedBadge ? 'compare-highlight-' + item.colorIndex : '']"
+                    class="right"
+                  >
+                    <div
+                      class="data-item"
+                      [ngClass]="[i === row.highlightIndex ? 'compare-highlight-' + item.colorIndex : '',
+                      row?.roundedBadge ? 'rounded-badge' : '']"
+                    >
+                      <span *ngIf="!row[i] && row[i] !== 0; else available">-</span>
+                      <ng-template #available>
+                        <span *ngIf="isProjectSelected && i !== row.highlightIndex && row[i] > 0 && !!row.percentDiff[i]">+</span>
+                        <sg-unit-value *ngIf="row.monthIndex >= 0"
+                                        [unit]="layer.unit"
+                                        [value]="row[i.toString()]"
+                                        [opts]="{ slot: row.monthIndex }"
+                                        [codelist]="layer.codelist">
+                        </sg-unit-value>
+                        <sg-unit-value *ngIf="row.monthIndex < 0"
+                                        [unit]="annualUnit"
+                                        [value]="row[i.toString()]"
+                                        [codelist]="layer.codelist">
+                        </sg-unit-value>
+                        <span *ngIf="!!row.percentDiff" class="muted">{{row.percentDiff[i]}}</span>
+                      </ng-template>
+                    </div>
+                  </cdk-cell>
+                </ng-container>
+              </ng-container>
+
+              <cdk-header-row *cdkHeaderRowDef="columns$ | async"></cdk-header-row>
+              <cdk-row *cdkRowDef="let row; columns: (columns$ | async);"></cdk-row>
+
+          </cdk-table>
+        </div>
+      </div>
+    </div>
+
+    <!-- chart -->
+    <div class="col-12 col-lg-6 mt-3 mt-lg-0">
+      <sg-highcharts [opts]="chart$ | async" [exportingOpts]="{ layers: layer, compare: compare$ | async }" [destroyOnChange]="true">
+      </sg-highcharts>
+    </div>
+  </div>
+</mat-card>
+
+<ng-template #loading>
+  <div style="overflow: hidden;">
+    <mat-spinner [diameter]="22" color="accent" style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>

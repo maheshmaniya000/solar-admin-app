@@ -1,0 +1,7 @@
+@use '../../styles/palette';
+
+@mixin theme() {
+  .block-ui-wrapper.block-ui-wrapper {
+    background-color: palette.$light-secondary-text;
+  }
+}

@@ -1,0 +1,44 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $primary: map-get($color-config, primary);
+  $warn: map-get($color-config, warn);
+  $foreground: map-get($color-config, foreground);
+  $is-dark-theme: map-get($color-config, is-dark);
+  $underline-color-base: mat.get-color-from-palette($foreground, divider, if($is-dark-theme, 1, 0.87));
+  $underline-focused-color: mat.get-color-from-palette($primary, text);
+
+  mat-form-field.mat-form-field-appearance-outline {
+    .mat-form-field-subscript-wrapper .mat-hint {
+      color: mat.get-color-from-palette($foreground, hint-text);
+    }
+
+    &,
+    &.mat-form-field-disabled {
+      .mat-form-field-outline {
+        color: mat.get-color-from-palette($foreground, disabled);
+      }
+    }
+
+    &,
+    &.mat-focused {
+      .mat-form-field-outline-thick {
+        color: mat.get-color-from-palette($foreground, icon);
+      }
+    }
+
+    &.mat-form-field-invalid {
+      &[doNotAppendFormError] {
+        .mat-form-field-outline-thick,
+        &.mat-focused .mat-form-field-outline-thick {
+          color: $underline-focused-color;
+        }
+      }
+
+      ::placeholder {
+        color: mat.get-color-from-palette($warn);
+      }
+    }
+  }
+}

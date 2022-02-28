@@ -1,0 +1,10 @@
+@use 'variables';
+
+@mixin size($sg-icon-type) {
+  $icon-size: map-get(variables.$sg-icon-size, $sg-icon-type);
+
+  width: $icon-size;
+  height: $icon-size;
+  font-size: $icon-size;
+  line-height: $icon-size;
+}

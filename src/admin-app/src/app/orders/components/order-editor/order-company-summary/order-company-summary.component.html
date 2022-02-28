@@ -1,0 +1,13 @@
+<div>
+  ({{ companySnapshot.sgCompanyId }}) {{ companySnapshot.name }}
+  <ng-container *ngIf="companySnapshot.VAT_ID">- {{ companySnapshot.VAT_ID }}</ng-container>
+</div>
+<div class="data">
+  ({{ companySnapshot.country?.name }} -
+  <ng-container *ngIf="getStateName()">{{ getStateName() }} - </ng-container>
+  <ng-container *ngIf="companySnapshot.territory?.name">{{ companySnapshot.territory.name }} - </ng-container>
+  {{ companySnapshot.city }} {{ companySnapshot.zipCode }}, {{ companySnapshot.street }})
+</div>
+<div *ngIf="companySnapshot.companyEmailForInvoice" class="data">
+  Email for Invoice: {{ companySnapshot.companyEmailForInvoice }}
+</div>

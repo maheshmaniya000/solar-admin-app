@@ -1,0 +1,36 @@
+<div class="content">
+  <mat-radio-group >
+    <mat-radio-button
+      *ngFor="let type of pvModuleTypes"
+      (click)="setModuleType(type)"
+      [value]="type"
+      [checked]="params.type === type">
+      {{ 'pvConfig.params.pvModule.' + type | transloco }}
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <div class="degradation">
+    <mat-checkbox
+      [checked]="params.degradation === 'custom'"
+      (change)="customDegradation$.next($event.checked)"
+      class="row">
+      {{ 'pvConfig.params.pvModule.degradation' | transloco }}
+    </mat-checkbox>
+    <div class="row years" [ngClass]="{'error-margin': form.invalid}">
+      <form [formGroup]="form">
+        <span>{{ 'pvConfig.params.pvModule.firstYear' | transloco }}</span>
+        <mat-form-field floatLabel="never">
+          <input matInput [placeholder]="defaultDegradFirstYear" type="number" formControlName="firstYear" step="0.1" [min]="MIN" [max]="MAX">
+          <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN, max: MAX} }}</mat-error>
+        </mat-form-field>
+        <div class="unit">%</div>
+        <span>{{ 'pvConfig.params.pvModule.nextYear' | transloco }}</span>
+        <mat-form-field floatLabel="never">
+          <input matInput [placeholder]="defaultDegradNextYear" type="number" formControlName="nextYear" step="0.1" [min]="MIN" [max]="MAX">
+          <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN, max: MAX} }}</mat-error>
+        </mat-form-field>
+        <div class="unit">%</div>
+      </form>
+    </div>
+  </div>
+</div>

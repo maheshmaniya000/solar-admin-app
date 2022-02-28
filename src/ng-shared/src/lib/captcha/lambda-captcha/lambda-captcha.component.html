@@ -1,0 +1,15 @@
+<div [formGroup]="form">
+  <div [innerHTML]="svg" *ngIf="svg; else spinner"></div>
+  <div fxLayout="row">
+    <mat-form-field floatLabel="always" fxFlex="1 0 auto">
+      <mat-label>{{ 'auth.lambdaCaptcha.label' | transloco }}</mat-label>
+      <input type="text" matInput formControlName="captchaInput" autocomplete="off">
+    </mat-form-field>
+    <button mat-icon-button (click)="reset()" fxFlex="0 1 auto"><mat-icon>replay</mat-icon></button>
+  </div>
+</div>
+<ng-template #spinner>
+  <div class="loading">
+    <mat-spinner [diameter]="32" ></mat-spinner>
+  </div>
+</ng-template>

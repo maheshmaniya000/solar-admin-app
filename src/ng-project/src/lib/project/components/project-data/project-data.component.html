@@ -1,0 +1,16 @@
+<mat-list fxFlex>
+  <ng-container *ngFor="let layerKey of layerKeys$ | async">
+    <mat-list-item *ngIf="showLayer(layerKey)">
+      <sg-project-data-item layerKey="{{layerKey}}"
+                            [layer]="layers.get(layerKey)"
+                            [mapLayer]="getMapLayer(layerKey)"
+                            [inProgress]="inProgress"
+                            [isSelectedMap]="layers?.get(layerKey)?.mapId === mapLayerId"
+                            [annualData]="annualData?.data"
+                            [monthlyData]="monthlyData?.data"
+                            [monthlyDataStats]="monthlyDataStats"
+                            (onSelectMap)="onSelectMap.emit($event)">
+      </sg-project-data-item>
+    </mat-list-item>
+  </ng-container>
+</mat-list>

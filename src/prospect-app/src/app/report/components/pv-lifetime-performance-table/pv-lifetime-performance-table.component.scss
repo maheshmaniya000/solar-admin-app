@@ -1,0 +1,29 @@
+@import 'theme';
+
+.table-container {
+  overflow: auto;
+  width: 100%;
+}
+
+.table-s {
+  @include cdk-table-s(true, auto);
+
+  cdk-cell, cdk-header-cell {
+    text-align: right;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 11px;
+
+    .subheader {
+      font-size: inherit;
+    }
+
+    .label {
+      margin-top: 0;
+    }
+  }
+
+  cdk-row {
+    min-height: 21px;
+  }
+}

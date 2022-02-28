@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Monthly minichart</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0px; /**/
+    }
+
+    body > div {
+      display: flex;
+      flex-direction: row;
+      align-content: right;
+    }
+
+    body > div > div {
+      flex: 0 1 500px;
+    }
+
+    #minichart {
+      width: 100px;
+      height: 30px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    #minichart > span {
+      background: silver;
+      margin-left: 1px;
+      margin-right: 1px;
+      align-self: flex-end;
+    }
+
+  </style>
+</head>
+<body>
+
+<div>
+  <div></div>
+  <div>
+    <h1>Monthly Minichart</h1>
+    <div id="minichart"></div>
+  </div>
+  <div></div>
+</div>
+
+<script>
+  const data = [1, 2, 2.5, 4, 5.5, 5.5, 5, 4, 4.7, 2, 0.5, 1];
+
+  const ch = document.getElementById('minichart');
+
+  const min = Math.min(0, ...data);
+  const max = Math.max(...data);
+
+  const percentValues = data.map(v => (v - min)*100/(max - min));
+
+  percentValues.forEach(v => {
+    const span = document.createElement('span');
+    span.style.height = v + '%';
+    span.style.width = (100 / percentValues.length) + '%';
+    ch.appendChild(span);
+  });
+
+
+</script>
+
+</body>
+</html>

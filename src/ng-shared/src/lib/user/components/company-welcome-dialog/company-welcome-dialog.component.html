@@ -1,0 +1,19 @@
+<div>
+
+  <div class="headline">
+    {{ 'user.company.welcomeDialog.welcome' | transloco:{"companyName": company.name } }}
+  </div>
+  <div class="desc">
+    {{ ('user.company.welcomeDialog.' + (isNewCompany ? 'newCompany' : 'assignedToCompany')) | transloco:{"companyName": company.name }  }}
+  </div>
+
+  <button mat-raised-button color="accent" (click)="close()" >
+    {{ 'user.company.welcomeDialog.continue' | transloco }}
+  </button>
+
+  <!-- <mat-divider></mat-divider>
+
+  <button mat-button color="accent" (click)="close()" [routerLink]="['/']">
+    {{ 'user.company.welcomeDialog.purchase' | transloco }}
+  </button> -->
+</div>

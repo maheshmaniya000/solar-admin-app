@@ -1,0 +1,159 @@
+<div>
+  <form [formGroup]="form" novalidate (keydown.enter)="$event.preventDefault()">
+
+    <div class="tableContent">
+      <mat-table [dataSource]="users$" matSort style="width: 100%;">
+        <ng-container matColumnDef="checkbox">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 75px">
+            <mat-checkbox (click)="onSelectAllClick($event)"
+                          [checked]="allSelected$ | async"
+                          [indeterminate]="selection.hasValue() && (allSelected$ | async) === false">
+            </mat-checkbox>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let user" fxFlex="0 0 75px">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(user.sgAccountId) : null"
+                          [checked]="selection.isSelected(user.sgAccountId)">
+            </mat-checkbox>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="sgAccountId">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="User ID" name="sgAccountId" formControlName="sgAccountId"/>
+            </mat-form-field>
+            <div mat-sort-header>
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let user" fxLayout>
+            <div class="name" fxFlex="grow">{{ user.sgAccountId }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Email" name="email" formControlName="email"/>
+            </mat-form-field>
+            <div mat-sort-header>
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let user" fxLayout>
+            <div class="name" fxFlex="grow">{{ user.email }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="First name" name="firstName" formControlName="firstName"/>
+            </mat-form-field>
+            <div mat-sort-header>
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let user" fxLayout>
+            <div fxFlex="grow">{{ user.firstName }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+          <mat-header-cell *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Last name" name="lastName" formControlName="lastName"/>
+            </mat-form-field>
+            <div mat-sort-header>
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let user" fxLayout>
+            <div fxFlex="grow">{{ user.lastName }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+          <mat-header-cell *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Phone" name="phone" formControlName="phone">
+            </mat-form-field>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let user" fxLayout>
+            <div fxFlex="grow">{{ user.phone }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="originSystem">
+          <mat-header-cell *matHeaderCellDef fxFlex="0 0 80px">
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Origin" name="originSystem" formControlName="originSystem">
+            </mat-form-field>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let user" fxFlex="0 0 80px">
+            <div fxFlex="grow">{{ user.originSystem }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="created">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <mat-label>Created</mat-label>
+              <mat-date-range-input [formGroup]="getCreatedFormGroup()" [rangePicker]="createdPicker">
+                <input matStartDate name="start" formControlName="start" placeholder="Start date" />
+                <input matEndDate name="end" formControlName="end" placeholder="End date" />
+              </mat-date-range-input>
+              <sg-form-group-reset matSuffix [formGroup]="form.get('created')"></sg-form-group-reset>
+              <mat-datepicker-toggle matSuffix [for]="createdPicker"></mat-datepicker-toggle>
+              <mat-date-range-picker #createdPicker></mat-date-range-picker>
+            </mat-form-field>
+            <div mat-sort-header>
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+
+          <mat-cell *matCellDef="let user" fxFlex="0 0 160px">
+            <div fxFlex="grow">{{ user.created | sgDateTimeFormat:'dateTime' }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="updated">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <mat-label>Updated</mat-label>
+              <mat-date-range-input [formGroup]="getUpdatedFormGroup()" [rangePicker]="updatedPicker">
+                <input matStartDate name="start" formControlName="start" placeholder="Start date" />
+                <input matEndDate name="end" formControlName="end" placeholder="End date" />
+              </mat-date-range-input>
+              <sg-form-group-reset matSuffix [formGroup]="form.get('updated')"></sg-form-group-reset>
+              <mat-datepicker-toggle matSuffix [for]="updatedPicker"></mat-datepicker-toggle>
+              <mat-date-range-picker #updatedPicker></mat-date-range-picker>
+            </mat-form-field>
+            <div mat-sort-header>
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+
+          <mat-cell *matCellDef="let user" fxFlex="0 0 160px">
+            <div>{{ user.updated | sgDateTimeFormat:'dateTime' }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay$ | async; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let user; columns: columnsToDisplay$ | async"
+                (click)="onRowClicked(user)"
+                [ngClass]="{'-active': selectedUserId === user.sgAccountId}"
+        ></mat-row>
+      </mat-table>
+    </div>
+
+    <mat-paginator
+      [length]="count$ | async"
+      [pageSize]="(page$ | async)?.size"
+      [pageIndex]="(page$ | async)?.index"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="onPageChanged($event)"
+    >
+    </mat-paginator>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'payment.dialog.resultHeadline' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <div class="wrapper">
+      <ng-container *ngIf="page === 'thank-you'">
+        <sg-payment-thank-you [paymentMethod]="paymentMethod"></sg-payment-thank-you>
+      </ng-container>
+
+      <ng-container *ngIf="page === 'payment-failed'">
+        <sg-payment-failed></sg-payment-failed>
+      </ng-container>
+    </div>
+    <button mat-raised-button color="accent" class="primary-button" style="width: 100%" (click)="closeDialog()">{{ 'common.action.close' | transloco }}</button>
+  </div>
+</sg-dialog-deprecated>

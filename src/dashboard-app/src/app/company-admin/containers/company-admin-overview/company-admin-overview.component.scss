@@ -1,0 +1,9 @@
+@import 'theme';
+@include sg-detail-card-layout(map-get($primary, 800));
+
+
+::ng-deep {
+  .mat-button-wrapper {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,18 @@
+<mat-card style="padding:0">
+  <div fxLayout="column">
+    <div fxFlex>
+      <button mat-icon-button (click)="zoomSelected()"
+              matTooltip="{{ 'map.zoom.selected' | transloco }}"
+              matTooltipPosition="right">
+        <mat-icon svgIcon="sg:sgf-map-selected"></mat-icon>
+      </button>
+    </div>
+    <div fxFlex>
+      <button mat-icon-button (click)="zoomAll()"
+              matTooltip="{{ 'map.zoom.all' | transloco }}"
+              matTooltipPosition="right">
+        <mat-icon svgIcon="sg:sgf-map-all"></mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>

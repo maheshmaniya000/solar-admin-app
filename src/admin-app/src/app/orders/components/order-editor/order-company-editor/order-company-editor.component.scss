@@ -1,0 +1,28 @@
+@import 'theme';
+
+:host {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+}
+
+.company-summary {
+  display: flex;
+  align-items: center;
+}
+
+sg-admin-company-snapshot-editor {
+  grid-column: 1 / span 2;
+}
+
+mat-form-field {
+  width:  100%;
+}
+
+mat-progress-spinner {
+  display: inline-block;
+}
+
+.full-width {
+  grid-column: 1 / span 2;
+}

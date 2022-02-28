@@ -1,0 +1,111 @@
+<sg-toolbar *transloco="let t">
+  <!-- LEFT -->
+  <sg-drawer-button class="drawer-button"></sg-drawer-button>
+
+  <div class="separator"></div>
+
+  <button mat-icon-button (click)="deselectAll()" class="pull-right">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div class="text pr-2">
+    {{ t('project.toolbar.selectedProjects', { projects: selectedProjectIds.length, allProjectsCount: projectsCount }) }}
+  </div>
+
+  <ng-container *ngIf="component === 'list'">
+    <div class="separator d-none d-md-block"></div>
+    <mat-slide-toggle color="primary" class="d-none d-md-block pl-2" (change)="selectedFirst($event.checked)" [checked]="selectedFirst$ | async">
+      {{ t('project.toolbar.selectedFirst') }}
+    </mat-slide-toggle>
+  </ng-container>
+
+  <!-- RIGHT -->
+  <ng-container class="sg-toolbar-right">
+    <div class="d-none d-sm-flex">
+
+      <button mat-button [title]="t('compare.compare')"
+              (click)="compareSelected()"
+              [disabled]="(((hasCompareAccess$ | async) === false) || (selectedProjectIds && selectedProjectIds.length > 4))">
+        <mat-icon svgIcon="sg:sgf-compare"></mat-icon>
+        <span>{{ t('compare.compare') }}</span>
+      </button>
+
+      <div class="separator"></div>
+      <button mat-button (click)="addTo()" [title]="t('project.toolbar.addTag')">
+        <mat-icon>label_outline</mat-icon>
+      </button>
+
+      <button *ngIf="!filter.archived" mat-icon-button [title]="t('project.toolbar.archive')"
+              (click)="updateSelectedStatus('archived', true)">
+        <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+      </button>
+
+      <button *ngIf="filter.archived" mat-icon-button color="accent" [title]="t('project.toolbar.unarchive')"
+              (click)="updateSelectedStatus('active')">
+        <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+      </button>
+
+      <button *ngIf="filter.archived" mat-icon-button [title]="t('project.toolbar.delete')"
+              (click)="deleteSelected()">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <button *ngIf="transferAvailable$ | async" mat-icon-button [title]="t('project.action.transfer')"
+              (click)="transferProjects()">
+        <mat-icon svgIcon="sg:sgf-transfer"></mat-icon>
+      </button>
+
+      <button mat-icon-button [title]="t('export.title')" (click)="exportProjects()">
+        <mat-icon>import_export</mat-icon>
+      </button>
+    </div>
+
+    <div class="d-block d-sm-none">
+      <mat-menu #actionMenu="matMenu">
+
+        <button mat-menu-item (click)="addTo()">
+          <mat-icon>label_outline</mat-icon>
+          {{ t('project.toolbar.addTag') }}
+        </button>
+
+        <button *ngIf="!filter.archived" mat-menu-item (click)="updateSelectedStatus('archived', true)">
+          <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+          {{ t('project.toolbar.archive') }}
+        </button>
+
+        <button *ngIf="filter.archived" mat-menu-item color="accent" (click)="updateSelectedStatus('active')">
+          <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+          {{ t('project.toolbar.unarchive') }}
+        </button>
+
+        <button *ngIf="filter.archived" mat-menu-item (click)="deleteSelected()">
+          <mat-icon>delete</mat-icon>
+          {{ t('project.toolbar.delete') }}
+        </button>
+
+        <button *ngIf="transferAvailable$ | async" mat-menu-item (click)="transferProjects()">
+          <mat-icon svgIcon="sg:sgf-transfer"></mat-icon>
+          {{ t('project.action.transfer') }}
+        </button>
+
+        <button mat-menu-item (click)="exportProjects()">
+          <mat-icon>import_export</mat-icon>
+          {{ t('export.title') }}
+        </button>
+
+        <button mat-menu-item
+                (click)="compareSelected()"
+                [disabled]="(((hasCompareAccess$ | async) === false) || (selectedProjectIds && selectedProjectIds.length > 4))">
+          <mat-icon svgIcon="sg:sgf-compare"></mat-icon>
+          {{ t('compare.compare') }}
+        </button>
+
+      </mat-menu>
+
+      <button mat-icon-button [matMenuTriggerFor]="actionMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </ng-container>
+
+</sg-toolbar>

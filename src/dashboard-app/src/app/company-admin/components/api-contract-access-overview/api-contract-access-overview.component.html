@@ -1,0 +1,21 @@
+<div>{{ 'companyAdmin.api.common.access.type' | transloco: { type: access.type } }}</div>
+
+<div *ngIf="access.type === 'GLOBAL' || access.type === 'REGIONS'">
+  <span>{{ 'companyAdmin.api.common.access.maxSites' | transloco: { maxSites: access.maxCountOfSites ? access.maxCountOfSites : 'companyAdmin.api.common.access.unlimitedMaxSites' | transloco } }}</span>
+</div>
+
+<div *ngIf="access.type === 'REGIONS'">
+  <div>{{ 'companyAdmin.api.common.access.regions' | transloco }}</div>
+  <ul>
+    <li *ngFor="let region of access.regions">{{ region }}</li>
+  </ul>
+</div>
+
+<div *ngIf="access.type === 'SITES'">
+  <div>{{ 'companyAdmin.api.common.access.sites' | transloco }}</div>
+  <ul>
+    <li *ngFor="let site of access.sites">
+      {{ 'companyAdmin.api.common.access.position' | transloco: { latitude: site.latitude, longitude: site.longitude } }}
+    </li>
+  </ul>
+</div>

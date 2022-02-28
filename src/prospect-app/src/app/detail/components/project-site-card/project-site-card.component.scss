@@ -1,0 +1,6 @@
+@import 'theme';
+
+.bold {
+  font-weight: bold;
+  color: map-get($primary, 800);
+}

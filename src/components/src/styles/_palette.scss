@@ -1,0 +1,144 @@
+$light-primary-text: white;
+$light-secondary-text: rgba(white, 0.75);
+$dark-text: #16253b;
+$primary-gray: #4b5b75;
+$primary-red: #c31e21;
+
+$sg-grey: (
+  50: #fafbfb,
+  100: #f4f5f7,
+  200: #edeff1,
+  300: #dfe2e7,
+  400: #d0d5db,
+  500: #a5adba,
+  600: #939dac,
+  700: #6f7c91,
+  800: $primary-gray,
+  900: #364863,
+  950: $dark-text,
+  contrast: (
+    50: $dark-text,
+    100: $dark-text,
+    200: $dark-text,
+    300: $dark-text,
+    400: $dark-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    950: $light-primary-text
+  )
+);
+
+$sg-red: (
+  50: #faeded,
+  100: #f7d3d3,
+  200: #f4bdbe,
+  300: #e18e8f,
+  400: #cf4a4c,
+  500: #c31e21,
+  600: #ac1c1d,
+  contrast: (
+    50: $dark-text,
+    100: $dark-text,
+    200: $dark-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text
+  )
+);
+
+$sg-bright-red: (
+  100: #fae7e6,
+  500: #e30000,
+  contrast: (
+    100: $dark-text,
+    500: $light-primary-text
+  )
+);
+
+$sg-orange: (
+  500: #f36b2e,
+  contrast: (
+    500: $dark-text
+  )
+);
+
+$sg-ochre: (
+  500: #e3a230,
+  contrast: (
+    500: $dark-text
+  )
+);
+
+$sg-yellow: (
+  100: #fdf5df,
+  500: #f4b300,
+  contrast: (
+    100: $dark-text,
+    500: $light-primary-text
+  )
+);
+
+$sg-green: (
+  100: #f1f7e8,
+  500: #94c34a,
+  contrast: (
+    100: $dark-text,
+    500: $light-primary-text
+  )
+);
+
+$sg-dark-green: (
+  500: #109462,
+  contrast: (
+    500: $light-primary-text
+  )
+);
+
+$sg-turquoise: (
+  500: #79cdcd,
+  contrast: (
+    500: $dark-text
+  )
+);
+
+$sg-electric-blue: (
+  100: #e4eefd,
+  300: #accaf9,
+  500: #3f84f2,
+  contrast: (
+    100: $dark-text,
+    300: $dark-text,
+    500: $light-primary-text
+  )
+);
+
+$sg-blue: (
+  300: #65bef3,
+  500: #4097d6,
+  600: #1c71ba,
+  contrast: (
+    100: $light-primary-text,
+    300: $light-primary-text,
+    500: $light-primary-text
+  )
+);
+
+$sg-violet: (
+  400: #c674c6,
+  500: #82459e,
+  contrast: (
+    100: $light-primary-text,
+    500: $light-primary-text
+  )
+);
+
+$sg-pink: (
+  500: #f0a3c6,
+  contrast: (
+    500: $dark-text
+  )
+);

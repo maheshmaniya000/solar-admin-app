@@ -1,0 +1,47 @@
+@use '~@angular/material' as mat;
+@use 'palette';
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $accent: map-get($color-config, accent);
+  $selected-background-color: mat.get-color-from-palette($accent);
+  $selected-hover-background-color: mat.get-color-from-palette($accent, darker);
+
+  sg-text-marker {
+    background-color: palette.$dark-text;
+    color: white;
+
+    &:after {
+      border-color: palette.$dark-text transparent transparent;
+    }
+
+    &:hover {
+      background-color: black;
+
+      &:after {
+        border-top-color: black;
+      }
+    }
+
+    &.selected {
+      background-color: $selected-background-color;
+      box-shadow: 0 0 0 1px white;
+
+      &:before {
+        border-color: white transparent transparent;
+      }
+
+      &:after {
+        border-top-color: $selected-background-color;
+      }
+
+      &:hover {
+        background-color: $selected-hover-background-color;
+
+        &:after {
+          border-top-color: $selected-hover-background-color;
+        }
+      }
+    }
+  }
+}

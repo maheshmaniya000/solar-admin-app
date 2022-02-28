@@ -1,0 +1,29 @@
+<ng-container [formGroup]="form">
+  <label for="timezone-select">Time zone</label>
+  <mat-form-field doNotAppendFormError>
+    <mat-select
+      data-test="timezone-select"
+      formControlName="timezone"
+      id="timezone-select"
+    >
+      <mat-option
+        *ngFor="let timezoneOption of timezoneOptions"
+        [value]="timezoneOption.value"
+      >
+        {{ timezoneOption.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      aria-label="utc-offset-input"
+      data-test="utc-offset-input"
+      formControlName="utcOffset"
+      matInput
+      max="14"
+      min="-12"
+      type="number"
+    />
+    <span matSuffix>h</span>
+  </mat-form-field>
+</ng-container>

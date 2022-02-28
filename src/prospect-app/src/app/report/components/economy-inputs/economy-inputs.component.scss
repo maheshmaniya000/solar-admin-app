@@ -1,0 +1,38 @@
+@import 'theme';
+
+h3 {
+  font-size: 11px;
+  padding: $sg-4 $sg-8;
+  border-bottom: 1px solid map-get($primary, 300);
+  margin: 0;
+  background-color: map-get($primary, 100);
+
+  &:first-of-type {
+    border-top: 1px solid map-get($primary, 300);
+  }
+}
+
+sg-economy-inputs-row {
+  color: map-get($primary, 800);
+  display: flex;
+  padding: $sg-4 $sg-8;
+  vertical-align: center;
+  margin: auto;
+  font-size: 11px;
+  border-bottom: 1px solid map-get($primary, 300);
+}
+
+:host ::ng-deep {
+  .left {
+    flex: 0 0 75%;
+  }
+
+  .right {
+    flex: auto;
+    margin: auto;
+  }
+
+  sg-unit-value {
+    margin-right: $sg-8;
+  }
+}

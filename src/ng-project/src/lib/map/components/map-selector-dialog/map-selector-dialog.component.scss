@@ -1,0 +1,177 @@
+@import 'theme';
+
+// https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
+
+@mixin map-selector-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  $gradient: rgba(0, 0, 0, 0.5);
+  $gradient-hover: rgba(0, 0, 0, 1);
+  $selected-hover: rgba(0, 0, 0, 0.7);
+
+  :host {
+
+    .map-list {
+      margin: 0 -5px;
+
+      @include media-breakpoint-up(md) {
+        width: 640px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 800px;
+      }
+    }
+
+    .map-list + .map-list {
+      margin-top: 32px;
+    }
+
+    .item {
+      cursor: pointer;
+      height: 150px;
+      position: relative;
+
+      .overlay {
+        background: linear-gradient($gradient, transparent);
+        z-index: 1000;
+        width: 100%;
+        height: 60%;
+        top: 0;
+        position: absolute;
+      }
+
+      &.paid {
+        cursor: default;
+
+        & h3 {
+          cursor: default;
+        }
+
+        & .overlay {
+          background: $gradient;
+          color: white;
+          cursor: default;
+          height: 100%;
+
+          &:hover {
+            background: $selected-hover;
+          }
+        }
+      }
+
+      &.selected .overlay {
+        background: $gradient;
+        height: 100%;
+
+        &:hover {
+          background: $selected-hover;
+        }
+      }
+
+      h3 {
+        position: absolute;
+        cursor: pointer;
+        z-index: 1000;
+        top: 0; left: 0; right: 0;
+        padding: $sg-12 $sg-16;
+        font-size: $sg-14;
+        line-height: $sg-20;
+        color: white;
+      }
+
+      &:hover {
+        .overlay {
+          background: linear-gradient($gradient-hover, transparent);
+        }
+
+        &.paid .overlay, &.selected .overlay {
+          background: $selected-hover
+        }
+      }
+
+      mat-icon {
+        position: absolute;
+        color: white;
+        left: $sg-16;
+        bottom: $sg-16;
+        z-index: 1000;
+      }
+    }
+
+    ::ng-deep .mat-list .mat-list-item {
+      height: auto;
+      margin: $sg-8 0;
+      cursor: pointer;
+
+      .mat-list-item-content {
+        padding-left: 40px;
+      }
+
+      &:hover {
+        color: map-get($accent, 600);
+      }
+
+      &.selected {
+        .mat-list-item-content {
+          padding-left: 0;
+          color: map-get($accent, 600);
+        }
+
+        mat-icon {
+          font-size: 20px;
+          line-height: 24px;
+          text-align: center;
+          margin-right: 16px;
+        }
+      }
+
+      &.paid {
+        cursor: default;
+        color: map-get($primary, 400);
+
+        .lock {
+          font-size: $sg-18;
+          line-height: $sg-24;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    mat-list {
+      strong {
+        padding-right: 12px;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
+
+@include map-selector-theme($theme);
+
+
+.view-switcher {
+  cursor: pointer;
+  float: right;
+
+  &:hover {
+    color: map-get($accent, default);
+  }
+}
+
+.list {
+  padding: 0;
+}
+
+@include media-breakpoint-up(lg) {
+  .list {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+mat-checkbox {
+  margin-right: 12px;
+}

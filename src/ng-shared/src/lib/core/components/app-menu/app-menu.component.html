@@ -1,0 +1,13 @@
+<mat-list class="app-menu">
+  <ng-container *ngFor="let app of dropdownApps">
+    <div mat-list-item >
+      <a (click)="redirect($event, app)" href="#"
+         class="d-flex align-items-center app-menu-item"
+         [ngClass]="{'app-menu-item-disabled': !isCompanyAdmin && app.name === 'company-admin'}">
+        <mat-icon class="apps-icon" [ngClass]="{'apps-icon-selected': app.name === currentApp}">done</mat-icon>
+        <img [src]="'assets/img/icons/' + app.name + '.svg'">
+        {{ 'header.' + app.name | transloco }}
+      </a>
+    </div>
+  </ng-container>
+</mat-list>

@@ -1,0 +1,55 @@
+@import 'theme';
+
+$map-menu-height: 40px;
+
+// https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
+
+@mixin map-menu-theme($theme) {
+
+  .map-menu {
+    display: flex;
+
+    .mat-toolbar {
+      padding: 0 0;
+      background-color: transparent;
+      height: $map-menu-height;
+      min-height: $map-menu-height;
+    }
+
+    .mat-toolbar-row {
+      height: $map-menu-height;
+    }
+
+    .map-menu__button {
+      height: $map-menu-height;
+      min-height: $map-menu-height;
+      display: flex;
+      box-sizing: border-box;
+      padding-right: $sg-16;
+      align-items: center;
+      white-space: nowrap;
+
+      .map-menu-label {
+        line-height: $sg-32;
+        padding-right: $sg-12;
+      }
+    }
+
+    .mat-card {
+      padding: 0;
+      cursor: pointer;
+    }
+
+    mat-icon {
+      text-align: center;
+    }
+
+    .map-menu-label {
+      font-size: $default-font-size; // TODO: use mat-typography-config
+    }
+
+  }
+
+}
+
+@include map-menu-theme($theme);

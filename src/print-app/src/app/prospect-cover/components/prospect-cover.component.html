@@ -1,0 +1,32 @@
+<div class="cover" *ngIf="projectCover$ | async as project">
+  <div class="logo">
+    <img src="assets/img/solargis.svg">
+    <span>Prospect</span>
+  </div>
+  <div class="map">
+    <sg-site-location-map [point]="project.point" [countryCode]="project.country?.code"></sg-site-location-map>
+  </div>
+  <h1 class="title">{{ (project.hasPvConfig ? 'report.cover.ProspectPv.title' : 'report.cover.ProspectSolar.title') | transloco }}</h1>
+  <div class="project">{{ 'report.cover.project' | transloco }}: {{ project.projectName }} <ng-container *ngIf="project.country">({{ project.country.name }})</ng-container></div>
+  <div class="summary">
+    <p><span class="left">{{ 'projectDetail.info.coordinates' | transloco }}</span>
+      <sg-unit-value [unit]="latlngToggle.units['decimal']" [value]="project.point"></sg-unit-value>
+      (<sg-unit-value [unit]="latlngToggle.units['DMS']" [value]="project.point"></sg-unit-value>)
+    </p>
+    <p><span class="left">{{ 'report.cover.reportNr' | transloco }}</span>
+      <span>P-{{ project.company?.sgCompanyId }}-{{ today | date:'yyyy-MM-dd' }}-{{ today | date:'HHmm' }}</span></p>
+    <p><span class="left">{{ 'report.cover.generated' | transloco }}</span>
+      <span>{{ today | date:(project.locale?.dateFormat || 'yyyy-MM-dd') }}</span></p>
+    <p><span class="left">{{ 'report.cover.generatedBy' | transloco }}</span>
+      <span>Solargis</span></p>
+    <p><span class="left">{{ 'report.cover.customer' | transloco }}</span>
+      <span>{{ project.company?.name }}<span *ngIf="project.company?.countryName"> ({{ project.company.countryName }})</span></span></p>
+  </div>
+  <div class="cover-footer">
+    <p>Solargis s.r.o., Bottova 2A, 811 09 Bratislava, {{ 'report.slovakia' | transloco }}</p>
+    <p><a href="https://solargis.com">solargis.com</a> • <a
+      href="mailto:contact@solargis.com">contact@solargis.com</a> • {{ 'report.cover.tel' | transloco }}.: +421 2 4319
+      1708</p>
+    <p>© {{ today.getFullYear() }} Solargis</p>
+  </div>
+</div>

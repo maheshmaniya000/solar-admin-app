@@ -1,0 +1,66 @@
+<div class="row" [formGroup]="form">
+  <div class="col-12 col-sm-6 pr-sm-2">
+    <mat-form-field floatLabel="always">
+      <mat-label>{{ 'auth.registration.firstNamePlaceholder' | transloco }}</mat-label>
+      <input type="text" matInput name="firstName" formControlName="firstName"
+             [ngClass]="{'invalid-field': this.form.hasError('invalidFirstNameOrLastName') && (firstName.touched || lastName.touched)}"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="col-12 col-sm-6 pl-sm-2">
+    <mat-form-field floatLabel="always">
+      <mat-label>{{ 'auth.registration.lastNamePlaceholder' | transloco }}</mat-label>
+      <input type="text" matInput name="lastName" formControlName="lastName"
+             [ngClass]="{'invalid-field': this.form.hasError('invalidFirstNameOrLastName') && (firstName.touched || lastName.touched)}"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="col-12">
+    <mat-error *ngIf="this.form.hasError('invalidFirstNameOrLastName') && (firstName.touched || lastName.touched)">
+      {{ 'auth.registration.firstOrLastNameRequired' | transloco }}
+    </mat-error>
+  </div>
+
+  <div class="col-12" [hidden]="emailHidden">
+    <mat-form-field floatLabel="always">
+      <mat-label>{{ 'auth.registration.emailPlaceholder' | transloco }}</mat-label>
+      <input type="email" autocomplete="username" matInput name="email" formControlName="email"/>
+      <mat-error>{{ 'auth.registration.emailError' | transloco }}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="col-12" [hidden]="companyHidden">
+    <mat-form-field floatLabel="always">
+      <mat-label>{{ 'user.company.field.companyName' | transloco }}</mat-label>
+      <input type="text" matInput name="companyName" formControlName="companyName"/>
+      <mat-error>{{ 'auth.registration.companyError' | transloco }}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="col-12 col-sm-6 pr-sm-2">
+    <mat-form-field floatLabel="always"
+                    [ngClass]="{'big-error-msg': password.hasError('pattern') || password.hasError('minLength')}">
+      <mat-label>{{ 'auth.registration.passwordPlaceholder' | transloco }}</mat-label>
+      <input type="password" autocomplete="new-password" matInput
+             name="password"
+             formControlName="password"
+             (input)="forcePasswordValidation()"
+      />
+      <mat-error *ngIf="password.hasError('required')">{{ 'auth.registration.passwordRequired' | transloco }}</mat-error>
+      <mat-error *ngIf="!password.hasError('required')">{{ 'auth.registration.passwordError' | transloco }}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="col-12 col-sm-6 pl-sm-2">
+    <mat-form-field floatLabel="always">
+      <mat-label>{{ 'auth.registration.passwordConfirm' | transloco }}</mat-label>
+      <input type="password" matInput name="passwordConfirm" formControlName="passwordConfirm"/>
+      <mat-error
+        *ngIf="passwordConfirm.hasError('notEquivalent')">{{ 'auth.registration.passwordsNotEqual' | transloco }}</mat-error>
+      <mat-error
+        *ngIf="!passwordConfirm.hasError('notEquivalent')">{{ 'auth.registration.passwordError' | transloco }}</mat-error>
+    </mat-form-field>
+  </div>
+</div>

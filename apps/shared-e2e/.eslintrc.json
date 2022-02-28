@@ -1,0 +1,14 @@
+{
+  "extends": ["plugin:cypress/recommended", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "apps/shared-e2e/tsconfig.json"
+        ]
+      }
+    }
+  ]
+}

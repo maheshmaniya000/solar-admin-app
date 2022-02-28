@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="form" novalidate>
+      <mat-form-field>
+        <input formControlName="email" matInput name="email" placeholder="Email" required type="email" />
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="salutation" matInput name="salutation" placeholder="Salutation Name" type="text" />
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="firstName" matInput name="firstName" placeholder="First Name" type="text" />
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="lastName" matInput name="lastName" placeholder="Last Name" type="text" />
+      </mat-form-field>
+      <mat-error *ngIf="form.hasError('invalidFirstNameOrLastName')">
+        {{ 'auth.registration.firstOrLastNameRequired' | transloco }}
+      </mat-error>
+      <mat-form-field>
+        <input formControlName="middleName" matInput name="middleName" placeholder="Middle name" type="text" />
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="position" matInput name="position" placeholder="Position" type="text" />
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="phone" matInput name="phone" placeholder="Phone" type="text" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions *ngIf="userDetailStore.viewModel$ | async as viewModel">
+    <button mat-raised-button color="accent" [disabled]="viewModel.saveDisabled" (click)="userDetailStore.update()">
+      <mat-spinner *ngIf="viewModel.updating" [diameter]="15" style="display: inline-block"> </mat-spinner>
+      Save & Close
+    </button>
+  </mat-card-actions>
+</mat-card>

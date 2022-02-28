@@ -1,0 +1,50 @@
+[
+  {
+    "region": 1,
+    "name": "GOES West",
+    "satellites": [
+      { "satellite": "GOES", "timeStep": 30, "yearStart": 1999, "yearEnd": 2019 },
+      { "satellite": "GOES-S", "timeStep": 10, "yearStart": 2020 }
+    ]
+  },
+  {
+    "region": 2,
+    "name": "GOES East",
+    "satellites": [
+      { "satellite": "GOES", "timeStep": 30, "yearStart": 1999, "yearEnd": 2017 },
+      { "satellite": "GOES-R", "timeStep": 15, "yearStart": 2018 }
+    ]
+  },
+  {
+    "region": 3,
+    "name": "Meteosat Prime",
+    "satellites": [
+      { "satellite": "MFG", "timeStep": 30, "yearStart": 1994, "yearEnd": 2004 },
+      { "satellite": "MSG", "timeStep": 15, "yearStart": 2005 }
+    ]
+  },
+  {
+    "region": 4,
+    "name": "Meteosat IODC",
+    "satellites": [
+      { "satellite": "MFG", "timeStep": 30, "yearStart": 1999, "yearEnd": 2016 },
+      { "satellite": "MSG", "timeStep": 15, "yearStart": 2017 }
+    ]
+  },
+  {
+    "region": 5,
+    "name": "Meteosat IODC - Himawari",
+    "satellites": [
+      { "satellite": "MFG", "timeStep": 30, "yearStart": 1999, "yearEnd": 2016 },
+      { "satellite": "HIMAWARI", "timeStep": 10, "yearStart": 2017 }
+    ]
+  },
+  {
+    "region": 6,
+    "name": "Himawari",
+    "satellites": [
+      { "satellite": "MTSAT", "timeStep": 30, "yearStart": 2007, "yearEnd": 2015 },
+      { "satellite": "HIMAWARI", "timeStep": 10, "yearStart": 2016 }
+    ]
+  }
+]

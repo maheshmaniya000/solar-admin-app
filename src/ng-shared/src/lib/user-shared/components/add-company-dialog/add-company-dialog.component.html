@@ -1,0 +1,116 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'user.company.add' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="close()"><mat-icon>close</mat-icon></button>
+  </div>
+
+  <div class="sg-dialog-content auth-dialog-content">
+
+    <!-- Result message after registration process -->
+    <div *ngIf="(companyCreated != null && !companyCreated) || otpError != null" class="error">
+      <mat-error *ngIf="companyCreated != null && !companyCreated">{{ 'user.company.messages.create-fail' | transloco }}</mat-error>
+      <mat-error *ngIf="otpError != null"><sg-translation [str]="otpError"></sg-translation></mat-error>
+    </div>
+
+    <!-- Main registration form (email + password) -->
+    <ng-container>
+      <div class="loading" [hidden]="!companySaveInProgress">
+        <ng-container *ngTemplateOutlet="spinner; context: {diameter: 64}"></ng-container>
+      </div>
+      <form [formGroup]="form" (keydown.enter)="clickOnEnter($event)" novalidate [hidden]="companySaveInProgress">
+        <mat-horizontal-stepper formArrayName="fields" #stepper
+                                (selectionChange)="stepChanged($event.selectedIndex)">
+          <mat-step formGroupName="0" [stepControl]="fields.get([0])">
+            <div class="row">
+              <div class="col-12">
+                <mat-form-field floatLabel="always">
+                  <mat-label>{{ 'user.company.field.companyOrOrganisationName' | transloco }}</mat-label>
+                  <input type="text" matInput name="name" formControlName="name" />
+                </mat-form-field>
+              </div>
+
+              <div class="col-12 pt-2">
+                <mat-checkbox formControlName="billing" [disableRipple]="true">
+                  <p class="m-0">{{ 'user.company.field.billing' | transloco }}</p>
+                </mat-checkbox>
+              </div>
+
+              <div class="col-12">
+                <mat-checkbox formControlName="trial" [disableRipple]="true">
+                  <p class="m-0">{{ 'user.company.field.trial' | transloco }}</p>
+                </mat-checkbox>
+              </div>
+            </div>
+          </mat-step>
+          <mat-step>
+            <sg-billing-info-form *ngIf="stepper.selectedIndex > 0 && billing" [name]="name.value" (output)="billingForm = $event">
+            </sg-billing-info-form>
+          </mat-step>
+          <mat-step>
+            <sg-free-trial-form-step *ngIf="stepper.selectedIndex > 1 && trial"
+                                     [displayTitle]="true"
+                                     [phone]="freeTrialForm?.phone || billingForm?.phone"
+                                     [phoneCode]="freeTrialForm?.phoneCode || billingForm?.phoneCode"
+                                     (output)="onOtpOutput($event)"
+                                     (otpError)="onOtpError($event)"
+                                     (captchaChange)="otpCaptcha = $event">
+            </sg-free-trial-form-step>
+          </mat-step>
+          <mat-step formGroupName="1" [stepControl]="fields.get([1])">
+            <sg-otp-form-step *ngIf="stepper.selectedIndex > 2 && trial"
+                              [phone]="freeTrialForm?.phone"
+                              [callingCode]="freeTrialForm?.phoneCode?.callingCode"
+                              (otpChange)="otp.setValue($event)"
+                              (sendAgainClick)="back()">
+            </sg-otp-form-step>
+          </mat-step>
+          <mat-step>
+            <div *ngIf="companyCreated" class="success">
+              <p>{{ 'user.company.messages.create-ok' | transloco }}</p>
+              <ul class="success-list">
+                <li>
+                  <mat-icon>done</mat-icon>{{ 'user.company.messages.success-items.name' | transloco: { name: name.value } }}
+                </li>
+                <li *ngIf="billing.value">
+                  <mat-icon>done</mat-icon>{{ 'user.company.messages.success-items.billing' | transloco }}
+                </li>
+                <li *ngIf="trial.value && otpError == null">
+                  <mat-icon>done</mat-icon>{{ 'user.company.messages.success-items.trial' | transloco }}
+                </li>
+                <li *ngIf="trial.value && otpError != null" class="error">
+                  <mat-icon>clear</mat-icon>{{ 'user.company.messages.success-items.trialFailed' | transloco }}
+                </li>
+              </ul>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </form>
+    </ng-container>
+  </div>
+
+  <div class="sg-dialog-actions auth-dialog-actions" *ngIf="!companySaveInProgress">
+    <button type="button" class="secondary-button" (click)="back()" *ngIf="(!companyCreated && stepper?.selectedIndex >= 1) || (companyCreated && otpError != null)">
+      <span>{{ 'common.action.back' | transloco }}</span>
+    </button>
+
+    <button
+      type="button"
+      *ngIf="stepper?.selectedIndex === 1 || stepper?.selectedIndex === 2"
+      class="secondary-button"
+      (click)="stepper?.selectedIndex === 1 ? skipBilling() : skipTrial()">
+      {{ (stepper?.selectedIndex === 1 ? 'user.company.action.billingLater' : 'user.company.action.trialLater') | transloco }}
+    </button>
+
+    <button type="button" class="primary-button"
+            [disabled]="isNextButtonDisabled()"
+            (click)="next()">
+      {{ (companyCreated ? 'common.action.ok' : actionName()) | transloco }}
+    </button>
+  </div>
+</sg-dialog-deprecated>
+
+<ng-template #spinner let-diameter="diameter">
+  <div style="overflow: hidden;">
+    <mat-spinner [diameter]="diameter || 22" color="accent" style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>

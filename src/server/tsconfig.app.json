@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "types": ["node", "express", "google.analytics"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": false, // FIXME
+    "noImplicitReturns": false // FIXME
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["**/*.spec.ts"]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "pv-configurator",
+  "scripts": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "https://github.com/solargis/ssh-private-key-buildpack"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-multi-procfile"
+    },
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/solargis/heroku-buildpack-run"
+    }
+  ]
+}

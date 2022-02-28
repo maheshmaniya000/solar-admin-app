@@ -1,0 +1,7 @@
+<img *ngIf="hasGravatarImage" [src]="imgSrc" class="gravatar" (error)="errorHandler()">
+
+<sg-avatar *ngIf="(company || user) && !hasGravatarImage"
+  class="avatar"
+  [name]="company ? companyName : (user | sgUserFullName)"
+  [sgCompanyId]="company ? companyId : null">
+</sg-avatar>

@@ -1,0 +1,103 @@
+@import 'theme';
+
+.wrapper-header {
+  position: relative;
+  background-image: url('/dashboard/assets/img/dashboard_banner.jpg');
+  background-position: 50%;
+  width: 100%;
+  background-size: cover;
+  max-width: 100%;
+  height: 35%;
+
+  @include media-breakpoint-down(md) {
+    height: 45%;
+  }
+
+  .header {
+    color: white;
+    position: absolute;
+    top: 24%;
+    left: 15%;
+    width: 80%;
+
+    @media (max-height: 800px) {
+      top: 15%;
+    }
+
+    h1 {
+      font-size: $sg-32;
+
+      @include media-breakpoint-up(md) {
+        width: 55%;
+      }
+
+      @include media-breakpoint-down(xs) {
+        font-size: $sg-24;
+      }
+
+      @media (max-height: 600px) {
+        font-size: $sg-24;
+        width: 100%;
+      }
+
+      @media (max-height: 400px) {
+        font-size: $sg-18;
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: $sg-16;
+
+      @include media-breakpoint-down(xs) {
+        font-size: $sg-12;
+      }
+    }
+  }
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 1rem;
+  padding: $sg-32;
+  margin-top: -65px;
+
+  @include media-breakpoint-down(xs) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: 520px 520px;
+    grid-template-rows: 260px 260px;
+    justify-content: center;
+  }
+
+  @media (max-height: 350px) {
+    margin-top: 0px;
+  }
+}
+
+.wrapper-footer {
+  width: 100%;
+  margin: 0px auto 20px auto;
+  display: inline-grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 2rem;
+
+  @include media-breakpoint-down(xs) {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-gap: 1rem;
+    margin: 0px auto 40px auto;
+  }
+
+  a {
+    font-size: $sg-14;
+    color: map-get($primary, 700);
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="wrapper-header">
+  <mat-card class="left-header">
+    <sg-gravatar [company]="company" [user]="user"></sg-gravatar>
+    <mat-card-content>
+      <mat-card-title>{{ user | sgUserFullName }}</mat-card-title>
+      <mat-card-subtitle>
+        <span>{{ company ? company.name : ('user.company.profile.personalAccount' | transloco) }} &bull; {{ user?.email }}</span>
+      </mat-card-subtitle>
+      <mat-card-actions>
+        <a class="accent-link" [routerLink]="['/user/profile']" target="_self">{{ 'user.profile.account' | transloco }}</a>
+        <ng-container *ngIf="isCompanyAdmin && company">
+          <span> &bull; </span>
+          <a class="accent-link" [routerLink]="['/company-admin/overview']" target="_self">
+            {{ 'header.administration' | transloco: { companyName: company.name } }}
+          </a>
+        </ng-container>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="right-header">
+    <mat-card-title>{{ 'dashboard.header.quickLinks' | transloco }}</mat-card-title>
+    <mat-card-actions>
+      <a class="accent-link" (click)="addNewCompany()">
+        {{ 'user.company.add' | transloco }}
+      </a>
+      <a class="accent-link" href="https://solargis.com" target="_blank">
+        {{ 'dashboard.landingPage.footer.solargisHomepage' | transloco }}
+      </a>
+      <a class="accent-link" href="https://solargis.com/release-notes" target="_blank">
+        {{ 'dashboard.landingPage.footer.releaseNotes' | transloco }}
+      </a>
+      <a class="accent-link" href="https://solargis.com/pricing/products-and-plans" target="_blank">
+        {{ 'dashboard.landingPage.footer.pricing' | transloco }}
+      </a>
+      <a class="accent-link" href="https://solargis.com/blog/solargis-news" target="_blank">
+        {{ 'dashboard.landingPage.footer.news' | transloco }}
+      </a>
+      <a class="accent-link" href="https://solargis.com/about-us/events" target="_blank">
+        {{ 'dashboard.landingPage.footer.events' | transloco }}
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<mat-divider></mat-divider>

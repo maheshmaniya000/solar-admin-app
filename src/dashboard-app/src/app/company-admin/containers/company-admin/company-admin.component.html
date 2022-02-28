@@ -1,0 +1,28 @@
+<div *ngIf="fullscreen$ | async; else default">
+  <router-outlet></router-outlet>
+</div>
+
+<ng-template #default>
+  <sg-drawer-layout>
+    <ng-container class="navigation">
+      <sg-side-navigation [path]="path$ | async" [routes]="routes" (onSelect)="onRouteSelect($event)"></sg-side-navigation>
+    </ng-container>
+
+    <ng-container class="content">
+      <sg-company-admin-toolbar [route]="route$ | async"></sg-company-admin-toolbar>
+      <div class="container">
+        <div class="inner-container">
+          <div class="outlet">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+        <sg-bottom-navigation
+          [path]="path$ | async"
+          [routes]="routes"
+          (onSelect)="onRouteSelect($event)"
+        ></sg-bottom-navigation>
+      </div>
+    </ng-container>
+
+  </sg-drawer-layout>
+</ng-template>

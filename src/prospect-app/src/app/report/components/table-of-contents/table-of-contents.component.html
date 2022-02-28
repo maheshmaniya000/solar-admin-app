@@ -1,0 +1,8 @@
+<ol class="table-of-contents">
+  <li *ngFor="let item of table; let i = index">
+    <a [href]="'#' + item.id" class="title">
+      {{ item.title | transloco }}<ng-container *ngIf="item.subtitle">: {{ item.subtitle | transloco }}</ng-container>
+    </a>
+    <span class="page" *ngIf="pageNumbers">{{ pageNumbers[i] }}</span>
+  </li>
+</ol>

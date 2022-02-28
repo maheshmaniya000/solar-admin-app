@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppendFormErrorToCheckboxDirective component error message rendering should render error message under invalid and touched checkbox 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+  formControl={[Function FormControl]}
+>
+  <mat-checkbox
+    class="mat-checkbox mat-accent _mat-animation-noopable ng-pristine ng-invalid ng-touched"
+    sgappendformerror=""
+  >
+    <label
+      class="mat-checkbox-layout"
+      for="mat-checkbox-3-input"
+    >
+      <span
+        class="mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin"
+      >
+        <input
+          aria-checked="false"
+          class="mat-checkbox-input cdk-visually-hidden"
+          id="mat-checkbox-3-input"
+          tabindex="0"
+          type="checkbox"
+        />
+        <span
+          class="mat-ripple mat-checkbox-ripple mat-focus-indicator"
+          matripple=""
+        >
+          <span
+            class="mat-ripple-element mat-checkbox-persistent-ripple"
+          />
+        </span>
+        <span
+          class="mat-checkbox-frame"
+        />
+        <span
+          class="mat-checkbox-background"
+        >
+          <svg
+            aria-hidden="true"
+            class="mat-checkbox-checkmark"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xml:space="preserve"
+          >
+            <path
+              class="mat-checkbox-checkmark-path"
+              d="M4.1,12.7 9,17.6 20.3,6.3"
+              fill="none"
+              stroke="white"
+            />
+          </svg>
+          <span
+            class="mat-checkbox-mixedmark"
+          />
+        </span>
+      </span>
+      <span
+        class="mat-checkbox-label"
+      >
+        <span
+          style="display: none;"
+        >
+        </span>
+      </span>
+    </label>
+  </mat-checkbox><sg-form-error>
+    <mat-error>
+       en.common.validation.required 
+    </mat-error>
+  </sg-form-error>
+</ng-component>
+`;

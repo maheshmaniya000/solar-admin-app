@@ -1,0 +1,23 @@
+@import 'theme';
+
+.settings-menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .settings-menu {
+    display: block;
+  }
+}
+
+.toolbar-main-actions {
+  .primary-button {
+    font-weight: $font-weight-bold;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .drawer-button, .separator {
+    display: none;
+  }
+}

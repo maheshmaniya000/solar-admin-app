@@ -1,0 +1,26 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'project.share.shareLocation' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="sg-dialog-content">
+      <div class="text">
+        {{ 'project.share.text' | transloco }}
+      </div>
+      <div class="uri-row">
+        <mat-form-field>
+          <input matInput [ngModel]="url" type="text" #urlInput (click)="urlInput.select()" readonly>
+        </mat-form-field>
+      </div>
+    </div>
+
+  <div class="sg-dialog-actions">
+    <button cdkFocusRegionstart class="primary-button" (click)="copyToClipboard()">{{ 'project.share.copyLink' | transloco | uppercase }}</button>
+  </div>
+</sg-dialog-deprecated>
+
+<ng-template #snackbar>
+  {{ 'project.share.copied' | transloco }}
+</ng-template>

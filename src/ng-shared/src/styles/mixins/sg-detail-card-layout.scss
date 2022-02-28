@@ -1,0 +1,95 @@
+
+@mixin sg-detail-card-layout($header-color) {
+  // HEADER CARD SPACING
+  mat-card {
+    padding: $sg-16;
+  }
+
+  // HEADER PANEL SPACING
+  mat-expansion-panel-header, .mat-expansion-panel-body {
+    padding-left: $sg-16;
+    padding-right: $sg-16;
+  }
+
+  // HEADER TEXT COLORING
+  mat-card, mat-expansion-panel {
+    color: map-get($primary, 800);
+  }
+
+  // HEADER TEXT STYLING
+  ::ng-deep mat-card-title, ::ng-deep mat-panel-title {
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    color: $header-color;
+  }
+
+  // POSITIONING
+  div.card-layout {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .sg-card {
+    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+    margin-bottom: $sg-8;
+  }
+
+  div.card-big {
+    @extend .sg-card;
+  }
+
+  div.card-medium {
+    @extend .sg-card;
+
+    @include media-breakpoint-up(lg) {
+      width: 50%;
+    }
+  }
+
+  div.card-small {
+    @extend .sg-card;
+
+    @include media-breakpoint-up(md) {
+      width: 50%;
+    }
+  }
+
+  // CARD WITH TABS
+  mat-card.tabs {
+    padding: 0;
+
+    .mat-tab-group {
+      @include media-breakpoint-down(sm) {
+        max-width: calc(100vw - 40px);
+      }
+    }
+
+    ::ng-deep .mat-tab-label {
+      font-size: 18px;
+      font-weight: $font-weight-bold;
+      opacity: unset;
+      color: map-get($primary, 800) !important;
+      min-width: 50px;
+      width: fit-content;
+
+      &.mat-tab-disabled {
+        color: map-get($primary, 500) !important;
+      }
+    }
+
+    ::ng-deep mat-tab-body {
+      padding-left: $sg-16;
+      padding-right: $sg-16;
+      overflow: hidden;
+
+      .limited-width-container {
+        @include media-breakpoint-down(sm) {
+          max-width: calc(100vw - 72px);
+        }
+      }
+    }
+  }
+}

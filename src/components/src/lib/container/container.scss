@@ -1,0 +1,10 @@
+$horizontal-padding: 20px;
+
+.sg-container {
+  padding: 16px $horizontal-padding 0 $horizontal-padding;
+
+  mat-divider.wide {
+    margin-right: -$horizontal-padding;
+    margin-left: -$horizontal-padding;
+  }
+}

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegistrationComponent component onOpenRegistrationButtonClick should match snapshot of dialog with continue button, footer,
+ without back button and have correctly bound attributes and methods 1`] = `
+<mat-dialog-container
+  aria-modal="true"
+  class="mat-dialog-container ng-trigger ng-trigger-dialogContainer"
+  role="dialog"
+  style="transform:none;0:transform;"
+  tabindex="-1"
+>
+  <sg-dialog
+    style=""
+    title="en.auth.registration.createUserAccount"
+  >
+    <mat-horizontal-stepper
+      class="no-header"
+      linear=""
+    >
+      <mat-step>
+         step1
+      </mat-step>
+      <mat-step>
+         step2
+      </mat-step>
+      <mat-step>
+         step3
+      </mat-step>
+      <mat-step>
+         step4
+      </mat-step>
+      <mat-step>
+         step5
+      </mat-step>
+      <mat-step>
+         step6
+      </mat-step>
+    </mat-horizontal-stepper>
+    <mat-dialog-actions
+      class="mat-dialog-actions"
+    >
+
+      <span
+        class="spacer"
+      />
+      <button
+        class="sg-large-button"
+        color="accent"
+        data-test="continue-button"
+        mat-flat-button=""
+      >
+         en.common.action.continue
+      </button>
+
+    </mat-dialog-actions>
+    <sg-dialog-footer>
+       en.auth.registration.alreadyHaveAccount
+      <button
+        color="accent"
+        data-test="login-button"
+        mat-button=""
+      >
+         en.auth.registration.login
+      </button>
+    </sg-dialog-footer>
+
+  </sg-dialog>
+
+
+
+
+</mat-dialog-container>
+`;
+
+exports[`RegistrationComponent component should match snapshot with no dialog and have correctly bound
+ methods 1`] = `
+<sg-registration
+  RegistrationStep={[Function Object]}
+  __ngContext__={[Function LRootView]}
+  dialogService={[Function DialogService]}
+  onOpenRegistrationButtonClick={[Function Function]}
+  registrationDialogContent={[Function TemplateRef]}
+  registrationStore={[Function RegistrationStore]}
+  store={[Function Object]}
+>
+  <button
+    class="sg-small-button"
+    color="accent"
+    data-test="open-registration-button"
+    mat-flat-button=""
+  >
+     en.auth.registration.title
+  </button>
+</sg-registration>
+`;

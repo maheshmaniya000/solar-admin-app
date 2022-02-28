@@ -1,0 +1,7 @@
+@import 'theme';
+
+button {
+  @include text-ellipsis();
+  white-space: nowrap;
+  max-width: calc(100vw - 72px);
+}

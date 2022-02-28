@@ -1,0 +1,36 @@
+<svg id="app-evaluate" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#dc484f"/>
+      <stop offset="0.793" stop-color="#dc484f"/>
+      <stop offset="1" stop-color="#ee5962"/>
+    </radialGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_37844" data-name="Rectangle 37844" width="44" height="31.429"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" y1="0.5" x2="0.956" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fe8377"/>
+      <stop offset="0.773" stop-color="#ee5962"/>
+      <stop offset="1" stop-color="#ee5962"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_15407" data-name="Group 15407">
+    <rect id="Rectangle_28630" data-name="Rectangle 28630" width="48" height="48" fill="none"/>
+    <g id="Group_18804" data-name="Group 18804" transform="translate(2 2)">
+      <rect id="Rectangle_38371" data-name="Rectangle 38371" width="44" height="44" fill="#adaeaf" opacity="0"/>
+      <circle id="Ellipse_318" data-name="Ellipse 318" cx="22" cy="22" r="22" fill="url(#radial-gradient)"/>
+      <g id="Group_18541" data-name="Group 18541" transform="translate(0 6.286)">
+        <g id="Mask_Group_245" data-name="Mask Group 245" transform="translate(0)" clip-path="url(#clip-path)">
+          <circle id="Ellipse_305" data-name="Ellipse 305" cx="22" cy="22" r="22" transform="translate(0 -6.286)" fill="url(#linear-gradient)"/>
+        </g>
+        <g id="Group_18515" data-name="Group 18515" transform="translate(12.571 6.81)">
+          <path id="Rectangle_37208" data-name="Rectangle 37208" d="M1.347,0h0A1.347,1.347,0,0,1,2.694,1.347V17.81a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V1.347A1.347,1.347,0,0,1,1.347,0Z" transform="translate(8.082)" fill="#fff"/>
+          <path id="Rectangle_37209" data-name="Rectangle 37209" d="M1.347,0h0A1.347,1.347,0,0,1,2.694,1.347V11.576a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V1.347A1.347,1.347,0,0,1,1.347,0Z" transform="translate(12.122 6.233)" fill="#fff"/>
+          <path id="Rectangle_37210" data-name="Rectangle 37210" d="M1.347,0h0A1.347,1.347,0,0,1,2.694,1.347V7.124a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V1.347A1.347,1.347,0,0,1,1.347,0Z" transform="translate(16.163 10.686)" fill="#fff"/>
+          <path id="Rectangle_37211" data-name="Rectangle 37211" d="M1.347,0h0A1.347,1.347,0,0,1,2.694,1.347v12.9a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V1.347A1.347,1.347,0,0,1,1.347,0Z" transform="translate(4.041 3.562)" fill="#fff"/>
+          <path id="Rectangle_37212" data-name="Rectangle 37212" d="M1.347,0h0A1.347,1.347,0,0,1,2.694,1.347V7.124a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V1.347A1.347,1.347,0,0,1,1.347,0Z" transform="translate(0 10.686)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

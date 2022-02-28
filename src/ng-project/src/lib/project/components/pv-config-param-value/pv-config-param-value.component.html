@@ -1,0 +1,87 @@
+<ng-container [ngSwitch]="type" *transloco="let t">
+
+  <ng-container *ngSwitchCase="'systemSize'">
+      {{ t('pvConfig.params.systemSize.capacity') }}:
+      <sg-unit-value [unit]="installedPowerUnit" [value]="installedPower"></sg-unit-value>
+      <sg-unit-toggle-label [unit]="installedPowerUnit"></sg-unit-toggle-label>
+      <ng-container *ngIf="param.type === 'area'">
+        ( {{ param.value }}m<sup>2</sup> )
+      </ng-container>
+    </ng-container>
+
+  <ng-container *ngSwitchCase="'pvModule'">
+    {{ t('pvConfig.params.pvModule.' + param.type) }}
+    <ng-container *ngIf="param.degradation === 'custom'">
+      {{ t('pvConfig.params.pvModule.customDegradation', param) }}
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'inverter'">
+      {{ t('pvConfig.params.inverter.efficiencyStr', {
+           efficiency: getInverterEfficiency(param),
+           inverterType: t('pvConfig.params.inverter.' + param.inverter)
+        })
+      }}
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'orientation'">
+    {{ t('pvConfig.params.orientation.azimuth') }}:
+    {{ param.azimuth }}°
+    {{ divider }}
+    {{ t('pvConfig.params.orientation.tilt') }}:
+    {{ param.tilt }}°
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'snowSoilingLosses'">
+    {{ t('pvConfig.params.snowSoilingLosses.soilingLossesShort') }}
+    {{ max(param.soiling).toFixed(1) }} %
+    {{ divider }}
+    {{ t('pvConfig.params.snowSoilingLosses.snowLossesShort') }}
+    {{ max(param.snow).toFixed(1)   }} %
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'cablingLosses'">
+    {{ t('pvConfig.params.cablingLosses.DCCableShort') }}
+    {{ param.DCCable }} %
+    {{ divider }}
+    {{ t('pvConfig.params.cablingLosses.DCMismatchShort') }}
+    {{ param.DCMismatch }} %
+    {{ divider }}
+    {{ t('pvConfig.params.cablingLosses.ACCableShort') }}
+    {{ param.ACCable }} %
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'systemAvailability'">
+    {{ param.availability }} %
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'transformer'">
+    <ng-container *ngIf="param.type !== noneTrasformer">
+      {{ t('pvConfig.params.transformer.lossStr', {
+           loss: getTransformerLoss(param),
+           transformerType: t('pvConfig.params.transformer.' + param.type)
+        })
+      }}
+    </ng-container>
+    <ng-container *ngIf="param.type === noneTrasformer">
+      {{ t('pvConfig.params.transformer.' + param.type) }}
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'rowSpacing'">
+    {{ param.spacing }}
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'colSpacing'">
+    {{ param.spacing }}
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'backtracking'">
+    {{ t('common.status.' + (param.enabled ? 'enabled' : 'disabled')) }}
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'rotationLimits'">
+    {{ t('pvConfig.params.rotationLimits.val', param) }}
+  </ng-container>
+
+</ng-container>

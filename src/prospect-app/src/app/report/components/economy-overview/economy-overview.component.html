@@ -1,0 +1,14 @@
+<cdk-table #table [dataSource]="[data]" class="data-table">
+  <ng-container *ngFor="let key of keys" [cdkColumnDef]="key">
+    <cdk-header-cell *cdkHeaderCellDef>
+      <sg-translation [str]="layerMap.get(key).name"></sg-translation>
+    </cdk-header-cell>
+    <cdk-cell *cdkCellDef="let row">
+      <sg-unit-value [value]="data[key]" [unit]="layerMap.get(key).unit"></sg-unit-value>
+      <sg-unit-label [unit]="layerMap.get(key).unit"></sg-unit-label>
+    </cdk-cell>
+  </ng-container>
+
+  <cdk-header-row *cdkHeaderRowDef="keys"></cdk-header-row>
+  <cdk-row *cdkRowDef="let row; columns: keys"></cdk-row>
+</cdk-table>

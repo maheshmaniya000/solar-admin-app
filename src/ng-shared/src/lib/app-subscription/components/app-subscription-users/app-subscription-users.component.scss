@@ -1,0 +1,25 @@
+@import 'theme';
+
+mat-table {
+  mat-header-cell, mat-cell {
+    color: map-get($sg-gray, 900);
+  }
+
+  mat-cell .name {
+    cursor: pointer;
+  }
+
+  mat-checkbox {
+    ::ng-deep .mat-checkbox-frame {
+      border-color: map-get($sg-gray, 900);
+    }
+  }
+}
+
+mat-paginator {
+  color: map-get($sg-gray, 700);
+}
+
+.dialog-close-button {
+  margin-right: 162px;
+}

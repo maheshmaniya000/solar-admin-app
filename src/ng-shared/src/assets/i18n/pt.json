@@ -1,0 +1,2139 @@
+{
+  "auth": {
+    "auth0": {
+      "recaptchaNotValid": "Recaptcha inválida, tente novamente.",
+      "registrationOk": "Concluído, confirme o registro clicando no link de verificação enviado ao seu e-mail.",
+      "unknown": "Ocorreu um erro durante o registro - tente novamente mais tarde",
+      "unknownError": "Algo deu errado...",
+      "emailAlreadyRegistred": "O usuário com este endereço de e-mail já existe.",
+      "otpInvalid": "OTP usado ou inválido"
+    },
+    "changePassword": {
+      "change": "Alterar",
+      "changePasswordOk": "A senha foi alterada",
+      "error": "Usuário ou senha incorretos",
+      "passwordConfirm": "Confirmar nova senha",
+      "recaptchaNotValid": "Recaptcha inválida, tente novamente.",
+      "tooManyAttempts": "A conta foi bloqueada - muitas tentativas de alterar a senha com senha incorreta",
+      "unknown": "Ocorreu um erro durante a alteração da senha - tente novamente mais tarde"
+    },
+    "confirmTerms": {
+      "agree": "Eu concordo",
+      "termsAgreeConfirm": "Termos de Uso e Aviso de Privacidade do Solargis",
+      "title": "Confirmar Termos de Uso",
+      "terms": "Termos de Uso",
+      "contractualTerms": "Termos contratuais gerais dos serviços pagos",
+      "particularConditions": "Condições particulares"
+    },
+    "emailVerify": {
+      "error": "Falha na verificação de e-mail",
+      "ok": "Seu e-mail foi confirmado. Agora você pode se conectar"
+    },
+    "forgotPassword": {
+      "changeOk": "A senha foi alterada. Agora você pode se conectar",
+      "error": "Erro desconhecido, tente novamente mais tarde",
+      "hint": "Insira seu e-mail para nos ajudar a identificar você",
+      "ok": "Verifique seu e-mail para obter mais instruções",
+      "recaptchaNotValid": "Recaptcha inválida, tente novamente",
+      "returnToSignIn": "Voltar para Iniciar Sessão",
+      "tokenNotValid": "O link já foi usado para alterar a senha",
+      "tooManyAttempts": "A conta está bloqueada e não pode alterar a senha",
+      "userNotFound": "Esse usuário não foi encontrado"
+    },
+    "fupRecaptcha": {
+      "title": "Confirmar que você não é um robô",
+      "info": "O número de cliques por minuto excedeu o limite. Faça login ou Registre-se para remover este limite."
+    },
+    "login": {
+      "create": "Criar sua conta Solargis gratuita",
+      "error": "Usuário ou senha incorretos",
+      "tooManyAttempts": "A conta foi bloqueada - muitas tentativas de login com senha incorreta",
+      "unknown": "Ocorreu um erro durante o login - tente novamente mais tarde",
+      "deletedUser": "Esta conta está desativada. <a href=\"https://solargis.com/about-us/contact\">Contate-nos.</a>",
+      "rememberMe": "Lembre-me",
+      "notVerified": "Seu e-mail não está verificado. Abra um e-mail de verificação que lhe enviamos quando você se registrou, ou podemos gerar um novo.",
+      "notVerifiedAction": "Enviar um novo e-mail de verificação",
+      "notVerifiedConfirm": "Um novo e-mail de verificação foi enviado"
+    },
+    "registration": {
+      "alreadyHaveAccount": "Já tem uma conta?",
+      "emailError": "Insira um endereço de e-mail válido",
+      "emailPlaceholder": "E-mail comercial",
+      "firstNameError": "O nome é necessário",
+      "firstNamePlaceholder": "Nome",
+      "lastNameError": "O sobrenome é necessário",
+      "lastNamePlaceholder": "Sobrenome",
+      "passwordConfirm": "Reinserir senha",
+      "passwordError": "Min. 8 caracteres, pelo menos, uma letra maiúscula e uma minúscula",
+      "passwordPlaceholder": "Senha",
+      "passwordRequired": "A senha é necessária",
+      "passwordsNotEqual": "As senhas devem ser iguais",
+      "termsAgree": "Concordo com as <a href='https://solargis.com/legal/solargis-apps-terms-of-use/' target='_blank' title='Conditions of Use and Privacy Notice'>Condições de Uso e o Aviso de Privacidade</a> do Solargis",
+      "title": "Registro",
+      "titleNewPassword": "Nova senha",
+      "titleOldPassword": "Senha antiga",
+      "companyError": "É necessário o nome da empresa",
+      "accountCreated": "Criação da conta concluída com sucesso",
+      "accountCreatedAfterInvitation": "Criação da conta concluída com sucesso e empresa ingressada",
+      "firstOrLastNameRequired": "Nome ou sobrenome obrigatório e não pode conter espaços em branco",
+      "login": "Iniciar Sessão",
+      "createUserAccount": "Criar conta de usuário"
+    },
+    "expired": "Você foi desconectado porque sua sessão expirou. Conecte-se novamente.",
+    "newPassword": "Você fez login pelo link Esqueci minha senha.<br>Defina uma nova senha.",
+    "invitation": {
+      "info": "A aceitação deste convite permitirá a criação de uma conta Solargis",
+      "text": "Você foi convidado para tornar-se membro da empresa. Ao aceitar este convite, você concorda em tornar-se membro da empresa.",
+      "companyName": "Nome da empresa",
+      "title": "Aceitar convite",
+      "accept": "Aceitar",
+      "expiredText": "Seu convite para a empresa expirou ou foi cancelado pela administração da empresa. Entre em contato com a pessoa que lhe enviou o convite da empresa.",
+      "expiredTitle": "Convite da empresa expirado"
+    },
+    "lambdaCaptcha": {
+      "label": "Expressão captcha"
+    },
+    "forbidden": "Você não tem permissão para acessar {url}"
+  },
+  "codelist": {
+    "LANDC": {
+      "301": "Nenhum dado",
+      "305": "Terra de cultivo irrigada ou pós-inundação",
+      "306": "Mosaico de cultivos (>50%)/vegetação natural",
+      "307": "Mosaico de vegetação natural (>50%)/cultivos",
+      "308": "Cobertura arbórea, folhas largas, perene (>15%)",
+      "318": "Cobertura arbórea, folhas mistas (folhas largas e aciculares)",
+      "319": "Mosaico árvores e arbustos (>50%)/cobertura herbácea",
+      "320": "Mosaico cobertura herbácea (>50%)/árvore e arbustos",
+      "324": "Pasto",
+      "325": "Líquenes e musgos",
+      "330": "Cobertura arbórea, inundada, água fresca ou salobra",
+      "331": "Cobertura arbórea, inundada, água salina",
+      "332": "Cobertura herbácea ou de arbustos, inundada",
+      "333": "Áreas urbanas",
+      "337": "Corpos de água",
+      "338": "Neve ou gelo permanente",
+      "302-304": "Terra de cultivo, sequeiro",
+      "309-311": "Cobertura arbórea, folhas largas, caduca (>15%)",
+      "312-314": "Cobertura arbórea, folha acicular, perene (>15%)",
+      "315-317": "Cobertura arbórea, folha acicular, caduca (>15%)",
+      "321-323": "Arbustos",
+      "326-329": "Vegetação esparsa (<15%)",
+      "334-336": "Áreas vazias"
+    },
+    "AZI": {
+      "-1": "plano",
+      "-2": "quase plano"
+    },
+    "SNOWD": {
+      "-1": "ocasional"
+    },
+    "DNI_season": {
+      "-1": "DNI mensal encontrada 0"
+    },
+    "GHI_season": {
+      "-1": "GHI mensal encontrada 0"
+    }
+  },
+  "common": {
+    "action": {
+      "apply": "Aplicar",
+      "back": "Voltar",
+      "cancel": "Cancelar",
+      "change": "Alterar",
+      "choose": "Escolher",
+      "close": "Fechar",
+      "collapseAll": "Recolher tudo",
+      "compare": "Comparar",
+      "confirm": "Confirmar",
+      "continue": "Continuar",
+      "delete": "Excluir",
+      "expandAll": "Expandir tudo",
+      "invite": "Convidar",
+      "manage": "Gerenciar",
+      "next": "Próximo",
+      "ok": "OK",
+      "open": "Abrir",
+      "prev": "Anterior",
+      "save": "Salvar",
+      "search": "Pesquisar",
+      "selectAll": "Selecionar tudo",
+      "send": "Enviar",
+      "unselectAll": "Desmarcar tudo",
+      "reload": "Recarregar",
+      "remove": "Remover",
+      "edit": "Editar",
+      "redo": "Refazer",
+      "undo": "Desfazer",
+      "default": "Configurar padrão",
+      "calculate": "Calcular",
+      "saveValues": "Salvar valores",
+      "resetDefaults": "Redefinir valores-padrão",
+      "add": "Adicionar",
+      "verify": "Verificar",
+      "launch": "Inicializar",
+      "defaultView": "Visualização padrão",
+      "moreInfo": "Mais informações"
+    },
+    "aggregation": {
+      "avg": "Média",
+      "cumulative": "Cumulativo",
+      "sum": "Soma"
+    },
+    "cardinal": {
+      "east": "Leste",
+      "north": "Norte",
+      "south": "Sul",
+      "west": "Oeste"
+    },
+    "confirmDialog": {
+      "body": "Esta ação não pode ser desfeita. Continuar?",
+      "heading": "Confirmar ação",
+      "usure": "Tem certeza?"
+    },
+    "datetime": {
+      "date": "Data",
+      "timezone": "Fuso horário",
+      "lastChange": "Última alteração"
+    },
+    "label": {
+      "settings": "Configurações",
+      "configureMapView": "Configurações da vista de mapa",
+      "configureProjectsView": "Configurações da vista de projetos"
+    },
+    "misc": {
+      "commingSoon": "Em breve",
+      "help": "Ajuda",
+      "n/a": "N/A",
+      "noWidth": "A resolução da tela está muito baixa para usar o Solargis. Para usar o Solargis, a resolução da tela precisa ter pelo menos 1100 pixels de largura."
+    },
+    "paginator": {
+      "nextPage": "Próxima página",
+      "perPage": "Itens por página",
+      "previousPage": "Página anterior",
+      "rangeLabel": "{startIndex} - {endIndex} de {length}",
+      "rangeLabelEmpty": "0 de 0"
+    },
+    "status": {
+      "disabled": "Desativado",
+      "enabled": "Ativado"
+    },
+    "subscription": {
+      "prospect": "Assinatura do Prospect",
+      "sdat": "Assinatura SDAT"
+    },
+    "error": {
+      "subscriptionLayer": "Para visualizar essas camadas de dados, você precisa atualizar sua assinatura do Prospect",
+      "valueBetween": "O valor deve estar entre {min} e {max}",
+      "failed": "Falha na ação",
+      "tooLarge": "Este valor é muito grande",
+      "internal": "Ocorreu um erro interno. Você deve recarregar a página."
+    },
+    "subscriptionType": {
+      "FREE": "Gratuito",
+      "UPGRADE": "Atualização do Prospect de Básico para Pro",
+      "expired": "Expirado {subscriptionType}",
+      "PROSPECT_PRO": "Prospect Pro",
+      "PROSPECT_BASIC": "Prospect Básico",
+      "PROSPECT_FREE_TRIAL": "Avaliação gratuita",
+      "SDAT_PRO": "SDAT Pro",
+      "SDAT_BASIC": "SDAT",
+      "SDAT_FREE_TRIAL": "Avaliação gratuita SDAT"
+    },
+    "confirm": {
+      "no": "Não",
+      "yes": "Sim"
+    },
+    "snackBar": {
+      "changesSaved": "A alteração foi salva",
+      "couldNotSaveChange": "Não foi possível salvar a alteração"
+    },
+    "alert": {
+      "freetrial": {
+        "available": "Projeto com avaliação gratuita disponível",
+        "viewDetail": "• Visualizar detalhes do projeto e ativa avaliação gratuita",
+        "availableAction": "Ativar avaliação gratuita",
+        "assigned": "Você não tem mais nenhum projeto de avaliação gratuita pendente",
+        "assignedAction": "Atualizar para assinatura completa",
+        "noSubscription": "Solicite uma avaliação gratuita e obtenha informações detalhadas sobre a geração de energia fotovoltaica",
+        "noSubscriptionAction": "Solicitar avaliação gratuita"
+      },
+      "subscription": {
+        "renewTrial": "Atualizar",
+        "renew": "Renovar sua assinatura do Prospect",
+        "expired": "Sua assinatura do Prospect expirou",
+        "expiredTrial": "Sua avaliação gratuita do Prospect expirou"
+      }
+    },
+    "validation": {
+      "min": "O valor mínimo é {min}",
+      "max": "O valor máximo é {max}",
+      "integer": "Este campo aceita apenas inteiros",
+      "minDate": "A data mínima é {minDate}",
+      "maxDate": "A data máxima é {maxDate}",
+      "pattern": "O valor não corresponde ao padrão exigido",
+      "required": "Este campo é obrigatório",
+      "maxLength": "O comprimento máximo é {requiredLength} caracteres",
+      "minLength": "O comprimento mínimo é {requiredLength} caracteres",
+      "maxDecimals": "Este campo aceita no máximo {maxDecimals} casas decimais",
+      "phoneNumber": "Número de telefone inválido. Use o formato internacional começando com +",
+      "maxDateRange": "O intervalo máximo de datas é de {days} dias",
+      "naturalNumber": "Este campo só aceita números naturais",
+      "endDateInvalid": "A data final é anterior à data inicial",
+      "datepickerParse": "\"{text}\" não pode ser interpretado como data",
+      "startDateInvalid": "A data inicial é posterior à data final",
+      "phoneNumberFormat": "Número de telefone inválido. Número de exemplo: {phoneNumberFormat}"
+    }
+  },
+  "companyAdmin": {
+    "billing": {
+      "allYears": "Todos os anos",
+      "deliveryDate": "Data de entrega",
+      "detail": "Detalhes do pedido",
+      "errorDownloadingInvoice": "Erro ao baixar a fatura",
+      "history": "Histórico do pedido",
+      "invoiceDownloaded": "Fatura baixada",
+      "noOrders": "Nenhum pedido ainda",
+      "orderDate": "Data do pedido",
+      "orderId": "Pedido",
+      "payment": "Pagamento",
+      "paymentMethod": "Forma de pagamento",
+      "price": "Preço",
+      "pay": "Pagar agora",
+      "paymentInfo": "Informações de pagamento",
+      "cancel": "Cancelar pedido",
+      "status": "Status"
+    },
+    "nav": {
+      "billing": "Cobrança e pagamentos",
+      "orderDetail": "Detalhe do pedido",
+      "overview": "Visão geral",
+      "settings": "Configurações da empresa",
+      "subscriptions": "Assinaturas",
+      "users": "Usuários",
+      "apiContracts": "API",
+      "info": "Informações do cliente"
+    },
+    "orderDetail": {
+      "contractNo": "Número do contrato",
+      "deliveryStatus": "Data de entrega",
+      "discount": "Desconto",
+      "itemDesc": "Descrição do item",
+      "orderNo": "Número do pedido",
+      "orderStatus": "Pedido",
+      "orderTitle": "Pedido",
+      "paymentStatus": "Pagamento",
+      "price": "Preço",
+      "purchaseOrderNo": "Ordem de compra",
+      "sgOrderId": "ID do pedido",
+      "totalPrice": "Preço total",
+      "totalQty": "Quantidade",
+      "unitPrice": "Preço unitário",
+      "vat": "IVA",
+      "users": "Usuários: {users}",
+      "valid": "Validade: de {from} até {to}",
+      "vatAmmount": "Valor do IVA",
+      "back": "Voltar para Cobrança e pagamentos",
+      "freeText": "Texto livre"
+    },
+    "subscription": {
+      "projectLimit": "{remaining} projetos restantes",
+      "unlimited": "Ilimitado",
+      "unlimitedProjects": "O número de projetos não é limitado (aplica-se a política de uso justo)",
+      "usersLimit": "{current}/{max} usuários",
+      "notice": "Aviso: pode ser necessário que os usuários saiam e entrem novamente para obter acesso à assinatura atribuída.",
+      "general": "Geral",
+      "users": {
+        "name": "Nome",
+        "none": "Nenhum usuário encontrado.",
+        "title": "Usuários",
+        "email": "E-mail",
+        "devices": "Dispositivos do usuário",
+        "tokenGenerationDate": "Data de geração",
+        "action": "Açao",
+        "generateToken": "Gerar token",
+        "regenerateToken": "Gerar novamente o token",
+        "deleteToken": "Excluir token"
+      }
+    },
+    "subscriptions": {
+      "empty": "Nenhuma assinatura ativa",
+      "from": "Válido a partir de",
+      "plan": "Plano de assinatura",
+      "projectLimit": "Projetos ativados",
+      "to": "Válido até",
+      "userLimit": "Limite de usuário"
+    },
+    "users": {
+      "email": "E-mail",
+      "enterEmail": "E-mail",
+      "instructions": "Um e-mail com mais instruções será enviado para o e-mail especificado.",
+      "invitations": "Convites da empresa",
+      "inviteDesc": "Insira o e-mail do usuário a ser convidado",
+      "name": "Nome",
+      "new": "Convidar um usuário",
+      "role": "Função no sistema",
+      "status": "Status",
+      "validUntill": "Válido até",
+      "invalidEmail": "O e-mail é inválido",
+      "addToSub": {
+        "note": "Nota: o usuário não será adicionado se você tiver atingido o número máximo de usuários da assinatura",
+        "prospect": "Adicionar este usuário à assinatura Prospect",
+        "noteFull": "Nota: você atingiu o número máximo de usuários em sua assinatura",
+        "sdat": "Adicionar este usuário à assinatura SDAT"
+      },
+      "assign": {
+        "sdat": "Atribuir à assinatura SDAT",
+        "prospect": "Atribuir à assinatura Prospect"
+      },
+      "unassign": {
+        "sdat": "Desatribuir da assinatura SDAT",
+        "prospect": "Desatribuir da assinatura Prospect"
+      },
+      "alreadyInvited": "O usuário já foi convidado para ser membro da conta { companyName }"
+    },
+    "api": {
+      "v1": {
+        "title": "API v1.1",
+        "name": "Nome do contrato",
+        "empty": "Sua empresa não tem contratos de API. Você pode solicitar uma avaliação gratuita.",
+        "prospect": {
+          "title": "Prospect"
+        },
+        "monitor": {
+          "title": "Monitor",
+          "hardLimit": "Dados do Monitor permitidos de {hardLimit}",
+          "relativeLimitWindow": "Dados do Monitor permitidos para os últimos {relativeLimitWindow}",
+          "relativeLimitWindow_y": "anos",
+          "relativeLimitWindow_m": "meses",
+          "relativeLimitWindow_d": "dias",
+          "dataSummarization": "Resumo de dados",
+          "processingKeys": "Chaves de processamento de dados"
+        },
+        "forecast": {
+          "title": "Forecast",
+          "description": "Forecast permitido para os próximos {days} dias"
+        }
+      },
+      "v2": {
+        "title": "API v2"
+      },
+      "common": {
+        "navigation": {
+          "info": "Informações",
+          "accessKeys": "Chaves de acesso (tokens)",
+          "stats": "Estatísticas"
+        },
+        "loading": "Carregando contrato de API...",
+        "title": "Título do contrato de API",
+        "freeTrialRequest": "Ativar avaliação gratuita",
+        "resources": "Recursos de API",
+        "rateLimit": {
+          "title": "Limite de taxa (total de solicitações)",
+          "description": "{rateLimit} solicitação permitidas para este contrato"
+        },
+        "fup": "{count} solicitações por {perSeconds} segundos",
+        "validity": {
+          "title": "Título",
+          "description": "De {from} até {to}"
+        },
+        "access": {
+          "title": "Acesso",
+          "type": "Tipo de acesso: {type}",
+          "maxSites": "Máximo de locais permitidos: {maxSites}",
+          "unlimitedMaxSites": "Ilimitado",
+          "regions": "Regiões permitidas:",
+          "sites": "Locais permitidos:",
+          "position": "Latitude: {latitude}, Longitude {longitude}"
+        },
+        "token": {
+          "title": "Token",
+          "create": "Adicionar novo token (chave de acesso)",
+          "errorCreating": "Não é possível gerar novo token (chave de acesso)",
+          "revoking": "Revogando...",
+          "revokeConfirmHeader": "Revogação da chave de acesso (token)",
+          "revokeConfirmMessage": "Você realmente deseja revogar a chave de acesso (token) para o contrato de API?",
+          "revokeError": "A chave de acesso (token) não pôde ser revogada"
+        },
+        "stats": {
+          "requestCount": "Solicitações (total)",
+          "uniqueSitesCount": "Locais exclusivos (total)",
+          "uiuCount": "Unidades de informações exclusivas (total)",
+          "documentation": "Você pode obter suas estatísticas via API, consulte esta <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/default/get_stats\" target=\"_blank\" title=\"documentation\">documentação</a>."
+        },
+        "apiDocumentation": "Você pode obter a documentação de API do Prospect/Monitor/Forecast (também experimente nossa API) nesta <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/ws/dataOperation\" target=\"_blank\" title=\"documentation\">documentação</a>."
+      }
+    },
+    "sdatSubscription": {
+      "devices": {
+        "all": "Todos os dispositivos",
+        "none": "Nenhum dispositivo SDAT encontrado.",
+        "title": "Dispositivos",
+        "email": "E-mail",
+        "active": "Dispositivos ativos",
+        "company": "Perfil da empresa",
+        "disabled": "Dispositivos desabilitados",
+        "userName": "Nome do usuário",
+        "hostName": "Nome do host",
+        "lastAccess": "Atividade recente",
+        "registeredAt": "Registrado",
+        "disableAction": "Desabilitar dispositivo",
+        "customName": "Nome personalizado",
+        "osFingerprint": "Impressão digital do dispositivo"
+      },
+      "general": {
+        "type": "Tipo de assinatura",
+        "none": "Não existe nenhuma assinatura SDAT.",
+        "users": "Usuários",
+        "notes": "Notas",
+        "validTo": "Válido até",
+        "validFrom": "Válido desde",
+        "deviceLimit": "Limite de dispositivos por usuário",
+        "offlineLimit": "Limite offline",
+        "offlineLimitUnit": "horas"
+      }
+    },
+    "prospectSubscription": {
+      "none": "Nenhuma assinatura do Prospect",
+      "users": "Usuários ativos",
+      "validFrom": "Válido a partir de {date}",
+      "validUntil": "Válido até {date}",
+      "subscription": "Assinatura",
+      "activatedProjects": "Projetos ativos"
+    },
+    "overview": {
+      "prospectSubscription": {
+        "desc": "Se você tem uma assinatura ativa do Solargis iMaps ou pvPlanner, pode resgatar o acesso pago ao Solargis Prospect pelo restante do período de sua assinatura.",
+        "snack": "Solicitação criada",
+        "button": "Já tenho assinaturas do iMaps e do pvPlanner",
+        "dialog": "Após recebermos sua solicitação, ativaremos o acesso pago ao aplicativo Prospect em, normalmente, até um dia útil. Você será notificado por e-mail.",
+        "confirmTerms": "Concordo com os <a href='https://solargis.com/legal/general-contractual-terms/' target='_blank' title='General contracts terms to the paid services'>Termos Contratuais Gerais dos serviços pagos</a> e as <a href='https://solargis.com/legal/particular-terms-and-conditions/project-use/' target='_blank' title='Particular conditions'>Condições Particulares</a> da Solargis"
+      }
+    }
+  },
+  "compare": {
+    "addDialog": {
+      "noProjects": "Nenhum projeto disponível. Criem um projeto primeiro",
+      "outOf": "{projects} projetos selecionados de, no máximo, {max}",
+      "project": "Projeto",
+      "systemType": "Tipo de sistema",
+      "lastChange": "Última alteração",
+      "systemSize": "Tamanho do sistema"
+    },
+    "addProjects": "Adicionar projetos",
+    "compare": "Comparar",
+    "empty": "Não há nenhum projeto para Comparar",
+    "endOfYear": "Final do ano",
+    "listDialog": {
+      "added": "Os projetos foram adicionados com sucesso ao recurso Comparar",
+      "open": "Abrir Comparar",
+      "projects": "Projetos atuais para Comparar:"
+    },
+    "noPermission": "Para usar Comparar, você precisa comprar uma assinatura da empresa selecionada primeiro",
+    "noPvConfig": "Filtramos projetos que não têm nenhuma configuração fotovoltaica instalada:",
+    "purchase": "Comprar uma assinatura",
+    "replaceDialog": {
+      "msg": "O recurso Comparar está cheio. Escolha um projeto para ser substituído:",
+      "replace": "Substituir projeto"
+    },
+    "addToCompare": "Adicionar para comparar",
+    "addPvSettings": "Adicionar configuração fotovoltaica",
+    "noFinanceConfig": "Estes são projetos filtrados que não têm nenhuma configuração financeira definida:",
+    "addFinanceSettings": "Adicionar parâmetros financeiros",
+    "noEconomyConfig": "Estes são projetos que não têm nenhuma configuração financeira definida:",
+    "noLatestData": "Há projetos que não têm dados atualizados",
+    "updateProjectData": "Atualizar dados do projeto"
+  },
+  "enum": {
+    "invoice": {
+      "CN": "Baixar nota de crédito",
+      "INVOICE": "Baixar fatura",
+      "INVOICE_FOR_PROFA": "Baixar fatura",
+      "PROFA": "Baixa fatura pro forma"
+    },
+    "orderPaymentStatus": {
+      "NOT_PAID": "Não pago",
+      "PAID": "Pago",
+      "PAYMENT_FAILED": "Falha no pagamento",
+      "PENDING": "Pendente"
+    },
+    "orderPaymentType": {
+      "BANK": "Banco",
+      "BRAINTREE": "Pagamento on-line por cartão",
+      "PAY_PAL": "PayPal",
+      "NO_PAYMENT": "Sem pagamento"
+    },
+    "orderStatus": {
+      "CANCELED": "Cancelado",
+      "DONE": "Concluído",
+      "IN_PROGRESS": "Em andamento",
+      "USER_STARTED": "Criado",
+      "EXPIRED": "Expirado"
+    },
+    "app": {
+      "prospect": "Prospect",
+      "evaluate": "Avaliar",
+      "monitor": "Monitor",
+      "forecast": "Forecast"
+    },
+    "horizon": {
+      "custom": "Personalizar horizonte",
+      "default": "Horizonte-padrão"
+    }
+  },
+  "header": {
+    "admin": "Solargis Administrador",
+    "company-admin": "Administrador da empresa",
+    "compare": "Comparar",
+    "contact": "Contato",
+    "forgotPassword": "Esqueceu sua senha?",
+    "help": "Ajuda",
+    "login": "Iniciar Sessão",
+    "logout": "Sair",
+    "map": "Mapa",
+    "pricing": "Preço",
+    "projectDetail": "Detalhes do projeto",
+    "projects": "Projetos",
+    "prospect": "Prospect",
+    "registration": "Criar conta",
+    "upgrade": "Atualizar",
+    "user": {
+      "invoiceUsers": "Convidar usuários",
+      "adminConsole": "Console do administrador",
+      "allCompanies": "Todas as empresas",
+      "switch": "Alternar para"
+    },
+    "freeTrial": "Avaliação gratuita",
+    "evaluate": "Avaliar",
+    "newPassword": "Nova senha",
+    "instructions": "Instruções enviadas",
+    "signUp": "Registre-se",
+    "users": "Usuários",
+    "orders": "Pedidos",
+    "products": "Produtos",
+    "companies": "Empresas",
+    "dashboard": "Painel",
+    "sdat": "SDAT",
+    "administration": "{companyName} administration",
+    "invoices": "Faturas"
+  },
+  "map": {
+    "layer": {
+      "mapbox-streets": {
+        "name": "Topográfico"
+      },
+      "solargis-cdd": {
+        "name": "Graus-dia de resfriamento"
+      },
+      "solargis-d2g": {
+        "name": "Razão entre irradiação difusa e global"
+      },
+      "solargis-dif": {
+        "name": "Irradiação difusa horizontal"
+      },
+      "solargis-dni": {
+        "name": "Irradiação direta normal"
+      },
+      "solargis-ele": {
+        "name": "Elevação",
+        "shortName": "Elevação"
+      },
+      "solargis-ghi": {
+        "name": "Irradiação global horizontal"
+      },
+      "solargis-gti": {
+        "name": "Irradiação global inclinada"
+      },
+      "solargis-gti_opta": {
+        "name": "Irradiação global inclinada no ângulo ideal"
+      },
+      "solargis-hdd": {
+        "name": "Graus-dia de aquecimento"
+      },
+      "solargis-landc": {
+        "name": "Cobertura do terreno"
+      },
+      "solargis-opta": {
+        "name": "Inclinação ideal de módulos fotovoltaicos"
+      },
+      "solargis-popul": {
+        "name": "Densidade populacional"
+      },
+      "solargis-prec": {
+        "name": "Precipitação (pluviométrica)"
+      },
+      "solargis-pvgain_cdte": {
+        "name": "Ganho de CdTe sobre módulos cSi"
+      },
+      "solargis-pvout_cdte": {
+        "name": "Rendimento fotovoltaico CdTe"
+      },
+      "solargis-pvout_csi": {
+        "name": "Rendimento fotovoltaico cSi"
+      },
+      "solargis-pwat": {
+        "name": "Água precipitável"
+      },
+      "solargis-rh": {
+        "name": "Umidade relativa"
+      },
+      "solargis-snowd": {
+        "name": "Dias de neve"
+      },
+      "solargis-temp": {
+        "name": "Temperatura do ar"
+      },
+      "solargis-ws": {
+        "name": "Velocidade do vento"
+      },
+      "solargis-alb": {
+        "name": "Albedo de superfície"
+      },
+      "solargis-azi": {
+        "name": "Azimute do terreno"
+      },
+      "solargis-slo": {
+        "name": "Inclinação do terreno"
+      },
+      "solargis-dni_season": {
+        "name": "Sazonalidade da DNI"
+      },
+      "solargis-ghi_season": {
+        "name": "Sazonalidade da GHI"
+      },
+      "bing-satellite": {
+        "name": "Satélite"
+      },
+      "mapbox-satellite": {
+        "name": "Satélite"
+      }
+    },
+    "legend": {
+      "button": "LEGENDA"
+    },
+    "location": {
+      "error": {
+        "1": "Geolocalização negada",
+        "2": "Geolocalização indisponível",
+        "3": "A geolocalização excedeu o tempo limite"
+      },
+      "tryAgain": "Tente novamente"
+    },
+    "menu": {
+      "labels": "Etiquetas",
+      "selectLayer": "Selecionar camada de mapa",
+      "marker": "Valores de marcador"
+    },
+    "zoom": {
+      "all": "Ampliar todos os projetos",
+      "selected": "Ampliar projetos selecionados"
+    },
+    "draw": {
+      "site": "Local",
+      "rectangle": "Retângulo",
+      "polygon": "Polígono",
+      "distance": "Distância"
+    },
+    "fullscreen": {
+      "fullscreen": "Tela inteira"
+    }
+  },
+  "months": {
+    "apr": "Abr",
+    "aug": "Ago",
+    "dec": "Dez",
+    "feb": "Fev",
+    "jan": "Jan",
+    "jul": "Jul",
+    "jun": "Jun",
+    "mar": "Mar",
+    "may": "Mai",
+    "month": "Mês",
+    "nov": "Nov",
+    "oct": "Out",
+    "sep": "Set",
+    "yearly": "Anual"
+  },
+  "project": {
+    "action": {
+      "archive": "Arquivar",
+      "delete": "Excluir",
+      "transfer": "Transferir",
+      "claimFreetrial": "Ativar Avaliação gratuita",
+      "unArchive": "Desarquivar",
+      "archiveText": "Gostaria de arquivar os projetos selecionados?",
+      "unArchiveText": "Gostaria de desarquivar os projetos selecionados?",
+      "updateProjectData": "Atualizar dados do projeto"
+    },
+    "data": {
+      "longtermAverage": "Média anual de longo prazo",
+      "mapData": "Dados do mapa",
+      "projectData": "Dados do projeto",
+      "showMore": "Mostrar mais",
+      "yearlyAverage": "Média anual",
+      "notLatest": "O projeto não está atualizado"
+    },
+    "dataLayer": {
+      "CDD": {
+        "desc": "Quantifica a demanda de energia necessária para resfriar um edifício. \"Graus-dia de resfriamento\" são uma medida de quanto (em graus) e por quanto tempo (em dias) a temperatura do ar externo foi mais alta do que uma temperatura média diária básica específica (18°C). Os valores anuais e mensais são agregados a partir dos valores diários",
+        "name": "Graus-dia de resfriamento",
+        "shortName": "CDD"
+      },
+      "CF": {
+        "name": "Fator de capacidade",
+        "desc": "A razão de uma produção real de energia elétrica em um ano para a produção máxima possível de energia elétrica em um ano, expressa em %. A produção máxima possível de energia é a capacidade da CA instalada vezes o número de horas em um ano, enquanto a produção real é a quantidade de eletricidade fornecida anualmente a partir do projeto.",
+        "shortName": "CF"
+      },
+      "D2G": {
+        "desc": "Razão entre irradiação difusa horizontal e irradiação global horizontal (DIF/GHI)",
+        "name": "Razão entre irradiação difusa e global",
+        "shortName": "D2G"
+      },
+      "DIF": {
+        "desc": "Soma média anual, mensal ou diária de irradiação difusa horizontal",
+        "name": "Irradiação difusa horizontal",
+        "shortName": "DIF"
+      },
+      "DNI": {
+        "desc": "Soma média anual, mensal ou diária de irradiação direta normal",
+        "name": "Irradiação direta normal",
+        "shortName": "DNI"
+      },
+      "DNI_season": {
+        "desc": "Razão entre as médias mensais máxima e mínima da irradiação direta normal (DNI_month_max / DNI_month_min)",
+        "name": "Sazonalidade da DNI",
+        "shortName": "Estação da DNI"
+      },
+      "ELE": {
+        "desc": "Elevação da superfície do terreno acima/abaixo do nível do mar",
+        "name": "Elevação do terreno"
+      },
+      "GHI": {
+        "desc": "Soma média anual, mensal ou diária de irradiação global horizontal",
+        "name": "Irradiação global horizontal",
+        "shortName": "GHI"
+      },
+      "GHI_season": {
+        "desc": "Razão entre as médias mensais máxima e mínima da irradiação global horizontal (GHI_month_max / GHI_month_min)",
+        "name": "Sazonalidade da GHI",
+        "shortName": "Estação da GHI"
+      },
+      "GTI": {
+        "desc": "Soma média anual, mensal ou diária de irradiação global inclinada",
+        "name": "Irradiação global inclinada",
+        "shortName": "GTI"
+      },
+      "GTI_opta": {
+        "desc": "Soma média anual, mensal ou diária de irradiação global inclinada para módulos fotovoltaicos montados em ângulo ideal",
+        "name": "Irradiação global inclinada em ângulo ideal",
+        "shortName": "GTI opta"
+      },
+      "GTI_theoretical": {
+        "desc": "Soma média anual, mensal ou diária de irradiação global inclinada sem considerar o sombreamento do terreno",
+        "name": "Irradiação global inclinada (teórica)",
+        "shortName": "GTI teórica"
+      },
+      "HDD": {
+        "desc": "Quantifica a demanda de energia necessária para aquecer um edifício. \"Graus-dia de aquecimento\" são uma medida de quanto (em graus) e por quanto tempo (em dias) a temperatura do ar externo foi mais baixa do que uma temperatura média diária básica específica (18°C). Os valores anuais e mensais são agregados a partir dos valores diários",
+        "name": "Graus-dia de aquecimento",
+        "shortName": "HDD"
+      },
+      "LANDC": {
+        "desc": "Indica o tipo de material predominante na superfície (grama, floresta, área urbanizada, etc.)",
+        "name": "Cobertura do terreno"
+      },
+      "OPTA": {
+        "desc": "Inclinação ideal dos módulos fotovoltaicos fixos voltados para o Equador para maximizar a entrada de GTI",
+        "name": "Inclinação ideal dos módulos fotovoltaicos"
+      },
+      "POPUL": {
+        "desc": "Número médio de habitantes por unidade de área",
+        "name": "Densidade populacional"
+      },
+      "PR": {
+        "desc": "Razão entre a saída específica de eletricidade CA de um sistema fotovoltaico e a irradiação global inclinada recebida pela superfície de um painel fotovoltaico (PVOUTspecific/GTI)",
+        "name": "Razão de desempenho",
+        "shortName": "PR"
+      },
+      "PREC": {
+        "desc": "Somas médias anuais e mensais de precipitação",
+        "name": "Precipitação (pluviométrica)",
+        "shortName": "PREC"
+      },
+      "PVGAIN_cdte": {
+        "desc": "Razão entre rendimento anual de sistemas fotovoltaicos baseado nos módulos CdTe e cSi (PVOUTcdte/PVOUTcsi)",
+        "name": "Ganho de módulos CdTe sobre CSi"
+      },
+      "PVOUT_cdte": {
+        "desc": "Rendimento anual de um sistema fotovoltaico usando módulos CdTe. Calculado usando dados de radiação solar e temperatura do ar",
+        "name": "Rendimento fotovoltaico de CdTe"
+      },
+      "PVOUT_csi": {
+        "desc": "Rendimento anual de um sistema fotovoltaico usando módulos cSi. Calculado usando dados de radiação solar e temperatura do ar",
+        "name": "Rendimento fotovoltaico de cSi"
+      },
+      "PVOUT_specific": {
+        "desc": "Valores médios anuais e mensais de eletricidade fotovoltaica (CA) fornecidos por um sistema fotovoltaico e normalizados para 1 kWp de capacidade instalada",
+        "name": "Potência fotovoltaica específica",
+        "shortName": "PVOUT específica"
+      },
+      "PVOUT_total": {
+        "desc": "Valores médios anuais e mensais de eletricidade fotovoltaica (CA) entregues pela capacidade total instalada de um sistema fotovoltaico",
+        "name": "Potência total de energia fotovoltaica",
+        "shortName": "PVOUT total"
+      },
+      "PWAT": {
+        "desc": "Água precipitável é a profundidade do vapor de água em uma coluna da atmosfera, se toda a água nessa coluna for precipitada como chuva. Indica a quantidade de umidade acima do solo",
+        "name": "Água precipitável",
+        "shortName": "PWAT"
+      },
+      "RH": {
+        "desc": "Umidade relativa média anual ou mensal a 2 m acima do solo",
+        "name": "Umidade relativa",
+        "shortName": "RH"
+      },
+      "SNOWD": {
+        "desc": "Os dias de neve são calculados como dias com lâmina d'água igual ou superior a 5 mm",
+        "name": "Dias de neve",
+        "shortName": "SNOWD"
+      },
+      "TEMP": {
+        "desc": "Temperatura média anual, mensal e diária do ar a 2 m acima do solo",
+        "name": "Temperatura do ar",
+        "shortName": "TEMP"
+      },
+      "WS": {
+        "desc": "Velocidade média anual, mensal e diária do vento a 10 m acima do solo",
+        "name": "Velocidade do vento",
+        "shortName": "WS"
+      },
+      "ALB": {
+        "desc": "Fração de irradiação solar refletida pela superfície. Razão entre fluxos radiativos que ascendem da superfície e os que descendem, incidindo na dita superfície (GHI)",
+        "name": "Albedo de superfície",
+        "shortName": "ALB"
+      },
+      "AZI": {
+        "desc": "Aspecto do terreno em direção aos pontos cardeais, em graus, no sentido horário. Norte=0, Leste=90, Sul=180, Oeste=270. Terreno plano (SLO &lt; 2 graus) não é considerado",
+        "name": "Azimute de terreno"
+      },
+      "SLO": {
+        "desc": "Inclinação do terreno em graus",
+        "name": "Inclinação de terreno"
+      },
+      "PV": {
+        "name": "Fotovoltaico"
+      }
+    },
+    "dataSettings": {
+      "generalInfo": "Informações gerais",
+      "irradiation": "Radiação solar",
+      "latlng": "Latitude e longitude",
+      "length": "Elevação do terreno",
+      "ltaDaily": "Médias de longo prazo",
+      "projectInfo": "Informações do projeto",
+      "temperature": "Temperatura do ar",
+      "unitSettings": "Configurações de unidade",
+      "values": "Valores",
+      "tableSettings": "Configurações da tabela",
+      "mapViewSettings": "Configurações da exibição de mapa",
+      "projectViewSettings": "Configurações da exibição de projeto"
+    },
+    "field": {
+      "created": "Criado",
+      "name": "Nome",
+      "rename": "Renomear"
+    },
+    "filter": {
+      "allProjects": "Todos os projetos",
+      "archived": "Arquivado",
+      "favorites": "Favoritos",
+      "recent": "Recente",
+      "manageLabels": "Gerenciar rótulos"
+    },
+    "pvConfigStatus": {
+      "empty": "Configuração do sistema fotovoltaico não definida",
+      "hasPvSystem": "Configuração do sistema fotovoltaico ativo",
+      "noPvSystem": "Configuração do sistema fotovoltaico ativo"
+    },
+    "rename": {
+      "title": "Renomear projeto"
+    },
+    "selected": {
+      "addToProjects": "Salvar como projeto",
+      "calculate": "Calcular",
+      "openDetail": "Abrir"
+    },
+    "share": {
+      "copied": "Copiado",
+      "copyLink": "Copiar link",
+      "share": "Compartilhar localização",
+      "shareLocation": "Compartilhar localização",
+      "text": "Você pode enviar este link para compartilhar esta localização."
+    },
+    "sidebar": {
+      "clearSelection": "Limpar seleção",
+      "listView": "Mostrar visualização de lista",
+      "multiSelected": "Vários projetos selecionados",
+      "noneSelected": "Nenhum projeto selecionado",
+      "projectsSelected": "Você tem {projects, plural, one {um projeto} other {# projetos}} selecionados"
+    },
+    "snackbar": {
+      "archive": "Projeto arquivado",
+      "bulkArchive": "{projects} projetos arquivados",
+      "bulkDelete": "{projects} projetos excluídos",
+      "bulkUpdate": "{projects} projetos atualizados",
+      "delete": "Projeto excluído",
+      "rename": "Projeto renomeado",
+      "save": "Projeto salvo",
+      "update": "Projeto atualizado",
+      "bulkTransfer": "{projects} projetos transferidos",
+      "transfer": "Projeto transferido",
+      "freetrialClaim": "Avaliação gratuita do Projeto ativada com sucesso",
+      "updateData": "Dados do projeto atualizados"
+    },
+    "tags": {
+      "deleteHeading": "Excluir rótulo",
+      "deleteText": "Tem certeza de que deseja excluir rótulo {tagName}?",
+      "forbiddenName": "O nome do rótulo deve ser exclusivo",
+      "minlength": "O nome do rótulo é muito curto",
+      "name": "Nome do rótulo",
+      "new": "Criar um rótulo",
+      "none": "Você não tem nenhum rótulo criado",
+      "required": "O nome do rótulo é necessário",
+      "labels": "Rótulos",
+      "newPlaceholder": "Novo rótulo",
+      "add": "Adicionar",
+      "manage": "Gerenciar rótulos",
+      "invalidCharText": "O rótulo pode conter apenas caracteres alfabéticos multilíngues, números, espaço ( ), ponto ( . ), vírgula ( , ), hífen ( - ), sublinhado ( _ ) e parênteses ( and ).",
+      "invalidCharHeading": "Caractere inválido"
+    },
+    "timezone": {
+      "dstNotConsidered": "Horário de verão não considerado"
+    },
+    "toolbar": {
+      "addTag": "Adicionar rótulo",
+      "archive": "Arquivar",
+      "delete": "Excluir",
+      "favorite": "Favorito",
+      "selected": "Selecionados ({projects})",
+      "selectedFirst": "Selecionado primeiro",
+      "share": "Compartilhar",
+      "unarchive": "Desarquivar",
+      "siteDetail": "Detalhe do site",
+      "rename": "Renomear",
+      "selectedProjects": "Selecionado: {projects}/{allProjectsCount}"
+    },
+    "transfer": {
+      "title": "Transferir {projects, plural, one {projeto} other {# projetos}}",
+      "targetAccount": "Conta de destino",
+      "info": "Ao transferir um projeto, você transferirá somente as informações do projeto (nome, local, etc.) e as informações da configuração FV. Todos os relatórios associados ao projeto serão perdidos. Após a conclusão da transferência, este projeto não estará disponível na conta atual à qual está associado."
+    },
+    "exportChart": {
+      "exportTo": "Exportar para {format}",
+      "pvConfig": "Configuração fotovoltaica"
+    },
+    "search": {
+      "searchLocations": "Pesquisar locais",
+      "invalidCoordinatesMessage": "Você inseriu coordenadas que contêm números negativos e direções cardeais. Isso não é compatível, pois pode levar a resultados ambíguos. Em vez disso, insira coordenadas inequívocas."
+    },
+    "updateProjectDialog": {
+      "note": "Observação: a atualização dos dados do projeto resultará na exclusão dos relatórios gerados. Se quiser mantê-los, baixe-os antes de atualizar os dados do projeto.",
+      "text": "Este projeto contém recursos solares e dados meteorológicos de uma versão mais antiga do banco de dados Solargis. Ao optar pela atualização, os dados existentes associados ao projeto serão substituídos por dados da versão mais recente do banco de dados Solargis.",
+      "title": "Atualizar dados do projeto?",
+      "nonUpdateData": "Este projeto contém dados que não estão atualizados.",
+      "progressTitle": "Atualizando dados do projeto",
+      "downloadReports": "Baixar relatórios"
+    }
+  },
+  "projectDetail": {
+    "daylength": {
+      "autumnEquinox": "Equinócio de outono",
+      "dayLengthHorizonCorrected": "Duração do dia, horizonte corrigido [hours]",
+      "daylength": "Duração do dia [hours]",
+      "label": "Duração do dia e ângulo do zênite solar",
+      "minimumZenitAngle": "Ângulo mínimo de zênite [°]",
+      "vernalEquinox": "Equinócio vernal"
+    },
+    "economy": {
+      "form": {
+        "addLoan": "Adicionar empréstimo",
+        "capacity": "Capacidade instalada",
+        "degradationFirst": "Primeiro ano de degradação",
+        "degradationNext": "Próximos anos de degradação",
+        "installationCost": "Custos da instalação do sistema",
+        "interestRate": "Taxa de juros",
+        "loan": "Empréstimo",
+        "loanPeriod": "Período de empréstimo",
+        "ownCapital": "Capital próprio",
+        "priceOfElectricity": "Preço da eletricidade",
+        "removeLoan": "Remover empréstimo",
+        "totalYield": "PVOUT_total (ano 0)",
+        "yearsOfOperation": "Anos de operação do projeto",
+        "loanEquity": "Patrimônio",
+        "accountingInfo": "Informações contábeis",
+        "linearDeprecation": "Depreciação linear de impostos",
+        "annualOperationalCost": "Custos operacionais anuais"
+      },
+      "label": {
+        "economicIndicators": "Fluxo de caixa",
+        "inputs": "Entradas",
+        "outputs": "Saídas",
+        "payback": "Retorno simples",
+        "pvEconomy": "Economia do sistema fotovoltaico",
+        "summary": "Resumo",
+        "overview": "Visão geral"
+      },
+      "layer": {
+        "CAPEX": {
+          "desc": "Quantidade de capital necessária para instalar um sistema fotovoltaico solar após subtrair os incentivos solares do custo total do sistema",
+          "name": "CAPEX"
+        },
+        "OPEX": {
+          "desc": "Soma dos custos operacionais anuais de um sistema de energia fotovoltaica e parcelas anuais equiparadas para a substituição de seus componentes",
+          "name": "OPEX"
+        },
+        "tariff": {
+          "desc": "Preço contratado, pelo qual a eletricidade solar gerada é vendida para a rede. O PPA é geralmente aplicado em usinas fotovoltaicas comerciais",
+          "name": "Contrato de compra de energia/Tarifa de alimentação"
+        },
+        "ROIEquity": {
+          "desc": "Retorno sobre o investimento durante a vida útil de um sistema fotovoltaico em relação ao custo do investimento (CAPEX), em que zero (0) marca um ponto de equilíbrio (taxa com desconto não usada)",
+          "name": "ROI"
+        },
+        "unitSystemCosts": {
+          "name": "Custos unitários do sistema",
+          "desc": "Custo do sistema fotovoltaico por kWp (Wp)"
+        },
+        "incentiveOrRebate": {
+          "desc": "Qualquer incentivo monetário ou fiscal oferecido pela empresa concessionária ou pelo governo",
+          "name": "Abatimentos ou incentivos de instalação"
+        },
+        "loanLinearPayment": {
+          "desc": "Montante fixo do pagamento de um empréstimo",
+          "name": "Reembolso de empréstimo linear"
+        },
+        "maintenanceReserve": {
+          "tooltip": "Custo de todas as substituições do inversor. Geralmente, a garantia do fabricante varia entre 5 a 12 anos e precisa ser substituída, em média, 2 vezes ao longo da duração típica da operação do sistema (25 anos)",
+          "desc": "Quantia de dinheiro contribuída anualmente necessária para substituições de hardware (principalmente inversores)",
+          "name": "Conta de reserva de manutenção"
+        },
+        "LCOE": {
+          "desc": "Custo da unidade de energia ao longo do ciclo de vida do sistema fotovoltaico",
+          "name": "LCOE"
+        },
+        "IRREquity": {
+          "desc": "Taxa de retorno interna ao longo do ciclo de vida do sistema fotovoltaico vista da perspectiva do acionista (excluindo empréstimo)",
+          "name": "Patrimônio de TIR"
+        },
+        "IRRProject": {
+          "name": "Projeto de TIR",
+          "desc": "Taxa de retorno interna ao longo do ciclo de vida do sistema fotovoltaico de todo o projeto"
+        },
+        "discountRate": {
+          "desc": "Fator de desconto usado nos cálculos do Valor Atual Líquido (NPV) para TIR",
+          "name": "Taxa de desconto"
+        },
+        "taxesOnProfit": {
+          "name": "Impostos sobre lucro",
+          "desc": "Imposto sobre lucro aplicado anualmente"
+        },
+        "loanDebtToEquity": {
+          "desc": "Razão entre Débito e Patrimônio",
+          "name": "Razão de Débito por Patrimônio (alavancagem)"
+        },
+        "OPEXInflationRate": {
+          "name": "Taxa de inflação Opex",
+          "desc": "Aumento anual no preço OPEX"
+        },
+        "linearDeprecation": {
+          "name": "Depreciação linear de impostos",
+          "desc": "Redução linear aplicada no valor de um ativo ao longo do tempo, devido ao envelhecimento, degradação e desgaste geral"
+        },
+        "tariffIndexationRate": {
+          "name": "Taxa de indexação tarifária",
+          "desc": "Aumento anual do preço da tarifa"
+        },
+        "inverterReplacementYear": {
+          "name": "Ano de substituição do inversor",
+          "desc": "Ano operacional em que a substituição do inversor ocorrerá, após o qual a conta de reserva de manutenção (MRA) será dissolvida"
+        }
+      },
+      "table": {
+        "endOfYear": "Final do ano",
+        "OPEX": "OPEX",
+        "EBIT": "EBIT",
+        "loan": "Empréstimo",
+        "CAPEX": "CAPEX",
+        "EBITDA": "EBITDA",
+        "revenue": "Receita",
+        "netProfit": "Lucro líquido",
+        "taxOnProfit": "Imposto sobre lucro",
+        "PVOUT_total": "PVOUT_total",
+        "tariffIndexed": "Tarifa (indexada)",
+        "PVOUT_specific": "PVOUT_specific",
+        "EBITDA_specific": "EBITDA_específica",
+        "loanInterestRate": "Taxa de juros sobre empréstimo",
+        "linearDeprecation": "Depreciação linear",
+        "cashFlowOperations": "Fluxo de caixa (operações)",
+        "maintenanceReserve": "Conta de reserva de manutenção",
+        "cashFlowNPVOperations": "Fluxo de caixa NPV de operações",
+        "loanRepaymentInterest": "Reembolso de empréstimo (juros)",
+        "loanRepaymentPrincipal": "Reembolso de empréstimo (principal)",
+        "shareholderCashFlowNPV": "Fluxo de caixa NPV para acionista",
+        "shareholderCashFlowAvailable": "Fluxo de caixa disponível para acionista",
+        "annualCosts": "Todas as despesas anuais"
+      },
+      "guard": {
+        "text": "Você editou configurações de economia para este sistema fotovoltaico. Gostaria de salvá-las?",
+        "heading": "A economia tem alterações não salvas"
+      },
+      "resetSaved": "Redefinir a partir de valores não salvos",
+      "tariffGoalseek": {
+        "use": "Usar valor",
+        "open": "Calcular por patrimônio de TIR",
+        "result": "Valor calculado:",
+        "target": "Patrimônio-alvo da TIR",
+        "explain": "O cálculo para saída de patrimônio de TIR específica e definida pelo usuário, ajustando a entrada da tarifa de receita (PPA,FiT), enquanto todos os outros parâmetros de entrada permanecerão inalterados."
+      }
+    },
+    "error": {
+      "noProject": "Nenhum projeto selecionado. Selecione um projeto para visualizar os detalhes do projeto."
+    },
+    "glossary": {
+      "acronym": "Sigla",
+      "explanation": "Explicação",
+      "name": "Nome completo",
+      "title": "Glossário",
+      "unit": "Unidade"
+    },
+    "info": {
+      "address": "Endereço",
+      "coordinates": "Coordenadas geográficas",
+      "country": "País/Região",
+      "created": "Criado",
+      "edit": "Editar nome",
+      "elevation": "Elevação",
+      "info": "Informações do projeto",
+      "name": "Nome do projeto",
+      "showOnMap": "Mostrar no mapa"
+    },
+    "metadata": {
+      "doc": {
+        "documentation": "Documentação",
+        "methodology": "Metodologia",
+        "simulation": "Simulação de energia fotovoltaica",
+        "uncertainty": "Incerteza de dados"
+      },
+      "method": {
+        "merging": "Mesclagem, limpeza e processamento de dados",
+        "postprocessing": "Pós-processamento",
+        "processing": "Processamento de dados",
+        "simulation": "Modelo de simulação fotovoltaica",
+        "solarModel": "Modelo solar"
+      },
+      "sources": {
+        "LANDC": "Cobertura do terreno CCI, v2.0.7",
+        "POPUL": "Gridded Population of the World, Versão 4 (GPWv4)",
+        "PREC": "Banco de dados GPCC",
+        "PWAT": "Modelos CFSR e CFSv2",
+        "SNOWD": "Modelos CFSR e CFSv2",
+        "TEMP": "Modelo ERA-5",
+        "aerosolsMerra": "Aerossóis dos modelos MERRA-2 e MACC-II/CAMS",
+        "albedo": "Bancos de dados MODIS e ERA-5",
+        "region1": "Satélites GOES West",
+        "region3": "Satélites Meteosat MFG e MSG (PRIME)",
+        "region4": "Satélites Meteosat MFG e MSG (IODC)",
+        "region5": "Satélites Meteosat MFG e MSG (IODC) e Himawari",
+        "region6": "Satélites MTSAT e Himawari",
+        "regionGeneral": "Satélites geoestacionários Meteosat, GOES, MTSAT e HIMAWARI",
+        "wapourCSFR": "Vapor de água dos modelos CSFR e GFS",
+        "region2": "Satélites GOES East e GOES-R",
+        "RHWSWD": "Modelos MERRA-2 e CDFv2"
+      },
+      "table": {
+        "method": "Método da Solargis",
+        "source": "Fonte de entrada de dados <br>(Organização)",
+        "period": "Representação temporal",
+        "updated": "Última atualização",
+        "parameter": "Parâmetro"
+      },
+      "text": {
+        "row0": "Etapa de tempo: estatísticas mensais e anuais de longo prazo",
+        "row1": "As estimativas consideram um ano com 365 dias",
+        "text": "Este relatório é baseado em banco de dados solar e meteorológico de alta resolução desenvolvido e operado pela Solargis. Os parâmetros de dados apresentados neste relatório são calculados pelos modelos e algoritmos Solargis. Os dados usados como entradas para os modelos vêm de diferentes fontes. As características dos dados são explicadas abaixo.",
+        "version": "Banco de dados Solargis Prospect versão {version}",
+        "latestMetadataVersion": "Versão {latestMetadataVersion} disponível"
+      }
+    },
+    "nav": {
+      "hourlyProfiles": "Perfis horários",
+      "lifetimePerformance": "Desempenho ao longo da vida",
+      "metadata": "Metadados",
+      "monthlyStatistics": "Estatísticas mensais",
+      "overview": "Visão geral",
+      "projectInfo": "Informações do projeto",
+      "pvConfig": "Configuração fotovoltaica",
+      "pvElectricity": "Eletricidade fotovoltaica",
+      "pvLosses": "Conversão de energia e perdas do sistema",
+      "pvPerformance": "Desempenho fotovoltaico",
+      "reports": "Relatórios",
+      "solarMeteo": "Solar e meteo",
+      "support": "Suporte",
+      "download": "Download",
+      "analysis": "Análise",
+      "properties": "Propriedades",
+      "data": "Dados",
+      "finance": "Finanças"
+    },
+    "overview": {
+      "longtermPvPowerPotential": "Potencial de energia fotovoltaica de longo prazo (média de {years} anos)",
+      "meteorologicalData": "Dados meteorológicos",
+      "projectInfo": "Informações do projeto",
+      "projectOverview": "Visão geral do projeto",
+      "pvElectricityAndPerformance": "Energia e desempenho fotovoltaico",
+      "solar": "Radiação solar",
+      "solarAndMeteo": "Solar e meteo",
+      "systemType": "Tipo de sistema",
+      "theoreticalPvElectricityPotential": "Potencial teórico de eletricidade fotovoltaica (na inicialização do sistema)",
+      "title": "Visão geral — radiação solar e parâmetros meteorológicos"
+    },
+    "pvConfig": {
+      "pvConfiguration": "Configuração do sistema fotovoltaico"
+    },
+    "pvElectricity": {
+      "hourlySummary": "Os perfis de produção de energia fotovoltaica, mostrados abaixo, são calculados como uma média de todos os dados por hora de cada mês. Os perfis fornecem uma indicação da alteração dos padrões de produção de energia devido ao clima e à configuração selecionada de um sistema fotovoltaico no decorrer de um dia. Note-se que o “perfil médio diário” é um conceito teórico, pois, na maioria dos casos, um perfil é específico para cada dia individual do ano devido à variabilidade climática.",
+      "potential": "Potencial teórico de eletricidade fotovoltaica",
+      "summary": "Estimativa teórica da produção de eletricidade solar por um sistema fotovoltaico sem considerar o envelhecimento no longo prazo e a degradação do desempenho dos módulos fotovoltaicos e outros componentes do sistema."
+    },
+    "pvLosses": {
+      "electricSystemLosses": "Perdas no sistema elétrico",
+      "energyInput": "Entrada de energia",
+      "energyLoss": "Perda de energia",
+      "lossDiagram": "Diagrama de perda",
+      "solarLosses": "Perdas solares",
+      "summary": "A estimativa teórica específica anual da produção de eletricidade solar por um sistema fotovoltaico sem considerar o envelhecimento no longo prazo e a degradação do desempenho dos módulos fotovoltaicos e outros componentes do sistema. A razão de desempenho médio no longo prazo (PR) é calculada para uma produção inicial de um sistema fotovoltaico.",
+      "title": "Conversão de energia e perdas relacionadas",
+      "diagramDesc": "O diagrama mostra perdas teóricas devido à conversão de energia no sistema de energia fotovoltaica",
+      "energy": "Energia",
+      "energyLossOrGain": "Perda/ganho de energia",
+      "absoluteValues": "Valores absolutos"
+    },
+    "pvPerformance": {
+      "degrad": "Taxa de degradação",
+      "endOfYear": "Final do ano",
+      "lifetimeProduction": "Produção de eletricidade fotovoltaica ao longo da vida",
+      "lifetimeSummary": "Estimativa média anual da produção de eletricidade solar por um sistema fotovoltaico. Esse valor considera a configuração do sistema fotovoltaico e também leva em consideração o declínio do desempenho do sistema devido ao envelhecimento e à degradação do desempenho dos módulos fotovoltaicos e outros componentes. O conceito de potência de energia fotovoltaica específica é útil para comparar projetos diferentes ou configurações de sistemas fotovoltaicos. A taxa de desempenho (PR) mostra a eficiência média durante a vida útil de um sistema fotovoltaico, levando em consideração a redução no desempenho do sistema.",
+      "theoretical": "Teórico"
+    },
+    "reports": {
+      "confirmDelete": "Tem certeza de que deseja excluir este relatório?",
+      "empty": "Nenhum relatório salvo. Para gerar um novo relatório, pressione o botão Gerar.",
+      "generate": "Gerar",
+      "status": {
+        "error": "Erro ao gerar relatório"
+      },
+      "table": {
+        "date": "Gerado",
+        "download": "Download",
+        "fileType": "Tipo de arquivo",
+        "lang": "Idioma",
+        "name": "Nome do relatório",
+        "no": "Não",
+        "yes": "Sim",
+        "dateFormat": "Formato da data",
+        "finance": "Finanças"
+      },
+      "title": "Gere um relatório a partir da configuração atual. Os relatórios serão mantidos até que a configuração do projeto seja alterada.",
+      "finance": "Incluir finanças"
+    },
+    "shared": {
+      "summary": "Resumo",
+      "noPvConfig": "Somente parâmetros solares e meteorológicos são calculados. Nenhuma configuração fotovoltaica é considerada."
+    },
+    "solarMeteo": {
+      "hourlySummary": "Os perfis de radiação solar e temperatura do ar, mostrados abaixo, são calculados como uma média de todos os dados horários de cada mês. Os perfis fornecem uma indicação dos padrões variáveis dos principais parâmetros meteorológicos durante o dia. Esses padrões são determinados pela astronomia solar e geografia do projeto. A irradiação global inclinada mostra como as superfícies com inclinação ideal dos módulos fotovoltaicos influenciam na disponibilidade média do recurso solar para produção de energia durante um dia médio. Note-se que o “perfil médio diário” é um conceito teórico, pois na maioria dos casos, um perfil é específico para cada dia individual do ano devido à variabilidade climática.",
+      "optimumAzimuth": "Inclinação/azimute ideais para GTI_opta",
+      "radiationTemperature": "Radiação solar e parâmetros meteorológicos",
+      "summary": "O mais importante parâmetro meteorológico específico do projeto que determina a produção de eletricidade solar é a radiação solar, que alimenta um sistema de energia fotovoltaica. A produção de energia também é influenciada pela temperatura do ar. Outros parâmetros meteorológicos também afetam o desempenho, a disponibilidade e o envelhecimento de um sistema fotovoltaico."
+    },
+    "sunpath": {
+      "axisAzimuth": "Azimute solar [°]",
+      "axisElevation": "Elevação solar [º]",
+      "civilTime": "Hora civil",
+      "decemberSolstice": "Solstício de dezembro",
+      "dstTime": "Horário DST",
+      "equinox": "Equinócio",
+      "juneSolstice": "Solstício de junho",
+      "label": "Horizonte e caminho do sol no projeto",
+      "modify": "Modificar horizonte",
+      "module": "Horizonte do módulo",
+      "solarTime": "Hora solar",
+      "summerSolstice": "Solstício de verão",
+      "sunArea": "Área ativa",
+      "sunpath": "Caminho do sol",
+      "terrain": "Horizonte do terreno",
+      "winterSolstice": "Solstício de inverno",
+      "horizonInvalid": "O horizonte especificado na entrada é inválido",
+      "horizonAzimuth": "Azimute: { azimute }",
+      "horizonElevation": "Elevação: { elevação }",
+      "horizonHorizonElevation": "Elevação do horizonte: { horizonte }",
+      "exportHorizon": "Exportar para arquivo HOR"
+    },
+    "unsavedProjectDialog": {
+      "body": "Para abrir Detalhes do projeto, o projeto atualmente selecionado precisa ser salvo. Deseja salvar este projeto?",
+      "heading": "Projeto não salvo",
+      "action": "Salvar e abrir"
+    },
+    "pvLossesLayer": {
+      "capacityFactor": {
+        "name": "Fator de capacidade",
+        "desc": "A razão entre a produção real de energia elétrica em um ano e a produção máxima possível de energia elétrica em um determinado período de tempo (geralmente um ano), expressa em %. A produção máxima possível de energia é a capacidade CA instalada multiplicada pelo número de horas em um ano, enquanto a produção real é a quantidade de eletricidade efetivamente entregue anualmente pela usina fotovoltaica"
+      },
+      "energyStage": {
+        "ac_out_with_ac_losses": {
+          "name": "Desempenho total do sistema (na inicialização do sistema)",
+          "desc": "Quantidade teórica de eletricidade produzida por um sistema fotovoltaico no início da operação. Nesta fase, a degradação dos módulos fotovoltaicos não é levada em consideração."
+        },
+        "ac_out_with_ac_losses_and_snow_losses_and_availability_losses": {
+          "name": "Desempenho total do sistema considerando disponibilidade técnica e perdas devido à neve",
+          "desc": "A quantidade de eletricidade produzida por um sistema fotovoltaico no início da operação, levando em consideração a indisponibilidade da produção devido à neve ou a falhas. Nesta fase, a degradação dos módulos fotovoltaicos não é levada em consideração."
+        },
+        "ghi": {
+          "name": "Irradiação global horizontal específica do local",
+          "desc": "Irradiação global horizontal teórica reduzida pela porção de irradiação bloqueada por objetos de terreno e horizonte distante."
+        },
+        "ghi_theoretical": {
+          "name": "Irradiação global horizontal (GHI) teórica",
+          "desc": "Irradiação global horizontal calculada pelo método da Solargis a partir de modelos numéricos, que são parametrizados por um conjunto de entradas que caracterizam a transmitância da nuvem e o estado da atmosfera."
+        },
+        "gti": {
+          "name": "Irradiação global inclinada (GTI)",
+          "desc": "Soma da média anual, mensal ou diária de irradiação global inclinada (geralmente chamada de irradiação no plano de instalação [POA])"
+        },
+        "gti_eff": {
+          "name": "GTI efetiva",
+          "desc": "Irradiação inclinada efetiva que atinge a superfície dos módulos fotovoltaicos com perdas ópticas consideradas."
+        }
+      },
+      "loss": {
+        "angularReflectivity": {
+          "name": "Refletividade angular",
+          "desc": "Perdas ópticas da refletividade angular (efeitos do ângulo de incidência) na superfície dos módulos fotovoltaicos, onde a magnitude dos efeitos depende da posição relativa do sol, do plano do módulo e do tipo e limpeza da superfície dos módulos."
+        },
+        "conversionToSurfaceOfPvModules": {
+          "name": "Conversão para superfície de módulos fotovoltaicos",
+          "desc": "Cálculo da irradiação inclinada (geralmente chamada de irradiação no plano de instalação), a partir da irradiação global horizontal específica do local, por meio de componentes diretos e difusos."
+        },
+        "dirtDustAndSoiling": {
+          "name": "Sujeira, poeira e solo",
+          "desc": "Perdas ópticas de radiação solar ao nível da superfície dos módulos fotovoltaicos devido à poluição da superfície."
+        },
+        "interRowShading": {
+          "name": "Perdas elétricas devido ao sombreamento entre linhas",
+          "desc": "Perdas de eletricidade devido a uma diminuição na irradiação, causada pelas linhas anteriores dos módulos fotovoltaicos que bloqueiam a irradiação."
+        },
+        "inverters": {
+          "name": "Conversores de inversores (CC/CA)",
+          "desc": "Perdas no inversor devido à eficiência do processo de conversão de corrente direta para alternada. Se o inversor contiver um transformador embutido, sua eficiência será incluída neste parâmetro."
+        },
+        "mismatchAndCablingDC": {
+          "name": "Incompatibilidade e cabeamento na seção CC",
+          "desc": "Perdas de eletricidade causadas pela incompatibilidade de diferentes pontos de operação MPP dos módulos conectados a um inversor e perdas de calor nas interconexões e cabos de corrente contínua (CC)."
+        },
+        "powerTolarance": {
+          "name": "Tolerância de potência dos módulos fotovoltaicos",
+          "desc": "Perdas de eletricidade devido à tolerância de energia desigual de módulos específicos conectados em cadeia. Se os módulos com maior tolerância de energia forem conectados em série, as perdas serão maiores."
+        },
+        "snow": {
+          "name": "Perdas devido à neve",
+          "desc": "Perdas na produção de eletricidade durante um período em que os módulos fotovoltaicos estiverem cobertos pela neve."
+        },
+        "solarIrradianceToDC": {
+          "name": "Conversão de radiação solar em corrente contínua nos módulos",
+          "desc": "Conversão fotovoltaica de irradiação em eletricidade em material semicondutor. A eficiência de conversão é não linear e depende da distribuição dos valores de irradiação e temperatura"
+        },
+        "spectralCorrection": {
+          "name": "Correção espectral",
+          "desc": "Perdas no processo de conversão de energia causadas por incompatibilidade espectral entre as propriedades do material semicondutor e o espectro da luz"
+        },
+        "technicalAvailablity": {
+          "name": "Disponibilidade técnica",
+          "desc": "Perdas na produção de eletricidade incorridas pela paralisação de uma usina fotovoltaica devido a manutenção, falhas ou paralisação da subestação local."
+        },
+        "terrainShading": {
+          "name": "Sombreamento do horizonte (objetos do horizonte + terreno)",
+          "desc": "Perda na irradiação global horizontal teórica causada pelas características do terreno. O sombreamento é calculado por desagregação usando SRTM-3 DEM e altura do horizonte. O sombreamento de características locais, como prédios, estruturas ou vegetação próximas, não é relevante neste estágio."
+        },
+        "transformersAndAC": {
+          "name": "Perdas de transformadores e cabos CA",
+          "desc": "Perdas externas de eletricidade do transformador de MT ou HV e perdas de calor em cabos e conexões de corrente alternada (CA). Esse parâmetro inclui perdas nos cabos CA no lado de baixa tensão, perdas nos cabos CA no lado de média (alta) tensão (até o ponto de conexão da rede com um medidor de eletricidade) e também em todos os dispositivos que estão no caminho da corrente CA produzida por inversores."
+        }
+      }
+    },
+    "data": {
+      "title": "Exportar arquivo CSV com dados do projeto",
+      "download": "Baixar",
+      "note": "Observação: no PVsyst, os dados horários de GHI, DIF e TEMP são gerados sinteticamente mediante a importação de dados médios mensais. A geração sintética do conjunto típico de dados anuais é um processo matemático que resulta na perda da coerência entre irradiação solar e temperatura do ar. Além disso, a distribuição de frequência dos valores horários nas séries temporais artificiais resultantes pode não representar condições reais do clima. Como o desempenho dos sistemas de energia solar varia com a irradiação solar e a temperatura do ar, o uso de conjuntos de dados sintéticos por hora aumenta a incerteza das simulações de energia solar. Portanto, é recomendável usar o Solargis [séries temporais ou conjunto de dados TMY | <a href='https://solargis.com/products/evaluate/overview' target='_blank'>https://solargis.com/products/evaluate/overview</a>] para simulação no PVsyst."
+    },
+    "settings": {
+      "systemSettings": "Configurações do sistema"
+    },
+    "unlockDialog": {
+      "upgrade": "Atualizar",
+      "mainTitle": "Desbloquear todos os recursos",
+      "addPVConfig": "Adicionar configuração fotovoltaica",
+      "text": {
+        "reports": "Gerar e baixar um relatório oficial do Solargis Prospect para a configuração de sua central elétrica. Compartilhe-o com seus clientes ou investidores. Nossos relatórios estão disponíveis em vários idiomas.",
+        "download": "Baixe dados solares e meteorológicos do seu projeto para análise adicional em ferramentas de terceiros.",
+        "solarMeteo": "Acesse estatísticas mensais e perfis horários de radiação solar e dados meteorológicos para o local do seu projeto.",
+        "compareTool": "Compare as estatísticas de vários locais lado a lado para encontrar um local ideal para sua central.",
+        "pvPerformance": "Veja uma análise detalhada das perdas.",
+        "pvElectricity": "Acesse estatísticas mensais e perfis horários da produção teórica de eletricidade para a configuração da sua central.",
+        "finance": "Otimize o financiamento do seu projeto:"
+      },
+      "title": {
+        "reports": "Relatórios",
+        "download": "Download",
+        "solarMeteo": "Solar e meteorológico",
+        "compareTool": "Ferramenta de comparação",
+        "pvElectricity": "Eletricidade fotovoltaica",
+        "pvPerformance": "Desempenho fotovoltaico",
+        "finance": "Calculadora financeira"
+      },
+      "requestFreeTrial": "Ativar avaliação gratuita",
+      "activateFreeTrial": "Ativar avaliação gratuita",
+      "bulletPoints": {
+        "economyCalculator": {
+          "ROI": "ROI (retorno sobre o investimento)",
+          "LCOE": "LCOE (custo normalizado de energia)",
+          "equity": "IRR de patrimônio",
+          "project": "IRR de projeto (taxa interna de retorno)"
+        }
+      }
+    }
+  },
+  "projectList": {
+    "filter": {
+      "toolbar": {
+        "archived": "Projetos arquivados",
+        "default": "Todos os projetos",
+        "favorite": "Projetos favoritos",
+        "recent": "Projetos recentes",
+        "tag": "Projetos rotulados: {tags}"
+      }
+    }
+  },
+  "pvConfig": {
+    "action": {
+      "add": "Adicionar configuração fotovoltaica",
+      "change": "Alterar o tipo de sistema",
+      "edit": "Editar configuração fotovoltaica",
+      "optimum": "Configurar o ângulo ideal",
+      "restore": "Restaurar configurações-padrão",
+      "save": "Salvar e calcular eletricidade fotovoltaica"
+    },
+    "error": {
+      "missing": "Você não tem nenhuma configuração fotovoltaica ativa selecionada neste projeto. Para acessar os dados fotovoltaicos, você precisa adicionar uma.",
+      "notFound": "Nenhum projeto com configuração encontrado"
+    },
+    "label": {
+      "chooseSystemType": "Escolher tipo de sistema",
+      "copy": "Copiar do projeto",
+      "default": "Modelos-padrão",
+      "systemType": "Tipo de sistema",
+      "unsaved": "Alterações não salvas",
+      "settings": "Configurações do sistema"
+    },
+    "params": {
+      "backtracking": {
+        "headline": "Backtracking"
+      },
+      "cablingLosses": {
+        "ACCable": "Perdas por cabeamento em corrente alternada (CA)",
+        "ACCableShort": "Cabeamento em corrente alternada (CA)",
+        "DCCable": "Perdas por cabeamento em corrente contínua (CC)",
+        "DCCableShort": "Cabeamento em corrente contínua (CC)",
+        "DCMismatch": "Perdas por incompatibilidade em corrente contínua (CC)",
+        "DCMismatchShort": "Incompatibilidade em corrente contínua (CC)",
+        "headline": "Perdas por cabeamento",
+        "setDefault": "Configurar padrões"
+      },
+      "colSpacing": {
+        "headline": "Espaçamento relativo da coluna",
+        "spacing": "Espaçamento relativo da coluna"
+      },
+      "inverter": {
+        "centralized": "Inversor centralizado de alta eficiência",
+        "headline": "Tipo de inversor",
+        "small": "Inversor pequeno",
+        "string": "Inversor de cadeia",
+        "efficiencyStr": "{inverterType} [{efficiency}% de eficiência em euros]",
+        "custom": "Personalizar inversor"
+      },
+      "orientation": {
+        "azimuth": "Azimute",
+        "headline": "Geometria de módulos fotovoltaicos",
+        "tilt": "Inclinar"
+      },
+      "pvModule": {
+        "ASI": "a-Si - silício amorfo",
+        "CDTE": "CdTe - telureto de cádmio",
+        "CIS": "CEI - seleneto de cobre-índio",
+        "CSI": "c-Si - silício cristalino (mono ou policristalino)",
+        "customDegradation": "com {degradationFirstYear}% no primeiro ano e {degradationNextYear}% nos próximos anos degradação",
+        "degradation": "Taxa personalizada de degradação do desempenho (RPD)",
+        "firstYear": "Primeiro ano",
+        "headline": "Tipo de módulo fotovoltaico",
+        "nextYear": "Próximos anos"
+      },
+      "rowSpacing": {
+        "headline": "Espaçamento relativo de linha",
+        "spacing": "Espaçamento relativo de linha"
+      },
+      "snowSoilingLosses": {
+        "headline": "Perdas de neve e sujeira nos módulos fotovoltaicos",
+        "snowLosses": "Perdas mensais por neve até",
+        "snowLossesShort": "Perdas mensais por neve até",
+        "soilingLosses": "Perdas mensais por sujeira até",
+        "soilingLossesShort": "Perdas mensais por sujeira até",
+        "snowLossesForm": "Perdas por neve",
+        "soilingLossesForm": "Perdas por sujeira",
+        "soilingAsYearly": "Prefiro inserir o valor anual de sujeira"
+      },
+      "systemAvailability": {
+        "availability": "Disponibilidade do sistema",
+        "headline": "Disponibilidade do sistema"
+      },
+      "systemSize": {
+        "area": "Área dos módulos fotovoltaicos instalados",
+        "capacity": "Capacidade instalada",
+        "headline": "Tamanho do sistema"
+      },
+      "transformer": {
+        "headline": "Tipo de transformador",
+        "highEfficiency": "Alta eficiência",
+        "none": "Nenhum",
+        "standard": "Padrão",
+        "lossStr": "{transformerType} [{loss}% de perda]",
+        "custom": "Personalizar transformador"
+      },
+      "rotationLimits": {
+        "val": "{east}° Leste , {west}° Oeste",
+        "west": "Oeste",
+        "east": "Leste",
+        "headline": "Limites de rotação"
+      }
+    },
+    "type": {
+      "buildingIntegrated": {
+        "desc": "Sistema fotovoltaico integrado em uma fachada ou telhado de um edifício residencial ou comercial. O azimute e a inclinação dos módulos fotovoltaicos são homogêneos. Os módulos não se sombreiam. Os módulos são integrados ao invólucro do edifício, portanto, a ventilação na parte traseira é muito limitada. Este tipo de sistema fotovoltaico pode ser conectado diretamente a uma rede de baixa tensão por meio de um inversor ou pode ser conectado a uma rede de média tensão por meio de um inversor e transformador de distribuição. Nenhum armazenamento de eletricidade é considerado.",
+        "name": "Integrado ao edifício"
+      },
+      "groundFixed": {
+        "desc": "Sistema fotovoltaico comercial em larga escala montado em terreno nivelado. O azimute e a inclinação dos módulos fotovoltaicos são homogêneos, geralmente voltados para o Equador e inclinados na inclinação ideal para maximizar o rendimento anual de energia. Os módulos são montados em estruturas inclinadas alinhadas em linhas. Durante ângulos de sol baixo, eles podem ser parcialmente sombreados pelas linhas anteriores. Os módulos são bem ventilados. Esse tipo de sistema fotovoltaico é conectado a uma rede de média ou alta tensão por meio de um inversor e transformador de distribuição, e um transformador adicional também pode ser usado. Nenhum armazenamento de eletricidade é considerado.",
+        "name": "Fixado no solo"
+      },
+      "noPvSystem": {
+        "desc": "Somente parâmetros solares e meteorológicos são calculados. Nenhuma configuração fotovoltaica é considerada.",
+        "name": "Nenhum sistema fotovoltaico"
+      },
+      "rooftopLargeFlat": {
+        "desc": "Sistema fotovoltaico montado em um grande telhado horizontal de um edifício comercial ou industrial. O azimute e a inclinação dos módulos fotovoltaicos são homogêneos. Os módulos são montados em estruturas inclinadas, fixados ao telhado plano e alinhados em fileiras. Assim, durante ângulos de sol baixos, os módulos podem ficar parcialmente sombreados pelas linhas anteriores. A montagem permite a ventilação dos módulos fotovoltaicos, mas o aquecimento da superfície do telhado pode afetar o desempenho desse sistema. Este tipo de sistema fotovoltaico pode ser conectado diretamente a uma rede de baixa tensão por meio de um inversor, ou pode ser conectado a uma rede de média tensão por meio de um inversor e transformador de distribuição. Nenhum armazenamento de eletricidade é considerado.",
+        "name": "Telhado plano grande na cobertura"
+      },
+      "rooftopLargeTilted": {
+        "desc": "Sistema fotovoltaico montado em um grande telhado inclinado de um edifício comercial ou industrial. O azimute e a inclinação dos módulos fotovoltaicos são homogêneos e os módulos não se sombreiam. Os módulos são montados em trilhos conectados a um telhado inclinado, portanto, a ventilação na parte traseira é possível. Este sistema pode ser conectado diretamente a uma rede de baixa tensão por meio de um inversor ou pode ser conectado a uma rede de média tensão por meio de um inversor e transformador de distribuição. Nenhum armazenamento de eletricidade é considerado.",
+        "name": "Telhado inclinado grande na cobertura"
+      },
+      "rooftopSmall": {
+        "desc": "Sistema fotovoltaico montado em um telhado inclinado de um edifício residencial. O azimute e a inclinação dos módulos fotovoltaicos são homogêneos e os módulos não se sombreiam. Os módulos são montados em trilhos fixados a um telhado inclinado, permitindo assim ventilação traseira. Este tipo de sistema fotovoltaico geralmente é conectado diretamente a uma rede de baixa tensão por meio de um inversor. Nenhum armazenamento de eletricidade é considerado.",
+        "name": "Cobertura pequena"
+      },
+      "trackerOneAxisHorizontalNS": {
+        "desc": "Sistema fotovoltaico comercial em larga escala montado em terreno nivelado. Os módulos fotovoltaicos são montados em rastreadores com um eixo horizontal norte-sul. Os limites de rotação para o rastreador são -60 graus leste e 60 graus oeste. O algoritmo de retorno é usado para reduzir as perdas de sombreamento entre as linhas durante ângulos baixos de sol. Os módulos são bem ventilados. Esse tipo de sistema fotovoltaico é conectado a uma rede de média ou alta tensão por meio de um inversor e transformador de distribuição, e um transformador adicional também pode ser usado. Nenhum armazenamento de eletricidade é considerado.",
+        "name": "Rastreador com 1 eixo horizontal"
+      },
+      "hydroMountedLargeScale": {
+        "desc": "Esta opção abrange grandes instalações fotovoltaicas solares flutuantes. Considera-se que os módulos são montados em pontões flutuantes de plástico, orientados em direção ao equador. Os módulos têm temperatura operacional mais baixa devido ao resfriamento por evaporação da água superficial. Espera-se uma maior incompatibilidade entre os módulos de uma sequência (incompatibilidade induzida por ondas) e maior sujeira devido a excrementos de pássaros. Neste exemplo de instalação, são considerados inversores de cadeia e transformador de distribuição. Em comparação com instalações fotovoltaicas de grande escala montadas no solo, a disponibilidade esperada do sistema é menor devido a um ambiente mais severo, com maior probabilidade de ocorrência de vários tipos de falhas.",
+        "name": "Hidráulica em grande escala"
+      }
+    }
+  },
+  "toggle": {
+    "ltaDaily": {
+      "perDay": "{unit} por dia"
+    }
+  },
+  "units": {
+    "DMS": "DMS",
+    "celsius": "°C",
+    "currencyAnnual": "{currency}/por ano",
+    "currencyMonthly": "{currency}/por mês",
+    "days": "dias",
+    "decimal": "Decimal",
+    "degreeDays": "graus dias",
+    "fahrenheit": "°F",
+    "feet": "ft",
+    "kWhAnnually": "kWh/por ano",
+    "meter": "m",
+    "perDay": "Diária",
+    "perMonth": "Mensal",
+    "perYear": "Anual",
+    "years": "anos",
+    "inhabitants": "hab.",
+    "km": "km",
+    "m2": "m<sup>2</sup>",
+    "mm": "mm",
+    "Wh": "Wh",
+    "km2": "km<sup>2</sup>",
+    "kWh": "kWh",
+    "kWp": "kWp",
+    "m/s": "m/s",
+    "MWh": "MWh",
+    "MWp": "MWp",
+    "kg/m2": "kg/m<sup>2</sup>",
+    "MJ/m2": "MJ/m<sup>2</sup>",
+    "Wh/m2": "Wh/m<sup>2</sup>",
+    "kWh/m2": "kWh/m<sup>2</sup>",
+    "Wh/kWp": "Wh/kWp",
+    "kWh/kWp": "kWh/kWp",
+    "inh./km2": "hab./km<sup>2</sup>"
+  },
+  "user": {
+    "company": {
+      "EUVATCheckInProgress": "Verificação do IVA da empresa em andamento",
+      "add": "Adicionar uma conta de empresa",
+      "field": {
+        "city": "Cidade",
+        "country": "País/Região",
+        "name": "Nome da empresa",
+        "phone": "Número de telefone",
+        "state": "Estado",
+        "street": "Rua",
+        "zipCode": "Código postal",
+        "VAT": "IVA",
+        "trial": "Solicitar teste gratuito",
+        "billing": "Adicionar informações de cobrança",
+        "companyName": "Nome da empresa",
+        "companyOrOrganisationName": "Nome da empresa/organização",
+        "territory": "Território"
+      },
+      "invalidEUVat": "O IVA da empresa inserido é inválido. O formato do IVA obrigatório é SKxxxxxxxxx",
+      "messages": {
+        "update-fail": "Falha na atualização da empresa. Tente novamente mais tarde!",
+        "update-ok": "A empresa foi atualizada!",
+        "create-ok": "Empresa criada!",
+        "create-fail": "Falha na criação da empresa, tente novamente!",
+        "success-items": {
+          "name": "Conta da empresa „{name}“ criada",
+          "trial": "Solicitação de teste gratuito aprovada",
+          "billing": "Informações de cobrança adicionadas",
+          "trialFailed": "A solicitação de avaliação gratuita não pôde ser aprovada"
+        },
+        "checkingVat": "Verificando IVA"
+      },
+      "none": "Você não tem uma conta corporativa",
+      "profile": {
+        "name": "Nome da empresa",
+        "projects": "Projetos ativos",
+        "role": "Sua função",
+        "updated": "Atualizado",
+        "type": "Tipo",
+        "switch": "Alternar empresa",
+        "current": "atual",
+        "companyAccount": "Conta da empresa",
+        "personalAccount": "Conta pessoal"
+      },
+      "role": {
+        "ADMIN": "Administrador",
+        "USER": "Usuário regular"
+      },
+      "similarExists": "Detectamos que uma empresa semelhante talvez já exista em nosso banco de dados. Faremos a verificação manualmente e notificaremos se sua empresa já existe.",
+      "status": {
+        "ACTIVE": "Ativo",
+        "SUSPENDED": "Suspenso",
+        "DELETED": "Excluído"
+      },
+      "stepOf": "Etapa { step } de { total }",
+      "welcomeDialog": {
+        "assignedToCompany": "Você foi adicionado com sucesso à empresa {companyName}",
+        "continue": "Vamos!",
+        "newCompany": "A empresa {companyName} foi criada com sucesso",
+        "purchase": "Comprar uma assinatura",
+        "welcome": "Bem-vinda, {companyName}!"
+      },
+      "freeTrial": {
+        "assignSuccess": "Avaliação gratuita atribuída com sucesso à empresa: {companyName}",
+        "info": "Para impedir abuso do teste gratuito, precisamos confirmar seu número do telefone",
+        "code": "Código de verificação",
+        "whatIs": "O teste gratuito permite que você ative recursos completos do aplicativo Prospect para 1 projeto à sua escolha",
+        "success": "Crie seus projetos e ative o teste gratuito para um projeto.",
+        "sendAgain": "Enviar novamente",
+        "phoneInvalid": "Número de telefone usado ou inválido",
+        "otpInvalid": "O código OTP é inválido",
+        "incorrectVerificationCode": "O código de verificação inserido está incorreto. Volte para inseri-lo novamente ou solicitar um novo."
+      },
+      "action": {
+        "add": "Adicionar",
+        "create": "Criar",
+        "verify": "Verificar",
+        "trialLater": "Solicitar teste gratuito depois",
+        "billingLater": "Adicionar informações de cobrança depois"
+      },
+      "phoneCodeIsString": "Selecione o prefixo do telefone no menu",
+      "stateNotSelectedFromList": "Selecione um estado na lista",
+      "countryNotSelectedFromList": "Selecione um país na lista",
+      "phoneInvalid": "Telefone inválido",
+      "EUVATTerritoryHint": "Se você é de um território que não usa ID de IVA, <a href='https://solargis.com/about-us/contact' target='_blank'>entre em contato conosco.</a>",
+      "errors": {
+        "vatNotValid": "O IVA não é válido para {vatPrefix}",
+        "vatIdSpacesForbidden": "O ID de IVA não deve ter espaços"
+      },
+      "territoryNotSelectedFromList": "Selecione um território na lista"
+    },
+    "profile": {
+      "account": "Conta de usuário",
+      "changeName": "Alterar nome",
+      "changePassword": "Alterar senha",
+      "companyAccounts": "Contas da empresa",
+      "general": "Geral",
+      "loginSecurity": "Login e segurança",
+      "my": "Meu perfil",
+      "notifications": "Notificações",
+      "overview": "Visão geral",
+      "units": "Unidades",
+      "unselectCompany": "Alternar para conta de usuário",
+      "type": "Conta pessoal",
+      "photo": "Sua foto",
+      "addPhoto": "Adicionar uma foto de perfil",
+      "lastChange": "Última alteração",
+      "changeEmail": "Alterar e-mail",
+      "changeUnitSettings": "Alterar configurações de unidade",
+      "sdatDevices": "Dispositivos SDAT registrados"
+    },
+    "selectCompany": {
+      "headline": "Selecione uma empresa para continuar",
+      "none": "Não encontramos nenhuma empresa. Gostaria de criar uma?",
+      "noneAdmin": "Não encontramos nenhuma empresa na qual você esteja designado como administrador. Deseja criar uma nova?",
+      "admin": "Estamos mostrando uma lista de empresas nas quais você está designado como administrador"
+    }
+  },
+  "payment": {
+    "dialog": {
+      "change": "Alterar forma de pagamento",
+      "chooseMethod": "Escolher forma de pagamento",
+      "headline": "Total do pedido: {sum}",
+      "payNow": "Pagar {price} agora",
+      "resultHeadline": "Resultado do pagamento"
+    },
+    "method": {
+      "bank": "Pagamento bancário",
+      "card": "Pagamento bancário com cartão",
+      "bankDesc": "As informações sobre pagamento serão mostradas na fatura. Para criar um pedido, clique em Confirmar."
+    },
+    "thankYou": {
+      "detail": "Visualizar detalhes do pedido",
+      "thankYou": "Obrigado!",
+      "thankYouBank": "Agradecemos seu pedido. O pedido será processado após o recebimento do pagamento bancário.",
+      "thankYouCard": "O pagamento do seu cartão foi bem-sucedido. Seus produtos serão ativados em breve."
+    },
+    "failed": {
+      "failed": "Falha no pagamento",
+      "failedText": "Não foi possível processar seu pagamento. Tente novamente mais tarde ou entre em contato com nosso suporte."
+    },
+    "pricing": {
+      "pricing": "Preço",
+      "choosePlan": "Escolha o Prospecto correto para você",
+      "currentPlan": "Plano atual",
+      "free": {
+        "price": "Plano gratuito",
+        "actionDesc": "Demonstração - também disponível sem registro",
+        "info": "Para aqueles que estão começando com a avaliação da energia solar",
+        "feature1": "Acesso a médias anuais a partir do banco de dados de recursos solares mais confiável",
+        "feature2": "Mapas interativos para prospecção solar",
+        "action": "Iniciar",
+        "feature3": "Ferramenta de simulação fotovoltaica de fácil utilização que fornece resultados confiáveis"
+      },
+      "basic": {
+        "priceInfo": "Começando com 3 usuários/ano",
+        "action": "Assinar",
+        "actionDesc": "Calcular seu preço agora",
+        "info": "Ideal para pré-viabilidade de projetos comerciais em coberturas",
+        "feature1": "3 usuários incluídos + € 300/ano/usuário extra",
+        "feature2": "Todos os recursos do plano Gratuito",
+        "feature3": "Médias mensais e perfis 24 x 12",
+        "feature4": "Informações detalhadas das perdas",
+        "feature5": "Downloads de relatórios em XLSX e PDF",
+        "all": "Todos os recursos do plano Gratuito, mais:"
+      },
+      "pro": {
+        "priceInfo": "Começando com 3 usuários/ano",
+        "action": "Assinar",
+        "upgrade": "Atualizar",
+        "actionDesc": "Calcular seu preço agora",
+        "info": "Ideal para equipes que trabalham em projetos de grande escala, ou seja, > 1 MW",
+        "feature1": "3 usuários incluídos + € 600/ano/usuário extra",
+        "feature2": "Todos os recursos do plano Básico",
+        "feature3": "Dados de Albedo para estimativa precisa do ganho bifacial ",
+        "feature4": "Dados precipitáveis da água para o cálculo de perda/ganho espectral",
+        "feature5": "Dados de precipitação e dias de neve para estimativa de perdas de sujeira e neve",
+        "all": "Todo os recursos do plano Básico, mais:"
+      },
+      "table": {
+        "data": {
+          "albedo": {
+            "text": "Albedo do solo"
+          },
+          "compare": {
+            "help": "Ferramenta para comparação de resultados para até 4 projetos diferentes",
+            "text": "Médias mensais e perfis 24 x 12"
+          },
+          "configure": {
+            "free": "Apenas sistemas de montagem fixa",
+            "pro": "Sistemas de rastreador fixo + 1 eixo",
+            "text": "19/5000Configurar sistema fotovoltaico"
+          },
+          "economy": {
+            "help": "Ferramenta simples para cálculo de ROI, período de retorno, LCOE, etc.",
+            "text": "Calculadora econômica"
+          },
+          "report": {
+            "text": "Download de relatório em PDF e XLSX"
+          },
+          "solar": {
+            "help": "Inclui Irradiação Global Horizontal, Irradiação Difusa Horizontal, Irradiação Direta Normal e Irradiação Global Inclinada",
+            "text": "Recurso solar"
+          },
+          "features": "Recursos",
+          "save": {
+            "text": "Criar e salvar projetos"
+          },
+          "pv": {
+            "pro": "Rastreadores com inclinação fixa e 1 eixo",
+            "text": "Parâmetros fotovoltaicos (GTI, PVOUT)",
+            "help": "Saída de eletricidade fotovoltaica e irradiação global inclinada",
+            "free": "Apenas sistemas de inclinação fixa",
+            "basic": "Apenas sistemas de inclinação fixa"
+          },
+          "meteo": {
+            "help": "Temperatura do ar, velocidade do vento, graus-dia de resfriamento, graus-dia de aquecimento",
+            "text": "Parâmetros meteorológicos básicos (TEMP, WS, CDD, HDD)"
+          },
+          "dataParams": "Parâmetros de dados",
+          "meteo2": {
+            "text": "Precipitação, dias de neve, umidade relativa e água precipitável"
+          },
+          "hourly": {
+            "text": "Perfis 24 X 12 (mensal x por hora)",
+            "basic": "Parâmetros selecionados"
+          },
+          "annual": {
+            "text": "Média anual em longo prazo"
+          },
+          "monthly": {
+            "text": "Médias mensais em longo prazo"
+          },
+          "floating": {
+            "text": "Suporte para fotovoltaica flutuante"
+          },
+          "dataAggregation": "Agregação de dados"
+        }
+      },
+      "alert": {
+        "body": "No momento, você alternou para sua conta pessoal. Selecione uma conta de empresa para a qual deseja atribuir uma licença em suas configurações para continuar.",
+        "heading": "Selecione uma empresa para continuar"
+      }
+    },
+    "cart": {
+      "headline": "Seu pedido",
+      "empty": "O carrinho está vazio",
+      "edit": "Editar {productName}",
+      "step1": {
+        "name": "Itens",
+        "withoutVAT": "Preços sem IVA",
+        "total": "Total da assinatura anual",
+        "back": "Voltar para produtos",
+        "purchaseOrder": "Ordem de compra",
+        "purchaseOrderPlaceholder": "Pedido nº",
+        "users": "Usuários com acesso total",
+        "subscription": "Assinatura",
+        "remove": "Deseja remover este item do carrinho?",
+        "annual": "Anual"
+      },
+      "step2": {
+        "name": "Informações de cobrança",
+        "address": "Endereço de cobrança"
+      },
+      "step3": {
+        "total": "Total do pedido",
+        "totalVAT": "Total do pedido incluindo IVA",
+        "name": "Pagamento",
+        "continue": "Acessar Meus pedidos"
+      }
+    }
+  },
+  "report": {
+    "mapLink": "Localização no mapa",
+    "contents": "Conteúdo",
+    "cover": {
+      "ProspectPv": {
+        "title": "Avaliação preliminar da produção de eletricidade fotovoltaica",
+        "type": "PROSPECT Análise da produção fotovoltaica"
+      },
+      "ProspectSolar": {
+        "title": "Avaliação preliminar da irradiação solar do local",
+        "type": "PROPECT Análise do recurso solar"
+      },
+      "customer": "Cliente",
+      "generated": "Relatório gerado",
+      "generatedBy": "Gerado por",
+      "project": "Projeto",
+      "reportNr": "Número do relatório",
+      "reportType": "Tipo de relatório",
+      "tel": "nº tel."
+    },
+    "figure": "Figura",
+    "hourlyDni": "Irradiação direta normal - médias horárias",
+    "hourlyGhi": "Irradiação global horizontal - médias horárias",
+    "legal": {
+      "copyright": "Os direitos autorais deste relatório pertencem à © { currentYear } Solargis s.r.o., todos os direitos reservados.",
+      "email": "E-mail",
+      "guarantee": "Considerando a incerteza de dados e cálculos, a Solargis s.r.o. não garante a precisão das estimativas. O máximo possível foi feito para a avaliação dos parâmetros climáticos e a avaliação preliminar da produção de eletricidade fotovoltaica com base nos melhores dados, software e conhecimento disponíveis. A Solargis s.r.o. não será responsável por quaisquer danos diretos, incidentais, consequenciais, indiretos ou punitivos que surjam ou que supostamente tenham sido originados pelo uso do relatório fornecido.",
+      "moreInfo": "Mais informações sobre a avaliação completa do rendimento fotovoltaico podem ser encontradas em:",
+      "registrationId": "ID do registro",
+      "serviceProvider": "Provedor de serviço",
+      "tel": "Telefone",
+      "terms": "Veja o texto completo dos TERMOS CONTRATUAIS GERAIS DOS SERVIÇOS PAGOS em:",
+      "title": "Isenção de responsabilidade e informações legais",
+      "trademark": "Solargis® é uma marca comercial de Solargis s.r.o.",
+      "uncertainty": "Este relatório mostra a estimativa de energia solar na fase de inicialização e durante toda a vida útil de um sistema fotovoltaico. As estimativas são precisas o suficiente para a avaliação preliminar do projeto. Para o planejamento e financiamento de grandes projetos, são necessárias mais informações: 1. Distribuição estatística e incerteza da radiação solar 2. Especificação detalhada de um sistema fotovoltaico 3. Variabilidade interanual e incerteza P90 da produção fotovoltaica 4. Produção de energia vitalícia considerando a degradação do desempenho de componentes fotovoltaicos.",
+      "url": "URL",
+      "validationAuth": "Validação da autenticidade",
+      "validationAuthText": "Este relatório em PDF é eletronicamente assinado por Solargis s.r.o.",
+      "vatNr": "Número de IVA"
+    },
+    "location": "Local do projeto",
+    "ltaPvout": "Potência de energia fotovoltaica - médias no longo prazo",
+    "mapView": "Vista detalhada do mapa",
+    "otherParams": "Outros parâmetros meteorológicos",
+    "slovakia": "Eslováquia",
+    "solarParams": "Radiação solar e parâmetros meteorológicos",
+    "table": "Tabela",
+    "dailyAvg": "Média diária",
+    "hourlyGti": "Irradiação global inclinada - médias horárias",
+    "hourlyPvoutSpecific": "Potência fotovoltaica específica - médias horárias",
+    "hourlyPvoutTotal": "Potência total de energia fotovoltaica - médias horárias",
+    "hourlyTemp": "Temperatura do ar - médias horárias",
+    "monthlySum": "Soma mensal",
+    "dailyStats": "Estatísticas diárias",
+    "dailyGhiDniDif": "GHI, DNI, DIF — médias diárias",
+    "solarDailySummary": "Os perfis de radiação solar abaixo são calculados como uma média de todos os dados horários de cada mês. Os perfis fornecem uma indicação de padrões variáveis ​​de GHI por dia, separadamente para cada mês. Esses padrões são conduzidos pela geografia local, astronomia e clima do local.",
+    "glossary": {
+      "title": "Acrônimos e glossário",
+      "pv": "Parâmetros de eletricidade fotovoltaica",
+      "meteo": "Parâmetros meteorológicos",
+      "solar": "Parâmetros solares"
+    },
+    "freeTrialWatermark": "Avaliação gratuita",
+    "annually": "anualmente"
+  },
+  "csvData": {
+    "T24": "T-24 — temperatura média diária (24 horas do ar) do ar a 2 m acima do solo. Calculada a partir das saídas do modelo 5 (© 2019 ECMWF) [grau C]",
+    "WSm": "WSm — velocidade média mensal do vento a 10 m acima do solo. Calculada a partir das saídas dos modelos MERRA-2 e CFSv2 (© {year} NOAA and NASA) [m/s]",
+    "RHm": "RHm — umidade relativa média mensal a 2 m acima do solo. Calculada a partir das saídas dos modelos MERRA-2 e CFSv2 (© {year} NASA e NOAA) [%]",
+    "ALBm": "ALBm — fração de irradiação solar refletida pela superfície. Razão entre fluxos radiativos que ascendem da superfície e os que descendem, incidindo na dita superfície (GHI). (Derivado do NASA MODIS e ECMWF ERA-5) []",
+    "data": "Dados",
+    "HDDm": "HDDm — quantifica a demanda de energia necessária para aquecer um edifício. \"Graus-dia de aquecimento\" são uma medida de quanto (em graus) e por quanto tempo (em dias), a temperatura do ar externo era mais baixa do que uma temperatura média diária básica específica (18°C). Os valores anuais e mensais são agregados dos valores diários. Calculado pela Solargis a partir de dados de temperatura do ar [graus-dia]",
+    "CDDm": "CDDm — quantifica a demanda de energia necessária para resfriar um edifício. \"Graus-dia de resfriamento\" são uma medida de quanto (em graus) e por quanto tempo (em dias), a temperatura do ar externo era mais alta do que uma temperatura média diária básica específica (18°C). Os valores anuais e mensais são agregados a partir dos valores diários. Calculado pelo Solargis a partir de dados de temperatura do ar [graus-dia]",
+    "year": "Ano",
+    "DNIm": "DNIm — soma média anual de irradiação direta normal (© {year} Solargis) [kWh/m2]",
+    "GHIm": "GHIm — soma média mensal de irradiação global horizontal (© {year} Solargis) [kWh/m2]",
+    "title": "MÉDIAS MENSAIS EM LONGO PRAZO DE RADIAÇÃO SOLAR E PARÂMETROS METEOROLÓGICOS",
+    "PRECm": "PRECm — somas médias anuais de precipitação derivadas do banco de dados Global Precipitation Climatology (© {year} DWD) [mm]",
+    "Diffm": "Diffm — soma média diária de irradiação difusa horizontal (© {year} Solargis) [kWh/m2]",
+    "PWATm": "PWATm — água precipitável é a profundidade do vapor de água em uma coluna da atmosfera, se toda a água nessa coluna for precipitada como chuva. Indica a quantidade de umidade acima do solo. Calculada a partir das saídas CFSR e CFSv2 (© {year} NOAA) [kg/m2]",
+    "issued": "Emitido",
+    "SNOWDm": "SNOWDm — os dias de neve são calculados como dias com lâmina d'água igual ou superior a 5 mm. Calculados a partir das saídas dos modelos CFSR e CFSv2 (© 2019 NOAA) [dias]",
+    "columns": "Colunas",
+    "azimuth": "Azimute da encosta",
+    "latitude": "Latitude",
+    "siteName": "Nome do local",
+    "encoding": "Codificação de caracteres",
+    "longitude": "Longitude",
+    "elevation": "Elevação",
+    "inclination": "Inclinação da encosta",
+    "reportNumber": "Número do relatório"
+  },
+  "export": {
+    "title": "Exportar projetos",
+    "confirmText": "Gostaria de exportar os projetos selecionados para um arquivo CSV?",
+    "csvInfo": {
+      "exported": "Exportado",
+      "ftpCompatible": "Os parâmetros de configurações fotovoltaicas exportadas estão descritos na documentação disponível aqui"
+    }
+  },
+  "cookies": {
+    "cookie-banner": {
+      "text": "Usamos cookies para oferecer-lhe a melhor experiência quando visitar nosso site. Ao clicar em “Aceitar” ou continuar o uso do site, você aceita o uso de cookies no seu navegador.",
+      "accept": "Aceitar",
+      "more-info": "Mais informações"
+    }
+  },
+  "dashboard": {
+    "landingPage": {
+      "learnMore": "Aprender mais",
+      "titleHeader": "Dados climáticos e software para investimento em energia solar",
+      "footer": {
+        "news": "Notícias",
+        "events": "Eventos",
+        "pricing": "Preço",
+        "contactUs": "Fale conosco",
+        "releaseNotes": "Notas de lançamento",
+        "solargisHomepage": "Página inicial da Solargis"
+      },
+      "subtitleCard": "aplicativo em desenvolvimento",
+      "monitor": {
+        "button": "Serviço de API",
+        "content": "Receba atualizações regulares de dados da Solargis para monitoramento de desempenho do sistema fotovoltaico.",
+        "subtitleFirst": "Atualizações diárias ou em tempo real",
+        "subtitleThird": "Acesso de API/FTP",
+        "subtitleSecond": "Etapa de até 15 minutos"
+      },
+      "prospect": {
+        "content": "Ferramenta de prospecção solar para pré-viabilidade rápida e confiável.",
+        "subtitleFirst": "Média de dados anuais e mensais",
+        "subtitleThird": "Dados de albedo, precipitação e neve",
+        "subtitleSecond": "Perfis horários (24) x mensais (12)"
+      },
+      "evaluate": {
+        "button": "Solicitar dados de TX/TMY",
+        "content": "Para a modelagem avançada de energia e a otimização de design de centrais de energia solar.",
+        "subtitleFirst": "Dados seriais cronológicos, até o último mês",
+        "subtitleThird": "Importar dados para PVsyst, helioscópio, SAM, etc.",
+        "subtitleSecond": "TMY P50, P90, Pxx"
+      },
+      "subtitleHeader": "Reduza riscos e aumente a lucratividade dos seus ativos de energia solar.",
+      "forecast": {
+        "button": "Serviço de API",
+        "content": "Previsão de energia solar para até 10 dias à frente.",
+        "subtitleFirst": "Atualizações de previsão a cada 30 minutos",
+        "subtitleThird": "Acesso de API/FTP",
+        "subtitleSecond": "Etapa de até 15 minutos"
+      }
+    },
+    "listRecentProjects": {
+      "noProjects": "Você ainda não criou nenhum projeto"
+    },
+    "header": {
+      "quickLinks": "Links rápidos",
+      "apps": "Aplicativos"
+    },
+    "sdatManagement": {
+      "manuals": "Manuais",
+      "devices": "Meus dispositivos SDAT",
+      "download": "Download",
+      "subscription": "Assinatura",
+      "sdatHeader": "{{header.sdat}}"
+    }
+  }
+}

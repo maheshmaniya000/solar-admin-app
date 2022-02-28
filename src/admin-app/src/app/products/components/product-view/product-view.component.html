@@ -1,0 +1,36 @@
+<div *ngIf="product" fxLayout="column" class="single-block">
+  <div fxFlex class="data-grid">
+    <div fxLayout="row">
+      <div fxFlex="40" class="bold">Code</div>
+      <div fxFlex>{{ product.code }}</div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="40" class="bold">Title</div>
+      <div fxFlex>{{ product.title }}</div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="40" class="bold">Description SK</div>
+      <div fxFlex>{{ product.descriptionSK }}</div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="40" class="bold">Description ENG</div>
+      <div fxFlex>{{ product.descriptionENG }}</div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="40" class="bold">Category</div>
+      <div fxFlex>{{ product.category }}</div>
+    </div>
+  </div>
+  <div>
+    <div fxFlex class="data-grid">
+      <div fxLayout="row">
+        <div fxFlex="40" class="bold">Price</div>
+        <div fxFlex>{{ product.price }}</div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="40" class="bold">Tech spec</div>
+        <div fxFlex>{{ product.techSpec | json }}</div>
+      </div>
+    </div>
+  </div>
+</div>

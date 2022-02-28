@@ -1,0 +1,95 @@
+@import 'theme';
+
+#table-settings {
+  padding: 0 $sg-20;
+}
+
+:host-context > * {
+  width: calc(100% - 8px);
+}
+
+:host-context {
+  height: 100%;
+}
+
+mat-cell button {
+  margin: $sg-4;
+  padding: 2px 8px;
+  line-height: normal;
+}
+
+.column-note {
+  font-weight: bold;
+
+  .note {
+    @include text-ellipsis();
+    line-height: $sg-16;
+    padding: $sg-4 0;
+  }
+}
+
+.fullText {
+  white-space: nowrap;
+
+  mat-form-field {
+    width: 300px;
+  }
+  input {
+    width: calc(100% - 30px);
+  }
+  mat-icon {
+    margin-left: -30px;
+    vertical-align: middle;
+  }
+}
+
+.sort {
+  display: inline-block;
+  cursor: pointer;
+
+  mat-icon {
+    display: inline-block;
+    padding: 0 10px;
+  }
+}
+
+.tableContent {
+  max-height: calc(100% - 70px);
+}
+
+.column-name, .column-name > div {
+  white-space: nowrap;
+}
+
+.column-name > div {
+  padding: 0 5px;
+
+  &.name.price {
+    text-align: right;
+    padding-right: $sg-20;
+  }
+}
+
+.-full-width {
+  width: calc(100% - 50px);
+}
+
+.-full-width-no-sort {
+  width: calc(100% - 25px);
+}
+
+.preWrap, div.name.order-items.preWrap {
+  white-space: pre-wrap;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+  margin-left: 0;
+}
+
+.paidNotFullyInvoiced {
+  background-color: map_get($sg-red, 100);
+}

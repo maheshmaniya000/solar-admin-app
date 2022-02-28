@@ -1,0 +1,106 @@
+<ng-container *transloco="let t; read: 'companyAdmin'">
+  <mat-tab-group>
+    <mat-tab [label]="t('subscription.general')">
+      <mat-card>
+        <mat-card-title>{{ t('subscription.general') }}</mat-card-title>
+        <mat-card-content>
+          <ng-container *ngIf="license$ | async as license; else noLicense">
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.type') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ 'common.subscriptionType.' + mapProspectLicenseType(license?.licenseType) | transloco }}
+              </div>
+            </div>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.validFrom') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ license?.from | sgDateTimeFormat }}
+              </div>
+            </div>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.validTo') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ license?.to | sgDateTimeFormat }}
+              </div>
+            </div>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.users') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ t('subscription.usersLimit', { current: userCount, max: license.usersLimit }) }}
+              </div>
+            </div>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('prospectSubscription.activatedProjects') }}
+              </div>
+              <div fxFlex.gt-xs>
+                <ng-container *ngIf="license.licenseType === 'FREE_TRIAL'; else unlimited">
+                  {{ t('subscription.projectLimit', { remaining: license.remainingFreeTrialProjects }) }}
+                </ng-container>
+              </div>
+            </div>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab [label]="t('subscription.users.title')" *ngIf="license$ | async as license">
+      <mat-card>
+        <mat-card-content>
+          <sg-app-subscription-users
+            *ngIf="(companyUsers$ | async)?.length > 0; else noUsers"
+            [users]="companyUsers$ | async"
+            [selectedUsers]="selectedUsers"
+            (selectUser)="selectUser($event.id, $event.checked)"
+            (selectAllUsers)="selectAllUsers($event)">
+          </sg-app-subscription-users>
+        </mat-card-content>
+        <mat-card-actions *ngIf="companyUsers$ | async as users">
+          <button mat-button class="primary-button" [disabled]="!changed || license.usersLimit < userCount" (click)="save(users)">
+            {{ 'common.action.save' | transloco }}
+          </button>
+          <div *ngIf="changed && license.usersLimit < userCount" class="userLimit">
+            {{ t('subscription.tooManyUsers', { userLimit: license.usersLimit }) }}
+          </div>
+          <div *ngIf="changed" class="notice">
+            {{ t('subscription.notice') }}
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
+
+  <ng-template #noLicense>
+    <ng-container *ngIf="!loading; else spinner">
+      {{ t('prospectSubscription.none') }}
+    </ng-container>
+  </ng-template>
+
+  <ng-template #noUsers>
+    {{ t('subscription.users.none') }}
+  </ng-template>
+
+  <ng-template #unlimited>
+    {{ t('subscription.unlimitedProjects') }}
+  </ng-template>
+
+  <ng-template #progress>
+    <div class="progress">
+      <mat-spinner [diameter]="24"></mat-spinner>
+    </div>
+  </ng-template>
+
+  <ng-template #spinner>
+    <div style="overflow: hidden">
+      <mat-spinner mode="indeterminate" [diameter]="25" style="margin: auto"></mat-spinner>
+    </div>
+  </ng-template>
+</ng-container>

@@ -1,0 +1,41 @@
+@import 'theme';
+
+mat-expansion-panel > div {
+  height: fit-content;
+}
+
+.cell {
+  padding: $sg-8 0;
+
+  @media screen and (min-width: 600px) {
+    padding: 0 $sg-16 0 $sg-16;
+
+    &:not(.small-no-pv) {
+      min-height: 120px;
+    }
+  }
+}
+
+.bottom-text {
+  margin-top: $sg-16;
+}
+
+.border {
+  @media screen and (min-width: 600px) and (max-width: 959px) {
+    &:first-of-type {
+      border-right: 1px solid map-get($primary, 300);
+    }
+  }
+  @media screen and (min-width: 960px) {
+    border-right: 1px solid map-get($primary, 300);
+  }
+}
+
+.heading {
+  font-weight: $font-weight-bold;
+  font-size: $sg-16;
+}
+
+.pv-config {
+  font-size: 13px;
+}

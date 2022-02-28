@@ -1,0 +1,17 @@
+@import 'theme';
+
+
+:host > div {
+  min-height: 500px;
+  align-items: center;
+  background-color: map-get($primary, 100);
+
+  > div {
+    text-align: center;
+    font-weight: $font-weight-bold;
+    font-size: 30px;
+    color: map-get($accent, 400);
+    margin-top: 16px;
+    // transform: rotate(-5deg);
+  }
+}

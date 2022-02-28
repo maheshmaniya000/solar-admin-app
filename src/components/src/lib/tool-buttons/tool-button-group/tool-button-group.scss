@@ -1,0 +1,12 @@
+.sg-tool-button-group {
+  display: inline-flex;
+  flex-direction: column;
+  border-radius: 3px;
+
+  .mat-icon-button {
+    width: auto;
+    height: auto;
+    padding: 4px;
+    border-radius: 0;
+  }
+}

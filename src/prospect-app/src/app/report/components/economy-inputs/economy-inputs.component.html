@@ -1,0 +1,6 @@
+<div>
+  <ng-container *ngFor="let row of rows">
+    <sg-economy-inputs-row *ngIf="row.label" [def]="row"></sg-economy-inputs-row>
+    <h3 *ngIf="!row.label">{{ row | transloco }}</h3>
+  </ng-container>
+</div>

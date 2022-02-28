@@ -1,0 +1,38 @@
+@import 'theme';
+
+:host > mat-list {
+  overflow-y: hidden;
+  padding: $sg-16 0;
+
+  .content {
+    border-top: 1px solid map-get($primary, 300);
+    border-bottom: 1px solid map-get($primary, 300);
+  }
+
+  & > mat-list-item {
+    height: $sg-32 + 1px;
+    border-top: 1px solid map-get($primary, 300);
+
+    // &:first-of-type {
+    //   border-top: none;
+    // }
+
+    &:last-of-type {
+      border-bottom: 1px solid map-get($primary, 300);
+    }
+
+    & ::ng-deep > .mat-list-item-content {
+      padding: 0;
+      flex: 1 0 auto;
+      font-size: 14px; // not defined
+    }
+
+    &:hover {
+      background-color: map-get($primary, 50);
+    }
+  }
+
+  & > button {
+    margin: 0 20px;
+  }
+}

@@ -1,0 +1,18 @@
+@import 'theme';
+
+:host ::ng-deep p.info-text {
+  margin-top: $sg-18;
+
+  a {
+    text-decoration: none;
+    color: map-get($accent, 500);
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+}
+
+.desc {
+  margin-bottom: $sg-16;
+}

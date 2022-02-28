@@ -1,0 +1,15 @@
+:host {
+  display: inline-block;
+}
+
+.title,
+.sub-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.unit {
+  padding-left: 8px;
+}

@@ -1,0 +1,36 @@
+<div class="content losses">
+  <form [formGroup]="form">
+    <div class="row" *ngFor="let key of keys">
+      <div class="label">{{ 'pvConfig.params.' + type + '.' + key | transloco }}</div>
+      <mat-form-field floatLabel="never">
+        <input matInput type="number" [formControlName]="key" step="0.1" [min]="min" [max]="max">
+        <mat-error >{{ 'common.error.valueBetween' | transloco:{min: min, max: max} }}</mat-error>
+      </mat-form-field>
+      <div class="unit" *ngIf="type === 'systemAvailability'">%</div>
+    </div>
+  </form>
+
+  <!-- ICON FOR ROW-SPACING -->
+  <div *ngIf="type === 'rowSpacing' || type === 'colSpacing'" class="row-spacing">
+    <svg version="1.1" id="_x31_20x50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    width="120px" height="50px" viewBox="0 0 120 50" style="enable-background:new 0 0 120 50;" xml:space="preserve">
+      <style type="text/css">
+        .st0{opacity:0.15;fill:#CFD4DA;}
+        .st1{fill:#CFD4DA;}
+        .st2{fill:#FCB813;}
+        .st3{fill:#A4ABB9;}
+        .st4{font-family:'Arial', sans-serif;}
+        .st5{font-size:12px;}
+      </style>
+      <path class="st0" d="M79.9999695,49h-75V14h75V49z"/>
+      <path class="st1" d="M79.999939,14v7h-1v-6h-73v6h-1v-7H79.999939z M101.999939,48V34l-2,1.1592407V48h-73V34l-2,1.1592407V48H0v2
+        h120v-2H101.999939z"/>
+      <path class="st2" d="M20.4365234,28.3652344l3.9130859-2.2587891l0.6972656,1.2080078l-5.4101563,3.1240234l-4.9765625-8.6201172
+        l1.4970703-0.8647461L20.4365234,28.3652344z M42.3266106,20.2660332L5.0002708,41.8732834l1.2474098,2.1603737
+        L43.5740242,22.426405L42.3266106,20.2660332z M117.3266144,20.2660332L80.0002747,41.8732834l1.247406,2.1603737
+        l37.3263397-21.6072521L117.3266144,20.2660332z"/>
+      <text transform="matrix(1 0 0 1 28.6554012 10.9999838)" class="st3 st4 st5">{{ +params['spacing'].toFixed(3) }} L</text>
+    </svg>
+  </div>
+
+</div>

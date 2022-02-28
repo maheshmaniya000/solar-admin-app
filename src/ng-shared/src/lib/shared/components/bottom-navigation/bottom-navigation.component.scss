@@ -1,0 +1,35 @@
+@import 'theme';
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid map-get($primary, 300);
+  padding: $sg-16;
+  min-height: 100px;
+}
+
+.content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav {
+  position: relative;
+}
+
+.pull-right {
+  text-align: right;
+}
+
+.label {
+  color: map-get($primary, default);
+}
+
+.label-left {
+  padding-left: 20px;
+}
+
+.label-right {
+  text-align: right;
+  padding-right: 20px;
+}

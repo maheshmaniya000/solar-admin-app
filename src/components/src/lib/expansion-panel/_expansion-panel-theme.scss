@@ -1,0 +1,28 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $typography-config: mat.get-typography-config($theme-or-color-config);
+  $foreground: map-get($color-config, foreground);
+  $border: 1px mat.get-color-from-palette($foreground, divider) solid;
+
+  .mat-accordion .mat-expansion-panel {
+    @include mat.elevation(0);
+    border: $border;
+    border-top: none;
+
+    &:first-child,
+    &.mat-expansion-panel-spacing,
+    &.mat-expansion-panel-spacing + .mat-expansion-panel {
+      border-top: $border;
+    }
+
+    .mat-expansion-panel-header {
+      @include mat.typography-level($typography-config, title);
+
+      &:hover:not([aria-disabled='true']) {
+        background: inherit;
+      }
+    }
+  }
+}

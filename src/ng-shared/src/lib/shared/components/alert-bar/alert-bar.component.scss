@@ -1,0 +1,65 @@
+@import 'theme';
+
+
+:host > div {
+  min-height: 20px;
+  line-height: 20px;
+  padding: 8px 24px;
+  background-color: #fef9db;
+  font-size: 13px;
+  color: map-get($primary, 800);
+  max-width: 100vw;
+  box-sizing: border-box;
+
+  @include media-breakpoint-down(sm) {
+    line-height: $sg-16;
+    padding: $sg-4 $sg-8;
+    font-size: 10px;
+  }
+
+  .icon {
+    width: 20px;
+  }
+
+  .close {
+    width: 32px;
+
+    mat-icon {
+      margin-left: 12px;
+      cursor: pointer;
+    }
+  }
+
+  mat-icon {
+    @include mat-icon-size(20px);
+    float: left;
+  }
+
+  .highlighted {
+    padding-left: 6px;
+    font-weight: $font-weight-medium;
+  }
+
+  .link {
+    text-decoration: underline;
+    cursor: pointer;
+    padding-left: $sg-12;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .primaryLink {
+    font-weight: $font-weight-medium;
+    color: map-get($accent, default);
+  }
+
+  .warning {
+    .icon mat-icon {
+      @include mat-icon-size(16px);
+      color: map-get($accent, default);
+      margin: 2px;
+    }
+  }
+}

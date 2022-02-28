@@ -1,0 +1,10 @@
+<table mat-table [dataSource]="contacts">
+  <mat-text-column name="firstName" headerText="First name"></mat-text-column>
+  <mat-text-column name="middleName" headerText="Middle name"></mat-text-column>
+  <mat-text-column name="lastName" headerText="Last name"></mat-text-column>
+  <mat-text-column name="email"></mat-text-column>
+  <mat-text-column name="phone"></mat-text-column>
+
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns"></tr>
+</table>

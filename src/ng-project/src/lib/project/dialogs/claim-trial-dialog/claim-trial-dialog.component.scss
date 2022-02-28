@@ -1,0 +1,15 @@
+@import 'theme';
+
+p {
+  margin: 0;
+}
+
+.data-label {
+  font-size: 12px;
+  font-weight: $font-weight-medium;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.primary { @include sg-button(lg, red); }
+.secondary { @include sg-button(lg); }

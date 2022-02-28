@@ -1,0 +1,274 @@
+<div fxFlex="1 0 auto">
+  <form [formGroup]="form" novalidate (keydown.enter)="$event.preventDefault()">
+    <div class="tableContent">
+      <mat-table [dataSource]="orders$" matSort style="width: 100%">
+        <ng-container matColumnDef="checkbox">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 75px">
+            <mat-checkbox (click)="onSelectAllClick($event)"
+                          [checked]="allSelected$ | async"
+                          [indeterminate]="selection.hasValue() && (allSelected$ | async) === false">
+            </mat-checkbox>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let order" fxFlex="0 0 75px">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(order.sgOrderId) : null"
+                          [checked]="selection.isSelected(order.sgOrderId)">
+            </mat-checkbox>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="sgOrderId">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 200px">
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Order ID" name="sgOrderId" formControlName="sgOrderId" />
+            </mat-form-field>
+
+            <div mat-sort-header="sgOrderId">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell class="column-name" (click)="onRowClicked(order)" *matCellDef="let order" fxFlex="0 0 200px">
+            <div class="name" fxFlex="grow">{{ order.sgOrderId }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="createDate">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <mat-label>Created</mat-label>
+              <mat-date-range-input [formGroup]="getAuthorTimestampFormGroup()" [rangePicker]="createdDatePicker">
+                <input matStartDate name="start" formControlName="start" placeholder="Start date" />
+                <input matEndDate name="end" formControlName="end" placeholder="End date" />
+              </mat-date-range-input>
+              <sg-form-group-reset matSuffix [formGroup]="form.get('author.ts')"></sg-form-group-reset>
+              <mat-datepicker-toggle matSuffix [for]="createdDatePicker"></mat-datepicker-toggle>
+              <mat-date-range-picker #createdDatePicker></mat-date-range-picker>
+            </mat-form-field>
+
+            <div mat-sort-header="author_ts">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell (click)="onRowClicked(order)" *matCellDef="let order" fxFlex="0 0 160px">
+            <div class="name" fxFlex="grow">{{ order.author.ts | sgDateTimeFormat: 'dateTime' }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="modifyDate">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <mat-label>Updated</mat-label>
+              <mat-date-range-input [formGroup]="getUpdatedTimestampFormGroup()" [rangePicker]="updatedDatePicker">
+                <input matStartDate name="start" formControlName="start" placeholder="Start date" />
+                <input matEndDate name="end" formControlName="end" placeholder="End date" />
+              </mat-date-range-input>
+              <sg-form-group-reset matSuffix [formGroup]="form.get('updated.ts')"></sg-form-group-reset>
+              <mat-datepicker-toggle matSuffix [for]="updatedDatePicker"></mat-datepicker-toggle>
+              <mat-date-range-picker #updatedDatePicker></mat-date-range-picker>
+            </mat-form-field>
+
+            <div mat-sort-header="updated_ts">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell (click)="onRowClicked(order)" *matCellDef="let order" fxFlex="0 0 160px">
+            <div class="name" fxFlex="grow">{{ order.updated.ts | sgDateTimeFormat: 'dateTime' }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="company">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 320px">
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Company" name="company_name" [formControl]="getCompanyNameFormControl()" />
+            </mat-form-field>
+
+            <div mat-sort-header="company_name">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell (click)="onRowClicked(order)" *matCellDef="let order" fxFlex="0 0 320px">
+            <div class="name" fxFlex="grow">{{ order.company?.name }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="paymentType">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 125px">
+            <mat-form-field class="-full-width">
+              <mat-select placeholder="Payment method" [formControl]="getPaymentTypeFormControl()">
+                <mat-option [value]="null">All</mat-option>
+                <mat-option *ngFor="let type of paymentTypes | keyvalue" [value]="type.key">
+                  {{ type.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div mat-sort-header="payment_type">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell (click)="onRowClicked(order)" *matCellDef="let order" fxFlex="0 0 125px">
+            <div class="name" fxFlex="grow">{{ 'enum.orderPaymentType.' + order.payment.type | transloco }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="paymentStatus">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 135px">
+            <mat-form-field class="-full-width">
+              <mat-select [formControl]="getPaymentStatusFormControl()" placeholder="Payment status">
+                <mat-option [value]="undefined">All</mat-option>
+                <mat-option *ngFor="let paymentStatus of paymentStatuses" [value]="paymentStatus">
+                  {{ 'enum.orderPaymentStatus.' + paymentStatus | transloco }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div mat-sort-header="payment_status">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell (click)="onRowClicked(order)" *matCellDef="let order" fxFlex="0 0 135px">
+            <div class="name" fxFlex="grow">{{ 'enum.orderPaymentStatus.' + order.payment.status | transloco }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 100px">
+            <div>Amount</div>
+
+            <div mat-sort-header="price">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell (click)="onRowClicked(order)" *matCellDef="let order" fxFlex="0 0 100px">
+            <div class="name price" fxFlex="grow">{{ order.price | number: '1.2-2':'en' }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="currency">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 100px">
+            <div>Currency</div>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let order" fxFlex="0 0 100px">
+            <div class="name" fxFlex="grow">{{ order.currency }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container *ngIf="downloadInvoiceStore.state$ | async as viewModel">
+          <ng-container matColumnDef="invoices">
+            <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 135px">
+              <mat-form-field class="-full-width-no-sort">
+                <input type="text" matInput placeholder="Invoice" name="invoiceCode" formControlName="invoiceCode" />
+              </mat-form-field>
+              <!-- sorting disabled
+              <div class="sort" (click)="sortBy('invoices_invoiceCode')">
+                <mat-icon *ngIf="sort.sortBy != 'invoices_invoiceCode'; else sorting">sort_by_alpha</mat-icon>
+              </div>
+              -->
+            </mat-header-cell>
+            <mat-cell *matCellDef="let order" fxFlex="0 0 135px">
+              <sg-admin-order-items-table-cell [order]="order" [invoiceTypes]="[invoiceType.INVOICE, invoiceType.INVOICE_FOR_PROFA]">
+              </sg-admin-order-items-table-cell>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="profaInvoices">
+            <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 135px">
+              <mat-form-field class="-full-width-no-sort">
+                <input type="text" matInput placeholder="Profa invoice" name="profaInvoiceCode" formControlName="profaInvoiceCode" />
+              </mat-form-field>
+              <!-- sorting disabled
+              <div class="sort" (click)="sortBy('invoices_profaInvoiceCode')">
+                <mat-icon *ngIf="sort.sortBy != 'invoices_profaInvoiceCode'; else sorting">sort_by_alpha</mat-icon>
+              </div>
+              -->
+            </mat-header-cell>
+            <mat-cell *matCellDef="let order" fxFlex="0 0 135px">
+              <sg-admin-order-items-table-cell [order]="order" [invoiceTypes]="[invoiceType.PROFA]">
+              </sg-admin-order-items-table-cell>
+            </mat-cell>
+          </ng-container>
+        </ng-container>
+
+        <ng-container matColumnDef="author">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Author" name="author_user_email" [formControl]="getAuthorUserEmailFormControl()" />
+            </mat-form-field>
+            <div mat-sort-header="author_user_email">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell (click)="onRowClicked(order)" *matCellDef="let order">
+            <div class="name" fxFlex="grow">{{ order.author.user.email }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="note">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Note" name="note" formControlName="note" />
+            </mat-form-field>
+            <div mat-sort-header="note">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell class="column-note" (click)="onRowClicked(order)" *matCellDef="let order">
+            <div class="note" fxFlex="grow">{{ order.note }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <mat-header-cell class="column-name" *matHeaderCellDef style="min-width: 210px" fxFlex="0 0 220px">
+            <mat-select [formControl]="getStatusFormControl()" multiple placeholder="Status">
+              <mat-option *ngFor="let status of statuses" [value]="status">{{ 'enum.orderStatus.' + status | transloco }}</mat-option>
+              <mat-option value="">Not defined</mat-option>
+            </mat-select>
+
+            <div mat-sort-header="status_status">
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let order" style="min-width: 210px" (click)="onRowClicked(order)" fxFlex="0 0 220px">
+            <div class="order-items" fxFlex="grow">
+              <ul>
+                <li>{{ order.status.status ? ('enum.orderStatus.' + order.status.status | transloco) : '' }}</li>
+                <li>Set: {{ order.status.author.ts | sgDateTimeFormat: 'dateTime' }}</li>
+              </ul>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 75px"> Duplication </mat-header-cell>
+          <mat-cell style="cursor: auto" *matCellDef="let order" fxFlex="0 0 75px">
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="onCopyButtonClick(order)"
+              matTooltip="CREATE DUPLICATE"
+              matTooltipShowDelay="1000"
+              matTooltipPosition="above"
+            >
+              <mat-icon>content_copy</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay$ | async; sticky: true"></mat-header-row>
+        <mat-row
+          *matRowDef="let order; columns: columnsToDisplay$ | async"
+          [ngClass]="{ paidNotFullyInvoiced: isPaidButNotFullyInvoiced(order) }">
+        </mat-row>
+      </mat-table>
+    </div>
+
+    <mat-paginator
+      [length]="count$ | async"
+      [pageSize]="(page$ | async)?.size"
+      [pageIndex]="(page$ | async)?.index"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="onPageChanged($event)"
+    >
+    </mat-paginator>
+  </form>
+</div>

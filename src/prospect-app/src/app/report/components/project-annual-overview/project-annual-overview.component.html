@@ -1,0 +1,14 @@
+<div class="border">
+  <ng-container *ngFor="let key of keys">
+
+    <div class="row" *ngIf="parseData(key) as parsed">
+      <div class="left">{{'project.dataLayer.' + key + '.name' | transloco}}</div>
+      <div class="right">{{key}}</div>
+      <div class="right">
+        <sg-unit-value [value]="parsed[1]" [unit]="parsed[0]"></sg-unit-value>
+        <sg-unit-label [unit]="parsed[0]"></sg-unit-label>
+      </div>
+    </div>
+
+  </ng-container>
+</div>

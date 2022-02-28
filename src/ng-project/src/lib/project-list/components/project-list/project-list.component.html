@@ -1,0 +1,122 @@
+<div class="project-list-wrapper">
+  <div class="scroll-nav-wrapper" [class.scroll-nav]="isScrollNav">
+    <nav mat-tab-nav-bar aria-label="prospect navigation links" color="primary">
+      <mat-tab-group [selectedIndex]="dataTabIndex$ | async" (selectedIndexChange)="toggleDataTab($event)">
+        <mat-tab [label]="'project.data.mapData' | transloco | uppercase">
+        </mat-tab>
+        <mat-tab [label]="'project.data.projectData' | transloco | uppercase">
+        </mat-tab>
+      </mat-tab-group>
+    </nav>
+  </div>
+
+  <div class="table-wrapper"
+    [ngStyle]="{'height': 'calc(100% - ' + tableBottomHeight + 'px);'}">
+    <mat-table [ngStyle]="{'width': tableWidth + 'px'}" [dataSource]="dataSource" matSort (matSortChange)="sortData($event)" matSortActive="name" matSortStart="asc" [trackBy]="trackById">
+      <!-- CHECKBOX COLUMN -->
+      <ng-container matColumnDef="checkbox">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox
+            [checked]="selectedState === 'MULTI_ALL'"
+            (change)="selectAll()"
+            [indeterminate]="selectedState === 'MULTI_SOME'">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox
+            [checked]="isChecked(isSelected[row._id], selectedState)"
+            (change)="selectProject(row, $event.checked, true)"
+            (click)="onCheckboxClick($event)"
+            [ngClass]="{'hide': selectedState === 'SINGLE' }">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="latest-data">
+        <mat-header-cell *matHeaderCellDef>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" >
+          <mat-icon *ngIf="!getProjectMetadataStatus(row, 'prospect').latest" [matTooltip]="'project.data.notLatest' | transloco" [svgIcon]="'sg:sgf-status-dot'"></mat-icon>
+        </mat-cell>
+      </ng-container>
+
+      <!-- NAME COLUMN -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef class="column-name" mat-sort-header [ngClass]="{'header-active': sort.active === 'name'}">
+          {{ 'project.field.name' | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="column-name" fxLayout>
+          <div fxFlex="grow" class="name">
+            <a [routerLink]="['/detail', row._id]">
+              {{ row.name }}
+            </a>
+            <mat-progress-spinner *ngIf="row.progress?.update?.name" mode="indeterminate" [diameter]="16" [strokeWidth]="2">
+            </mat-progress-spinner>
+          </div>
+          <sg-project-chips [freetrial]="row.freetrial"></sg-project-chips>
+          <div fxFlex style="display: flex; min-width: 0;">
+            <mat-menu #projectMenu="matMenu">
+              <sg-project-menu [showSettings]="false" component="list" [project]="row"
+                               (exportProjects)="exportProject(row)">
+              </sg-project-menu>
+            </mat-menu>
+            <button
+              mat-icon-button data-test="kebab-menu-button" [matMenuTriggerFor]="projectMenu"
+              (click)="selectProjectMenu(row, !isSelected[row._id]); $event.stopPropagation()">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- CREATED COLUMN -->
+      <ng-container matColumnDef="created">
+        <mat-header-cell *matHeaderCellDef class="data-cell column-name" mat-sort-header [ngClass]="{'header-active': sort.active === 'created'}">
+          {{ 'project.field.created' | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell">
+          {{ row.created?.ts | sgDateTimeFormat }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- DATA COLUMNS -->
+      <ng-container *ngFor="let col of dataLayerColumns$ | async" [matColumnDef]="col.layerKey">
+        <mat-header-cell *matHeaderCellDef class="data-cell" mat-sort-header [ngClass]="{'header-active': sort.active === col.layerKey}">
+          <div fxLayout="column">
+            <div class="column-name" fxFlex>
+              <sg-project-data-key [key]="col.layerKey"></sg-project-data-key>
+            </div>
+            <div fxFlex>
+              <sg-unit-label [unit]="unit(col)"></sg-unit-label>
+            </div>
+          </div>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" class="data-cell">
+          <sg-unit-value
+            *ngIf="hasValue(row, col); else noValue"
+            [unit]="unit(col)"
+            [value]="row.data[col.dataset]?.annual?.data[col.layerKey]">
+          </sg-unit-value>
+          <ng-template #noValue>-</ng-template>
+        </mat-cell>
+      </ng-container>
+
+      <!-- ROWS !-->
+      <mat-header-row [class.scroll-header]="isScrollHeader" *matHeaderRowDef="allColumns$ | async;"></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: allColumns$ | async"
+        (click)="selectProject(row, !isSelected[row._id])"
+        [ngClass]="{'highlighted': isSelected[row._id]}">
+      </mat-row>
+    </mat-table>
+  </div>
+  <div class="paginator-wrapper">
+    <mat-paginator
+      [pageSizeOptions]="[10, 20, 50, 100, 250]"
+      [length]="countTableItems$ | async"
+      [pageSize]="defaultPageSettings.pageSize"
+      (page)="pageChange($event)"
+      showFirstLastButtons>
+    </mat-paginator>
+  </div>
+</div>

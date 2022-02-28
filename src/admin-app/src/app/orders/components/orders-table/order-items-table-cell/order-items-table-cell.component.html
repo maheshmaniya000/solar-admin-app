@@ -1,0 +1,22 @@
+<ng-container *ngIf="downloadInvoiceStore.state$ | async as viewModel">
+  <div *ngFor="let item of invoicesByType(order, invoiceTypes)" class="invoice-item" fxLayout="column">
+    <button
+      mat-button
+      color="accent"
+      type="button"
+      matTooltip="Download invoice"
+      matTooltipShowDelay="1000"
+      [disabled]="viewModel.downloadingInvoice[item.invoiceCode]"
+      (click)="downloadInvoiceStore.downloadInvoiceForOrder(order, item.invoiceCode)"
+    >
+      <mat-spinner
+        *ngIf="viewModel.downloadingInvoice[item.invoiceCode] === true"
+        [diameter]="15"
+        style="display: inline-block"
+        color="warn"
+      >
+      </mat-spinner>
+      {{ item.invoiceCode }}
+    </button>
+  </div>
+</ng-container>

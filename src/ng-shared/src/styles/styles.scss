@@ -1,0 +1,181 @@
+/* You can add global styles to this file, and also import other style files */
+@use '~@angular/material' as mat;
+
+@import 'bootstrap';
+
+
+body {
+
+  mat-sidenav {
+    min-width: 15%;
+
+    [mat-button] {
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      margin: 24px 0;
+    }
+  }
+
+  mat-toolbar {
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
+
+a mat-icon {
+  cursor: pointer;
+}
+
+// Materialdesign hides overflown items in list by default
+// TODO: remove when https://github.com/angular/material2/issues/8517 is resolved
+mat-cell, mat-header-cell {
+  overflow: visible !important;
+}
+
+body {
+  margin: 0px;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+mat-icon {
+  font-family: 'Material Icons' !important;
+
+  svg {
+    width: 24px;
+  }
+}
+
+.mat-button-focus-overlay {
+  background-color: transparent!important;
+}
+
+.grecaptcha-badge { // makes google recaptcha badge invisible
+  display: none;
+}
+
+// NOT WORKING: imported as html tag in index
+// offline use: http://stackoverflow.com/questions/32014204/should-importing-material-design-icons-work-offline-with-my-current-code
+// @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+// Roboto font
+// @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=latin-ext");
+
+@import 'theme';
+
+@include mat.core();
+@include mat.all-component-themes($theme);
+
+@import 'common';
+@import 'recaptcha';
+
+/////////////////////
+// Global classes: //
+/////////////////////
+.snackbarError {
+  background-color: map-get($accent, 400);
+  color: white;
+  font-weight: bold;
+}
+.snackbarPass {
+  color: #0E0;
+}
+.snackbarTextCenter {
+  span {
+    margin: auto;
+  }
+}
+
+.mat-select-panel.higher-select-panel {
+  max-height: 52vh;
+}
+
+.mat-checkbox .mat-checkbox-ripple {
+  display: none;
+}
+
+a,button {
+  &.primary-button {
+    @include sg-button(md, red);
+    min-width: 96px;
+    font-family: Roboto;
+
+    &:disabled {
+      background-color: map_get($sg-gray, 200) !important;
+      color: map_get($sg-gray, 600) !important;
+      cursor: default;
+    }
+  }
+
+  &.secondary-button {
+    @include sg-button(md);
+    min-width: 96px;
+    font-family: Roboto;
+    min-height: 34px;
+  }
+
+  &.mini {
+    font-size: 11px;
+    letter-spacing: 0.28px;
+    min-width: 78px;
+    min-height: 24px;
+    border-radius: 4px;
+    margin: 0 12px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.primary-button-mini {
+    @include sg-button(xs, red);
+    span {
+      font-size: 11px!important;
+    }
+    max-height: 24px!important;
+    line-height: 24px!important;
+  }
+}
+
+
+[sgscrollcontainer]:not([sgscrollcontainer="custom"]) {
+  @include sg-scroll-container();
+
+  &[sgscrollcontainer="xs"] {
+    @include sg-scroll-container(xs);
+  }
+  &[sgscrollcontainer="sm"] {
+    @include sg-scroll-container(sm);
+  }
+  &[sgscrollcontainer="md"] {
+    @include sg-scroll-container(md);
+  }
+}
+
+@keyframes zoomSmallQuicky {
+	50% { transform: scale(1.2); }
+	100% { transform: scale(1); }
+}

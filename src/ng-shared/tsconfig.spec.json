@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "allowJs": true,
+    "types": ["jest", "node"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "files": ["../../tools/angular-test-setup.ts"],
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
+}

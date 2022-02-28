@@ -1,0 +1,92 @@
+@import 'theme';
+@import 'mixins/user-company';
+
+.profile-container {
+  max-width: 552px;
+  margin: auto;
+}
+
+.label {
+  font-size: $sg-14;
+  font-weight: $font-weight-regular;
+  line-height: 36px;
+  color: map-get($primary, 800);
+}
+
+.login {
+  padding: 1rem 0;
+  border-top: 1px solid map-get($primary, 300);
+}
+
+.change-password-btn,
+.change-units-btn {
+  font-size: $sg-13;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  line-height: 15px;
+  color: map-get($sg-red, 500);
+  cursor: pointer;
+  align-self: center;
+}
+
+.change-units-btn {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.languages-menu,
+.date-settings,
+.unit-settings {
+  padding-bottom: 1rem;
+
+  .languages,
+  .date-format {
+    font-size: $sg-14;
+    color: map-get($primary, 800);
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+
+    mat-icon {
+      line-height: 22px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.muted {
+  color: map-get($primary, 600);
+  font-weight: lighter;
+}
+
+.save-btn {
+  padding: $sg-12 $sg-24;
+
+  button {
+    @include sg-button(md, red);
+    line-height: 15px;
+    min-width: 96px;
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .btn-disabled {
+    @include sg-button(md, red-disabled);
+  }
+
+  .loading {
+    display: block;
+    line-height: 38px;
+    padding-right: 30px;
+
+    mat-spinner {
+      margin-left: auto;
+    }
+  }
+}

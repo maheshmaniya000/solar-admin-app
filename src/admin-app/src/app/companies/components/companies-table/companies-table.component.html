@@ -1,0 +1,171 @@
+<div>
+  <form [formGroup]="form" novalidate (keydown.enter)="$event.preventDefault()">
+
+    <div class="tableContent">
+      <mat-table [dataSource]="companies$" matSort style="width: 100%;">
+        <ng-container matColumnDef="checkbox">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 75px">
+            <mat-checkbox (click)="onSelectAllClick($event)"
+                          [checked]="allSelected$ | async"
+                          [indeterminate]="selection.hasValue() && (allSelected$ | async) === false">
+            </mat-checkbox>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let company" fxFlex="0 0 75px">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(company.sgCompanyId) : null"
+                          [checked]="selection.isSelected(company.sgCompanyId)">
+            </mat-checkbox>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="sgCompanyId">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 100px">
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="ID" name="sgCompanyId" formControlName="sgCompanyId" />
+            </mat-form-field>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let company" fxFlex="0 0 100px">
+            <span class="name">{{ company.sgCompanyId }}</span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Company name" name="name" formControlName="name" />
+            </mat-form-field>
+            <div mat-sort-header>
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let company" fxLayout>
+            <mat-icon *ngIf="company.isMainCompany">stars</mat-icon>
+            <div class="name" fxFlex="grow">
+              {{ company.name }}
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <div>
+                <input matInput
+                  placeholder="Country"
+                  [matAutocomplete]="auto"
+                  autocomplete="disabled"
+                  name="country"
+                  [formControl]="countryFormControl"
+                />
+                <mat-autocomplete #auto="matAutocomplete"
+                                  [displayWith]="countryDisplayFn"
+                                  (optionSelected)="onCountrySelected($event)"
+                >
+                  <mat-option *ngFor="let country of filteredCountries$ | async" [value]="country">
+                    <small>{{ country.name }}</small>
+                  </mat-option>
+                </mat-autocomplete>
+              </div>
+
+            </mat-form-field>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let company" fxLayout>
+            <div>{{ company.country?.name }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="City" name="city" formControlName="city" />
+            </mat-form-field>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let company" fxLayout>
+            <div>{{ company.city }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="street">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Street" name="street" formControlName="street" />
+            </mat-form-field>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let company" fxLayout>
+            <div>{{ company.street }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="contacts">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Contacts" name="contact" formControlName="contactEmail" />
+            </mat-form-field>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let company" class="contacts">
+            <div *ngFor="let contact of company.contacts">
+              {{contact.email}}
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="created">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <mat-label>Created</mat-label>
+              <mat-date-range-input formGroupName="created" [rangePicker]="createdPicker">
+                <input matStartDate name="start" formControlName="start" placeholder="Start date" />
+                <input matEndDate name="end" formControlName="end" placeholder="End date" />
+              </mat-date-range-input>
+              <sg-form-group-reset matSuffix [formGroup]="form.get('created')"></sg-form-group-reset>
+              <mat-datepicker-toggle matSuffix [for]="createdPicker"></mat-datepicker-toggle>
+              <mat-date-range-picker #createdPicker></mat-date-range-picker>
+            </mat-form-field>
+            <div mat-sort-header>
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+
+          <mat-cell *matCellDef="let company" fxFlex="0 0 160px">
+            {{ company.created | sgDateTimeFormat:'dateTime' }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="updated">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <mat-label>Updated</mat-label>
+              <mat-date-range-input formGroupName="updated" [rangePicker]="updatedPicker">
+                <input matStartDate name="start" formControlName="start" placeholder="Start date" />
+                <input matEndDate name="end" formControlName="end" placeholder="End date" />
+              </mat-date-range-input>
+              <sg-form-group-reset matSuffix [formGroup]="form.get('updated')"></sg-form-group-reset>
+              <mat-datepicker-toggle matSuffix [for]="updatedPicker"></mat-datepicker-toggle>
+              <mat-date-range-picker #updatedPicker></mat-date-range-picker>
+            </mat-form-field>
+            <div mat-sort-header>
+              <mat-icon>sort_by_alpha</mat-icon>
+            </div>
+          </mat-header-cell>
+
+          <mat-cell *matCellDef="let company" fxFlex="0 0 160px">
+            {{ company.updated | sgDateTimeFormat:'dateTime' }}
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let company; columns: columns"
+          (click)="onRowClicked(company)"
+          [ngClass]="{'-active': (selected$ | async)?.sgCompanyId === company.sgCompanyId}"
+        ></mat-row>
+      </mat-table>
+    </div>
+
+    <mat-paginator [length]="count$ | async"
+                   [pageSize]="(page$ | async)?.size"
+                   [pageIndex]="(page$ | async)?.index"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="onPageChanged($event)">
+    </mat-paginator>
+  </form>
+</div>

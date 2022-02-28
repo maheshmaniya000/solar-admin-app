@@ -1,0 +1,139 @@
+<mat-table [dataSource]="dataSource" matSort style="width: 100%">
+  <!-- CHECKBOX COLUMN -->
+  <ng-container matColumnDef="checkbox" *ngIf="!isEdit">
+    <mat-header-cell *matHeaderCellDef fxFlex="0 0 75px">
+      <mat-checkbox
+        [checked]="users?.length === selectedUsersCount()"
+        [indeterminate]="selectedUsersCount() > 0 && users?.length !== selectedUsersCount()"
+        (change)="selectAllUsers.emit($event.checked)">
+      </mat-checkbox>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let user; let i = index" fxFlex="0 0 75px">
+      <mat-checkbox
+        [checked]="selectedUsers[user.sgAccountId]"
+        (change)="selectUser.emit({ id: user.sgAccountId, checked: $event.checked })"
+        (click)="$event.stopPropagation()">
+      </mat-checkbox>
+    </mat-cell>
+  </ng-container>
+
+  <!-- NAME COLUMN -->
+  <ng-container matColumnDef="name" *ngIf="!isEdit">
+    <mat-header-cell *matHeaderCellDef mat-sort-header="firstName" fxFlex="0 0 150px">
+      {{ 'companyAdmin.subscription.users.name' | transloco }}
+    </mat-header-cell>
+    <mat-cell *matCellDef="let user" fxFlex="0 0 150px">
+      <span class="name" (click)="clickOnUser.emit(user)">{{ user | sgUserFullName }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <!-- DEVICES COLUMN -->
+  <ng-container matColumnDef="devices" *ngIf="!isEdit">
+    <mat-header-cell *matHeaderCellDef>
+      {{ 'companyAdmin.subscription.users.devices' | transloco }}
+    </mat-header-cell>
+    <mat-cell *matCellDef="let user">
+      <span>{{ userDevicesCount(user.sgAccountId) }} / {{ devicesPerUser }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <!-- EMAIL COLUMN -->
+  <ng-container matColumnDef="email" *ngIf="!isEdit">
+    <mat-header-cell *matHeaderCellDef mat-sort-header  fxFlex="0 0 250px">
+      {{'companyAdmin.subscription.users.email' | transloco}}
+    </mat-header-cell>
+    <mat-cell *matCellDef="let user" fxFlex="0 0 250px">
+      <span>{{ user.email }}</span>
+    </mat-cell>
+  </ng-container>
+
+
+ 
+
+
+  <ng-container matColumnDef="Tokenid" *ngIf="isEdit">
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="0 0 400px">
+      Token Id
+    </mat-header-cell>
+    <mat-cell *matCellDef="let user" fxFlex="0 0 400px">
+      <span>{{ user.tokenId }}</span>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="genartedate" *ngIf="isEdit">
+    <mat-header-cell *matHeaderCellDef mat-sort-header fxFlex="0 0 200px">
+      Generation Date
+    </mat-header-cell>
+    <mat-cell *matCellDef="let user" fxFlex="0 0 200px">
+      <span>{{ user.generationDate }}</span>
+    </mat-cell>
+  </ng-container>
+    <!-- GENERATION DATE COLUMN -->
+    <!-- <ng-container matColumnDef="generation_date" *ngIf="isTMY">
+      <mat-header-cell *matHeaderCellDef  fxFlex="0 0 180px">
+        {{'companyAdmin.subscription.users.tokenGenerationDate' | transloco}}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let user" fxFlex="0 0 180px">
+        <span>{{ user.tokenGenerationDate }}</span>
+      </mat-cell>
+    </ng-container> -->
+
+      <ng-container matColumnDef="active_token" *ngIf="isTMY && !isEdit">
+      <mat-header-cell *matHeaderCellDef  fxFlex="0 0 100px">
+        {{'companyAdmin.subscription.users.activeToken' | transloco}}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let user" fxFlex="0 0 100px">
+        <span>{{ user.status==='ACTIVE' ? "1" :"0" }}</span>
+      </mat-cell>
+    </ng-container>
+
+      <!-- ACTION COLUMN -->
+      <ng-container matColumnDef="action" *ngIf="isTMY && !isEdit">
+        <mat-header-cell *matHeaderCellDef  fxFlex="0 0 300px">
+          {{'companyAdmin.subscription.users.action' | transloco}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user" fxFlex="0 0 300px">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="generateToken(user)">   
+              {{'companyAdmin.subscription.users.generateToken' | transloco}}
+            </button>
+            <button mat-menu-item  *ngIf="user.status==='ACTIVE'" (click)="edittoken.emit(user)">
+              <!-- (click)="editToken(user)" -->
+              {{'companyAdmin.subscription.users.editToken' | transloco}}
+            </button>
+          </mat-menu>
+          <!-- <button style="margin-right: 4px;" mat-raised-button color="accent" *ngIf="!user.tokenGenerationDate" (click)="generateToken(user)">
+            {{'companyAdmin.subscription.users.generateToken' | transloco}}
+          </button>
+          <button style="margin-right: 22px;" mat-raised-button color="accent" *ngIf="user.tokenGenerationDate" (click)="regenerateToken(user)" >
+            {{'companyAdmin.subscription.users.regenerateToken' | transloco}}
+          </button>
+          <button style="margin-right: 4px;" mat-raised-button color="accent" *ngIf="user.tokenGenerationDate" (click)="deleteToken(user)">
+            {{'companyAdmin.subscription.users.deleteToken' | transloco}}
+          </button> -->
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action" *ngIf="isEdit">
+        <mat-header-cell *matHeaderCellDef fxFlex="0 0 300px">
+          {{'companyAdmin.subscription.users.action' | transloco}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user" fxFlex="0 0 300px">
+    
+          <button style="margin-right: 4px;" mat-raised-button color="accent" (click)="generateToken(user)">
+            {{'companyAdmin.subscription.users.regenerateToken' | transloco}}
+          </button>
+          <button style="margin-right: 4px;" mat-raised-button color="accent">
+            {{'companyAdmin.subscription.users.deleteToken' | transloco}}
+          </button>
+    
+        </mat-cell>
+      </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row *matRowDef="let user; columns: columns"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSize]="10"></mat-paginator>

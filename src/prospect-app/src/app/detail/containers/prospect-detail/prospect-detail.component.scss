@@ -1,0 +1,98 @@
+@import 'theme';
+
+:host > div {
+  height: 100%;
+}
+
+:host sg-alert-bar-container {
+  position: fixed;
+  width: 100%;
+}
+
+.container {
+  background-color: map-get($primary, 100);
+  height: max-content;
+  min-height: calc(100% - 64px);
+  width: 100%;
+  padding-top: $sg-48;
+}
+
+.section-title {
+  font-weight: 700;
+  line-height: 32px;
+  margin-left: 10px;
+  font-size: 18px;
+  color: map-get($sg-gray, 800);
+  display: flex;
+  align-items: center;
+}
+
+.inner-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: $sg-24 $sg-16;
+}
+
+.detail-content {
+  width: 100%;
+  max-width: $content-container-width;
+  margin: 0 auto;
+}
+
+.drawer-content {
+  height: 100%;
+  border-left: 1px solid map-get($primary, 300);
+}
+
+
+mat-drawer-container {
+  height: max-content;
+  min-height: calc(100% - 64px);
+}
+
+.mat-drawer-content {
+  min-height: calc(100vh - 128px);
+  height: fit-content;
+  overflow: unset;
+}
+
+
+.detail-spinner {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+
+  div {
+    align-self: center;
+  }
+}
+
+.no-pv-config {
+  color: map-get($primary, 800);
+  margin-bottom: 40px;
+
+  .close {
+    margin-top: -12px;
+  }
+  .row {
+    margin-top: $sg-8;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  sg-drawer-button, .separator {
+    display: none;
+  }
+}
+
+.separator {
+  width: 1px;
+  background: map-get($primary, 400);
+  margin: 0 10px;
+}
+
+.project-detail-title {
+  display: flex;
+  padding-bottom: $sg-16;
+  color: map-get($primary, 800);
+}

@@ -1,0 +1,32 @@
+<svg id="app-prospect" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f78d31"/>
+      <stop offset="0.719" stop-color="#f78d31"/>
+      <stop offset="1" stop-color="#ffa93f"/>
+    </radialGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_37234" data-name="Rectangle 37234" width="44" height="31.778"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" y1="0.5" x2="0.956" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffce48"/>
+      <stop offset="0.773" stop-color="#ffa93f"/>
+      <stop offset="1" stop-color="#ffa93f"/>
+    </linearGradient>
+  </defs>
+  <rect id="Rectangle_28629" data-name="Rectangle 28629" width="48" height="48" fill="none"/>
+  <g id="Group_18803" data-name="Group 18803" transform="translate(2 2)">
+    <rect id="Rectangle_38374" data-name="Rectangle 38374" width="44" height="44" fill="#adaeaf" opacity="0"/>
+    <rect id="Rectangle_38375" data-name="Rectangle 38375" width="44" height="44" fill="none"/>
+    <circle id="Ellipse_388" data-name="Ellipse 388" cx="22" cy="22" r="22" fill="url(#radial-gradient)"/>
+    <g id="Group_18755" data-name="Group 18755" transform="translate(0 6.111)">
+      <g id="Mask_Group_241" data-name="Mask Group 241" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <circle id="Ellipse_269" data-name="Ellipse 269" cx="22" cy="22" r="22" transform="translate(0 -6.111)" fill="url(#linear-gradient)"/>
+      </g>
+      <g id="Group_16832" data-name="Group 16832" transform="translate(12.571 5.937)">
+        <path id="Path_6175" data-name="Path 6175" d="M23.381,34.53,20.5,28.417A.728.728,0,0,0,19.843,28H17.007l-1.983,3.109a1.2,1.2,0,0,1-.162.2c-.016.016-.034.028-.05.043a1.281,1.281,0,0,1-.148.117.988.988,0,0,1-.089.049,1.116,1.116,0,0,1-.12.06c-.036.014-.073.025-.11.036a1.151,1.151,0,0,1-.113.03,1.09,1.09,0,0,1-.118.015c-.038,0-.077.008-.115.008s-.077,0-.115-.008a1.091,1.091,0,0,1-.118-.015,1.151,1.151,0,0,1-.113-.03c-.037-.011-.074-.022-.11-.036a1.117,1.117,0,0,1-.12-.06.988.988,0,0,1-.089-.049,1.281,1.281,0,0,1-.148-.117c-.016-.015-.034-.027-.05-.043a1.2,1.2,0,0,1-.162-.2L10.99,28H8.154a.728.728,0,0,0-.659.417L4.616,34.53a.476.476,0,0,0-.046.2.483.483,0,0,0,.485.481H22.942a.489.489,0,0,0,.205-.045A.479.479,0,0,0,23.381,34.53Z" transform="translate(-4.57 -16.358)" fill="#fff"/>
+        <path id="Path_6176" data-name="Path 6176" d="M18.22,18.768a.484.484,0,0,0,.152.149.493.493,0,0,0,.675-.149l4.211-6.551a5.081,5.081,0,0,0-.077-4.594,4.594,4.594,0,0,0-2.386-2.209,5.231,5.231,0,0,0-2.112-.451A5.126,5.126,0,0,0,13.5,10.031a4.955,4.955,0,0,0,.511,2.186Zm.413-10.42a1.684,1.684,0,1,1-1.711,1.683A1.7,1.7,0,0,1,18.633,8.348Z" transform="translate(-9.205 -4.963)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

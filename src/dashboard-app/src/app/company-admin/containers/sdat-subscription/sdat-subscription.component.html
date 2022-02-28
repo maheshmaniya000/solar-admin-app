@@ -1,0 +1,126 @@
+<ng-container *transloco="let t; read: 'companyAdmin'">
+  <mat-tab-group (selectedIndexChange)="selectedIndexChange($event)">
+    <mat-tab [label]="t('subscription.general')">
+      <mat-card>
+        <mat-card-title>{{ t('subscription.general') }}</mat-card-title>
+        <mat-card-content>
+          <ng-container *ngIf="subscription$ | async as subscription; else noSubscription">
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.type') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ 'common.subscriptionType.' + subscription?.type | transloco }}
+              </div>
+            </div>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.validFrom') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ subscription?.from | sgDateTimeFormat }}
+              </div>
+            </div>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.validTo') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ subscription?.to | sgDateTimeFormat }}
+              </div>
+            </div>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.users') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ t('subscription.usersLimit', { current: userCount, max: subscription.usersLimit }) }}
+              </div>
+            </div>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.deviceLimit') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ subscription?.devicesPerUser }}
+              </div>
+            </div>
+            <div fxLayout="column" fxLayout.gt-xs="row" class="row">
+              <div fxFlex.gt-xs="35%">
+                {{ t('sdatSubscription.general.offlineLimit') }}
+              </div>
+              <div fxFlex.gt-xs>
+                {{ subscription.offlineDuration }}
+                {{ t('sdatSubscription.general.offlineLimitUnit') }}
+              </div>
+            </div>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab [label]="t('subscription.users.title')" *ngIf="subscription$ | async as subscription;">
+      <mat-card>
+        <mat-card-content>
+          <sg-app-subscription-users
+            *ngIf="(companyUsers$ | async)?.length > 0; else noUsers"
+            [users]="companyUsers$ | async"
+            [selectedUsers]="selectedUsers"
+            [devices]="companyDevices$ | async"
+            [devicesPerUser]="(subscription$ | async)?.devicesPerUser"
+            (selectUser)="selectUser($event.id, $event.checked)"
+            (selectAllUsers)="selectAllUsers($event)"
+            (clickOnUser)="filterDevicesByUser($event)">
+          </sg-app-subscription-users>
+        </mat-card-content>
+        <mat-card-actions *ngIf="companyUsers$ | async as users">
+          <button mat-button class="primary-button" [disabled]="!changed || subscription.usersLimit < userCount" (click)="save(users)">
+            {{ 'common.action.save' | transloco }}
+          </button>
+          <div *ngIf="changed && subscription.usersLimit < userCount" class="userLimit">
+            {{ t('subscription.tooManyUsers', { userLimit: subscription.usersLimit }) }}
+          </div>
+          <div *ngIf="changed" class="notice">
+            {{ t('subscription.notice') }}
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab [label]="t('sdatSubscription.devices.title')" *ngIf="!!(subscription$ | async)">
+      <sg-sdat-subscription-devices
+        *ngIf="(companyDevices$ | async)?.length > 0; else noDevices"
+        [devices]="companyDevices$ | async"
+        [users]="companyUsers$ | async"
+        [filter]="filterUser"
+        [columns]="['userName', 'email', 'customName', 'hostName']"
+        (resetFilter)="filterUser = null"
+        (updateDevice)="updateDevice($event)">
+      </sg-sdat-subscription-devices>
+    </mat-tab>
+  </mat-tab-group>
+
+  <ng-template #noSubscription>
+    <ng-container *ngIf="!loading; else spinner">
+      {{ t('sdatSubscription.general.none') }}
+    </ng-container>
+  </ng-template>
+
+  <ng-template #noUsers>
+    {{ t('subscription.users.none') }}
+  </ng-template>
+
+  <ng-template #noDevices>
+    <mat-card>
+      <mat-card-content>
+        {{ t('sdatSubscription.devices.none') }}
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+
+  <ng-template #spinner>
+    <div style="overflow: hidden">
+      <mat-spinner mode="indeterminate" [diameter]="25" style="margin: auto"></mat-spinner>
+    </div>
+  </ng-template>
+</ng-container>

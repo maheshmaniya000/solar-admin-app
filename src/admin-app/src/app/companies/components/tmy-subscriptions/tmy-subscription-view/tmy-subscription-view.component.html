@@ -1,0 +1,198 @@
+<div *ngIf="mode === componentMode.view; else subscriptionAddTemplate">
+    <sg-fullscreen-dialog-toolbar *ngIf="!tokenDataShow" headline="Edit TMY API" subheadline="Admin" (onClose)="onCloseClick()"></sg-fullscreen-dialog-toolbar>
+    <sg-fullscreen-dialog-toolbar *ngIf="tokenDataShow" headline="View Tokens" [subheadline]="displayname" (onClose)="onCloseClick()"></sg-fullscreen-dialog-toolbar>
+
+    <ng-container>
+      <mat-tab-group  (selectedTabChange)="onTabChanged();">
+        <mat-tab label="General">
+          <div class="tmy-container">
+            <form [formGroup]="form">
+              
+                <div>
+                  <mat-label>Subscription type: </mat-label>
+                  <mat-form-field>
+                    <mat-select formControlName="tmysubType">
+                      <mat-option *ngFor="let tmysubType of tmysubscriptionTypes" [value]="tmysubType">
+                        {{ tmysubType }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div>
+                  <mat-label>Subscription ID: </mat-label>
+                  <mat-form-field>
+                    <input matInput formControlName="subId" type="text">
+                  </mat-form-field>
+                </div>
+
+                <div>
+                  <mat-label>Valid from: </mat-label>
+                  <mat-form-field>
+                    <input matInput formControlName="from" [matDatepicker]="fromPicker">
+                    <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #fromPicker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+
+              <div>
+                <mat-label>Valid to: </mat-label>
+                <mat-form-field>
+                  <input matInput formControlName="to" [matDatepicker]="toPicker">
+                  <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+                  <mat-datepicker #toPicker></mat-datepicker>
+                </mat-form-field>
+              </div>
+
+              <div>
+                <mat-label>Original calls: </mat-label>
+                <mat-form-field>
+                  <input matInput formControlName="originalCalls" type="number" step="1">
+                </mat-form-field>
+              </div>
+
+              <div>
+                <mat-label>Remaining calls: </mat-label>
+                <mat-form-field>
+                  <input matInput formControlName="remainingCalls" type="number" step="1">
+                </mat-form-field>
+              </div>
+
+              
+              <div>
+                <mat-label>Subscription consumption: </mat-label>
+                <mat-slide-toggle formControlName="consumption"></mat-slide-toggle>
+              </div>
+              
+
+            </form>
+          </div>
+          <ng-container *ngTemplateOutlet="toolbar; context: { canDelete: true }"></ng-container>
+        </mat-tab>
+  
+        <mat-tab label="User tokens">
+          <div *ngIf="!tokenDataShow">
+            <sg-app-subscription-users
+              *ngIf="companyUsers?.length > 0; else noUsers"
+              [users]="companyUsers"
+              [isTMY]=true
+              [isEdit]=false
+              [selectedUsers]="selectedUsers"
+              (selectUser)="selectUser($event.id, $event.checked)"
+              (selectAllUsers)="selectAllUsers($event)"
+              (edittoken)="edittoken($event)"
+              >
+            </sg-app-subscription-users>
+    
+            <ng-container *ngTemplateOutlet="toolbar; context: { canDelete: false }"></ng-container>
+          </div>
+          <div *ngIf="tokenDataShow">
+            <sg-app-subscription-users [isEdit]=true [tokenData]="tokenData" (edittoken)="edittoken($event)">
+            </sg-app-subscription-users>
+            <ng-container *ngTemplateOutlet="toolbaredit; context: { canEdit: false }"></ng-container>
+
+            
+          </div>
+        </mat-tab>
+        <mat-tab label="Userless token">
+          
+        </mat-tab>
+      </mat-tab-group>
+    </ng-container>
+  </div>
+  
+  <ng-template #toolbar let-canDelete="canDelete">
+    <div class="toolbar">
+      <button mat-raised-button color="accent" *ngIf="!savingOrDeleting" (click)="save()">
+        Save
+      </button>
+      <button mat-raised-button color="accent" *ngIf="!savingOrDeleting && canDelete" (click)="delete()">
+        Delete TMY subscription
+      </button>
+  
+      <mat-progress-spinner mode="indeterminate" *ngIf="savingOrDeleting" [diameter]="30"></mat-progress-spinner>
+    </div>
+  </ng-template>
+  
+  <ng-template #toolbaredit let-canEdit="canEdit">
+    <div class="toolbar">
+      <button mat-button class="primary-button" (click)="closeEditToken()">
+        {{ 'common.action.close' | transloco }}
+      </button>
+      <button mat-button class="primary-button" (click)="closeEditToken()">
+        New Token
+      </button>
+    </div>
+  </ng-template>
+  <ng-template #noUsers>
+    <mat-card class="no-license">No users found.</mat-card>
+  </ng-template>
+
+  <ng-template #subscriptionAddTemplate>
+    <div>
+      <sg-fullscreen-dialog-toolbar headline="Create TMY API" subheadline="Admin" (onClose)="onCloseClick()"></sg-fullscreen-dialog-toolbar>
+      <ng-container>
+        <mat-tab-group>
+          <mat-tab label="General">
+            <div class="tmy-container">
+              <form [formGroup]="form">
+                <div>
+                  <mat-label>Subscription type: </mat-label>
+                  <mat-form-field>
+                    <mat-select formControlName="tmysubType">
+                      <mat-option *ngFor="let tmysubType of tmysubscriptionTypes" [value]="tmysubType">
+                        {{ tmysubType }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div>
+                  <mat-label>Valid from: </mat-label>
+                    <mat-form-field>
+                      <input matInput formControlName="from" [matDatepicker]="fromPicker">
+                      <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+                      <mat-datepicker #fromPicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+  
+                <div>
+                  <mat-label>Valid to: </mat-label>
+                  <mat-form-field>
+                    <input matInput formControlName="to" [matDatepicker]="toPicker">
+                    <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #toPicker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+
+                <div>
+                  <mat-label>Original calls: </mat-label>
+                  <mat-form-field>
+                    <input matInput formControlName="usersLimit" type="number" step="1">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-label>Subscription consumption: </mat-label>
+                  <mat-slide-toggle formControlName="consumption"></mat-slide-toggle>
+                </div>
+              </form>
+            </div>
+            <ng-container *ngTemplateOutlet="toolbar; context: { canDelete: true }"></ng-container>
+          </mat-tab>
+    
+          <mat-tab label="User tokens">
+            <sg-app-subscription-users
+              *ngIf="companyUsers?.length > 0; else noUsers"
+              [users]="companyUsers"
+              [isTMY]=true
+              [selectedUsers]="selectedUsers"
+              (selectUser)="selectUser($event.id, $event.checked)"
+              (selectAllUsers)="selectAllUsers($event)">
+            </sg-app-subscription-users>
+    
+            <ng-container *ngTemplateOutlet="toolbar; context: { canDelete: false }"></ng-container>
+          </mat-tab>
+        </mat-tab-group>
+      </ng-container>
+    </div>
+  </ng-template>

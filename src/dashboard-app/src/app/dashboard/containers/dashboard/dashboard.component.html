@@ -1,0 +1,7 @@
+<ng-container *ngIf="(isLoading$ | async) !== true; else loading">
+  <router-outlet></router-outlet>
+</ng-container>
+
+<ng-template #loading>
+  <mat-spinner diameter="32" style="margin: auto; margin-top: 250px;"></mat-spinner>
+</ng-template>

@@ -1,0 +1,118 @@
+@import 'theme';
+
+:host {
+  ::ng-deep {
+    .mat-dialog-content {
+      padding: 1px 0 !important;
+      border-top: 1px solid map-get($primary, 200);
+      border-bottom: 1px solid map-get($primary, 200);
+    }
+
+    mat-dialog-content {
+      margin: 0 !important;
+    }
+
+    .content {
+      padding: 0 !important;
+    }
+
+    .title, .actions {
+      padding: $sg-24 !important;
+    }
+
+    .actions {
+      width: 100%;
+
+      hr {
+        display: none;
+      }
+
+      .sg-dialog-actions {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .tag-dialog-new {
+    width: 100%;
+    margin-top: $sg-24;
+    margin-bottom: -$sg-16;
+
+    input {
+      box-sizing: border-box;
+      font-size: $sg-14;
+      margin: 0;
+      padding: 0 $sg-12;
+      width: 100%;
+      height: $sg-36;
+      line-height: $sg-36;
+      outline: 0;
+      border: 1px solid map-get($primary, 400);
+      display: block;
+      border-radius: $sg-4;
+
+      &.ng-invalid.ng-touched {
+        border-color: map-get($accent, default);
+      }
+    }
+
+    .submit {
+      width: $sg-36;
+      height: $sg-36;
+      outline: 0;
+      margin-left: $sg-8;
+    }
+  }
+
+  .tag-dialog-content {
+    overflow: hidden;
+
+    .tag {
+      height: 40px;
+      line-height: 40px;
+      font-size: $sg-14;
+      padding: 0 $sg-24;
+
+      .name {
+        padding-right: $sg-48;
+      }
+
+      mat-icon {
+        font-size: $sg-20;
+      }
+    }
+
+    .empty {
+      padding: 0 $sg-24;
+      line-height: 40px;
+    }
+
+    .mat-input-element {
+      background: 0 0;
+      color: currentColor;
+      border: none;
+      outline: 0;
+      width: 100%;
+      padding-left: $sg-12;
+    }
+
+    .selectedInput {
+      border: 1px solid map-get($primary, 300);
+      border-radius: $sg-4;
+      height: 40px;
+    }
+
+    input {
+      &.ng-invalid.ng-touched {
+        color: map-get($accent, default);
+      }
+    }
+  }
+
+  .tag-dialog-actions {
+    .primary {
+      @include sg-button(lg, red);
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<h3>{{ 'companyAdmin.api.common.freeTrialRequest' | transloco }}</h3>
+
+<div class="row" [formGroup]="form">
+  <div class="col-12">
+    <p class="margin-bottom font-weight-bold">{{ callingCode }} {{ phone }}</p>
+  </div>
+  <div class="col-12 col-sm-6 pr-sm-2">
+    <mat-form-field floatLabel="always">
+      <mat-label>{{ 'user.company.freeTrial.code' | transloco }}</mat-label>
+      <input type="text" matInput name="otp" formControlName="otp" />
+    </mat-form-field>
+  </div>
+  <div class="col-12 col-sm-6 pl-sm-2">
+    <p class="inline-paragraph"><a (click)="sendAgainClick.emit()">{{ 'user.company.freeTrial.sendAgain' | transloco }}</a></p>
+  </div>
+</div>

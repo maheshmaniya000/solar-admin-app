@@ -1,0 +1,10 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $background: map-get($color-config, background);
+
+  .sg-container {
+    background-color: mat.get-color-from-palette($background, card);
+  }
+}

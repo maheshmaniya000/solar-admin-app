@@ -1,0 +1,29 @@
+@import 'theme';
+
+sg-admin-origin-data {
+  display: block;
+  width: 50%;
+  padding-top: 1rem;
+}
+
+.users {
+  .mat-icon {
+    cursor: pointer;
+
+    &:hover {
+      color: map_get($accent, 500);
+    }
+  }
+
+  .mat-icon.-active {
+    color: map_get($accent, 500);
+  }
+  .mat-icon.-not-active {
+    &:hover {
+      color: black;
+    }
+  }
+  .-default-cursor {
+    cursor: default;
+  }
+}

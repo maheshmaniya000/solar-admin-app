@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionComponent component should match snapshot with transcluded section with header 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+>
+  <sg-section>
+    <h6
+      class="header"
+    >
+      Some header
+    </h6>
+    <section>
+      <section>
+        Some transcluded 
+        <b>
+          content
+        </b>
+      </section>
+    </section>
+  </sg-section>
+</ng-component>
+`;
+
+exports[`SectionComponent component should match snapshot with transcluded section without header 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+>
+  <sg-section>
+    <section>
+      <section>
+        Some transcluded 
+        <b>
+          content
+        </b>
+      </section>
+    </section>
+  </sg-section>
+</ng-component>
+`;

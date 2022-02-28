@@ -1,0 +1,9 @@
+<sg-toolbar>
+  <!-- LEFT -->
+  <sg-drawer-button class="drawer-button"></sg-drawer-button>
+  <div class="separator"></div>
+  <button mat-icon-button (click)="back()" *ngIf="route.data.parent">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <div class="title">{{ (route ? route.data?.nav?.name : 'header.company-admin') | transloco }}</div>
+</sg-toolbar>

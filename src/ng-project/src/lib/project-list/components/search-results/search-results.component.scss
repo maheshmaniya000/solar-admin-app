@@ -1,0 +1,67 @@
+@use '~@angular/material' as mat;
+@import 'theme';
+
+// https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
+
+@mixin search-results-theme($theme) {
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+
+  :host ::ng-deep {
+    mat-list-item.highlight {
+      background-color: mat.get-color-from-palette($background, hover);
+    }
+
+    mat-list-item {
+      border-bottom: 1px solid map-get($primary, 200);
+    }
+
+    mat-list-item, mat-list-item .mat-list-item-content {
+      height: 62px !important;
+    }
+
+    mat-list-item .mat-list-text {
+      padding-left: 50px !important;
+    }
+
+    .result-number {
+      color: map-get($map: $sg-red, $key: 500);
+      font-weight: $font-weight-medium;
+      position: absolute;
+      left: $sg-24;
+    }
+
+    h5 {
+      color: map-get($primary, 900);
+      font-size: 11pt !important;
+      font-weight: $font-weight-medium !important;
+    }
+
+    small {
+      font-size: 9pt;
+      color: map-get($primary, 600);
+    }
+  }
+}
+
+@include search-results-theme($theme);
+
+.icon {
+  mat-icon {
+    font-size: 40px;
+    width: 50px;
+    color: map-get($primary, 600);
+  }
+}
+
+.name {
+  color: map-get($primary, 900);
+  font-weight: $font-weight-medium;
+  font-size: 14.5px;
+}
+
+.address {
+  font-size: $sg-14;
+  font-weight: $font-weight-regular;
+  color: map_get($sg-gray, 600);
+}

@@ -1,0 +1,12 @@
+<ng-container [formGroup]="formGroup">
+  <mat-form-field class="vat">
+    <input type="number" placeholder="VAT" matInput formControlName="VAT" />
+    <mat-hint align="start">VAT in %</mat-hint>
+    <span matSuffix>%</span>
+  </mat-form-field>
+  <mat-form-field class="price">
+    <input [value]="(orderDetailStore.viewModel$| async).totals?.priceWithVAT | number:'1.2-2':'en'" matInput readonly />
+    <mat-hint align="start">Total price of order for all items (discount included)</mat-hint>
+    <span matSuffix>{{ orderDetailStore.currency$ | async }}</span>
+  </mat-form-field>
+</ng-container>

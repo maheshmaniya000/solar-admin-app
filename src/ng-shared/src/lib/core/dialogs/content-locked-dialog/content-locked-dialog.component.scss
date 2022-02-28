@@ -1,0 +1,49 @@
+@import 'theme';
+
+img {
+  display: block;
+  margin: 25px auto;
+  width: 100%;
+  max-width: #{ $sg-content-locked-dialog-content-width };
+  height: auto;
+}
+
+.dialog-heading {
+  text-align: center;
+  font: bold 24px/30px Roboto;
+  color: map-get($sg-gray, 800);
+  margin-bottom: 8px;
+}
+
+.dialog-text {
+  text-align: center;
+  font: Regular 15px/22px Roboto;
+  color: map-get($sg-gray, 800);
+  max-width: #{ $sg-content-locked-dialog-content-width };
+  margin: 0 auto 8px auto;
+
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+  button {
+    margin: 12px 12px 0 12px;
+    min-width: 176px;
+    height: 40px;
+  }
+}
+
+.bullet-points {
+  max-width: #{ $sg-content-locked-dialog-content-width };
+}
+
+@media(min-width: 700px) {
+  .dialog-heading {
+    width: 576px;
+  }
+}
+

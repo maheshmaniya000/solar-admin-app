@@ -1,0 +1,23 @@
+<cdk-table #table [dataSource]="dataSource" class="data-table">
+
+  <ng-container cdkColumnDef="type">
+    <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+    <cdk-cell *cdkCellDef="let row">{{ 'pvConfig.params.snowSoilingLosses.' + row.type | transloco }}</cdk-cell>
+  </ng-container>
+
+  <ng-container *ngFor="let key of months" [cdkColumnDef]="key">
+    <cdk-header-cell *cdkHeaderCellDef fxLayout="column">
+      <div>{{ key | transloco }}</div>
+      <div class="subheader">
+        <sg-unit-label [unit]="unit"></sg-unit-label>
+      </div>
+    </cdk-header-cell>
+    <cdk-cell *cdkCellDef="let row">
+      <sg-unit-value [unit]="unit" [value]="row[key]"></sg-unit-value>
+    </cdk-cell>
+  </ng-container>
+
+  <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+  <cdk-row *cdkRowDef="let row; columns: columns"></cdk-row>
+
+</cdk-table>

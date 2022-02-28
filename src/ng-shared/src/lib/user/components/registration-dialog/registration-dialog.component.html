@@ -1,0 +1,113 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading" *ngIf="!registrationResult || !registrationResult.status">{{ 'auth.registration.createUserAccount' | transloco }}</div>
+  <div class="sg-dialog-close-button" *ngIf="!registrationResult || !registrationResult.status">
+    <button mat-icon-button (click)="close()"><mat-icon>close</mat-icon></button>
+  </div>
+
+  <div class="sg-dialog-content auth-dialog-content" *ngIf="(ipGeolocation$ | async); else spinner">
+
+    <!-- Result message after registration process -->
+    <div *ngIf="(registrationResult && !registrationResult.status) || otpError != null" class="error">
+      <mat-error *ngIf="registrationResult && registrationResult?.messageCode">
+        {{ registrationResult.messageCode | transloco }}
+      </mat-error>
+      <mat-error *ngIf="otpError != null"><sg-translation [str]="otpError"></sg-translation></mat-error>
+    </div>
+
+    <sg-success-message *ngIf="registrationResult && registrationResult.status"
+                        [heading]="opts.companyInvitationTokenId ? 'auth.registration.accountCreatedAfterInvitation' : 'auth.registration.accountCreated'"
+                        [message]="opts.companyInvitationTokenId ? null : registrationResult.messageCode"
+                        [buttonText]="'Get started'"
+                        (buttonClick)="close()">
+    </sg-success-message>
+
+    <!-- Main registration form (email + password) -->
+    <ng-container *ngIf="!registrationResult || !registrationResult.status">
+      <div class="loading" [hidden]="!isRegistering">
+        <ng-container *ngTemplateOutlet="spinner; context: {diameter: 64}"></ng-container>
+      </div>
+      <form [formGroup]="form" (keydown.enter)="clickOnEnter($event)" novalidate [hidden]="isRegistering">
+        <mat-horizontal-stepper formArrayName="fields" #stepper
+                                (selectionChange)="stepChanged($event.selectedIndex)">
+          <mat-step>
+            <sg-registration-dialog-form [email]="data?.email"
+                                         [emailHidden]="!!(opts?.disableEmailEdit && data?.email)"
+                                         [companyHidden]="opts?.disableCompanyCreation"
+                                         (output)="registrationForm = $event">
+            </sg-registration-dialog-form>
+          </mat-step>
+
+          <mat-step>
+            <sg-free-trial-form-step [displayTitle]="true"
+                                     (output)="onOtpOutput($event)"
+                                     (otpError)="onOtpError($event)"
+                                     (captchaChange)="otpCaptcha = $event">
+            </sg-free-trial-form-step>
+          </mat-step>
+
+          <mat-step formGroupName="0" [stepControl]="fields.get([0])">
+            <sg-otp-form-step [phone]="freeTrialForm?.phone"
+                              [callingCode]="freeTrialForm?.phoneCode?.callingCode"
+                              (otpChange)="fields.get([0]).get('otp').setValue($event)"
+                              (sendAgainClick)="back()">
+            </sg-otp-form-step>
+          </mat-step>
+
+          <mat-step formGroupName="1" [stepControl]="fields.get([1])">
+            <h3>{{ 'auth.confirmTerms.terms' | transloco }}</h3>
+
+            <sg-terms-and-conditions></sg-terms-and-conditions>
+
+            <p><a class="accent-link" href="https://solargis.com/legal/solargis-apps-terms-of-use/" target="_blank">
+              {{ 'auth.confirmTerms.termsAgreeConfirm' | transloco }}
+            </a></p>
+
+            <mat-checkbox formControlName="confirmed" [disableRipple]="true">
+              <p class="m-0">{{ 'auth.confirmTerms.title' | transloco }}</p>
+            </mat-checkbox>
+
+            <div class="recaptcha-container col-12"
+                 [ngClass]="{'-invalid-recaptcha': confirmed?.invalid && confirmed?.touched}">
+              <sg-captcha *ngIf="stepper.selectedIndex === 3"
+                          class="recaptcha-registration"
+                          action="registration"
+                          (onSuccess)="handleCaptcha($event)">
+              </sg-captcha>
+            </div>
+
+            <input type="hidden" name="captchaType" formControlName="captchaType" />
+          </mat-step>
+        </mat-horizontal-stepper>
+      </form>
+    </ng-container>
+  </div>
+
+  <div class="sg-dialog-actions auth-dialog-actions"
+       *ngIf="!isRegistering && (!registrationResult || (registrationResult && !registrationResult.status))">
+
+    <button class="secondary-button" (click)="back()"
+            *ngIf="stepper?.selectedIndex >= 1">
+      <span>{{ 'common.action.back' | transloco }}</span>
+    </button>
+
+    <button
+      *ngIf="stepper?.selectedIndex === 1"
+      class="secondary-button"
+      (click)="skipTrial()">
+      {{ 'user.company.action.trialLater' | transloco }}
+    </button>
+
+    <button
+      sgDebounceClick (debounceClick)="next()" [debounceTime]="700"
+      class="primary-button"
+      [disabled]="isNextButtonDisabled()">
+      {{ actionName() | transloco }}
+    </button>
+  </div>
+</sg-dialog-deprecated>
+
+<ng-template #spinner let-diameter="diameter">
+  <div style="overflow: hidden;">
+    <mat-spinner [diameter]="diameter || 22" color="accent" class="loading"></mat-spinner>
+  </div>
+</ng-template>

@@ -1,0 +1,132 @@
+<sg-toolbar>
+  <!-- LEFT -->
+  <ng-container *ngIf="(showFilter$ | async) && (isLoggedIn$ | async)">
+    <sg-drawer-button class="drawer-button"></sg-drawer-button>
+    <div class="separator"></div>
+    <sg-project-filter-toolbar [filter]="filter$ | async" class="title"></sg-project-filter-toolbar>
+  </ng-container>
+
+  <!-- RIGHT -->
+  <ng-container *transloco="let t" class="sg-toolbar-right">
+
+    <div class="d-none d-md-flex">
+
+      <div *ngIf="componentName !== 'map' && isProjectSelected" class="toolbar-main-actions">
+        <button (click)="openProject()" class="primary-button">
+          {{ t('common.action.open') }}
+        </button>
+        <button mat-icon-button (click)="renameProject()" color="primary" class="hide rename-button">
+          <mat-icon>create</mat-icon>
+        </button>
+      </div>
+
+      <button *ngIf="projectToClaimFreetrial$ | async" mat-button (click)="claimFreetrial()"
+              [title]="t('project.action.claimFreetrial')">
+        <mat-icon>local_offer</mat-icon>
+        <span>{{ t('project.action.claimFreetrial') }}</span>
+      </button>
+
+      <button *ngIf="isProjectSelected" mat-icon-button (click)="addTo()" [title]="t('project.toolbar.addTag')">
+        <mat-icon>label_outline</mat-icon>
+      </button>
+
+      <ng-container *ngIf="isProjectSelected">
+        <ng-container *ngIf="(project$ | async)?.status === 'archived'; else projectNotArchived">
+          <button mat-icon-button color="accent" [title]="t('project.toolbar.unarchive')" (click)="updateStatus('active', true)">
+            <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+          </button>
+          <button mat-icon-button [title]="t('project.toolbar.delete')" (click)="delete()">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </ng-container>
+        <ng-template #projectNotArchived>
+          <button mat-icon-button [title]="t('project.toolbar.archive')" (click)="updateStatus('archived', true)">
+            <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+          </button>
+        </ng-template>
+
+        <button *ngIf="transferAvailable$ | async" mat-icon-button [title]="t('project.action.transfer')" (click)="transfer()">
+          <mat-icon svgIcon="sg:sgf-transfer"></mat-icon>
+        </button>
+
+        <button mat-icon-button [title]="t('export.title')" (click)="exportProjects()">
+          <mat-icon>import_export</mat-icon>
+        </button>
+
+        <button *ngIf="updateDataAvailable$ | async" mat-icon-button [title]="t('project.action.updateProjectData')" (click)="openUpdateDataDialog()">
+          <mat-icon svgIcon="sg:sgf-reload"></mat-icon>
+        </button>
+      </ng-container>
+
+      <button *ngIf="componentName === 'map'" mat-icon-button [title]="t('project.share.share')" (click)="openShareDialog()">
+        <mat-icon>share</mat-icon>
+      </button>
+      <div class="separator"></div>
+    </div>
+
+    <sg-search-input [showingSearchResults]="!!(searchResults$ | async)?.length"
+      (onSelectSite)="selectSiteFromSearch($event)"
+      (onShowResults)="showSearchResults($event)"
+      (onClearResults)="clearSearchResults()"
+      (onSelectProject)="selectProject($event)"
+      (foundProjects) = "foundProjects.emit($event)"
+      (onSearchQuery)="onSearchQuery.emit($event)"
+      [componentName]="componentName">
+    </sg-search-input>
+
+    <div class="d-none d-md-flex">
+      <button mat-button [title]="t('compare.compare')" (click)="compare()" [disabled]="(hasCompareAccess$ | async) === false">
+        <mat-icon svgIcon="sg:sgf-compare"></mat-icon>
+        <span>{{ t('compare.compare') }}</span>
+      </button>
+
+      <ng-container *ngIf="componentName !== 'map'">
+        <button mat-icon-button
+                class="d-none d-xl-block"
+                (click)="toggleListSidebarState('map')"
+                [ngClass]="{'highlighted': sidebarState === 'map'}">
+          <mat-icon>map</mat-icon>
+        </button>
+
+        <button mat-icon-button
+                class="d-none d-xl-block"
+                (click)="toggleListSidebarState('info')"
+                [ngClass]="{'highlighted': sidebarState === 'info'}">
+          <mat-icon>info</mat-icon>
+        </button>
+      </ng-container>
+
+      <div class="settings-menu">
+        <sg-settings-menu class="settings-menu"
+          (openLayerSettings)="openLayerSettings()"
+          (openUnitSettings)="openUnitSettings()"
+          [componentName]="componentName">
+        </sg-settings-menu>
+      </div>
+    </div>
+
+    <div class="d-block d-md-none">
+      <mat-menu #actionMenu="matMenu">
+        <sg-project-menu
+          showUnits="true"
+          showSettings="true"
+          (openShareDialog)="openShareDialog()"
+          (openLayerSettings)="openLayerSettings()"
+          (openUnitSettings)="openUnitSettings()"
+          (exportProjects)="exportProjects()"
+          [componentName]="componentName"
+          [project]="project$ | async">
+        </sg-project-menu>
+      </mat-menu>
+
+      <button mat-icon-button [matMenuTriggerFor]="actionMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+
+  </ng-container>
+
+</sg-toolbar>
+
+
+

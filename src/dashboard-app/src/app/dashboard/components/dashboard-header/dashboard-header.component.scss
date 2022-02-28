@@ -1,0 +1,76 @@
+@use '~@angular/material' as mat;
+@import 'theme';
+
+.wrapper-header {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 1rem;
+  padding: $sg-36 0px;
+
+  @include media-breakpoint-down(xs) {
+    & {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    mat-card-title,
+    mat-card-subtitle,
+    mat-card-actions {
+      text-align: center;
+    }
+  }
+
+  mat-card {
+    box-shadow: none;
+  }
+
+  mat-card-title {
+    color: map-get($primary, 900);
+    font-size: $sg-20;
+  }
+
+  mat-card-subtitle {
+    color: map-get($primary, 700);
+    font-size: $sg-14;
+  }
+
+  mat-card-actions,
+  mat-card-subtitle {
+    margin: 0px;
+  }
+
+  .accent-link {
+    font-size: $sg-14;
+    color: map-get(mat.$red-palette, 600);
+    text-decoration: none;
+  }
+
+  .left-header {
+    display: grid;
+    grid-template-columns: 30% auto;
+
+    @include media-breakpoint-down(xs) {
+      grid-template-columns: auto;
+    }
+
+    mat-card-content {
+      justify-self: stretch;
+    }
+  }
+
+  .right-header {
+    @include media-breakpoint-up(md) {
+      grid-column: 3 / span 1;
+    }
+
+    mat-card-title {
+      font-size: $sg-14;
+    }
+
+    mat-card-actions {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 0.5rem;
+    }
+  }
+}

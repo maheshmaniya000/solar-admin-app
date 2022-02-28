@@ -1,0 +1,27 @@
+
+<mat-card>
+  <div class="headline">
+    <mat-icon>check_circle</mat-icon>
+    <span>{{ 'payment.cart.step1.name' | transloco }}</span>
+    <button mat-button color="accent" [routerLink]="['..', '1']">
+        <mat-icon>edit</mat-icon>&nbsp;{{ 'common.action.edit' | transloco }}
+    </button>
+  </div>
+
+  <div class="content">
+    <div *ngFor="let product of products$ | async">
+      <div class="row">
+        <b>{{ getProductNameTranslation(product.product) | transloco }}</b>
+        <div class="divider">{{ divider }}</div>
+        {{ 'payment.cart.step1.subscription' | transloco }}: {{ 'payment.cart.step1.annual' | transloco }}
+        <div class="divider">{{ divider }}</div>
+        {{ 'payment.cart.step1.users' | transloco }}: {{ product.users }}
+      </div>
+      <div class="row">
+        {{ 'payment.cart.step1.total' | transloco }}: {{ product.price }} €
+        <div class="divider">{{ divider }}</div>
+        {{ 'payment.cart.step1.withoutVAT' | transloco }}
+      </div>
+    </div>
+  </div>
+</mat-card>

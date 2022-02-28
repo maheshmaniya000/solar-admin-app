@@ -1,0 +1,45 @@
+@import 'theme';
+
+$right-panel-width: 640px;
+
+:host > div {
+  height: 100%;
+}
+
+:host sg-alert-bar-container {
+  position: fixed;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.right-panel {
+  height: 100%;
+  border-left: 1px solid map-get($primary, 300);
+  flex: 0 0 $right-panel-width;
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+
+.list {
+  flex: 1 1 auto;
+}
+
+.list-reduced {
+  min-width: 0;
+}
+
+.map, .container {
+  height: calc(100% - #{ $sg-toolbar-height });
+}
+
+@media (max-width: 500px) {
+  .container {
+    height: 100%;
+  }
+}

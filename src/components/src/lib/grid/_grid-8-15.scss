@@ -1,0 +1,45 @@
+@use 'mixins';
+
+.sg-grid-8-15 {
+  $leading-track-size: 8;
+
+  .row-4-2-4-5 {
+    @include mixins.row($leading-track-size, (4, 2, 4, 5));
+  }
+
+  .row-4-4-4-3 {
+    @include mixins.row($leading-track-size, (4, 4, 4, 3));
+  }
+
+  .row-4-11 {
+    @include mixins.row($leading-track-size, (4, 11));
+  }
+
+  .row-6-6-3 {
+    @include mixins.row($leading-track-size, (6, 6, 3));
+  }
+
+  .row-6-9 {
+    @include mixins.row($leading-track-size, (6, 9));
+  }
+
+  .row-8-4-3 {
+    @include mixins.row($leading-track-size, (8, 4, 3));
+  }
+
+  .row-8-7 {
+    @include mixins.row($leading-track-size, (8, 7));
+  }
+
+  .row-10-4-1 {
+    @include mixins.row($leading-track-size, (10, 4));
+  }
+
+  .row-10-5 {
+    @include mixins.row($leading-track-size, (10, 5));
+  }
+
+  .row-15 {
+    @include mixins.row($leading-track-size, 15);
+  }
+}

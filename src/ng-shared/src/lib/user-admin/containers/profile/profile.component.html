@@ -1,0 +1,66 @@
+<div class="bootstrap">
+  <sg-fullscreen-dialog-toolbar-new [headline]="'user.profile.my' | transloco" (onClose)="setPreviousUrl()">
+  </sg-fullscreen-dialog-toolbar-new>
+
+  <div class="content">
+    <mat-tab-group *ngIf="user$ | async; else spinner"
+                   [selectedIndex]="tabIndex$ | async"
+                   (selectedIndexChange)="selectedIndexChange($event)">
+      <mat-tab [label]="'user.profile.general' | transloco">
+        <!-- USER PROFILE-->
+        <mat-card>
+          <sg-profile-detail
+            [user]="user$ | async"
+            [company]="selectedCompany$ | async"
+            (onChangePassword)="changePassword()"
+            (onChangeUnitToggles)="openUnitSettings()"
+            (onUnselectCompany)="unselectCompany()">
+          </sg-profile-detail>
+        </mat-card>
+      </mat-tab>
+
+      <mat-tab [label]="'user.profile.companyAccounts' | transloco">
+        <div class="company-list-button">
+          <button (click)="addNewCompany()">
+            {{ 'user.company.add' | transloco }}
+          </button>
+        </div>
+
+        <!-- COMPANY LIST CARD-->
+        <mat-card>
+          <sg-company-list
+            [companyList]="companyList$ | async"
+            [selectedCompany]="selectedCompany$ | async"
+            [user]="user$ | async"
+            (onSelect)="selectCompany($event)"
+            (onEdit)="manageCompany($event)"
+            (unselect)="unselectCompany()">
+          </sg-company-list>
+        </mat-card>
+      </mat-tab>
+
+      <mat-tab *ngIf="hasSDATSubscription$ | async" [label]="'user.profile.sdatDevices' | transloco">
+        <sg-sdat-subscription-devices
+          *ngIf="sdatDeviceList$ | async as devices; else noDevices"
+          [devices]="devices"
+          [columns]="['customName', 'hostName', 'company', 'lastActivity', 'registered']"
+          (updateDevice)="updateAppDevice($event)">
+        </sg-sdat-subscription-devices>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+<ng-template #spinner>
+  <div style="margin: 250px auto;">
+    <mat-spinner style="margin: auto;" [diameter]="50"></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #noDevices>
+  <mat-card>
+    <mat-card-content>
+      {{ 'companyAdmin.sdatSubscription.devices.none' | transloco }}
+    </mat-card-content>
+  </mat-card>
+</ng-template>

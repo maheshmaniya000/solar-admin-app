@@ -1,0 +1,26 @@
+mat-expansion-panel-header {
+  padding: 0 5px;
+}
+mat-panel-title,
+mat-panel-description {
+  margin: 0 !important;
+  > * {
+    margin: 0 5px;
+  }
+}
+
+mat-expansion-panel {
+  grid-column: 1 / span 2;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-bottom: 1rem;
+
+  ::ng-deep {
+    span:nth-child(2n - 1) {
+      font-weight: bold;
+    }
+  }
+}

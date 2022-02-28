@@ -1,0 +1,26 @@
+<sg-dialog-deprecated [large]="true">
+  <div class="sg-dialog-heading">{{ 'common.subscription.prospect' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+  <div class="sg-dialog-content auth-dialog-content">
+    <div class="desc">
+      {{ 'companyAdmin.overview.prospectSubscription.dialog' | transloco }}
+    </div>
+    <sg-terms-and-conditions variant="contractual-terms"></sg-terms-and-conditions>
+
+    <div>
+      <mat-checkbox [(ngModel)]="checked">
+        <p class="info-text" [innerHtml]="'companyAdmin.overview.prospectSubscription.confirmTerms' | transloco"></p>
+      </mat-checkbox>
+    </div>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button mat-raised-button color="accent" (click)="closeDialog(true)" style="width: 100%;" [disabled]="!checked">
+      {{ 'common.action.confirm' | transloco }}
+    </button>
+  </div>
+</sg-dialog-deprecated>

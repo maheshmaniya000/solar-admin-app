@@ -1,0 +1,69 @@
+@import 'theme';
+
+@import 'mixins/user-company';
+
+:host {
+  ::ng-deep {
+    @include media-breakpoint-up(md) {
+      .dialog-container.bootstrap.large {
+        width: 440px;
+      }
+    }
+
+    mat-dialog-content {
+      &.mat-dialog-content {
+        margin: 0;
+      }
+    }
+    mat-form-field {
+      width: 283px;
+      .mat-form-field-underline {
+        display: none;
+      }
+    }
+
+    mat-select {
+      border: 1px solid map-get($primary, 400);
+      font-size: $sg-14;
+      padding: 0 $sg-12;
+      line-height: $sg-36;
+      border-radius: 4px;
+      width: 100%;
+
+      span {
+        color: map-get($primary, 900);
+      }
+    }
+
+    mat-dialog-content {
+      .content {
+        padding: 0 $sg-24;
+
+        label {
+          font-size: $sg-14;
+        }
+      }
+    }
+  }
+  height: 100%;
+
+  .company-form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .info {
+    white-space: pre-line;
+  }
+
+  .primary-button {
+    @include sg-button(md, red);
+    min-width: 96px;
+  }
+
+  .secondary-button {
+    @include sg-button(md);
+    min-width: 96px;
+  }
+}

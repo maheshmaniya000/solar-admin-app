@@ -1,0 +1,284 @@
+<div>
+  <h4>API Contract settings</h4>
+  <div>
+    <form [formGroup]="apiContractForm">
+      <div fxLayout="row" class="space-between">
+        <div fxFlex id="settings">
+          <div>
+            <mat-form-field class="title">
+              <input type="text" placeholder="" matInput formControlName="title">
+              <mat-hint align="start">Optional title for API Contract</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field class="max-requests">
+              <input type="number" placeholder="" matInput formControlName="maxCountOfRequest" />
+              <mat-hint align="start">Rate Limit (count of requests)</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!--MAX REQUEST PART-->
+        <div fxFlex>
+          <div formArrayName="maxRequests">
+            <div *ngFor="let site of maxRequests.controls; let i = index" [formGroupName]="i">
+              <div fxLayout="row" class="space-between">
+                <div>
+                  <mat-form-field class="big">
+                    <input type="number" placeholder="How many request ?" matInput formControlName="count" />
+                    <span matSuffix="">Requests</span>
+                  </mat-form-field>
+                </div>
+
+                <div>
+                  <mat-form-field class="big">
+                    <input type="number" placeholder="Per how many seconds ?" matInput formControlName="perSeconds" />
+                    <span matSuffix="">Seconds</span>
+                  </mat-form-field>
+                </div>
+
+                <div>
+                  <button mat-icon-button aria-label="Remove" (click)="removeMaxRequest(i)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div fxLayoutAlign="center center">
+              <button mat-button color="accent" (click)="addNewMaxRequest()">
+                <mat-icon>add</mat-icon>
+                Add another Max Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h4>API Contract resources (APIs)</h4>
+  <div class="space-between">
+    <mat-checkbox [(ngModel)]="hasDataDeliveryContract" (change)="emitNewAPIContract()">Data Delivery Web Service</mat-checkbox>
+    <mat-checkbox [(ngModel)]="hasPvPlannerContract" (change)="emitNewAPIContract()">PV Planner Web Service</mat-checkbox>
+  </div>
+
+  <div *ngIf="hasDataDeliveryContract">
+    <h4>Data Delivery Web Service</h4>
+
+    <form [formGroup]="dataDeliveryForm">
+      <div fxLayout="column">
+        <!--1 ROW-->
+        <div fxFlex>
+          <div fxLayout="row" class="first-row">
+
+            <!--VALIDITY PART-->
+            <div fxFlex="nogrow">
+              <div fxLayout="column">
+                <h5>Validity</h5>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="validFrom" placeholder="Valid From*" formControlName="validFrom" />
+                  <mat-datepicker-toggle matSuffix [for]="validFrom"></mat-datepicker-toggle>
+                  <mat-datepicker #validFrom></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input matInput [matDatepicker]="validTo" placeholder="Valid To*" formControlName="validTo" />
+                  <mat-datepicker-toggle matSuffix [for]="validTo"></mat-datepicker-toggle>
+                  <mat-datepicker #validTo></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!--SUMMARIZATION + PROCESSING KEYS PART-->
+            <div fxFlex="nogrow">
+              <div fxLayout="column">
+                <h5>Summarization</h5>
+                <p class="error" [hidden]="dataDeliverySummarization.length > 0">Choose at least one</p>
+
+                <mat-checkbox *ngFor="let summarization of summarizations"
+                              [checked]="dataDeliverySummarization.indexOf(summarization) > -1"
+                              (change)="changeSummarization(summarization, $event)">
+                  {{summarization}}
+                </mat-checkbox>
+              </div>
+            </div>
+            <div fxFlex>
+              <h5>Processing keys</h5>
+              <p class="error" [hidden]="dataDeliveryProcessingKeys.length > 0">Choose at least one</p>
+
+              <h5>Location keys <span (click)="checkAll(processingLocationKeys)">(Check all)</span></h5>
+              <div *ngFor="let processingKey of processingLocationKeys; let i = index" class="processing-key">
+                <mat-checkbox
+                  [checked]="dataDeliveryProcessingKeys.indexOf(processingKey) > -1"
+                  (change)="changeProcessingKeys(processingKey, $event)">
+                  {{processingKey}}
+                </mat-checkbox>
+              </div>
+
+              <h5>Geometry keys <span (click)="checkAll(processingGeometryKeys)">(Check all)</span></h5>
+              <div *ngFor="let processingKey of processingGeometryKeys; let i = index" class="processing-key">
+                <mat-checkbox
+                  [checked]="dataDeliveryProcessingKeys.indexOf(processingKey) > -1"
+                  (change)="changeProcessingKeys(processingKey, $event)">
+                  {{processingKey}}
+                </mat-checkbox>
+              </div>
+
+              <h5>PV keys <span (click)="checkAll(processingPVKeys)">(Check all)</span></h5>
+              <div *ngFor="let processingKey of processingPVKeys; let i = index" class="processing-key">
+                <mat-checkbox
+                  [checked]="dataDeliveryProcessingKeys.indexOf(processingKey) > -1"
+                  (change)="changeProcessingKeys(processingKey, $event)">
+                  {{processingKey}}
+                </mat-checkbox>
+              </div>
+            </div>
+          </div>
+
+          <div fxLayout="row" class="space-between">
+            <!--FORECAST-->
+            <div fxFlex="grow">
+              <h5>Forecast data</h5>
+              <div>
+                <mat-checkbox [checked]="dataDeliveryHasForecast" (change)="changeForecast($event.checked)">Forecast</mat-checkbox>
+              </div>
+
+              <div *ngIf="dataDeliveryHasForecast">
+                <mat-form-field>
+                  <input type="number" placeholder="Days of forecast ?" matInput formControlName="forecast" />
+                  <span matSuffix="">Days</span>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!--MONITOR-->
+            <div fxFlex="grow" fxLayout="row" class="space-between">
+              <div fxFlex>
+                <h5>Monitor data</h5>
+
+                <div>
+                  <mat-checkbox [checked]="dataDeliveryHasMonitor" (change)="changeMonitor($event.checked)">Monitor</mat-checkbox>
+                </div>
+
+                <div *ngIf="dataDeliveryHasMonitor" [formGroup]="historic">
+                  <div>
+                    <mat-radio-group formControlName="historicType">
+                      <mat-radio-button [value]="monitorType.MONITOR_RELATIVE">
+                        Monitor (window, relative value)
+                      </mat-radio-button>
+                      <mat-radio-button [value]="monitorType.MONITOR_HARD">
+                        Monitor (hard limit)
+                      </mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+
+                  <div *ngIf="historicType.value === monitorType.MONITOR_RELATIVE">
+                    <mat-form-field class="big">
+                      <input type="text" placeholder="Window, Relative from" matInput formControlName="historicRelative"/>
+                      <mat-hint>Combination of number and 'y'-year/'m'-month/'d'-day</mat-hint>
+                    </mat-form-field>
+                  </div>
+
+                  <div *ngIf="historicType.value === monitorType.MONITOR_HARD">
+                    <mat-form-field class="small">
+                      <input matInput [matDatepicker]="historicHard" placeholder="Hard From*" formControlName="historicHard">
+                      <mat-datepicker-toggle matSuffix [for]="historicHard"></mat-datepicker-toggle>
+                      <mat-datepicker #historicHard></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--MAX DAYS / UIU-->
+            <div fxFlex="grow">
+              <h5>Max days / Max UniqueInformationUnits (UIU)</h5>
+
+              <div>
+                <mat-form-field class="big">
+                  <input type="number" placeholder="" matInput formControlName="maxDaysInRequest" />
+                  <mat-hint align="start">Limit for max. days in single request</mat-hint>
+                  <span matSuffix="">Days</span>
+                </mat-form-field>
+              </div>
+
+              <div>
+                <mat-form-field class="big">
+                  <input type="number" placeholder="" matInput formControlName="maxUniqueInformationUnits" />
+                  <mat-hint align="start">Combination of Lat/Long/Day</mat-hint>
+                  <span matSuffix="">UIU</span>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--2 ROW-->
+        <div fxFlex>
+          <!--SITES-->
+          <div fxLayout="column">
+            <div class="sites" fxFlex>
+              <sg-admin-api-access-definition
+                [access]="apiDataDelivery.access"
+                (accessChange)="loadAccessDefinition(apiDataDelivery, $event)"
+              >
+              </sg-admin-api-access-definition>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <mat-divider></mat-divider>
+  </div>
+
+  <div *ngIf="hasPvPlannerContract">
+    <h4>PV Planner Web Service</h4>
+
+    <form [formGroup]="pvPlannerForm">
+      <div fxLayout="column">
+        <!--1 ROW-->
+        <div fxFlex>
+          <div fxLayout="row" class="first-row">
+
+            <!--VALIDITY PART-->
+            <div fxFlex="nogrow">
+              <div fxLayout="column">
+                <h5>Validity</h5>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="validFrom" placeholder="Valid From*" formControlName="validFrom" />
+                  <mat-datepicker-toggle matSuffix [for]="validFrom"></mat-datepicker-toggle>
+                  <mat-datepicker #validFrom></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input matInput [matDatepicker]="validTo" placeholder="Valid To*" formControlName="validTo" />
+                  <mat-datepicker-toggle matSuffix [for]="validTo"></mat-datepicker-toggle>
+                  <mat-datepicker #validTo></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--2 ROW-->
+        <div class="sites" fxFlex>
+          <!--SITES-->
+          <div fxLayout="column">
+            <div fxFlex>
+              <sg-admin-api-access-definition
+                [access]="apiPvPlanner.access"
+                (accessChange)="loadAccessDefinition(apiPvPlanner, $event)"
+              >
+              </sg-admin-api-access-definition>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

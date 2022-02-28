@@ -1,0 +1,220 @@
+<div class="card-layout">
+
+  <div class="card-big bootstrap">
+    <mat-card class="charts row no-gutters">
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let tile of (overviewTiles$ | async); trackBy: trackByFn">
+        <sg-summary-data-item [layer]="tile.annualLayer" [data]="tile.annualData">
+          {{ 'project.data.yearlyAverage' | transloco }}
+        </sg-summary-data-item>
+        <sg-highcharts *ngIf="tile.monthlyChart"
+                       [opts]="tile.monthlyChart"
+                       [exportingOpts]="getExportChartOpts(tile.annualLayer) | async">
+        </sg-highcharts>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- SITE INFO -->
+  <div class="card-small">
+    <mat-card class="info">
+
+      <div fxFlex class="panel">  <!-- TODO as SiteOverviewComponent -->
+        <mat-card-title>
+          {{ 'projectDetail.overview.projectInfo' | transloco }}
+        </mat-card-title>
+        <div class="bootstrap">
+          <div class="row no-gutters">
+            <div class="left col-4">
+              <img src="assets/img/detail-overview.svg" />
+            </div>
+            <div class="right col-8">
+              <div class="headinglabel">{{ 'projectDetail.info.name' | transloco }}</div>
+              <div class="heading">{{ (project$ | async) | sgProjectName }}</div>
+            </div>
+          </div>
+        </div>
+
+        <sg-project-site-properties [project]="project$ | async"></sg-project-site-properties>
+
+        <div class="actions">
+          <button mat-button color="accent" (click)="redirect('info')">
+            {{ 'projectDetail.nav.projectInfo' | transloco }}
+          </button>
+          <button mat-button color="accent" (click)="showOnMap()">
+            {{ 'projectDetail.info.showOnMap' | transloco }}
+          </button>
+          <!-- <button mat-button color="accent" (click)="share()">
+            {{ 'project.share.share' | transloco }}
+          </button> -->
+          <button *ngIf="updateDataButtonVisible$ | async" mat-button color="accent" (click)="openUpdateDataDialog()">
+            {{ 'project.action.updateProjectData' | transloco }}
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- PV CONFIG -->
+  <div class="card-small">
+    <mat-card class="info">
+      <div fxFlex class="right-panel panel">
+        <mat-card-title>
+          {{ 'projectDetail.pvConfig.pvConfiguration' | transloco }}
+        </mat-card-title>
+        <div class="bootstrap"> <!-- TODO as PvConfigOverviewComponent -->
+          <div class="row no-gutters">
+            <div class="left col-4">
+              <img src="assets/pvconfig/{{ (pvConfig$ | async)?.type }}.svg" />
+            </div>
+            <div class="right col-8">
+              <div class="headinglabel">{{ 'projectDetail.overview.systemType' | transloco }}</div>
+              <div class="heading"><span>{{ 'pvConfig.type.' + (pvConfig$ | async)?.type + '.name' | transloco }}</span></div>
+            </div>
+          </div>
+
+          <ng-container *ngIf="(pvConfigStatus$ | async) === 'hasPvSystem'">
+            <sg-pv-config-miniviewer [pvConfig]="pvConfig$ | async"></sg-pv-config-miniviewer>
+          </ng-container>
+        </div>
+
+        <div class="actions">
+          <button mat-button color="accent" (click)="redirect('configure/change')">
+            {{ 'pvConfig.action.change' | transloco }}
+          </button>
+          <button mat-button color="accent" (click)="redirect('pv-configuration')">
+            {{ 'projectDetail.nav.pvConfig' | transloco }}
+          </button>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+
+  <div class="section-title">
+    {{ 'projectDetail.overview.solarAndMeteo' | transloco }}
+  </div>
+
+  <div class="card-big">
+    <mat-card fxLayout="column" fxLayout.gt-sm="row" class="info">
+
+      <!-- LEFT SIDE: SOLAR DATA !-->
+      <div fxFlex fxFlex.gt-sm="50" class="panel">
+        <mat-card-title>
+          {{ 'projectDetail.overview.solar' | transloco }}
+        </mat-card-title>
+        <sg-overview-data
+          [data]="(solarMeteoData$ | async)?.annual?.data"
+          [dataLayers]="solarLayers$ | async"
+          [monthlyData]="(solarMeteoData$ | async)?.monthly?.data"
+          [monthlyDataStats]="solarMeteoMonthlyDataStats$ | async">
+        </sg-overview-data>
+        <div class="actions">
+          <sg-prospect-overview-nav-button
+            translationStr="projectDetail.nav.monthlyStatistics"
+            path="solar-meteo/monthly"
+            (onSelect)="redirect($event)">
+          </sg-prospect-overview-nav-button>
+          <sg-prospect-overview-nav-button
+            translationStr="projectDetail.nav.hourlyProfiles"
+            path="solar-meteo/hourly"
+            (onSelect)="redirect($event)">
+          </sg-prospect-overview-nav-button>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: METEOROLOGICAL DATA !-->
+      <div fxFlex fxFlex.gt-sm="50" class="right-panel panel">
+        <mat-card-title>
+          {{ 'projectDetail.overview.meteorologicalData' | transloco }}
+        </mat-card-title>
+        <sg-overview-data
+          [data]="(solarMeteoData$ | async)?.annual?.data"
+          [dataLayers]="weatherLayers$ | async"
+          [monthlyData]="(solarMeteoData$ | async)?.monthly?.data"
+          [monthlyDataStats]="solarMeteoMonthlyDataStats$ | async">
+        </sg-overview-data>
+        <div class="actions">
+          <sg-prospect-overview-nav-button
+            translationStr="projectDetail.nav.monthlyStatistics"
+            path="solar-meteo/monthly"
+            (onSelect)="redirect($event)">
+          </sg-prospect-overview-nav-button>
+          <sg-prospect-overview-nav-button
+            translationStr="projectDetail.nav.hourlyProfiles"
+            path="solar-meteo/hourly"
+            (onSelect)="redirect($event)">
+          </sg-prospect-overview-nav-button>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+
+  <ng-container *ngIf="(pvConfigStatus$ | async) === 'hasPvSystem'">
+    <div class="section-title" fxFlex="100%">
+      {{ 'projectDetail.overview.pvElectricityAndPerformance' | transloco }}
+    </div>
+
+    <!-- PV ELECTRICITY -->
+    <div class="card-medium">
+      <mat-card class="small">
+        <mat-card-title>
+          {{ 'projectDetail.overview.theoreticalPvElectricityPotential' | transloco }}
+        </mat-card-title>
+        <sg-overview-data
+          [data]="pvcalcAnnualData$ | async"
+          [dataLayers]="pvcalcLayers$ | async"
+          [monthlyData]="(pvcalcData$ | async)?.monthly?.data"
+          [monthlyDataStats]="pvcalcMonthlyDataStats$ | async">
+        </sg-overview-data>
+        <div class="actions">
+          <sg-prospect-overview-nav-button
+            translationStr="projectDetail.nav.monthlyStatistics"
+            path="pv-electricity/monthly"
+            (onSelect)="redirect($event)">
+          </sg-prospect-overview-nav-button>
+          <sg-prospect-overview-nav-button
+            translationStr="projectDetail.nav.hourlyProfiles"
+            path="pv-electricity/hourly"
+            (onSelect)="redirect($event)">
+          </sg-prospect-overview-nav-button>
+        </div>
+      </mat-card>
+    </div>
+
+    <!-- PV PERFORMANCE -->
+    <div class="card-medium performance-name-table">
+      <mat-card class="small">
+        <mat-card-title>
+          {{ 'projectDetail.overview.longtermPvPowerPotential' | transloco:(pvPerformanceData$ | async) || {} }}
+        </mat-card-title>
+        <sg-overview-data
+          [data]="pvPerformanceData$ | async"
+          [hideName]="true"
+          [dataLayers]="pvPerformanceLayers$ | async"
+          [hideKeys]="true" [mergeTranslationData]="true">
+        </sg-overview-data>
+        <div class="actions">
+          <sg-prospect-overview-nav-button
+            translationStr="projectDetail.nav.pvLosses"
+            path="pv-performance/losses"
+            (onSelect)="redirect($event)">
+          </sg-prospect-overview-nav-button>
+          <sg-prospect-overview-nav-button
+            translationStr="projectDetail.nav.lifetimePerformance"
+            path="pv-performance/lifetime"
+            (onSelect)="redirect($event)">
+          </sg-prospect-overview-nav-button>
+        </div>
+      </mat-card>
+    </div>
+
+  </ng-container>
+
+  <div class="section-title">
+    {{ 'common.misc.help' | transloco }}
+  </div>
+  <div class="card-big">
+    <sg-glossary [layers]="glossaryLayers$ | async"></sg-glossary>
+  </div>
+</div>

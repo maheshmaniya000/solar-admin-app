@@ -1,0 +1,10 @@
+{
+  "name": "@solargis/ng-analytics",
+  "version": "8.3.0",
+  "description": "Solargis angular services for analytics, like Google Analytics.",
+  "author": "Solargis",
+  "license": "ISC",
+  "publishConfig": {
+    "directory": "../../dist/libs/ng-analytics"
+  }
+}

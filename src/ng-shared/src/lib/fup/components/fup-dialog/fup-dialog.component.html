@@ -1,0 +1,21 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{'auth.fupRecaptcha.title' | transloco}}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content auth-dialog-content">
+    <p>{{ 'auth.fupRecaptcha.info' | transloco }}</p>
+  </div>
+
+  <div class="sg-dialog-actions auth-dialog-actions">
+    <button type="button" class="primary" (click)="openRegistration()">
+      {{ 'header.signUp' | transloco }}
+    </button>
+    <button type="button" class="secondary" (click)="openLogin()">
+      {{ 'header.login' | transloco }}
+    </button>
+  </div>
+</sg-dialog-deprecated>

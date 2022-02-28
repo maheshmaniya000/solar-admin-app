@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Monthly minichart</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0px; /**/
+    }
+
+    body > div {
+      display: flex;
+      flex-direction: row;
+      align-content: flex-end;
+    }
+
+    body > div > div {
+      flex: 0 1 500px;
+    }
+
+    .losses-wrapper {
+      width: 320px;
+      height: 32px;
+      border-top: 1px solid #eee;
+    }
+
+    .losses-left, .losses-right {
+      border-radius: 0px 00px 0px 14px;
+      position: absolute;
+    }
+
+    .losses-left {
+      margin-left: 0px;
+      width: 150px;
+      height: 18px;
+      background: #4285F4;
+    }
+
+    .losses-right {
+      height: 14px;
+      background: white/*#fafafa*/;
+      z-index: 10;
+    }
+
+    .losses-left-back {
+      border-radius: 14px 00px 0px 0px !important;
+      margin-top: 14px;
+    }
+
+    .losses-right-back {
+      border-radius: 14px 00px 0px 0px !important;
+      margin-top: 18px;
+    }
+
+    .losses-number {
+      text-align: right;
+      line-height: 32px;
+    }
+
+    .losses-arrow, .losses-arrow-back {
+      margin-top: 8px;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-radius: 0;
+      z-index: 20;
+    }
+
+    .losses-arrow {
+      margin-left: 150px;
+      border-left: 10px solid #4285F4;
+    }
+
+    .losses-arrow-back {
+      margin-left: 140px;
+      border-right: 10px solid #4285F4;
+    }
+
+  </style>
+</head>
+<body>
+
+<div>
+  <div></div>
+  <div>
+    <h1>Losses Chart</h1>
+    <div id="losses"></div>
+  </div>
+  <div></div>
+</div>
+
+<script>
+  const losses = document.getElementById('losses');
+
+  for (let i = -50; i <= 100; i++) {
+    const left = document.createElement('div');
+    left.classList.add('losses-left');
+    if (i < 0) left.classList.add('losses-left-back');
+
+    const right = document.createElement('div');
+    right.classList.add('losses-right');
+    if (i < 0) right.classList.add('losses-right-back');
+    right.style.marginLeft = `${Math.abs(i)}px`;
+    right.style.width = `${150-Math.abs(i)}px`;
+
+    const arrow = document.createElement('div');
+    arrow.classList.add(i >= 0 ? 'losses-arrow' : 'losses-arrow-back');
+
+    const num = document.createElement('div');
+    num.classList.add('losses-number');
+    num.innerHTML = i;
+
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('losses-wrapper');
+    wrapper.appendChild(left);
+    wrapper.appendChild(right);
+    wrapper.appendChild(arrow);
+    wrapper.appendChild(num);
+
+    losses.appendChild(wrapper);
+  }
+
+</script>
+
+</body>
+</html>

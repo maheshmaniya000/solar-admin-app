@@ -1,0 +1,9 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.chips {
+  margin-bottom: $sg-32 !important;
+}

@@ -1,0 +1,92 @@
+
+<ng-container *transloco="let t; read: 'companyAdmin'">
+  <mat-card>
+    <!-- <mat-card-title>
+      {{ t('nav.subscriptions') }}
+    </mat-card-title> -->
+
+    <mat-card-content>
+      <ng-container *ngIf="hasData$ | async; else noLicense">
+
+        <div sgScrollContainer="md">
+          <mat-table [dataSource]="dataSource$">
+            <!-- NAME COLUMN -->
+            <ng-container matColumnDef="plan">
+              <mat-header-cell *matHeaderCellDef fxFlex>
+                {{ t('subscriptions.plan') }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row" fxFlex class="bold">
+                {{ row.plan | transloco }}
+              </mat-cell>
+            </ng-container>
+
+            <!-- USER LIMIT COLUMN -->
+            <ng-container matColumnDef="userLimit">
+              <mat-header-cell *matHeaderCellDef fxFlex>
+                {{ t('subscriptions.userLimit') }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row" fxFlex>
+                <sg-translation [str]="row.userLimit"></sg-translation>
+              </mat-cell>
+            </ng-container>
+
+            <!-- PROJECT LIMIT COLUMN -->
+            <ng-container matColumnDef="projectLimit">
+              <mat-header-cell *matHeaderCellDef fxFlex>
+                {{ t('subscriptions.projectLimit') }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row" fxFlex>
+                <sg-translation [str]="row.projectLimit"></sg-translation>
+              </mat-cell>
+            </ng-container>
+
+            <!-- FROM COLUMN -->
+            <ng-container matColumnDef="from">
+              <mat-header-cell *matHeaderCellDef fxFlex>
+                {{ t('subscriptions.from') }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row" fxFlex>
+                {{ row.from | sgDateTimeFormat }}
+              </mat-cell>
+            </ng-container>
+
+            <!-- TO COLUMN -->
+            <ng-container matColumnDef="to">
+              <mat-header-cell *matHeaderCellDef fxFlex>
+                {{ t('subscriptions.to') }}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row" fxFlex>
+                {{ row.to | sgDateTimeFormat }}
+              </mat-cell>
+            </ng-container>
+
+            <!-- OPEN COLUMN -->
+            <ng-container matColumnDef="open">
+              <mat-header-cell *matHeaderCellDef fxFlex="1 1 100px"></mat-header-cell>
+              <mat-cell *matCellDef="let row" fxFlex="1 1 100px">
+                <button mat-button color="accent" [routerLink]="row.detailUrl">
+                  {{ 'common.action.open' | transloco }}
+                </button>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+          </mat-table>
+        </div>
+      </ng-container>
+    </mat-card-content>
+  </mat-card>
+
+  <ng-template #noLicense>
+    <div *ngIf="(loading$ | async) === false; else loading">
+      {{ t('subscriptions.empty') }}
+    </div>
+  </ng-template>
+
+  <ng-template #loading>
+    <div style="overflow: hidden;">
+      <mat-spinner mode="indeterminate" [diameter]="25" style="margin: auto;"></mat-spinner>
+    </div>
+  </ng-template>
+</ng-container>

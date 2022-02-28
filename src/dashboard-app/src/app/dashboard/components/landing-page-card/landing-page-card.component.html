@@ -1,0 +1,33 @@
+<div class="landing-page-card">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar>
+        <img src="{{ 'assets/img/icons/' + id + '.svg' | lowercase }}">
+      </div>
+      <mat-card-title>{{ id }}</mat-card-title>
+      <mat-card-subtitle *ngIf="!hideSubtitle">{{ 'dashboard.landingPage.subtitleCard' | transloco }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="content">
+      {{ 'dashboard.landingPage.' + id.toLowerCase() + '.content' | transloco }}
+        <a class="accent-link" href="{{ 'https://solargis.com/products/' + id + '/overview' | lowercase }}" target="_blank">
+          {{ 'dashboard.landingPage.learnMore' | transloco }}
+        </a>
+      </div>
+      <div class="subtitles">
+        <ng-container *ngTemplateOutlet="subtitle; context: { subtitleId: 'subtitleFirst'}"></ng-container>
+        <ng-container *ngTemplateOutlet="subtitle; context: { subtitleId: 'subtitleSecond'}"></ng-container>
+        <ng-container *ngTemplateOutlet="subtitle; context: { subtitleId: 'subtitleThird'}"></ng-container>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <a class="primary-button" href="{{ actionButtonLink }}" target="_self">{{ actionButtonName | transloco }}</a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #subtitle let-subtitleId="subtitleId">
+  <mat-card-subtitle><img src="assets/img/red-tick.svg"/>
+    <p>{{ getSubtitle(subtitleId) | transloco }}</p>
+  </mat-card-subtitle>
+</ng-template>

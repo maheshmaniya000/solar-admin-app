@@ -1,0 +1,38 @@
+@use '~@angular/material' as mat;
+@use 'palette';
+@use '../lib/icon/icon' as icon;
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $accent: map-get($color-config, accent);
+
+  sg-icon-marker {
+    path {
+      fill: palette.$dark-text;
+    }
+
+    &:hover {
+      path {
+        fill: black;
+      }
+    }
+
+    &.selected {
+      path {
+        fill: mat.get-color-from-palette($accent);
+        stroke: white;
+      }
+
+      &:hover {
+        path {
+          fill: mat.get-color-from-palette($accent, darker);
+        }
+      }
+    }
+
+    mat-icon.mat-icon {
+      @include icon.size(inline);
+      color: white;
+    }
+  }
+}

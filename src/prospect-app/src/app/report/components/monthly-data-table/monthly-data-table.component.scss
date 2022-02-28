@@ -1,0 +1,28 @@
+@import 'theme';
+
+@include cdk-table-s(true, auto);
+
+cdk-cell, cdk-header-cell {
+  text-align: right;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 11px;
+
+  .subheader {
+    font-size: inherit;
+  }
+
+  .aggregation {
+    font-size: 11px;
+    font-weight: $font-weight-regular;
+  }
+}
+
+cdk-row {
+  min-height: 21px;
+}
+
+.cdk-column-GTI, .cdk-column-GTI-d { flex: 0 0 85px; box-sizing: border-box; }
+.cdk-column-PVOUT_specific, .cdk-column-PVOUT_specific-d { flex: 0 0 95px; box-sizing: border-box; }
+.cdk-column-PVOUT_total, .cdk-column-PVOUT_total-d { flex: 0 0 85px; box-sizing: border-box; }
+.cdk-column-PR { flex: 0 0 45px; box-sizing: border-box; }

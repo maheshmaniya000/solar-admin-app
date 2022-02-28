@@ -1,0 +1,9 @@
+
+<sg-lambda-captcha *ngIf="type === 'lambdaCaptcha'"
+  (lambdaCaptchaResult)="handleResult($event)">
+</sg-lambda-captcha>
+
+<sg-re-captcha *ngIf="type === 'recaptcha'"
+  [action]="action"
+  (captchaResponse)="handleResult($event)">
+</sg-re-captcha>

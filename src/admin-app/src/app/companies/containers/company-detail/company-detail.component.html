@@ -1,0 +1,15 @@
+<div *ngIf="companyDetailStore.viewModel$ | async as viewModel">
+  <sg-fullscreen-dialog-toolbar
+    [headline]="headerLabel[mode]"
+    [subheadline]="viewModel.nameWithGroup"
+    (onClose)="onCloseClick()"
+  ></sg-fullscreen-dialog-toolbar>
+
+  <sg-admin-company-hierarchy-view
+    *ngIf="mode === componentMode.view; else companyEditorTemplate"
+    [company]="viewModel.entity"
+  ></sg-admin-company-hierarchy-view>
+  <ng-template #companyEditorTemplate>
+    <sg-admin-company-editor [company]="viewModel.entity"></sg-admin-company-editor>
+  </ng-template>
+</div>

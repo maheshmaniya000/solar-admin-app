@@ -1,0 +1,29 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 22 33"
+  [ngClass]="{ small: !isIconVisible() }"
+>
+  <defs>
+    <style>
+      .b {
+        fill: url(#a);
+      }
+    </style>
+    <radialGradient
+      id="a"
+      cx="0.5"
+      cy="0.5"
+      r="0.5"
+      gradientUnits="objectBoundingBox"
+    >
+      <stop offset="0" stop-opacity="0.396" />
+      <stop offset="1" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <ellipse class="b" cx="7" cy="3.5" rx="7" ry="3.5" />
+  <path
+    d="M10,28l7.6-11.4C19.5,13.737,20,12.255,20,10A10,10,0,0,0,0,10c0,2.255.511,3.753,2.4,6.6S10,28,10,28Z"
+  />
+</svg>
+<mat-icon *ngIf="isIconVisible()">{{ icon }}</mat-icon>

@@ -1,0 +1,30 @@
+::ng-deep mat-radio-group[layout="column"] {
+  mat-radio-button {
+    display: block;
+  }
+}
+
+form {
+  div[fxLayout="column"] {
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+}
+
+#previous-account-period {
+  margin-top: 25px;
+}
+
+:host div.toolbar {
+  margin-top: 20px;
+  > button:not(:last-child) {
+    margin-right: 20px;
+  }
+  overflow: auto;
+}
+
+.invoice-hint {
+  height: 2em;
+  margin-bottom: 1em;
+}

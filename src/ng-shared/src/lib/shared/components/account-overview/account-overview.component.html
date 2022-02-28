@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center">
+  <sg-avatar *ngIf="company || user"
+             class="avatar"
+             [name]="company ? company.name : user | sgUserFullName"
+             [sgCompanyId]="company ? company.sgCompanyId : null">
+  </sg-avatar>
+
+  <div [class.display-small-none]="hideOnSmallScreen === true" class="account-overview-info">
+    <p class="account-overview-name">{{ company ? company.name : ('user.company.profile.personalAccount' | transloco) }}</p>
+    <p *ngIf="user" class="account-overview-text">
+      {{ company ? ('user.company.role.' + userCompanyRole() | transloco) : this.user.email }}
+    </p>
+  </div>
+</div>
+

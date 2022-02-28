@@ -1,0 +1,10 @@
+{
+  "name": "@solargis/ng-geosearch",
+  "version": "8.3.0",
+  "description": "Solargis angular services for geocoding and parsing locations",
+  "author": "Solargis",
+  "license": "ISC",
+  "publishConfig": {
+    "directory": "../../dist/libs/ng-geosearch"
+  }
+}

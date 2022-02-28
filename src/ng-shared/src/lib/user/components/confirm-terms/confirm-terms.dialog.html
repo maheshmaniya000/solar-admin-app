@@ -1,0 +1,49 @@
+
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{'auth.confirmTerms.title' | transloco}}</div>
+  <div class="sg-dialog-close-button">
+    <!-- Confirm terms dialog does not allow close -->
+  </div>
+  <div class="sg-dialog-content auth-dialog-content">
+    <ng-container *ngIf="!checkInProgress; else loading">
+      <form [formGroup]="form" novalidate class="row">
+        <mat-form-field floatLabel="always" style="width: 100%" [ngClass]="{'big-error-msg': firstName.hasError('required')}">
+          <mat-label>{{ 'auth.registration.firstNamePlaceholder' | transloco }}</mat-label>
+          <input type="text" class="input" matInput name="firstName" formControlName="firstName" />
+          <mat-error *ngIf="firstName.hasError('required')">{{ 'auth.registration.firstNameError' | transloco }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field floatLabel="always" style="width: 100%" [ngClass]="{'big-error-msg': lastName.hasError('required')}">
+          <mat-label>{{ 'auth.registration.lastNamePlaceholder' | transloco }}</mat-label>
+          <input type="text" class="input" matInput name="lastName" formControlName="lastName" />
+          <mat-error *ngIf="lastName.hasError('required')">{{ 'auth.registration.lastNameError' | transloco }}</mat-error>
+        </mat-form-field>
+      </form>
+
+      <div style="margin-bottom: 8px">
+        <sg-terms-and-conditions></sg-terms-and-conditions>
+      </div>
+
+      <div style="width: 100%" [ngClass]="{'big-error-msg': lastName.hasError('required')}">
+        <mat-checkbox [(ngModel)]="confirmed">
+          <span [innerHtml]="'auth.confirmTerms.termsAgreeConfirm' | transloco"></span>
+        </mat-checkbox>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="sg-dialog-actions auth-dialog-actions">
+    <button type="button" class="-full-width" mat-raised-button color="accent"
+            (click)="confirmTerms()"
+            class="primary"
+            [disabled]="checkInProgress || !this.form.valid || !confirmed"
+    >{{'common.action.confirm' | transloco}}</button>
+  </div>
+</sg-dialog-deprecated>
+
+
+<ng-template #loading>
+  <div class="loading" style="height: 100px;">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

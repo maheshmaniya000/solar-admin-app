@@ -1,0 +1,13 @@
+@import 'theme';
+
+mat-card, mat-cell, mat-header-cell {
+  color: map-get($primary, 800);
+}
+
+mat-card-content {
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: $font-weight-bold;
+}

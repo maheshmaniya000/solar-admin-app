@@ -1,0 +1,94 @@
+@import 'theme';
+
+@import '~leaflet/dist/leaflet.css';
+@import '~leaflet-fullscreen/dist/leaflet.fullscreen.css';
+
+@import 'mixins/pv-config-setting-panel';
+
+@include pv-config-setting-panel();
+
+.orientation {
+  margin-bottom: $sg-24 !important;
+  height: 250px;
+
+  &.small {
+    height: auto;
+  }
+
+  .row {
+    & > div {
+      display: inline-block;
+    }
+    .label {
+      width: 80px;
+    }
+    mat-form-field {
+      width: 60px;
+    }
+    ::ng-deep .mat-form-field-subscript-wrapper {
+      width: 400px;
+    }
+  }
+  .optimum {
+    display: block;
+    color: map-get($accent, default);
+    margin-left: 22px;
+    display: inline-block;
+    margin-top: -10px;
+
+    &.small {
+      margin-top: 10px;
+    }
+  }
+
+  .orientation-minimap-container {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    display: block;
+    position: relative;
+  }
+
+  .orientation-minimap {
+    width: 200px;
+    height: 200px;
+  }
+
+  .azimuth-container {
+    position: absolute;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+
+    & > img {
+      position: absolute;
+      padding: 35px;
+      width: 130px;
+      height: 130px;
+    }
+  }
+
+  .img {
+    margin-top: 30px !important;
+  }
+
+
+  .img-tilt-container {
+    width: 90px;
+    height: 90px;
+    margin: 20px 44px;
+
+    border: solid 3px rgb(206, 211, 217);
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-tilt-inner {
+    width: 5px;
+    height: 75px;
+    background-color: rgb(251, 183, 52);
+  }
+}

@@ -1,0 +1,28 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'project.dataSettings.tableSettings' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button  [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <ul class="layer-list">
+      <li class="layer-list-item" *ngFor="let key of data.layerList">
+          <mat-checkbox [(ngModel)]="isSelected[key]">
+            <sg-project-data-key [key]="key"></sg-project-data-key>&nbsp;-&nbsp;
+            <sg-translation [str]='ltaDataset.annual.get(key).name'></sg-translation>
+          </mat-checkbox>
+      </li>
+    </ul>
+    <div class="tab-actions">
+      <button mat-button (click)="checkBulkAllCheckboxes(true)">{{ 'common.action.selectAll' | transloco }}</button>
+      <button mat-button (click)="checkBulkAllCheckboxes(false)">{{ 'common.action.unselectAll' | transloco }}</button>
+    </div>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button class="secondary-button" (click)='closeDialog()'>{{ 'common.action.cancel' | transloco }}</button>
+    <button class="primary-button" (click)='saveDialog()'>{{ 'common.action.ok' | transloco }}</button>
+  </div>
+</sg-dialog-deprecated>

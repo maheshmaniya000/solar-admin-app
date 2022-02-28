@@ -1,0 +1,23 @@
+<div fxLayout="column">
+  <div fxFlex="0 0 auto" *ngIf="noFullscreen$ | async">
+    <router-outlet name="toolbar"></router-outlet>
+  </div>
+
+  <div fxLayout="row" class="max-full-screen">
+    <div class="outlet">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="named-outlet-wrapper">
+      <div class="admin-view-tool"
+           mwlResizable
+           [ngStyle]="resizeStyle"
+           [validateResize]="validate"
+           [enableGhostResize]="true"
+           [resizeEdges]="{ bottom: false, right: false, top: false, left: true }"
+           (resizeEnd)="onResizeEnd($event)">
+        <router-outlet name="detail" (activate)="detailActivated(true)" (deactivate)="detailActivated(false)"></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+

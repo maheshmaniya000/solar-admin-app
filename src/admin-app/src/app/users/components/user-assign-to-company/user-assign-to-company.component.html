@@ -1,0 +1,28 @@
+<h3>Assign user to company</h3>
+<ng-container *ngIf="userViewStore.viewModel$ | async as viewModel">
+  <form [formGroup]="form" novalidate>
+    <sg-admin-company-autocomplete formControlName="company"></sg-admin-company-autocomplete>
+
+    <mat-form-field>
+      <mat-select placeholder="User role" formControlName="role">
+        <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="User status" formControlName="status">
+        <mat-option *ngFor="let status of statuses" [value]="status">{{status}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="onAssignButtonClick()"
+      [disabled]="form.invalid || viewModel.assigningUserToCompany"
+    >
+      <mat-progress-spinner mode="indeterminate" [diameter]="15" *ngIf="viewModel.assigningUserToCompany"> </mat-progress-spinner>
+      Assign
+    </button>
+  </form>
+</ng-container>

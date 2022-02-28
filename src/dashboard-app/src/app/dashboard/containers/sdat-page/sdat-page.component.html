@@ -1,0 +1,45 @@
+<ng-container *transloco="let t; read: 'dashboard.sdatManagement'">
+  <div class="global-home-wrapper">
+    <sg-dashboard-header [user]="user$ | async" [company]="company$ | async"></sg-dashboard-header>
+
+    <div class="apps-wrapper">
+      <h3 class="title">{{ t('sdatHeader') }}</h3>
+      <mat-card-content>
+        <mat-card>
+          <img class="apps-image" [src]="manualIcon" />
+          <a class="project-title" href="https://wiki.solargis.com/display/SUG/SDAT+User+Guide" target="_blank">
+            {{ t('manuals') }}
+          </a>
+        </mat-card>
+        <mat-card *ngIf="isCompanyAdmin$ | async">
+          <img class="apps-image" [src]="subscriptionIcon" />
+          <a class="project-title" [routerLink]="['/company-admin/subscriptions/sdat-subscription']">
+            {{ (company$ | async)?.name }}
+            {{ t('subscription') }}
+          </a>
+        </mat-card>
+        <mat-card *ngIf="hasCompanySDATSubscription$ | async">
+          <img class="apps-image" [src]="devicesIcon" />
+          <a class="project-title" [routerLink]="['/user/profile']" [queryParams]="{ tabId: 2 }">
+            {{ t('devices') }}
+          </a>
+        </mat-card>
+      </mat-card-content>
+      <h3 class="title">{{ t('download') }}</h3>
+      <p *ngIf="(hasCompanySDATSubscription$ | async) !== true" class="noSDATSubscription">
+        {{ t('noCompanySDATSubscription') }}
+      </p>
+      <p *ngIf="(hasCompanySDATSubscription$ | async) && (hasUserSDATSubscription | async) !== true" class="noSDATSubscription">
+        {{ t('noUserSDATSubscription') }}
+      </p>
+      <mat-card-content>
+        <mat-card *ngFor="let downloadSdatOption of downloadSdatOptions">
+          <img class="apps-image" [src]="downloadIcon" />
+          <a class="project-title" [href]="downloadSdatOption.url" target="_blank">
+            {{ downloadSdatOption.text }}
+          </a>
+        </mat-card>
+      </mat-card-content>
+    </div>
+  </div>
+</ng-container>

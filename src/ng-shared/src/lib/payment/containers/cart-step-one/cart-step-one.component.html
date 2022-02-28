@@ -1,0 +1,68 @@
+<mat-card class="main-card">
+  <div class="headline">
+    <mat-icon>arrow_right_alt</mat-icon>
+    <span>{{ 'payment.cart.step1.name' | transloco }}</span>
+  </div>
+
+  <div class="content">
+    <div *ngFor="let product of productsInCart$ | async; let i = index" class="order-item">
+      <div class="item-name" fxLayout="row">
+        <div fxFlex>{{ getProductNameTranslation(product.product) | transloco }}</div>
+        <div fxFlex="50px">{{ product.price }} €</div>
+      </div>
+      <div>
+        {{ 'payment.cart.step1.subscription' | transloco }}: <b>{{ 'payment.cart.step1.annual' | transloco }}</b>
+      </div>
+      <div>
+        {{ 'payment.cart.step1.users' | transloco }}: <b>{{ product.users }}</b>
+      </div>
+      <div>
+        <button
+          mat-button
+          [disabled]="product.product.code === prospectUpgradeCode"
+          (click)="edit(i)"
+          color="accent">
+          <mat-icon>edit</mat-icon>&nbsp;
+          {{ 'common.action.edit' | transloco }}
+        </button>&nbsp;
+        <button
+          mat-button
+          (click)="clear()"
+          color="accent">
+          <mat-icon>close</mat-icon>
+          {{ 'common.action.remove' | transloco }}
+        </button>
+      </div>
+    </div>
+
+    <div class="purchase-order">
+      <mat-checkbox (change)="purchaseOrderCheckboxChange($event)" [checked]="purchaseOrderEnabled">
+        {{ 'payment.cart.step1.purchaseOrder' | transloco }}
+      </mat-checkbox>
+      <form [formGroup]="form" novalidate [ngStyle]="{'visibility': !purchaseOrderEnabled ? 'hidden' : 'visible' }">
+        <mat-form-field floatLabel="never">
+          <input type="text" matInput name="purchaseOrder" formControlName="purchaseOrder"
+            [placeholder]="'payment.cart.step1.purchaseOrderPlaceholder' | transloco" />
+        </mat-form-field>
+      </form>
+
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="start end">
+      <div class="price">
+        <div class="vat">
+          {{ 'payment.cart.step1.withoutVAT' | transloco }}
+        </div>
+        <div class="total" fxLayout="row">
+          <div fxFlex>{{ 'payment.cart.step1.total' | transloco }}</div>
+          <div fxFlex="90px;" style="text-align: right;">{{ totalPrice$ | async }} €</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="actions">
+    <button class="secondary-button" [routerLink]="['/', 'payment', 'pricing']">{{ 'payment.cart.step1.back' | transloco }}</button>
+    <button class="primary-button" [routerLink]="['..', '2']">{{ 'common.action.continue' | transloco }}</button>
+  </div>
+</mat-card>

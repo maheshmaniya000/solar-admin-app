@@ -1,0 +1,32 @@
+<div *ngIf="productDetailStore.viewModel$ | async as viewModel" class="admin-view-tool-bar" fxFlex="1 1 auto">
+  <mat-card id="selected-product">
+    <mat-card-actions>
+      <div *ngIf="!viewModel.updating; else updatingTemplate">
+        <ng-container [ngSwitch]="mode">
+          <sg-admin-add-product-tools *ngSwitchCase="componentMode.add"></sg-admin-add-product-tools>
+          <sg-admin-edit-product-tools *ngSwitchCase="componentMode.edit"></sg-admin-edit-product-tools>
+          <sg-admin-view-product-tools *ngSwitchCase="componentMode.view"></sg-admin-view-product-tools>
+        </ng-container>
+
+        <button (click)="productDetailStore.close()" class="pull-right" mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+      <ng-template #updatingTemplate>
+        <mat-progress-spinner [diameter]="20" mode="indeterminate"></mat-progress-spinner>
+      </ng-template>
+    </mat-card-actions>
+
+    <mat-card-title class="bold">{{ viewModel.entity?.code }}</mat-card-title>
+    <mat-card-content>
+      <sg-admin-product-view
+        *ngIf="mode === componentMode.view; else productEditorTemplate"
+        [product]="viewModel.entity"
+      ></sg-admin-product-view>
+      <ng-template #productEditorTemplate>
+        <sg-admin-product-editor [product]="viewModel.entity"></sg-admin-product-editor>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>

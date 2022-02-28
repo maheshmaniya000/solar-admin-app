@@ -1,0 +1,47 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.title {
+  margin-bottom: $sg-32;
+  color: map-get($primary, 800);
+}
+
+.noReport {
+  padding: $sg-32 $sg-32 $sg-16 $sg-32;
+  text-align: center
+}
+
+mat-form-field {
+  width: 100px;
+  margin-right: $sg-32;
+}
+
+.error-generating {
+  color: map-get($accent, 400);
+  font-style: italic;
+}
+
+.mat-cell.cdk-column-name {
+  overflow: hidden!important;
+}
+
+.name {
+  @include text-ellipsis();
+}
+
+.table-container {
+  max-width: calc(100vw - #{$sg-72}); // calculates 100vw minus page spacing
+  overflow-x: auto;
+  padding-bottom: $sg-16;
+
+  mat-table {
+    min-width: 640px;
+  }
+}
+
+.mat-checkbox {
+  margin-right: $sg-32;
+}

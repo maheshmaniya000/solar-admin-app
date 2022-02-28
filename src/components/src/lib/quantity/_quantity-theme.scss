@@ -1,0 +1,30 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $typography-config: mat.get-typography-config($theme-or-color-config);
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $foreground: map-get($color-config, foreground);
+
+  sg-quantity {
+    .title,
+    .sub-title,
+    .unit {
+      @include mat.typography-level($typography-config, caption);
+    }
+
+    .title,
+    .value {
+      color: mat.get-color-from-palette($foreground, text);
+    }
+
+    .sub-title,
+    .unit {
+      color: mat.get-color-from-palette($foreground, hint-text);
+    }
+
+    .value {
+      @include mat.typography-level($typography-config, display-1);
+      font-weight: mat.font-weight($typography-config, display-2);
+    }
+  }
+}

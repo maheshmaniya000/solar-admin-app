@@ -1,0 +1,74 @@
+<div class="card-layout">
+  <div class="card-big chips">
+    <sg-chips-selector
+      (onSelect)="onSelect($event)"
+      [defaultSelectedChips]="defaultSelectedChips"
+      [layers]="layers"
+      [layersWithPerm]="layersWithPerm$ | async"
+    ></sg-chips-selector>
+  </div>
+
+  <ng-container *ngIf="hasCompareItems$ | async">
+    <ng-container *ngFor="let layer of layersWithPerm$ | async">
+      <div class="card-big" *ngIf="selectedChips[layer.key]">
+        <mat-card>
+          <mat-card-title>
+            <sg-project-data-key [key]="layer.key"></sg-project-data-key>
+          </mat-card-title>
+          <mat-card-content>
+            <div sgScrollContainer="sm">
+              <div class="table-s" *ngIf="hasData">
+                <cdk-table [dataSource]="dataSources[layer.key]">
+
+                    <!-- END OF YEAR COLUMN -->
+                    <ng-container cdkColumnDef="endOfYear">
+                      <cdk-header-cell *cdkHeaderCellDef>
+                        <div>{{ 'compare.endOfYear' | transloco }}</div>
+                        <!-- <sg-project-data-key [key]="layer.key"></sg-project-data-key> -->
+                        <div class="muted"><sg-unit-toggle-label [unit]="layer.unit"></sg-unit-toggle-label></div>
+                      </cdk-header-cell>
+                      <cdk-cell *cdkCellDef="let row">
+                        <ng-container *ngIf="row.year === 'avg'">
+                          {{ 'common.aggregation.avg' | transloco}}
+                        </ng-container>
+                        <ng-container *ngIf="row.year === 'sum'">
+                          {{ 'common.aggregation.sum' | transloco}}
+                        </ng-container>
+                        <ng-container *ngIf="row.year !== 'avg' && row.year !== 'sum'">
+                          {{ row.year }}
+                        </ng-container>
+                      </cdk-cell>
+                    </ng-container>
+
+                    <!-- DATA COLUMNS -->
+                    <ng-container *ngFor="let item of compare; let i = index">
+                      <ng-container [cdkColumnDef]="i.toString()">
+                        <cdk-header-cell *cdkHeaderCellDef>
+                          <div class="table-header">{{ item.project | sgProjectName }}</div>
+                          <div class="compare-{{ item.colorIndex }} compare-strip"></div>
+                        </cdk-header-cell>
+                        <cdk-cell
+                          *cdkCellDef="let row"
+                          class="right {{ item.highlighted ? 'compare-highlight-' + item.colorIndex : '' }} "
+                        >
+                          <sg-unit-value
+                            [unit]="layer.unit"
+                            [value]="row[i]"
+                          ></sg-unit-value>
+                        </cdk-cell>
+                      </ng-container>
+                    </ng-container>
+
+                    <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+                    <cdk-row *cdkRowDef="let row; columns: columns"
+                      [ngClass]="{'highlighted': row.year === 'avg' || row.year === 'sum' }"
+                    ></cdk-row>
+                  </cdk-table>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

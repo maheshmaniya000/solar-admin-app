@@ -1,0 +1,54 @@
+<section>
+  <span>ID</span>
+  <span>{{ company.sgCompanyId }}</span>
+
+  <span>Name</span>
+  <span>{{ company.name }}</span>
+
+  <span>Street</span>
+  <span>{{ company.street }}</span>
+
+  <span>Street 2</span>
+  <span>{{ company.street2 }}</span>
+
+  <span>City</span>
+  <span>{{ company.city }}</span>
+
+  <span>ZIP</span>
+  <span>{{ company.zipCode }}</span>
+
+  <span>Country</span>
+  <span>{{ company.country?.name }}</span>
+
+  <ng-container *ngIf="company.state">
+    <span>State</span>
+    <span>{{ company.state.name }}</span>
+  </ng-container>
+
+  <ng-container *ngIf="company.territory">
+    <span>Territory</span>
+    <span>{{ company.territory.name }}</span>
+  </ng-container>
+</section>
+
+<section>
+  <ng-container *ngIf="company.VAT_ID">
+    <span>VAT ID</span>
+    <span>{{ company.VAT_ID }}</span>
+  </ng-container>
+
+  <span>Registration ID</span>
+  <span>{{ company.registrationId }}</span>
+
+  <span>Email for Invoice</span>
+  <span>{{ company.companyEmailForInvoice }}</span>
+
+  <span>Web</span>
+  <span>{{ company.web }}</span>
+
+  <span>Phone</span>
+  <span>{{ company.phone }}</span>
+
+  <span>Company note</span>
+  <span>{{ company.note }}</span>
+</section>

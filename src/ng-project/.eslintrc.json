@@ -1,0 +1,17 @@
+{
+  "extends": ["../../.eslintrc-angular.json", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "src/ng-project/tsconfig.(lib|spec).json"
+        ]
+      },
+      "rules":{
+        "max-classes-per-file": "warn" // TODO switch to 'error' / remove when all resolved
+      }
+    }
+  ]
+}

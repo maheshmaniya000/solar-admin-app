@@ -1,0 +1,14 @@
+<sg-toolbar>
+  <span class="title pr-2">Users</span>
+  <div class="separator d-none d-md-block"></div>
+  <mat-slide-toggle class="d-none d-md-block pl-2"
+                    [checked]="(filter$ | async).deleted"
+                    (change)="updateFilter({ deleted: $event.checked })">
+    Show deleted
+  </mat-slide-toggle>
+
+  <ng-container class="sg-toolbar-right">
+    <sg-admin-column-selector [tableName]="tableSettingsKey" [selected]="selectedColumns$ | async" [columns]="columns"></sg-admin-column-selector>
+    <sg-admin-export-table-data (exportData)="exportUsersList()"></sg-admin-export-table-data>
+  </ng-container>
+</sg-toolbar>

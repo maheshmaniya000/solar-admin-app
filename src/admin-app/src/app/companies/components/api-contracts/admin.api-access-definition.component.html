@@ -1,0 +1,48 @@
+<form fxLayout="column" [formGroup]="accessType">
+  <div fxFlex>
+    <h5>Access</h5>
+    <mat-radio-group class="space-between" formControlName="type">
+      <!--TODO: *ngFor from enum type-->
+      <mat-radio-button value="GLOBAL">Global</mat-radio-button>
+      <mat-radio-button value="REGIONS">Region</mat-radio-button>
+      <mat-radio-button value="SITES">Sites</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div fxFlex>
+    <div *ngIf="typeForm.value === 'GLOBAL' || typeForm.value === 'REGIONS'">
+      <div fxLayout="column">
+
+        <div fxLayout="column">
+          <div fxFlex>
+            <mat-form-field>
+              <input type="number" placeholder="" matInput formControlName="maxCountOfSites" />
+              <mat-hint align="start">Max. number of sites</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div *ngIf="typeForm.value === 'REGIONS'">
+          <div fxFlex>
+            <h5>Regions</h5>
+            <p class="error" [hidden]="regions.length > 0">Choose at least one</p>
+
+            <div><mat-checkbox [checked]="regions.indexOf('EUROPE') > -1" (change)="changeRegion('EUROPE', $event)">EUROPE</mat-checkbox></div>
+            <div><mat-checkbox [checked]="regions.indexOf('AFRICA') > -1" (change)="changeRegion('AFRICA', $event)">AFRICA</mat-checkbox></div>
+            <div><mat-checkbox [checked]="regions.indexOf('ASIA') > -1" (change)="changeRegion('ASIA', $event)">ASIA</mat-checkbox></div>
+            <div><mat-checkbox [checked]= "regions.indexOf('SOUTH_AMERICA') > -1" (change)="changeRegion('SOUTH_AMERICA', $event)">SOUTH AMERICA</mat-checkbox></div>
+            <div><mat-checkbox [checked]="regions.indexOf('NORTH_AMERICA') > -1" (change)="changeRegion('NORTH_AMERICA', $event)">NORTH AMERICA</mat-checkbox></div>
+            <div><mat-checkbox [checked]="regions.indexOf('AUSTRALIA') > -1" (change)="changeRegion('AUSTRALIA', $event)">AUSTRALIA</mat-checkbox></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="typeForm.value === 'SITES'">
+      <sg-admin-api-site-access
+        [accessSites]="sites"
+        (accessSitesChange)="changeAccessSites($event)">
+      </sg-admin-api-site-access>
+    </div>
+  </div>
+</form>

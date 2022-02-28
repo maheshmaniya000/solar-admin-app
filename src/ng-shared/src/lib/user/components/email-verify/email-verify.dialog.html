@@ -1,0 +1,22 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'auth.registration.createUserAccount' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="sg-dialog-content">
+    <span *ngIf="auth0State && auth0State.emailVerify;then elseEmailVerified else elseEmailVerifyError"></span>
+
+    <ng-template #elseEmailVerifyError>
+      <span>{{ "auth.emailVerify.error" | transloco }}</span>
+    </ng-template>
+    <ng-template #elseEmailVerified>
+      <span>{{ "auth.emailVerify.ok" | transloco }}</span>
+    </ng-template>
+  </div>
+  <div class="sg-dialog-actions auth-dialog-actions">
+    <button mat-raised-button color="primary" class="primary" (click)="close()"
+    >{{ 'common.action.close' | transloco }}</button>
+  </div>
+</sg-dialog-deprecated>

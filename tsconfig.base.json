@@ -1,0 +1,41 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noErrorTruncation": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2019", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@solargis/ng-analytics": ["libs/ng-analytics/src/index.ts"],
+      "@solargis/ng-geosearch": ["libs/ng-geosearch/src/index.ts"],
+      "@solargis/ng-translation": ["libs/ng-translation/src/index.ts"],
+      "@solargis/ng-unit-value": ["libs/ng-unit-value/src/index.ts"],
+      "components": ["src/components/src/lib"],
+      "components/*": ["src/components/src/lib/*"],
+      "ng-project": ["src/ng-project/src/lib"],
+      "ng-project/*": ["src/ng-project/src/lib/*"],
+      "ng-shared": ["src/ng-shared/src/lib"],
+      "ng-shared/*": ["src/ng-shared/src/lib/*"]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "exclude": ["node_modules", "tmp", "dist"]
+}

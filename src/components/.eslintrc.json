@@ -1,0 +1,21 @@
+{
+  "extends": ["../../.eslintrc-angular.json", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "src/components/tsconfig.(lib|spec).json",
+          "src/components/.storybook/tsconfig.json"
+        ]
+      }
+    },
+    {
+      "files": ["*.stories.ts"],
+      "rules": {
+        "max-classes-per-file": "off"
+      }
+    }
+  ]
+}

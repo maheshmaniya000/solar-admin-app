@@ -1,0 +1,58 @@
+<div [ngClass]="{'sg-border': showBorders}" *transloco="let t">
+  <div class="sg-row" >
+    <div class="left">{{ t('projectDetail.info.name') }}</div>
+    <div class="right">{{ project | sgProjectName }}</div>
+  </div>
+  <div class="sg-row" *ngIf="address">
+      <div class="left">{{ t('projectDetail.info.address') }}</div>
+    <div class="right">{{ address }}</div>
+  </div>
+  <div class="sg-row" >
+      <div class="left">{{ t('projectDetail.info.coordinates') }}</div>
+    <div class="right" style="margin-top: -4px;">
+      <sg-unit-toggle-value class="unit-toggle" [unit]="latlngUnit" [value]="project?.site.point"></sg-unit-toggle-value>
+    </div>
+  </div>
+  <div class="sg-row" >
+      <div class="left">{{ t('common.datetime.timezone') }}</div>
+    <div class="right">
+      <sg-timezone [timezone]="project?.site.timezone"></sg-timezone>
+    </div>
+  </div>
+  <div class="sg-row" >
+    <div class="left">{{ t('common.datetime.lastChange') }}</div>
+    <div class="right">
+      <div *ngIf="!!project?.updated?.ts; else created">{{ project?.updated?.ts | sgDateTimeFormat }}</div>
+      <ng-template #created>
+        <div>{{ project?.created?.ts | sgDateTimeFormat }}</div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="sg-row" >
+    <div class="left">{{ t('projectDetail.info.elevation') }}</div>
+    <div class="right" style="margin-top: -4px;">
+      <ng-container *ngIf="ltaAnnual?.data.ELE; else noElevation">
+        <sg-unit-value [unit]="layer('ELE').unit" [value]="ltaAnnual?.data.ELE"></sg-unit-value>
+        <sg-unit-toggle-label [unit]="layer('ELE').unit"></sg-unit-toggle-label>
+      </ng-container>
+
+      <ng-template #noElevation>
+        <sg-no-value [muted]="true"></sg-no-value>
+      </ng-template>
+    </div>
+  </div>
+  <div class="sg-row" *ngFor="let key of landLayerKeys">
+    <div class="left">
+      <sg-translation [str]="layer(key).name"></sg-translation>
+    </div>
+    <div class="right">
+      <sg-unit-value
+        [unit]="layer(key).unit"
+        [value]="ltaAnnual?.data[key]"
+        [codelist]="layer(key).codelist">
+      </sg-unit-value>
+      <sg-unit-toggle-label *ngIf="!isCodelistValue(key)" [unit]="layer(key).unit">
+      </sg-unit-toggle-label>
+    </div>
+  </div>
+</div>

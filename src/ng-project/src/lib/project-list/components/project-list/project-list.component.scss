@@ -1,0 +1,242 @@
+@import 'theme';
+
+$accent: map-get($theme, accent);
+
+:host > div {
+  margin-left: $sg-8;
+}
+
+:host ::ng-deep {
+  mat-header-cell button {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  mat-header-cell.mat-sort-header-sorted {
+    color: map-get($accent, default);
+  }
+}
+
+mat-cell {
+  color: inherit;
+  font-size: $sg-13;
+}
+
+.project-list-wrapper {
+  height: 100%;
+  .table-wrapper {
+    overflow: scroll;
+    width: 100%;
+    position: relative;
+
+    mat-table {
+      width: 100%;
+      min-width: 100%;
+      position: absolute;
+
+      .header-active {
+        color: #{ $sg-table-header-active };
+
+        ::ng-deep {
+          .mat-sort-header-arrow {
+            color: #{ $sg-table-header-active };
+          }
+        }
+      }
+
+      mat-checkbox {
+        ::ng-deep .mat-checkbox-frame {
+          border-color: map-get($sg-gray, 900);
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .column-name {
+      font-weight: bold;
+      min-width: 0;
+
+      .name {
+        @include text-ellipsis();
+        line-height: 40px;
+
+        mat-progress-spinner {
+          display: inline-block;
+        }
+      }
+
+      sg-project-chips {
+        min-width: $sg-56;
+      }
+    }
+  }
+}
+
+.paginator-wrapper {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+  mat-paginator {
+    color: map-get($sg-gray, 700);
+
+    ::ng-deep {
+      .mat-paginator-container {
+        align-items: baseline;
+      }
+
+      .mat-form-field-underline {
+        display: none;
+      }
+
+      .mat-form-field-infix {
+        border: 1px solid map-get($sg-gray, 400);
+        border-radius: $sg-4;
+        width: $sg-56;
+        height: $sg-24;
+        padding-top: 5px;
+
+        .mat-select-value {
+          padding-top: 3px;
+          span {
+            color: map-get($sg-gray, 700);
+            font-size: $sg-12;
+            padding-left: $sg-4;
+          }
+        }
+
+        .mat-select-arrow {
+          color: map-get($sg-gray, 700);
+        }
+      }
+
+      @include media-breakpoint-down(xs) {
+        .mat-paginator-range-label {
+          margin: 0px;
+        }
+        .mat-paginator-page-size-label {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    & {
+      position: inherit;
+    }
+  }
+}
+
+
+:host ::ng-deep .column-name .open-button {
+  top: 5px;
+
+  min-width: 40px;
+
+  &,
+  & * {
+    max-height: 30px;
+    line-height: 30px;
+  }
+  span {
+    font-weight: bold;
+  }
+}
+
+.open-button {
+  visibility: hidden;
+}
+mat-row:hover .open-button {
+  visibility: visible;
+}
+.open-button + .open-button {
+  margin-left: $sg-4;
+}
+
+.mat-column-checkbox {
+  flex: 0 0 20px;
+}
+.mat-column-latest-data {
+  flex: 0 0 24px;
+}
+.mat-column-name {
+  flex: 1 0 250px;
+  flex-grow: 1;
+  font-size: $sg-13;
+}
+.data-cell {
+  flex: 1 0 40px;
+  font-size: $sg-13;
+}
+
+.highlighted {
+  background: map-get($primary, 200);
+}
+
+.hide {
+  visibility: hidden;
+}
+
+mat-row {
+  // TODO: Add typography
+  color: map-get($primary, 900);
+  min-height: 40px;
+
+  &:hover {
+    // background: map-get($primary, 200);
+    .mat-column-name,
+    mat-cell {
+      color: map-get($accent, 500);
+    }
+
+    .hide {
+      visibility: visible;
+    }
+  }
+}
+
+mat-header-cell {
+  color: map-get($primary, 900);
+}
+
+.scroll-header {
+  animation-name: header-animation;
+  animation-duration: 0.5s;
+  position: sticky !important;
+  top: 0;
+  z-index: 1;
+}
+
+@keyframes header-animation {
+  from { top: -5px; }
+  to { top: 0px; }
+}
+
+.scroll-nav-wrapper {
+  position: absolute;
+  top: 0px;
+  z-index: 0px;
+  height: 0px;
+}
+
+.scroll-nav {
+  animation-name: nav-animation;
+  animation-duration: 0.5s;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  height: 50px;
+}
+
+@keyframes nav-animation {
+  from { height: 0px; }
+  to { height: 50px; }
+}
+

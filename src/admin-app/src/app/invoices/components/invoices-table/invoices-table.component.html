@@ -1,0 +1,325 @@
+<div fxFlex="1 0 auto">
+  <form [formGroup]="form" novalidate (keydown.enter)="$event.preventDefault()">
+
+    <div class="tableContent">
+      <mat-table [dataSource]="invoices$" matSort style="width: 100%;">
+        <ng-container matColumnDef="checkbox">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 75px">
+            <mat-checkbox (click)="onSelectAllClick($event)"
+                          [checked]="allSelected$ | async"
+                          [indeterminate]="selection.hasValue() && (allSelected$ | async) === false">
+            </mat-checkbox>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 75px">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(invoice.invoiceCode) : null"
+                          [checked]="selection.isSelected(invoice.invoiceCode)">
+            </mat-checkbox>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 75px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- ID COLUMN -->
+        <ng-container *ngIf="downloadInvoiceStore.state$ | async as viewModel" matColumnDef="invoiceCode">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Invoice ID" name="invoiceCode" formControlName="invoiceCode" />
+            </mat-form-field>
+            <div mat-sort-header></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 160px">
+            <div class="invoice-id" fxFlex="grow">
+              <button
+                mat-button
+                color="accent"
+                type="button"
+                matTooltip="Download invoice"
+                matTooltipShowDelay="1000"
+                [disabled]="viewModel.downloadingInvoice[invoice.invoiceCode]"
+                (click)="downloadInvoiceStore.downloadInvoice(invoice)"
+              >
+                <mat-spinner
+                  *ngIf="viewModel.downloadingInvoice[invoice.invoiceCode] === true"
+                  [diameter]="15"
+                  style="display: inline-block"
+                  color="warn"
+                >
+                </mat-spinner>
+                {{ invoice.invoiceCode }}
+              </button>
+            </div>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 160px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- ISSUE DATE COLUMN -->
+        <ng-container matColumnDef="issueDate">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <mat-label>Issue Date</mat-label>
+              <mat-date-range-input formGroupName="issueDate" [rangePicker]="picker">
+                <input matStartDate name="start" formControlName="start" placeholder="Start date" />
+                <input matEndDate name="end" formControlName="end" placeholder="End date" />
+              </mat-date-range-input>
+              <sg-form-group-reset matSuffix [formGroup]="form.get('issueDate')"></sg-form-group-reset>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+            <div mat-sort-header></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 160px" (click)="selectOrder(invoice.order)">
+            <div class="name" fxFlex="grow">{{ invoice.issueDate | sgDateTimeFormat }}</div>
+          </mat-cell>
+          <mat-footer-cell class="column-name" *matFooterCellDef fxFlex="0 0 160px">Summary</mat-footer-cell>
+        </ng-container>
+
+        <!-- DUE DATA COLUMN -->
+        <ng-container matColumnDef="dueDate">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <mat-label>Due Date</mat-label>
+              <mat-date-range-input formGroupName="dueDate" [rangePicker]="picker">
+                <input matStartDate name="start" formControlName="start" placeholder="Start date" />
+                <input matEndDate name="end" formControlName="end" placeholder="End date" />
+              </mat-date-range-input>
+              <sg-form-group-reset matSuffix [formGroup]="form.get('dueDate')"></sg-form-group-reset>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+            <div mat-sort-header></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 160px" (click)="selectOrder(invoice.order)">
+            <div class="name" fxFlex="grow">{{ invoice.dueDate | sgDateTimeFormat }}</div>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 160px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- COMPANY COLUMN -->
+        <ng-container matColumnDef="company">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 200px">
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Company" name="company" formControlName="company" />
+            </mat-form-field>
+            <div mat-sort-header="order.company.name"></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 200px" (click)="selectOrder(invoice.order)">
+            <div class="name" fxFlex="grow">{{ invoice.order.company?.name }}</div>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 200px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- COUNTRY COLUMN -->
+        <ng-container matColumnDef="country">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 140px">
+            <mat-form-field class="-full-width">
+              <div>
+                <input matInput
+                      placeholder="Country"
+                      [matAutocomplete]="auto"
+                      autocomplete="off"
+                      name="country"
+                      [formControl]="countryFormControl"/>
+                <mat-autocomplete #auto="matAutocomplete"
+                                  [displayWith]="countryDisplayFn"
+                                  (optionSelected)="onCountrySelected($event)">
+                  <mat-option *ngFor="let country of filteredCountries$ | async" [value]="country">
+                    <small>{{ country.name }}</small>
+                  </mat-option>
+                </mat-autocomplete>
+              </div>
+            </mat-form-field>
+            <div mat-sort-header="order.company.country.name"></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 140px" (click)="selectOrder(invoice.order)">
+            <div class="name" fxFlex="grow">{{ invoice.order.company?.country.name }}</div>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 140px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- ITEM CODES COLUMN -->
+        <ng-container matColumnDef="itemCodes">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 80px">
+            <div>Item codes</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 80px" (click)="selectOrder(invoice.order)">
+            <div class="invoice-items" fxFlex="grow">
+              <ul>
+                <li *ngFor="let item of invoice.order.orderItems">{{ item.product }}</li>
+              </ul>
+            </div>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 80px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- PRICE COLUMN -->
+        <ng-container matColumnDef="priceWithoutVat">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 130px">
+            <div>Price</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 130px" (click)="selectOrder(invoice.order)">
+            <div class="name price" fxFlex="grow">{{ getOrderPriceWithoutVat(invoice.order) | number:'1.2-2':'en' }}</div>
+          </mat-cell>
+          <mat-footer-cell class="column-name" *matFooterCellDef fxFlex="0 0 130px">
+            <ng-container *ngTemplateOutlet="summaryFooter; context: { $implicit: (summary$ | async)?.priceWithoutVat }"></ng-container>
+          </mat-footer-cell>
+        </ng-container>
+
+        <!-- VAT COLUMN -->
+        <ng-container matColumnDef="VAT">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 130px">
+            VAT amount
+            <div mat-sort-header="order.VAT"></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 130px" (click)="selectOrder(invoice.order)">
+            <div class="name price" fxFlex="grow">{{ invoice.order.price - getOrderPriceWithoutVat(invoice.order) | number:'1.2-2':'en' }}</div>
+          </mat-cell>
+          <mat-footer-cell class="column-name" *matFooterCellDef fxFlex="0 0 130px">
+            <ng-container
+              *ngTemplateOutlet="summaryFooter; context: { $implicit: calculateVAT(summary$ | async) }">
+            </ng-container>
+          </mat-footer-cell>
+        </ng-container>
+
+        <!-- TOTAL PRICE COLUMN -->
+        <ng-container matColumnDef="price">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 130px">
+            <div>Total price</div>
+
+            <div mat-sort-header="order.price"></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 130px" (click)="selectOrder(invoice.order)">
+            <div class="name price" fxFlex="grow">{{ invoice.order.price | number:'1.2-2':'en' }}</div>
+          </mat-cell>
+          <mat-footer-cell class="column-name" *matFooterCellDef fxFlex="0 0 130px">
+            <ng-container *ngTemplateOutlet="summaryFooter; context: { $implicit: (summary$ | async)?.price }"></ng-container>
+          </mat-footer-cell>
+        </ng-container>
+
+        <!-- CURRENCY COLUMN -->
+        <ng-container matColumnDef="currency">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 80px">
+            <div>Currency</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 80px" (click)="selectOrder(invoice.order)">
+            <div class="name" fxFlex="grow">{{ invoice.order.currency }}</div>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 80px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- PAYMENT METHOD COLUMN -->
+        <ng-container matColumnDef="paymentType">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <mat-select placeholder="Payment method" name="paymentType" formControlName="paymentType">
+                <mat-option>Payment method</mat-option>
+                <mat-option *ngFor="let type of paymentTypes | keyvalue" [value]="type.key">
+                  {{ type.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div mat-sort-header="order.payment.type"></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 160px" (click)="selectOrder(invoice.order)">
+            <div class="name" fxFlex="grow">{{ ('enum.orderPaymentType.' + invoice.order?.payment?.type ) | transloco }}</div>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 160px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- PAYMENT DATE COLUMN -->
+        <ng-container matColumnDef="paymentDate">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 140px">
+            <mat-form-field class="-full-width">
+              <mat-label>Payment Date</mat-label>
+              <mat-date-range-input formGroupName="paymentDate" [rangePicker]="picker">
+                <input matStartDate name="start" formControlName="start" placeholder="Start date" />
+                <input matEndDate name="end" formControlName="end" placeholder="End date" />
+              </mat-date-range-input>
+              <sg-form-group-reset matSuffix [formGroup]="form.get('paymentDate')"></sg-form-group-reset>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+            <div mat-sort-header="order.payment.paymentDate"></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 140px" (click)="selectOrder(invoice.order)">
+            <div class="name" fxFlex="grow">{{ invoice.order.payment.paymentDate | sgDateTimeFormat }}</div>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 140px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- PAID COLUMN -->
+        <ng-container matColumnDef="paid">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 130px">
+            <div>Paid Amount</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 130px" (click)="selectOrder(invoice.order)">
+            <div class="name price" fxFlex="grow">{{ getPaidAmount(invoice.order) | number:'1.2-2':'en' }}</div>
+          </mat-cell>
+          <mat-footer-cell class="column-name" *matFooterCellDef fxFlex="0 0 130px">
+            <ng-container *ngTemplateOutlet="summaryFooter; context: { $implicit: (summary$ | async)?.pricePaid }"></ng-container>
+          </mat-footer-cell>
+        </ng-container>
+
+        <!-- UNPAID COLUMN -->
+        <ng-container matColumnDef="unpaid">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 130px">
+            <div>Unpaid Amount</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 130px" (click)="selectOrder(invoice.order)">
+            <div class="name price" fxFlex="grow">{{ getUnpaidAmount(invoice.order) | number:'1.2-2':'en' }}</div>
+          </mat-cell>
+          <mat-footer-cell class="column-name" *matFooterCellDef fxFlex="0 0 130px">
+            <ng-container *ngTemplateOutlet="summaryFooter; context: { $implicit: (summary$ | async)?.priceUnpaid }"></ng-container>
+          </mat-footer-cell>
+        </ng-container>
+
+        <!-- AUTHOR COLUMN -->
+        <ng-container matColumnDef="author">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 160px">
+            <mat-form-field class="-full-width">
+              <input type="text" matInput placeholder="Order owner" name="author" formControlName="author" />
+            </mat-form-field>
+            <div mat-sort-header="order.author.user.email"></div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 160px" (click)="selectOrder(invoice.order)">
+            <div class="name" fxFlex="grow">{{ invoice.order.author.user.email }}</div>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 160px"></mat-footer-cell>
+        </ng-container>
+
+        <!-- NOTE COLUMN -->
+        <ng-container matColumnDef="note">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 150px">
+            <div>Order note</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let invoice" fxFlex="0 0 150px">
+            <div class="name" fxFlex="grow">{{ invoice.order.note }}</div>
+            <button mat-icon-button (click)="editNote(invoice.order)"><mat-icon>edit</mat-icon></button>
+          </mat-cell>
+          <mat-footer-cell *matFooterCellDef fxFlex="0 0 150px"></mat-footer-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay$ | async; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let invoice; columns: columnsToDisplay$ | async"></mat-row>
+        <mat-footer-row *matFooterRowDef="columnsToDisplay$ | async; sticky: true"></mat-footer-row>
+
+      </mat-table>
+      <ng-template #noValue><span> - </span></ng-template>
+    </div>
+
+    <ng-container *ngrxLet="page$; let page">
+      <mat-paginator [length]="count$ | async"
+        [pageSize]="page?.size"
+        [pageIndex]="page?.index"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="changePage($event)">
+      </mat-paginator>
+    </ng-container>
+  </form>
+</div>
+
+<ng-template #summaryFooter let-summary>
+  <div class="name price" fxFlex="grow" *ngIf="currency$ | async as currency">
+    {{ summary | sgCurrency:currency }}
+  </div>
+</ng-template>

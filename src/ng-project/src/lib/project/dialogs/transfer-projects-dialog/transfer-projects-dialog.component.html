@@ -1,0 +1,35 @@
+<sg-dialog-deprecated [minWidth]="320">
+  <div class="sg-dialog-heading">{{ 'project.transfer.title' | transloco: { projects: projectIds.length } }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <div class="company-form-wrapper">
+      <label>{{ 'project.transfer.targetAccount' | transloco }}</label>
+      <mat-form-field>
+        <mat-select [(value)]="activeCompany">
+          <mat-option [value]="userAccount">{{ 'user.profile.type' | transloco }}</mat-option>
+          <mat-option *ngFor="let company of companies" [value]="company">
+            {{company.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <p class="info">
+      {{ 'project.transfer.info' | transloco }}
+    </p>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button class="secondary-button" (click)='closeDialog()'>
+      {{ 'common.action.cancel' | transloco | uppercase }}
+    </button>
+    <button class="primary-button" [disabled]="isNothingChanged()" (click)='transferProjects()'>
+      {{ 'project.action.transfer' | transloco | uppercase }}
+    </button>
+  </div>
+
+</sg-dialog-deprecated>

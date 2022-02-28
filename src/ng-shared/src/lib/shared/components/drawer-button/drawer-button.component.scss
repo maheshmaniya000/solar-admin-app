@@ -1,0 +1,20 @@
+@import 'theme';
+
+:host {
+  display: grid;
+
+  .drawerButton {
+    justify-self: end;
+    width: 28px;
+    height: $sg-32;
+    color: map-get($primary, 800);
+  }
+
+  .arrowRightButton {
+    width: $sg-24;
+  }
+
+  .drawerButton:focus {
+    outline: 0;
+  }
+}

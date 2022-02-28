@@ -1,0 +1,27 @@
+@import 'theme';
+
+:host > div {
+  height: 100%;
+  width: 100%;
+  background: map-get($primary, 100);
+}
+
+.container {
+  padding-top: $sg-24;
+}
+
+mat-expansion-panel {
+  margin: 0 $sg-16;
+}
+
+:host ::ng-deep {
+  sg-project-site .info-container {
+    flex-direction: column-reverse !important;
+  }
+}
+
+.error {
+  margin-top: $sg-64;
+  text-align: center;
+  font-style: italic;
+}

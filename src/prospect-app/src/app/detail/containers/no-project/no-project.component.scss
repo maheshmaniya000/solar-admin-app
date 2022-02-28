@@ -1,0 +1,10 @@
+
+:host > div {
+  width: 100%;
+
+  & > div {
+    width: fit-content;
+    margin: auto;
+    padding-top: 80px;
+  }
+}

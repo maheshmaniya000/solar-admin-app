@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageBarComponent component should match snapshot with content 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+>
+  <sg-page-bar>
+    <div
+      class="line"
+    />
+    <div
+      class="content"
+    >
+      <div>
+        some 
+        <b>
+          content
+        </b>
+        '
+      </div>
+    </div>
+  </sg-page-bar>
+</ng-component>
+`;
+
+exports[`PageBarComponent component should match snapshot without content 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+>
+  <sg-page-bar>
+    <div
+      class="line"
+    />
+    <div
+      class="content"
+    />
+  </sg-page-bar>
+</ng-component>
+`;

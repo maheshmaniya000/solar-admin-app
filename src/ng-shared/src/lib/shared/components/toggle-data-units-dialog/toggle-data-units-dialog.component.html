@@ -1,0 +1,24 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'project.dataSettings.unitSettings' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button  [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <div *ngFor="let toggle of toggles" class="row no-gutters align-items-center justify-content-between value-row">
+      <div class="label">
+        {{ 'project.dataSettings.' + toggle.settingsKey | transloco }}
+      </div>
+      <sg-unit-toggle [toggle]="toggle" [passive]="true"
+        (onKeyChange)="toggleKeys[toggle.settingsKey] = $event">
+      </sg-unit-toggle>
+    </div>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button class="secondary-button" (click)='closeDialog()'>{{ 'common.action.cancel' | transloco }}</button>
+    <button mat-button class="primary-button" (click)='saveDialog()'>{{ 'common.action.ok' | transloco }}</button>
+  </div>
+</sg-dialog-deprecated>

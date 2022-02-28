@@ -1,0 +1,10 @@
+<div
+  [style.width.%]="barWidth"
+  [ngClass]="barColorClass"
+  aria-readonly="true"
+  role="slider"
+  [attr.aria-valuemin]="min"
+  [attr.aria-valuemax]="max"
+  [attr.aria-valuenow]="value"
+></div>
+<div class="target" [style.left.%]="targetPosition"></div>

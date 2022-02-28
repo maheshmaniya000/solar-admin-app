@@ -1,0 +1,123 @@
+@import 'theme';
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 100vh;
+  width: $sg-user-sidebar-width;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  z-index: 999;
+  overflow: hidden auto;
+  visibility: hidden;
+  transform: translate3d(-100%,0,0);
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(.25,.8,.25,1);
+  transition-property: transform,visibility;
+
+  &.active {
+    visibility: visible;
+    transform: none;
+  }
+
+  .tabs, .links {
+    padding: 8px 0;
+  }
+
+  .tabs {
+    .mat-button {
+      width: 100%;
+      text-align: left;
+      color: map-get($primary, 800);
+      padding: 0;
+      text-decoration: none;
+      font-weight: $font-weight-medium;
+
+      mat-icon {
+        font-size: $sg-18;
+        text-align: center;
+        line-height: 24px;
+        margin: 0 16px;
+      }
+
+      &.active {
+        color: map-get($accent, default);
+      }
+
+      &[disabled] {
+        color: map-get($primary, 500);
+      }
+    }
+  }
+
+  .license-button-wrapper {
+    margin: 10px 0 6px 0;
+  }
+
+  .button {
+    @include sg-button(sm, red);
+    line-height: 18px;
+    margin: 0 0 0 56px;
+    white-space: normal;
+  }
+
+  .login-button {
+    @include sg-button(sm);
+  }
+
+  .link {
+    display: block;
+    font-size: $sg-14;
+    font-weight: $font-weight-regular;
+    line-height: $sg-20;
+    color: map-get($primary, 800);
+    padding: 9px 16px 9px 56px;
+    cursor: pointer;
+    white-space: normal;
+    text-decoration: none;
+
+    &:hover {
+      background: map-get($primary, 100);
+    }
+  }
+
+  .languages {
+    font-size: $sg-14;
+    line-height: $sg-20;
+    color: map-get($primary, 800);
+    margin: 9px 0 9px 56px;
+    overflow: hidden;
+
+    span, mat-icon {
+      height: $sg-20;
+      line-height: $sg-20;
+      float: left;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .mat-divider {
+    border-top-color: map-get($primary, 200);
+  }
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  z-index: 998;
+  visibility: hidden;
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(.25,.8,.25,1);
+  transition-property: background-color,visibility;
+
+  &.active {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}

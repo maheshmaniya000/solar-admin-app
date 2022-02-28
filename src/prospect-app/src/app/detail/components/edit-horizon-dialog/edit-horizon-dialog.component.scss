@@ -1,0 +1,45 @@
+@import 'theme';
+
+.sunpath {
+  canvas {
+    width: 560px;
+    height: 405px;
+  }
+
+  margin-top: 25px;
+  width: 580px;
+}
+
+.export-link {
+  margin-top: $sg-4;
+  font-size: 11px;
+  text-align: right;
+  & > a {
+    text-decoration: none;
+  }
+}
+
+.horizon-info {
+  margin-top: $sg-8;
+  font-size: 13px;
+  & > div {
+    text-align: center;
+  }
+}
+
+.horizon-actions {
+  text-align: center;
+  margin-top: $sg-16;
+}
+
+.horizon-error {
+  text-align: right;
+}
+
+.horizon-error-color {
+  color: map-get($accent, default);
+}
+
+:host ::ng-deep .dialog-container {
+  width: auto !important;
+}

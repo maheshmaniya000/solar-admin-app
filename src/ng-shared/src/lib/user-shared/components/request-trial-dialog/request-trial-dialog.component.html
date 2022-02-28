@@ -1,0 +1,74 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">{{ 'companyAdmin.api.common.freeTrialRequest' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="close()"><mat-icon>close</mat-icon></button>
+  </div>
+
+  <div class="sg-dialog-content auth-dialog-content">
+
+    <!-- Result message after registration process -->
+    <div *ngIf="requestResult && !requestResult.status" class="error">
+      <mat-error><sg-translation [str]="requestResult.message"></sg-translation></mat-error>
+    </div>
+
+    <div *ngIf="requestResult && requestResult.status" class="success">
+      <ul class="success-list">
+        <li><mat-icon>done</mat-icon><sg-translation [str]="requestResult.message"></sg-translation></li>
+      </ul>
+      <p class="padding-left">{{ 'user.company.freeTrial.success' | transloco }}</p>
+    </div>
+
+    <ng-container *ngIf="!requestResult || !requestResult.status">
+      <div class="loading" [hidden]="!isRequesting">
+        <mat-spinner></mat-spinner>
+      </div>
+      <form [formGroup]="form" (keydown.enter)="clickOnEnter($event)" novalidate [hidden]="isRequesting">
+        <mat-horizontal-stepper #stepper (selectionChange)="stepChanged($event.selectedIndex)">
+          <mat-step>
+            <sg-free-trial-form-step (output)="onOtpOutput($event)"
+                                     (otpError)="onOtpError($event)"
+                                     (captchaChange)="otpCaptcha = $event">
+            </sg-free-trial-form-step>
+          </mat-step>
+
+          <mat-step>
+            <sg-otp-form-step [callingCode]="freeTrialForm?.phoneCode?.callingCode"
+                              [phone]="freeTrialForm?.phone"
+                              (otpChange)="form.get('otp').setValue($event)"
+                              (sendAgainClick)="back()">
+            </sg-otp-form-step>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </form>
+    </ng-container>
+  </div>
+
+  <div class="sg-dialog-actions auth-dialog-actions" *ngIf="!isRequesting && !requestResult?.status">
+
+    <button class="secondary-button" (click)="back()" *ngIf="stepper?.selectedIndex >= 1">
+      <span>{{ 'common.action.back' | transloco }}</span>
+    </button>
+
+    <ng-container *ngIf="requestResult && requestResult?.status">
+      <button class="primary-button" (click)="close()" [ngClass]="{'disabled': form.invalid || !form.dirty}">
+        {{ 'common.action.ok' | transloco }}
+      </button>
+    </ng-container>
+
+    <ng-container *ngIf="!isRequesting && !requestResult?.status">
+      <button class="primary-button"
+              [disabled]="form.invalid || !otpCaptcha || (stepper?.selectedIndex === 0 && !freeTrialForm)"
+              (click)="next()">
+        {{ (stepper?.selectedIndex === 1 ? 'user.company.action.verify' :
+        stepper?.selectedIndex === 2 ? 'common.action.ok' :
+          'common.action.next') | transloco }}
+      </button>
+    </ng-container>
+  </div>
+</sg-dialog-deprecated>
+
+<ng-template #spinner>
+  <div style="overflow: hidden;">
+    <mat-spinner [diameter]="22" color="accent" style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>

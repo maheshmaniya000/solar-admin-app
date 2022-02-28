@@ -1,0 +1,92 @@
+<form [formGroup]="form">
+  <div fxLayout="row">
+      <div fxFlex>
+        <div fxLayout="column">
+          <div fxFlex>
+            <p>Type*:</p>
+            <mat-radio-group formControlName="type" layout="column">
+              <mat-radio-button [value]="'PROFA'"
+                [disabled]="order.deliveryFirst === true || hasInvoice() || hasCN()">
+                  Pro Forma Invoice</mat-radio-button>
+              <mat-radio-button [value]="'INVOICE_FOR_PROFA'"
+                [disabled]="order.deliveryFirst === true || !hasProForma() || hasInvoice() || hasCN()">
+                  Invoice for Pro Forma</mat-radio-button>
+              <mat-radio-button [value]="'INVOICE'"
+                [disabled]="hasCN()">
+                  Invoice (without Pro Forma)</mat-radio-button>
+              <mat-radio-button [value]="'CN'"
+                [disabled]="!hasInvoice() && !hasProFormaInvoice()">
+                  Credit Note</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div fxLayout="column" id="previous-account-period">
+          <div fxFlex>
+            <span>Invoice author: {{ author.email }}</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div fxFlex>
+        <div fxLayout="column">
+          <div fxFlex [hidden]="form.controls.paymentDate.disabled">
+            <mat-form-field>
+              <input matInput [matDatepicker]="paymentDate" placeholder="Payment date" formControlName="paymentDate" />
+              <mat-datepicker-toggle matSuffix [for]="paymentDate"></mat-datepicker-toggle>
+              <mat-datepicker #paymentDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div fxFlex [hidden]="form.controls.deliveryDate.disabled">
+            <mat-form-field>
+              <input matInput [matDatepicker]="deliveryDate" placeholder="Delivery date" formControlName="deliveryDate" />
+              <mat-datepicker-toggle matSuffix [for]="deliveryDate"></mat-datepicker-toggle>
+              <mat-datepicker #deliveryDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div fxFlex [hidden]="form.controls.issueDate.disabled">
+            <mat-form-field>
+              <input matInput [matDatepicker]="issueDate" placeholder="Issue date" formControlName="issueDate" />
+              <mat-datepicker-toggle matSuffix [for]="issueDate"></mat-datepicker-toggle>
+              <mat-datepicker #issueDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div fxFlex [hidden]="form.controls.dueDate.disabled">
+            <mat-form-field>
+              <input matInput [matDatepicker]="dueDate" placeholder="Due date" formControlName="dueDate" />
+              <mat-datepicker-toggle matSuffix [for]="dueDate"></mat-datepicker-toggle>
+              <mat-datepicker #dueDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+  </div>
+</form>
+
+<div class="toolbar">
+  <div class="invoice-hint">
+    <div *ngIf="invoiceHint && !invoiceHintInProgress">
+      Accounting period:
+      <b>{{ invoiceHint.accountingPeriod.from | sgDateTimeFormat }} - {{ invoiceHint.accountingPeriod.to | sgDateTimeFormat }}</b>
+      <br>
+      Next {{ getInvoiceLabel() }} number: <b>{{ invoiceHint.nextInvoiceCode }}</b>
+    </div>
+    <div style="overflow: hidden;" *ngIf="invoiceHintInProgress">
+      <mat-spinner [diameter]="22" color="accent"></mat-spinner>
+    </div>
+  </div>
+  <div *ngIf="(hasInvoice() || hasProFormaInvoice()) && (form.value.type === 'INVOICE' || form.value.type === 'INVOICE_FOR_PROFA')">
+    Note: This will edit current Invoice. If you wish to generate a new one,
+      please create a Credit note for current Invoice first and then create a new Order.
+  </div>
+  <div *ngIf="hasProForma() && form.value.type === 'PROFA' ">
+    Note: This will remove and create a new PROFA.
+  </div>
+  <br>
+  <button mat-raised-button color="accent"
+    *ngIf="!working"
+    [disabled]="form.invalid"
+    (click)="save()">Create invoice</button>
+  <mat-progress-spinner mode="indeterminate" *ngIf="working" [diameter]="30"></mat-progress-spinner>
+</div>

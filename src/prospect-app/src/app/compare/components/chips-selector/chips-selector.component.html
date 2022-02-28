@@ -1,0 +1,25 @@
+
+<div fxLayout="row">
+  <div fxFlex>
+    <mat-chip-list [multiple]="true">
+      <mat-chip
+        *ngFor="let layer of layers"
+        [selected]="selectedChips[layer.key]"
+        [selectable]="hasPerm[layer.key]"
+        [disabled]="!hasPerm[layer.key]"
+        color="accent"
+        (click)="chipClick(layer.key)">
+        <sg-project-data-key [key]="layer.key"></sg-project-data-key>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <div fxFlex.xs>
+    <button mat-button (click)="selectDefaultChips()">
+      {{ 'common.action.defaultView' | transloco }}
+    </button>
+    <button mat-button (click)="selectAllChips(!allSelected)">
+      <ng-container *ngIf="!allSelected">{{ 'common.action.selectAll' | transloco }}</ng-container>
+      <ng-container *ngIf="allSelected">{{ 'common.action.unselectAll' | transloco }}</ng-container>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <mat-list>
+    <ng-container *ngFor="let pvConfig of pvConfigs">
+      <mat-list-item (click)="select(pvConfig)" [ngClass]="{'selected': pvConfig.selected}" >
+        <mat-radio-button [value]="pvConfig.type" [disabled]="pvConfig.disabled">
+          <div fxLayout>
+            <span fxFlex matLine class="name">{{ 'pvConfig.type.' + pvConfig.type + '.name' | transloco }}</span>
+            <span *ngIf="pvConfig.disabled" fxFlex="100px" class="badge">
+              <mat-icon>lock</mat-icon>
+              <span>{{ 'common.subscriptionType.PROSPECT_PRO' | transloco }}</span>
+            </span>
+          </div>
+          <div matLine class="desc">{{ 'pvConfig.type.' + pvConfig.type + '.desc' | transloco }}</div>
+        </mat-radio-button>
+      </mat-list-item>
+    </ng-container>
+  </mat-list>
+</div>

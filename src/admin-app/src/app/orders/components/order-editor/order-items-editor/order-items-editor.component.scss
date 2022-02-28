@@ -1,0 +1,34 @@
+@import 'theme';
+
+:host {
+  margin-bottom: 15px;
+  display: block;
+}
+
+$border: 1px dashed map-get($accent, 600);
+
+sg-admin-order-item-editor {
+  border-top: $border;
+  padding: 7px 0 7px 0;
+
+  &:last-child {
+    border-bottom: $border;
+  }
+}
+
+.order-items-toolbar {
+  display: flex;
+  align-items: center;
+
+  .quantity {
+    width: 100px;
+    margin-left: auto;
+  }
+
+  .total {
+    margin-left: 10px;
+    span {
+      font-weight: bold;
+    }
+  }
+}

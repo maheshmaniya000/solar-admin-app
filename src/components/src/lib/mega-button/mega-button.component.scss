@@ -1,0 +1,32 @@
+@use '~@angular/material' as mat;
+
+:host {
+  button.mat-button {
+    height: 72px;
+    width: 100%;
+    min-width: 160px;
+    padding: 12px 8px 12px 12px;
+
+    ::ng-deep {
+      .mat-button-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        text-align: left;
+        margin-right: 12px;
+        white-space: initial;
+        overflow: hidden;
+        height: 100%;
+
+        img {
+          width: 48px;
+          height: 48px;
+          margin-right: 12px;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
+
+

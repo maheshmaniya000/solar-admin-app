@@ -1,0 +1,25 @@
+@import 'theme';
+
+@include cdk-table-s(true, auto);
+
+cdk-cell, cdk-header-cell {
+  text-align: left;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 11px;
+  flex: 0 0 25%;
+  box-sizing: border-box;
+}
+
+cdk-cell {
+  background-color: white;
+  font-weight: $font-weight-regular;
+
+  sg-unit-label {
+    margin-left: 4px;
+  }
+}
+
+cdk-row {
+  min-height: 21px;
+}

@@ -1,0 +1,25 @@
+@import 'theme';
+
+mat-card {
+  color: map-get($primary, 800);
+  margin-top: $sg-32;
+}
+
+.row {
+  padding: $sg-8;
+}
+
+.progress {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.userLimit {
+  margin-top: $sg-16;
+  color: map-get($accent, 400);
+}
+
+.notice {
+  margin-top: $sg-16;
+  font-style: italic;
+}

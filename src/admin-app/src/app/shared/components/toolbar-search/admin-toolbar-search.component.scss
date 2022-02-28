@@ -1,0 +1,10 @@
+@import 'theme';
+
+.search {
+  height: 32px;
+
+  mat-form-field {
+    bottom: 10px;
+    width: 300px;
+  }
+}

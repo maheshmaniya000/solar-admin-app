@@ -1,0 +1,11 @@
+@import 'theme';
+
+.contacts {
+  display: block;
+  min-height: auto;
+
+  div {
+    max-width: 100%;
+    @include text-ellipsis();
+  }
+}

@@ -1,0 +1,23 @@
+@forward 'grid-16-7';
+@forward 'grid-12-11';
+@forward 'grid-8-15';
+
+$column-count: 23;
+
+[class*='sg-grid-'] {
+  display: grid;
+  grid-template-columns: repeat(
+    $column-count,
+    minmax(0, calc(1 / #{$column-count} * 100%))
+  );
+  grid-column-gap: calc(1 / #{$column-count * 2 - 1} * 100%);
+  grid-row-gap: 8px;
+
+  .row-full-width {
+    grid-column-end: span $column-count;
+  }
+
+  .row-next :first-child {
+    grid-column-start: 1;
+  }
+}

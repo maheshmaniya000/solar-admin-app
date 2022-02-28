@@ -1,0 +1,20 @@
+<ng-container *ngIf="userDetailStore.viewModel$ | async as viewModel">
+  <button mat-icon-button routerLink="edit" [disabled]="viewModel.entity.deleted">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button
+          [disabled]="viewModel.entity.deleted"
+          (click)="userDetailStore.toggleInspected()"
+          [ngClass]="{'-active': viewModel.entity.inspected}"
+          [matTooltip]="viewModel.entity.inspected ? 'MARK AS NOT INSPECTED (values are verified now)' : 'MARK AS INSPECTED (values are NOT verified now)'"
+          matTooltipPosition="above">
+    <mat-icon>beenhere</mat-icon>
+  </button>
+  <button mat-icon-button
+          (click)="userDetailStore.toggleDeleted()"
+          [ngClass]="{'-active': viewModel.entity.deleted}"
+          [matTooltip]="viewModel.entity.deleted ? 'UNDELETE' : 'MARK AS DELETED'"
+          matTooltipPosition="above">
+    <mat-icon>delete</mat-icon>
+  </button>
+</ng-container>

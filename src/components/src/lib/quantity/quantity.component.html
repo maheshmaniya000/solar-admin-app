@@ -1,0 +1,29 @@
+<ng-container
+  *ngTemplateOutlet="
+    titleTemplate;
+    context: { $implicit: { className: 'title', title: title } }
+  "
+></ng-container>
+
+<ng-container
+  *ngTemplateOutlet="
+    titleTemplate;
+    context: { $implicit: { className: 'sub-title', title: subTitle } }
+  "
+></ng-container>
+
+<div>
+  <span class="value">{{ value }}</span>
+  <span class="unit" [innerHTML]="unitHtml"></span>
+</div>
+
+<ng-template #titleTemplate let-config>
+  <div
+    *ngIf="config.title"
+    [class]="config.className"
+    [style]="{ '-webkit-line-clamp': config.title.lineCount }"
+    [style.height.px]="calculateTitleHeight(config.title.lineCount)"
+  >
+    {{ config.title.text }}
+  </div>
+</ng-template>

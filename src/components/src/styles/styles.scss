@@ -1,0 +1,23 @@
+@use 'fonts';
+@use 'theme';
+
+@use '../lib/block-ui/block-ui';
+@use '../lib/button/button';
+@use '../lib/container/container';
+@use '../lib/datepicker/datepicker';
+@use '../lib/dialog/dialog';
+@use '../lib/divider/divider';
+@use '../lib/form-field/form-field';
+@use '../lib/grid/grid';
+@use '../lib/horizontal-ul-creator/horizontal-ul-creator';
+@use '../lib/icon/icon';
+@use '../lib/slider/slider';
+@use '../lib/spacer/spacer';
+@use '../lib/stepper/stepper';
+@use '../lib/tab/tab';
+@use '../lib/tool-buttons/tool-button-group/tool-button-group';
+@use '../lib/tool-buttons/tool-button-toggle-group/tool-button-toggle-group';
+@use '../lib/toolbar/toolbar';
+@use '../lib/typography/typography';
+
+@include fonts.generate-fonts('components');

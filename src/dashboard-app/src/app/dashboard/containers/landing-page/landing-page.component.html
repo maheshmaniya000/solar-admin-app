@@ -1,0 +1,53 @@
+<ng-container *transloco="let t; read: 'dashboard.landingPage'">
+  <div class="wrapper-header">
+    <div class="header">
+      <h1>{{ t('titleHeader') }}</h1>
+      <h3>{{ t('subtitleHeader') }}</h3>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <sg-landing-page-card
+      id="Prospect"
+      actionButtonLink="/prospect/"
+      actionButtonName="common.action.open"
+      [hideSubtitle]="true">
+    </sg-landing-page-card>
+    <sg-landing-page-card
+      id="Evaluate"
+      actionButtonLink="https://solargis.info/purchase/#tl=satellite&ot=CLIMDATA"
+      actionButtonName="dashboard.landingPage.evaluate.button">
+    </sg-landing-page-card>
+    <sg-landing-page-card
+      id="Monitor"
+      actionButtonLink="https://solargis.com/products/api"
+      actionButtonName="dashboard.landingPage.monitor.button">
+    </sg-landing-page-card>
+    <sg-landing-page-card
+      id="Forecast"
+      actionButtonLink="https://solargis.com/products/api"
+      actionButtonName="dashboard.landingPage.forecast.button">
+    </sg-landing-page-card>
+  </div>
+
+  <div class="wrapper-footer">
+    <a href="https://solargis.com" target="_blank">
+      {{ t('footer.solargisHomepage') }}
+    </a>
+    <a href="https://solargis.com/pricing/products-and-plans" target="_blank">
+      {{ t('footer.pricing') }}
+    </a>
+    <a href="https://solargis.com/about-us/contact" target="_blank">
+      {{ t('footer.contactUs') }}
+    </a>
+    <a href="https://solargis.com/release-notes" target="_blank">
+      {{ t('footer.releaseNotes') }}
+    </a>
+    <a href="https://solargis.com/blog/solargis-news" target="_blank">
+      {{ t('footer.news') }}
+    </a>
+    <a href="https://solargis.com/about-us/events" target="_blank">
+      {{ t('footer.events') }}
+    </a>
+  </div>
+</ng-container>

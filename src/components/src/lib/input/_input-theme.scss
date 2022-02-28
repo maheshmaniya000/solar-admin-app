@@ -1,0 +1,10 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $primary: map-get($color-config, primary);
+
+  .mat-form-field-invalid[doNotAppendFormError] .mat-input-element {
+    caret-color: mat.get-color-from-palette($primary, text);
+  }
+}

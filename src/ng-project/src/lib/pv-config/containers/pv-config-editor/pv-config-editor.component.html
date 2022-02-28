@@ -1,0 +1,117 @@
+<div *transloco="let t">
+  <sg-fullscreen-dialog-toolbar
+    [headline]="t('pvConfig.label.settings')"
+    [subheadline]="project | sgProjectName"
+    (onClose)="ignore()">
+  </sg-fullscreen-dialog-toolbar>
+
+  <div class="container" *ngIf="!!project">
+
+    <div class="content-wrapper">
+      <div class="heading heading-margin">
+        {{ t('pvConfig.label.systemType') }}
+      </div>
+
+      <mat-card class="bootstrap">
+        <div class="row align-items-center">
+          <div class="d-none d-md-block col-4 text-center">
+            <img src="assets/pvconfig/{{ sourcePvConfig.type }}.svg" />
+          </div>
+          <div class="col-12 col-md-8">
+            <div class="name left-column">{{ t('pvConfig.type.' + sourcePvConfig.type + '.name') }}</div>
+            <div class="desc right-column">{{ t('pvConfig.type.' + sourcePvConfig.type + '.desc') }}</div>
+            <a class="change" mat-button color="accent" [routerLink]="['..', 'change']">{{ t('pvConfig.action.change') }}</a>
+            <button class="restore" mat-button color="accent" (click)="restoreDefault()">{{ t('pvConfig.action.restore') }}</button>
+            <ng-container *ngIf="!isDraft; else unsaved"></ng-container>
+          </div>
+        </div>
+      </mat-card>
+
+      <div class="heading-margin">
+        <div class="heading">
+          {{ t('common.label.settings') }}
+        </div>
+        <div class="pull-right" fxHide.lt-sm>
+          <button mat-button (click)="toggleExpandAll(true)">{{ t('common.action.expandAll') }}</button>
+          <button mat-button (click)="toggleExpandAll(false)">{{ t('common.action.collapseAll') }}</button>
+        </div>
+      </div>
+
+      <mat-accordion multi="true">
+        <ng-container *ngFor="let paramType of orderedParamTypes; trackBy: trackByIndex">
+          <mat-expansion-panel
+            [expanded]="expanded[paramType] | async"
+            (opened)="expanded[paramType].next(true)"
+            (closed)="expanded[paramType].next(false)">
+            <mat-expansion-panel-header collapsedHeight="auto" expandedHeight="auto">
+              <mat-panel-title>{{ t('pvConfig.params.' + paramType + '.headline') }}</mat-panel-title>
+              <mat-panel-description>
+                <div [ngClass]="{'error': isValid[paramType] === false}">
+                  <sg-pv-config-param-value [type]="paramType" [param]="editedPvConfig[paramType]" [pvConfig]="editedPvConfig">
+                  </sg-pv-config-param-value>
+                  <div class="unsaved-panel">
+                    <ng-container *ngIf="!(changed[paramType]); else unsaved"></ng-container>
+                  </div>
+                </div>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div [ngSwitch]="paramType">
+              <sg-pv-param-system-size *ngSwitchCase="'systemSize'" [params]="editedPvConfig[paramType]" [pvConfig]="editedPvConfig"
+                                        (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event">
+              </sg-pv-param-system-size>
+              <sg-pv-param-pv-module *ngSwitchCase="'pvModule'" [params]="editedPvConfig[paramType]"
+                                      (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event">
+              </sg-pv-param-pv-module>
+              <sg-pv-param-orientation *ngSwitchCase="'orientation'" [params]="editedPvConfig[paramType]" [project]="project"
+                                        (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event">
+              </sg-pv-param-orientation>
+              <sg-pv-param-inverter *ngSwitchCase="'inverter'" [params]="editedPvConfig[paramType]" [pvConfigType]="sourcePvConfig.type"
+                                    (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event">
+              </sg-pv-param-inverter>
+              <sg-pv-param-transformer *ngSwitchCase="'transformer'"
+                                        [params]="editedPvConfig[paramType]" [pvConfigType]="sourcePvConfig.type"
+                                        (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event">
+              </sg-pv-param-transformer>
+              <sg-pv-param-cabling-losses *ngSwitchCase="'cablingLosses'" [pvConfig]="editedPvConfig" [params]="editedPvConfig[paramType]"
+                                          (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event">
+              </sg-pv-param-cabling-losses>
+              <sg-pv-param-snow-soiling-losses *ngSwitchCase="'snowSoilingLosses'" [params]="editedPvConfig[paramType]"
+                                                (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event">
+              </sg-pv-param-snow-soiling-losses>
+              <sg-pv-param-backtracking *ngSwitchCase="'backtracking'" [params]="editedPvConfig[paramType]"
+                                        (onChange)="onParamChange(paramType, $event)">
+              </sg-pv-param-backtracking>
+              <sg-pv-param-rotation-limits *ngSwitchCase="'rotationLimits'" [params]="editedPvConfig[paramType]"
+                                            (onChange)="onParamChange(paramType, $event)">
+              </sg-pv-param-rotation-limits>
+
+              <!-- inputs !-->
+              <sg-pv-param-inputs *ngSwitchCase="'systemAvailability'" [type]="paramType" [params]="editedPvConfig[paramType]"
+                                  (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event"
+                                  [keys]="['availability']">
+              </sg-pv-param-inputs>
+              <sg-pv-param-inputs *ngSwitchCase="'colSpacing'" [type]="paramType" [params]="editedPvConfig[paramType]"
+                                  (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event"
+                                  [keys]="['spacing']">
+              </sg-pv-param-inputs>
+              <sg-pv-param-inputs *ngSwitchCase="'rowSpacing'" [type]="paramType" [params]="editedPvConfig[paramType]"
+                                  (onChange)="onParamChange(paramType, $event)" (isValid)="isValid[paramType] = $event"
+                                  [keys]="['spacing']">
+              </sg-pv-param-inputs>
+            </div>
+          </mat-expansion-panel>
+        </ng-container>
+      </mat-accordion>
+    </div>
+
+    <div class="actions">
+      <button class="secondary-button" (click)="ignore()">{{ t('common.action.cancel') }}</button>
+      <button class="primary-button" [disabled]="!isAllInputsValid()" (click)="save()">{{ t('pvConfig.action.save') }}</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #unsaved>
+  <div class="unsaved">{{ 'pvConfig.label.unsaved' | transloco }}</div>
+</ng-template>

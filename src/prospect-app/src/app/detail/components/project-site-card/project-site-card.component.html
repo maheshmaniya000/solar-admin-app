@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-content>
+    <sg-project-site [project]="project"></sg-project-site>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <a mat-button color="accent" (click)="renameProject()">{{ 'projectDetail.info.edit' | transloco }}</a>
+    <a mat-button color="accent" routerLink="/map">{{ 'projectDetail.info.showOnMap' | transloco }}</a>
+  </mat-card-actions>
+</mat-card>

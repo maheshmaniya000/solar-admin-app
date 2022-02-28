@@ -1,0 +1,8 @@
+.mat-icon-button {
+  &.mat-calendar-previous-button,
+  &.mat-calendar-next-button {
+    &::after {
+      margin: 12.5px;
+    }
+  }
+}

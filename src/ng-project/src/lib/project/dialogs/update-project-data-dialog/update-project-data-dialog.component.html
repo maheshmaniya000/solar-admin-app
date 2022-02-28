@@ -1,0 +1,36 @@
+<ng-container *transloco="let t">
+  <sg-dialog-deprecated *ngIf="updateInProgress; else dialogContent">
+    <div class="sg-dialog-heading">{{ t('project.updateProjectDialog.progressTitle') }}</div>
+    <div class="sg-dialog-content">
+      <mat-spinner diameter="64" color="accent" style="margin: auto auto 20px;"></mat-spinner>
+    </div>
+  </sg-dialog-deprecated>
+
+  <ng-template #dialogContent>
+    <sg-dialog-deprecated>
+      <div class="sg-dialog-heading">{{ t('project.updateProjectDialog.title') }}</div>
+      <div class="sg-dialog-close-button">
+        <button mat-icon-button (click)="close()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+      <div class="sg-dialog-content">
+        <p>{{ t('project.updateProjectDialog.text') }}</p>
+        <p class="note">{{ t('project.updateProjectDialog.note') }}</p>
+      </div>
+
+      <div class="sg-dialog-actions">
+        <button type="button" class="secondary" (click)="close()">
+          {{ t('common.action.cancel') | uppercase }}
+        </button>
+        <button type="button" class="primary" (click)="redirectToReports()">
+          {{ t('project.updateProjectDialog.downloadReports') | uppercase }}
+        </button>
+        <button type="button" class="primary" (click)="recalculateProject()">
+          {{ t('project.action.updateProjectData') | uppercase }}
+        </button>
+      </div>
+    </sg-dialog-deprecated>
+  </ng-template>
+</ng-container>

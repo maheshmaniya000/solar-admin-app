@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+}
+
+.mat-body,
+.mat-body-1,
+.mat-typography {
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.mat-typography .mat-display-2,
+.mat-display-2,
+.mat-typography .mat-display-1,
+.mat-display-1 {
+  margin-bottom: 16px;
+}
+
+.mat-h3,
+.mat-subheading-2,
+.mat-typography h3,
+.mat-h4,
+.mat-typography h4,
+.mat-headline,
+.mat-title {
+  margin-bottom: 12px;
+}
+
+.mat-h5,
+.mat-typography h5,
+.mat-h6,
+.mat-typography h6,
+.mat-subheading-1,
+.mat-subheading-2 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+a {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+$ul-vertical-spacing: 8px;
+
+ul {
+  margin-top: $ul-vertical-spacing;
+  margin-bottom: 0;
+  padding-left: 28px;
+}
+
+li {
+  margin-top: $ul-vertical-spacing;
+  margin-bottom: $ul-vertical-spacing;
+}

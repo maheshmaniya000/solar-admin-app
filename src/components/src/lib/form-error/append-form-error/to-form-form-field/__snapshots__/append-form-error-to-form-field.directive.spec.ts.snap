@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppendFormErrorToFormFieldDirective component error message rendering form control should render error message inside mat-form-field
+ that contains invalid and touched form control 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+  formControl={[Function FormControl]}
+>
+  <mat-form-field
+    class="mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder ng-pristine ng-invalid _mat-animation-noopable mat-form-field-invalid ng-touched"
+  >
+    <div
+      class="mat-form-field-wrapper"
+    >
+      <div
+        class="mat-form-field-flex"
+      >
+        <div
+          class="mat-form-field-infix"
+        >
+          <input
+            aria-invalid="true"
+            aria-required="false"
+            class="mat-input-element mat-form-field-autofill-control ng-pristine ng-invalid cdk-text-field-autofill-monitored ng-touched"
+            matinput=""
+          />
+          <span
+            class="mat-form-field-label-wrapper"
+          >
+          </span>
+        </div>
+      </div>
+      <div
+        class="mat-form-field-underline"
+      >
+        <span
+          class="mat-form-field-ripple"
+        />
+      </div>
+      <div
+        class="mat-form-field-subscript-wrapper"
+      >
+        <div
+          class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
+          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
+        >
+          <div
+            class="mat-form-field-hint-spacer"
+          />
+        </div>
+        <sg-form-error>
+          <mat-error>
+             en.common.validation.required 
+          </mat-error>
+        </sg-form-error>
+      </div>
+    </div>
+  </mat-form-field>
+</ng-component>
+`;

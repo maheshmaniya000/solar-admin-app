@@ -1,0 +1,7 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  .mat-card {
+    @include mat.elevation($zValue: 1, $opacity: 0.1);
+  }
+}

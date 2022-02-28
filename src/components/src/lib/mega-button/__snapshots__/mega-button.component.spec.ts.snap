@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MegaButtonComponent component should render mega button with correct icon 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+  icon={[Function String]}
+>
+  <sg-mega-button>
+    <button
+      mat-button=""
+    >
+      <img
+        src="assets/img/mega-button/sprite.svg#app-prospect"
+      />
+      Label
+    </button>
+  </sg-mega-button>
+</ng-component>
+`;

@@ -1,0 +1,115 @@
+<div class="card-layout">
+  <ng-container *ngIf="hasCompareItems$ | async">
+    <div class="card-big">
+      <mat-card>
+        <mat-card-title>
+          {{ 'projectDetail.economy.label.outputs' | transloco }}
+        </mat-card-title>
+        <mat-card-content>
+          <div sgScrollContainer="md">
+            <div class="table-s" *ngIf="(economyOutputsDataSource$ | async)">
+              <cdk-table [dataSource]="economyOutputsDataSource$">
+
+                <ng-container cdkColumnDef="label">
+                  <cdk-header-cell *cdkHeaderCellDef fxFlex="300px"></cdk-header-cell>
+                  <cdk-cell *cdkCellDef="let row" fxFlex="300px">
+                    {{ row.label | transloco }}
+                  </cdk-cell>
+                </ng-container>
+
+                <ng-container cdkColumnDef="unit">
+                  <cdk-header-cell *cdkHeaderCellDef fxFlex="80px">
+                  </cdk-header-cell>
+                  <cdk-cell *cdkCellDef="let row" fxFlex="80px">
+                    <sg-unit-label [unit]="row.unit"></sg-unit-label>
+                  </cdk-cell>
+                </ng-container>
+
+                <ng-container *ngFor="let item of compare; let i = index">
+                  <ng-container [cdkColumnDef]="i.toString()">
+                    <cdk-header-cell *cdkHeaderCellDef>
+                      <div class="table-header">{{ item.project | sgProjectName }}</div>
+                      <div class="compare-{{ item.colorIndex }} compare-strip"></div>
+                    </cdk-header-cell>
+                    <cdk-cell
+                      *cdkCellDef="let row"
+                      class="right {{ item.highlighted ? 'compare-highlight-' + item.colorIndex : '' }} "
+                    >
+                    <sg-unit-value *ngIf="row[i] !== null; else noValue" [unit]="row.unit" [value]="row[i]"></sg-unit-value>
+                    </cdk-cell>
+                  </ng-container>
+                </ng-container>
+
+                <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+                <cdk-row *cdkRowDef="let row; columns: columns" [ngClass]="{'row-bold': row.bold }"></cdk-row>
+              </cdk-table>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="hasCompareItems$ | async">
+    <div class="card-big">
+      <mat-card>
+        <mat-card-title>
+          {{ 'projectDetail.economy.label.inputs' | transloco }}
+        </mat-card-title>
+        <mat-card-content>
+          <div sgScrollContainer="md">
+            <div class="table-s" *ngIf="(economyInputsDataSource$ | async)">
+              <cdk-table [dataSource]="economyInputsDataSource$">
+
+                <ng-container cdkColumnDef="label">
+                  <cdk-header-cell *cdkHeaderCellDef fxFlex="300px"></cdk-header-cell>
+                  <cdk-cell *cdkCellDef="let row" fxFlex="300px">
+                    <ng-container *ngIf="row">
+                      {{ row.label | transloco }}
+                    </ng-container>
+                  </cdk-cell>
+                </ng-container>
+
+                <ng-container cdkColumnDef="unit">
+                  <cdk-header-cell *cdkHeaderCellDef fxFlex="80px">
+                  </cdk-header-cell>
+                  <cdk-cell *cdkCellDef="let row" fxFlex="80px">
+                    <ng-container *ngIf="row">
+                      <sg-unit-label [unit]="row.unit"></sg-unit-label>
+                    </ng-container>
+                  </cdk-cell>
+                </ng-container>
+
+                <ng-container *ngFor="let item of compare; let i = index">
+                  <ng-container [cdkColumnDef]="i.toString()">
+                    <cdk-header-cell *cdkHeaderCellDef>
+                      <div class="table-header">{{ item.project | sgProjectName }}</div>
+                      <div class="compare-{{ item.colorIndex }} compare-strip"></div>
+                    </cdk-header-cell>
+                      <cdk-cell *cdkCellDef="let row"
+                        class="right {{ item.highlighted ? 'compare-highlight-' + item.colorIndex : '' }} ">
+                        <ng-container *ngIf="row">
+                          <ng-container *ngIf="row[i] !== null; else noValue">
+                            <sg-unit-value [unit]="row.unit" [value]="row[i]"></sg-unit-value>
+                          </ng-container>
+                        </ng-container>
+                      </cdk-cell>
+                  </ng-container>
+                </ng-container>
+
+                <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+                <cdk-row *cdkRowDef="let row; columns: columns"
+                  [ngClass]="{'row-bold': row && row.bold, 'row-empty': !row }"></cdk-row>
+              </cdk-table>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+
+</div>
+
+<ng-template #noValue>
+  -
+</ng-template>

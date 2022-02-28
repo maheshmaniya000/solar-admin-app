@@ -1,0 +1,9 @@
+@import 'theme';
+
+::ng-deep {
+  sg-alert-bar-container {
+    display: block;
+    padding-top: $sg-toolbar-height;
+    z-index: 5;
+  }
+}

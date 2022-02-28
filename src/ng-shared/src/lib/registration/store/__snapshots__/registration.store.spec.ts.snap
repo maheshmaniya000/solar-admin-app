@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegistrationStore should match snapshot of enum with correct order of values 1`] = `
+Object {
+  "0": "selectAccountType",
+  "1": "userInformation",
+  "2": "studentInformation",
+  "3": "trialSelection",
+  "4": "termsAndConditions",
+  "5": "accountVerification",
+  "accountVerification": 5,
+  "selectAccountType": 0,
+  "studentInformation": 2,
+  "termsAndConditions": 4,
+  "trialSelection": 3,
+  "userInformation": 1,
+}
+`;

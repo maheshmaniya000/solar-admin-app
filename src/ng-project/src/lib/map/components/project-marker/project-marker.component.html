@@ -1,0 +1,88 @@
+<div #marker class="marker-big-container">
+  <div class="marker-small-container">
+    <div class="marker-content-container" [ngClass]="{
+      'mouseover': mouseover$ | async,
+      'saved': saved$ | async,
+      'selected': selected$ | async,
+      'multiselect-active': multiSelectActive$ | async,
+      'save-disable': (valueStatus$ | async) === 'NO_VALUE',
+      'small-marker': (showLargeMarkers$ | async) === false,
+      'add-btn-active': saveButtonActive$ | async}"
+    >
+
+      <div class="container">
+        <div class="left">
+
+          <!-- ADD TO PROJECTS BUTTON !-->
+          <div *ngIf="saveButtonActive$ | async" class="action add"
+          [ngClass]="{'small-add': (showLargeMarkers$ | async) === false}">
+            <mat-icon (click)="addToProjects()">
+              {{ (mouseover$ | async) ? 'add_circle' : 'add_circle_outline' }}
+            </mat-icon>
+          </div>
+
+          <!-- SAVE IN PROGRESS SPINNER !-->
+          <div class="action" *ngIf="saveInProgress$ | async" [ngClass]="{'small-marker-spinner': (showLargeMarkers$ | async) === false}">
+            <mat-progress-spinner mode="indeterminate" [diameter]="16" [strokeWidth]="2">
+            </mat-progress-spinner>
+          </div>
+
+          <!-- MULTIPLE SELECT CHECKBOX !-->
+          <div class="action" [ngClass]="{'multiselect': multiSelectActive$ | async, 'small-marker': (showLargeMarkers$ | async) === false}" *ngIf="showCheckbox$ | async">
+            <mat-checkbox disableRipple
+              (click)="$event.stopPropagation()"
+              (change)="onMultiSelectChange($event)"
+              [checked]="multiSelected"
+              color="accent">
+            </mat-checkbox>
+          </div>
+
+          <!-- MARKER VALUE !-->
+          <ng-container *ngIf="showLargeMarkers$ | async">
+            <div class="value" [ngSwitch]="valueStatus$ | async">
+              <div *ngSwitchCase="'IN_PROGRESS'">
+                <mat-progress-spinner mode="indeterminate" [diameter]="16" [strokeWidth]="2">
+                </mat-progress-spinner>
+              </div>
+              <div *ngSwitchCase="'NO_VALUE'">
+                <sg-no-value></sg-no-value>
+              </div>
+              <sg-unit-value *ngSwitchCase="'HAS_VALUE'"
+                [unit]="unit$ | async"
+                [value]="value$ | async">
+              </sg-unit-value>
+              <div *ngSwitchCase="'CODELIST_VALUE'">-</div>
+            </div>
+          </ng-container>
+
+
+        </div>
+
+        <div class="right" *ngIf="showRight$ | async">
+          <div class="right-container">
+            <div class="placemark">
+              <div><span>{{ (project$ | async) | sgProjectName }}</span></div>
+            </div>
+            <div class="detail">
+              <button mat-icon-button color="accent" disableRipple="true"
+                [routerLink]="['/detail', (project$ | async)?._id]"
+                (click)="onOpenDetail($event)">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arr" [ngClass]="{'arr-mouseover': mouseover$ | async, 'arr-selected': selected$ | async}">
+      <svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" width="18px" height="10px" viewBox="0 2 18 10" style="enable-background:new 0 0 18 12;" xml:space="preserve">
+        <path class="sg-marker-border"
+          d="M0,0v0.101l7.309,10.958C7.663,11.622,8.285,12,9,12s1.337-0.378,1.691-0.942L18,0.101V0H0z"/>
+        <polygon class="sg-marker-fill" points="15,0 9,10 3,1 2,0 16,0 "/>
+      </svg>
+    </div>
+
+  </div>
+</div>

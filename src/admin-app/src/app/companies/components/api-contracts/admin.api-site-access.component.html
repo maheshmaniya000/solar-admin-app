@@ -1,0 +1,43 @@
+<form [formGroup]="form">
+  <div fxLayout="row wrap" formArrayName="accessSites">
+    <div fxFlex="nogrow" class="access-site" *ngFor="let site of getAccessSites(); let i = index" [formGroupName]="i">
+      <div>
+        <button mat-icon-button aria-label="Remove" (click)="removeAccessSite(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <span>Site #{{ i+1 }}</span>
+      </div>
+
+      <div id="lat-long" class="space-between">
+        <mat-form-field>
+          <input type="number" placeholder="Latitude*" matInput formControlName="latitude" />
+        </mat-form-field>
+        <mat-form-field>
+          <input type="number" placeholder="Longitude*" matInput formControlName="longitude" />
+        </mat-form-field>
+      </div>
+
+      <div id="area" class="space-between" [formGroup]="site.controls.area">
+        <mat-form-field>
+          <input type="number" placeholder="Radius:" matInput formControlName="radius" />
+          <span matSuffix="">km</span>
+        </mat-form-field>
+      </div>
+
+      <div id="validity" class="space-between">
+        <mat-form-field>
+          <input matInput [matDatepicker]="validFrom" placeholder="Valid From" formControlName="validFrom" />
+          <mat-datepicker-toggle matSuffix [for]="validFrom"></mat-datepicker-toggle>
+          <mat-datepicker #validFrom></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="validTo" placeholder="Valid To" formControlName="validTo" />
+          <mat-datepicker-toggle matSuffix [for]="validTo"></mat-datepicker-toggle>
+          <mat-datepicker #validTo></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</form>
+
+<button mat-raised-button color="accent" (click)="addNewAccessSite()">Add new site</button>

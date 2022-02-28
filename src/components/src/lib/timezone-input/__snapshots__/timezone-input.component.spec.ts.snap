@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimezoneInputComponent component should match snapshot 1`] = `
+<sg-timezone-input
+  __ngContext__={[Function LRootView]}
+  destroyed$={[Function Subject]}
+  form={[Function FormGroup]}
+  timezone={[Function String]}
+  timezoneOptions={[Function Array]}
+  utcOffset={[Function Number]}
+>
+  <label
+    for="timezone-select"
+  >
+    Time zone
+  </label><mat-form-field
+    donotappendformerror=""
+  >
+    <mat-select
+      data-test="timezone-select"
+      formcontrolname="timezone"
+      id="timezone-select"
+    >
+      <mat-option>
+         Local legal time (rounded) 
+      </mat-option>
+      <mat-option>
+         UTC offset 
+      </mat-option>
+    </mat-select>
+  </mat-form-field><mat-form-field>
+    <input
+      aria-label="utc-offset-input"
+      data-test="utc-offset-input"
+      formcontrolname="utcOffset"
+      matinput=""
+      max="14"
+      min="-12"
+      type="number"
+    />
+    <span
+      matsuffix=""
+    >
+      h
+    </span>
+  </mat-form-field>
+</sg-timezone-input>
+`;

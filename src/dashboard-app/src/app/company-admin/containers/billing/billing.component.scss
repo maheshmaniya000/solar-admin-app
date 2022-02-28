@@ -1,0 +1,59 @@
+@import 'theme';
+
+::ng-deep .mat-tab-label {
+  @include mat-tabs();
+}
+
+::ng-deep {
+  .mat-tab-labels {
+    .mat-tab-label {
+      padding: 0 10px;
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  ::ng-deep {
+    .mat-tab-labels {
+      .mat-tab-label {
+        padding: 0 24px;
+      }
+    }
+  }
+}
+
+mat-card, mat-cell, mat-header-cell {
+  color: map-get($primary, 800);
+}
+
+mat-card-content {
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: $font-weight-bold;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+:host ::ng-deep .mat-select-value-text, :host ::ng-deep .mat-option-text {
+  color: map-get($primary, 800);
+}
+
+mat-form-field {
+  width: 100px;
+}
+
+.red {
+  color: map-get($accent, 600);
+}
+
+.buttons {
+  width: 100%;
+  text-align: right;
+  float: right;
+}

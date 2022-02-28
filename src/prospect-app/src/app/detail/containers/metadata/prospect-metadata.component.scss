@@ -1,0 +1,53 @@
+@use '~@angular/material' as mat;
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.table-s {
+  @include cdk-table-s(false);
+  margin: $sg-32 0;
+
+  cdk-table {
+    cdk-header-row {
+      height: auto !important;
+    }
+
+    cdk-cell {
+      padding: 6px $sg-4;
+    }
+
+    .cdk-column-parameter { flex: 0.9; }
+    .cdk-column-sources{ flex: 2.4; }
+    .cdk-column-period { flex: 0.7; }
+    .cdk-column-method { flex: 1.3; }
+    .cdk-column-updated { flex: 0.7; }
+  }
+}
+
+.doc {
+  .headline {
+    font-weight: $font-weight-bold;
+    margin-bottom: $sg-8;
+  }
+
+  a {
+    color: map-get($accent, 600);
+    text-decoration: none;
+    word-break: break-word;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.latestMetadataColor {
+  color: map-get(mat.$red-palette, 600);
+}
+
+.latestMetadataNewLine {
+  @extend .latestMetadataColor;
+  display: block;
+}

@@ -1,0 +1,63 @@
+<div fxLayout [ngClass]="{'selectedMapLayer': isSelectedMap, 'selectMap': canSelectMap()}"
+     (mouseenter)="hovering=true" (mouseleave)="hovering=false">
+
+  <div fxFlex="22px" (click)="selectMap()">
+    <mat-icon *ngIf="isSelectedMap">check_circle</mat-icon>
+    <mat-icon *ngIf="canSelectMap()" class="selectMap">check_circle</mat-icon>
+  </div>
+
+  <!-- layer name -->
+  <div fxFlex="90px" (click)="selectMap()">
+    <sg-project-data-key [key]="layerKey"></sg-project-data-key>
+  </div>
+
+  <!-- value available -->
+  <ng-container *ngIf="hasValue(); else noValue">
+
+    <!-- codelist value -->
+    <div fxFlex *ngIf="isCodelistValue(); else unitValue" class="codelist-value">
+      <sg-unit-value [unit]="unit" [value]="value" [codelist]="layer.codelist"></sg-unit-value>
+    </div>
+
+    <!-- unit value -->
+    <ng-template #unitValue>
+      <div fxFlex="82px" class="value">
+        <!-- print value -->
+        <sg-unit-value [unit]="unit" [value]="value"></sg-unit-value>
+        <!-- add OPTA_AZIMUTH -->
+        <ng-container *ngIf="layerKey === 'OPTA'">
+          /&nbsp;
+          <sg-unit-value [unit]="unit" [value]="annualData['OPTA_AZIMUTH']"></sg-unit-value>
+        </ng-container>
+      </div>
+
+      <div fxFlex="1 0 auto">
+        <sg-unit-toggle-label [unit]="unit"></sg-unit-toggle-label>
+      </div>
+
+      <div fxFlex="0 0 60px" *ngIf="monthlyData && monthlyData[layerKey]" class="monthly-minichart">
+        <sg-monthly-minichart [layer]="layer"
+                              [data]="monthlyData[layerKey]"
+                              [dataStats]="monthlyDataStats[layerKey]"
+                              [width]="60"
+                              [height]="20">
+        </sg-monthly-minichart>
+      </div>
+    </ng-template>
+  </ng-container>
+
+  <ng-template #noValue>
+    <div fxFlex="90px" class="value">
+      <!-- loading spinner -->
+      <div *ngIf="inProgress" fxLayout="row">
+        <span fxFlex="1 1 auto"><!-- spacer --></span>
+        <mat-progress-spinner mode="indeterminate" [diameter]="20" [strokeWidth]="1.6">
+        </mat-progress-spinner>
+      </div>
+
+      <!-- value not available -->
+      <sg-no-value *ngIf="!hasValue() && !inProgress" [muted]="true"></sg-no-value>
+    </div>
+  </ng-template>
+
+</div>

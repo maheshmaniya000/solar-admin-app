@@ -1,0 +1,57 @@
+@import 'theme';
+
+:host > div {
+  margin-top: 24px;
+
+  .profile-label {
+    font-size: $sg-14;
+    font-weight: $font-weight-regular;
+    line-height: 36px;
+    color: map-get($primary, 800);
+  }
+
+  .mat-form-field {
+    display: block;
+    position: relative;
+
+    input, mat-select {
+      @include sg-input;
+    }
+
+    .invalid-field {
+      border: 1px solid map-get($accent, 500);
+    }
+  }
+
+  .mat-error {
+    color: map-get($accent, default);
+  }
+
+  ::ng-deep {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+
+    .mat-form-field-infix {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-subscript-wrapper {
+      margin-top: 0;
+    }
+
+    .mat-form-field-subscript-wrapper {
+      position: relative;
+    }
+
+    .mat-input-element {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

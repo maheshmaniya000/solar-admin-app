@@ -1,0 +1,24 @@
+<sg-dialog-deprecated [large]="true">
+  <div class="sg-dialog-heading">Transfer order</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="onCloseButtonClick()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <sg-admin-company-autocomplete
+      ngModel
+      [ngModelOptions]="{ standalone: true }"
+      (ngModelChange)="onCompanySelected($event)"
+    ></sg-admin-company-autocomplete>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button (click)="onCloseButtonClick()" class="secondary-button" mat-button>Close</button>
+    <button [disabled]="isTransferButtonDisabled()" (click)="onTransferButtonClick()" class="primary-button" mat-button>
+      <mat-progress-spinner mode="indeterminate" [diameter]="15" *ngIf="updating"> </mat-progress-spinner>
+      Transfer
+    </button>
+  </div>
+</sg-dialog-deprecated>

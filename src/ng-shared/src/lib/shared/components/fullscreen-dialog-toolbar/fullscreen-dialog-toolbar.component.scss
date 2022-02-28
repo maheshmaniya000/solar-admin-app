@@ -1,0 +1,26 @@
+@import 'theme';
+
+mat-toolbar {
+  height: 48px;
+  color: map-get($primary, 800);
+  border-bottom: map-get($primary, 300) 1px solid;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $sg-16;
+  }
+
+  button {
+    margin-top: -4px;
+  }
+
+  .divider {
+    padding: 0 $sg-8;
+    color: map-get($primary, 600);
+  }
+
+  .projectname {
+    color: map-get($primary, 600);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

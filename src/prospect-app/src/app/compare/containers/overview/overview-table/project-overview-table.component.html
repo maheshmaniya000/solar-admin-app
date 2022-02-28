@@ -1,0 +1,64 @@
+<mat-card-content>
+  <div class="table-wrapper">
+    <div class="table-s" *ngIf="dataSource">
+      <cdk-table [dataSource]="dataSource">
+
+        <!--LABEL-->
+        <ng-container cdkColumnDef="layer">
+          <cdk-header-cell *cdkHeaderCellDef [fxFlex]="paramNameColWidth">
+          </cdk-header-cell>
+          <cdk-cell *cdkCellDef="let row" class="layer">
+            <span class="param-name">
+              {{'project.dataLayer.' + row.layer + '.shortName' | transloco}}
+            </span>
+            <span class="muted param-unit">
+              <sg-unit-toggle-label [unit]="layer(row.layer).unit"></sg-unit-toggle-label>
+            </span>
+
+          </cdk-cell>
+        </ng-container>
+
+        <!--DATA-->
+        <ng-container *ngFor="let item of compare">
+          <ng-container [cdkColumnDef]="item.energySystemId">
+            <cdk-header-cell *cdkHeaderCellDef>
+              <div class="table-header">{{item.project | sgProjectName }}</div>
+              <div class="compare-{{item.colorIndex}} compare-strip"></div>
+            </cdk-header-cell>
+            <cdk-cell
+              *cdkCellDef="let row"
+              class="right {{ item.highlighted ? 'compare-highlight-' + item.colorIndex : '' }}">
+              <div class="data-item"
+                [ngClass]="[ row[item.energySystemId] === row.maxValue &&
+                row.hasHighlightBadge &&
+                !isProjectSelected ? 'rounded-badge compare-highlight-'+item.colorIndex : '' ]">
+                <ng-container *ngIf="row[item.energySystemId] || row[item.energySystemId] === 0; else notAvailable">
+                  <span class="value">
+                    <span
+                      *ngIf="isProjectSelected && item.energySystemId !== selectedEnergySysId && row[item.energySystemId] > 0 && isComparing">+</span>
+                    <sg-unit-value
+                      [unit]="layer(row.layer).unit"
+                      [value]="row[item.energySystemId]">
+                    </sg-unit-value>
+                  </span>
+                  <span class="percent" *ngIf="isProjectSelected">
+                    <span *ngIf="!!row.percentDiff" class="muted">{{row.percentDiff[item.energySystemId]}}</span>
+                  </span>
+                </ng-container>
+              </div>
+
+            </cdk-cell>
+          </ng-container>
+        </ng-container>
+
+        <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+        <cdk-row *cdkRowDef="let row; columns: columns"
+        ></cdk-row>
+      </cdk-table>
+    </div>
+  </div>
+  <ng-template #notAvailable>
+    <div class="muted unit">-</div>
+  </ng-template>
+
+</mat-card-content>

@@ -1,0 +1,95 @@
+<div fxFlex="1 0 auto">
+  <form [formGroup]="form" novalidate (keydown.enter)="$event.preventDefault()">
+
+    <div class="tableContent">
+      <mat-table [dataSource]="products$" style="width: 100%;">
+        <ng-container matColumnDef="checkbox">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 75px">
+            <mat-checkbox (click)="onSelectAllClick($event)"
+                          [checked]="allSelected$ | async"
+                          [indeterminate]="selection.hasValue() && (allSelected$ | async) === false">
+            </mat-checkbox>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let product" fxFlex="0 0 75px">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(product.code) : null"
+                          [checked]="selection.isSelected(product.code)">
+            </mat-checkbox>
+          </mat-cell>
+        </ng-container>
+
+        <!-- CODE COLUMN -->
+        <ng-container matColumnDef="code">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 150px">
+            <div>Code</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let product" fxFlex="0 0 150px">
+            <div class="name" fxFlex="grow">{{ product.code }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- CATEGORY COLUMN -->
+        <ng-container matColumnDef="category">
+          <mat-header-cell class="column-name" *matHeaderCellDef fxFlex="0 0 300px">
+            <div>Category</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let product" fxFlex="0 0 300px">
+            <div class="name" fxFlex="grow">{{ product.category }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- TITLE COLUMN -->
+        <ng-container matColumnDef="title">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <div>Title</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let product" fxLayout>
+            <div class="name" fxFlex="grow">{{ product.title }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- DESCRIPTION EN COLUMN -->
+        <ng-container matColumnDef="descriptionEN">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <div>Description EN</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let product" fxLayout>
+            <div class="name" fxFlex="grow">{{ product.descriptionENG }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- DESCRIPTION SK COLUMN -->
+        <ng-container matColumnDef="descriptionSK">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <div>Description SK</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let product" fxLayout>
+            <div class="name" fxFlex="grow">{{ product.descriptionSK }}</div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- PRICE COLUMN -->
+        <ng-container matColumnDef="price">
+          <mat-header-cell class="column-name" *matHeaderCellDef>
+            <div>Price</div>
+          </mat-header-cell>
+          <mat-cell class="column-name" *matCellDef="let product" fxLayout>
+            <div class="name" fxFlex="grow">
+              <ng-container *ngIf="product.price; else noValue">
+                {{ product.price }}
+              </ng-container>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let product; columns: columns"
+                (click)="onRowClicked(product)"
+                [ngClass]="{'-active': (selected$ | async)?.code === product.code}"
+        ></mat-row>
+      </mat-table>
+
+      <ng-template #noValue><span> - </span></ng-template>
+    </div>
+  </form>
+</div>

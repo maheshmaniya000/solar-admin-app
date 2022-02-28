@@ -1,0 +1,18 @@
+<mat-card *ngIf="companyDetailStore.viewModel$ | async as viewModel">
+  <mat-card-content>
+    <form [formGroup]="form" autocomplete="off" novalidate>
+      <sg-admin-company-snapshot-editor [parentForm]="form" [companySnapshot]="company"></sg-admin-company-snapshot-editor>
+      <h3>
+        Contacts
+        <button title="Add contact" mat-icon-button (click)="onAddContactButtonClick()"><mat-icon>add</mat-icon></button>
+      </h3>
+      <sg-admin-contacts-editor [formArray]="getContactsFormArray()"></sg-admin-contacts-editor>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" [disabled]="viewModel.saveDisabled" (click)="companyDetailStore.update()">
+      <mat-spinner *ngIf="viewModel.updating" [diameter]="15" style="display: inline-block"> </mat-spinner>
+      Save & Close
+    </button>
+  </mat-card-actions>
+</mat-card>

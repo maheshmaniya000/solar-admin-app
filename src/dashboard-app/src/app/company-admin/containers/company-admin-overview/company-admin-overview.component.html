@@ -1,0 +1,11 @@
+<div class="card-small">
+  <mat-card>
+    <mat-card-title>{{ 'common.subscription.prospect' | transloco }}</mat-card-title>
+    <mat-card-content>{{ 'companyAdmin.overview.prospectSubscription.desc' | transloco }}</mat-card-content>
+    <button mat-button color="accent"
+      (click)="redeemProspectLicense()"
+      [disabled]="sg1LicenseDisabled || (hasProspectLicense$ | async)">
+      {{ 'companyAdmin.overview.prospectSubscription.button' | transloco }}
+    </button>
+  </mat-card>
+</div>

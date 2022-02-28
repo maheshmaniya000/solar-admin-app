@@ -1,0 +1,295 @@
+@import 'theme';
+
+// This is special styling for dialogs
+// It is put here so that it is included only once in the bundled version of app
+
+:host ::ng-deep .auth-dialog-content {
+  font-size: $sg-14;
+  line-height: 20px;
+
+  h3 {
+    font-size: $sg-18;
+    line-height: 22px;
+    margin-bottom: 16px;
+    font-weight: $font-weight-bold;
+  }
+
+  p {
+    margin-bottom: 16px;
+
+    a {
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &.accent-link {
+        color: map-get($accent, default);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .margin-bottom {
+    margin-top: 16px;
+  }
+
+  .padding-left {
+    padding-left: 29px;
+  }
+
+  .inline-paragraph {
+    padding-top: 0.84375em;
+    margin-bottom: 0;
+    line-height: 42px;
+  }
+
+  .recaptcha-container {
+    padding: 0;
+
+    & > sg-captcha {
+      display: block;
+      margin: 20px 0;
+    }
+  }
+
+  ::ng-deep {
+    .mat-form-field {
+      display: block;
+      position: relative;
+
+      input, mat-select {
+        @include sg-input;
+
+        &:disabled {
+          background-color: map-get($primary, 200);
+          border-color: map-get($primary, 200);
+        }
+      }
+    }
+
+    .mat-form-field-label {
+      top: 10px;
+      position: relative;
+      color: map-get($primary, 800);
+      font-weight: $font-weight-medium;
+    }
+
+    .mat-form-field-invalid .mat-form-field-label {
+      color: map-get($primary, 800);
+    }
+
+    .mat-warn .mat-input-element, .mat-form-field-invalid .mat-input-element,
+    .mat-warn mat-select, .mat-form-field-invalid mat-select {
+      border: 1px solid map-get($accent, 500);
+    }
+
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+      height: 0;
+      background: none;
+    }
+
+    .mat-form-field-appearance-legacy.mat-form-field-invalid:not(.mat-focused) .mat-form-field-ripple {
+      height: 0;
+    }
+
+    .mat-form-field-subscript-wrapper {
+      margin-top: 0;
+    }
+
+    .mat-form-field-ripple {
+      background: none;
+      height: 0;
+    }
+
+    .mat-form-field-subscript-wrapper {
+      position: relative;
+    }
+
+    .mat-input-element {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .mat-horizontal-stepper-header-container {
+      display: none;
+    }
+
+    .mat-horizontal-content-container {
+      padding: 0;
+    }
+
+    .mat-form-field-suffix {
+      position: absolute;
+      right: 8px;
+      top: 24px;
+
+      .mat-button-wrapper {
+        font-size: 20px;
+        color: map-get($primary, 600);
+      }
+
+      .mat-icon-button {
+        outline: none;
+      }
+    }
+  }
+
+  .loading {
+    margin: 0 auto 16px auto;
+
+    > mat-spinner {
+      display: inline-block;
+    }
+  }
+
+  .error {
+    margin-bottom: 15px;
+  }
+
+  .mat-error {
+    color: map-get($accent, default);
+  }
+
+  .success {
+    .success-list {
+      padding: 0;
+      list-style: none;
+
+      li {
+        color: #008E09;
+        line-height: 17px;
+        margin-bottom: 12px;
+
+        mat-icon {
+          color: white;
+          background-color: #008E09;
+          border-radius: 50%;
+          margin-right: 12px;
+          float: left;
+          font-size: 17px;
+          width: 17px;
+          height: 17px;
+          line-height: 17px;
+        }
+
+        &.error {
+          color: map-get($accent, default);
+
+          mat-icon {
+            background-color: map-get($accent, default);
+          }
+        }
+      }
+    }
+  }
+
+  .invitation-summary {
+    border-top: 1px solid map-get($primary, 300);
+    padding-top: 16px;
+
+    .field {
+      color: map-get($primary, 600);
+    }
+
+    .info {
+      padding-top: 32px;
+
+      mat-icon {
+        color: map-get($accent, default);
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        float: left;
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+// Dialog actions
+:host ::ng-deep .auth-dialog-actions {
+  button {
+    line-height: 18px;
+    width: 100%;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      float: right;
+      width: auto;
+      margin-bottom: 0;
+
+      &:not(:first-child) {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .mat-button-wrapper {
+    text-transform: uppercase;
+  }
+
+  .primary { @include sg-button(lg, red); }
+  .secondary { @include sg-button(lg); }
+
+  .back-button {
+    overflow: hidden;
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: auto;
+    height: 40px;
+    line-height: 40px;
+    color: map-get($primary, 700);
+
+    @include media-breakpoint-up(sm) {
+      float: left;
+    }
+
+    mat-icon {
+      float: left;
+      display: block;
+      margin: 8px 8px 8px 0;
+    }
+
+    span {
+      float: left;
+    }
+  }
+}
+
+// Dialog footer
+:host ::ng-deep .auth-dialog-footer {
+  padding: 12px 32px 0 32px;
+  border-top: 1px solid map-get($primary, 250);
+  font-size: $sg-14;
+  line-height: 20px;
+
+  p {
+    margin-bottom: 12px;
+  }
+
+  a {
+    color: map-get($accent, default);
+
+    &:hover {
+      color: map-get($accent, default);
+      text-decoration: underline;
+    }
+  }
+}

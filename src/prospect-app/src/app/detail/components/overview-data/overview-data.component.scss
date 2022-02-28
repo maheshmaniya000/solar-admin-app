@@ -1,0 +1,73 @@
+@import 'theme';
+
+.row {
+  border-bottom: 1px solid map-get($primary, 300);
+  font-size: $sg-13;
+  font-weight: 400;
+
+  display: flex;
+  flex-direction: row;
+
+  &:first-child {
+    border-top: 1px solid map-get($primary, 300);
+  }
+
+  .name {
+    font-weight: $font-weight-bold;
+    flex: 1 1;
+
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+
+  .key {
+    flex: 0 0 70px;
+    white-space: nowrap;
+  }
+
+  .codelist-value {
+    flex: 0 0 #{40+16+90+16+60}px; // value + unit + monthly + paddings
+  }
+
+  .monthly {
+    flex: 0 0 60px;
+    height: $sg-20;
+
+    @media (max-width: 360px) {
+      display: none;
+    }
+  }
+
+  .value {
+    flex: 0 0 40px;
+  }
+
+  .unit {
+    flex: 0 0 90px;
+
+    & > ::ng-deep sg-unit-toggle-label {
+      white-space: normal;
+    }
+
+    @include media-breakpoint-down(xs) {
+      flex: 1 0 0px;
+    }
+  }
+
+  & > div {
+    padding: 6px 8px;
+    vertical-align: center;
+    margin: auto;
+  }
+
+  .value {
+    text-align: right;
+  }
+}
+
+.hide-name {
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+}

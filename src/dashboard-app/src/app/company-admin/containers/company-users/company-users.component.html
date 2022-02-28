@@ -1,0 +1,157 @@
+<button mat-button class="primary-button" (click)="assignUserToCompany()">
+  <mat-icon>add_circle_outline</mat-icon>
+  {{ 'companyAdmin.users.new' | transloco }}
+</button>
+
+<div class="card-big">
+  <mat-card>
+    <!-- <mat-card-title>{{ 'companyAdmin.nav.users' | transloco }}</mat-card-title> -->
+
+    <mat-card-content *ngIf="company$ | async as company">
+      <div sgScrollContainer="md" *ngIf="!!(users$ | async); else spinner;">
+        <mat-table [dataSource]="users$">
+
+          <!-- CHECKED COLUMN -->
+          <ng-container matColumnDef="checked">
+            <mat-header-cell *matHeaderCellDef fxFlex="0 0 100px"></mat-header-cell>
+            <mat-cell *matCellDef="let user" fxFlex="0 0 100px">
+              <mat-checkbox ></mat-checkbox>
+            </mat-cell>
+          </ng-container>
+
+          <!-- NAME COLUMN -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef fxFlex="1 1 40%">
+              {{ 'companyAdmin.users.name' | transloco }}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let user" fxFlex="1 1 40%">
+              {{ user | sgUserFullName }}
+            </mat-cell>
+          </ng-container>
+
+          <!-- EMAIL COLUMN -->
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef fxFlex="1 1 40%">
+              {{ 'companyAdmin.users.email' | transloco }}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let user" fxFlex="1 1 40%">
+              <span class="email">{{ user.email }}</span>
+            </mat-cell>
+          </ng-container>
+
+          <!-- ROLE COLUMN -->
+          <ng-container matColumnDef="role">
+            <mat-header-cell *matHeaderCellDef fxFlex="1 1 20%">
+              {{ 'companyAdmin.users.role' | transloco }}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let user" fxFlex="1 1 20%">
+
+            <mat-select [placeholder]="'user.company.role.' + user.role | transloco" [value]="user.role">
+              <ng-container *ngIf="!(user.role === 'ADMIN' && (hasMultipleAdmins$ | async) === false) && isNotLoggedIn(user)">
+                <mat-option *ngFor="let role of allowedRoles" [value]="role" (click)="updateRole(company, user, role)">
+                  {{ 'user.company.role.' + role | transloco }}
+                </mat-option>
+              </ng-container>
+            </mat-select>
+            </mat-cell>
+          </ng-container>
+
+
+          <!-- STATUS COLUMN -->
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef fxFlex="1 1 20%">
+              {{ 'companyAdmin.users.status' | transloco }}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let user" fxFlex="1 1 20%">
+              <mat-select [placeholder]="'user.company.status.' + user.status | transloco" [value]="user.status">
+                <ng-container *ngIf="isNotLoggedIn(user)">
+                  <mat-option *ngFor="let status of allowedStatus" [value]="status" (click)="updateStatus(company, user, status)">
+                    {{ 'user.company.status.' + status | transloco }}
+                  </mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-cell>
+          </ng-container>
+
+          <!-- ACTIONS COLUMN -->
+          <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef fxFlex="1 1 10%">
+            </mat-header-cell>
+            <mat-cell *matCellDef="let user" fxFlex="1 1 10%">
+              <button
+                *ngIf="isNotLoggedIn(user) || hasAppSubscription(company)"
+                mat-icon-button
+                [matMenuTriggerFor]="actionMenu"
+              >
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #actionMenu="matMenu">
+                <button *ngIf="isNotLoggedIn(user)" mat-menu-item (click)="deleteUser(company, user)">
+                  {{ 'common.action.delete' | transloco }}
+                </button>
+                <ng-container *ngIf="company$ | async as company">
+                  <ng-container *ngTemplateOutlet="assignButton; context: { app: 'prospect' }"></ng-container>
+                  <ng-container *ngTemplateOutlet="assignButton; context: { app: 'sdat' }"></ng-container>
+
+                  <ng-template let-app="app" #assignButton>
+                    <button *ngIf="!!getAppSubscription(company, app)" mat-menu-item
+                            (click)="changeUserAssignmentToSubscription(user, company, app)">
+                      {{ 'companyAdmin.users.' + (canAssignUser(user, company, app) ? 'assign' : 'unassign') + '.' + app | transloco }}
+                    </button>
+                  </ng-template>
+                </ng-container>
+              </mat-menu>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+          <mat-row *matRowDef="let user; columns: columns;"></mat-row>
+        </mat-table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- INVITATIONS -->
+<div class="card-small">
+  <mat-card class="card-small" *ngIf="(hasInvitation$ | async) || reloadingInvitations">
+    <mat-card-title>
+      {{ 'companyAdmin.users.invitations' | transloco }}
+    </mat-card-title>
+    <mat-card-content>
+      <div sgScrollContainer="md">
+        <mat-table [dataSource]="invitations$" [trackBy]="trackByIndex" *ngIf="!reloadingInvitations; else spinner">
+
+          <!-- EMAIL COLUMN -->
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef fxFlex="1 1 60%">
+              {{ 'companyAdmin.users.email' | transloco }}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let invitation" fxFlex="1 1 60%">
+              <span class="email">{{ invitation.email }}</span>
+            </mat-cell>
+          </ng-container>
+
+          <!-- TS COLUMN -->
+          <ng-container matColumnDef="ts">
+            <mat-header-cell *matHeaderCellDef fxFlex="1 1 40%">
+              {{ 'companyAdmin.users.validUntill' | transloco }}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let invitation" fxFlex="1 1 40%">
+              {{ secondsToMilliseconds(invitation.validUntil) | sgDateTimeFormat:'dateTime' }}
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="invitationsColumns"></mat-header-row>
+          <mat-row *matRowDef="let user; columns: invitationsColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<ng-template #spinner>
+  <div class="spinner">
+    <mat-spinner mode="indeterminate" [diameter]="25" style="margin: auto;"></mat-spinner>
+  </div>
+</ng-template>

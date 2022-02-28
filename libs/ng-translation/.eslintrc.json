@@ -1,0 +1,14 @@
+{
+  "extends": ["../../.eslintrc-angular.json", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "libs/ng-translation/tsconfig.(lib|spec).json"
+        ]
+      }
+    }
+  ]
+}

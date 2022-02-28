@@ -1,0 +1,22 @@
+<sg-dialog
+  [titleTranslationKey]="data.titleTranslationKey"
+  [closeIconButtonEnabled]="data.closeIconButtonEnabled"
+  [actions]="data.actions"
+  [dividedContent]="data.dividedContent"
+>
+  <ng-container *ngIf="isContentAString()">
+    {{ data.content }}
+  </ng-container>
+
+  <ng-container
+    *ngIf="isContentATemplateRef()"
+    [ngTemplateOutlet]="data.content"
+  >
+  </ng-container>
+
+  <ng-container
+    *ngIf="isContentAComponent()"
+    [ngComponentOutlet]="data.content"
+  >
+  </ng-container>
+</sg-dialog>

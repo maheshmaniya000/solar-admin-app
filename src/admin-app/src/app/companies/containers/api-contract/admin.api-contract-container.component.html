@@ -1,0 +1,128 @@
+<div>
+  <sg-fullscreen-dialog-toolbar
+    headline="API Contract"
+    subheadline="Admin"
+    (onClose)="onCloseClick()"
+  ></sg-fullscreen-dialog-toolbar>
+
+  <mat-card>
+    <ng-container *ngIf="company; else noAPIContracts">
+      <mat-card-title>
+        API contracts for company:
+        <ng-container *ngIf="!!company">{{ company.name }}</ng-container>
+      </mat-card-title>
+
+      <div *ngIf="loadingContracts" fxLayout="row" class="loading-container">
+        <div fxFlex="nogrow"><mat-progress-spinner mode="indeterminate" [diameter]="22" ></mat-progress-spinner></div>
+        <div fxFlex="nogrow"><h3>Loading API contracts ...</h3></div>
+      </div>
+
+      <div *ngIf="!loadingContracts" class="existing-api-contracts">
+        <div *ngIf="company.apiContracts && company.apiContracts.length > 0; else noAPIContracts">
+          <h3>Existing API contracts</h3>
+          <ul>
+            <li *ngFor="let APIContract of company.apiContracts; let i = index">
+              <div *ngIf="deletingContractId !== APIContract.id">
+                <button mat-icon-button aria-label="Edit" (click)="editAPIContract(APIContract)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+
+                <button mat-icon-button aria-label="Remove" (click)="deleteAPIContract(APIContract)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+
+                <span [hidden]="APIContract.title">API #{{ (i+1) }}</span>
+                <span [hidden]="!APIContract.title">{{APIContract.title}}</span>
+                (
+                <span [hidden]="!APIContract.pvPlannerContract">pvPlanner</span>
+                <span [hidden]="!APIContract.dataDeliveryContract">dataDelivery</span>
+                )
+              </div>
+              <div class="spinner-with-text" *ngIf="deletingContractId === APIContract.id">
+                <mat-progress-spinner mode="indeterminate" [diameter]="14" ></mat-progress-spinner>
+                <span>Deleting ....</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <ng-template #noAPIContracts>
+          <p>This company has no API Contracts.</p>
+        </ng-template>
+
+        <button mat-raised-button color="accent" *ngIf="!newApiContract" (click)="addNewAPIContract()">Add new API contract</button>
+      </div>
+    </ng-container>
+  </mat-card>
+
+  <mat-card *ngIf="loadingExistingContract || newApiContract">
+    <mat-progress-spinner mode="indeterminate" [diameter]="25" *ngIf="loadingExistingContract"></mat-progress-spinner>
+
+    <mat-tab-group *ngIf="newApiContract">
+      <mat-tab label="Settings">
+        <div class="new-api-contract">
+          <sg-admin-single-api-contract
+            *ngIf="!savingNewContract"
+            [apiContract]="newApiContract"
+            (apiContractChange)="newApiContract = $event"
+            (newApiContractValid)="newApiContractValid = $event"
+          ></sg-admin-single-api-contract>
+
+          <div class="space-between">
+            <div class="spinner-with-text" *ngIf="savingNewContract">
+              <mat-progress-spinner mode="indeterminate" [diameter]="15" ></mat-progress-spinner>
+              <h4>Saving API contract ...</h4>
+            </div>
+
+            <div *ngIf="!savingNewContract">
+              <button mat-raised-button color="accent"
+                      [disabled]="!newApiContractValid"
+                      (click)="saveNewAPIContract()"
+              >Save</button>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Access keys (tokens)" [disabled]="!newApiContract.id">
+        <ul>
+          <li *ngFor="let token of newApiContract.accessTokens; let i = index">
+            <div *ngIf="revokingToken !== i">
+              <button mat-icon-button aria-label="Remove" (click)="revokeTokenForAPIContract(token)">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+              <span>Token {{ i + 1 }}</span>
+              <pre class="token">{{ token }}</pre>
+            </div>
+
+            <div class="spinner-with-text" *ngIf="revokingToken === i">
+              <mat-progress-spinner mode="indeterminate" [diameter]="14" ></mat-progress-spinner>
+              <span>Revoking ....</span>
+            </div>
+          </li>
+        </ul>
+
+        <button mat-raised-button color="accent" (click)="addNewTokenToAPIContract()" *ngIf="!generatingNewToken">Add new token (access key)</button>
+        <mat-progress-spinner mode="indeterminate" [diameter]="15" *ngIf="generatingNewToken"></mat-progress-spinner>
+      </mat-tab>
+      <mat-tab label="Statistics" [disabled]="!newApiContract.id">
+        <ul *ngIf="newApiContract && newApiContract.stats">
+          <li>Requests (count): {{ newApiContract.stats.requestCount }}</li>
+          <li>Unique Sites (count): {{ newApiContract.stats.uniqueSitesCount }}</li>
+          <li>Unique Information Units (count): {{ newApiContract.stats.uniqueInformationUnits }}</li>
+        </ul>
+      </mat-tab>
+    </mat-tab-group>
+
+    <div class="text-right">
+      <button mat-button color="accent" (click)="cancelNewAPIContract()">Cancel</button>
+    </div>
+  </mat-card>
+
+</div>
+
+<ng-template #noAPIContracts>
+  <p>Loading API contracts.</p>
+  <p>
+    <mat-progress-spinner mode="indeterminate" [diameter]="30"></mat-progress-spinner>
+  </p>
+</ng-template>

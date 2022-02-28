@@ -1,0 +1,11 @@
+<div class="site-map">
+  <img class="marker" src="assets/img/marker.svg" alt="Marker" *ngIf="satellite" />
+  <img *ngIf="imgSrc; else reportMap" class="map" [src]="imgSrc" alt="Map">
+</div>
+
+<ng-template #reportMap>
+  <sg-report-map [point]="reportMapPoint"
+                 [type]="!pvElectricity ? 'site' : 'cover'"
+                 [countryCode]="reportMapCountryCode">
+  </sg-report-map>
+</ng-template>

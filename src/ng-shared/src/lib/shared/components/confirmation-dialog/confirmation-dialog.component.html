@@ -1,0 +1,24 @@
+
+<sg-dialog-deprecated [large]="true">
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-heading">
+    <sg-translation [str]="heading"></sg-translation>
+  </div>
+
+  <div class="sg-dialog-content">
+    <sg-translation [str]="text"></sg-translation>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <ng-container *ngFor="let action of actions" >
+      <button mat-button *ngIf="!action.default"(click)="closeDialog(action.value)" class="secondary-button"><sg-translation [str]="action.text"></sg-translation></button>
+      <button mat-button *ngIf="action.default" (click)="closeDialog(action.value)" class="primary-button"><sg-translation [str]="action.text"></sg-translation></button>
+    </ng-container>
+  </div>
+
+</sg-dialog-deprecated>

@@ -1,0 +1,72 @@
+@import 'theme';
+
+.cover {
+  margin: $print-space-top auto 0 auto;
+  overflow: hidden;
+  width: $print-page-width;
+
+  .logo {
+    line-height: 36px;
+    overflow: hidden;
+
+    img {
+      height: 36px;
+      float: left;
+    }
+
+    span {
+      color: map-get($accent, default);
+      font-size: 22pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding-left: 30px;
+      float: left;
+    }
+  }
+
+  .map {
+    margin: 80px 0 60px 0;
+  }
+
+  .title {
+    color: map-get($accent, default);
+    font-size: 22pt;
+    font-weight: bold;
+  }
+
+  .project {
+    color: map-get($accent, default);
+    font-size: 22px;
+    font-weight: bold;
+    margin: 50px 0;
+  }
+
+  .summary {
+    .left {
+      display: inline-block;
+      width: 180px;
+    }
+  }
+
+  .cover-footer {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 180px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  a {
+    color: map-get($accent, default);
+    text-decoration: none;
+  }
+}
+
+::ng-deep {
+  * {
+    font-size: 12px;
+    color: black;
+  }
+}

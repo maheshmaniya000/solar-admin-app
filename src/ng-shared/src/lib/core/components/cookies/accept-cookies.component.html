@@ -1,0 +1,11 @@
+  <p>{{ 'cookies.cookie-banner.text' | transloco }}</p>
+  <div class="buttons-wrapper">
+    <button class="primary-button" (click)="acceptCookies.emit()">
+      {{ 'cookies.cookie-banner.accept' | transloco }}
+    </button>
+    <button class="secondary-button">
+      <a href="https://solargis.com/legal/solargis-apps-terms-of-use" target="_blank">
+        {{ 'cookies.cookie-banner.more-info' | transloco }}
+      </a>
+    </button>
+  </div>

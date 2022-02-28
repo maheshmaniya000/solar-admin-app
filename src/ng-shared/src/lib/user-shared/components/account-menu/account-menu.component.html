@@ -1,0 +1,41 @@
+<div class="bootstrap" [ngClass]="{ nested: nested }">
+
+  <!-- ACCOUNT INFO -->
+  <mat-list class="account-info">
+    <mat-list-item class="company-account d-flex align-items-center" *ngFor="let company of companyList" (click)="selectCompany(company)">
+      <div class="col-auto account-select-icon">
+        <mat-icon *ngIf="selected === company.company || (!selected && !company.company)">done</mat-icon>
+      </div>
+      <div class="col d-flex align-items-center account-menu-info">
+        <sg-account-overview [hideOnSmallScreen]="false" [user]="user" [company]="company.company"></sg-account-overview>
+      </div>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-divider></mat-divider>
+
+  <!-- SETTINGS -->
+  <div class="settings">
+    <p class="account-menu-label" (click)="addNewCompany()">
+      {{ 'user.company.add' | transloco }}
+    </p>
+    <p class="account-menu-label" [routerLink]="['user', 'profile']" (click)="closeParentIfNested()">
+      {{ 'user.profile.account' | transloco }}
+    </p>
+  </div>
+  <mat-divider></mat-divider>
+
+  <!-- <ng-container *ngIf="isAdmin$ | async">
+    <div class="admin">
+      <p class="account-menu-label" [routerLink]="['payment', 'pricing']" (click)="closeParentIfNested()">Payment v2 [only SG admin]</p>
+    </div>
+    <mat-divider></mat-divider>
+  </ng-container> -->
+
+  <!-- LOGOUT -->
+  <div class="log-out">
+    <p class="account-menu-label" (click)="logout()">
+      {{ 'header.logout' | transloco }}
+    </p>
+  </div>
+</div>

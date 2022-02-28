@@ -1,0 +1,38 @@
+<div *ngFor="let layer of dataLayers" class="row">
+  <div class="name" [ngClass]="{'hide-name': !hideName}">
+    <sg-translation [str]="translationDefWithData(layer.name)"></sg-translation>
+  </div>
+  <div class="key" *ngIf="!hideKeys">
+    <sg-project-data-key [key]="layer.key"></sg-project-data-key>
+  </div>
+
+  <!-- codelist value -->
+  <div *ngIf="isCodelistValue(layer); else unitValue" class="codelist-value">
+    <sg-unit-value [unit]="layer.unit" [value]="data[layer.key]" [codelist]="layer.codelist"></sg-unit-value>
+  </div>
+
+  <ng-template #unitValue>
+    <div class="value">
+      <ng-container *ngIf="hasAnnualData(layer); else noData">
+        <sg-unit-value [unit]="layer.unit" [value]="data[layer.key]"></sg-unit-value>
+      </ng-container>
+      <ng-template #noData>
+        <sg-no-value></sg-no-value>
+      </ng-template>
+    </div>
+    <div class="unit">
+      <ng-container *ngIf="hasAnnualData(layer)">
+        <sg-unit-toggle-label [unit]="layer.unit"></sg-unit-toggle-label>
+      </ng-container>
+    </div>
+    <div class="monthly" *ngIf="hasMonthlyData()">
+      <ng-container *ngIf="monthlyData && monthlyData[layer.key]">
+        <sg-monthly-minichart [layer]="layer"
+                              [data]="monthlyData[layer.key]"
+                              [dataStats]="monthlyDataStats[layer.key]">
+        </sg-monthly-minichart>
+      </ng-container>
+    </div>
+  </ng-template>
+
+</div>

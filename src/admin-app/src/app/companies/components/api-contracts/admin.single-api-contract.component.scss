@@ -1,0 +1,33 @@
+@import 'theme';
+
+#settings {
+  .title {
+    width: 350px;
+  }
+  .max-requests {
+    width: 180px;
+  }
+}
+
+.first-row {
+  > div:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+.processing-key {
+  display: inline-block;
+  width: 200px;
+}
+.sites {
+  margin-bottom: 15px;
+}
+.big {
+  width: 300px;
+}
+.small {
+  width: 140px;
+}
+.error {
+  font-size: 12px;
+  color: #ffc107;
+}

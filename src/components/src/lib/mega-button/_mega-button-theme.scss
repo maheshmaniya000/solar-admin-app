@@ -1,0 +1,19 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $typography-config: mat.get-typography-config($theme-or-color-config);
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $background: map-get($color-config, background);
+  $primary: map-get($color-config, primary);
+
+  sg-mega-button  {
+    button.mat-button {
+      background-color: mat.get-color-from-palette($background, hover);
+
+      .mat-button-wrapper {
+        color: mat.get-color-from-palette($primary);
+        @include mat.typography-level($typography-config, subheading-2);
+      }
+    }
+  }
+}

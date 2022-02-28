@@ -1,0 +1,28 @@
+
+<sg-drawer-layout>
+  <ng-container class="navigation">
+    <sg-project-filter></sg-project-filter>
+  </ng-container>
+
+  <ng-container class="content">
+    <sg-multi-select-toolbar *ngIf="isMulti$ | async; else projectToolbar" component="list"></sg-multi-select-toolbar>
+    <sg-alert-bar-container route="prospect/list"></sg-alert-bar-container>
+    <div class="container" [ngStyle]="{'padding-top': (alertBarHeight$ | async) + 'px', 'height': 'calc(100% - ' + (alertBarHeight$ | async) + 'px);'}">
+      <div class="list" [ngClass]="{'list-reduced': (state$ | async) !== 'none'}">
+        <sg-project-list [searchQuery]="searchQuery"></sg-project-list>
+      </div>
+      <div class="right-panel" *ngIf="(state$ | async) !== 'none'">
+        <ng-container *ngIf="(state$ | async) === 'info'">
+          <sg-project-list-info></sg-project-list-info>
+        </ng-container>
+        <ng-container class="map" *ngIf="(state$ | async) === 'map'">
+          <sg-map-view></sg-map-view>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</sg-drawer-layout>
+
+<ng-template #projectToolbar>
+  <sg-project-toolbar (onSearchQuery)="searchProject($event)" componentName="list"></sg-project-toolbar>
+</ng-template>

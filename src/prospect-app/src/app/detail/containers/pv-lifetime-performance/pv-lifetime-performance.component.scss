@@ -1,0 +1,41 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.table-s {
+  @include cdk-table-s();
+
+  cdk-header-cell {
+    text-align: right;
+  }
+
+  @include sticky-table-scrolling();
+
+  cdk-cell:first-of-type, cdk-header-cell:first-of-type {
+    min-width: 10%;
+  }
+
+  cdk-row:nth-last-child(2) cdk-cell:first-of-type {
+    background-color: #f4f5f7;
+  }
+  cdk-row:nth-child(2) cdk-cell:first-of-type {
+    background-color: #f4f5f7;
+  }
+}
+
+cdk-cell {
+  text-align: right;
+}
+
+.yield {
+  margin-bottom: $sg-8;
+  padding: 0;
+}
+
+[sgscrollcontainer] {
+  @include media-breakpoint-down(sm) {
+    @include sg-scroll-container(xs);
+  }
+}

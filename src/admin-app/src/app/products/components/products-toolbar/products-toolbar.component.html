@@ -1,0 +1,16 @@
+<sg-toolbar>
+  <span class="title pr-2">Products</span>
+  <div class="separator d-none d-md-block"></div>
+  <mat-slide-toggle class="d-none d-md-block pl-2" [checked]="onlyEnabled$ | async" (change)="onOnlyEnabledChange($event)">
+    Only enabled
+  </mat-slide-toggle>
+  <ng-container class="sg-toolbar-right">
+    <div class="d-none d-sm-flex">
+      <button mat-button (click)="onCreateNewClick()" title="Create new product">
+        <mat-icon>add_circle_outline</mat-icon>
+        <span>Create new product</span>
+      </button>
+    </div>
+    <sg-admin-export-table-data (exportData)="exportProductList()"></sg-admin-export-table-data>
+  </ng-container>
+</sg-toolbar>

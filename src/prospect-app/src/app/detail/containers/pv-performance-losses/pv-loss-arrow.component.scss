@@ -1,0 +1,74 @@
+@import 'theme';
+
+$lossGtiColor: map-get($primary, 800);
+$lossPvColor:  darken(saturate(#46BDF0, 5), 10);
+$lossOpacity: 0.6;
+
+.pr-last-row {
+  position: absolute;
+  opacity: $lossOpacity;
+  border-right: 1px solid map-get($primary, 900);
+}
+
+.pr, .loss-left {
+  opacity: $lossOpacity;
+
+  &.gti {
+    background: $lossGtiColor;
+  }
+
+  &.pv {
+    background: $lossPvColor;
+  }
+}
+
+.loss-left, .loss-right {
+  border-radius: 0px 00px 0px 14px;
+  position: absolute;
+}
+
+.loss-left {
+  margin-left: 0px;
+  width: 150px;
+  height: 15px;
+}
+
+.loss-right {
+  height: 13px;
+  background: white/*#fafafa*/;
+  z-index: 10;
+}
+
+.loss-left-gain {
+  border-radius: 14px 00px 0px 0px !important;
+  margin-top: 13px;
+  height: 14px;
+}
+
+.loss-right-gain {
+  border-radius: 14px 00px 0px 0px !important;
+  margin-top: 15px;
+  height: 12px;
+}
+
+.loss-arrow, .loss-arrow-gain {
+  margin-top: 6px;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-radius: 0;
+  z-index: 20;
+  opacity: $lossOpacity;
+}
+
+.loss-arrow {
+  &.gti { border-left: 10px solid $lossGtiColor; }
+  &.pv { border-left: 10px solid $lossPvColor; }
+}
+
+.loss-arrow-gain {
+  &.gti { border-right: 10px solid $lossGtiColor; }
+  &.pv { border-right: 10px solid $lossPvColor; }
+}

@@ -1,0 +1,12 @@
+<div class="chart {{ className }}" #chartElm></div>
+<div [hidden]="true" #chartElmToExport></div>
+
+<button *ngIf="exportingOpts" mat-icon-button [matMenuTriggerFor]="actionMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<mat-menu #actionMenu="matMenu">
+  <sg-export-chart-button format="PNG" (exportChart)="exportImage(exportMimeTypes.PNG)"></sg-export-chart-button>
+  <sg-export-chart-button format="SVG" (exportChart)="exportImage(exportMimeTypes.SVG)"></sg-export-chart-button>
+  <sg-export-chart-button format="PDF" (exportChart)="exportImage(exportMimeTypes.PDF)"></sg-export-chart-button>
+</mat-menu>

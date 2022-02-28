@@ -1,0 +1,36 @@
+<div class="content system-size">
+  <form [formGroup]="form">
+    <mat-radio-group >
+      <div class="row" [ngClass]="{'error-margin': form.get('capacity').invalid}">
+        <mat-radio-button value="capacity" (click)="type$.next('capacity')" [checked]="(type$ | async) === 'capacity'">
+          {{ 'pvConfig.params.systemSize.capacity' | transloco }}
+        </mat-radio-button>
+        <mat-form-field floatLabel="never">
+          <input matInput
+            sgUnitValueInput
+            [unit]="kWpUnit"
+            formControlName="capacity"
+            type="number"
+            [step]="resolveKWpUnitValue(1)"
+            [min]="MIN">
+          <mat-error>{{ 'common.error.valueBetween' | transloco:{min: MIN, max: resolveKWpUnitValue(MAX_CAPACITY)} }}</mat-error>
+        </mat-form-field>
+        <div class="unit">
+            <sg-unit-toggle-label [unit]="kWpUnit"></sg-unit-toggle-label>
+        </div>
+      </div>
+
+      <div class="row" [ngClass]="{'error-margin': form.get('area').invalid}">
+        <mat-radio-button value="area" (click)="type$.next('area')" [checked]="(type$ | async) === 'area'">
+          {{ 'pvConfig.params.systemSize.area' | transloco }}
+        </mat-radio-button>
+        <mat-form-field floatLabel="never">
+          <input matInput formControlName="area" type="number" [min]="MIN">
+          <mat-error>{{ 'common.error.tooLarge' | transloco }}</mat-error>
+        </mat-form-field>
+        <div class="unit">m<sup>2</sup></div>
+      </div>
+
+    </mat-radio-group>
+  </form>
+</div>

@@ -1,0 +1,10 @@
+table {
+  width: 100%;
+}
+
+.mat-cell,
+.mat-header-cell,
+.mat-footer-cell {
+  white-space: nowrap;
+  padding: 0 5px;
+}

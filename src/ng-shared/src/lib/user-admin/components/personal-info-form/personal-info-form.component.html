@@ -1,0 +1,19 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col-12 col-sm-4 profile-label">{{'companyAdmin.users.name' | transloco}}</div>
+    <mat-form-field class="col-12 col-sm-8" floatLabel="never">
+      <input [ngClass]="{'invalid-field': this.form.hasError('invalidFirstNameOrLastName')}" type="text" matInput name="firstName" formControlName="firstName"/>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-sm-4 profile-label">{{'auth.registration.lastNamePlaceholder' | transloco}}</div>
+    <mat-form-field class="col-12 col-sm-8" floatLabel="never">
+      <input [ngClass]="{'invalid-field': this.form.hasError('invalidFirstNameOrLastName')}" type="text" matInput name="lastName" formControlName="lastName"/>
+    </mat-form-field>
+  </div>
+
+  <mat-error *ngIf="this.form.hasError('invalidFirstNameOrLastName')">
+      {{ 'auth.registration.firstOrLastNameRequired' | transloco }}
+  </mat-error>
+</div>

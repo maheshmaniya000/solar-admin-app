@@ -1,0 +1,48 @@
+@import 'theme';
+
+:host ::ng-deep {
+  .height-24 {
+    height: 24px;
+  }
+
+  .content {
+    .value-row {
+      margin-bottom: 12px;
+
+      @include media-breakpoint-up(sm) {
+        height: 40px;
+        margin-bottom: 0;
+      }
+
+      .label {
+        font-size: $sg-14;
+        color: map-get($sg-gray, 800);
+        padding-bottom: 4px;
+
+        @include media-breakpoint-up(sm) {
+          padding-bottom: 0;
+        }
+      }
+
+      sg-unit-toggle {
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+          width: 122px;
+        }
+      }
+
+      mat-select {
+        border: 1px solid map-get($sg-gray, 400);
+        border-radius: 4px;
+        height: 32px;
+        padding: 6px 12px 7px 12px
+      }
+
+      .mat-select-value-text {
+        font-size: $sg-14;
+        color: map-get($sg-gray, 800);
+      }
+    }
+  }
+}

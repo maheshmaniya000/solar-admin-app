@@ -1,0 +1,7 @@
+@import 'theme';
+
+@include media-breakpoint-up(xl) {
+  .drawer-button, .separator {
+    display: none;
+  }
+}

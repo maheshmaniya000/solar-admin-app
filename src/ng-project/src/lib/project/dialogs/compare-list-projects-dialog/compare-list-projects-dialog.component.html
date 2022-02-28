@@ -1,0 +1,31 @@
+<sg-dialog-deprecated [large]="true">
+  <div class="sg-dialog-heading">{{ 'compare.compare' | transloco }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button [disableRipple]="true" (click)="closeDialog()">
+      <mat-icon class="dialog-close-icon">close</mat-icon>
+    </button>
+  </div>
+  <div class="sg-dialog-content">
+    <div fxLayout="column">
+      <div fxFlex class="icon">
+        <mat-icon color="accent">done</mat-icon>
+      </div>
+      <div fxFlex class="text">
+        {{ 'compare.listDialog.added' | transloco }}
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <!-- <div class="text projects">
+      {{ 'compare.listDialog.projects' | transloco }}
+    </div> -->
+
+    <sg-compare-dialog-item *ngFor="let item of compare$ | async" [highlighted]="item.energySystemRef === added"
+      [item]="item"></sg-compare-dialog-item>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <button cdkFocusRegionstart class="primary-button" (click)="closeDialog()"
+            [routerLink]="['compare']">{{ 'compare.listDialog.open' | transloco }}
+    </button>
+  </div>
+</sg-dialog-deprecated>

@@ -1,0 +1,69 @@
+@import 'theme';
+
+.table-s {
+  @include cdk-table-s(true);
+  @include sticky-table-scrolling();
+
+  cdk-header-row {
+    background-color: transparent !important;
+    height: unset !important;
+  }
+
+  cdk-cell {
+    padding: $sg-4 $sg-8;
+    align-self: stretch;
+
+    &>div {
+      line-height: $sg-18;
+    }
+
+    .data-item {
+      padding-right: 10px;
+    }
+  }
+
+  .table-header {
+    @include text-ellipsis();
+    width: 80px;
+
+    @include media-breakpoint-only(md) {
+      width: 120px;
+    }
+  }
+
+  cdk-cell:first-of-type, cdk-header-cell:first-of-type {
+    min-width: 10%;
+    max-width: 30%;
+  }
+
+  cdk-header-cell:first-of-type {
+    background-color: white;
+  }
+}
+
+mat-card-title {
+  color: map-get($primary, 800);
+}
+
+.container > div {
+  padding: 0 $sg-16;
+}
+
+.muted {
+  color: map-get($primary, 600);
+  font-weight: lighter;
+}
+
+.compare-strip {
+  width: 100%;
+  height: 3px;
+  margin-top: 6px;
+}
+
+.rounded-badge {
+  border-radius: 50px;
+}
+
+.right {
+  text-align: right;
+}

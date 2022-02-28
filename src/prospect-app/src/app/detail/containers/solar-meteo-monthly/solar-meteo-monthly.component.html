@@ -1,0 +1,91 @@
+<div class="card-layout">
+
+  <!-- SUMMARY -->
+  <div class="card-big">
+    <sg-summary [text]="'projectDetail.solarMeteo.summary'" [energySystem]="energySystem$ | async" [hasData]="true">
+      <sg-summary-data-item class="left" [layer]="layer('GHI')" [data]="annualData$ | async">
+        {{ 'project.data.yearlyAverage' | transloco }}
+      </sg-summary-data-item>
+      <sg-summary-data-item class="right" [layer]="layer('TEMP')" [data]="annualData$ | async">
+        {{ 'project.data.yearlyAverage' | transloco }}
+      </sg-summary-data-item>
+    </sg-summary>
+  </div>
+
+  <!-- All data table -->
+  <div class="card-big">
+    <mat-card class="data-table-card">
+      <mat-card-title>
+        <div fxLayout>
+          <div fxFlex>
+            {{ 'projectDetail.solarMeteo.radiationTemperature' | transloco }}
+          </div>
+          <div fxFlex="40px" class="header-actions">
+            <button mat-icon-button [matMenuTriggerFor]="settings">
+              <mat-icon>settings</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+        <div class="table-wrapper">
+          <div class="table-inner table-s">
+            <cdk-table #table [dataSource]="dataSource" class="data-table">
+              <ng-container cdkColumnDef="month" sticky>
+                <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+                <cdk-cell *cdkCellDef="let row">{{ monthTranslationKey(row.monthIndex) | transloco }}</cdk-cell>
+              </ng-container>
+
+              <ng-container *ngFor="let key of dataColumns$ | async" [cdkColumnDef]="key">
+                <cdk-header-cell *cdkHeaderCellDef fxLayout="column">
+                  <sg-project-data-key fxFlex="18px" [key]="key"></sg-project-data-key>
+                  <div fxFlex="18px" class="subheader">
+                    <sg-unit-label [unit]="unit(key)"></sg-unit-label>
+                  </div>
+                </cdk-header-cell>
+                <cdk-cell *cdkCellDef="let row">
+                  <sg-unit-value [unit]="unit(key, row.monthIndex)" [value]="row[key]"
+                                 [codelist]="layer(key)?.codelist" [opts]="{ slot: row.monthIndex }">
+                  </sg-unit-value>
+                </cdk-cell>
+              </ng-container>
+
+              <cdk-header-row *cdkHeaderRowDef="allColumns$ | async"></cdk-header-row>
+              <cdk-row *cdkRowDef="let row; columns: allColumns$ | async"></cdk-row>
+            </cdk-table>
+          </div>
+        </div>
+
+        <div class="azimuth" *ngIf="(hasPvConfig$ | async) === false">
+          <span>{{ 'projectDetail.solarMeteo.optimumAzimuth' | transloco }}</span>
+          <sg-unit-value [unit]="unit('OPTA')" [value]="(annualData$ | async)?.OPTA"></sg-unit-value>
+          <sg-unit-label [unit]="unit('OPTA')"></sg-unit-label>
+          /&nbsp;
+          <sg-unit-value [unit]="unit('OPTA')" [value]="optaAzimuth$ | async"></sg-unit-value>
+          <sg-unit-label [unit]="unit('OPTA')"></sg-unit-label>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="card-small" *ngFor="let cardCharts of charts$ | async">
+    <sg-chart-card [charts]="cardCharts"
+                   [allowExporting]="true"
+                   [project]="project$ | async"
+                   [pvConfig]="(energySystem$ | async)?.pvConfig"></sg-chart-card>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="card-big">
+    <sg-glossary [layers]="glossaryLayers$ | async"></sg-glossary>
+  </div>
+</div>
+
+<mat-menu #settings>
+  <div>
+    <button mat-menu-item (click)="openUnitSettings()">{{ 'project.dataSettings.unitSettings' | transloco }}</button>
+  </div>
+  <div>
+    <button mat-menu-item (click)="openTableSettings()">{{ 'project.dataSettings.tableSettings' | transloco }}</button>
+  </div>
+</mat-menu>

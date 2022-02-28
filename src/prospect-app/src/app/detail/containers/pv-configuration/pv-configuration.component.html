@@ -1,0 +1,26 @@
+<div class="card-layout">
+  <div class="card-big">
+    <mat-card *ngIf="(isLoading$ | async) === false; else spinner">
+      <div class="row">
+        <sg-pv-config-viewer [pvConfig]="pvConfig$ | async" size="large"></sg-pv-config-viewer>
+      </div>
+
+      <div class="row buttons">
+        <button [routerLink]="['..', 'configure', 'change']" class="secondary-button">
+          {{ 'pvConfig.action.change' | transloco }}
+        </button>
+        <button *ngIf="(pvConfigStatus$ | async) === 'hasPvSystem'"
+                [routerLink]="['..', 'configure', 'editor']"
+                class="primary-button">
+          {{ 'pvConfig.action.edit' | transloco }}
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<ng-template #spinner>
+  <div class="card-big" style="margin: 250px 0;">
+    <mat-spinner style="margin: auto;" [diameter]="50"></mat-spinner>
+  </div>
+</ng-template>

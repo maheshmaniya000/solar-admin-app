@@ -1,0 +1,12 @@
+@import 'theme';
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+@include media-breakpoint-up(xl) {
+  .drawer-button, .separator {
+    display: none;
+  }
+}

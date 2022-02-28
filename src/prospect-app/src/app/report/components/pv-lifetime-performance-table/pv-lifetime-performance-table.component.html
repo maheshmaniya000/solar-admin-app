@@ -1,0 +1,85 @@
+<div class="table-s lifetimePerformance-table">
+  <cdk-table #table [dataSource]="performanceTable" class="data-table">
+
+    <ng-container cdkColumnDef="id">
+      <cdk-header-cell *cdkHeaderCellDef>{{ 'projectDetail.pvPerformance.endOfYear' | transloco }}</cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <ng-container *ngIf="row.id === 'avg'">{{ 'common.aggregation.avg' | transloco }}</ng-container>
+        <ng-container *ngIf="row.id === 'sum'">{{ 'common.aggregation.cumulative' | transloco }}</ng-container>
+        <ng-container *ngIf="row.id >= 0 ">
+          <ng-container *ngIf="row.id === 0; else id">{{ 'projectDetail.pvPerformance.theoretical' | transloco }}</ng-container>
+          <ng-template #id>{{ row.id }}</ng-template>
+        </ng-container>
+      </cdk-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="DEGRAD">
+      <cdk-header-cell *cdkHeaderCellDef>
+        {{ 'projectDetail.pvPerformance.degrad' | transloco }}
+        <div class="label">
+          <sg-unit-label [unit]="percentUnit"></sg-unit-label>
+        </div>
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <ng-container *ngIf="row.DEGRAD !== null; else empty">
+          <sg-unit-value [unit]="percentUnit" [value]="row.DEGRAD"></sg-unit-value>
+        </ng-container>
+      </cdk-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="PVOUT_specific">
+      <cdk-header-cell *cdkHeaderCellDef>
+        <sg-project-data-key key="PVOUT_specific"></sg-project-data-key>
+        <div class="label">
+          <sg-unit-label [unit]="pvcalcDataset.annual.get('PVOUT_specific').unit"></sg-unit-label>
+        </div>
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <ng-container *ngIf="row.PVOUT_specific !== null; else empty">
+          <sg-unit-value
+            [unit]="pvcalcDataset.annual.get('PVOUT_specific').unit" [value]="row.PVOUT_specific">
+          </sg-unit-value>
+        </ng-container>
+      </cdk-cell>
+
+    </ng-container>
+    <ng-container cdkColumnDef="PVOUT_total">
+      <cdk-header-cell *cdkHeaderCellDef>
+        <sg-project-data-key key="PVOUT_total"></sg-project-data-key>
+        <div class="label">
+          <sg-unit-label [unit]="pvcalcDataset.annual.get('PVOUT_total').unit"></sg-unit-label>
+        </div>
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <ng-container *ngIf="row.PVOUT_total !== null; else empty">
+          <sg-unit-value
+            [unit]="pvcalcDataset.annual.get('PVOUT_total').unit" [value]="row.PVOUT_total">
+          </sg-unit-value>
+        </ng-container>
+      </cdk-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="PR">
+      <cdk-header-cell *cdkHeaderCellDef>
+        <sg-project-data-key key="PR"></sg-project-data-key>
+        <div class="label">
+          <sg-unit-label [unit]="pvcalcDataset.annual.get('PR').unit"></sg-unit-label>
+        </div>
+      </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row">
+        <ng-container *ngIf="row.PR !== null; else empty">
+          <sg-unit-value
+            [unit]="pvcalcDataset.annual.get('PR').unit" [value]="row.PR">
+          </sg-unit-value>
+        </ng-container>
+      </cdk-cell>
+    </ng-container>
+
+    <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+    <cdk-row *cdkRowDef="let row; columns: columns" [ngClass]="{'highlighted': row.highlighted }"></cdk-row>
+  </cdk-table>
+</div>
+
+<ng-template #empty>
+  -
+</ng-template>

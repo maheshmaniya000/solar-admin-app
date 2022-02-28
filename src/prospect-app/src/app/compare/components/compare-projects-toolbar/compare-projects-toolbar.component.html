@@ -1,0 +1,74 @@
+<sg-toolbar [wrapperOnly]="true">
+  <div class="projects d-flex flex-wrap" #toolbar>
+    <div class="col-12 project col-md-6 {{item.highlighted ? 'compare-highlight-' + item.colorIndex : ''}}"
+         *ngFor="let item of compare; let i = index"
+         (click)="highlight.emit(item)"
+         [ngClass]="{'no-bottom-border': i >= 2 || compare.length <= 2}">
+      <div class="row no-gutters align-items-center" [ngClass]="{'fat-row': isBottomActionButtonVisible()}">
+        <div class="dot col-auto">
+          <mat-radio-button [checked]="item.highlighted" class="compare-radio-{{ item.colorIndex }}"></mat-radio-button>
+        </div>
+        <div class="desc-wrapper col">
+          <sg-project-name-with-status [project]="item.project"></sg-project-name-with-status>
+          <div class="desc pvConfig">
+            <ng-container *ngIf="hasPvConfig(item.energySystem); else noPvSystem"
+              >{{ 'pvConfig.type.' + item.energySystem.pvConfig.type + '.name' | transloco }}
+              {{ divider }}
+              <sg-unit-value [unit]="installedPowerUnit"
+                             [value]="pvInstalledPower(item.energySystem.pvConfig)"></sg-unit-value>
+              <sg-unit-label [unit]="installedPowerUnit"></sg-unit-label>
+              <ng-container *ngIf="!!item.energySystem.pvConfig.orientation">
+                {{ divider }}
+                {{ item.energySystem.pvConfig.orientation.azimuth }}°/{{ item.energySystem.pvConfig.orientation.tilt }}°
+              </ng-container>
+              <ng-container *ngIf="!!item.energySystem.pvConfig.rowSpacing">
+                {{ divider }}
+                {{ item.energySystem.pvConfig.rowSpacing.spacing }}
+              </ng-container>
+              <ng-container *ngIf="!!item.energySystem.pvConfig.rotationLimits">
+                {{ divider }}
+                {{ item.energySystem.pvConfig.rotationLimits.east }}°
+                /
+                {{ item.energySystem.pvConfig.rotationLimits.west }}°
+              </ng-container>
+            </ng-container>
+            <ng-template #noPvSystem>
+              <div class="noConfig"
+                >{{ 'pvConfig.type.noPvSystem.name' | transloco }}
+                <div *ngIf="hasLatestData(item.project)" [ngClass]="{'inline': !isBottomActionButtonVisible()}">
+                  <button class="primary-button mini" (click)="redirectToPVSettings(item)">
+                    {{ 'compare.addPvSettings' | transloco }}
+                  </button>
+                </div>
+              </div>
+            </ng-template>
+            <div *ngIf="!hasLatestData(item.project)" class="noConfig">
+              <button class="primary-button mini" (click)="updateProjectData(item, $event)">
+                {{ 'compare.updateProjectData' | transloco }}
+              </button>
+            </div>
+            <div *ngIf="isAddEconConfigButtonVisible(item)" class="noConfig">
+              <button class="primary-button mini" (click)="redirectToFinanceSettings(item)">
+                {{ 'compare.addFinanceSettings' | transloco }}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <button mat-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openProject(item)">
+              <mat-icon>open_in_new</mat-icon>
+              {{ 'common.action.open' | transloco }}
+            </button>
+          </mat-menu>
+          <button mat-icon-button (click)="onCloseButtonClick(item, $event)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</sg-toolbar>

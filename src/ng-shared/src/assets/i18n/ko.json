@@ -1,0 +1,2139 @@
+{
+  "auth": {
+    "auth0": {
+      "recaptchaNotValid": "Recaptcha가 유효하지 않습니다. 다시 시도해 주십시오.",
+      "registrationOk": "요청 완료, 귀하의 이메일로 보낸 확인 링크를 클릭하여 등록을 완료해 주십시오.",
+      "unknown": "등록 중 오류가 발생하였습니다. 나중에 다시 시도해 주십시오.",
+      "unknownError": "문제가 발생했습니다.",
+      "emailAlreadyRegistred": "이 이메일 주소를 가진 사용자가 이미 존재합니다.",
+      "otpInvalid": "OPT가 이미 사용되었거나 유효하지 않습니다."
+    },
+    "changePassword": {
+      "change": "변경",
+      "changePasswordOk": "비밀번호가 변경되었습니다.",
+      "error": "사용자 이름 혹은 비밀번호가 정확하지 않습니다.",
+      "passwordConfirm": "새 비밀번호 확인",
+      "recaptchaNotValid": "Recaptcha가 유효하지 않습니다. 다시 시도해 주십시오.",
+      "tooManyAttempts": "계정이 잠겼습니다. - 비밀번호를 변경하기에 너무 많은 부정확한 시도가 감지되었습니다.",
+      "unknown": "비밀번호 변경 중 오류가 발생하였습니다. 나중에 다시 시도해 주십시오."
+    },
+    "confirmTerms": {
+      "agree": "동의합니다.",
+      "termsAgreeConfirm": "Solargis의이용 약관 및 개인 정보 취급 방침에 동의합니다.",
+      "title": "사용 조건 확인",
+      "terms": "이용 약관",
+      "contractualTerms": "유료 서비스에 대한 일반 계약 조건",
+      "particularConditions": "특별 조건"
+    },
+    "emailVerify": {
+      "error": "이메일 확인 실패",
+      "ok": "이메일 주소가 확인되었습니다. 로그인이 가능합니다."
+    },
+    "forgotPassword": {
+      "changeOk": "비밀번호가 변경되었습니다. 지금 로그인할 수 있습니다.",
+      "error": "알 수 없는 오류가 발생하였습니다. 나중에 다시 시도해 주십시오.",
+      "hint": "본인 확인에 도움이 되는 이메일을 입력하십시오.",
+      "ok": "다음 단계를 위해 귀하의 이메일을 확인해 주십시오.",
+      "recaptchaNotValid": "Recaptcha가 유효하지 않습니다. 다시 시도해 주십시오.",
+      "returnToSignIn": "로그인으로 돌아가기",
+      "tokenNotValid": "링크가 이미 비밀번호를 변경하는데 사용되었습니다.",
+      "tooManyAttempts": "계정이 잠겼습니다. 비밀번호를 변경할 수 없습니다.",
+      "userNotFound": "사용자가 존재하지 않습니다."
+    },
+    "fupRecaptcha": {
+      "title": "귀하가 로봇이 아니라는 것을 확인합니다.",
+      "info": "분 당 클릭 횟수가 보안 제한을 초과하였습니다. 이 제한을 제거하려면 로그인을 하거나 가입해 주세요."
+    },
+    "login": {
+      "create": "귀하의 Solargis 무료 계정을 만드세요.",
+      "error": "사용자 이름 혹은 비밀번호가 정확하지 않습니다.",
+      "tooManyAttempts": "계정이 잠겼습니다. - 로그인에 너무 많은 부정확한 시도가 감지되었습니다.",
+      "unknown": "로그인 중 오류가 발생하였습니다. 나중에 다시 시도해 주십시오.",
+      "deletedUser": "이 계정은 비활성 되어 있습니다. <a href=\"https://solargis.com/about-us/contact\">관리자에 문의해주세요.</a>",
+      "rememberMe": "로그인 정보 기억하기",
+      "notVerified": "귀하의 이메일이 확인되지 않았습니다. 등록 할 때 받은 확인 이메일을 확인해 보세요. 혹은 확인 이메일을 다시 생성할 수도 있습니다.",
+      "notVerifiedAction": "새로운 확인 이메일 보내기",
+      "notVerifiedConfirm": "새로운 확인 이메일이 발송되었습니다."
+    },
+    "registration": {
+      "alreadyHaveAccount": "이미 계정을 가지고 계십니까?",
+      "emailError": "올바른 이메일 주소를 입력해 주십시오.",
+      "emailPlaceholder": "이메일",
+      "firstNameError": "이름은 필수 항목입니다.",
+      "firstNamePlaceholder": "이름",
+      "lastNameError": "성(Last name)이 필요합니다.",
+      "lastNamePlaceholder": "성",
+      "passwordConfirm": "비밀번호를 다시 입력해 주십시오.",
+      "passwordError": "최소 8글자, 하나 이상의 대문자와 하나 이상의 소문자",
+      "passwordPlaceholder": "비밀번호",
+      "passwordRequired": "비밀번호가 필요합니다.",
+      "passwordsNotEqual": "비밀번호는 동일하여야 합니다.",
+      "termsAgree": "Solargis의 <a href='https://solargis.com/legal/solargis-apps-terms-of-use/' target='_blank' title='Conditions of Use and Privacy Notice'>이용 약관 및 개인 정보 취급 방침</a>에 동의합니다.",
+      "title": "등록",
+      "titleNewPassword": "새로운 비밀번호",
+      "titleOldPassword": "기존 비밀번호",
+      "companyError": "회사 이름은 필수입니다.",
+      "accountCreated": "계정 생성이 성공적으로 완료되었습니다.",
+      "accountCreatedAfterInvitation": "계정 생성이 성공적으로 완료되고, 회사에 가입되었습니다.",
+      "firstOrLastNameRequired": "이름이나 성은 필수 항목이며 여백만 포함할 수 없습니다",
+      "login": "로그인",
+      "createUserAccount": "사용자 계정 생성"
+    },
+    "expired": "사용자 세션이 종료되어 로그아웃 되었습니다. 다시 로그인해 주세요.",
+    "newPassword": "비밀번호 분실 링크를 통해 로그인 하였습니다.<br>새로운 비밀번호를 설정해주세요.",
+    "invitation": {
+      "info": "이 초대를 수락하면 Solargis 계정을 만들기 위한 메시지가 표시됩니다.",
+      "text": "귀하는 회사 멤버로 초대되었습니다. 초대를 수락하면, 회사의 멤버가 되는 것에 동의하는 것입니다.",
+      "companyName": "회사명",
+      "title": "초대 수락",
+      "accept": "수락",
+      "expiredText": "회사의 초대가 만료되었거나 회사 관리자가 이 초대를 취소하였습니다. 귀하에게 회사 초대장을 보낸 사람에게 문의하십시오.",
+      "expiredTitle": "회사 초대장 만료됨"
+    },
+    "lambdaCaptcha": {
+      "label": "캡차 표현식"
+    },
+    "forbidden": "{url}에 액세스할 수 없습니다."
+  },
+  "codelist": {
+    "LANDC": {
+      "301": "데이터 없음",
+      "305": "홍수 이후 또는 관개된 농경지",
+      "306": "모자이크 농경지 (>50%) / 자연 식물",
+      "307": "모자이크 자연 식물 (>50%) / 농경지",
+      "308": "나무 지역, 활엽수의, 상록의 (>15%)",
+      "318": "나무 지역, 혼합 엽형 (활엽 및 침엽)",
+      "319": "모자이크 나무 및 관목 (>50%) / 초원",
+      "320": "모자이크 초원 (>50%) / 나무 및 관목",
+      "324": "초원",
+      "325": "이끼류(Lichens and mosses)",
+      "330": "담수 혹은 기수(brackish water)로 관개된 산림 지역",
+      "331": "염수(Saline water)로 관개된 산림 지역",
+      "332": "관개된 관목 또는 초원",
+      "333": "도시 지역",
+      "337": "수역(Water bodies)",
+      "338": "영구적인 눈과 얼음",
+      "302-304": "농경지, 하늘바라기농업(rainfed)",
+      "309-311": "나무 지역, 낙엽 활엽수(>15%)",
+      "312-314": "나무 지역, 상록 침엽수(>15%)",
+      "315-317": "나무 지역, 낙엽 침엽수(>15%)",
+      "321-323": "관목지",
+      "326-329": "드문드문한 초목 (<15%)",
+      "334-336": "나지(bare land)"
+    },
+    "AZI": {
+      "-1": "평평한",
+      "-2": "유사 평면(Quasi flat)"
+    },
+    "SNOWD": {
+      "-1": "간헐적인"
+    },
+    "DNI_season": {
+      "-1": "월평균 DNI는 0입니다."
+    },
+    "GHI_season": {
+      "-1": "월평균 GHI는 0입니다."
+    }
+  },
+  "common": {
+    "action": {
+      "apply": "적용하기",
+      "back": "뒤로",
+      "cancel": "취소",
+      "change": "변경",
+      "choose": "선택",
+      "close": "닫기",
+      "collapseAll": "모든 항목 접기",
+      "compare": "비교분석",
+      "confirm": "확인",
+      "continue": "계속",
+      "delete": "삭제",
+      "expandAll": "모두 펼치기",
+      "invite": "초대하기",
+      "manage": "관리",
+      "next": "다음",
+      "ok": "승인",
+      "open": "열기",
+      "prev": "이전",
+      "save": "저장하기",
+      "search": "찾기",
+      "selectAll": "모두 선택",
+      "send": "보내기",
+      "unselectAll": "모든 항목 선택 취소",
+      "reload": "다시 불러오기",
+      "remove": "삭제하기",
+      "edit": "변경하기",
+      "redo": "다시 실행",
+      "undo": "실행 취소",
+      "default": "기본값으로 설정",
+      "calculate": "계산",
+      "saveValues": "값 저장",
+      "resetDefaults": "기본값 재설정",
+      "add": "추가",
+      "verify": "확인",
+      "launch": "시작",
+      "defaultView": "기본 보기",
+      "moreInfo": "추가 정보"
+    },
+    "aggregation": {
+      "avg": "평균",
+      "cumulative": "누적",
+      "sum": "합계"
+    },
+    "cardinal": {
+      "east": "동",
+      "north": "북",
+      "south": "남",
+      "west": "서"
+    },
+    "confirmDialog": {
+      "body": "이 작업은 취소할 수 없습니다. 계속 하시겠습니까?",
+      "heading": "작업 확인",
+      "usure": "정말 진행하시겠습니까?"
+    },
+    "datetime": {
+      "date": "날짜",
+      "timezone": "표준시간대",
+      "lastChange": "마지막 변경일"
+    },
+    "label": {
+      "settings": "설정",
+      "configureMapView": "지도 설정 보기",
+      "configureProjectsView": "프로젝트 보기 설정"
+    },
+    "misc": {
+      "commingSoon": "곧 게재 예정",
+      "help": "도움말",
+      "n/a": "해당 없음(N/A)",
+      "noWidth": "SolarGIS를 사용하기에 화면 해상도가 너무 낮습니다.  화면 해상도는 최소 1100 픽셀 이상이어야합니다."
+    },
+    "paginator": {
+      "nextPage": "다음 페이지",
+      "perPage": "페이지당 항목",
+      "previousPage": "이전 페이지",
+      "rangeLabel": "{startIndex} - {endIndex} of {length}",
+      "rangeLabelEmpty": "0 중 0"
+    },
+    "status": {
+      "disabled": "불가능한",
+      "enabled": "가능한"
+    },
+    "subscription": {
+      "prospect": "Prospect 가입",
+      "sdat": "SDAT 구독"
+    },
+    "error": {
+      "subscriptionLayer": "데이터 레이어를 보려면 Prospect 가입을 업그레이드 해야합니다.",
+      "valueBetween": "값은 반드시 {min} 와 {max} 사이여야 합니다.",
+      "failed": "작업 실패",
+      "tooLarge": "이 값은 너무 큽니다.",
+      "internal": "내부 오류가 발생했습니다. 페이지를 새로고침 해주십시오."
+    },
+    "subscriptionType": {
+      "FREE": "무료",
+      "UPGRADE": "Prospect Basic에서 Pro로 업그레이드",
+      "expired": "{subscriptionType} 만료됨",
+      "PROSPECT_PRO": "Prospect Pro",
+      "PROSPECT_BASIC": "Prospect Basic",
+      "PROSPECT_FREE_TRIAL": "무료 평가판",
+      "SDAT_PRO": "SDAT Pro",
+      "SDAT_BASIC": "SDAT",
+      "SDAT_FREE_TRIAL": "SDAT 무료 평가판"
+    },
+    "confirm": {
+      "no": "아니요",
+      "yes": "예"
+    },
+    "snackBar": {
+      "changesSaved": "변경 사항이 저장되었습니다.",
+      "couldNotSaveChange": "변경 사항을 저장할 수 없습니다."
+    },
+    "alert": {
+      "freetrial": {
+        "available": "사용 가능한 무료 평가판 프로젝트",
+        "viewDetail": "• 프로젝트 상세정보 조회 및 무료 평가판 활성화",
+        "availableAction": "무료 평가판 활성화",
+        "assigned": "더 이상 무료 평가판 프로젝트가 남아 있지 않습니다.",
+        "assignedAction": "정식 가입으로 업그레이드",
+        "noSubscription": "무료 평가판 요청 및 PV 발전에 대한 자세한 정보 얻기",
+        "noSubscriptionAction": "무료 평가판 요청하기"
+      },
+      "subscription": {
+        "renewTrial": "업그레이드",
+        "renew": "귀하의 Prospect 가입을 갱신해주세요.",
+        "expired": "귀하의 Prospect 가입이 만료되었습니다.",
+        "expiredTrial": "귀하의 Prospect 무료 평가판이 만료되었습니다."
+      }
+    },
+    "validation": {
+      "min": "최솟값은 {min}입니다",
+      "max": "최댓값은 {max}입니다",
+      "integer": "이 필드는 정수만 지원합니다",
+      "minDate": "최소 날짜는 {minDate}입니다",
+      "maxDate": "최대 날짜는 {maxDate}입니다",
+      "pattern": "값이 필수 패턴과 일치하지 않습니다",
+      "required": "이 필드는 필수입니다",
+      "maxLength": "최대 길이는 {requiredLength}자입니다",
+      "minLength": "최소 길이는 {requiredLength}자입니다",
+      "maxDecimals": "이 필드는 최대 {maxDecimals} 소수 자릿수를 지원합니다",
+      "phoneNumber": "잘못된 전화번호. +로 시작하는 국제 형식을 사용하십시오",
+      "maxDateRange": "최대 날짜 범위는 {days}일입니다",
+      "naturalNumber": "이 필드는 자연수만 지원합니다",
+      "endDateInvalid": "종료 날짜가 시작 날짜 이전입니다",
+      "datepickerParse": "\"{text}\"은(는) 현재까지 구문 분석할 수 없습니다",
+      "startDateInvalid": "시작 날짜가 종료 날짜 이후입니다",
+      "phoneNumberFormat": "잘못된 전화번호. 예시 번호: {phoneNumberFormat}"
+    }
+  },
+  "companyAdmin": {
+    "billing": {
+      "allYears": "모든 해(Year)",
+      "deliveryDate": "납품일",
+      "detail": "주문 상세정보",
+      "errorDownloadingInvoice": "인보이스 다운로드 오류",
+      "history": "주문 내역",
+      "invoiceDownloaded": "인보이스 다운로드됨",
+      "noOrders": "주문 없음",
+      "orderDate": "주문 날짜",
+      "orderId": "주문",
+      "payment": "지불",
+      "paymentMethod": "지불 방법",
+      "price": "가격",
+      "pay": "지금 지불하기",
+      "paymentInfo": "지불 정보",
+      "cancel": "주문 취소하기",
+      "status": "현재 상태"
+    },
+    "nav": {
+      "billing": "청구서 & 지불",
+      "orderDetail": "주문 상세정보",
+      "overview": "개요",
+      "settings": "회사 설정",
+      "subscriptions": "가입 목록",
+      "users": "사용자",
+      "apiContracts": "API",
+      "info": "고객 정보"
+    },
+    "orderDetail": {
+      "contractNo": "계약 번호",
+      "deliveryStatus": "납품일",
+      "discount": "할인",
+      "itemDesc": "항목 설명",
+      "orderNo": "주문 번호",
+      "orderStatus": "주문",
+      "orderTitle": "주문",
+      "paymentStatus": "지불",
+      "price": "가격",
+      "purchaseOrderNo": "구매 주문",
+      "sgOrderId": "주문 ID",
+      "totalPrice": "총 가격",
+      "totalQty": "수량",
+      "unitPrice": "단가",
+      "vat": "부가가치세(VAT)",
+      "users": "사용자: {users}",
+      "valid": "유효: {from} 부터 {to} 까지",
+      "vatAmmount": "부가가치세",
+      "back": "청구서 & 지불로 돌아가기",
+      "freeText": "무료 텍스트"
+    },
+    "subscription": {
+      "projectLimit": "남아있는 {remaining} 개의 프로젝트",
+      "unlimited": "제한 없는",
+      "unlimitedProjects": "프로젝트 수에 제한이 없습니다.(공정 사용 정책 적용)",
+      "usersLimit": "{current} / {max} 사용자",
+      "notice": "알림: 할당된 구독에 대한 액세스 권한을 얻으려면 해당 사용자는 로그아웃했다가 다시 로그인해야 합니다.",
+      "general": "일반",
+      "users": {
+        "name": "이름",
+        "none": "사용자를 찾을 수 없습니다.",
+        "title": "사용자",
+        "email": "이메일",
+        "devices": "사용자 장치",
+        "tokenGenerationDate": "생성 날짜",
+        "action": "동작",
+        "generateToken": "토큰 생성",
+        "regenerateToken": "토큰 재생성",
+        "deleteToken": "토큰 삭제"
+      }
+    },
+    "subscriptions": {
+      "empty": "유효한 가입내역이 없습니다.",
+      "from": "시작일",
+      "plan": "가입 계획",
+      "projectLimit": "활성화된 프로젝트",
+      "to": "까지 유효",
+      "userLimit": "사용자 한도"
+    },
+    "users": {
+      "email": "이메일",
+      "enterEmail": "이메일",
+      "instructions": "다음 단계를 위한 추가 설명이 지정된 이메일로 전송됩니다.",
+      "invitations": "회사 초대장",
+      "inviteDesc": "초대할 사용자의 이메일을 입력해 주십시오.",
+      "name": "이름",
+      "new": "사용자 초대하기",
+      "role": "시스템 역할",
+      "status": "현재 상태",
+      "validUntill": "까지 유효",
+      "invalidEmail": "이메일 주소가 유효하지 않습니다.",
+      "addToSub": {
+        "note": "알림 : 서비스에서 최대 사용자 수에 도달 한 경우 사용자가 추가되지 않습니다.",
+        "prospect": "Prospect 구독에 이 사용자 추가하기",
+        "noteFull": "알림 : 최대 사용자 수에 도달하였습니다.",
+        "sdat": "SDAT 구독에 이 사용자 추가하기"
+      },
+      "assign": {
+        "sdat": "SDAT 구독에 할당",
+        "prospect": "Prospect 구독에 할당"
+      },
+      "unassign": {
+        "sdat": "SDAT 구독 할당 취소",
+        "prospect": "Prospect 구독 할당 취소"
+      },
+      "alreadyInvited": "사용자가 이미 { company Name } 계정의 회원으로 초대되었습니다."
+    },
+    "api": {
+      "v1": {
+        "title": "API v1.1",
+        "name": "계약 이름",
+        "empty": "귀사에는 API 계약이 없습니다. 무료 평가판을 요청할 수 있습니다.",
+        "prospect": {
+          "title": "Prospect"
+        },
+        "monitor": {
+          "title": "Monitor",
+          "hardLimit": "{hardLimit}에서 허용된 Monitor 데이터",
+          "relativeLimitWindow": "지난 {relativeLimitWindow} 동안 허용된 Monitor 데이터",
+          "relativeLimitWindow_y": "년",
+          "relativeLimitWindow_m": "개월",
+          "relativeLimitWindow_d": "일",
+          "dataSummarization": "데이터 요약",
+          "processingKeys": "데이터 처리 키 (Data Processing Keys)"
+        },
+        "forecast": {
+          "title": "Forecast",
+          "description": "Forecast는 {days}일 예보를 제공합니다."
+        }
+      },
+      "v2": {
+        "title": "API v2"
+      },
+      "common": {
+        "navigation": {
+          "info": "정보",
+          "accessKeys": "액세스(Access) 키 (tokens)",
+          "stats": "통계"
+        },
+        "loading": "API 계약을 불러오고 있습니다.",
+        "title": "API 계약 제목",
+        "freeTrialRequest": "무료 평가판 요청하기",
+        "resources": "API 리소스",
+        "rateLimit": {
+          "title": "속도 제한 (요청 횟수)",
+          "description": "이 연락처에 허용된 {rateLimit}개의 요청"
+        },
+        "fup": "{perSeconds} 초당 {count}개의 요청",
+        "validity": {
+          "title": "제목(Title)",
+          "description": "{from}에서 {to}으로"
+        },
+        "access": {
+          "title": "접근",
+          "type": "접근 유형: {type}",
+          "maxSites": "허용된 위치 최대 갯수: {maxSites}",
+          "unlimitedMaxSites": "제한 없는",
+          "regions": "허용된 지역:",
+          "sites": "허용된 위치:",
+          "position": "위도: {latitude}, 경도: {longitude}"
+        },
+        "token": {
+          "title": "토큰(Token)",
+          "create": "새로운 토큰 추가 (액세스 키)",
+          "errorCreating": "새로운 토큰 (액세스 키)를 생성할 수 없습니다.",
+          "revoking": "취소 중 입니다.",
+          "revokeConfirmHeader": "액세스 키 (토큰)이 취소됩니다.",
+          "revokeConfirmMessage": "API 계약에 대한 액세스 키(토큰)를 정말로 취소하시겠습니까?",
+          "revokeError": "액세스 키(토큰)를 취소할 수 없습니다."
+        },
+        "stats": {
+          "requestCount": "요청 (갯수)",
+          "uniqueSitesCount": "고유 위치 (개수)",
+          "uiuCount": "고유 정보 단위 (개수)",
+          "documentation": "API를 이용해 통계를 얻을 수 있습니다. 이 <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/default/get_stats\" target=\"_blank\" title=\"documentation\">문서</a>를 참조해주십시오."
+        },
+        "apiDocumentation": "이 <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/ws/dataOperation\" target=\"_blank\" title=\"documentation\">문서에서 prospect/monitor/forecast API 문서(혹은 Solargis API)를 찾을 수 있습니다. "
+      }
+    },
+    "sdatSubscription": {
+      "devices": {
+        "all": "모든 장치",
+        "none": "SDAT 장치를 찾을 수 없습니다.",
+        "title": "장치",
+        "email": "이메일",
+        "active": "활성화된 장치",
+        "company": "회사 프로필",
+        "disabled": "비활성화된 장치",
+        "userName": "사용자 이름",
+        "hostName": "호스트 이름",
+        "lastAccess": "최근 활동",
+        "registeredAt": "등록됨",
+        "disableAction": "장치 비활성화",
+        "customName": "사용자 지정 이름",
+        "osFingerprint": "장치 지문"
+      },
+      "general": {
+        "type": "구독 유형",
+        "none": "SDAT 구독이 없습니다.",
+        "users": "사용자",
+        "notes": "참고",
+        "validTo": "만료일",
+        "validFrom": "시작일",
+        "deviceLimit": "사용자당 장치 한도",
+        "offlineLimit": "오프라인 한도",
+        "offlineLimitUnit": "시간"
+      }
+    },
+    "prospectSubscription": {
+      "none": "Prospect에 가입되어 있지 않습니다.",
+      "users": "활성화된 사용자",
+      "validFrom": "{date}부터 유효",
+      "validUntil": "{date}까지 유효",
+      "subscription": "구독",
+      "activatedProjects": "활성화된 프로젝트"
+    },
+    "overview": {
+      "prospectSubscription": {
+        "desc": "Solargis iMaps 또는 pvPlanner에 가입되어 있는 경우, 남은 가입 기간으로 Solargis Prospect에 유료 액세스를 사용할 수 있습니다.",
+        "snack": "요청이 생성되었습니다.",
+        "button": "이미 iMaps 및 pvPlanner에 가입되어 있습니다.",
+        "dialog": "사용자의 요청을 받으면 일반적으로 평일 기준 1일 이내에 Prospect 앱에 유료 액세스가 활성화됩니다. 결과는 이메일로 안내됩니다.",
+        "confirmTerms": "Solargis의 <a href='https://solargis.com/legal/general-contractual-terms/' target='_blank' title='General contracts terms to the paid services'>유료 서비스 일반 계약 조건</a> 및 <a href='https://solargis.com/legal/particular-terms-and-conditions/project-use/' target='_blank' title='Particular conditions'>특수 조건</a>에 동의합니다."
+      }
+    }
+  },
+  "compare": {
+    "addDialog": {
+      "noProjects": "사용 가능한 프로젝트가 없습니다. 프로젝트를 먼저 만들어 주십시오.",
+      "outOf": "최대 { projects }개 중 선택된 프로젝트 { max }개",
+      "project": "프로젝트",
+      "systemType": "시스템 유형",
+      "lastChange": "가장 최근의 수정사항",
+      "systemSize": "시스템 크기"
+    },
+    "addProjects": "프로젝트 추가하기",
+    "compare": "비교분석",
+    "empty": "비교분석에 프로젝트가 없습니다.",
+    "endOfYear": "연말",
+    "listDialog": {
+      "added": "프로젝트가 비교분석에 성공적으로 추가되었습니다.",
+      "open": "비교분석 열기",
+      "projects": "비교분석에서 현재 프로젝트:"
+    },
+    "noPermission": "비교분석 서비스를 사용하려면, 등록된 회사를 위한 유료서비스에 가입해야 합니다.",
+    "noPvConfig": "태양광 구성이 설치되지 않은 프로젝트를 필터링했습니다.",
+    "purchase": "유료 서비스 가입하기",
+    "replaceDialog": {
+      "msg": "비교분석이 가득 찼습니다. 대체할 프로젝트를 선택하십시오.",
+      "replace": "프로젝트 교체하기"
+    },
+    "addToCompare": "비교분석에 추가하기",
+    "addPvSettings": "태양광 시스템 구성 추가하기",
+    "noFinanceConfig": "재무 구성 세트가 없는 필터링된 프르젝트들이 있습니다.",
+    "addFinanceSettings": "재무 매개변수 추가",
+    "noEconomyConfig": "재무 구성이 없는 프로젝트들이 있습니다.",
+    "noLatestData": "최신 데이터가 없는 프로젝트가 있습니다",
+    "updateProjectData": "프로젝트 데이터 업데이트"
+  },
+  "enum": {
+    "invoice": {
+      "CN": "신용 전표 다운로드",
+      "INVOICE": "인보이스 다운로드",
+      "INVOICE_FOR_PROFA": "인보이스 다운로드",
+      "PROFA": "견적한 인보이스 다운로드"
+    },
+    "orderPaymentStatus": {
+      "NOT_PAID": "미지불",
+      "PAID": "지불됨",
+      "PAYMENT_FAILED": "결제 실패",
+      "PENDING": "대기 중"
+    },
+    "orderPaymentType": {
+      "BANK": "은행",
+      "BRAINTREE": "신용 카드",
+      "PAY_PAL": "PayPal",
+      "NO_PAYMENT": "무료"
+    },
+    "orderStatus": {
+      "CANCELED": "취소됨",
+      "DONE": "완료",
+      "IN_PROGRESS": "진행 중",
+      "USER_STARTED": "생성된 날짜",
+      "EXPIRED": "만료됨"
+    },
+    "app": {
+      "prospect": "Prospect",
+      "evaluate": "평가",
+      "monitor": "Monitor",
+      "forecast": "Forecast"
+    },
+    "horizon": {
+      "custom": "사용자 정의 수평면",
+      "default": "기본 수평면"
+    }
+  },
+  "header": {
+    "admin": "관리자",
+    "company-admin": "회사 관리자",
+    "compare": "비교분석",
+    "contact": "문의",
+    "forgotPassword": "비밀번호 잊으셨나요?",
+    "help": "도움말",
+    "login": "로그인",
+    "logout": "로그아웃",
+    "map": "지도",
+    "pricing": "가격",
+    "projectDetail": "프로젝트 상세정보",
+    "projects": "프로젝트",
+    "prospect": "Prospect",
+    "registration": "계정 생성",
+    "upgrade": "업그레이드",
+    "user": {
+      "invoiceUsers": "사용자 추가",
+      "adminConsole": "관리 콘솔",
+      "allCompanies": "모든 회사",
+      "switch": "회사계정으로 전환"
+    },
+    "freeTrial": "무료 평가판",
+    "evaluate": "평가",
+    "newPassword": "새로운 비밀번호",
+    "instructions": "지시사항 보냄",
+    "signUp": "가입하기",
+    "users": "사용자",
+    "orders": "주문",
+    "products": "Products",
+    "companies": "회사",
+    "dashboard": "대시보드",
+    "sdat": "SDAT",
+    "administration": "{companyName} 관리",
+    "invoices": "송장"
+  },
+  "map": {
+    "layer": {
+      "mapbox-streets": {
+        "name": "지도"
+      },
+      "solargis-cdd": {
+        "name": "냉방도일"
+      },
+      "solargis-d2g": {
+        "name": "산란일사량 대 전일사량 비율"
+      },
+      "solargis-dif": {
+        "name": "수평면 산란일사량(DHI)"
+      },
+      "solargis-dni": {
+        "name": "법선면 직달일사량(DNI)"
+      },
+      "solargis-ele": {
+        "name": "고도",
+        "shortName": "고도"
+      },
+      "solargis-ghi": {
+        "name": "수평면 전일사량(GHI)"
+      },
+      "solargis-gti": {
+        "name": "경사면 전일사량 "
+      },
+      "solargis-gti_opta": {
+        "name": "최적각 경사면 전일사량 "
+      },
+      "solargis-hdd": {
+        "name": "난방도일"
+      },
+      "solargis-landc": {
+        "name": "토지 피복"
+      },
+      "solargis-opta": {
+        "name": "태양광 모듈의 최적 기울기"
+      },
+      "solargis-popul": {
+        "name": "인구 밀도"
+      },
+      "solargis-prec": {
+        "name": "강수량(강우량)"
+      },
+      "solargis-pvgain_cdte": {
+        "name": "cSi 모듈 대신 CdTe 모듈 사용의 이익"
+      },
+      "solargis-pvout_cdte": {
+        "name": "CdTe 태양광 생산량"
+      },
+      "solargis-pvout_csi": {
+        "name": "cSi 태양광 생산량"
+      },
+      "solargis-pwat": {
+        "name": "가강수량"
+      },
+      "solargis-rh": {
+        "name": "상대 습도"
+      },
+      "solargis-snowd": {
+        "name": "강설일"
+      },
+      "solargis-temp": {
+        "name": "대기 온도"
+      },
+      "solargis-ws": {
+        "name": "풍속"
+      },
+      "solargis-alb": {
+        "name": "표면 알베도"
+      },
+      "solargis-azi": {
+        "name": "지형 방위각"
+      },
+      "solargis-slo": {
+        "name": "지형 경사"
+      },
+      "solargis-dni_season": {
+        "name": "DNI 계절성"
+      },
+      "solargis-ghi_season": {
+        "name": "GHI 계절성"
+      },
+      "bing-satellite": {
+        "name": "인공위성"
+      },
+      "mapbox-satellite": {
+        "name": "인공위성"
+      }
+    },
+    "legend": {
+      "button": "범례"
+    },
+    "location": {
+      "error": {
+        "1": "위치 정보가 거부되었습니다.",
+        "2": "위치 정보를 사용할 수 없습니다.",
+        "3": "위치 정보가 시간 초과되었습니다."
+      },
+      "tryAgain": "다시 시도해 주십시오."
+    },
+    "menu": {
+      "labels": "지도 라벨",
+      "selectLayer": "지도 레이어 선택",
+      "marker": "마커 값"
+    },
+    "zoom": {
+      "all": "모든 프로젝트 확대(Zoom)",
+      "selected": "선택한 프로젝트 확대(Zoom)"
+    },
+    "draw": {
+      "site": "위치",
+      "rectangle": "직사각형",
+      "polygon": "다각형",
+      "distance": "거리"
+    },
+    "fullscreen": {
+      "fullscreen": "전체화면"
+    }
+  },
+  "months": {
+    "apr": "4월",
+    "aug": "8월",
+    "dec": "12월",
+    "feb": "2월",
+    "jan": "1월",
+    "jul": "7월",
+    "jun": "6월",
+    "mar": "3월",
+    "may": "5월",
+    "month": "월(Month)",
+    "nov": "11월",
+    "oct": "10월",
+    "sep": "9월",
+    "yearly": "연간"
+  },
+  "project": {
+    "action": {
+      "archive": "보관하기",
+      "delete": "삭제",
+      "transfer": "이동하기",
+      "claimFreetrial": "무료 평가판 신청하기",
+      "unArchive": "보관 취소",
+      "archiveText": "선택한 프로젝트를 보관하시겠습니까?",
+      "unArchiveText": "선택한 프로젝트를 보관 취소하시겠습니까?",
+      "updateProjectData": "프로젝트 데이터 업데이트"
+    },
+    "data": {
+      "longtermAverage": "수명기간 동안의 연평균",
+      "mapData": "지도 데이터",
+      "projectData": "프로젝트 데이터",
+      "showMore": "더보기",
+      "yearlyAverage": "연평균",
+      "notLatest": "프로젝트가 최신 상태가 아님"
+    },
+    "dataLayer": {
+      "CDD": {
+        "desc": "건물 냉방에 필요한 에너지 수요량을 정량화합니다. \"냉방도일(Cooling degree days)\"은 외기 온도가 특정 기본 일평균 기온(18°C)보다 높을 때, 그 정도(도) 및 기간(일)을 나타내는 척도입니다. 연별 및 월별 값은 일일 값으로부터 합산됩니다.",
+        "name": "냉방도일",
+        "shortName": "CDD"
+      },
+      "CF": {
+        "name": "설비 이용률",
+        "desc": "1년 동안 최대 발전 가능한 전기 에너지 대비 실제 발전한 전기 에너지의 비율(%). 최대 발전 가능한 전기 에너지는 AC 설치 용량에 연간 시간 수를 곱한 값이며, 실제 발전한 전기 에너지는 프로젝트에서 매년 전달된 전기량입니다.",
+        "shortName": "CF"
+      },
+      "D2G": {
+        "desc": "수평면 산란일사량과 수평면 전일사량의 비율(DHI/GHI)",
+        "name": "산란일사량과 전일사량 비율",
+        "shortName": "D2G"
+      },
+      "DIF": {
+        "desc": "수평면 산란일사량(DHI)의 평균 연별, 월별, 일일 합계",
+        "name": "수평면 산란일사량",
+        "shortName": "DIF"
+      },
+      "DNI": {
+        "desc": "직달일사량(DNI)의 평균 연별, 월별, 일일 합계",
+        "name": "법선면 직달일사량",
+        "shortName": "DNI"
+      },
+      "DNI_season": {
+        "desc": "직달일사량의 월평균 최대값과 최소값의 비율 (DNI 월 최대/DNI 월 최소)",
+        "name": "DNI 계절성",
+        "shortName": "DNI 계절"
+      },
+      "ELE": {
+        "desc": "해발 위/아래의 지면 고도",
+        "name": "지형 고도"
+      },
+      "GHI": {
+        "desc": "수평면 전일사량(GHI)의 평균 연별, 월별, 일일 합계",
+        "name": "수평면 전일사량",
+        "shortName": "GHI"
+      },
+      "GHI_season": {
+        "desc": "수평면 전일사량의 월평균 최대값과 최소값의 비율 (GHI 월 최대/GHI 월 최소)",
+        "name": "GHI 계절성",
+        "shortName": "GHI 계절"
+      },
+      "GTI": {
+        "desc": "경사면 전일사량(GTI)의 평균 연별, 월별, 일일 합계",
+        "name": "경사면 전일사량",
+        "shortName": "GTI"
+      },
+      "GTI_opta": {
+        "desc": "최적 각도에서 고정 장착된 경사면 전일사량(최적경사면 전일사량)의 평균 연별, 월별, 일일 합계",
+        "name": "최적각 경사면 전일사량",
+        "shortName": "GTI opta"
+      },
+      "GTI_theoretical": {
+        "desc": "지형 음영을 고려하지 않은 경사면 전일사량의 평균 연별, 월별, 일일 합계",
+        "name": "경사면 전일사량 (이론적)",
+        "shortName": "이론적 GTI"
+      },
+      "HDD": {
+        "desc": "건물 난방에 필요한 에너지 수요량을 정량화합니다. \"난방도일(Heating degree days)\"은 외기 온도가 특정 기본 일평균 기온(18°C)보다 낮을 때, 그 정도(도) 및 기간(일)을 나타내는 척도입니다. 연별 및 월별 값은 일일 값으로부터 합산됩니다.",
+        "name": "난방도일",
+        "shortName": "HDD"
+      },
+      "LANDC": {
+        "desc": "표면(잔디, 숲, 도시 지역 등)에 일반적인 유형의 물질을 나타냅니다.",
+        "name": "토지 피복"
+      },
+      "OPTA": {
+        "desc": "GTI 입력값을 극대화하기 위해 적도 방향으로 세팅한 고정 태양광 모듈의 최적 기울기",
+        "name": "태양광 모듈의 최적 기울기"
+      },
+      "POPUL": {
+        "desc": "단위면적당 평균 거주자 수",
+        "name": "인구 밀도"
+      },
+      "PR": {
+        "desc": "태양광 시스템 AC 전력 고유출력과 태양광 어레이(array) 표면에 입사된 경사면 전일사량 비율 (태양광 고유출력/GTI)",
+        "name": "성능 비율",
+        "shortName": "PR"
+      },
+      "PREC": {
+        "desc": "연평균 및 월평균 강수량 합계",
+        "name": "강수량(강우량)",
+        "shortName": "PREC"
+      },
+      "PVGAIN_cdte": {
+        "desc": "CdTe 모듈과 cSi 모듈 태양광 시스템의 연간 생산량 비율 (CdTe 태양광 생산량/cSi 태양광 생산량)",
+        "name": "cSi 모듈 대신 CdTe 모듈 사용의 이익"
+      },
+      "PVOUT_cdte": {
+        "desc": "CdTe 모듈을 사용하는 태양광 시스템의 연간 생산량. 일사량 및 대기 온도 데이터를 사용하여 계산",
+        "name": "CdTe 태양광 생산량"
+      },
+      "PVOUT_csi": {
+        "desc": "cSi 모듈을 사용하는 태양광 시스템의 연간 생산량. 일사량 및 대기 온도 데이터를 사용하여 계산",
+        "name": "cSi 태양광 생산량"
+      },
+      "PVOUT_specific": {
+        "desc": "설비용량 1kWp로 정규화한(normalized), 태양광 시스템에서 공급된 발전량(AC)의 연평균 및 월평균",
+        "name": "태양광 발전 고유출력",
+        "shortName": "고유 PVOUT"
+      },
+      "PVOUT_total": {
+        "desc": "태양광 시스템의 총 설비 용량으로 공급된 발전량 (AC)의 연평균 및 월평균",
+        "name": "총 태양광 발전량",
+        "shortName": "총 PVOUT"
+      },
+      "PWAT": {
+        "desc": "가강수량은 대기 중에 함유되어 있는 수증기가 전부 응결한다고 가정하였을 경우의 물의 양을 깊이로 표시한 것입니다. 지면 위의 수분량을 나타냅니다.",
+        "name": "가강수량",
+        "shortName": "PWAT"
+      },
+      "RH": {
+        "desc": "지상 2m에서의 연평균, 월평균 상대 습도.",
+        "name": "상대 습도",
+        "shortName": "RH"
+      },
+      "SNOWD": {
+        "desc": "강설일은 적설 깊이가 5mm 이상의 눈이 내린 날로 계산됩니다.",
+        "name": "강설일",
+        "shortName": "SNOWD"
+      },
+      "TEMP": {
+        "desc": "지상 2m에서의 연평균, 월평균, 일평균 대기 온도.",
+        "name": "대기 온도",
+        "shortName": "TEMP"
+      },
+      "WS": {
+        "desc": "지상 10m에서의 연평균, 월평균, 일평균 풍속.",
+        "name": "풍속",
+        "shortName": "WS"
+      },
+      "ALB": {
+        "desc": "표면으로부터 반사된 일사량의 비율. 표면에 반사되는 수평면전일사량(GHI) 대 표면에 입사하는 수평면전일사량(GHI)에 대한 비율.",
+        "name": "표면 알베도",
+        "shortName": "ALB"
+      },
+      "AZI": {
+        "desc": "동서남북을 향한 지형 방위각(시계방향). 북=0도, 동=90도, 남=180도, 서=270도. 평평한 지형 (SLO &lt; 2도)는 고려되지 않음.",
+        "name": "지형 방위각"
+      },
+      "SLO": {
+        "desc": "지형 경사(기울기) (도)",
+        "name": "지형 경사"
+      },
+      "PV": {
+        "name": "태양광"
+      }
+    },
+    "dataSettings": {
+      "generalInfo": "일반 정보",
+      "irradiation": "일사량",
+      "latlng": "위도와 경도",
+      "length": "지형 고도",
+      "ltaDaily": "장기간 평균",
+      "projectInfo": "프로젝트 정보",
+      "temperature": "대기 온도",
+      "unitSettings": "단위 설정",
+      "values": "값",
+      "tableSettings": "표 설정",
+      "mapViewSettings": "지도 보기 설정",
+      "projectViewSettings": "프로젝트 보기 설정"
+    },
+    "field": {
+      "created": "생성됨",
+      "name": "이름",
+      "rename": "이름 변경"
+    },
+    "filter": {
+      "allProjects": "모든 프로젝트",
+      "archived": "보관된 프로젝트",
+      "favorites": "즐겨찾기",
+      "recent": "최근 프로젝트",
+      "manageLabels": "라벨 관리"
+    },
+    "pvConfigStatus": {
+      "empty": "태양광 시스템 구성이 설정되지 않았습니다.",
+      "hasPvSystem": "유효 태양광 시스템 구성",
+      "noPvSystem": "유효 태양광 시스템 구성"
+    },
+    "rename": {
+      "title": "프로젝트 이름 변경"
+    },
+    "selected": {
+      "addToProjects": "프로젝트로 저장하기",
+      "calculate": "계산",
+      "openDetail": "열기"
+    },
+    "share": {
+      "copied": "복사됨",
+      "copyLink": "링크 복사",
+      "share": "위치 공유",
+      "shareLocation": "위치 공유",
+      "text": "이 링크를 보내면 위치를 공유할 수 있습니다."
+    },
+    "sidebar": {
+      "clearSelection": "선택 취소",
+      "listView": "리스트 뷰 보기",
+      "multiSelected": "다수의 프로젝트가 선택됨",
+      "noneSelected": "선택된 프로젝트 없음",
+      "projectsSelected": "{projects, plural, other {# 개의 프로젝트}} 를 선택하였습니다."
+    },
+    "snackbar": {
+      "archive": "프로젝트가 보관되었습니다.",
+      "bulkArchive": "{projects}개의 프로젝트가 보관되었습니다.",
+      "bulkDelete": "{projects}개의 프로젝트가 삭제되었습니다.",
+      "bulkUpdate": "{projects}개의 프로젝트가 업데이트되었습니다.",
+      "delete": "프로젝트가 삭제되었습니다.",
+      "rename": "프로젝트 이름이 변경되었습니다.",
+      "save": "프로젝트가 저장되었습니다.",
+      "update": "프로젝트가 업데이트 되었습니다.",
+      "bulkTransfer": "{projects}개의 프로젝트가 이동되었습니다.",
+      "transfer": "프로젝트가 이동되었습니다.",
+      "freetrialClaim": "프로젝트 무료 평가판이 성공적으로 요청되었습니다.",
+      "updateData": "프로젝트 데이터 업데이트됨"
+    },
+    "tags": {
+      "deleteHeading": "라벨 삭제",
+      "deleteText": "정말 라벨 {tagName}을 삭제하시겠습니까?",
+      "forbiddenName": "라벨 이름은 중복 없이 고유한 이름이어야 합니다.",
+      "minlength": "라벨 이름이 너무 짧습니다.",
+      "name": "라벨 이름",
+      "new": "라벨 생성",
+      "none": "생성한 라벨이 없습니다.",
+      "required": "라벨 이름은 필수 항목입니다.",
+      "labels": "라벨",
+      "newPlaceholder": "새로운 라벨",
+      "add": "추가",
+      "manage": "라벨 관리",
+      "invalidCharText": "라벨에는 여러 언어의 알파벳 문자, 숫자, 공백(), 마침표(.), 쉼표(,), 하이픈(-), 밑줄(_) 및 괄호(및)만 포함될 수 있습니다.",
+      "invalidCharHeading": "유효하지 않은 문자"
+    },
+    "timezone": {
+      "dstNotConsidered": "서머타임 고려되지 않음"
+    },
+    "toolbar": {
+      "addTag": "라벨 추가하기",
+      "archive": "보관하기",
+      "delete": "삭제",
+      "favorite": "즐겨찾기",
+      "selected": "선택된 ({projects})",
+      "selectedFirst": "선택된 첫 번째",
+      "share": "공유하기",
+      "unarchive": "보관 취소",
+      "siteDetail": "위치 상세정보",
+      "rename": "이름 변경",
+      "selectedProjects": "Selected: {projects} / {allProjectsCount}"
+    },
+    "transfer": {
+      "title": "{projects, plural, other {# 개의 프로젝트}} 를 이동합니다.",
+      "targetAccount": "대상 계정",
+      "info": "프로젝트를 전송하면 프로젝트 정보(프로젝트 이름, 위치 등)와 PV 구성 정보만 전송됩니다.프로젝트와 관련된 모든 리포트는 손실됩니다.전송이 완료되면 프로젝트가 연결된 현재 계정에서 이 프로젝트를 사용할 수 없습니다."
+    },
+    "exportChart": {
+      "exportTo": "{형식}으로 내보내기",
+      "pvConfig": "태양광 구성"
+    },
+    "search": {
+      "searchLocations": "위치 찾기",
+      "invalidCoordinatesMessage": "음수와 기본 방향을 포함하는 좌표를 입력했습니다. 이는 모호한 결과를 도출할 수 있으므로 지원되지 않습니다. 모호하지 않은 좌표를 입력하세요."
+    },
+    "updateProjectDialog": {
+      "note": "참고: 프로젝트를 다시 업데이트하면 생성된 보고서가 삭제됩니다. 보고서를 보존하려면 다시 업데이트하기 전에 다운로드하세요.",
+      "text": "이 프로젝트는 Solargis의 오래된 태양 자원 및 기상 데이터를 포함하므로 다시 업데이트해야 합니다. 프로젝트를 다시 업데이트하면 프로젝트에 포함된 모든 데이터가 최신 버전으로 업데이트됩니다.",
+      "title": "프로젝트 데이터를 다시 업데이트할까요?",
+      "nonUpdateData": "이 프로젝트는 최신 상태가 아닌 데이터를 포함합니다.",
+      "progressTitle": "프로젝트 데이터 다시 업데이트 중",
+      "downloadReports": "보고서 다운로드"
+    }
+  },
+  "projectDetail": {
+    "daylength": {
+      "autumnEquinox": "추분(Autumn equinox)",
+      "dayLengthHorizonCorrected": "수평으로 보정된 일조시간 [시간]",
+      "daylength": "일조시간 [시간]",
+      "label": "일조시간과 태양천정각",
+      "minimumZenitAngle": "최소 천정각 [°]",
+      "vernalEquinox": "춘분(Vernal equinox)"
+    },
+    "economy": {
+      "form": {
+        "addLoan": "대출(Loan) 추가하기",
+        "capacity": "설비 용량",
+        "degradationFirst": "첫 해의 성능 저하",
+        "degradationNext": "다음 해의 성능 저하",
+        "installationCost": "시스템 설치 비용",
+        "interestRate": "금리",
+        "loan": "대출",
+        "loanPeriod": "대출 기간",
+        "ownCapital": "자기 자본",
+        "priceOfElectricity": "전기 요금",
+        "removeLoan": "대출(Loan) 제거하기",
+        "totalYield": "총 비율생산량(0)",
+        "yearsOfOperation": "운영 연수",
+        "loanEquity": "대출 자본",
+        "accountingInfo": "회계 정보",
+        "linearDeprecation": "선형 세액 감가상각",
+        "annualOperationalCost": "연간 운영 비용"
+      },
+      "label": {
+        "economicIndicators": "현금 흐름",
+        "inputs": "입력값",
+        "outputs": "산출물",
+        "payback": "단순 투자 회수",
+        "pvEconomy": "태양광 시스템 경제성",
+        "summary": "요약",
+        "overview": "개요"
+      },
+      "layer": {
+        "CAPEX": {
+          "desc": "총 시스템 비용에서 태양광 인센티브를 제외한 태양광 시스템 설치 금액",
+          "name": "설비투자금"
+        },
+        "OPEX": {
+          "desc": "태양광 시스템 연간 운영 비용의 합계와 해당 구성 요소 교체를 위한 연간 할부금",
+          "name": "운영비용(OPEX)"
+        },
+        "tariff": {
+          "desc": "생산된 태양광 발전량이 전력계통에 판매되는 계약 가격. PPA는 일반적으로 상용 태양광 발전소에 적용됩니다.",
+          "name": "전력 구매 계약 / 발전차액지원제도(FIT)"
+        },
+        "ROIEquity": {
+          "desc": "태양광 시스템 수명 기간 동안 투자 비용(CAPEX)과 비교한 투자 수익. 여기서, 0은 손익 분기점을 나타냅니다.",
+          "name": "투자자본수익률(ROI)"
+        },
+        "unitSystemCosts": {
+          "name": "단위 시스템 비용",
+          "desc": "kWp(혹은 Wp) 당 태양광 시스템 비용"
+        },
+        "incentiveOrRebate": {
+          "desc": "공기업 및 정부가 제공하는 금융 혹은 세금 인센티브",
+          "name": "설치 인센티브 혹은 리베이트"
+        },
+        "loanLinearPayment": {
+          "desc": "고정지불 대출액",
+          "name": "선형 대출 상환"
+        },
+        "maintenanceReserve": {
+          "tooltip": "모든 인버터 교체 비용. 일반적으로 인버터 제조업체의 보증기간은 5 - 12년 사이이며, 일반적인 태양광 시스템 작동 기간 (25년)보다 평균 2배로 교체됩니다.",
+          "desc": "장비 교체(주로 인버터)에 필요한 연간 총액",
+          "name": "유지보수 지급준비계정"
+        },
+        "LCOE": {
+          "desc": "태양광 시스템 수명 동안의 에너지 단위 비용",
+          "name": "균등화발전원가(LCOE)"
+        },
+        "IRREquity": {
+          "desc": "주주의 관점에서 태양광 시스템 수명 동안의 내부 수익률(대출 제외)",
+          "name": "내부수익률 자본(IRR equity)"
+        },
+        "IRRProject": {
+          "name": "내부수익률(IRR) 프로젝트",
+          "desc": "전체 프로젝트의 태양광 시스템 수명 동안 내부수익률"
+        },
+        "discountRate": {
+          "desc": "내부수익률(IRR)에 대한 순현재가치 계산에 사용된 할인 계수",
+          "name": "할인율"
+        },
+        "taxesOnProfit": {
+          "name": "이익에 대한 세금",
+          "desc": "이익에 매년 적용되는 세금"
+        },
+        "loanDebtToEquity": {
+          "desc": "부채와 자본의 비율",
+          "name": "부채 대 자본 비율(기어링, gearing)"
+        },
+        "OPEXInflationRate": {
+          "name": "운영비용(OPEX) 인플레이션율",
+          "desc": "운영비용(OPEX)의 연간 인상"
+        },
+        "linearDeprecation": {
+          "name": "선형 세액 감가상각",
+          "desc": "노후화, 열화 및 일반적인 마모로 인해 시간의 경과에 따른 자산 가치의 선형적 적용 감소"
+        },
+        "tariffIndexationRate": {
+          "name": "관세율",
+          "desc": "관세 가격의 연간 인상"
+        },
+        "inverterReplacementYear": {
+          "name": "인버터 교체 연도",
+          "desc": "유지보수 지급준비계정(MRA)이 해체된 후, 인버터 교체가 발생한 운영 연도"
+        }
+      },
+      "table": {
+        "endOfYear": "연말",
+        "OPEX": "운영비용(OPEX)",
+        "EBIT": "EBIT",
+        "loan": "대출",
+        "CAPEX": "설비투자금",
+        "EBITDA": "EBITDA",
+        "revenue": "수익",
+        "netProfit": "순이익",
+        "taxOnProfit": "이익에 대한 세금",
+        "PVOUT_total": "PVOUT_total",
+        "tariffIndexed": "관세(인덱스)",
+        "PVOUT_specific": "PVOUT_specific",
+        "EBITDA_specific": "EBITDA_specific",
+        "loanInterestRate": "대출 금리",
+        "linearDeprecation": "선형 감가상각",
+        "cashFlowOperations": "현금 흐름(운영)",
+        "maintenanceReserve": "유지보수 지급준비계정",
+        "cashFlowNPVOperations": "운영으로 인한 순현재가치(NPV) 현금 흐름",
+        "loanRepaymentInterest": "대출 상환(이자)",
+        "loanRepaymentPrincipal": "대출 상환(주체)",
+        "shareholderCashFlowNPV": "주주에 대한 순현재가치(NPV) 현금 흐름",
+        "shareholderCashFlowAvailable": "주주에 대한 현금 흐름",
+        "annualCosts": "모든 연간 비용"
+      },
+      "guard": {
+        "text": "이 태양광 시스템의 재무 설정이 변경되었습니다. 저장하시겠습니까?",
+        "heading": "재무 계산기 입력 양식에 저장되지 않은 변경 사항이 있습니다."
+      },
+      "resetSaved": "저장된 값에서 재설정",
+      "tariffGoalseek": {
+        "use": "사용 값",
+        "open": "내부수익률 자본(IRR equity)으로 계산",
+        "result": "계산된 값:",
+        "target": "목표 내부수익률 자본(IRR equity)",
+        "explain": "수익 관세(PPA/FiT) 입력을 조정하여 특별히 사용자가 지정한 내부수익률(IRR) 자본 출력에 대한 계산. 이외에 다른 모든 입력 매개변수는 변경되지 않습니다."
+      }
+    },
+    "error": {
+      "noProject": "선택된 프로젝트가 없습니다.  프로젝트 상세정보을 보려면 프로젝트를 선택해 주십시오."
+    },
+    "glossary": {
+      "acronym": "약어",
+      "explanation": "설명",
+      "name": "명칭",
+      "title": "용어 사전",
+      "unit": "단위"
+    },
+    "info": {
+      "address": "주소",
+      "coordinates": "지리 좌표",
+      "country": "국가 / 지역",
+      "created": "생성됨",
+      "edit": "사용자 이름 변경",
+      "elevation": "고도",
+      "info": "프로젝트 정보",
+      "name": "프로젝트 이름",
+      "showOnMap": "지도에서 보기"
+    },
+    "metadata": {
+      "doc": {
+        "documentation": "문서",
+        "methodology": "방법론",
+        "simulation": "태양광 에너지 시뮬레이션",
+        "uncertainty": "데이터 불확실성"
+      },
+      "method": {
+        "merging": "데이터 병합, 정리, 처리",
+        "postprocessing": "후처리",
+        "processing": "데이터 처리",
+        "simulation": "태양광 시뮬레이션 모델",
+        "solarModel": "태양 모델"
+      },
+      "sources": {
+        "LANDC": "Land Cover CCI, v2.0.7",
+        "POPUL": "Gridded Population of the World, Version 4 (GPWv4)",
+        "PREC": "GPCC 데이터베이스",
+        "PWAT": "CFSR 및 CFSv2 모델",
+        "SNOWD": "CFSR 및 CFSv2 모델",
+        "TEMP": "ERA-5 모델",
+        "aerosolsMerra": "Aerosols from MERRA-2 and MACC-II/CAMS 모델",
+        "albedo": "MODIS 및 ERA-5 데이터베이스",
+        "region1": "GOES West 위성",
+        "region3": "기상위성 MFG 및 MSG 인공위성 (PRIME)",
+        "region4": "기상위성 MFG 및 MSG 인공위성 (IODC)",
+        "region5": "기상위성 MFG, MSG (IODC) 및 Himawari 인공위성",
+        "region6": "MTSAT 및 Himawari 인공위성",
+        "regionGeneral": "지구 정지 위성 Meteosat, GOES, MTSAT 및 HIMAWARI",
+        "wapourCSFR": "CSFR 및 GFS 모델에서 출처한 수증기",
+        "region2": "GOES East 및 GOES-R 인공위성 ",
+        "RHWSWD": "MERRA-2 및 CDFv2 모델"
+      },
+      "table": {
+        "method": "Solargis 방법",
+        "source": "데이터 입력값 소스 <br>(조직)",
+        "period": "시간 표시",
+        "updated": "마지막 업데이트",
+        "parameter": "매개 변수"
+      },
+      "text": {
+        "row0": "단위 기간: 월간 및 연간 장기 통계",
+        "row1": "365일 1년으로 추정함",
+        "text": "이 보고서는 Solargis가 개발 및 운영하는 고해상도 태양 및 기상 데이터베이스를 기반으로 합니다. 이 보고서에 제시된 데이터 매개 변수는 Solargis  모델 및 알고리즘에 의해 계산됩니다. 모델 입력값으로 사용된 데이터는 여러 소스에서 제공됩니다. 데이터 특성은 아래에 설명되어 있습니다.",
+        "version": "Solargis Prospect 데이터베이스 버전 {version}",
+        "latestMetadataVersion": "버전 {latestMetadataVersion} 사용 가능"
+      }
+    },
+    "nav": {
+      "hourlyProfiles": "시간별 프로파일",
+      "lifetimePerformance": "수명 성능",
+      "metadata": "메타데이터",
+      "monthlyStatistics": "월간 통계",
+      "overview": "개요",
+      "projectInfo": "프로젝트 정보",
+      "pvConfig": "태양광 구성",
+      "pvElectricity": "태양광 발전량",
+      "pvLosses": "에너지 변환 및 시스템 손실",
+      "pvPerformance": "태양광 성능",
+      "reports": "보고서",
+      "solarMeteo": "태양 및 기상",
+      "support": "고객 지원",
+      "download": "다운로드",
+      "analysis": "분석",
+      "properties": "속성",
+      "data": "데이터",
+      "finance": "재무"
+    },
+    "overview": {
+      "longtermPvPowerPotential": "장기간 태양광 발전 잠재량 ({years}년 평균)",
+      "meteorologicalData": "기상 데이터",
+      "projectInfo": "프로젝트 정보",
+      "projectOverview": "프로젝트 개요",
+      "pvElectricityAndPerformance": "태양광 발전량 및 성능",
+      "solar": "일사량",
+      "solarAndMeteo": "태양 및 기상",
+      "systemType": "시스템 유형",
+      "theoreticalPvElectricityPotential": "태양광 발전 이론적 잠재량 (시스템 시동 시)",
+      "title": "개요 - 일사량 및 기상 변수"
+    },
+    "pvConfig": {
+      "pvConfiguration": "태양광 시스템 구성"
+    },
+    "pvElectricity": {
+      "hourlySummary": "아래에 표시된 태양광 전력 생산 프로파일(Profiles)은 매월 모든 시간별 데이터의 평균으로 계산됩니다. 프로파일은 날씨 및 선택한 태양광 시스템 구성에 대한 하루 동안의 전력 생산 패턴 변화를 제시합니다. \"평균 일일 프로파일\"은 이론적인 개념으로, 프로파일이 특정 해, 특정 일의 기후 변동성에 영향을 받는 경우가 많으므로 주의해야 합니다.",
+      "potential": "이론적 태양광 발전 잠재량",
+      "summary": "태양광 모듈 및 다른 시스템 구성 요소의 장기 노화 및 성능 저하를 고려하지 않은 태양광 시스템 발전량의 이론적 추정치."
+    },
+    "pvLosses": {
+      "electricSystemLosses": "전기 시스템 손실",
+      "energyInput": "에너지 입력(input)",
+      "energyLoss": "에너지 손실",
+      "lossDiagram": "손실 도표",
+      "solarLosses": "태양 손실",
+      "summary": "태양광 모듈 및 다른 시스템 구성 요소의 장기 노화 및 성능 저하를 고려하지 않은 태양광 시스템 발전량의 이론적 연간 구체적 추정치(Specific estimate). PV 시스템의 시작 생산량에 대해 장기 평균 성능 비율(PR)이 계산됩니다. ",
+      "title": "에너지 변환 및 관련 손실",
+      "diagramDesc": "그림은 태양광 시스템에서 에너지 변환으로 인한 이론적 손실을 보여줍니다.",
+      "energy": "에너지",
+      "energyLossOrGain": "에너지 손실/생산",
+      "absoluteValues": "절대값"
+    },
+    "pvPerformance": {
+      "degrad": "성능 저하율",
+      "endOfYear": "연말",
+      "lifetimeProduction": "태양광 시스템 수명 기간 동안의 발전량",
+      "lifetimeSummary": "태양광 시스템 연평균 발전량 추정. 이 값은 태양광 시스템 구성을 고려하며, 노후화로 인한 시스템 성능 저하, 태양광 모듈 및 다른 구성요소의 성능 저하도 함께 고려합니다. 태양광 발전 고유출력의 개념은 다른 프로젝트나 다른 태양광 시스템 구성과 비교하는데에 유용합니다. 성능비(PR)은 시스템 성능 감소를 고려한 태양광 시스템 수명 기간 동안의 평균 효율을 나타냅니다.",
+      "theoretical": "이론적"
+    },
+    "reports": {
+      "confirmDelete": "정말 이 보고서를 삭제하시겠습니까?",
+      "empty": "저장된 보고서가 없습니다. 새 보고서를 생성하려면 생성 버튼을 눌러 주십시오.",
+      "generate": "생성",
+      "status": {
+        "error": "보고서 생성 오류"
+      },
+      "table": {
+        "date": "생성됨",
+        "download": "다운로드",
+        "fileType": "파일 형식",
+        "lang": "언어",
+        "name": "보고서 이름",
+        "no": "아니요",
+        "yes": "예",
+        "dateFormat": "날짜 형식",
+        "finance": "재무"
+      },
+      "title": "현재 구성으로 보고서 만들기. 보고서는 프로젝트 구성이 변경될 때까지 유지됩니다.",
+      "finance": "재무 포함"
+    },
+    "shared": {
+      "summary": "요약",
+      "noPvConfig": "태양 및 기상 변수만 계산됩니다. 태양광 시스템 구성은 고려되지 않습니다."
+    },
+    "solarMeteo": {
+      "hourlySummary": "아래에 표시된 일사량과 대기 온도 프로파일은 매월 모든 시간별 데이터의 평균으로 계산됩니다. 이러한 패턴은 프로젝트의 태양 천문학과 지리학에 의해 결정됩니다. 경사면 전일사량은 태양광 모듈의 최적 경사면이 태양 자원의 평균 가용성(일평균 발전량)에 얼마나 영향을 미치는지 보여줍니다. \"평균 일일 프로파일\"은 이론적인 개념으로 특정 날짜마다 연중 기후 변동성에 영향을 받는 특유의 프로파일이 많기 때문에 주의하여야 합니다.",
+      "optimumAzimuth": "GTI_opta에 대한 최적 기울기/방위각",
+      "radiationTemperature": "일사량 및 기상 변수",
+      "summary": "태양광 발전량을 결정하는 가장 중요한 기상 변수는 일사량이며 대기 온도의 영향도 받습니다. 또한 다른 기상 변수들도 태양광 시스템의 성능, 가용성 및 노화에 영향을 줍니다."
+    },
+    "sunpath": {
+      "axisAzimuth": "태양 방위각 [°]",
+      "axisElevation": "태양 고도 [°]",
+      "civilTime": "상용시(Civil time)",
+      "decemberSolstice": "동지(December solstice)",
+      "dstTime": "서머타임(Daylight saving time)",
+      "equinox": "주야 평분시(equinox)",
+      "juneSolstice": "하지(June solstice)",
+      "label": "수평면 및 태양경로 투영",
+      "modify": "수평면 변경",
+      "module": "모듈 수평면",
+      "solarTime": "태양 시간 ",
+      "summerSolstice": "하지(Summer solstice)",
+      "sunArea": "유효 면적",
+      "sunpath": "태양 경로(Sun path)",
+      "terrain": "지형 수평면",
+      "winterSolstice": "동지(Winter solstice)",
+      "horizonInvalid": "입력값에 지정된 수평면이 유효하지 않습니다.",
+      "horizonAzimuth": "방위각: { azimuth }",
+      "horizonElevation": "고도: { elevation }",
+      "horizonHorizonElevation": "수평면 고도: { horizon }",
+      "exportHorizon": "HOR 파일 내보내기"
+    },
+    "unsavedProjectDialog": {
+      "body": "프로젝트 상세정보(Project Detail)을 열려면 현재 선택된 프로젝트를 저장해야합니다. 이 프로젝트를 저장하시겠습니까?",
+      "heading": "저장되지 않은 프로젝트",
+      "action": "저장하고 열기"
+    },
+    "pvLossesLayer": {
+      "capacityFactor": {
+        "name": "설비 이용률",
+        "desc": "특정 기간(보통 일년) 동안 최대 발전 가능한 전기 에너지 대비 실제 발전한 전기 에너지의 비율(%). 최대 발전 가능한 전기 에너지는 AC 설치 용량에 연간 시간 수를 곱한 값이며, 실제 발전한 전기 에너지는 프로젝트에서 매년 전달된 전기량입니다."
+      },
+      "energyStage": {
+        "ac_out_with_ac_losses": {
+          "name": "총 시스템 성능 (시스템 작동 초기)",
+          "desc": "태양광 시스템 작동 초기의 태양광 시스템 이론적 발전량. 이 단계에서는 태양광 모듈의 성능 저하가 고려되지 않습니다."
+        },
+        "ac_out_with_ac_losses_and_snow_losses_and_availability_losses": {
+          "name": "기술 가용성과 눈(Snow)에 의한 손실을 고려한 총 시스템 성능",
+          "desc": "눈(snow) 및 고장으로 인한 발전 불능 시기를 고려한, 태양광 시스템 작동 초기의 태양광 시스템 발전량. 이 단계에서는 태양광 모듈의 성능 저하가 고려되지 않습니다."
+        },
+        "ghi": {
+          "name": "지정 위치 수평면 전일사량",
+          "desc": "이론적 수평면 전일사량은 멀리 떨어진 지평선 및 지형 물체에 의해 차단된 일사량 만큼 감소되었습니다."
+        },
+        "ghi_theoretical": {
+          "name": "이론적 수평면 전일사량(GHI)",
+          "desc": "수평면 전일사량은 Solargis의 수치모델을 기반으로한 방법으로 계산되었습니다. 이는 구름 투과율 및 대기 상태를 특징 짓는 일련의 입력값들에 의해 변수화되었습니다."
+        },
+        "gti": {
+          "name": "경사면 전일사량 (GTI)",
+          "desc": "경사면 전일사량(평면 어레이 [Plain of array, POA] 일사량이라고도 함)의 평균 연별, 월별, 일일 합계"
+        },
+        "gti_eff": {
+          "name": "유효 GTI",
+          "desc": "광학적 손실을 고려한 태양광 모듈의 표면에 도달하는 유효 경사면 일사량"
+        }
+      },
+      "loss": {
+        "angularReflectivity": {
+          "name": "각 반사율",
+          "desc": "태양광 모듈 표면의 각도 반사율(입사각 효과)에 의한 광학적 손실. 효과의 크기는 태양의 상대 위치, 모듈 평면 및 모듈 표면의 유형 및 청결도에 따라 달라집니다."
+        },
+        "conversionToSurfaceOfPvModules": {
+          "name": "태양광 모듈의 표면 변환",
+          "desc": "지정 위치별 수평면 전일사량(직달 및 산란 요소)으로부터 경사면 일사량 계산(평면 어레이 일사량이라고도 불림)"
+        },
+        "dirtDustAndSoiling": {
+          "name": "먼지, 오물 및 소일링",
+          "desc": "표면 오염으로 인한 태양광 모듈 표면에서의 태양복사 광학 손실"
+        },
+        "interRowShading": {
+          "name": "열간(inter-row) 음영효과에 의한 전기 손실",
+          "desc": "일사량 감소로 인한 전력 손실. 이는 태양광 모듈에서 선행 열의 일사량 차단(가림 효과)에 의해 발생합니다."
+        },
+        "inverters": {
+          "name": "인버터 (DC/AC) 변환",
+          "desc": "직류에서 교류로의 전환 효율성에 의해 발생하는 인버터에서의 손실. 인터버에 변압기가 내장되어 있으면 그 효율이 이 변수에 포함됩니다."
+        },
+        "mismatchAndCablingDC": {
+          "name": "DC 부문에서의 불일치 및 케이블링",
+          "desc": "인버터에 연결된 모듈들의 서로 다른 MPP(Maximum Power Point, 최대 출력 지점) 작동 지점 불일치로 인한 전력 손실 및 직류(DC) 상호 연결 및 케이블에서의 열손실"
+        },
+        "powerTolarance": {
+          "name": "태양광 모듈의 전원 허용 오차(Power tolerance)",
+          "desc": "스트링(string)으로 연결된 특정 모듈의 불균일한 전력 허용 오차로 인한 전력 손실. 높은 전력 허용 오차를 가진 모듈을 직렬로 연결하면 그 손실은 더 커집니다."
+        },
+        "snow": {
+          "name": "눈(Snow)으로 의한 손실",
+          "desc": "태양광 모듈이 눈(Snow)으로 덮인 기간 동안의 전력 생산량 손실"
+        },
+        "solarIrradianceToDC": {
+          "name": "모듈에서 일사량을 직류(DC)로 변환",
+          "desc": "반도체 물질에서 일사량을 전기로 태양광 변환(Photovoltaic conversion). 이 변환 효율은 비선형이며 일사량 및 온도 값의 분포에 따라 달라집니다."
+        },
+        "spectralCorrection": {
+          "name": "스펙트럼 보정",
+          "desc": "반도체 물질의 특성 및 광 스펙트럼의 불일치로 인한 에너지 변환 프로세스에서의 손실"
+        },
+        "technicalAvailablity": {
+          "name": "기술 가용성",
+          "desc": "현지 변전소의 유지 보수, 고장 또는 정지로 인한 태양광 발전소의 정지로 인해 발생한 전력 생산량의 손실"
+        },
+        "terrainShading": {
+          "name": "수평면 음영 (지형 + 수평선 개체)",
+          "desc": "지형 특성으로 인한 이론적 수평면 전일사량에서의 손실. 음영 효과는 SRTM-3 DEM 및 지평선 높이를 사용한 상세화(disaggregation)를 통해 계산됩니다. 주변 건물 및 구조물, 초목과 같은 지역 특성으로 인한 음영 효과는 이 단계에서 고려되지 않습니다."
+        },
+        "transformersAndAC": {
+          "name": "변압기 및 AC 케이블에 의한 손실",
+          "desc": "외부 MV 또는 HV 변압기 전력 손실 및 교류(AC) 케이블링 및 연결에서의 열 손실. 이 변수는 저전압 측에서의 AC 케이블 손실, 중(고)압 측에서의 AC 케이블 손실(전력계가 있는 그리드 연결 지점까지) 및 인버터에서 생산한 AC 전류 경로에 있는 모든 장치에서의 손실이 포함됩니다."
+        }
+      }
+    },
+    "data": {
+      "title": "PVsyst로 직접 가져오기 위해 CSV 형식으로 월평균 데이터 내보내기",
+      "download": "다운로드",
+      "note": "참고: PVsyst상에서는 시간별 GHI, DIF 와 TEMP 데이터는 월간 평균값을 받아서 합성한 결과로 만들어집니다. 이러한 특정한 연간 데이터의 합성은 수학적인 과정인데 일사량과 대기온도간의 일치성을 상실하게 만듭니다. 그리고 결과적인 얻어지는 인공 시계열의 시간 별 수치의 주파수 분포도 또한 실제의 기후 조건을 제대로 나타내지 않을 수 도 있습니다. 태양열 전력 시스템의 성능은 일사량과 대기온도에 따라 변화하므로 위에서 언급한 합성된 시간 단위의 데이터를 사용하면 결과적으로 태양열 에너지 시뮬레이션의 부정확성이 증가하게 됩니다. 그러므로 PVsyst상에서의 시뮬레이션을 위해서는 Solargis [시계열 혹은 TMY 데이터 세트| <a href='https://solargis.com/products/evaluate/overview'target='_blank'>https://solargis.com/products/evaluate/overview</a>]를 사용 할 것을 권장드립니다."
+    },
+    "settings": {
+      "systemSettings": "시스템 설정"
+    },
+    "unlockDialog": {
+      "upgrade": "업그레이드",
+      "mainTitle": "모든 기능 잠금해제",
+      "addPVConfig": "태양광 시스템 구성 추가하기",
+      "text": {
+        "reports": "발전소 구성에 대한 공식 Solargis Prospect 보고서를 생성하고 다운로드하십시오. 고객이나 투자자와 공유하십시오. 당사의 보고서는 다양한 언어로 제공됩니다.",
+        "download": "타사 도구를 사용하여 추가 분석하기 위해 프로젝트의 태양 및 기상 데이터를 다운로드하십시오.",
+        "solarMeteo": "프로젝트 위치에 대한 월간 통계 및 시간별 일사량 및 기상 데이터 프로파일에 액세스하십시오.",
+        "compareTool": "여러 위치에 대한 통계를 세밀히 비교하여 발전소에 대한 최적의 위치를 찾으십시오.",
+        "pvPerformance": "손실에 대한 자세한 분석을 참조하십시오.",
+        "pvElectricity": "발전소 구성을 위한 이론적 전기 생산에 대한 월간 통계 및 시간별 프로파일에 액세스하십시오.",
+        "finance": "프로젝트 파이낸싱 최적화:"
+      },
+      "title": {
+        "reports": "보고서",
+        "download": "다운로드",
+        "solarMeteo": "태양 및 기상",
+        "compareTool": "비교분석 도구",
+        "pvElectricity": "태양광 발전량",
+        "pvPerformance": "태양광 성능",
+        "finance": "재무 계산기"
+      },
+      "requestFreeTrial": "무료 평가판 요청하기",
+      "activateFreeTrial": "무료 평가판 요청하기",
+      "bulletPoints": {
+        "economyCalculator": {
+          "ROI": "ROI (투자자본수익률)",
+          "LCOE": "LCOE(균등화발전원가)",
+          "equity": "대출 자본 IRR",
+          "project": "프로젝트 IRR (내부수익률)"
+        }
+      }
+    }
+  },
+  "projectList": {
+    "filter": {
+      "toolbar": {
+        "archived": "보관된 프로젝트",
+        "default": "모든 프로젝트",
+        "favorite": "즐겨찾는 프로젝트",
+        "recent": "최근 프로젝트",
+        "tag": "프로젝트가 태그되었습니다: {tags}"
+      }
+    }
+  },
+  "pvConfig": {
+    "action": {
+      "add": "태양광 시스템 구성 추가하기",
+      "change": "시스템 유형 변경",
+      "edit": "태양광 시스템 구성 변경",
+      "optimum": "최적 조건 설정",
+      "restore": "기본 설정으로 복원하기",
+      "save": "저장하고 태양광 발전량 계산하기"
+    },
+    "error": {
+      "missing": "이 프로젝트에서 활성화된 태양광 시스템 구성을 선택하지 않았습니다. 태양광 데이터에 접근하려면 추가해야합니다.",
+      "notFound": "구성이 있는 프로젝트가 없습니다."
+    },
+    "label": {
+      "chooseSystemType": "시스템 유형 선택",
+      "copy": "프로젝트로부터 복사",
+      "default": "기본 템플릿",
+      "systemType": "시스템 유형",
+      "unsaved": "저장되지 않은 변경 사항",
+      "settings": "시스템 설정"
+    },
+    "params": {
+      "backtracking": {
+        "headline": "역추적"
+      },
+      "cablingLosses": {
+        "ACCable": "AC 케이블 손실",
+        "ACCableShort": "AC 케이블",
+        "DCCable": "DC 케이블 손실",
+        "DCCableShort": "직류(DC) 케이블",
+        "DCMismatch": "DC 불일치로 인한 손실",
+        "DCMismatchShort": "직류(DC) 불일치",
+        "headline": "케이블 손실",
+        "setDefault": "기본값 설정"
+      },
+      "colSpacing": {
+        "headline": "상대 열 간격",
+        "spacing": "상대 열 간격"
+      },
+      "inverter": {
+        "centralized": "집중형 고효율 인버터",
+        "headline": "인버터 유형",
+        "small": "소형 인버터",
+        "string": "스트링 인버터",
+        "efficiencyStr": "{inverterType} [{efficiency}% 유로 효율]",
+        "custom": "맞춤형 인버터"
+      },
+      "orientation": {
+        "azimuth": "방위각",
+        "headline": "태양광 시스템의 기하학적 구조",
+        "tilt": "기울기"
+      },
+      "pvModule": {
+        "ASI": "a-Si - 비결정성 실리콘",
+        "CDTE": "CdTe - 텔루륨화카드뮴",
+        "CIS": "CIS - 구리인듐 셀렌화물",
+        "CSI": "c-Si - 결정형 실리콘 (단일 혹은 다결정질)",
+        "customDegradation": "첫 해 {degradationFirstYear}% 성능 저하 및 다음해 {degradationNextYear}% 성능 저하",
+        "degradation": "사용자 성능 저하 속도 (RPD)",
+        "firstYear": "첫 해",
+        "headline": "태양광 모듈 유형",
+        "nextYear": "다음 해"
+      },
+      "rowSpacing": {
+        "headline": "상대 행 간격",
+        "spacing": "상대 행 간격"
+      },
+      "snowSoilingLosses": {
+        "headline": "태양광 모듈에서 눈(Snow) 및 소일링(Soiling)에 의한 손실",
+        "snowLosses": "월간 눈(Snow)에 의한 손실은 최대",
+        "snowLossesShort": "월간 눈(Snow)에 의한 손실은 최대",
+        "soilingLosses": "월간 소일링(Soiling)에 의한 손실은 최대",
+        "soilingLossesShort": "월간 소일링(Soiling)에 의한 손실은 최대",
+        "snowLossesForm": "눈(Snow)에 의한 손실",
+        "soilingLossesForm": "소일링(Soiling)에 의한 손실",
+        "soilingAsYearly": "연간 소일링(Soiling) 값을 입력하고 싶습니다."
+      },
+      "systemAvailability": {
+        "availability": "시스템 가용성",
+        "headline": "시스템 가용성"
+      },
+      "systemSize": {
+        "area": "설치된 태양광 모듈 면적",
+        "capacity": "설비 용량",
+        "headline": "시스템 크기"
+      },
+      "transformer": {
+        "headline": "변압기 유형",
+        "highEfficiency": "고효율",
+        "none": "없음",
+        "standard": "표준",
+        "lossStr": "{transformerType} [{loss}% 손실]",
+        "custom": "맞춤형 변압기"
+      },
+      "rotationLimits": {
+        "val": "{east}° 동 , {west}° 서",
+        "west": "서",
+        "east": "동",
+        "headline": "회전 한계"
+      }
+    },
+    "type": {
+      "buildingIntegrated": {
+        "desc": "주거용 또는 상업용 건물의 외관이나 지붕에 설치된 태양광 시스템. 방위각과 태양광 모듈의 기울기가 동일합니다. 모듈이 서로 음영되지 않습니다. 모듈은 건물 외장에 통합되므로 후면 환기가 매우 제한적입니다. 이 유형의 태양광 시스템은 인버터를 통해 저전압 계통에 직접 연결되거나 인버터 및 배전 변압기를 통해 중전압 계통에 연결될 수 있습니다. 전력저장장치는 고려되지 않습니다.",
+        "name": "건물 일체형"
+      },
+      "groundFixed": {
+        "desc": "평평한 바닥에 설치된 대규모 상업용 태양광 시스템. 방위각과 태양광 모듈의 기울기는 동일하며, 연간 에너지 생산을 극대화 하기 위해 일반적으로 적도를 향하고 최적의 기울기로 기울어져 있습니다. 모듈은 행을 맞추어 정렬된 기울어진 구조에 고정 장착됩니다. 낮은 태양각에서는 부분적으로 다른 행에 의해 음영이 생길 수 있습니다. 모듈은 통풍이 잘 됩니다. 이 유형의 태양광시스템은 인버터 및 배전용 변압기를 통해 중전압 혹은 고전압 계통에 연결되며, 추가 변압기가 사용될 수 있습니다. 전력저장장치는 고려되지 않습니다.",
+        "name": "지상 기반의 고정식 마운트"
+      },
+      "noPvSystem": {
+        "desc": "태양 및 기상 변수만 계산됩니다. 태양광 시스템 구성은 고려되지 않습니다.",
+        "name": "태양광 시스템 없음"
+      },
+      "rooftopLargeFlat": {
+        "desc": "상업용 또는 산업용 건물의 넓은 수평 지붕에 설치된 태양광 시스템. 방위각 및 태양광 모듈의 기울기가 일치합니다. 모듈은 평평한 지붕에 행을 맞추어 정렬된 기울어진 구조에 고정 장착됩니다. 따라서, 낮은 태양각에서는 부분적으로 다른 행에 의해 음영이 생길 수 있습니다. 이 장착은 태양광 모듈의 통풍이 가능하지만, 지붕 표면의 온도 상승은 태양광 시스템 성능에 영향을 줄 수 있습니다. 이 유형의 태양광 시스템은 인버터를 통해 저전압 계통에 직접 연결되거나 인버터 및 배전 변압기를 통해 중전압 계통에 연결될 수 있습니다. 전력저장장치는 고려되지 않습니다.",
+        "name": "수평인 넓은 지붕"
+      },
+      "rooftopLargeTilted": {
+        "desc": "상업용 또는 산업용 건물의 기울어진 지붕에 설치된 태양광 발전 시스템. 방위각 및 태양광 모듈의 기울기가 일치하며, 모듈이 서로 음영되지 않습니다. 모듈은 기울어진 지붕에 부착된 레일에 장착되어 후면 통풍 가능합니다. 이 시스템은 인버터를 통해 저전압 계통에 직접 연결되거나 인버터 및 배전 변압기를 통해 중전압 계통에 연결될 수 있습니다. 전력저장장치는 고려되지 않습니다.",
+        "name": "기울어진 넓은 지붕"
+      },
+      "rooftopSmall": {
+        "desc": "주거용 건물의 기울어진 지붕에 장착된 태양광 시스템. 방위각 및 태양광 모듈의 기울기가 일치하며, 모듈이 서로 음영되지 않습니다. 모듈은 기울어진 지붕에 부착된 레일에 장착되어 후면 통풍 가능합니다. 이 유형의 시스템은 주로 인버터를 통해 저전압 계통에 직접 연결됩니다. 전력저장장치는 고려되지 않습니다.",
+        "name": "옥상 소형"
+      },
+      "trackerOneAxisHorizontalNS": {
+        "desc": "평평한 바닥에 설치된 대규모 상업용 태양광 시스템.  태양광 모듈은 남북으로 움직이는 한 개의 수평축 추적장치(Tracker)에 장착됩니다. 추적장치의 회전 반경은 동쪽 -60도와 서쪽 60도 입니다. 역추적 알고리즘은 낮은 태양각에서 행간 음영 손실을 줄이기 위해 사용됩니다. 모듈은 통풍이 잘 됩니다. 이 유형의 태양광시스템은 인버터 및 배전용 변압기를 통해 중전압 혹은 고전압 계통에 연결되며, 추가 변압기가 사용될 수 있습니다. 전력저장장치는 고려되지 않습니다.",
+        "name": "1개의 수평축이 달린 트랙커"
+      },
+      "hydroMountedLargeScale": {
+        "desc": "이 옵션은 대형 수상 태양광 발전 설비를 포함합니다. 모듈은 적도를 향하는 플라스틱 수상 플랫폼에 조립되는 것으로 간주됩니다. 지표수 증발에 의한 냉각으로 인해 모듈의 작동 온도가 낮습니다. 일련의 모듈 간 불일치(파동으로 인한 불일치) 및 새의 분비물(조분)으로 인한 오염도가 높을 것으로 예상됩니다. 이 예제 설치에서는 스트링 인버터와 배전 변압기를 고려합니다. 대규모 지상 고정식 태양광 설치와 비교할 때, 시스템의 예상 가용성은 보다 열악한 환경으로 인해 낮아지며, 다양한 장애 유형의 발생 가능성이 더 높습니다.",
+        "name": "수상 태양광"
+      }
+    }
+  },
+  "toggle": {
+    "ltaDaily": {
+      "perDay": "{unit} / 일"
+    }
+  },
+  "units": {
+    "DMS": "도분초(DMS)",
+    "celsius": "°C",
+    "currencyAnnual": "{currency}/년",
+    "currencyMonthly": "{currency}/월",
+    "days": "일 수 (Days)",
+    "decimal": "십진법의",
+    "degreeDays": "도일수(Degree days)",
+    "fahrenheit": "°F",
+    "feet": "피트(ft)",
+    "kWhAnnually": "kWh/연간",
+    "meter": "미터(m)",
+    "perDay": "일간",
+    "perMonth": "월간",
+    "perYear": "연간",
+    "years": "년",
+    "inhabitants": "inh.",
+    "km": "km",
+    "m2": "m<sup>2</sup>",
+    "mm": "mm",
+    "Wh": "Wh",
+    "km2": "km<sup>2</sup>",
+    "kWh": "kWh",
+    "kWp": "kWp",
+    "m/s": "m/s",
+    "MWh": "MWh",
+    "MWp": "MWp",
+    "kg/m2": "kg/m<sup>2</sup>",
+    "MJ/m2": "MJ/m<sup>2</sup>",
+    "Wh/m2": "Wh/m<sup>2</sup>",
+    "kWh/m2": "kWh/m<sup>2</sup>",
+    "Wh/kWp": "Wh/kWp",
+    "kWh/kWp": "kWh/kWp",
+    "inh./km2": "inh./km<sup>2</sup>"
+  },
+  "user": {
+    "company": {
+      "EUVATCheckInProgress": "회사 부가 가치세(VAT) 확인 진행중",
+      "add": "회사 계정 추가하기",
+      "field": {
+        "city": "도시",
+        "country": "국가 / 지역",
+        "name": "회사 이름",
+        "phone": "전화 번호",
+        "state": "시도",
+        "street": "도로명",
+        "zipCode": "우편번호(5자리)",
+        "VAT": "부가가치세(VAT)",
+        "trial": "무료 평가판 요청하기",
+        "billing": "결제 정보 추가",
+        "companyName": "회사명",
+        "companyOrOrganisationName": "회사/조직명",
+        "territory": "지역"
+      },
+      "invalidEUVat": "입력한 회사 VAT가 유효하지 않습니다.",
+      "messages": {
+        "update-fail": "회사 업데이트에 실패하였습니다. 나중에 다시 시도해 주십시오.",
+        "update-ok": "회사가 업데이트 되었습니다!",
+        "create-ok": "고객이 생성되었습니다!",
+        "create-fail": "회사 생성에 실패했습니다. 나중에 다시 시도해 주십시오!",
+        "success-items": {
+          "name": "회사 계정 „{name}“이/가 생성되었습니다.",
+          "trial": "무료 평가판 요청이 승인되었습니다.",
+          "billing": "결제 정보 추가 완료",
+          "trialFailed": "무료 평가판 요청을 승인할 수 없습니다."
+        },
+        "checkingVat": "부가가치세 확인"
+      },
+      "none": "귀하는 회사 계정이 없습니다.",
+      "profile": {
+        "name": "회사 이름",
+        "projects": "유효 프로젝트",
+        "role": "사용자 역할",
+        "updated": "업데이트 됨",
+        "type": "유형",
+        "switch": "회사 계정으로 전환",
+        "current": "현재 상태",
+        "companyAccount": "회사 계정",
+        "personalAccount": "개인 계정"
+      },
+      "role": {
+        "ADMIN": "관리자",
+        "USER": "일반 사용자"
+      },
+      "similarExists": "Solargis 데이터베이스에서 이미 존재할지도 모르는 유사한 회사를 발견했습니다. 귀하의 회사가 이미 존재하는지 SolarGIS에서 수동으로 확인한 후, 안내드리겠습니다.",
+      "status": {
+        "ACTIVE": "유효한",
+        "SUSPENDED": "중지된",
+        "DELETED": "삭제됨"
+      },
+      "stepOf": "{ total } 단계 중 { step } 단계",
+      "welcomeDialog": {
+        "assignedToCompany": "{ companyName } 회사에 성공적으로 추가되었습니다.",
+        "continue": "시작합시다!",
+        "newCompany": "회사 { companyName } 가 성공적으로 생성되었습니다.",
+        "purchase": "유료 서비스 가입하기",
+        "welcome": "{ companyName } 환영합니다!"
+      },
+      "freeTrial": {
+        "assignSuccess": "{companyName} 회사에 무료 평가판이 지정되었습니다.",
+        "info": "무료 평가판 남용 방지를 위해 전화 번호를 확인합니다.",
+        "code": "확인 코드",
+        "whatIs": "무료 평가판을 사용하면 선택한 1개의 프로젝트에 대해 Prospect 앱의 모든 기능을 활성화 할 수 있습니다. 무료 평가판은 14일 동안 유효합니다.",
+        "success": "사용자의 프로젝트를 만들고, 하나의 프로젝트에 대한 무료 평가판을 활성화 합니다.",
+        "sendAgain": "다시 요청하기",
+        "phoneInvalid": "전화 번호가 이미 사용되었거나 유효하지 않습니다.",
+        "otpInvalid": "OTP 코드가 유효하지 않습니다",
+        "incorrectVerificationCode": "입력한 확인 코드가 올바르지 않습니다. 다시 시도하거나 새 확인 코드를 받으십시오."
+      },
+      "action": {
+        "add": "추가",
+        "create": "생성",
+        "verify": "확인",
+        "trialLater": "나중에 무료 평가판 요청하기",
+        "billingLater": "나중에 결제 정보 추가"
+      },
+      "phoneCodeIsString": "메뉴에서 전화번호 지역코드 선택하기",
+      "stateNotSelectedFromList": "목록에서 시/도 선택",
+      "countryNotSelectedFromList": "목록에서 국가 선택",
+      "phoneInvalid": "전화번호가 유효하지 않습니다.",
+      "EUVATTerritoryHint": "부가가치세 식별 번호를 사용하지 않는 지역에서 오신 경우, <a href='https://solargis.com/about-us/contact' target='_blank'>저희에게 연락해 주십시오.</a>",
+      "errors": {
+        "vatNotValid": "부가가치세는 {vatPrefix}에 유효하지 않습니다",
+        "vatIdSpacesForbidden": "부가가치세 식별 번호에는 공백이 없어야 합니다"
+      },
+      "territoryNotSelectedFromList": "목록에서 지역을 선택하십시오"
+    },
+    "profile": {
+      "account": "사용자 계정",
+      "changeName": "사용자 이름 변경",
+      "changePassword": "비밀번호 변경",
+      "companyAccounts": "회사 계정",
+      "general": "일반적인",
+      "loginSecurity": "로그인 및 보안",
+      "my": "나의 프로필",
+      "notifications": "알림",
+      "overview": "개요",
+      "units": "단위",
+      "unselectCompany": "사용자 계정으로 전환",
+      "type": "개인 계정",
+      "photo": "사용자 사진",
+      "addPhoto": "프로필 사진 추가",
+      "lastChange": "가장 최근의 수정사항",
+      "changeEmail": "이메일 변경",
+      "changeUnitSettings": "단위 설정 변경",
+      "sdatDevices": "등록된 SDAT 장치"
+    },
+    "selectCompany": {
+      "headline": "계속하려면 회사를 선택하십시오.",
+      "none": "회사를 찾지 못했습니다. 새로운 회사를 지정하시겠습니까?",
+      "noneAdmin": "귀하가 관리자로 지정된 회사를 찾지 못했습니다. 새로운 회사를 지정하시겠습니까?",
+      "admin": "귀하가 관리자로 지정된 회사 목록을 보여줍니다."
+    }
+  },
+  "payment": {
+    "dialog": {
+      "change": "지불 방법 변경",
+      "chooseMethod": "지불 방법 선택",
+      "headline": "주문 총계: {sum}",
+      "payNow": "지금 지불하기",
+      "resultHeadline": "결제 결과"
+    },
+    "method": {
+      "bank": "은행 송금",
+      "card": "신용 카드",
+      "bankDesc": "결제 정보는 인보이스에 표시됩니다."
+    },
+    "thankYou": {
+      "detail": "주문 상세정보 보기",
+      "thankYou": "감사합니다!",
+      "thankYouBank": "주문해 주셔서 감사합니다. 은행송금이 완료되면 주문이 처리됩니다.",
+      "thankYouCard": "카드 결제가 완료되었습니다. 서비스가 곧 활성화됩니다."
+    },
+    "failed": {
+      "failed": "지불 실패",
+      "failedText": "지불 승인이 거절되었습니다. 종료 후 다시 시도해 주세요."
+    },
+    "pricing": {
+      "pricing": "가격",
+      "choosePlan": "귀하에게 알맞는 Prospect를 선택하십시오.",
+      "currentPlan": "현재 플랜",
+      "free": {
+        "price": "무료 플랜",
+        "actionDesc": "데모 - 등록없이 사용 가능",
+        "info": "태양 에너지 평가를 이제 막 시작하는 입문용으로 적합합니다.",
+        "feature1": "연평균 데이터",
+        "feature2": "대화형(Interactive) 태양 자원 지도",
+        "action": "시작하기",
+        "feature3": "신뢰할 수 있는 결과를 제공하는 사용하기 쉬운 태양광 시물레이션 도구"
+      },
+      "basic": {
+        "priceInfo": "연간 사용자 3명으로 시작하기",
+        "action": "가입하기",
+        "actionDesc": "지금 견적보기",
+        "info": "상업용 옥상 프로젝트의 사전 실행 가능성 검토에 이상적입니다.",
+        "feature1": "월평균 및 24*12 프로파일",
+        "feature2": "XLSX 및 PDF 보고서 다운로드",
+        "feature3": "비교분석 도구",
+        "feature4": "경제성 계산기",
+        "feature5": "사용자 3인 + 추가 인원 당 300 유로",
+        "all": "무료 플랜의 모든 기능과 함께 다음 기능이 추가됩니다:"
+      },
+      "pro": {
+        "priceInfo": "연간 사용자 3명으로 시작하기",
+        "action": "가입하기",
+        "upgrade": "업그레이드",
+        "actionDesc": "지금 견적보기",
+        "info": "대규모 프로젝트를 수행하는 전문가를 위한 고급 기능",
+        "feature1": "양면 이득(bifacial gain)의 정확한 추정을 위한 알베도 데이터",
+        "feature2": "스펙트럼의 손익 계산을 위한 가강수량 및 습도 데이터",
+        "feature3": "소일링 및 눈(Snow)에 의한 손실을 추정하기 위한 강우량 및 강설일 데이터",
+        "feature4": "1축 트랙커 및 수상 태양광 시스템 지원",
+        "feature5": "사용자 3인 + 추가 인원 당 600 유로",
+        "all": "기본 플랜의 모든 기능과 함께 다음 기능이 추가됩니다:"
+      },
+      "table": {
+        "data": {
+          "albedo": {
+            "text": "표면 알베도"
+          },
+          "compare": {
+            "help": "최대 4개의 다른 프로젝트에 대한 발전량 비교 도구",
+            "text": "비교분석 도구"
+          },
+          "configure": {
+            "free": "고정식 마운트 시스템",
+            "pro": "고정식 + 1축 트랙커 시스템",
+            "text": "태양광 시스템 구성"
+          },
+          "economy": {
+            "help": "투자자본수익률(ROI), 투자 회수 기간, 균등화발전원가(LCOE) 등을 위한 간단한 계산 도구",
+            "text": "경제성 계산기"
+          },
+          "report": {
+            "text": "PDF 및 XLSX 보고서 다운로드"
+          },
+          "solar": {
+            "help": "수평면 전일사량, 수평면 산란일사량 및 법선면 직달일사량",
+            "text": "태양 자원 매개변수(GHI, DIF, DNI)"
+          },
+          "features": "세부 기능",
+          "save": {
+            "text": "프로젝트 생성 및 저장"
+          },
+          "pv": {
+            "pro": "고정식 경사 및 1축 트랙커",
+            "text": "태양광 매개변수(GTI, PVOUT)",
+            "help": "경사면 전일사량(GTI) 및 태양광 전기 출력",
+            "free": "고정식 경사 시스템",
+            "basic": "고정 경사 시스템"
+          },
+          "meteo": {
+            "help": "대기 온도, 풍속, 냉방도일, 난방도일",
+            "text": "기본 기상 매개변수(TEMP, WS, CDD, HDD)"
+          },
+          "dataParams": "데이터 매개변수",
+          "meteo2": {
+            "text": "강우, 강설일, 상대습도 및 가강수량"
+          },
+          "hourly": {
+            "text": "24 x 12(시간별 x 월별) 프로파일",
+            "basic": "선택된 매개변수"
+          },
+          "annual": {
+            "text": "장기 연평균"
+          },
+          "monthly": {
+            "text": "장기간 월평균"
+          },
+          "floating": {
+            "text": "수상 태양광 지원"
+          },
+          "dataAggregation": "데이터 집계"
+        }
+      },
+      "alert": {
+        "body": "귀하는 현재 개인 계정으로 전환되었습니다. 계속 가입하려면 사용자 설정에서 할당할 회사 계정을 선택해 주세요.",
+        "heading": "계속하려면 회사를 선택해 주세요."
+      }
+    },
+    "cart": {
+      "headline": "사용자 주문",
+      "empty": "장바구니가 비어 있습니다.",
+      "edit": "{productName} 변경하기",
+      "step1": {
+        "name": "항목",
+        "withoutVAT": "부가가치세(VAT)를 제외한 가격입니다.",
+        "total": "총 연간 가입",
+        "back": "products로 돌아가기",
+        "purchaseOrder": "주문 구매하기",
+        "purchaseOrderPlaceholder": "주문 번호",
+        "users": "전체 액세스 권한이 있는 사용자",
+        "subscription": "가입",
+        "remove": "장바구니에서 이 항목을 제거하시겠습니까?",
+        "annual": "연간"
+      },
+      "step2": {
+        "name": "결제 정보",
+        "address": "결제 주소"
+      },
+      "step3": {
+        "total": "주문 총합",
+        "totalVAT": "부가가치세(VAT) 포함한 주문 총합",
+        "name": "지불",
+        "continue": "내 주문 목록으로 가기"
+      }
+    }
+  },
+  "report": {
+    "mapLink": "지도상의 위치",
+    "contents": "콘텐츠",
+    "cover": {
+      "ProspectPv": {
+        "title": "태양광 에너지 전력 생산량 예비 평가",
+        "type": "PROSPECT 태양광 에너지 검토(review)"
+      },
+      "ProspectSolar": {
+        "title": "해당 위치 일사량 예비 평가",
+        "type": "PROSPECT 태양 자원 검토(review)"
+      },
+      "customer": "고객",
+      "generated": "보고서 생성일",
+      "generatedBy": "보고서 작성자",
+      "project": "프로젝트",
+      "reportNr": "보고서 번호",
+      "reportType": "보고서 유형",
+      "tel": "전화번호"
+    },
+    "figure": "그림",
+    "hourlyDni": "법선면 직달일사량 - 시간 평균",
+    "hourlyGhi": "수평면 전일사량 - 시간 평균",
+    "legal": {
+      "copyright": "이 보고서는 © { currentYear } Solargis s.r.o.,에 모든 저작권이 있습니다.",
+      "email": "이메일",
+      "guarantee": "데이터 및 계산의 불확실성에 의하여, Solargis s.r.o.는 추정의 정확성을 보장하지 않습니다. 가능한 최고의 데이터, 소프트웨어 및 지식에 기초하여, 기상 매개 변수 및 태양광 발전량의 예비 평가를 위해 가능한 최대의 작업을 하였습니다. Solargis s.r.o.는 제공된 보고서의 사용에 의해 발생한 혹은 발생하였다고 주장된 어떠한 직접적, 부수적, 결과적, 간접적 또는 징벌적 손해에 대해서 책임을 지지 않습니다.",
+      "moreInfo": "전체 태양광 생산량 평가에 대한 자세한 정보:",
+      "registrationId": "등록 ID",
+      "serviceProvider": "서비스 제공자",
+      "tel": "전화번호",
+      "terms": "유료 서비스에 대한 일반 계약 조건의 전문:",
+      "title": "면책 및 법적 정보(Disclaimer and legal information)",
+      "trademark": "Solargis®는 Solargis s.r.o.의 상표입니다.",
+      "uncertainty": "이 보고서는 태양광 시스템의 작동 초기 기간 및 전체 수명 기간 동안의 발전량 추정을 보여줍니다. 이 예측은 예비 프로젝트 평가를 수행하기에 충분히 정확합니다. 대규모 프로젝트의 계획 및 파이낸싱의 경우에는 다음의 추가 정보가 필요합니다: 1. 일사량의 통계적 분포 및 불확도 2. 태양광 시스템의 세부 사양 3. 태양광 발전량의 연간 변동성 및 P90 불확도 4. 태양광 구성요소의 성능저하를 고려한 전체 수명 기간 동안의 에너지 발전량.",
+      "url": "URL",
+      "validationAuth": "진위 검증",
+      "validationAuthText": "이 PDF 보고서는 Solargis s.r.o.에 의해 전자서명되었습니다.",
+      "vatNr": "부가가치세(VAT) ID"
+    },
+    "location": "프로젝트 위치",
+    "ltaPvout": "태양광 발전량 - 장기간 평균",
+    "mapView": "상세 지도 보기",
+    "otherParams": "다른 기상 변수",
+    "slovakia": "슬로바키아",
+    "solarParams": "일사량 및 기상 변수",
+    "table": "표",
+    "dailyAvg": "일 평균",
+    "hourlyGti": "경사면 전일사량 - 시간 평균",
+    "hourlyPvoutSpecific": "태양광 발전 고유출력 - 시간 평균",
+    "hourlyPvoutTotal": "총 태양광 발전량 - 시간 평균",
+    "hourlyTemp": "대기 온도 - 시간 평균",
+    "monthlySum": "월별 합계",
+    "dailyStats": "일일 통계",
+    "dailyGhiDniDif": "GHI, DNI, DIF - 일 평균",
+    "solarDailySummary": "아래의 일사량 프로파일은 매월 모든 시간별 데이터의 평균으로 계산됩니다. 프로파일은 각각의 월과는 별개로 하루 동안 변화하는 GHI(수평면 전일사량) 패턴을 나타냅니다. 이러한 패턴은 지역의 지리, 천문학 및 기후에 의해 좌우됩니다.",
+    "glossary": {
+      "title": "약어 및 용어",
+      "pv": "태양광 전력 매개변수",
+      "meteo": "기상 매개변수",
+      "solar": "태양 매개변수"
+    },
+    "freeTrialWatermark": "무료 평가판 이용",
+    "annually": "연간"
+  },
+  "csvData": {
+    "T24": "T24 - 지상 2m에서 하루(24 시간) 동안의 평균 기온. ERA-5 모델 결과로 산출 (© 2019 ECMWF) [섭씨]",
+    "WSm": "WSm - 지상 10m에서의 평균 월별 풍속. MERRA-2 및 CFSv2 모델 결과로 산출 (© {year} NOAA 및 NASA) [m/s]",
+    "RHm": "RHm - 지상 2m에서의 평균 월별 상대 습도. MERRA-2 및 CFSv2 모델 결과로 산출 (© {year} NASA 및 NOAA) [%]",
+    "ALBm": "ALBm - 표면에 반사된 일사량의 비율. 표면에 반사되는 수평면전일사량(GHI) 대 표면에 입사하는 수평면전일사량(GHI)에 대한 비율. (출처: NASA MODIS 및 ECMWF ERA-5) []",
+    "data": "데이터",
+    "HDDm": "HDDm - 건물 난방에 필요한 에너지 수요량을 정량화합니다. \"난방도일(Heating degree days)\"은 외기 온도가 특정 기본 일평균 기온(18°C)보다 낮을 때, 그 정도(도) 및 기간(일)을 나타내는 척도입니다. 연별 및 월별 값은 일일 값으로부터 합산됩니다. 대기 온도 데이터 [도일(degree days)] 로부터 Solargis가 계산하였습니다.",
+    "CDDm": "CDDm - 건물 냉방에 필요한 에너지 수요량을 정량화합니다. \"냉방도일(Cooling degree days)\"은 외기 온도가 특정 기본 일평균 기온(18°C)보다 높은 때, 그 정도(도) 및 기간(일)을 나타내는 척도입니다. 연별 및 월별 값은 일일 값으로부터 합산됩니다. 대기 온도 데이터 [도일(degree days)] 로부터 Solargis가 계산하였습니다.",
+    "year": "연도",
+    "DNIm": "DNIm - 법선면 직달일사량(DNI)의 평균 월별 합계 (© {year} Solargis) [kWh/m2]",
+    "GHIm": "GHIm - 수평면 전일사량(GHI)의 평균 월별 합계 (© {year} Solargis) [kWh/m2]",
+    "title": "장기간 평균 월별 일사량 및 기상 매개변수",
+    "PRECm": "PRECm - 글로벌 강수 기후학 센터(GPCC)에서 출처한 강수량의 월별 합계의 평균 (© {year} DWD) [mm]",
+    "Diffm": "Diffm - 수평면 산란일사량(DHI)의 평균 일일 합계 (© {year} Solargis) [kWh/m2]",
+    "PWATm": "PWATm - 가강수량은 대기 중에 함유되어 있는 수증기가 전부 응결한다고 가정하였을 경우의 물의 양을 깊이로 표시한 것입니다. 지면 위의 수분량을 나타냅니다. CFSR 및 CFSv2 모델 결과로 산출 (© {year} NOAA) [kg/m2]",
+    "issued": "발행됨",
+    "SNOWDm": "SNOWDm - 강설일은 적설 깊이가 5mm 이상의 눈이 내린 날로 계산됩니다. CFSR 및 CFSv2 모델 결과로 산출 (© 2019 NOAA)",
+    "columns": "열",
+    "azimuth": "경사 방위",
+    "latitude": "위도",
+    "siteName": "위치",
+    "encoding": "문자 인코딩",
+    "longitude": "경도",
+    "elevation": "고도",
+    "inclination": "경사 기울기",
+    "reportNumber": "보고서 번호"
+  },
+  "export": {
+    "title": "프로젝트 내보내기",
+    "confirmText": "선택한 프로젝트를 CSV 파일로 내보내시겠습니까?",
+    "csvInfo": {
+      "exported": "내보냄",
+      "ftpCompatible": "내보낸 PV 구성의 매개변수에 대해서는 여기 문서에서 설명합니다."
+    }
+  },
+  "cookies": {
+    "cookie-banner": {
+      "text": "당사는 웹 사이트를 방문하는 동안 사용자에게 최상의 경험을 제공하기 위해 쿠키를 사용합니다. '동의'를 클릭하거나 웹 사이트를 계속 사용하면 브라우저에서 쿠키 사용을 수락하는 것입니다.",
+      "accept": "수락",
+      "more-info": "추가 정보"
+    }
+  },
+  "dashboard": {
+    "landingPage": {
+      "learnMore": "더 알아보기",
+      "titleHeader": "태양광 투자를 위한 기상 데이터 및 소프트웨어",
+      "footer": {
+        "news": "뉴스",
+        "events": "행사",
+        "pricing": "가격",
+        "contactUs": "문의",
+        "releaseNotes": "릴리즈 노트",
+        "solargisHomepage": "Solargis 홈페이지"
+      },
+      "subtitleCard": "앱이 개발 중입니다",
+      "monitor": {
+        "button": "API 서비스",
+        "content": "태양광 시스템의 성능 모니터링을 위해 Solargis 데이터를 정기적으로 업데이트하십시오.",
+        "subtitleFirst": "매일 또는 실시간 업데이트",
+        "subtitleThird": "API/FTP 액세스",
+        "subtitleSecond": "최대 15분 간격"
+      },
+      "prospect": {
+        "content": "빠르고 안정적인 프로젝트 사전 실행 가능성을 확인하기 위한 태양 탐사 도구.",
+        "subtitleFirst": "연간 및 월간 평균 데이터",
+        "subtitleThird": "알베도, 강우량 및 강설량 데이터",
+        "subtitleSecond": "시간별(24) x 월별(12) 프로파일"
+      },
+      "evaluate": {
+        "button": "TS / TMY 데이터 주문",
+        "content": "태양광 발전소의 고급 에너지 모델링 및 설계 최적화를 위해.",
+        "subtitleFirst": "지난 달까지의 시계열 데이터",
+        "subtitleThird": "PVsyst, Helioscope, SAM 등으로 데이터 가져오기",
+        "subtitleSecond": "TMY P50, P90, Pxx"
+      },
+      "subtitleHeader": "위험 감소 및 태양 에너지 자산의 수익성 극대화",
+      "forecast": {
+        "button": "API 서비스",
+        "content": "최대 10일 동안 태양광 발전 예측.",
+        "subtitleFirst": "최대 30분마다 예측 업데이트",
+        "subtitleThird": "API/FTP 액세스",
+        "subtitleSecond": "최대 15분 간격"
+      }
+    },
+    "listRecentProjects": {
+      "noProjects": "아직 프로젝트를 만들지 않았습니다"
+    },
+    "header": {
+      "quickLinks": "빠른 링크",
+      "apps": "앱"
+    },
+    "sdatManagement": {
+      "manuals": "설명서",
+      "devices": "내 SDAT 장치",
+      "download": "다운로드",
+      "subscription": "구독",
+      "sdatHeader": "{{header.sdat}}"
+    }
+  }
+}

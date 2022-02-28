@@ -1,0 +1,12 @@
+@import 'theme';
+
+.template-list {
+  height: 100%;
+}
+
+.template-view {
+  border-left: 1px solid map-get($primary, 300);
+  padding: $sg-24;
+  height: calc(100vh - #{ $sg-system-type-offset });
+  overflow: auto;
+}

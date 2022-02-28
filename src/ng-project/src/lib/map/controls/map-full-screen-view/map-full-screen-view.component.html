@@ -1,0 +1,12 @@
+<mat-card style="padding:0">
+  <div fxLayout="column">
+    <div fxFlex>
+      <button mat-icon-button (click)="toggleFullscreen()"
+              matTooltip="{{ 'map.fullscreen.fullscreen' | transloco }}"
+              matTooltipPosition="right">
+        <mat-icon *ngIf="!isFullscreen" svgIcon="sg:sgf-full-screen"></mat-icon>
+        <mat-icon *ngIf="isFullscreen" svgIcon="sg:sgf-full-screen-exit"></mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>

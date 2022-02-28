@@ -1,0 +1,8 @@
+
+@import 'theme';
+
+span {
+  font-weight: 400;
+  color: map-get($primary, 800);
+  font-size: $sg-12;
+}

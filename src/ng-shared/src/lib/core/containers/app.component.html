@@ -1,0 +1,13 @@
+<div class="main">
+  <header *ngIf="showHeader$ | async">
+    <sg-header></sg-header>
+  </header>
+  <div [ngClass]="{'no-fullscreen': noFullscreen$ | async}">
+    <div [ngClass]="{'scroll': noFillLayout$ | async}">
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+  <sg-accept-cookies *ngIf="showAcceptCookies$ | async" (acceptCookies)="acceptCookies()"></sg-accept-cookies>
+</div>

@@ -1,0 +1,17 @@
+@use 'mixins';
+
+.sg-grid-16-7 {
+  $leading-track-size: 16;
+
+  .row-4-3 {
+    @include mixins.row($leading-track-size, (4, 3));
+  }
+
+  .row-6-1 {
+    @include mixins.row($leading-track-size, 6);
+  }
+
+  .row-7 {
+    @include mixins.row($leading-track-size, 7);
+  }
+}

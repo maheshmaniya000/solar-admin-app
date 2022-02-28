@@ -1,0 +1,32 @@
+@import 'theme';
+
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+.outlet {
+  width: 100%;
+  max-width: $content-container-width;
+  margin: $sg-32 auto;
+}
+
+.container {
+  background-color: map-get($primary, 100);
+  height: max-content;
+  min-height: 100%;
+  width: 100%;
+}
+
+.inner-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: $sg-24 $sg-16;
+}
+
+sg-company-admin-toolbar {
+  display: block;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+}

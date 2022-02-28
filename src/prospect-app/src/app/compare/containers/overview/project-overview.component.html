@@ -1,0 +1,106 @@
+<div class="card-layout" *transloco="let t">
+  <div class="card-medium">
+    <mat-card class="small">
+      <div class="table-header">
+        <mat-card-title>
+          {{ t('projectDetail.overview.solar') }}
+        </mat-card-title>
+      </div>
+      <sg-project-overview-table
+        [dataSource]="solarDataSource$ | async"
+        [layer]="solarAndMeteoLayer"
+        [compare]="solarAndMeteoCompare$ | async"
+        [isProjectSelected]="isProjectSelected"
+        [columns]="solarAndMeteoColumns$ | async"
+        [selectedEnergySysId] = "selectedEnergySysId | async">
+      </sg-project-overview-table>
+      <div class="actions">
+        <button mat-button color="accent" (click)="redirect(['compare', 'solar-meteo', 'monthly'])">
+          {{ t('projectDetail.nav.monthlyStatistics') }}
+        </button>
+        <button mat-button color="accent" (click)="redirect(['compare', 'solar-meteo', 'hourly'])">
+          {{ t('projectDetail.nav.hourlyProfiles') }}
+        </button>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="card-medium">
+    <mat-card class="small">
+      <div class="table-header">
+        <mat-card-title>
+          {{ t('projectDetail.overview.meteorologicalData') }}
+        </mat-card-title>
+      </div>
+      <sg-project-overview-table
+        [dataSource]="meteoDataSource$ | async"
+        [layer]="solarAndMeteoLayer"
+        [compare]="solarAndMeteoCompare$ | async"
+        [isProjectSelected]="isProjectSelected"
+        [columns]="solarAndMeteoColumns$ | async"
+        [selectedEnergySysId] = "selectedEnergySysId | async">
+      </sg-project-overview-table>
+      <div class="actions">
+        <button mat-button color="accent" (click)="redirect(['compare', 'solar-meteo', 'monthly'])">
+          {{ t('projectDetail.nav.monthlyStatistics') }}
+        </button>
+        <button mat-button color="accent" (click)="redirect(['compare', 'solar-meteo', 'hourly'])">
+          {{ t('projectDetail.nav.hourlyProfiles') }}
+        </button>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="card-medium">
+    <mat-card class="small" *ngIf="(pvElectricityDataSource$ | async) as pvElectricityDataSource">
+      <mat-card-title>
+        {{ t('projectDetail.overview.theoreticalPvElectricityPotential') }}
+      </mat-card-title>
+      <sg-project-overview-table
+        [dataSource]="pvElectricityDataSource"
+        [layer]="pvElectricityLayer"
+        [compare]="pvElectricityCompare$ | async"
+        [isProjectSelected]="isProjectSelected"
+        [columns]="pvElectricityColumns$ | async"
+        [selectedEnergySysId] = "selectedEnergySysId | async">
+      </sg-project-overview-table>
+      <div class="actions">
+        <button mat-button color="accent" (click)="redirect(['compare', 'pv-electricity', 'monthly'])">
+          {{ t('projectDetail.nav.monthlyStatistics') }}
+        </button>
+        <button mat-button color="accent" (click)="redirect(['compare', 'pv-electricity', 'hourly'])">
+          {{ t('projectDetail.nav.hourlyProfiles') }}
+        </button>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="card-medium">
+    <mat-card class="small" *ngIf="(pvPerformanceDataSource$ | async) as pvPerformanceDataSource">
+      <mat-card-title>
+        {{ t('projectDetail.overview.longtermPvPowerPotential', { years: lifetimeYears }) }}
+      </mat-card-title>
+      <sg-project-overview-table
+        [dataSource]="pvPerformanceDataSource"
+        [layer]="pvElectricityLayer"
+        [compare]="pvElectricityCompare$ | async"
+        [isProjectSelected]="isProjectSelected"
+        [columns]="pvElectricityColumns$ | async"
+        [selectedEnergySysId] = "selectedEnergySysId | async">
+      </sg-project-overview-table>
+      <div class="actions">
+        <button mat-button color="accent" (click)="redirect(['compare', 'pv-performance', 'losses'])">
+          {{ t('projectDetail.nav.pvLosses') }}
+        </button>
+        <button mat-button color="accent" (click)="redirect(['compare', 'pv-performance', 'lifetime'])">
+          {{ t('projectDetail.nav.lifetimePerformance') }}
+        </button>
+      </div>
+    </mat-card>
+  </div>
+
+  <ng-template #notAvailable>
+    <div class="muted unit">-</div>
+  </ng-template>
+
+</div>

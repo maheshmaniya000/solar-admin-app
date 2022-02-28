@@ -1,0 +1,63 @@
+<h3>Found companies for user</h3>
+<ng-container *ngIf="userViewStore.viewModel$ | async as viewModel">
+  <mat-progress-spinner *ngIf="viewModel.loadingCompanies" [diameter]="20" mode="indeterminate"></mat-progress-spinner>
+
+  <div>
+    <ng-container *ngFor="let company of viewModel.companies">
+      <div class="actions">
+        <mat-icon
+          class="checked-sub-company"
+          [ngClass]="{
+            '-active': company.inspected,
+            '-not-active': !company.inspected
+          }"
+          [matTooltip]="company.inspected ? 'INSPECTED': 'NOT INSPECTED'"
+          matTooltipPosition="above"
+        >
+          beenhere
+        </mat-icon>
+        <button mat-icon-button [routerLink]="['/list/companies', company.sgCompanyId]" matTooltip="Company detail" matTooltipPosition="above">
+          <mat-icon>pageview</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          (click)="userViewStore.deleteFromCompany(company.sgCompanyId)"
+          [disabled]="doesNotHaveOtherAdmins(company, viewModel.user) || viewModel.updatingCompany[company.sgCompanyId]"
+          matTooltip="Delete from company"
+          matTooltipPosition="above"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+
+      <span>{{ company.name }} <ng-container *ngIf="company.VAT_ID">({{ company.VAT_ID }})</ng-container></span>
+
+      <ng-container *ngIf="!viewModel.updatingCompany[company.sgCompanyId]; else updatingCompanyTemplate">
+        <mat-form-field>
+          <mat-select
+            placeholder="User role"
+            [disabled]="doesNotHaveOtherAdmins(company, viewModel.user)"
+            [value]="getUserRoleInCompany(company, viewModel.user)"
+            (selectionChange)="changeRole(company, viewModel.user, $event.value)"
+          >
+            <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select
+            placeholder="User status"
+            [disabled]="doesNotHaveOtherAdmins(company, viewModel.user)"
+            [value]="getUserStatusInCompany(company, viewModel.user)"
+            (selectionChange)="changeStatus(company, viewModel.user, $event.value)"
+          >
+            <mat-option *ngFor="let status of statuses" [value]="status">{{status}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ng-container>
+      <ng-template #updatingCompanyTemplate>
+        <mat-progress-spinner [diameter]="21" mode="indeterminate"></mat-progress-spinner>
+      </ng-template>
+    </ng-container>
+  </div>
+</ng-container>

@@ -1,0 +1,25 @@
+
+<div class="card-layout bootstrap">
+  <div class="card-big">
+    <mat-card>
+      <div *ngFor="let item of compare$ | async; let i = index"
+        [ngClass]="[item.highlighted ? 'compare-highlight-' + i : '']"
+        class="project col-12 col-lg-6"
+      >
+        <div class="name"> {{ item.project | sgProjectName }}</div>
+        <div class="sg-border compare-{{ i }}"></div>
+        <sg-pv-config-miniviewer
+          *ngIf="item?.energySystem?.pvConfig; else noConfig"
+          size="showAll"
+          [pvConfig]="item?.energySystem?.pvConfig"
+        ></sg-pv-config-miniviewer>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<ng-template #noConfig>
+  <div class="empty">
+    {{ 'pvConfig.type.noPvSystem.name' | transloco }}
+  </div>
+</ng-template>

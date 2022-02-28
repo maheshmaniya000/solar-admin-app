@@ -1,0 +1,13 @@
+@mixin mat-tabs() {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: $font-weight-regular;
+  opacity: unset;
+  color: map-get($primary, 900) !important;
+  min-width: 50px;
+  width: fit-content;
+
+  &.mat-tab-disabled {
+    color: map-get($primary, 500) !important;
+  }
+}

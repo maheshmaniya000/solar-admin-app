@@ -1,0 +1,23 @@
+@use '~@angular/material' as mat;
+@use '../mixins';
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $primary: map-get($color-config, primary);
+  $foreground: map-get($color-config, foreground);
+  $divider-color: mat.get-color-from-palette($foreground, divider);
+
+  .sg-tool-button-group {
+    background-color: white;
+    border: solid 1px $divider-color;
+    @include mixins.side-attachments();
+
+    .mat-icon-button {
+      color: mat.get-color-from-palette($primary, lighter);
+
+      & + .mat-icon-button {
+        border-top: solid 1px $divider-color;
+      }
+    }
+  }
+}

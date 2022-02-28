@@ -1,0 +1,41 @@
+@import 'theme';
+
+:host {
+  align-self: start;
+  width: 100%;
+
+  mat-list-item {
+    height: $sg-32 + 1px;
+    border-top: 1px solid map-get($primary, 300);
+
+    &:last-of-type {
+      border-bottom: 1px solid map-get($primary, 300);
+    }
+
+    & ::ng-deep > .mat-list-item-content {
+      padding: 0 $sg-8;
+      flex: 1 0 auto;
+      font-size: 14px; // not defined
+      font-weight: bold;
+      color: map-get($accent, 500);
+
+      & > div {
+        cursor: default;
+        width: 1px; // no idea why it works
+        flex: 1 0 auto;
+        @include text-ellipsis();
+      }
+    }
+
+    & mat-checkbox {
+      flex: 0 0 ($sg-18 * 2);
+      @include mat-checkbox-size($sg-18);
+    }
+
+    &:hover {
+      background-color: map-get($primary, 50);
+    }
+
+  }
+
+}

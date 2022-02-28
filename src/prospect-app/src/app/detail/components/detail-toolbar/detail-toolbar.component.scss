@@ -1,0 +1,54 @@
+@import 'theme';
+
+sg-project-chips {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.rename-button {
+  width: auto;
+
+  mat-icon {
+    margin: 0;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-wrapper {
+  button {
+    padding-left: 60px;
+  }
+}
+
+.back-icon {
+  width: auto;
+  max-width: $sg-56;
+  overflow: visible !important;
+
+  mat-icon {
+    font-size: $sg-24;
+    display: flex;
+    align-items: center;
+    color: map-get($primary, 800);
+  }
+}
+
+sg-project-name-with-status {
+  min-width: 0;
+}
+
+::ng-deep {
+  .left-section {
+    min-width: 0;
+    align-items: center;
+  }
+}

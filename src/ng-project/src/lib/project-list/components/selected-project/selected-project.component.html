@@ -1,0 +1,71 @@
+<div>
+  <div fxLayout="row" class="section-wrapper">
+    <div fxFlex="90px" fxHide.lt-sm class="project-img">
+      <img *ngIf="pvConfigStatus !== 'empty'; else noPvConfigImage" src="assets/pvconfig/{{ pvConfig?.type }}.svg">
+    </div>
+
+    <div fxFlex class="project-actions">
+      <div class="name" [ngClass]="{'unsaved': !project.created}">
+        <sg-project-name-with-status [project]="project"></sg-project-name-with-status>
+        <mat-progress-spinner *ngIf="progress?.update?.name" mode="indeterminate" [diameter]="16" [strokeWidth]="2">
+        </mat-progress-spinner>
+        <sg-project-chips [freetrial]="freetrial"></sg-project-chips>
+      </div>
+      <div class="buttons">
+        <button *ngIf="project.created" [routerLink]="['/detail', project._id]" class="primary-button">
+          {{ 'project.selected.openDetail' | transloco }}
+        </button>
+        <button *ngIf="!project.created && !progress?.save" (click)="onSaveProject.emit()" [disabled]="!hasDataCoverage"
+                class="primary-button">
+          {{ 'project.selected.addToProjects' | transloco }}
+        </button>
+        <button *ngIf="progress?.save" class="primary-button">
+          <mat-progress-spinner mode="indeterminate" [diameter]="16" [strokeWidth]="2">
+          </mat-progress-spinner>
+        </button>
+        <!--<sg-favorite-button *ngIf="project.created" size="normal" [project]="project"></sg-favorite-button> TODO user-tags -->
+        <button
+          *ngIf="project.created && (isLoggedIn$ | async)"
+          mat-icon-button
+          data-test="kebab-menu-button"
+          [matMenuTriggerFor]="settings"
+        >
+          <mat-icon class="menu">more_vert</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="address">{{ project.site.place?.placemark | sgPlacemark }}</div>
+  <div class="latlng" *ngIf="project.site.place?.placemark || project.name">
+    <sg-unit-toggle-value [unit]="latlngUnit" [value]="project.site.point"></sg-unit-toggle-value>
+  </div>
+
+  <div class="pv-config" *ngIf="project.created">
+    <div class="pv-config-title">{{ 'project.pvConfigStatus.' + pvConfigStatus | transloco }}</div>
+    <sg-pv-config-summary *ngIf="pvConfigStatus !== 'empty'" [pvConfig]="pvConfig"></sg-pv-config-summary>
+  </div>
+
+  <div class="hr"></div>
+
+</div>
+
+<ng-template #noPvConfigImage>
+  <div class="flex-center">
+    <img src="assets/img/emptyPvConfig.svg" />
+  </div>
+</ng-template>
+
+<mat-menu #settings>
+  <sg-project-menu
+    component="map"
+    [showSettings]="false"
+    (openShareDialog)="openShareDialog()"
+    [showOpen]="false"
+    [project]="project"
+    (exportProjects)="exportProject.emit()"
+  ></sg-project-menu>
+</mat-menu>
+

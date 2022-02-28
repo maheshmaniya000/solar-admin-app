@@ -1,0 +1,88 @@
+@import 'theme';
+
+.table-s {
+  @include cdk-table-s(true);
+
+  cdk-header-row {
+    background-color: transparent !important;
+    height: unset !important;
+  }
+
+  cdk-row {
+    &:last-of-type {
+      background-color: transparent !important;
+      font-weight: $font-weight-regular !important;
+    }
+  }
+
+  cdk-cell {
+    padding: $sg-4 $sg-8;
+    align-self: stretch;
+
+    & > div {
+      line-height: $sg-20;
+    }
+
+    &.layer {
+      flex: 1;
+    }
+
+    &:first-of-type {
+      font-weight: $font-weight-bold;
+    }
+
+    .param-name {
+      display: inline-block;
+      width: 118px;
+    }
+
+    .param-unit {
+      display: inline-block;
+    }
+
+    .muted.unit {
+      display: inline-block;
+    }
+
+    .data-item {
+      padding-right: 10px;
+    }
+
+    .value, .percent {
+      display: inline-block;
+      min-width: 50px;
+      margin-left: $sg-4;
+    }
+  }
+
+  .muted {
+    color: map-get($primary, 600);
+    font-weight: lighter;
+  }
+
+  .compare-strip {
+    width: 100%;
+    height: 3px;
+    margin-top: 6px;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .table-header {
+    @include text-ellipsis();
+    width: 90px;
+  }
+
+  .rounded-badge {
+    border-radius: 50px;
+  }
+}
+  .table-wrapper {
+    overflow: auto;
+
+    .table-s {
+      min-width: 550px;
+    }
+  }

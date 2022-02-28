@@ -1,0 +1,93 @@
+<ng-container *ngIf="viewModel$ | async as viewModel">
+  <div *ngIf="viewModel.saved">
+    <h4>Company snapshot</h4>
+    <div class="company-summary">
+      <sg-admin-order-company-summary [companySnapshot]="viewModel.unsavedEntity.company"></sg-admin-order-company-summary>
+      <div class="actions">
+        <button
+          mat-button
+          mat-icon-button
+          aria-label="Edit"
+          title="Edit"
+          [disabled]="viewModel.expandSnapshotDisabled"
+          (click)="orderDetailStore.toggleEditingCompanySnapshot()"
+        >
+          <mat-icon>{{ viewModel.editingCompanySnapshot ? 'expand_less' : 'expand_more' }}</mat-icon>
+        </button>
+        <button
+          mat-button
+          mat-icon-button
+          *ngIf="viewModel.company"
+          aria-label="Copy from actual company"
+          title="Copy from actual company"
+          (click)="onCopyActualToSnapshotClick(viewModel.company)"
+        >
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div [formGroup]="parentForm" [class.full-width]="!viewModel.saved">
+    <h4>Company</h4>
+    <sg-admin-company-autocomplete
+      *ngIf="viewModel.companySelectorVisible; else companySummaryTemplate"
+      hint="Company must be ACTIVE and CANNOT be assigned to another company as similar company"
+      ngModel
+      [ngModelOptions]="{ standalone: true }"
+      (ngModelChange)="onCompanySelected($event)"
+    ></sg-admin-company-autocomplete>
+    <ng-template #companySummaryTemplate>
+      <div class="company-summary">
+        <sg-admin-order-company-summary
+          *ngIf="viewModel.company; else loadingTemplate"
+          [companySnapshot]="viewModel.company"
+        ></sg-admin-order-company-summary>
+
+        <div class="actions" *ngIf="viewModel.company">
+          <button *ngIf="!viewModel.saved" mat-button mat-icon-button aria-label="Remove" (click)="onClearCompanyButtonClick()">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <a mat-button mat-icon-button target="_blank" [routerLink]="['/list/companies/', viewModel.company.sgCompanyId, 'edit']">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <a mat-button mat-icon-button target="_blank" [routerLink]="['/list/companies/', viewModel.company.sgCompanyId]">
+            <mat-icon>visibility</mat-icon>
+          </a>
+          <!-- <sg-admin-order-company-transfer
+            *ngIf="viewModel.saved"
+            [sgOrderId]="viewModel.entity.sgOrderId"
+          ></sg-admin-order-company-transfer> -->
+          <button
+            mat-button
+            mat-icon-button
+            aria-label="Reload"
+            (click)="orderDetailStore.loadActualCompany(viewModel.unsavedEntity.sgCompanyId)"
+          >
+            <mat-icon>refresh</mat-icon>
+          </button>
+        </div>
+      </div>
+      <mat-error *ngIf="getSgCompanyIdFormControl().hasError('VAT')">
+        Company VAT Id is invalid. Please edit & save company to fix the validation errors.
+      </mat-error>
+      <mat-error *ngIf="getSgCompanyIdFormControl().hasError('data')">
+        Company data are invalid. Please edit & save company to fix the validation errors.
+      </mat-error>
+      <ng-container *ngIf="(getSgCompanyIdFormControl().statusChanges | async) === 'PENDING'">
+        <ng-template *ngTemplateOutlet="loadingTemplate"></ng-template>
+      </ng-container>
+    </ng-template>
+  </div>
+
+  <sg-admin-company-snapshot-editor
+    [hidden]="viewModel.snapshotEditorHidden"
+    [companySnapshot]="viewModel.entity.company"
+    [parentForm]="getCompanyFormGroup()"
+  >
+  </sg-admin-company-snapshot-editor>
+
+  <ng-template #loadingTemplate>
+    <mat-progress-spinner mode="indeterminate" [diameter]="25"> </mat-progress-spinner>
+  </ng-template>
+</ng-container>

@@ -1,0 +1,16 @@
+<div>
+  <sg-fullscreen-dialog-toolbar
+    [headline]="'projectDetail.economy.label.economicIndicators' | transloco"
+    [subheadline]="(project$ | async) | sgProjectName"
+    (onClose)="back()"
+  ></sg-fullscreen-dialog-toolbar>
+
+  <div class="table">
+    <div>
+      <sg-economy-calculator-table
+        [economy$]="economy$"
+        [shorten]="false"
+      ></sg-economy-calculator-table>
+    </div>
+  </div>
+</div>

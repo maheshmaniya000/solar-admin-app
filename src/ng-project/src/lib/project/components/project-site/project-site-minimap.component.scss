@@ -1,0 +1,11 @@
+@import '~leaflet/dist/leaflet.css';
+@import '~leaflet-fullscreen/dist/leaflet.fullscreen.css';
+
+.project-site-minimap {
+  width: 100%;
+  height: 100%;
+}
+
+.project-site-minimap, .project-site-minimap .leaflet-marker-icon {
+  cursor: default !important;
+}

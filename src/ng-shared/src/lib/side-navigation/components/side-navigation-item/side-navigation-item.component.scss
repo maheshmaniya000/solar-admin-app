@@ -1,0 +1,80 @@
+@import 'theme';
+
+button {
+  line-height: $sg-14;
+  text-align: left;
+  font-size: $sg-14;
+  white-space: normal;
+  min-height: $sg-36;
+  width: 90%;
+  margin: 0 auto $sg-4 auto;
+  padding: 0;
+  border-radius: 0;
+
+  &:hover {
+    background: map-get($sg-gray, 300);
+  }
+
+  mat-icon {
+    height: $sg-24;
+    color: map-get($sg-gray, 700);
+  }
+
+  .icon {
+    margin-right: $sg-18;
+  }
+
+  .lock-icon {
+    width: 100%;
+    height: 100%;
+    padding-top: 5px;
+    box-sizing: border-box;
+  }
+
+  .rotate-arrow-icon {
+    margin-right: 2px;
+    transform: rotate(270deg);
+  }
+
+  .arrow-icon-invisible {
+    visibility: hidden;
+  }
+
+  &.highlighted {
+    mat-icon, .label, .count {
+      color: map-get($accent, 500) !important;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &.icon-highlighted {
+    mat-icon {
+      color: map-get($accent, 500) !important;
+    }
+  }
+}
+
+.label-lock {
+  width: 100%;
+}
+
+.label-child {
+  margin-left: 85px;
+}
+
+:host ::ng-deep {
+  .mat-button-focus-overlay {
+    background-color: map-get($primary, 100);
+    z-index: -1;
+  }
+  .label {
+    font-size: $sg-14;
+    font-weight: $font-weight-regular;
+    color: map-get($primary, 800);
+    line-height: 18px;
+
+    margin-bottom: 0;
+    padding-bottom: 0;
+    word-break: break-word;
+  }
+}

@@ -1,0 +1,29 @@
+<sg-dialog-deprecated>
+  <div class="sg-dialog-heading">Expire order</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="close(false)">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content auth-dialog-content">
+    <ol>
+      <li>
+        manually deactivate all the order items
+      </li>
+      <li>
+        manually refund customer on Braintree
+      </li>
+    </ol>
+    <div class="confirmation">
+      <mat-checkbox (change)="change($event)">I understand</mat-checkbox>
+    </div>
+  </div>
+
+
+  <div class="sg-dialog-actions auth-dialog-actions">
+    <button mat-button [disabled]="disabled" type="button" class="primary-button" (click)="close(true)">
+      OK
+    </button>
+  </div>
+</sg-dialog-deprecated>

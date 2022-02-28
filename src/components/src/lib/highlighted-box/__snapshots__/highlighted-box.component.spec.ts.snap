@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HighlightedBoxComponent component should match snapshot with title and transcluded content 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+>
+  <sg-highlighted-box>
+    <h4
+      class="title"
+    >
+      some title
+    </h4>
+    <button>
+      Action
+    </button>
+  </sg-highlighted-box>
+</ng-component>
+`;
+
+exports[`HighlightedBoxComponent component should match snapshot with transcluded content and without title  1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+>
+  <sg-highlighted-box>
+    <button>
+      Action
+    </button>
+  </sg-highlighted-box>
+</ng-component>
+`;

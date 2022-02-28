@@ -1,0 +1,13 @@
+<mat-toolbar class="sg-toolbar bootstrap" [ngClass]="{'wrapper-only': wrapperOnly}">
+  <div class="w-100" [ngClass]="{'d-flex justify-content-between align-items-center': !wrapperOnly}">
+
+    <section class="d-flex left-section">
+      <ng-content></ng-content>
+    </section>
+
+    <section class="d-flex right-section">
+      <ng-content select=".sg-toolbar-right"></ng-content>
+    </section>
+
+  </div>
+</mat-toolbar>

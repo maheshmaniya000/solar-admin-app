@@ -1,0 +1,13 @@
+<button mat-icon-button
+        *ngIf="user$ | async"
+        (click)="drawerClick()"
+        [disableRipple]="true"
+        [ngClass]="{'drawerButton': buttonStyle, 'arrowRightButton': buttonStyle === 'arrowButton' && (opened$ | async) === false}">
+  <ng-container *ngIf="buttonStyle === 'menuButton'; else arrowButton">
+    <mat-icon [svgIcon]="(opened$ | async) ? 'sg:sgf-menu-hide' : 'sg:sgf-menu-show'"></mat-icon>
+  </ng-container>
+</button>
+
+<ng-template #arrowButton>
+  <mat-icon [svgIcon]="(opened$ | async) ? 'sg:sgf-keyboard-arrow-left' : 'sg:sgf-keyboard-arrow-right'"></mat-icon>
+</ng-template>

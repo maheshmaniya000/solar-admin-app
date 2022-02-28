@@ -1,0 +1,81 @@
+@import 'theme';
+
+// layout-wrapper
+:host > div.main {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  overflow: auto;
+
+  header {
+    flex: 0 0 auto;
+  }
+
+  & > div {
+    width: 100%;
+
+    // main-wrapper
+    &.no-fullscreen {
+      flex: 1 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-flow: row;
+      min-width: 100%;
+      width: fit-content;
+    }
+
+    // former <router-outlet> for prospect-app and ProspectViewComponent, now inlined
+    & > div {
+      flex: 1 1 auto;
+      display: flex;
+      flex-flow: column;
+
+      & > div {
+        flex: 1 0;
+        display: flex;
+        flex-flow: row;
+        align-items: stretch;
+        //overflow: hidden;
+      }
+
+      main {
+        flex: 1 1 auto;
+        height: 100%;
+      }
+
+      .scroll {
+        flex-wrap: wrap;
+        // align-items: flex-start;
+        // overflow-y: auto;
+      }
+    }
+  }
+
+}
+
+.no-width {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: map-get($primary, 100);
+  padding: 15px;
+  box-sizing: border-box;
+
+  div {
+    margin-top: 20px;
+    text-align: center;
+    color: map-get($primary, 800);
+    font-size: 20px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+  }
+}

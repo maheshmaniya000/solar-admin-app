@@ -1,0 +1,98 @@
+@import 'theme';
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+:host ::ng-deep .mat-select-value-text {
+  color: map-get($primary, 800) !important;
+}
+
+.section-title {
+  color: map-get($primary, 500);
+  padding: 20px 4px 10px 4px;
+  font-size: 10.5pt;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:first-of-type {
+    padding-top: 0px;
+  }
+}
+
+.actions {
+  margin-bottom: -8px !important;
+  margin-top: 8px;
+}
+
+.charts {
+  padding: 0;
+
+  & > div {
+    padding: $sg-16;
+
+    &:not(last-of-type) {
+      border-right: 1px solid map-get($primary, 300);
+    }
+  }
+}
+
+.info {
+  padding: 0;
+
+  & > div {
+    padding: $sg-16;
+  }
+
+  .row:first-of-type {
+    min-height: 90px;
+    border-top: 1px solid map-get($primary, 300);
+  }
+
+  .row {
+    border-bottom: 1px solid map-get($primary, 300);
+    padding: 6px 8px;
+    vertical-align: center;
+    margin: auto;
+  }
+
+  .row, ::ng-deep .mat-card-subtitle {
+    font-size: 13px;
+  }
+
+  .left {
+    font-weight: $font-weight-bold;
+    text-align: center;
+    margin: auto;
+
+    img {
+      width: 80%;
+      max-width: 80px;
+    }
+  }
+
+  .right {
+    margin: auto;
+  }
+
+  .right-panel {
+    border-left: 1px solid map-get($primary, 300);
+  }
+
+  // HEADING
+  .headinglabel {
+    color: map-get($primary, 800);
+    font-size: $sg-16;
+    font-weight: $font-weight-bold;
+  }
+
+  .heading {
+    color: #67bcf0; // TODO take color from theme
+    font-weight: $font-weight-bold;
+    font-size: $sg-24;
+  }
+}
+
+:host .performance-name-table ::ng-deep .name {
+  display: inherit !important;
+}

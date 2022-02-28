@@ -1,0 +1,75 @@
+@import 'theme';
+
+::ng-deep {
+  .mat-icon:hover, .-active {
+    color: map-get($accent, 600);
+  }
+  .-not-active:hover {
+    color: black;
+  }
+  .mat-icon-button[disabled] {
+    cursor: not-allowed;
+  }
+  .spinner {
+    display: inline-block;
+  }
+}
+
+mat-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: $sg-16;
+  max-width: 1000px;
+  margin: 32px auto auto;
+}
+
+mat-card > mat-card-content {
+  overflow: auto;
+}
+
+mat-card > mat-card-actions {
+  margin: 0;
+}
+
+.checked-sub-company,.-relative-icon {
+  position: relative;
+  bottom: 3px;
+  padding-right: 10px;
+}
+.-relative-icon {
+  &:hover {
+    color: map-get($accent, 600);
+  }
+}
+
+.link-similar-companies {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.buttons {
+  white-space: nowrap;
+
+  .raised-buttons {
+    padding: $sg-8;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 1rem;
+
+    & > button {
+      margin: 0;
+    }
+  }
+}
+
+mat-expansion-panel-header {
+  padding: 0 5px;
+}
+mat-panel-title, mat-panel-description {
+  margin: 0 !important;
+  > * {
+    margin: 0 5px;
+  }
+}

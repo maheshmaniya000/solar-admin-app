@@ -1,0 +1,45 @@
+<mat-list>
+  <sg-drawer-button buttonStyle="arrowButton"></sg-drawer-button>
+  <div *ngIf="(isOpened$ | async)">
+    <ng-container *ngFor="let parent of parents">
+      <div mat-list-item>
+        <sg-side-navigation-item
+          [route]="parent"
+          [isLocked]="!!allowedPaths && !allowedPaths[parent.path]"
+          [isActive]="path.startsWith(parent.path)"
+          [isExpanded]="opened[parent.path]"
+          [isChild]="false"
+          [hasChildren]="children[parent.path]"
+          (onClick)="click(parent)"
+          (openLockerModal)="openLockerModal($event)"
+          (onClick)="clickOnParent(parent)"
+          (onClickArrow)="clickOnArrows(parent)">
+        </sg-side-navigation-item>
+      </div>
+
+      <ng-container *ngIf="!!children[parent.path] && opened[parent.path]">
+        <ng-container *ngFor="let child of children[parent.path]">
+          <sg-side-navigation-item
+            [route]="child"
+            [isLocked]="!!allowedPaths && !allowedPaths[parent.path]"
+            [isActive]="path === child.path"
+            [isExpanded]="opened[parent.path]"
+            [isChild]="true"
+            [hasChildren]="true"
+            (onClick)="click(child)">
+          </sg-side-navigation-item>
+        </ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="parent.data?.nav?.dividerAfter">
+        <mat-divider></mat-divider>
+      </ng-container>
+
+      <ng-container *ngIf="parent.data?.nav?.textAfter">
+        <p class="side-nav-group-heading">{{ parent.data?.nav?.textAfter | transloco }}</p>
+      </ng-container>
+    </ng-container>
+
+    <sg-trademark></sg-trademark>
+  </div>
+</mat-list>

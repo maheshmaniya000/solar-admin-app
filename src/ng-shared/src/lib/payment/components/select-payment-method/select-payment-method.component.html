@@ -1,0 +1,18 @@
+
+<div class="select-payment">
+  <div class="headline">{{ 'payment.dialog.chooseMethod' | transloco }}</div>
+
+  <div fxLayout="row wrap" fxLayoutAlign="space-around">
+
+    <div class="payment-method" (click)="onSelect.emit('card')">
+      <img src="assets/payment/card.png" [alt]="'payment.method.card' | transloco">
+      <div>{{ 'payment.method.card' | transloco }}</div>
+    </div>
+
+    <div class="payment-method" (click)="onSelect.emit('bank')">
+      <img src="assets/payment/bank.png" [alt]="'payment.method.bank' | transloco">
+      <div>{{ 'payment.method.bank' | transloco }}</div>
+    </div>
+  </div>
+
+</div>

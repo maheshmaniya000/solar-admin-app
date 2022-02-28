@@ -1,0 +1,2139 @@
+{
+  "auth": {
+    "auth0": {
+      "recaptchaNotValid": "Recaptcha geçerli değil, lütfen tekrar deneyin.",
+      "registrationOk": "Tamamlandı, lütfen size gönderilen e-postadaki doğrulama linkine tıklayarak kaydınızı onaylayın.",
+      "unknown": "Kayıt sırasında hata oluştu - lütfen daha sonra tekrar deneyin",
+      "unknownError": "Bir şeyler ters gitti...",
+      "emailAlreadyRegistred": "Bu e-posta adresini kullanan bir kullanıcı zaten var.",
+      "otpInvalid": "Tek seferlik şifre kullanılmış ya da geçersiz"
+    },
+    "changePassword": {
+      "change": "Değiştir",
+      "changePasswordOk": "Şifre değiştirildi",
+      "error": "Yanlış kullanıcı adı veya şifre",
+      "passwordConfirm": "Yeni şifreyi onaylayın",
+      "recaptchaNotValid": "Recaptcha geçerli değil, lütfen tekrar deneyin",
+      "tooManyAttempts": "Hesap kilitlendi - yanlış şifreyle çok fazla giriş denemesinde bulunuldu",
+      "unknown": "Şifre değiştirilirken hata oluştu - lütfen daha sonra tekrar deneyin"
+    },
+    "confirmTerms": {
+      "agree": "Kabul ediyorum",
+      "termsAgreeConfirm": "Solargis Kullanım Koşulları ve Gizlilik Bildirimi",
+      "title": "Kullanım Koşullarını kabul et",
+      "terms": "Kullanım Şartları",
+      "contractualTerms": "Ücretli Servislerle İlgili Genel Kontrat Şartları",
+      "particularConditions": "Belirli Koşullar"
+    },
+    "emailVerify": {
+      "error": "E-posta adresi doğrulaması başarısız oldu",
+      "ok": "E-posta adresiniz doğrulandı, şimdi giriş yapabilirsiniz"
+    },
+    "forgotPassword": {
+      "changeOk": "Şifre değiştirildi, şimdi giriş yapabilirsiniz",
+      "error": "Bilinmeyen hata, lütfen daha sonra tekrar deneyin",
+      "hint": "Sizi tanımamıza yardımcı olması için e-postanızı girin.",
+      "ok": "Lütfen sonraki adımlar için e-postalarınızı kontrol edin.",
+      "recaptchaNotValid": "Recaptcha geçerli değil, lütfen tekrar deneyin",
+      "returnToSignIn": "Giriş ekranına dön",
+      "tokenNotValid": "Şifre sıfırlama linki önceden kullanılmış",
+      "tooManyAttempts": "Hesap kilitlendiği için şifre değiştirilemedi",
+      "userNotFound": "Böyle bir kullanıcı bulunamadı"
+    },
+    "fupRecaptcha": {
+      "title": "Kullanım limitine ulaştınız",
+      "info": "Dakikada izin verilen tıklama sayısını aştınız. Limiti kaldırmak için Giriş yapın ya da Kayıt olun."
+    },
+    "login": {
+      "create": "Ücretsiz Solargis hesabınızı oluşturun",
+      "error": "Geçersiz kullanıcı adı veya şifre",
+      "tooManyAttempts": "Hesap kilitlendi - çok fazla geçersiz şifre girildi",
+      "unknown": "Giriş sırasında hata oluştu - lütfen daha sonra tekrar deneyin",
+      "deletedUser": "Bu hesap deaktive edildi. Lütfen <a href=\"https://solargis.com/about-us/contact\">bizimle iletişime geçin.</a>",
+      "rememberMe": "Beni hatırla",
+      "notVerified": "E-postanız doğrulanamadı. Lütfen ilk kaydolduğunuzda size gönderdiğimiz doğrulama postasını açın veya yeni bir tane oluşturabiliriz.",
+      "notVerifiedAction": "Doğrulama e-postası gönder.",
+      "notVerifiedConfirm": "Yeni doğrulama e-postası gönderildi."
+    },
+    "registration": {
+      "alreadyHaveAccount": "Zaten bir hesabınız var mı?",
+      "emailError": "Lütfen geçerli bir e-posta adresi girin",
+      "emailPlaceholder": "İş e-posta adresi",
+      "firstNameError": "İsim gereklidir",
+      "firstNamePlaceholder": "İsim",
+      "lastNameError": "Soyisim gereklidir",
+      "lastNamePlaceholder": "Soyisim",
+      "passwordConfirm": "Şifreyi tekrar girin",
+      "passwordError": "Min. 8 karakter, en az bir büyük harf ve bir küçük harf",
+      "passwordPlaceholder": "Şifre",
+      "passwordRequired": "Şifre gereklidir",
+      "passwordsNotEqual": "Şifreler aynı olmalıdır",
+      "termsAgree": "Solargis <a href='https://solargis.com/legal/solargis-apps-terms-of-use/' target='_blank' title='Conditions of Use and Privacy Notice'>Kullanım Koşulları ve Gizlilik Bildirim</a>i'ni kabul ediyorum.",
+      "title": "Kayıt",
+      "titleNewPassword": "Yeni şifre",
+      "titleOldPassword": "Eski şifre",
+      "companyError": "Firma ismi gereklidir",
+      "accountCreated": "Hesap oluşturma başarıyla tamamlandı",
+      "accountCreatedAfterInvitation": "Hesap oluşturma başarıyla tamamlandı ve firma eklendi",
+      "firstOrLastNameRequired": "Ad veya Soyadı zorunludur ve yalnızca boşluk içeremez",
+      "login": "Giriş yap",
+      "createUserAccount": "Kullanıcı hesabı oluştur"
+    },
+    "expired": "Oturumunuzun süresi dolduğu için oturumunuz kapatıldı. Lütfen tekrar giriş yapın.",
+    "newPassword": "Şifremi unuttum bağlantısından giriş yaptınız.<br>Lütfen yeni bir şifre belirleyin.",
+    "invitation": {
+      "info": "Bu davetiyeyi kabul etmek sizi bir Solargis hesabı yaratmaya yönlendirecektir",
+      "text": "Firmanın üyesi olmak için davet edildiniz. Daveti kabul ederek firmanın bir üyesi olmayı kabul etmiş olursunuz.",
+      "companyName": "Firma ismi",
+      "title": "Daveti kabul et",
+      "accept": "Kabul et",
+      "expiredText": "Şirkete davetinizin süresi doldu veya Şirket yöneticisi tarafından iptal edildi. Lütfen size şirket davetini gönderen kişiyle iletişime geçin.",
+      "expiredTitle": "Şirket Davetinin süresi doldu"
+    },
+    "lambdaCaptcha": {
+      "label": "Captcha ifadesi"
+    },
+    "forbidden": "{url} adresine erişim izniniz yok"
+  },
+  "codelist": {
+    "LANDC": {
+      "301": "Veri yok",
+      "305": "Sel sonrası veya sulanan ekili alanlar",
+      "306": "Mozaik tarla (>%50) / doğal bitki örtüsü",
+      "307": "Mozaik doğal bitki örtüsü (>%50) / ekili alan",
+      "308": "Ağaç örtüsü, geniş yapraklı, yaprak dökmeyen (>%15)",
+      "318": "Ağaç örtüsü, karışık yaprak tipi (geniş ve iğne yapraklı)",
+      "319": "Mozaik ağacı ve çalı (>%50) / otsu örtü",
+      "320": "Mozaik otsu örtü (>%50) / ağaç ve çalı",
+      "324": "Çayır",
+      "325": "Likenler ve yosunlar",
+      "330": "Ağaç örtüsü, sular altında, tatlı veya acı su",
+      "331": "Ağaç örtüsü, sular altında, tuzlu su",
+      "332": "Su dolu çalı veya otsu örtü",
+      "333": "Kentsel alanlar",
+      "337": "Su kütleleri",
+      "338": "Kalıcı kar ve buz",
+      "302-304": "Tarla, yağmurla beslenen",
+      "309-311": "Ağaç örtüsü, geniş yapraklı, yaprak döken (>% 15)",
+      "312-314": "Ağaç örtüsü, iğne yapraklı, yaprak dökmeyen (>% 15)",
+      "315-317": "Ağaç örtüsü, iğne yapraklı, yaprak döken (>% 15)",
+      "321-323": "Çalılık",
+      "326-329": "Seyrek bitki örtüsü (<% 15)",
+      "334-336": "Çıplak bölgeler"
+    },
+    "AZI": {
+      "-1": "düz",
+      "-2": "yarı düz"
+    },
+    "SNOWD": {
+      "-1": "bazen"
+    },
+    "DNI_season": {
+      "-1": "Aylık DNI 0"
+    },
+    "GHI_season": {
+      "-1": "Aylık GHI 0"
+    }
+  },
+  "common": {
+    "action": {
+      "apply": "Uygula",
+      "back": "Geri",
+      "cancel": "İptal",
+      "change": "Değiştir",
+      "choose": "Seç",
+      "close": "Kapat",
+      "collapseAll": "Hepsini daralt",
+      "compare": "Karşılaştır",
+      "confirm": "Onayla",
+      "continue": "Devam Et",
+      "delete": "Sil",
+      "expandAll": "Hepsini genişlet",
+      "invite": "Davet et",
+      "manage": "Yönet",
+      "next": "Sonraki",
+      "ok": "Tamam",
+      "open": "Aç",
+      "prev": "Önceki",
+      "save": "Kaydet",
+      "search": "Ara",
+      "selectAll": "Tümünü seç",
+      "send": "Gönder",
+      "unselectAll": "Tüm seçimleri kaldır",
+      "reload": "Yeniden yükle",
+      "remove": "Sil",
+      "edit": "Düzenle",
+      "redo": "Yeniden yap",
+      "undo": "Geri al",
+      "default": "Varsayılana ayarla",
+      "calculate": "Hesapla",
+      "saveValues": "Değerleri kaydet",
+      "resetDefaults": "Varsayılan değerlere sıfırla",
+      "add": "Ekle",
+      "verify": "Doğrula",
+      "launch": "Başlat",
+      "defaultView": "Varsayılan görünüm",
+      "moreInfo": "Daha Fazla Bilgi"
+    },
+    "aggregation": {
+      "avg": "Ortalama",
+      "cumulative": "Kümülatif",
+      "sum": "Toplam"
+    },
+    "cardinal": {
+      "east": "Doğu",
+      "north": "Kuzey",
+      "south": "Güney",
+      "west": "Batı"
+    },
+    "confirmDialog": {
+      "body": "Bu eylem geri alınamaz. Devam etmek istiyor musunuz?",
+      "heading": "Eylemi onayla",
+      "usure": "Emin misiniz?"
+    },
+    "datetime": {
+      "date": "Tarih",
+      "timezone": "Zaman dilimi",
+      "lastChange": "Son değişiklik"
+    },
+    "label": {
+      "settings": "Ayarlar",
+      "configureMapView": "Harita görüntüsü ayarları",
+      "configureProjectsView": "Projeler görüntüsü ayarları"
+    },
+    "misc": {
+      "commingSoon": "Yakında",
+      "help": "Yardım",
+      "n/a": "Uygulanamaz",
+      "noWidth": "Ekran çözünürlüğünüz Solargis'i kullanmak için çok düşük. Solargis'i kullanabilmek için ekran çözünürlüğünüzün en az 1100 piksel genişliğinde olması gerekir."
+    },
+    "paginator": {
+      "nextPage": "Sonraki sayfa",
+      "perPage": "Sayfa başına öğe sayısı",
+      "previousPage": "Önceki sayfa",
+      "rangeLabel": "{length}'da {startIndex} - {endIndex}",
+      "rangeLabelEmpty": "0'da 0"
+    },
+    "status": {
+      "disabled": "Devre dışı",
+      "enabled": "Etkin"
+    },
+    "subscription": {
+      "prospect": "Prospect aboneliği",
+      "sdat": "SDAT aboneliği"
+    },
+    "error": {
+      "subscriptionLayer": "Bu veri katmanlarını görebilmek için Prospect aboneliğinizi yükseltmeniz gerekir.",
+      "valueBetween": "Değer {min} ve {max} arasında olmalıdır",
+      "failed": "Eylem başarısız oldu",
+      "tooLarge": "Bu değer fazla büyük",
+      "internal": "Maalesef dahili bir hata oluştu. Sayfayı yenilemeniz gerekebilir."
+    },
+    "subscriptionType": {
+      "FREE": "Ücretsiz",
+      "UPGRADE": "Prospect'i Temel'den Profesyonel'e yükselt",
+      "expired": "Süresi doldu {subscriptionType}",
+      "PROSPECT_PRO": "Prospect Profesyonel",
+      "PROSPECT_BASIC": "Prospect Temel",
+      "PROSPECT_FREE_TRIAL": "Ücretsiz deneme",
+      "SDAT_PRO": "SDAT Profesyonel",
+      "SDAT_BASIC": "SDAT",
+      "SDAT_FREE_TRIAL": "SDAT Ücretsiz deneme"
+    },
+    "confirm": {
+      "no": "Hayır",
+      "yes": "Evet"
+    },
+    "snackBar": {
+      "changesSaved": "Değişiklik kaydedildi",
+      "couldNotSaveChange": "Değişiklik kaydedilemedi"
+    },
+    "alert": {
+      "freetrial": {
+        "available": "Mevcut Ücretsiz Deneme projesi",
+        "viewDetail": "• Proje detaylarını görün ve Ücretsiz Denemeyi aktive edin",
+        "availableAction": "Ücretsiz Denemeyi aktive et",
+        "assigned": "Daha fazla ücretsiz deneme projeniz kalmadı",
+        "assignedAction": "Tam üyeliğe yükselt",
+        "noSubscription": "Ücretsiz deneme talep edin ve FV güç üretimi konusunda detaylı bilgi alın",
+        "noSubscriptionAction": "Ücretsiz deneme talep et"
+      },
+      "subscription": {
+        "renewTrial": "Yükselt",
+        "renew": "Prospect üyeliğinizi yenileyin",
+        "expired": "Prospect üyeliğiniz sona erdi",
+        "expiredTrial": "Prospect ücretsiz denemeniz sona erdi"
+      }
+    },
+    "validation": {
+      "min": "Minimum değer {min}",
+      "max": "Maksimum değer {max}",
+      "integer": "Bu alan yalnızca tamsayıları destekler",
+      "minDate": "Minimum tarih {minDate}",
+      "maxDate": "Maksimum tarih {maxDate}",
+      "pattern": "Değer gerekli düzenle eşleşmiyor",
+      "required": "Bu alan gerekli",
+      "maxLength": "Maksimum uzunluk {requiredLength} karakter",
+      "minLength": "Minimum uzunluk {requiredLength} karakter",
+      "maxDecimals": "Bu alan maksimum {maxDecimals} ondalık basamağı destekler",
+      "phoneNumber": "Geçersiz telefon numarası. Lütfen + ile başlayan uluslararası biçimi kullanın",
+      "maxDateRange": "Maksimum tarih aralığı {days} gün",
+      "naturalNumber": "Bu alan yalnızca doğal sayıları destekler",
+      "endDateInvalid": "Bitiş tarihi başlangıç tarihinden önce",
+      "datepickerParse": "\"{text}\" tarihe ayrıştırılamaz",
+      "startDateInvalid": "Başlangıç tarihi bitiş tarihinden sonra",
+      "phoneNumberFormat": "Geçersiz telefon numarası. Örnek numara: {phoneNumberFormat}"
+    }
+  },
+  "companyAdmin": {
+    "billing": {
+      "allYears": "Tüm yıllar",
+      "deliveryDate": "Teslim tarihi",
+      "detail": "Sipariş detayı",
+      "errorDownloadingInvoice": "Fatura indirirken hata",
+      "history": "Sipariş geçmişi",
+      "invoiceDownloaded": "Fatura indirildi",
+      "noOrders": "Henüz sipariş yok",
+      "orderDate": "Sipariş tarihi",
+      "orderId": "Sipariş",
+      "payment": "Ödeme",
+      "paymentMethod": "Ödeme yöntemi",
+      "price": "Fiyat",
+      "pay": "Şimdi ödeme yapın",
+      "paymentInfo": "Ödeme bilgisi",
+      "cancel": "Siparişi iptal et",
+      "status": "Durum"
+    },
+    "nav": {
+      "billing": "Faturalama & ödemeler",
+      "orderDetail": "Sipariş detayları",
+      "overview": "Genel bakış",
+      "settings": "Firma ayarları",
+      "subscriptions": "Abonelikler",
+      "users": "Kullanıcılar",
+      "apiContracts": "Uygulama programlama arayüzü (API)",
+      "info": "Müşteri bilgisi"
+    },
+    "orderDetail": {
+      "contractNo": "Kontrat numarası",
+      "deliveryStatus": "Teslimat tarihi",
+      "discount": "İndirim",
+      "itemDesc": "Öğe açıklaması",
+      "orderNo": "Sipariş numarası",
+      "orderStatus": "Sipariş",
+      "orderTitle": "Sipariş",
+      "paymentStatus": "Ödeme",
+      "price": "Fiyat",
+      "purchaseOrderNo": "Sipariş emri",
+      "sgOrderId": "Sipariş Numarası",
+      "totalPrice": "Toplam fiyat",
+      "totalQty": "Miktar",
+      "unitPrice": "Birim fiyat",
+      "vat": "Vergi numarası",
+      "users": "Kullanıcılar: {users}",
+      "valid": "Geçerlilik: {from}'den {to}'e",
+      "vatAmmount": "KDV tutarı",
+      "back": "Faturalama & ödemeler'e geri dön",
+      "freeText": "Ücretsiz metin"
+    },
+    "subscription": {
+      "projectLimit": "Kalan {remaining} proje",
+      "unlimited": "Sınırsız",
+      "unlimitedProjects": "Proje sayısında sınır bulunmuyor (adil kullanım politikasına tabidir)",
+      "usersLimit": "{current} / {max} kullanıcı",
+      "notice": "Uyarı: Atanan aboneliğe erişmek için kullanıcıların oturumu kapatıp tekrar oturum açmaları gerekebilir.",
+      "general": "Genel",
+      "users": {
+        "name": "İsim",
+        "none": "Kullanıcı bulunamadı.",
+        "title": "Kullanıcılar",
+        "email": "E-posta",
+        "devices": "Kullanıcı aygıtları",
+        "tokenGenerationDate": "Oluşturma tarihi",
+        "action": "Eylem",
+        "generateToken": "Belirteç oluştur",
+        "regenerateToken": "Jetonu yeniden oluştur",
+        "deleteToken": "Jetonu sil"
+      }
+    },
+    "subscriptions": {
+      "empty": "Aktif abonelik bulunmuyor",
+      "from": "Şu tarihten itibaren geçerli",
+      "plan": "Abonelik planı",
+      "projectLimit": "Aktif projeler",
+      "to": "Şu tarihe kadar geçerli",
+      "userLimit": "Kullanıcı limiti"
+    },
+    "users": {
+      "email": "E-posta",
+      "enterEmail": "E-posta",
+      "instructions": "Daha fazla talimat içeren bir e-posta belirtilen e-posta adresine gönderilecektir.",
+      "invitations": "Firma davetleri",
+      "inviteDesc": "Lütfen davet etmek istediğiniz kullanıcının e-posta adresini girin.",
+      "name": "İsim",
+      "new": "Bir kullanıcı davet et",
+      "role": "Sistem rolü",
+      "status": "Durum",
+      "validUntill": "Şu tarihe kadar geçerli",
+      "invalidEmail": "E-posta adresi geçersiz",
+      "addToSub": {
+        "note": "Not: Eğer abonelikteki maksimum kullanıcı sayısına ulaştıysanız, bu kullanıcı eklenmeyecektir.",
+        "prospect": "Bu kullanıcıyı Prospect aboneliğine ekle",
+        "noteFull": "Not: Abonelikteki maksimum kullanıcı sayısına ulaştınız.",
+        "sdat": "Bu kullanıcıyı SDAT aboneliğine ekle"
+      },
+      "assign": {
+        "sdat": "SDAT aboneliğine ata",
+        "prospect": "Prospect aboneliğine ata"
+      },
+      "unassign": {
+        "sdat": "SDAT aboneliğinden atamayı kaldır",
+        "prospect": "Prospect aboneliğinden atamayı kaldır"
+      },
+      "alreadyInvited": "Kullanıcı zaten { companyName } hesabının bir üyesi için davet edildi"
+    },
+    "api": {
+      "v1": {
+        "title": "Uygulama programlama arayüzü (API) v1.1",
+        "name": "Kontrat ismi",
+        "empty": "Firmaya ait bir uygulama programlama arayüzü (API) kontratı bulunamadı. Ücretsiz bir deneme talep edebilirsiniz.",
+        "prospect": {
+          "title": "Prospect"
+        },
+        "monitor": {
+          "title": "Monitor (takip)",
+          "hardLimit": "{hardLimit} tarafından Monitor (takip) verisi",
+          "relativeLimitWindow": "Son {relativeLimitWindow} için Monitor (takip) verisi",
+          "relativeLimitWindow_y": "yıl",
+          "relativeLimitWindow_m": "ay",
+          "relativeLimitWindow_d": "gün",
+          "dataSummarization": "Veri özeti",
+          "processingKeys": "Veri İşleme Anahtarları"
+        },
+        "forecast": {
+          "title": "Forecast (tahmin)",
+          "description": "Önümüzdeki {days} güne kadar Forecast (tahmin)"
+        }
+      },
+      "v2": {
+        "title": "Uygulama programlama arayüzü (API) v2"
+      },
+      "common": {
+        "navigation": {
+          "info": "Bilgi",
+          "accessKeys": "Erişim anahtarları (token'lar)",
+          "stats": "İstatistikler"
+        },
+        "loading": "Uygulama programlama arayüzü (API) kontratı yükleniyor ...",
+        "title": "Uygulama programlama arayüzü (API) kontrat başlığı",
+        "freeTrialRequest": "Ücretsiz denemeyi aktive et",
+        "resources": "Uygulama programlama arayüzü (API) kaynakları",
+        "rateLimit": {
+          "title": "Kullanım Sınırı (istek sayısı)",
+          "description": "Bu kontrat {rateLimit} istek hakkı sunuyor"
+        },
+        "fup": "Her {perSeconds} saniyede {count} istek",
+        "validity": {
+          "title": "Başlık",
+          "description": "{from}'den {to}'e"
+        },
+        "access": {
+          "title": "Erişim",
+          "type": "Erişim tipi: {type}",
+          "maxSites": "İzin verilen maksimum saha sayısı: {maxSites}",
+          "unlimitedMaxSites": "Sınırsız",
+          "regions": "Kabul edilen bölgeler:",
+          "sites": "Kabul edilen sahalar:",
+          "position": "Enlem: {latitude}, Boylam {longitude}"
+        },
+        "token": {
+          "title": "Token",
+          "create": "Yeni token ekle (erişim anahtarı)",
+          "errorCreating": "Yeni token (erişim anahtarı) oluşturulamadı",
+          "revoking": "İptal ediliyor ...",
+          "revokeConfirmHeader": "Erişim anahtarı (token) iptali",
+          "revokeConfirmMessage": "Gerçekten bu erişim anahtarının (token) API Kontratı'na erişimini iptal etmek istiyor musunuz?",
+          "revokeError": "Erişim anahtarı (token) iptal edilemedi"
+        },
+        "stats": {
+          "requestCount": "İstekler (sayı)",
+          "uniqueSitesCount": "Özgün sahalar (sayı)",
+          "uiuCount": "Tekil Bilgi Birimleri (sayı)",
+          "documentation": "API üzerinden istatistiklerinizi alabilirsiniz, lütfen bu <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/default/get_stats\" target=\"_blank\" title=\"documentation\">dökümanı</a> inceleyin."
+        },
+        "apiDocumentation": "Prospect (keşif) / Monitor (takip) / Forecast (tahmin) API dokümantasyonlarını <a href=\"http://api-doc/ui?urls.primaryName=ws-proxy-dev#/default/get_stats\" target=\"_blank\" title=\"documentation\">burada</a> bulabilirsiniz, ve ayrıca API'yi deneyebilirsiniz."
+      }
+    },
+    "sdatSubscription": {
+      "devices": {
+        "all": "Tüm aygıtlar",
+        "none": "SDAT aygıtı bulunamadı.",
+        "title": "Aygıtlar",
+        "email": "E-posta",
+        "active": "Etkin aygıtlar",
+        "company": "Şirket profili",
+        "disabled": "Devre dışı aygıtlar",
+        "userName": "Kullanıcının adı",
+        "hostName": "Ana bilgisayar adı",
+        "lastAccess": "En son etkinlik",
+        "registeredAt": "Kayıtlı",
+        "disableAction": "Aygıtı devre dışı bırak",
+        "customName": "Özel ad",
+        "osFingerprint": "Aygıt parmak izi"
+      },
+      "general": {
+        "type": "Abonelik türü",
+        "none": "SDAT aboneliği yok.",
+        "users": "Kullanıcılar",
+        "notes": "Notlar",
+        "validTo": "Geçerlilik sonu",
+        "validFrom": "Geçerlilik başlangıcı",
+        "deviceLimit": "Kullanıcı başına aygıt sınırı",
+        "offlineLimit": "Çevrimdışı sınırı",
+        "offlineLimitUnit": "saat"
+      }
+    },
+    "prospectSubscription": {
+      "none": "Prospect aboneliği yok",
+      "users": "Aktif kullanıcılar",
+      "validFrom": "{date} tarihinden itibaren geçerli",
+      "validUntil": "{date} tarihine kadar geçerli",
+      "subscription": "Abonelik",
+      "activatedProjects": "Aktif projeler"
+    },
+    "overview": {
+      "prospectSubscription": {
+        "desc": "Etkin bir Solargis iMaps veya pvPlanner aboneliğiniz varsa, abonelik sürenizin geri kalanında Solargis Prospect'e ücretli erişimi ücret ödemeden kullanabilirsiniz.",
+        "snack": "Talep oluşturuldu",
+        "button": "Halihazırda iMaps ve pvPlanner aboneliklerim var",
+        "dialog": "İsteğinizi aldıktan sonra Prospect uygulamasına ücretli erişimi bir iş günü içinde etkinleştirmeye çalışacağız. E-posta ile bilgilendirileceksiniz.",
+        "confirmTerms": "Solargis <a href='https://solargis.com/legal/general-contractual-terms/' target='_blank' title='General contracts terms to the paid services'>Ücretli servislerle ilgili genel kontrat şartlarını</a> ve <a href='https://solargis.com/legal/particular-terms-and-conditions/project-use/' target='_blank' title='Particular conditions'>Belirli koşullar</a>’ı kabul ediyorum."
+      }
+    }
+  },
+  "compare": {
+    "addDialog": {
+      "noProjects": "Kullanılabilir proje yok. Lütfen önce bir proje oluşturun",
+      "outOf": "Maksimum { max } projeler içinden { projects } projeleri seçildi",
+      "project": "Proje",
+      "systemType": "Sistem tipi",
+      "lastChange": "Son değişiklik",
+      "systemSize": "Sistem büyüklüğü"
+    },
+    "addProjects": "Projeler ekle",
+    "compare": "Karşılaştır",
+    "empty": "Karşılaştır alanında proje yok",
+    "endOfYear": "Yıl sonu",
+    "listDialog": {
+      "added": "Proje başarıyla Karşılaştır'a eklendi",
+      "open": "Karşılaştır'ı aç",
+      "projects": "Karşılaştır'da bulunan mevcut projeler:"
+    },
+    "noPermission": "Karşılaştırmayı kullanmak için önce seçilen firma için bir abonelik satın almanız gerekir",
+    "noPvConfig": "Kurulu bir FV konfigürasyonuna sahip olmayan projeleri filtreledik:",
+    "purchase": "Bir abonelik satın alın",
+    "replaceDialog": {
+      "msg": "Karşılaştır dolu. Lütfen değiştirmek için bir proje seçin:",
+      "replace": "Projeyi değiştir"
+    },
+    "addToCompare": "Karşılaştırmaya ekle",
+    "addPvSettings": "FV konfigürasyonu ekle",
+    "noFinanceConfig": "Herhangi bir finans konfigürasyonu olmayan filtrelenmiş projeler var:",
+    "addFinanceSettings": "Finansal parametreleri ekle",
+    "noEconomyConfig": "Herhangi bir Finansal konfigürasyonu olmayan projeler var",
+    "noLatestData": "Güncel veriye sahip olmayan projeler var",
+    "updateProjectData": "Proje verisini güncelle"
+  },
+  "enum": {
+    "invoice": {
+      "CN": "Kredi notunu indir",
+      "INVOICE": "Faturayı indir",
+      "INVOICE_FOR_PROFA": "Faturayı indir",
+      "PROFA": "Proforma faturayı indir"
+    },
+    "orderPaymentStatus": {
+      "NOT_PAID": "Ödenmedi",
+      "PAID": "Ödendi",
+      "PAYMENT_FAILED": "Ödeme başarısız",
+      "PENDING": "Beklemede"
+    },
+    "orderPaymentType": {
+      "BANK": "Banka transferi",
+      "BRAINTREE": "Kartla online ödeme",
+      "PAY_PAL": "PayPal",
+      "NO_PAYMENT": "Ödeme yok"
+    },
+    "orderStatus": {
+      "CANCELED": "İptal edildi",
+      "DONE": "Bitti",
+      "IN_PROGRESS": "Devam etmekte",
+      "USER_STARTED": "Yaratıldı",
+      "EXPIRED": "Süresi doldu"
+    },
+    "app": {
+      "prospect": "Prospect",
+      "evaluate": "Evaluate (değerlendir)",
+      "monitor": "Monitor (takip)",
+      "forecast": "Forecast (tahmin)"
+    },
+    "horizon": {
+      "custom": "Özel ufuk",
+      "default": "Varsayılan ufuk"
+    }
+  },
+  "header": {
+    "admin": "Solargis Admini",
+    "company-admin": "Firma Admini",
+    "compare": "Karşılaştır",
+    "contact": "İletişim",
+    "forgotPassword": "Şifrenizi mi unuttunuz?",
+    "help": "Yardım",
+    "login": "Giriş yap",
+    "logout": "Çıkış yap",
+    "map": "Harita",
+    "pricing": "Fiyatlandırma",
+    "projectDetail": "Proje Detayları",
+    "projects": "Projeler",
+    "prospect": "Prospect",
+    "registration": "Hesap oluştur",
+    "upgrade": "Yükselt",
+    "user": {
+      "invoiceUsers": "Kullanıcıları davet et",
+      "adminConsole": "Admin konsolu",
+      "allCompanies": "Tüm firmalar",
+      "switch": "Geçiş yap"
+    },
+    "freeTrial": "Ücretsiz deneme",
+    "evaluate": "Evaluate (değerlendir)",
+    "newPassword": "Yeni şifre",
+    "instructions": "Yönergeler gönderildi",
+    "signUp": "Kayıt ol",
+    "users": "Kullanıcılar",
+    "orders": "Siparişler",
+    "products": "Ürünler",
+    "companies": "Firmalar",
+    "dashboard": "Kontrol paneli",
+    "sdat": "SDAT",
+    "administration": "{companyName} yönetimi",
+    "invoices": "Faturalar"
+  },
+  "map": {
+    "layer": {
+      "mapbox-streets": {
+        "name": "Topografik"
+      },
+      "solargis-cdd": {
+        "name": "Soğutma derecesi günleri"
+      },
+      "solargis-d2g": {
+        "name": "Dağınık ışınımın küresel ışınıma oranı"
+      },
+      "solargis-dif": {
+        "name": "Dağınık yatay ışınım (DIF)"
+      },
+      "solargis-dni": {
+        "name": "Doğrusal normal ışınım (DNI)"
+      },
+      "solargis-ele": {
+        "name": "Yükseklik",
+        "shortName": "Yükseklik"
+      },
+      "solargis-ghi": {
+        "name": "Küresel yatay ışınım (GHI)"
+      },
+      "solargis-gti": {
+        "name": "Küresel eğimli ışınım (GTI)"
+      },
+      "solargis-gti_opta": {
+        "name": "Optimum açıdaki küresel eğimli ışınım (GTI)"
+      },
+      "solargis-hdd": {
+        "name": "Isınma derece gün"
+      },
+      "solargis-landc": {
+        "name": "Arazi örtüsü"
+      },
+      "solargis-opta": {
+        "name": "FV modüllerinin optimum eğimi"
+      },
+      "solargis-popul": {
+        "name": "Nüfus yoğunluğu"
+      },
+      "solargis-prec": {
+        "name": "Yağış miktarı (yağmur)"
+      },
+      "solargis-pvgain_cdte": {
+        "name": "CdTe modüllerinin cSi modülleriniden fazla kazanımı"
+      },
+      "solargis-pvout_cdte": {
+        "name": "FV CdTe kazanımı"
+      },
+      "solargis-pvout_csi": {
+        "name": "FV cSi kazanımı"
+      },
+      "solargis-pwat": {
+        "name": "Yağış olarak çökebilecek su"
+      },
+      "solargis-rh": {
+        "name": "Bağıl nem"
+      },
+      "solargis-snowd": {
+        "name": "Karlı günler"
+      },
+      "solargis-temp": {
+        "name": "Hava sıcaklığı"
+      },
+      "solargis-ws": {
+        "name": "Rüzgar hızı"
+      },
+      "solargis-alb": {
+        "name": "Yüzey albedosu"
+      },
+      "solargis-azi": {
+        "name": "Arazi azimutu"
+      },
+      "solargis-slo": {
+        "name": "Arazi eğimi"
+      },
+      "solargis-dni_season": {
+        "name": "DNI mevsimselliği"
+      },
+      "solargis-ghi_season": {
+        "name": "GHI mevsimselliği"
+      },
+      "bing-satellite": {
+        "name": "Uydu"
+      },
+      "mapbox-satellite": {
+        "name": "Uydu"
+      }
+    },
+    "legend": {
+      "button": "GÖSTERGE"
+    },
+    "location": {
+      "error": {
+        "1": "Konum erişimi reddedildi",
+        "2": "Konum kullanılamıyor",
+        "3": "Konum zaman aşımına uğradı"
+      },
+      "tryAgain": "Tekrar dene"
+    },
+    "menu": {
+      "labels": "Harita etiketleri",
+      "selectLayer": "Harita katmanı seç",
+      "marker": "İşaretçi değerleri"
+    },
+    "zoom": {
+      "all": "Tüm projeleri yakınlaştır",
+      "selected": "Seçili projeleri yakınlaştır"
+    },
+    "draw": {
+      "site": "Saha",
+      "rectangle": "Dikdörtgen",
+      "polygon": "Çokgen",
+      "distance": "Mesafe"
+    },
+    "fullscreen": {
+      "fullscreen": "Tam Ekran"
+    }
+  },
+  "months": {
+    "apr": "Nis",
+    "aug": "Ağu",
+    "dec": "Ara",
+    "feb": "Şub",
+    "jan": "Oca",
+    "jul": "Tem",
+    "jun": "Haz",
+    "mar": "Mar",
+    "may": "May",
+    "month": "Ay",
+    "nov": "Kas",
+    "oct": "Eki",
+    "sep": "Eyl",
+    "yearly": "Yıllık"
+  },
+  "project": {
+    "action": {
+      "archive": "Arşiv",
+      "delete": "Sil",
+      "transfer": "Transfer",
+      "claimFreetrial": "Ücretsiz denemeyi aktive et",
+      "unArchive": "Arşivden çıkar",
+      "archiveText": "Seçilen projeleri arşivlemek ister misiniz?",
+      "unArchiveText": "Seçilen projeleri arşivden çıkarmak ister misiniz?",
+      "updateProjectData": "Proje verisini güncelle"
+    },
+    "data": {
+      "longtermAverage": "Ömür boyu yıllık ortalama",
+      "mapData": "Harita verisi",
+      "projectData": "Proje verisi",
+      "showMore": "Daha fazlasını göster",
+      "yearlyAverage": "Yıllık ortalama",
+      "notLatest": "Proje güncel değil"
+    },
+    "dataLayer": {
+      "CDD": {
+        "desc": "Bir binayı soğutmak için gereken enerji talebini ölçer. \"Soğutma derecesi günleri\", dış hava sıcaklığının günlük ortalama sıcaklıktan (18°C) ne kadar (derece cinsinden) ve ne uzunlukta (gün cinsinden) yüksek olduğunun bir ölçüsüdür. Yıllık ve aylık değerler günlük değerlerden toplanır.",
+        "name": "Soğutma derecesi günleri",
+        "shortName": "CDD"
+      },
+      "CF": {
+        "name": "Kapasite faktörü",
+        "desc": "Bir yıldaki gerçek elektrik enerjisi üretiminin bir yıl içindeki olası maksimum elektrik enerjisi üretimine oranı yüzde olarak ifade edilir. Mümkün olan maksimum elektrik üretimi, AC güç kapasitesinin bir yıl içindeki saat sayısıdır, gerçek üretim ise projeden yıllık olarak sağlanan elektrik miktarıdır.",
+        "shortName": "CF"
+      },
+      "D2G": {
+        "desc": "Dağınık yatay ışınım ve küresel yatay ışınım oranı (DIF/GHI)",
+        "name": "Dağınık ışınımın küresel ışınıma oranı",
+        "shortName": "D2G"
+      },
+      "DIF": {
+        "desc": "Dağınık yatay ışınımın ortalama yıllık, aylık veya günlük toplamı",
+        "name": "Dağınık yatay ışınım (DIF)",
+        "shortName": "DIF"
+      },
+      "DNI": {
+        "desc": "Doğrusal normal ışınımın ortalama yıllık, aylık veya günlük toplamı",
+        "name": "Doğrusal normal ışınım (DNI)",
+        "shortName": "DNI"
+      },
+      "DNI_season": {
+        "desc": "Doğrudan normal ışınımın (DNI) maksimum ve minimum aylık ortalamalarının oranı (DNI_month_max/DNI_month_min)",
+        "name": "DNI mevsimselliği",
+        "shortName": "DNI mevsimi"
+      },
+      "ELE": {
+        "desc": "Arazi yüzeyinin deniz seviyesinin üstündeki veya altındaki yükseklik değeri",
+        "name": "Arazi Yüksekliği"
+      },
+      "GHI": {
+        "desc": "Küresel yatay ışınımın ortalama yıllık, aylık veya günlük toplamı",
+        "name": "Küresel yatay ışınım (GHI)",
+        "shortName": "GHI"
+      },
+      "GHI_season": {
+        "desc": "Küresel yatay ışınımın (GHI) maksimum ve minimum aylık ortalamalarının oranı (GHI_month_max/GHI_month_min)",
+        "name": "GHI mevsimselliği",
+        "shortName": "GHI mevsimi"
+      },
+      "GTI": {
+        "desc": "Küresel eğimli ışınımın ortalama yıllık, aylık veya günlük toplamı",
+        "name": "Küresel eğimli ışınım (GTI)",
+        "shortName": "GTI"
+      },
+      "GTI_opta": {
+        "desc": "Optimum açıyla sabitlenmiş FV modülleri için küresel eğimli ışınımın ortalama yıllık, aylık veya günlük toplamı",
+        "name": "Optimum açıda küresel eğimli ışınım (GTI)",
+        "shortName": "GTI opta"
+      },
+      "GTI_theoretical": {
+        "desc": "Arazi gölgelenmesi dikkate alınmadan küresel eğimli ışınımın ortalama yıllık, aylık veya günlük toplamı",
+        "name": "Küresel eğimli ışınım (teorik)",
+        "shortName": "GTI teorik"
+      },
+      "HDD": {
+        "desc": "Bir binayı ısıtmak için gereken enerji talebini ölçer. \"Isıtma derecesi günleri\", dış hava sıcaklığının günlük ortalama sıcaklıktan (18°C) ne kadar (derece cinsinden) ve ne uzunlukta (gün cinsinden) düşük olduğunun bir ölçüsüdür. Yıllık ve aylık değerler günlük değerlerden toplanır.",
+        "name": "Isıtma derecesi günleri",
+        "shortName": "HDD"
+      },
+      "LANDC": {
+        "desc": "Yüzeydeki geçerli malzeme türünü (çim, orman, kentsel alan vb.) belirtir.",
+        "name": "Arazi örtüsü"
+      },
+      "OPTA": {
+        "desc": "GTI girişini en üst düzeye çıkarmak için ekvatora dönük şekilde ayarlanan sabit montajlı FV modüllerinin optimum eğimi",
+        "name": "FV modüllerinin optimum eğimi"
+      },
+      "POPUL": {
+        "desc": "Birim alanı başına ikamet eden ortalama kişi sayısı",
+        "name": "Nüfus yoğunluğu"
+      },
+      "PR": {
+        "desc": "Bir FV sisteminin spesifik AC elektrik çıkışı ile bir FV dizisinin yüzeyi tarafından alınan küresel eğimli ışınım arasındaki oran (PVOUTspecific/GTI)",
+        "name": "Performans oranı",
+        "shortName": "PR"
+      },
+      "PREC": {
+        "desc": "Ortalama yıllık ve aylık yağış miktarı toplamı",
+        "name": "Yağış miktarı (yağmur)",
+        "shortName": "PREC"
+      },
+      "PVGAIN_cdte": {
+        "desc": "CdTe ve cSi modüllerine dayalı FV sistemlerin yıllık verim oranı (PVOUTcdte/PVOUTcsi) ",
+        "name": "CdTe modüllerinin CSi modülleri üzeri kazancı"
+      },
+      "PVOUT_cdte": {
+        "desc": "CdTe modülleri kullanılmış bir FV sisteminin yıllık verimi. Güneş ışınımı ve hava sıcaklığı verileri kullanılarak hesaplanır",
+        "name": "FV CdTe üretimi"
+      },
+      "PVOUT_csi": {
+        "desc": "cSi modülleri kullanılmış bir FV sisteminin yıllık verimi. Güneş ışınımı ve hava sıcaklığı verileri kullanılarak hesaplanır",
+        "name": "FV cSi üretimi"
+      },
+      "PVOUT_specific": {
+        "desc": "Bir FV sistem tarafından sağlanan ve 1 kWp kurulu kapasiteye normalize edilen, yıllık ve aylık ortalama fotovoltaik elektrik (AC) değerleri",
+        "name": "Spesifik fotovoltaik güç çıkışı",
+        "shortName": "PVOUT spesifik"
+      },
+      "PVOUT_total": {
+        "desc": "Bir FV sisteminin toplam kurulu kapasitesi tarafından sağlanan yıllık ve aylık ortalama fotovoltaik elektrik (AC) değerleri",
+        "name": "Toplam fotovoltaik güç çıkışı",
+        "shortName": "PVOUT toplam"
+      },
+      "PWAT": {
+        "desc": "Eğer bir atmosfer sütunundaki tüm su yağmur olarak yağdıysa, yağış olarak yağabilecek su, o sütundaki su buharının derinliğidir. Bu, yer üstündeki nem miktarını gösterir",
+        "name": "Yağış olarak çökebilecek su",
+        "shortName": "PWAT"
+      },
+      "RH": {
+        "desc": "Yerden 2 m yükseklikteki ortalama yıllık veya aylık bağıl nem",
+        "name": "Bağıl nem",
+        "shortName": "RH"
+      },
+      "SNOWD": {
+        "desc": "Karlı günler, kar suyu derinliğinin 5 mm'ye eşit veya daha yüksek olduğu günler olarak hesaplanır.",
+        "name": "Karlı günler",
+        "shortName": "SNOWD"
+      },
+      "TEMP": {
+        "desc": "Yerden 2 m yükseklikteki ortalama yıllık, aylık ve günlük hava sıcaklığı.",
+        "name": "Hava sıcaklığı",
+        "shortName": "TEMP"
+      },
+      "WS": {
+        "desc": "Yerden 10 m yükseklikteki ortalama yıllık, aylık ve günlük rüzgar hızı",
+        "name": "Rüzgar hızı",
+        "shortName": "WS"
+      },
+      "ALB": {
+        "desc": "Güneş ışınımının yüzeyden yansıyan kısmı. Yüzeydeki yukarı yönlü ışınımsal akının aşağı yönlü ışınımsal akıya (GHI) oranıdır.",
+        "name": "Yüzey albedosu",
+        "shortName": "ALB"
+      },
+      "AZI": {
+        "desc": "Saat yönünde ve ana yönlere doğru, derece cinsinden arazi açısı. Kuzey=0, Doğu=90, Güney=180, Batı=270. Düz arazi (SLO &lt; 2 derece) dikkate alınmaz",
+        "name": "Arazi azimutu"
+      },
+      "SLO": {
+        "desc": "Derece cinsinden arazi eğimi",
+        "name": "Arazi eğimi"
+      },
+      "PV": {
+        "name": "Fotovoltaik"
+      }
+    },
+    "dataSettings": {
+      "generalInfo": "Genel bilgi",
+      "irradiation": "Solar ışıma",
+      "latlng": "Enlem ve boylam",
+      "length": "Arazinin yüksekliği",
+      "ltaDaily": "Uzun dönem ortalamaları",
+      "projectInfo": "Proje bilgisi",
+      "temperature": "Hava sıcaklığı",
+      "unitSettings": "Birim ayarları",
+      "values": "Değerler",
+      "tableSettings": "Tablo ayarları",
+      "mapViewSettings": "Harita görünümü ayarları",
+      "projectViewSettings": "Proje görünümü ayarları"
+    },
+    "field": {
+      "created": "Oluşturuldu",
+      "name": "İsim",
+      "rename": "Yeniden adlandır"
+    },
+    "filter": {
+      "allProjects": "Aktif projeler",
+      "archived": "Arşivlenen",
+      "favorites": "Favoriler",
+      "recent": "Son projeler",
+      "manageLabels": "Etiketleri yönet"
+    },
+    "pvConfigStatus": {
+      "empty": "FV sistem konfigürasyonu ayarlanmadı",
+      "hasPvSystem": "Aktif FV sistem konfigürasyonu",
+      "noPvSystem": "Aktif FV sistem konfigürasyonu"
+    },
+    "rename": {
+      "title": "Projeyi yeniden adlandır"
+    },
+    "selected": {
+      "addToProjects": "Proje olarak kaydet",
+      "calculate": "Hesapla",
+      "openDetail": "Aç"
+    },
+    "share": {
+      "copied": "Kopyalandı",
+      "copyLink": "Linki kopyala",
+      "share": "Konumu paylaş",
+      "shareLocation": "Konumu paylaş",
+      "text": "Bu konumu paylaşmak için bu linki gönderebilirsiniz."
+    },
+    "sidebar": {
+      "clearSelection": "Seçimi temizle",
+      "listView": "Liste görünümünde göster",
+      "multiSelected": "Birden çok proje seçildi",
+      "noneSelected": "Hiçbir proje seçilmedi",
+      "projectsSelected": "Seçili {projects, plural, one {bir proje} other {# projeler}} var"
+    },
+    "snackbar": {
+      "archive": "Proje arşivlendi",
+      "bulkArchive": "{projects} projeler arşivlendi",
+      "bulkDelete": "{projects} projeler silindi",
+      "bulkUpdate": "{projects} projeler güncellendi",
+      "delete": "Proje silindi",
+      "rename": "Proje yeniden adlandırıldı",
+      "save": "Proje kaydedildi",
+      "update": "Proje güncellendi",
+      "bulkTransfer": "{projects} projeleri transfer edildi",
+      "transfer": "Proje transfer edildi",
+      "freetrialClaim": "Bu proje için ücretsiz deneme başarıyla aktive edildi",
+      "updateData": "Proje verisi güncellendi"
+    },
+    "tags": {
+      "deleteHeading": "Etiketi sil",
+      "deleteText": "{tagName} etiketini silmek istediğinize emin misiniz?",
+      "forbiddenName": "Etiket ismi diğer etiketlerden farklı olmalıdır",
+      "minlength": "Etiket ismi fazla kısa",
+      "name": "Etiket ismi",
+      "new": "Bir etiket oluştur",
+      "none": "Oluşturulmuş etiketiniz yok",
+      "required": "Etiket ismi gereklidir",
+      "labels": "Etiketler",
+      "newPlaceholder": "Yeni etiket",
+      "add": "Ekle",
+      "manage": "Etiketleri yönet",
+      "invalidCharText": "Etiket yalnızca çok dilli alfabetik karakterler, sayılar, boşluk (), nokta (.), virgül (,), kısa çizgi (-), alt çizgi (_) ve parantez ( ) içerebilir.",
+      "invalidCharHeading": "Geçersiz karakter"
+    },
+    "timezone": {
+      "dstNotConsidered": "Yaz/kış saati göz önüne alınmamıştır"
+    },
+    "toolbar": {
+      "addTag": "Etiket ekle",
+      "archive": "Arşivle",
+      "delete": "Sil",
+      "favorite": "Favori",
+      "selected": "Seçili: ({projects})",
+      "selectedFirst": "İlk seçilen",
+      "share": "Paylaş",
+      "unarchive": "Arşivden çıkar",
+      "siteDetail": "Saha detayları",
+      "rename": "Yeniden adlandır",
+      "selectedProjects": "Seçili: {projects}/{allProjectsCount}"
+    },
+    "transfer": {
+      "title": "{projects, plural, one {proje} other {# projeler}} transfer et",
+      "targetAccount": "Hedef hesap",
+      "info": "Bir projeyi aktararak yalnızca proje bilgilerini (proje adı, konum vb.) ve PV konfigürasyonunu aktarırsınız. Projeyle ilişkili raporlar kaybolacaktır.Aktarım tamamlandıktan sonra, bu proje, projenin ilişkilendirildiği mevcut hesapta kullanılamaz."
+    },
+    "exportChart": {
+      "exportTo": "{format} olarak dışa aktar",
+      "pvConfig": "FV konfigürasyonu"
+    },
+    "search": {
+      "searchLocations": "Konum ara",
+      "invalidCoordinatesMessage": "Negatif sayı ve ana yön içeren koordinatlar girdiniz. Belirsiz sonuçlara neden olabileceğinden bu desteklenmez. Lütfen bunun yerine belirsiz olmayan koordinatlar girin."
+    },
+    "updateProjectDialog": {
+      "note": "Not: Projenin güncellenmesi oluşturulan raporları siler. Bunları saklamak istiyorsanız, proje verilerini güncellemeden önce bunları indirin.",
+      "text": "Bu proje, daha eski bir Solargis veri tabanından güneş kaynağı ve meteorolojik veriler içeriyor. Bir güncellemeyi tercih ettiğinizde, proje ile ilgili mevcut veriler Solargis veri tabanının en son sürümünden verilerle değiştirilir.",
+      "title": "Proje verisi güncellensin mi?",
+      "nonUpdateData": "Bu proje güncel olmayan veriler içermektedir.",
+      "progressTitle": "Proje verisi güncelleniyor",
+      "downloadReports": "Raporları indir"
+    }
+  },
+  "projectDetail": {
+    "daylength": {
+      "autumnEquinox": "Sonbahar ekinoksu",
+      "dayLengthHorizonCorrected": "Gün uzunluğu, ufuk düzeltmesi yapıldıktan sonra [saat]",
+      "daylength": "Gün uzunluğu [saat]",
+      "label": "Gün uzunluğu ve güneş ışığı zenit açısı",
+      "minimumZenitAngle": "Minimum zenit açısı [°]",
+      "vernalEquinox": "İlkbahar ekinoksu"
+    },
+    "economy": {
+      "form": {
+        "addLoan": "Kredi ekle",
+        "capacity": "Kurulu kapasite",
+        "degradationFirst": "İlk yılki yıpranma",
+        "degradationNext": "Sonraki yıllardaki yıpranma",
+        "installationCost": "Sistem kurulum masrafları",
+        "interestRate": "Faiz oranı",
+        "loan": "Kredi",
+        "loanPeriod": "Kredi periyodu",
+        "ownCapital": "Ana para",
+        "priceOfElectricity": "Elektrik fiyatı",
+        "removeLoan": "Krediyi sil",
+        "totalYield": "PVOUT_total (yıl 0)",
+        "yearsOfOperation": "Projenin yıl cinsinden çalışma süresi",
+        "loanEquity": "Özsermaye",
+        "accountingInfo": "Muhasebe bilgisi",
+        "linearDeprecation": "Vergi amortismanı",
+        "annualOperationalCost": "Yıllık işletme maliyetleri"
+      },
+      "label": {
+        "economicIndicators": "Nakit akışı",
+        "inputs": "Girdiler",
+        "outputs": "Çıktılar",
+        "payback": "Yalın geri ödeme",
+        "pvEconomy": "FV sistem ekonomisi",
+        "summary": "Özet",
+        "overview": "Genel Bakış"
+      },
+      "layer": {
+        "CAPEX": {
+          "desc": "Güneş enerjisi teşvikleri toplam sistem maliyetinden çıkarıldıktan sonra, bir FV güneş enerjisi sistemi kurmak için gereken sermaye miktarı",
+          "name": "Sermaye masrafı (CAPEX)"
+        },
+        "OPEX": {
+          "desc": "Bir FV güç sisteminin yıllık işletme maliyetlerinin toplamı, ve bileşenlerinin değiştirilmesi için ortalama yıllık eşit taksitler",
+          "name": "İşletme gideri (OPEX)"
+        },
+        "tariff": {
+          "desc": "Üretilen güneş enerjisinin şebekeye satıldığı sözleşmeli fiyat. PPA genellikle ticari FV enerji santrallerine uygulanır",
+          "name": "Enerji satınalım anlaşması / Tarife garantisi (FiT)"
+        },
+        "ROIEquity": {
+          "desc": "Sıfırın (0) denkliği (indirim oranı kullanılmaz) ifade ettiği yatırım maliyetine (CAPEX) göre FV sisteminin ömrü boyunca yatırım getirisi",
+          "name": "Yatırımın geri dönmesi (ROI)"
+        },
+        "unitSystemCosts": {
+          "name": "Birim sistem masrafları",
+          "desc": "FV sisteminin kWp (Wp) başına maliyeti"
+        },
+        "incentiveOrRebate": {
+          "desc": "Kamu hizmeti şirketi veya hükümet tarafından sunulan herhangi bir parasal veya vergi teşviki",
+          "name": "Kurulum teşvikleri veya indirimleri"
+        },
+        "loanLinearPayment": {
+          "desc": "Kredi geri ödemesi için sabit ödeme miktarı",
+          "name": "Doğrusal kredi geri ödemesi"
+        },
+        "maintenanceReserve": {
+          "tooltip": "Tüm inverter değişimlerinin fiyatı. Genelde, üretici garantisi 5-12 yıl arası değişir ve tesisin çalışacağı süre içinde (25 yıl) aşağı yukarı 2 kez değiştirilmesi gerekir.",
+          "desc": "Donanım değişimleri (öncelikli olarak inverterler) için yıllık olarak ödenen toplam tutar",
+          "name": "Bakım giderleri için ayrılmış hesap"
+        },
+        "LCOE": {
+          "desc": "FV sisteminin ömrü süresince enerjinin birim ücreti",
+          "name": "Seviyelendirilmiş enerji maliyeti (LCOE)"
+        },
+        "IRREquity": {
+          "desc": "FV sisteminin ömrü boyunca, hissedar bakış açısından dahili getiri oranı (kredi hariç)",
+          "name": "İç getiri oranı (IRR) özsermayesi"
+        },
+        "IRRProject": {
+          "name": "İç getiri oranı (IRR) projesi",
+          "desc": "FV sisteminin bütün proje ömrü boyunca iç getiri oranı"
+        },
+        "discountRate": {
+          "desc": "İç getiri oranı (IRR) için Net Bugünkü Değer (NPV) hesaplamalarında kullanılan indirim faktörü",
+          "name": "İndirim oranı"
+        },
+        "taxesOnProfit": {
+          "name": "Kâr üstünden vergiler",
+          "desc": "Kârdan yıllık vergiler"
+        },
+        "loanDebtToEquity": {
+          "desc": "Borç ve Özsermaye arasındaki oran",
+          "name": "Borcun Özsermayeye oranı (araçlar)"
+        },
+        "OPEXInflationRate": {
+          "name": "İşletme masrafları (OPEX) enflasyon oranı",
+          "desc": "İşletme masrafları (OPEX) fiyatındaki yıllık artış"
+        },
+        "linearDeprecation": {
+          "name": "Vergi amortismanı",
+          "desc": "Yaşlanma, yıpranma, bozulma ve genel aşınmadan dolayı varlığın değerine doğrusal olarak uygulanan azaltma"
+        },
+        "tariffIndexationRate": {
+          "name": "Tarife endeksleme oranı",
+          "desc": "Tarife fiyatındaki yıllık artış"
+        },
+        "inverterReplacementYear": {
+          "name": "İnverter değişimi yılı",
+          "desc": "İnverter değişiminin yapılacağı, daha sonra bakım rezerv hesabının (MRA) kapatılacağı operasyon yılı"
+        }
+      },
+      "table": {
+        "endOfYear": "Yıl sonu",
+        "OPEX": "İşletme gideri (OPEX)",
+        "EBIT": "EBIT",
+        "loan": "Kredi",
+        "CAPEX": "Sermaye masrafı (CAPEX)",
+        "EBITDA": "EBITDA",
+        "revenue": "Gelir",
+        "netProfit": "Net kâr",
+        "taxOnProfit": "Kâr vergisi",
+        "PVOUT_total": "PVOUT_total",
+        "tariffIndexed": "Tarife (endeksli)",
+        "PVOUT_specific": "PVOUT_specific",
+        "EBITDA_specific": "EBITDA_specific",
+        "loanInterestRate": "Kredi faiz oranı",
+        "linearDeprecation": "Lineer amortisman",
+        "cashFlowOperations": "Nakit akışı (işletme)",
+        "maintenanceReserve": "Bakım yedek hesabı",
+        "cashFlowNPVOperations": "İşlemlerden Net Şimdiki Değer (NPV) nakit akışı",
+        "loanRepaymentInterest": "Kredi geri ödemesi (faiz)",
+        "loanRepaymentPrincipal": "Kredi geri ödemesi (anapara)",
+        "shareholderCashFlowNPV": "Hissedarlar için Net Şimdiki Değer (NPV) nakit akışı",
+        "shareholderCashFlowAvailable": "Hissedarlar için mevcut nakit akışı",
+        "annualCosts": "Tüm yıllık masraflar"
+      },
+      "guard": {
+        "text": "Bu FV sistemi için ekonomi ayarlarını değiştirdiniz. Kaydetmek istiyor musunuz?",
+        "heading": "Ekonomide kaydedilmeyen değişiklikler var"
+      },
+      "resetSaved": "Kaydedilen değerlere sıfırla",
+      "tariffGoalseek": {
+        "use": "Kullanım değeri",
+        "open": "İç getiri oranı (IRR) özsermayesine göre hesapla",
+        "result": "Hesaplanan değer:",
+        "target": "Hedef iç getiri oranı (IRR) özsermayesi",
+        "explain": "Gelir tarifesi (PPA/FiT) girişi ayarlanarak belirli, kullanıcı tanımlı iç getiri oranı (IRR) özsermaye çıktısı için hesaplama yapılırken, diğer tüm giriş parametreleri değişmeden kalacaktır."
+      }
+    },
+    "error": {
+      "noProject": "Seçilen hiçbir proje yok. Lütfen proje detayı görmek için bir proje seçin."
+    },
+    "glossary": {
+      "acronym": "Kısaltma",
+      "explanation": "Açıklama",
+      "name": "Tam isim",
+      "title": "Terimler sözlüğü",
+      "unit": "Birim"
+    },
+    "info": {
+      "address": "Adres",
+      "coordinates": "Coğrafi koordinatlar",
+      "country": "Ülke/Bölge",
+      "created": "Oluşturuldu",
+      "edit": "İsmi düzenle",
+      "elevation": "Yükseklik",
+      "info": "Proje bilgisi",
+      "name": "Proje ismi",
+      "showOnMap": "Haritada göster"
+    },
+    "metadata": {
+      "doc": {
+        "documentation": "Dokümantasyon",
+        "methodology": "Metodoloji",
+        "simulation": "FV enerji simülasyonu",
+        "uncertainty": "Veri belirsizliği"
+      },
+      "method": {
+        "merging": "Veri birleştirme, temizleme, işleme",
+        "postprocessing": "Rötuşlar",
+        "processing": "Veri işleme",
+        "simulation": "FV simülasyon modeli",
+        "solarModel": "Solar model"
+      },
+      "sources": {
+        "LANDC": "Land Cover (Arazi Örtüsü) CCI, v2.0.7",
+        "POPUL": "Gridded Population of the World (Gridli Dünya Nüfusu), Version 4 (GPWv4)",
+        "PREC": "GPCC veritabanı",
+        "PWAT": "CFSR ve CFSv2 modeller",
+        "SNOWD": "CFSR ve CFSv2 modeller",
+        "TEMP": "ERA-5 model",
+        "aerosolsMerra": "MERRA-2 ve MACC-II/CAMS modellerinden aerosoller (havadaki partiküller)",
+        "albedo": "MODIS ve ERA-5 veritabanları",
+        "region1": "GOES West uyduları",
+        "region3": "Meteosat MFG ve MSG uyguları (PRIME)",
+        "region4": "Meteosat MFG ve MSG uyduları (IODC)",
+        "region5": "Meteosat MFG, MSG (IODC) ve Himawari uyduları",
+        "region6": "MTSAT ve Himawari uyduları",
+        "regionGeneral": "Yerdurağan uydular Meteosat, GOES, MTSAT ve HIMAWARI",
+        "wapourCSFR": "CSFR ve GFS modellerinden su buharı",
+        "region2": "GOES East ve GOES-R uyduları",
+        "RHWSWD": "MERRA-2 ve CDFv2 modeller"
+      },
+      "table": {
+        "method": "Solargis metodu",
+        "source": "Veri girişi kaynakları <br>(Kuruluş)",
+        "period": "Zaman gösterimi",
+        "updated": "Son güncelleme",
+        "parameter": "Parametre"
+      },
+      "text": {
+        "row0": "Zaman adımı: Aylık ve yıllık uzun vadeli istatistikler",
+        "row1": "Bir yılda 365 gün olduğu varsayılır",
+        "text": "Bu rapor, Solargis tarafından geliştirilen ve işletilen yüksek çözünürlüklü solar ve meteorolojik veritabanına dayanmaktadır. Bu raporda sunulan veri parametreleri Solargis modelleri ve algoritmaları ile hesaplanmıştır. Modele girdi olarak kullanılan veriler farklı kaynaklardan gelmektedir. Veri özellikleri aşağıda açıklanmaktadır.",
+        "version": "Solargis Prospect veritabanı versiyon {version}",
+        "latestMetadataVersion": "{latestMetadataVersion} sürümü mevcut"
+      }
+    },
+    "nav": {
+      "hourlyProfiles": "Saatlik profiller",
+      "lifetimePerformance": "Ömür boyu performans değişimi",
+      "metadata": "Kılavuz veri",
+      "monthlyStatistics": "Aylık istatistikler",
+      "overview": "Genel bakış",
+      "projectInfo": "Proje bilgisi",
+      "pvConfig": "FV konfigürasyonu",
+      "pvElectricity": "FV elektriği",
+      "pvLosses": "Enerji çevrimi ve sistem kayıpları",
+      "pvPerformance": "FV performansı",
+      "reports": "Raporlar",
+      "solarMeteo": "Solar ve meteorolojik",
+      "support": "Destek",
+      "download": "İndir",
+      "analysis": "Analiz",
+      "properties": "Özellikler",
+      "data": "Veri",
+      "finance": "Finans"
+    },
+    "overview": {
+      "longtermPvPowerPotential": "Uzun dönem FV güç potansiyeli ({years} yıllık ortalama)",
+      "meteorologicalData": "Meteorolojik veri",
+      "projectInfo": "Proje bilgisi",
+      "projectOverview": "Projeye genel bakış",
+      "pvElectricityAndPerformance": "FV elektrik & performans",
+      "solar": "Solar ışıma",
+      "solarAndMeteo": "Solar ve meteorolojik",
+      "systemType": "Sistem tipi",
+      "theoreticalPvElectricityPotential": "Teorik FV elektrik potansiyeli (sistem başlangıcında)",
+      "title": "Genel bakış - solar ışıma ve meteorolojik parametreler"
+    },
+    "pvConfig": {
+      "pvConfiguration": "FV sistem konfigürasyonu"
+    },
+    "pvElectricity": {
+      "hourlySummary": "Aşağıda gösterilen FV güç üretim profilleri, her ay için tüm saatlik verilerin ortalaması olarak hesaplanır. Profiller, hava durumu ve bir FV sisteminin bir gün içinde seçilen konfigürasyonu nedeniyle değişen güç üretim modellerinin bir göstergesini verir. “Ortalama günlük profil”in teorik bir kavram olduğu unutulmamalıdır, zira çoğu durumda günlük olarak değişen hava durumlarından dolayı her günün üretim potansiyeli kendine özeldir.",
+      "potential": "Teorik FV elektrik potansiyeli",
+      "summary": "FV modüllerinin ve diğer sistem bileşenlerinin uzun süreli yıpranmasını ve performans düşüşünü dikkate almadan fotovoltaik bir sistemle güneş enerjisi üretiminin teorik tahmini."
+    },
+    "pvLosses": {
+      "electricSystemLosses": "Elektrik sistem kayıpları",
+      "energyInput": "Enerji girişi",
+      "energyLoss": "Enerji kaybı",
+      "lossDiagram": "Kayıp diyagramı",
+      "solarLosses": "Solar kayıplar",
+      "summary": "FV modüllerinin ve diğer sistem bileşenlerinin uzun süreli yıpranmasını ve performans düşüşünü dikkate almadan fotovoltaik bir sistemle güneş enerjisi üretiminin teorik yıllık spesifik tahmini. Uzun vadeli ortalama performans oranı (PR), bir FV sisteminin başlangıç üretimi için hesaplanır.",
+      "title": "Enerji çevrimi ve bundan kaynaklanan kayıplar",
+      "diagramDesc": "Diyagram, FV güç sisteminde enerji çevriminden kaynaklanan teorik kayıpları göstermektedir",
+      "energy": "Enerji",
+      "energyLossOrGain": "Enerji kaybı/kazancı",
+      "absoluteValues": "Mutlak değerler"
+    },
+    "pvPerformance": {
+      "degrad": "Yıpranma oranı",
+      "endOfYear": "Yıl sonu",
+      "lifetimeProduction": "Ömrü boyunca FV elektrik üretimi",
+      "lifetimeSummary": "Bir fotovoltaik sisteme göre güneş enerjisi üretiminin yıllık ortalama tahmini. Bu değer FV sistem konfigürasyonu ile birlikte, ayrıca FV modüllerin ve diğer bileşenlerin performans düşüşü ve yaşlanma nedeniyle sistem performansındaki düşüşü de dikkate alır. Spesifik FV güç çıkışı kavramı, FV sistem konfigürasyonlarını ve farklı projeleri karşılaştırmak için yararlanılır. Performans oranı (PR), sistem performansındaki düşüşü dikkate alarak bir FV sistemin ömrü boyunca ortalama verimliliğini gösterir.",
+      "theoretical": "Teorik"
+    },
+    "reports": {
+      "confirmDelete": "Bu raporu silmek istediğinize emin misiniz?",
+      "empty": "Kaydedilmiş rapor yok. Yeni bir rapor oluşturmak için, Oluştur butonuna basın.",
+      "generate": "Oluştur",
+      "status": {
+        "error": "Rapor oluştururken hata meydana geldi"
+      },
+      "table": {
+        "date": "Oluşturuldu",
+        "download": "İndir",
+        "fileType": "Dosya tipi",
+        "lang": "Dil",
+        "name": "Rapor ismi",
+        "no": "Hayır",
+        "yes": "Evet",
+        "dateFormat": "Veri formatı",
+        "finance": "Finans"
+      },
+      "title": "Mevcut konfigürasyonla bir rapor oluştur. Raporlar projenin konfigürasyonu değişene kadar tutulacaktır.",
+      "finance": "Finans ekle"
+    },
+    "shared": {
+      "summary": "Özet",
+      "noPvConfig": "Sadece solar ve meteorolojik parametreler hesaplandı. FV konfigürasyonu göz önüne alınmadı."
+    },
+    "solarMeteo": {
+      "hourlySummary": "Aşağıda gösterilen güneş ışıması ve hava sıcaklığı profilleri, her ay için tüm saatlik verilerin ortalaması olarak hesaplanır. Profiller, gün boyunca önemli meteorolojik parametrelerin değişen modellerinin bir göstergesini verir. Bu modeller, projenin kurulduğu arazinin güneş alımı ve coğrafyası tarafından belirlenir. Küresel eğimli ışıma, fotovoltaik modüllerin optimum eğimli yüzeylerinin ortalama bir gün boyunca enerji üretimi için güneş kaynağının ortalama kullanılabilirliğini nasıl etkilediğini gösterir. “Ortalama günlük profil”in teorik bir kavram olduğu unutulmamalıdır, zira çoğu durumda günlük olarak değişen hava durumlarından dolayı her günün üretim potansiyeli kendine özeldir.",
+      "optimumAzimuth": "GTI_opta için ideal eğim/azimut",
+      "radiationTemperature": "Solar ışıma ve meteorolojik parametreler",
+      "summary": "Güneş enerjisi üretimini belirleyen, projeye özgü en önemli meteorolojik parametre, bir FV güç sistemini besleyen güneş ışımasıdır. Enerji üretimi hava sıcaklığından da etkilenir. Diğer meteorolojik parametreler de bir FV sisteminin performansını, kullanılabilirliğini ve yaşlanma hızını etkiler."
+    },
+    "sunpath": {
+      "axisAzimuth": "Güneş azimutu [°]",
+      "axisElevation": "Güneş yüksekliği [°]",
+      "civilTime": "Yerel zaman",
+      "decemberSolstice": "Aralık dönencesi",
+      "dstTime": "Yaz/kış saati (DST)",
+      "equinox": "Ekinoks",
+      "juneSolstice": "Haziran dönencesi",
+      "label": "Proje ufku ve gün ışığı hattı",
+      "modify": "Ufuğu düzenle",
+      "module": "Modül ufuğu",
+      "solarTime": "Güneş zamanı",
+      "summerSolstice": "Yaz dönencesi",
+      "sunArea": "Aktif alan",
+      "sunpath": "Gün ışığı hattı",
+      "terrain": "Arazi ufuğu",
+      "winterSolstice": "Kış dönencesi",
+      "horizonInvalid": "Girdide belirtilen ufuk bilgisi geçersiz",
+      "horizonAzimuth": "Azimut: { azimuth }",
+      "horizonElevation": "Yükseklik: { elevation }",
+      "horizonHorizonElevation": "Ufuk yüksekliği: { horizon }",
+      "exportHorizon": "HOR formatında dışa aktar"
+    },
+    "unsavedProjectDialog": {
+      "body": "Proje Detaylarını açmak için, seçilmiş mevcut projeniz kaydedilmiş olmalıdır. Bu projeyi kaydetmek ister misiniz?",
+      "heading": "Kaydedilmemiş proje",
+      "action": "Kaydet ve aç"
+    },
+    "pvLossesLayer": {
+      "capacityFactor": {
+        "name": "Kapasite faktörü",
+        "desc": "Bir yıldaki gerçek elektrik enerjisi üretiminin, belirli bir süre boyunca (genellikle yıl) mümkün olan maksimum elektrik enerjisi üretimine yüzde cinsinden oranı olarak ifade edilir. Mümkün olan maksimum güç üretimi, kurulu AC kapasitesinin bir yıldaki saat sayısıyla çarpılması, gerçek üretim ise FV enerji santrali tarafından her yıl etkili bir şekilde sağlanan elektrik miktarıdır."
+      },
+      "energyStage": {
+        "ac_out_with_ac_losses": {
+          "name": "Toplam sistem performansı (sistem başlangıcında)",
+          "desc": "Bir FV sistemi tarafından operasyon başlangıcında teorik olarak üretilen elektrik miktarı. Bu aşamada, FV modüllerinin yıpranması dikkate alınmaz."
+        },
+        "ac_out_with_ac_losses_and_snow_losses_and_availability_losses": {
+          "name": "Teknik sorunlar ve kar nedeniyle kayıpları dikkate alarak hesaplanan toplam sistem performansı",
+          "desc": "Kar veya arıza nedeniyle üretimin mevcut olmaması göz önünde bulundurularak, bir FV sisteminin operasyon başlangıcında ürettiği elektrik miktarı. Bu aşamada FV modüllerinin yıpranma miktarları dikkate alınmaz."
+        },
+        "ghi": {
+          "name": "Sahaya özel küresel yatay ışınım",
+          "desc": "Uzak ufuk ve arazi nesneleri tarafından engellenen ışınım kısmı çıkarılmış teorik küresel yatay ışınım."
+        },
+        "ghi_theoretical": {
+          "name": "Küresel yatay ışınım (GHI) teorik",
+          "desc": "Küresel yatay ışınım, bulut geçirgenliğini ve atmosferin durumunu karakterize eden bir dizi girdi ile hesaplanan sayısal modellerden Solargis'in oluşturduğu bir yöntem ile hesaplanır."
+        },
+        "gti": {
+          "name": "Küresel eğimli ışınım (GTI)",
+          "desc": "Küresel eğimli ışınımın ortalama yıllık, aylık veya günlük toplamı (genellikle Dizi Düzlüğü [POA] ışınımı olarak adlandırılır)"
+        },
+        "gti_eff": {
+          "name": "GTI efektif",
+          "desc": "Optik kayıplar göz önüne alındığında FV yüzeyine ulaşan efektif eğimli ışınım"
+        }
+      },
+      "loss": {
+        "angularReflectivity": {
+          "name": "Açısal yansıtma",
+          "desc": "Etkilerin büyüklüğünün güneşin göreceli konumuna, modülün düzlemine ve modül yüzeyinin tipine ve temizliğine bağlı olduğu FV modüllerinin yüzeyindeki açısal yansıtmasından (insidans açısı etkileri) oluşan optik kayıplar."
+        },
+        "conversionToSurfaceOfPvModules": {
+          "name": "FV modüllerinin yüzeyine çevrim",
+          "desc": "Doğrusal ve dağınık bileşenler aracılığıyla sahaya özgü küresel yatay ışınımdan, eğimli ışınımın (genellikle dizi ışınımı düzlüğü olarak adlandırılır) hesaplanması."
+        },
+        "dirtDustAndSoiling": {
+          "name": "Kir, toz ve tozlanma",
+          "desc": "Yüzey kirliliği nedeniyle FV modüllerinin yüzey seviyesinde solar ışımanın optik kayıpları."
+        },
+        "interRowShading": {
+          "name": "Diziler arası gölgeleme nedeniyle elektriksel kayıplar",
+          "desc": "Yakınlardaki FV modüllerinin ışınımı engellemesinden dolayı, ışınımdaki azalmadan kaynaklı elektrik kayıpları"
+        },
+        "inverters": {
+          "name": "İnvertörler (DC/AC) çevrimi",
+          "desc": "DC'den AC'ye çevrimden dolayı oluşan kayıplar. İnvertör dahili transformatör içeriyorsa, verimliliği bu parametreye dahil edilir."
+        },
+        "mismatchAndCablingDC": {
+          "name": "DC bölümünde uyumsuzluk ve kablolama",
+          "desc": "Bir invertöre bağlı modüllerin farklı MPP çalışma noktalarının uyumsuzluğu ve doğru akım (DC) bağlantılarında ve kablolarındaki ısı kayıplarından kaynaklanan elektrik kaybı."
+        },
+        "powerTolarance": {
+          "name": "FV modüllerinin güç toleransı",
+          "desc": "Diziye bağlı belirli modüllerin eşit olmayan güç toleransı nedeniyle elektrik kaybı. Daha yüksek güç toleransına sahip modüller bir seri halinde bağlanırsa, kayıplar daha yüksektir."
+        },
+        "snow": {
+          "name": "Kar nedeniyle kayıplar",
+          "desc": "FV modüllerinin karla kaplı olduğu zamanlardaki elektrik üretimi kayıpları"
+        },
+        "solarIrradianceToDC": {
+          "name": "Solar ışımanın modüllerde DC'ye çevrilmesi",
+          "desc": "Yarı-iletken malzemede ışınımın elektriğe fotovoltaik çevirimi. Çevirme verimliliği doğrusal değildir ve hem ışınıma hem de sıcaklık değerlerinin dağılımına bağlıdır."
+        },
+        "spectralCorrection": {
+          "name": "Spektral düzeltme",
+          "desc": "Enerji çevrimi sürecinde yarı-iletken malzemenin özellikleri ile ışık spektrumu arasındaki spektral uyumsuzluğun neden olduğu kayıplar"
+        },
+        "technicalAvailablity": {
+          "name": "Teknik kullanılabilirlik",
+          "desc": "Yerel trafo merkezinin bakımı, arızaları veya çalışmayı durdurması nedeniyle bir FV santralin çalışmayı durdurmasından kaynaklı elektrik üretimindeki kayıplar."
+        },
+        "terrainShading": {
+          "name": "Ufuk gölgelemesi (arazi + ufuktaki nesneler)",
+          "desc": "Arazi özelliklerinin neden olduğu teorik küresel yatay ışınım kaybı. Gölgeleme, SRTM-3 DEM ve ufuk yüksekliği kullanılarak ayrışma ile hesaplanır. Yakındaki binalar, yapılar veya bitki örtüsü gibi yerel özelliklerden kaynaklanan gölgelendirme bu aşamada dikkate alınmaz."
+        },
+        "transformersAndAC": {
+          "name": "Transformatör ve AC kablolamadan kaynaklanan kayıplar",
+          "desc": "Harici orta gerilim (OG) veya yüksek gerilim (YG) trafo elektrik kayıpları, ve alternatif akım (AC) kablolama ve bağlantılarındaki ısı kayıpları. Bu parametre, düşük voltaj tarafında AC kablolarındaki kayıpları, orta (yüksek) voltaj tarafında invertörler tarafından üretilen AC akımının kablolarındaki kayıpları (elektrik sayacı ile şebeke bağlantı noktasına kadar) ve ayrıca invertör tarafından üretilen AC akımının geçtiği yoldaki tüm cihazlardaki kayıpları içerir."
+        }
+      }
+    },
+    "data": {
+      "title": "Doğrudan PVsyst'e aktarmak için aylık ortalama verileri CSV formatında dışa çıkar.",
+      "download": "İndir",
+      "note": "Not: PVsyst'te, aylık ortalama verilerin içe aktarılması üzerine saatlik GHI, DIF ve TEMP verileri sentetik olarak üretilir. Tipik yıl veri kümesinin sentetik üretimi, güneş ışınımı ve hava sıcaklığı arasındaki uyum kaybıyla sonuçlanan matematiksel bir süreçtir. Ayrıca, ortaya çıkan yapay zaman serilerinde saatlik değerlerin frekans dağılımı, iklimin gerçek koşullarını temsil etmeyebilir. Güneş enerjisi sistemlerinin performansı güneş ışınımına ve hava sıcaklığına göre değiştiğinden, sentetik saatlik veri kümesinin kullanılması güneş enerjisi simülasyonlarının belirsizliğini artırır. Bu nedenle Solargis [zaman serileri veya TMY veri kümeleri | <a href='https://solargis.com/products/evaluate/overview' target='_blank'>https://solargis.com/products/evaluate/overview</a>] kullanılması önerilir."
+    },
+    "settings": {
+      "systemSettings": "Sistem ayarları"
+    },
+    "unlockDialog": {
+      "upgrade": "Yükselt",
+      "mainTitle": "Tüm özellikleri etkinleştir",
+      "addPVConfig": "FV konfigürasyonu ekle",
+      "text": {
+        "reports": "Enerji santrali konfigürasyonunuz için resmi bir Solargis Prospect raporu oluşturun ve indirin. Müşterileriniz ve yatırımcılarınızla paylaşın. Raporlarımız birden fazla dilde sunulmaktadır.",
+        "download": "3. taraf araçlarında daha fazla analiz yapabilmek için projenizin solar ve meteorolojik verilerini indirin.",
+        "solarMeteo": "Proje konumunuza ilişkin solar ışınımı verilerinin ve meteorolojik verilerin aylık istatistiklerine ve saatlik profillerine ulaşın.",
+        "compareTool": "Santraliniz için ideal konumu bulabilmek üzere birden fazla sahanın istatistiklerini yan yana karşılaştırın.",
+        "pvPerformance": "Kayıpların ayrıntılı döküm analizini inceleyin.",
+        "pvElectricity": "Santral konfigürasyonunuz için, teorik elektrik üretiminin aylık istatistiklerine ve saatlik profillerine ulaşın.",
+        "finance": "Proje finansmanınızı optimize edin:"
+      },
+      "title": {
+        "reports": "Raporlar",
+        "download": "İndir",
+        "solarMeteo": "Solar ve Meteorolojik",
+        "compareTool": "Karşılaştırma aracı",
+        "pvElectricity": "FV elektriği",
+        "pvPerformance": "FV performansı",
+        "finance": "Finans hesap makinesi"
+      },
+      "requestFreeTrial": "Ücretsiz denemeyi aktive et",
+      "activateFreeTrial": "Ücretsiz denemeyi aktive et",
+      "bulletPoints": {
+        "economyCalculator": {
+          "ROI": "ROI (Yatırımın geri dönmesi)",
+          "LCOE": "LCOE (Seviyelendirilmiş Enerji Maliyeti)",
+          "equity": "Özsermaye İç Getiri Oranı (IRR)",
+          "project": "Proje İç Getiri Oranı (IRR)"
+        }
+      }
+    }
+  },
+  "projectList": {
+    "filter": {
+      "toolbar": {
+        "archived": "Arşivlenen projeler",
+        "default": "Aktif projeler",
+        "favorite": "Favori projeler",
+        "recent": "Son projeler",
+        "tag": "Etiket: {tags}"
+      }
+    }
+  },
+  "pvConfig": {
+    "action": {
+      "add": "FV konfigürasyonu ekle",
+      "change": "Sistem tipini değiştir",
+      "edit": "FV konfigürasyonunu düzenle",
+      "optimum": "İdeal değere ayarla",
+      "restore": "Varsayılan seçeneklere sıfırla",
+      "save": "Kaydet ve FV elektriğini hesapla"
+    },
+    "error": {
+      "missing": "Bu projede seçilmiş hiç aktif FV konfigürasyonunuz yok. FV verilerine erişmek için bir konfigürasyon eklemeniz gerekir.",
+      "notFound": "Bu konfigürasyona sahip proje bulunamadı"
+    },
+    "label": {
+      "chooseSystemType": "Sistem tipi seç",
+      "copy": "Projeden kopyala",
+      "default": "Varsayılan şablonlar",
+      "systemType": "Sistem tipi",
+      "unsaved": "Kaydedilmemiş değişiklikler",
+      "settings": "Sistem ayarları"
+    },
+    "params": {
+      "backtracking": {
+        "headline": "Geri-takip sistemi"
+      },
+      "cablingLosses": {
+        "ACCable": "AC kablolama kayıpları",
+        "ACCableShort": "AC kablolama",
+        "DCCable": "DC kablolama kayıpları",
+        "DCCableShort": "DC kablolama",
+        "DCMismatch": "DC uyumsuzluğundan kaynaklanan kayıplar",
+        "DCMismatchShort": "DC uyumsuzluğu",
+        "headline": "Kablolama kayıpları",
+        "setDefault": "Varsayılanlara ayarla"
+      },
+      "colSpacing": {
+        "headline": "Bağıl sütun aralığı",
+        "spacing": "Bağıl sütun aralığı"
+      },
+      "inverter": {
+        "centralized": "Merkezi yüksek verimli inverter",
+        "headline": "İnvertör tipi",
+        "small": "Küçük invertör",
+        "string": "Dizi invertör",
+        "efficiencyStr": "{inverterType} [%{efficiency} Euro verimlilik]",
+        "custom": "Özel invertör"
+      },
+      "orientation": {
+        "azimuth": "Azimut",
+        "headline": "FV modüllerinin geometrisi",
+        "tilt": "Eğim"
+      },
+      "pvModule": {
+        "ASI": "a-Si - amorf silisyum",
+        "CDTE": "CdTe - kadmiyum tellürid",
+        "CIS": "CIS - Bakıt indiyum selenid",
+        "CSI": "c-Si - kristalin silisyum (mono ya da polikristalin)",
+        "customDegradation": "İlk yıl %{degradationFirstYear} yıpranma ve sonraki yıllarda %{degradationNextYear} yıpranma oranıyla",
+        "degradation": "Özel performans düşüş oranı (RPD)",
+        "firstYear": "İlk yıl",
+        "headline": "FV modül tipi",
+        "nextYear": "Sonraki yıllar"
+      },
+      "rowSpacing": {
+        "headline": "Bağıl dizi aralığı",
+        "spacing": "Bağıl dizi aralığı"
+      },
+      "snowSoilingLosses": {
+        "headline": "FV modüllerinde kar ve tozlanma nedeniyle kayıplar",
+        "snowLosses": "Aylık kar nedeniyle kayıp en fazla",
+        "snowLossesShort": "Aylık kar nedeniyle kayıp en fazla",
+        "soilingLosses": "Aylık tozlanma kaybı en fazla",
+        "soilingLossesShort": "Aylık tozlanma kaybı en fazla",
+        "snowLossesForm": "Kar nedeniyle kayıplar",
+        "soilingLossesForm": "Tozlanma kayıpları",
+        "soilingAsYearly": "Yıllık tozlanma değerini girmeyi tercih ederim"
+      },
+      "systemAvailability": {
+        "availability": "Sistemin uygunluğu",
+        "headline": "Sistemin uygunluğu"
+      },
+      "systemSize": {
+        "area": "Kurulu FV modüllerin toplam alanı (arazinin değil)",
+        "capacity": "Kurulu kapasite",
+        "headline": "Sistem boyutu"
+      },
+      "transformer": {
+        "headline": "Transformatör tipi",
+        "highEfficiency": "Yüksek verimli transformatör",
+        "none": "Transformatör yok",
+        "standard": "Standart transformatör",
+        "lossStr": "{transformerType} [%{loss} kayıp]",
+        "custom": "Özel transformatör"
+      },
+      "rotationLimits": {
+        "val": "{east}° Doğu, {west}° Batı",
+        "west": "Batı",
+        "east": "Doğu",
+        "headline": "Dönme sınırları"
+      }
+    },
+    "type": {
+      "buildingIntegrated": {
+        "desc": "Bir konut veya ticari binanın cephesine veya çatısına entegre fotovoltaik sistem. FV modüllerinin azimut ve eğimi homojendir. Modüller birbirini gölgelemez. Modüller bir bina kaplamasına entegre edilmiştir, bu nedenle arka taraftaki havalandırma çok sınırlıdır. Bu tip FV sistem, bir invertör aracılığıyla doğrudan düşük voltajlı bir şebekeye bağlanabilir veya bir invertör ve dağıtım transformatörü aracılığıyla bir orta voltaj şebekesine bağlanabilir. Elektrik depolaması dikkate alınmaz.",
+        "name": "Binaya entegre kurulum"
+      },
+      "groundFixed": {
+        "desc": "Düz zemine monte edilmiş büyük ölçekli ticari fotovoltaik sistem. FV modüllerinin azimut ve eğimi homojendir, genellikle ekvatora bakar ve yıllık enerji verimini en üst düzeye çıkarmak için optimum eğime ayarlanmıştır. Modüller, diziler halinde hizalanmış eğik yapılara sabit olarak monte edilir. Düşük güneş açıları sırasında, öndeki diziler kısmen gölgeleyerek enerji kaybına neden olabilirler. Modüller iyice havalandırılmıştır. Bu tip FV sistemi, bir invertör ve dağıtım transformatörü aracılığıyla orta veya yüksek voltajlı bir şebekeye bağlanır ve ek bir transformatör de kullanılabilir. Elektrik depolaması dikkate alınmaz.",
+        "name": "Zeminde sabit kurulum"
+      },
+      "noPvSystem": {
+        "desc": "Sadece solar ve meteorolojik parametreler hesaplanmıştır. Herhangi bir FV konfigürasyonu göz önüne alınmamıştır.",
+        "name": "FV sistemi yok"
+      },
+      "rooftopLargeFlat": {
+        "desc": "Ticari veya endüstriyel bir binanın geniş bir yatay çatısına monte edilen fotovoltaik sistem. FV modüllerinin azimut ve eğimi homojendir. Modüller eğik yapılara sabit olarak monte edilir, düz çatıya tutturulur ve diziler halinde hizalanır. Bu sebepten dolayı düşük güneş açıları sırasında, modüller önceki sıralarla kısmen gölgelenebilir. Montaj, FV modüllerinin havalandırılmasını sağlar, ancak çatı yüzeyinde ısınma FV sisteminin performansını etkileyebilir. Bu tip FV sistemi bir invertör aracılığıyla doğrudan düşük voltajlı bir şebekeye bağlanabilir veya bir invertör ve dağıtım transformatörü aracılığıyla orta voltajlı bir şebekeye bağlanabilir. Elektrik depolaması dikkate alınmaz.",
+        "name": "Büyük düz çatı kurulumu"
+      },
+      "rooftopLargeTilted": {
+        "desc": "Ticari veya endüstriyel bir binanın büyük ve eğimli bir çatısına monte edilen fotovoltaik sistem. FV modüllerinin azimut ve eğimi homojendir ve modüller birbirini gölgelemez. Modüller eğimli bir çatıya tutturulmuş raylara monte edilir, böylece arka taraftan havalandırma mümkündür. Bu sistem bir invertör aracılığıyla doğrudan düşük voltajlı bir şebekeye bağlanabilir veya bir invertör ve dağıtım transformatörü aracılığıyla orta voltajlı bir şebekeye bağlanabilir. Elektrik depolaması dikkate alınmaz.",
+        "name": "Büyük eğimli çatı kurulumu"
+      },
+      "rooftopSmall": {
+        "desc": "Ticari veya endüstriyel bir binanın büyük ve eğimli çatısına monte edilen fotovoltaik sistem. FV modüllerinin azimut ve eğimi homojendir ve modüller birbirini gölgelemez. Modüller eğimli bir çatıya tutturulmuş raylara monte edilir, arka taraftan havalandırma mümkündür. Bu sistem, bir invertör ve dağıtım transformatörü kullanılarak orta voltajlı bir voltaj şebekesine bağlanabilir. Elektrik depolaması dikkate alınmaz.",
+        "name": "Küçük çatı kurulumu"
+      },
+      "trackerOneAxisHorizontalNS": {
+        "desc": "Düz zemine monte edilmiş büyük ölçekli ticari FV sistem. FV modülleri Kuzey-Güney doğrultusundaki yatay tek eksenli takip sistemine monte edilir. Takip sistemi için dönme sınırları hem doğu hem batı yönü için verilmiştir. Geri-takip sistemi algoritması, düşük güneş açıları sırasında diziler arasındaki gölgelemeden kaynaklanan kayıpları azaltmak için kullanılır. Modüller iyice havalandırılmıştır. Bu tip FV sistemi, bir invertör ve dağıtım transformatörü aracılığıyla orta veya yüksek voltajlı bir şebekeye bağlanır ve ek bir transformatör de kullanılabilir. Elektrik depolaması dikkate alınmaz.",
+        "name": "Yatay tek eksenli takip sistemi"
+      },
+      "hydroMountedLargeScale": {
+        "desc": "Bu seçenek büyük yüzen FV güneş enerjisi sistemi kurulumlarını kapsar. Modüllerin ekvatora doğru yönlendirilmiş plastik yüzer dubalar üzerine monte edildiği düşünülmektedir. Modüller, yüzey suyunun buharlaşması ile soğutma nedeniyle daha düşük çalışma sıcaklığına sahiptir. Bir dizide kuş dışkısı nedeniyle daha yüksek tozlanma ve modüller arasında daha yüksek uyumsuzluk (dalgaya bağlı uyumsuzluk) beklenir. Bu örnek kurulumda, dizi çeviriciler ve dağıtım trafosu dikkate alınmıştır. Büyük ölçekli zemine monte FV kurulumlarına kıyasla, daha sert bir ortam nedeniyle sistemin beklenen kullanılabilirliği daha düşüktür ve çeşitli arıza türlerinin ortaya çıkma olasılığı daha yüksektir.",
+        "name": "Yüzen FV sistem"
+      }
+    }
+  },
+  "toggle": {
+    "ltaDaily": {
+      "perDay": "Her gün {unit}"
+    }
+  },
+  "units": {
+    "DMS": "DMS",
+    "celsius": "°C",
+    "currencyAnnual": "Yıllık {currency}",
+    "currencyMonthly": "Aylık {currency}",
+    "days": "gün",
+    "decimal": "Ondalık",
+    "degreeDays": "derece gün",
+    "fahrenheit": "°F",
+    "feet": "ft",
+    "kWhAnnually": "Yıllık kWh",
+    "meter": "m",
+    "perDay": "Günlük",
+    "perMonth": "Aylık",
+    "perYear": "Yıllık",
+    "years": "yıl",
+    "inhabitants": "sak.",
+    "km": "km",
+    "m2": "m<sup>2</sup>",
+    "mm": "mm",
+    "Wh": "Wh",
+    "km2": "km<sup>2</sup>",
+    "kWh": "kWh",
+    "kWp": "kWp",
+    "m/s": "m/s",
+    "MWh": "MWh",
+    "MWp": "MWp",
+    "kg/m2": "kg/m<sup>2</sup>",
+    "MJ/m2": "MJ/m<sup>2</sup>",
+    "Wh/m2": "Wh/m<sup>2</sup>",
+    "kWh/m2": "kWh/m<sup>2</sup>",
+    "Wh/kWp": "Wh/kWp",
+    "kWh/kWp": "kWh/kWp",
+    "inh./km2": "sak./km<sup>2</sup>"
+  },
+  "user": {
+    "company": {
+      "EUVATCheckInProgress": "Firma vergi numarası kontrolü devam ediyor",
+      "add": "Bir firma hesabı ekleyin",
+      "field": {
+        "city": "Şehir",
+        "country": "Ülke/Bölge",
+        "name": "Firma ismi",
+        "phone": "Telefon numarası",
+        "state": "Eyalet",
+        "street": "Cadde",
+        "zipCode": "Posta Kodu",
+        "VAT": "Vergi numarası",
+        "trial": "Ücretsiz deneme talep et",
+        "billing": "Fatura bilgisi gir",
+        "companyName": "Firma ismi",
+        "companyOrOrganisationName": "Firma/Kuruluş adı",
+        "territory": "Bölge"
+      },
+      "invalidEUVat": "Girilen vergi numarası geçersiz. Gereken vergi numarası formatı TRxxxxxxxxx şeklindedir.",
+      "messages": {
+        "update-fail": "Firma güncellemesi başarısız oldu, lütfen daha sonra tekrar deneyin!",
+        "update-ok": "Firma güncellendi!",
+        "create-ok": "Firma oluşturuldu!",
+        "create-fail": "Firma oluşturma başarısız oldu, lütfen daha sonra tekrar deneyin!",
+        "success-items": {
+          "name": "„{name}“ isimli firma hesabı başarıyla oluşturuldu.",
+          "trial": "Ücretsiz deneme talebi onaylandı",
+          "billing": "Fatura bilgisi eklendi",
+          "trialFailed": "Ücretsiz Deneme talebi onaylanamadı"
+        },
+        "checkingVat": "KDV denetleniyor"
+      },
+      "none": "Hiçbir firma hesabınız bulunmuyor",
+      "profile": {
+        "name": "Firma ismi",
+        "projects": "Aktif projeler",
+        "role": "Rolünüz",
+        "updated": "Güncellenme tarihi",
+        "type": "Tip",
+        "switch": "Firma hesabına geçiş yap",
+        "current": "mevcut",
+        "companyAccount": "Firma hesabı",
+        "personalAccount": "Kişisel kullanıcı hesabı"
+      },
+      "role": {
+        "ADMIN": "Admin",
+        "USER": "Normal kullanıcı"
+      },
+      "similarExists": "Benzer bir firmanın veritabanımızda halihazırda bulunduğunu tespit ettik. Manuel olarak kontrol edip eğer size aitse bilgilendireceğiz.",
+      "status": {
+        "ACTIVE": "Aktif",
+        "SUSPENDED": "Askıya alınmış",
+        "DELETED": "Silindi"
+      },
+      "stepOf": "{total} üzerinden {step}. adım",
+      "welcomeDialog": {
+        "assignedToCompany": "Başarıyla { companyName } firmasına eklendiniz",
+        "continue": "Hadi başlayalım!",
+        "newCompany": "{ companyName } isimli firma başarıyla oluşturuldu",
+        "purchase": "Bir abonelik satın alın",
+        "welcome": "Hoşgeldiniz { companyName }!"
+      },
+      "freeTrial": {
+        "assignSuccess": "Ücretsiz deneme başarıyla {companyName} firma hesabına atandı",
+        "info": "Ücretsiz denemenin kötüye kullanımının önüne geçmek için, telefon numaranızı doğrulamamız gerekiyor",
+        "code": "Doğrulama kodu",
+        "whatIs": "Ücretsiz deneme seçeceğiniz bir proje için Prospect uygulamasının tüm özelliklerini aktive etmenizi sağlar.",
+        "success": "Projelerinizi oluşturun ve bir proje için ücretsiz denemeyi aktive edin.",
+        "sendAgain": "Tekrar gönder",
+        "phoneInvalid": "Telefon numarası kullanılmış veya geçersiz",
+        "otpInvalid": "Geçersiz OTP kodu",
+        "incorrectVerificationCode": "Girdiğiniz doğrulama kodu yanlış. Lütfen doğrulama kodunu tekrar girmek veya yeni bir tane istemek için geri gidin."
+      },
+      "action": {
+        "add": "Ekle",
+        "create": "Oluştur",
+        "verify": "Doğrula",
+        "trialLater": "Ücretsiz denemeyi daha sonra talep et",
+        "billingLater": "Fatura bilgisini daha sonra ekle"
+      },
+      "phoneCodeIsString": "Menüden telefon alan kodu seçin",
+      "stateNotSelectedFromList": "Listeden bir bölge seçin",
+      "countryNotSelectedFromList": "Listeden bir ülke seçin",
+      "phoneInvalid": "Geçersiz telefon numarası",
+      "EUVATTerritoryHint": "KDV No kullanmayan bir bölgedeyseniz, lütfen <a href='https://solargis.com/about-us/contact' target='_blank'>bize ulaşın.</a>",
+      "errors": {
+        "vatNotValid": "KDV {vatPrefix} için geçerli değil",
+        "vatIdSpacesForbidden": "KDV No boşluk içermemelidir"
+      },
+      "territoryNotSelectedFromList": "Listeden bir bölge seçin"
+    },
+    "profile": {
+      "account": "Kullanıcı hesabı",
+      "changeName": "İsim değiştir",
+      "changePassword": "Şifre değiştir",
+      "companyAccounts": "Firma hesapları",
+      "general": "Genel",
+      "loginSecurity": "Giriş ve güvenlik",
+      "my": "Profilim",
+      "notifications": "Bildirimler",
+      "overview": "Genel bakış",
+      "units": "Birimler",
+      "unselectCompany": "Kullanıcı hesabına geçiş yap",
+      "type": "Kişisel kullanıcı hesabı",
+      "photo": "Fotoğrafınız",
+      "addPhoto": "Profil fotoğrafı ekle",
+      "lastChange": "Son değişiklik",
+      "changeEmail": "E-posta adresini değiştir",
+      "changeUnitSettings": "Birim ayarlarını değiştir",
+      "sdatDevices": "Kayıtlı SDAT aygıtları"
+    },
+    "selectCompany": {
+      "headline": "Devam etmek için lütfen bir firma seçin",
+      "none": "Hiçbir firma bulamadık. Yeni bir tane oluşturmak ister misiniz?",
+      "noneAdmin": "Admin olarak atandığınız herhangi bir firma bulamadık. Yeni bir tane oluşturmak ister misiniz?",
+      "admin": "Admin olarak atandığınız firmaların bir listesi gösteriliyor"
+    }
+  },
+  "payment": {
+    "dialog": {
+      "change": "Ödeme yöntemini değiştirin",
+      "chooseMethod": "Ödeme yöntemi seçin",
+      "headline": "Sipariş toplamı: {sum}",
+      "payNow": "Şimdi {price} ödeme yapın",
+      "resultHeadline": "Ödeme sonucu"
+    },
+    "method": {
+      "bank": "Banka transferi",
+      "card": "Kartla online ödeme",
+      "bankDesc": "Ödeme hakkında bilgiler faturada gösterilecek"
+    },
+    "thankYou": {
+      "detail": "Sipariş detaylarını görüntüle",
+      "thankYou": "Teşekkür ederiz!",
+      "thankYouBank": "Siparişiniz için teşekkür ederiz. Banka kanalıyla ödemeniz tarafımıza ulaştıktan hemen sonra siparişiniz işleme alınacaktır.",
+      "thankYouCard": "Kartla ödemeniz başarıyla tamamlandı. Ürünleriniz kısa süre içinde aktive edilecektir."
+    },
+    "failed": {
+      "failed": "Ödeme başarısız oldu",
+      "failedText": "Ödemenizi alamadık. Lütfen daha sonra tekrar deneyin ya da destek için bize ulaşın."
+    },
+    "pricing": {
+      "pricing": "Fiyatlandırma",
+      "choosePlan": "Sizin için doğru Prospect'i bulun",
+      "currentPlan": "Mevcut plan",
+      "free": {
+        "price": "Ücretsiz plan",
+        "actionDesc": "Demo - Kaydolmadan da ulaşılabilir",
+        "info": "Solar enerji değerlendirme çalışmalarına yeni başlayanlar için",
+        "feature1": "Yıllık ortalama veri",
+        "feature2": "Güneş enerjisi kaynak interaktif haritaları",
+        "action": "Başla",
+        "feature3": "Güvenilir sonuçlar veren kullanıcı dostu FV simülasyon aracı"
+      },
+      "basic": {
+        "priceInfo": "Yıllık 3 kullanıcı ile başlayan seçenekler",
+        "action": "Abone ol",
+        "actionDesc": "Ücreti şimdi hesaplayın",
+        "info": "Ticari çatı projelerinde çalışan ekipler için sahip olunması gereken özellikler",
+        "feature1": "Aylık ortalamalar ve 24 x 12 profiller",
+        "feature2": "XLSX ve PDF rapor indirme",
+        "feature3": "Karşılaştırma aracı",
+        "feature4": "Ekonomik hesaplama",
+        "feature5": "3 kullanıcıya kadar + ekstra kullanıcı başına 300 €",
+        "all": "Ücretsiz planın tüm özellikleri ve ayrıca:"
+      },
+      "pro": {
+        "priceInfo": "Başlangıçta yıllık 3 kullanıcı",
+        "action": "Abone ol",
+        "upgrade": "Yükselt",
+        "actionDesc": "Ücreti şimdi hesaplayın",
+        "info": "Büyük ölçekli projelerde çalışan profesyoneller için gelişmiş özellikler",
+        "feature1": "İki yüzlü kazanımın doğru tahmin edilmesi için Albedo verileri",
+        "feature2": "Spektral kayıp/kazancın hesaplanması için yağış olarak çökebilecek su ve nem verileri",
+        "feature3": "Tozlanma ve kar nedeniyle kayıpların tahmini için yağmur yağışı ve karlı gün verileri",
+        "feature4": "Tek eksenli takip sistemleri ve yüzen FV sistemleri için destek",
+        "feature5": "3 kullanıcıya kadar + ekstra kullanıcı başına 600 €",
+        "all": "Temel planın tüm özellikleri ve ayrıca:"
+      },
+      "table": {
+        "data": {
+          "albedo": {
+            "text": "Yüzey Albedo'su"
+          },
+          "compare": {
+            "help": "Maksimum 4 farklı proje için çıktıların karşılaştırma aracı",
+            "text": "Karşılaştırma aracı"
+          },
+          "configure": {
+            "free": "Sadece sabit monte sistemler",
+            "pro": "Sabit + 1-eksenli takip sistemleri",
+            "text": "FV sistemini yapılandır"
+          },
+          "economy": {
+            "help": "Yatırımın geri dönmesi (ROI), geri ödeme periyodu, LCOE vb. için basit hesaplama aracı",
+            "text": "Finansal hesap makinesi"
+          },
+          "report": {
+            "text": "PDF ve XLSX rapor indirme"
+          },
+          "solar": {
+            "help": "Küresel yatay ışınım (GHI), Dağınık yatay ışınım (DIF), Doğrusal normal ışınım (DNI) ve Küresel eğimli ışınım (GTI) verilerini içerir",
+            "text": "Güneş enerjisi kaynak parametreleri (GHI, DIF, DNI)"
+          },
+          "features": "Özellikler",
+          "save": {
+            "text": "Projeler yarat ve kaydet"
+          },
+          "pv": {
+            "pro": "Sabit eğimli ve tek eksenli takip sistemi",
+            "text": "FV parametreler (GTI, PVOUT)",
+            "help": "Küresel eğimli ışınım ve FV elektrik çıkışı",
+            "free": "Sadece sabit eğimli sistemler",
+            "basic": "Sadece sabit eğimli sistemler"
+          },
+          "meteo": {
+            "help": "Hava sıcaklığı, Rüzgar hızı, Soğutma derecesi günleri, Isıtma derecesi günleri",
+            "text": "Temel meteorolojik parametreler (TEMP, WS, CDD, HDD)"
+          },
+          "dataParams": "Veri parametreleri",
+          "meteo2": {
+            "text": "Yağmur yağışı, Karlı günler, bağıl nem ve yağış olarak çökebilecek su"
+          },
+          "hourly": {
+            "text": "24 x 12 (saatlik x aylık) profiller",
+            "basic": "Seçili parametreler"
+          },
+          "annual": {
+            "text": "Uzun dönem yıllık ortalamalar"
+          },
+          "monthly": {
+            "text": "Uzun dönem aylık ortalamalar"
+          },
+          "floating": {
+            "text": "Yüzen FV sistem için destek"
+          },
+          "dataAggregation": "Veri birleştirme"
+        }
+      },
+      "alert": {
+        "body": "Mevcut kişisel kullanıcı hesabınıza geçtiniz. Lütfen devam etmek için ayarlarınızdan lisans atamak istediğiniz bir firma hesabı seçiniz.",
+        "heading": "Devam etmek için bir firma seçin"
+      }
+    },
+    "cart": {
+      "headline": "Siparişiniz",
+      "empty": "Sepet boş",
+      "edit": "{productName} ürününü düzenle",
+      "step1": {
+        "name": "Ürünler",
+        "withoutVAT": "Ücretlere vergiler dahil değildir",
+        "total": "Toplam yıllık abonelik",
+        "back": "Ürünlere geri dön",
+        "purchaseOrder": "Sipariş emri",
+        "purchaseOrderPlaceholder": "Sipariş numarası",
+        "users": "Tam erişime sahip kullanıcılar",
+        "subscription": "Abonelik",
+        "remove": "Bu ürünü sepetinizden çıkarmak istiyor musunuz?",
+        "annual": "Yıllık"
+      },
+      "step2": {
+        "name": "Fatura bilgisi",
+        "address": "Fatura adresi"
+      },
+      "step3": {
+        "total": "Sipariş toplamı",
+        "totalVAT": "Vergiler dahil sipariş toplamı",
+        "name": "Ödeme",
+        "continue": "Siparişlerime git"
+      }
+    }
+  },
+  "report": {
+    "mapLink": "Harita üzerinde konum",
+    "contents": "İçerikler",
+    "cover": {
+      "ProspectPv": {
+        "title": "Fotovoltaik elektrik üretimi için ön çalışmalar",
+        "type": "PROSPECT FV enerji değerlendirmesi"
+      },
+      "ProspectSolar": {
+        "title": "Sahanın solar ışınımıyla ilgili ön çalışma",
+        "type": "PROSPECT güneş enerjisi kaynak değerlendirmesi"
+      },
+      "customer": "Müşteri",
+      "generated": "Rapor oluşturuldu",
+      "generatedBy": "Oluşturan",
+      "project": "Proje",
+      "reportNr": "Rapor numarası",
+      "reportType": "Rapor tipi",
+      "tel": "tel"
+    },
+    "figure": "Şekil",
+    "hourlyDni": "Doğrusal normal ışınım (DNI) - saatlik ortalamalar",
+    "hourlyGhi": "Küresel Yatay Işınım (GHI) - saatlik ortalamalar",
+    "legal": {
+      "copyright": "Bu raporun telif hakkı © { currentYear } Solargis s.r.o.'a aittir, tüm hakları saklıdır.",
+      "email": "E-posta",
+      "guarantee": "Veri ve hesaplamaların belirsizliği göz önüne alındığında, Solargis s.r.o., tahminlerin doğruluğunu garanti etmez. Hava parametrelerinin değerlendirilmesi ve mevcut en iyi veri, yazılım ve bilgiye dayanarak fotovoltaik elektrik üretiminin ön değerlendirmesi için mümkün olan maksimum değerlendirme yapılmıştır. Solargis s.r.o. sunulan raporun kullanımından doğan veya doğduğu iddia edilen herhangi bir doğrudan, arızi, dolaylı veya cezai zarardan sorumlu tutulamaz.",
+      "moreInfo": "Komple FV verimi değerlendirmesi hakkında daha fazla bilgi şu adreste bulunabilir:",
+      "registrationId": "Kayıt numarası",
+      "serviceProvider": "Servis sağlayıcı",
+      "tel": "Telefon",
+      "terms": "ÜCRETLİ SERVİSLERLE İLGİLİ GENEL KONTRAT ŞARTLARI'nın tüm metnini şu adreste bulabilirsiniz:",
+      "title": "Sorumluluk reddi ve yasal bilgiler",
+      "trademark": "Solargis®, Solargis s.r.o.'nun bir markasıdır.",
+      "uncertainty": "Bu rapor, bir FV sistemin başlangıç aşamasında ve tüm ömrü boyunca solar gücünün tahminini göstermektedir. Tahminler, ön proje değerlendirmesi için yeterince doğrudur. Büyük projelerin planlanması ve finansmanı için daha fazla bilgiye ihtiyaç vardır: 1. Solar ışımasının istatistiksel dağılımı ve belirsizliği 2. FV sisteminin ayrıntılı özellikleri 3. FV üretiminin yıllar arası değişkenliği ve P90 belirsizliği 4. FV bileşenlerinin performans düşüşünü dikkate alan ömür boyu enerji üretimi.",
+      "url": "Düzgün Kaynak Bulucu (URL)",
+      "validationAuth": "Orijinallik doğrulaması",
+      "validationAuthText": "Bu PDF raporu Solargis s.r.o. tarafından elektronik olarak imzalanmıştır.",
+      "vatNr": "Vergi numarası"
+    },
+    "location": "Proje konumu",
+    "ltaPvout": "FV güç çıkışı - uzun süreli ortalamalar",
+    "mapView": "Detaylı harita görüntüsü",
+    "otherParams": "Diğer meteorolojik parametreler",
+    "slovakia": "Slovakya",
+    "solarParams": "Güneş ışıması ve meteorolojik parametreler",
+    "table": "Tablo",
+    "dailyAvg": "Günlük ortalama",
+    "hourlyGti": "Küresel eğimli ışınım - saatlik ortalamalar",
+    "hourlyPvoutSpecific": "Spesifik fotovoltaik güç çıkışı - saatlik ortalamalar",
+    "hourlyPvoutTotal": "Toplam fotovoltaik güç çıkışı - saatlik ortalamalar",
+    "hourlyTemp": "Hava sıcaklığı - saatlik ortalamalar",
+    "monthlySum": "Aylık toplam",
+    "dailyStats": "Günlük istatistikler",
+    "dailyGhiDniDif": "GHI, DNI, DIF - günlük ortalamalar",
+    "solarDailySummary": "Aşağıdaki solar ışıma profilleri, her ay için elde edilen tüm saatlik verilerin ortalaması olarak hesaplanır. Profiller, her ay için ayrı olarak, günlük değişen GHI modellerini gösterir. Bu modeller yerel coğrafya, astronomi ve sahanın iklimi tarafından oluşturulur.",
+    "glossary": {
+      "title": "Kısaltmalar ve sözlük",
+      "pv": "FV elektrik parametreleri",
+      "meteo": "Meteorolojik parametreler",
+      "solar": "Solar parametreler"
+    },
+    "freeTrialWatermark": "Ücretsiz Deneme",
+    "annually": "yıllık"
+  },
+  "csvData": {
+    "T24": "T24 - Yerden 2 m yükseklikte ortalama diumal (24 saat) hava sıcaklığı. ERA-5 modelinin çıktılarından hesaplanmıştır (© 2019 ECMWF) [deg. C]",
+    "WSm": "WSm - Yerden 10 m yükseklikte ortalama aylık rüzgar hızı. MERRA-2 ve CFSv2 modellerinin çıktılarından hesaplanmıştır (© {year} NOAA ve NASA) [m / s]",
+    "RHm": "RHm - Yerden 2 m yükseklikte ortalama aylık bağıl nem. MERRA-2 ve CFSv2 modellerinin çıktılarından hesaplanmıştır (© {year} NASA ve NOAA) [%]",
+    "ALBm": "ALBm - Güneş ışınımının yüzeye yansıyan kısmı. Yüzeydeki (GHI) ışınımın yukarı/aşağı yönlü oranı. (NASA MODIS ve ECMWF ERA-5'ten elde edilmiştir.) []",
+    "data": "Veri",
+    "HDDm": "HDDm - Bir binayı ısıtmak için gereken enerji talebini ölçer. \"Isıtma derece günleri\", dış hava sıcaklığının günlük ortalama (18°C) sıcaklığın belirli bir tabandan kaç derece ve kaç gün düşük olduğunun bir ölçüsüdür. Yıllık ve aylık değerler günlük değerlerden toplanır. Solargis tarafından hava sıcaklığı verilerinden hesaplanır [degree days]",
+    "CDDm": "CDDm - Bir binayı soğutmak için gereken enerji talebini ölçer. \"Soğutma derece günleri\", dış hava sıcaklığının günlük ortalama (18°C) sıcaklığın belirli bir tabandan kaç derece ve kaç gün fazla olduğunun bir ölçüsüdür. Yıllık ve aylık değerler günlük değerlerden toplanır. Solargis tarafından hava sıcaklığı verilerinden hesaplanır [degree days]",
+    "year": "Yıl",
+    "DNIm": "DNIm - Doğrudan normal ışınımın ortalama aylık toplamı (© {year} Solargis) [kWh/m2]",
+    "GHIm": "GHIm - Küresel yatay ışınımın ortalama aylık toplamı (© {year} Solargis) [kWh/m2]",
+    "title": "GÜNEŞ IŞINIM VE METEOROLOJİK PARAMETRELERİN UZUN DÖNEM AYLIK ORTALAMALARI",
+    "PRECm": "PRECm -Küresel Yağış Klimatolojisi (Global Precipitation Climatology) veri tabanından elde edilen ortalama aylık yağış miktarı toplamları (© {year} DWD) [mm]",
+    "Diffm": "Diffm - Dağınık yatay ışınımın ortalama günlük toplamları (© {year} Solargis) [kWh/m2]",
+    "PWATm": "PWATm - Eğer bir atmosfer sütunundaki tüm su yağmur olarak çöktüyse, yağış olarak çökebilecek su o sütunundaki su buharının derinliğidir. Bu toprak üzerindeki nem miktarını gösterir. CFSR ve CFSv2 modellerinin çıktılarından hesaplanmıştır (© {year} NOAA) [kg/m2]",
+    "issued": "İhraç edildi",
+    "SNOWDm": "SNOWDm - Karlı günler, kar suyu derinliğinin 5 mm'ye eşit veya daha yüksek olduğu günler olarak hesaplanır. CFSR ve CFSv2 modellerinin çıktılarından hesaplanmıştır (© 2019 NOAA) [days]",
+    "columns": "Sütunlar",
+    "azimuth": "Eğim azimutu",
+    "latitude": "Enlem",
+    "siteName": "Saha ismi",
+    "encoding": "Karakter kodlaması",
+    "longitude": "Boylam",
+    "elevation": "Yükseklik",
+    "inclination": "Eğim açısı",
+    "reportNumber": "Rapor numarası"
+  },
+  "export": {
+    "title": "Projeleri dışa aktar",
+    "confirmText": "Seçilen projeleri CSV dosyasına aktarmak ister misiniz?",
+    "csvInfo": {
+      "exported": "Dışa aktarıldı",
+      "ftpCompatible": "Dışa aktarılan FV konfigürasyonlarının parametreleri bu belgede açıklanmıştır"
+    }
+  },
+  "cookies": {
+    "cookie-banner": {
+      "text": "Web sitemizi ziyaret ederken en iyi deneyimi yaşayabilmeniz için çerezlerden yararlanıyoruz. \"Kabul et\" düğmesini tıklayarak veya web sitesini kullanmaya devam ederek tarayıcınızda çerez kullanımını kabul etmiş olursunuz.",
+      "accept": "Kabul et",
+      "more-info": "Daha fazla bilgi"
+    }
+  },
+  "dashboard": {
+    "landingPage": {
+      "learnMore": "Daha fazla bilgi",
+      "titleHeader": "Güneş enerjisi yatırımı için hava durumu verileri ve yazılım",
+      "footer": {
+        "news": "Haberler",
+        "events": "Etkinlikler",
+        "pricing": "Fiyatlandırma",
+        "contactUs": "Bize ulaşın",
+        "releaseNotes": "Sürüm notları",
+        "solargisHomepage": "Solargis Ana Sayfası"
+      },
+      "subtitleCard": "uygulama geliştirme aşamasındadır",
+      "monitor": {
+        "button": "API servisi",
+        "content": "Fotovoltaik sistemin performansını izlemek için Solargis verilerine ilişkin düzenli güncellemeler alın",
+        "subtitleFirst": "Günlük veya gerçek zamanlı güncellemeler",
+        "subtitleThird": "API/FTP erişimi",
+        "subtitleSecond": "15 dakikaya kadar zaman adımı"
+      },
+      "prospect": {
+        "content": "Proje ön fizibiltesinin hızlı ve güvenilir olmasını sağlayan solar araştırma aracı",
+        "subtitleFirst": "Yıllık ve aylık ortalama veri",
+        "subtitleThird": "Albedo, yağmur yağışı ve kar verileri",
+        "subtitleSecond": "Saatlik (24) x aylık (12) profiller"
+      },
+      "evaluate": {
+        "button": "TS/TMY verileri sipariş et",
+        "content": "Güneş enerjisi santrallerinin gelişmiş enerji modellemesi ve tasarım optimizasyonu.",
+        "subtitleFirst": "Zaman serileri verileri, geçen aya kadar",
+        "subtitleThird": "Verileri PVsyst, Helioscope, SAM vb. yerlere içe aktar",
+        "subtitleSecond": "TMY P50, P90, Pxx"
+      },
+      "subtitleHeader": "Riski azaltın ve güneş enerjisi varlıklarınızın kârlılığını en üst düzeye çıkarın",
+      "forecast": {
+        "button": "API servisi",
+        "content": "Önümüzdeki 10 güne kadar güneş enerjisi tahmini.",
+        "subtitleFirst": "Her 30 dakikaya kadar tahmin güncellemeleri",
+        "subtitleThird": "API/FTP erişimi",
+        "subtitleSecond": "15 dakikaya kadar zaman adımı"
+      }
+    },
+    "listRecentProjects": {
+      "noProjects": "Oluşturulmuş projeniz yok"
+    },
+    "header": {
+      "quickLinks": "Hızlı bağlantılar",
+      "apps": "Uygulamalar"
+    },
+    "sdatManagement": {
+      "manuals": "Kullanım Kılavuzları",
+      "devices": "SDAT aygıtlarım",
+      "download": "İndir",
+      "subscription": "Abonelik",
+      "sdatHeader": "{{header.sdat}}"
+    }
+  }
+}

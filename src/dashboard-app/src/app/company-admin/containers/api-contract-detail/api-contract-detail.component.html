@@ -1,0 +1,191 @@
+<mat-card>
+  <mat-card-content>
+
+    <mat-tab-group *ngIf="apiContract; else noApiContracts">
+      <mat-tab label="{{'companyAdmin.api.common.navigation.info' | transloco}}">
+        <div fxLayout class="row" *ngIf="apiContract.title">
+          <div fxFlex="40%" class="bold">
+            {{ 'companyAdmin.api.common.title' | transloco }}
+          </div>
+          <div fxFlex>
+            {{ apiContract.title }}
+          </div>
+        </div>
+
+        <div fxLayout class="row">
+          <div fxFlex="40%" class="bold">
+            {{ 'companyAdmin.api.common.rateLimit.title' | transloco }}
+          </div>
+          <div fxFlex>
+            <div class="margin-bottom" [hidden]="!apiContract.maxCountOfRequest">
+              {{ 'companyAdmin.api.common.rateLimit.description' | transloco: { rateLimit: apiContract.maxCountOfRequest } }}
+            </div>
+
+            <ul>
+              <li *ngFor="let maxRequest of apiContract.maxRequests">
+                {{ 'companyAdmin.api.common.fup' | transloco: { count: maxRequest.count, perSeconds: maxRequest.perSeconds } }}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <ng-container *ngIf="apiContract.pvPlannerContract">
+          <mat-divider ></mat-divider>
+
+          <div fxLayout class="row">
+            <h4>{{ 'companyAdmin.api.v1.prospect.title' | transloco }}</h4>
+          </div>
+
+          <div fxLayout class="row">
+            <div fxFlex="40%" class="bold">
+              {{ 'companyAdmin.api.common.validity.title' | transloco }}
+            </div>
+            <div fxFlex>
+              {{ 'companyAdmin.api.common.validity.description' | transloco: { from: apiContract.pvPlannerContract.validFrom | sgDateTimeFormat, to: apiContract.pvPlannerContract.validTo | sgDateTimeFormat:'dateTime' } }}
+            </div>
+          </div>
+
+          <div fxLayout class="row">
+            <div fxFlex="40%" class="bold">
+              {{ 'companyAdmin.api.common.access.title' | transloco }}
+            </div>
+            <div fxFlex>
+              <sg-api-contract-access-overview [access]="apiContract.pvPlannerContract.access"></sg-api-contract-access-overview>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="apiContract.dataDeliveryContract">
+          <div fxLayout class="row">
+            <div fxFlex="40%" class="bold">
+              {{ 'companyAdmin.api.common.validity.title' | transloco }}
+            </div>
+            <div fxFlex>
+              {{ 'companyAdmin.api.common.validity.description' | transloco: { from: apiContract.dataDeliveryContract.validFrom | sgDateTimeFormat, to: apiContract.dataDeliveryContract.validTo | date:"longDate" } }}
+            </div>
+          </div>
+
+          <div fxLayout class="row">
+            <div fxFlex="40%" class="bold">
+              {{ 'companyAdmin.api.common.access.title' | transloco }}
+            </div>
+            <div fxFlex>
+              <sg-api-contract-access-overview [access]="apiContract.dataDeliveryContract.access"></sg-api-contract-access-overview>
+            </div>
+          </div>
+
+          <div fxLayout class="row" *ngIf="apiContract.dataDeliveryContract.forecast">
+            <div fxFlex="40%" class="bold">
+              {{ 'companyAdmin.api.v1.forecast.title' | transloco }}
+            </div>
+            <div fxFlex>
+              {{ 'companyAdmin.api.v1.forecast.description' | transloco: { days: apiContract.dataDeliveryContract.forecast } }}
+            </div>
+          </div>
+
+          <div fxLayout class="row" *ngIf="isMonitor">
+            <div fxFlex="40%" class="bold">
+              {{ 'companyAdmin.api.v1.monitor.title' | transloco }}
+            </div>
+            <div fxFlex>
+              <span *ngIf="isMonitorSetToHardLimit">
+                {{ 'companyAdmin.api.v1.monitor.hardLimit' | transloco: { hardLimit: apiContract.dataDeliveryContract.historic | sgDateTimeFormat } }}
+              </span>
+              <span *ngIf="!isMonitorSetToHardLimit">
+                {{ 'companyAdmin.api.v1.monitor.relativeLimitWindow' | transloco: { relativeLimitWindow: monitorRelativeWindow } }}
+                {{ 'companyAdmin.api.v1.monitor.relativeLimitWindow_' + monitorRelativeType | transloco }}
+              </span>
+            </div>
+          </div>
+
+          <div fxLayout class="row">
+            <div fxFlex="40%" class="bold">
+              {{ 'companyAdmin.api.v1.monitor.dataSummarization' | transloco }}
+            </div>
+            <div fxFlex>
+              <span>{{ summarizationString }}</span>
+            </div>
+          </div>
+
+          <div fxLayout class="row">
+            <div fxFlex="40%" class="bold">
+              {{ 'companyAdmin.api.v1.monitor.processingKeys' | transloco }}
+            </div>
+            <div fxFlex>
+              <span>{{ processingKeysString }}</span>
+            </div>
+          </div>
+        </ng-container><div class="note">
+        <mat-divider></mat-divider>
+
+        <p [innerHTML]="'companyAdmin.api.common.apiDocumentation' | transloco"></p>
+      </div>
+      </mat-tab>
+
+      <mat-tab label="{{'companyAdmin.api.common.navigation.accessKeys' | transloco}}">
+        <ul class="tokens">
+          <li *ngFor="let token of apiContract.accessTokens; let i = index">
+            <div *ngIf="revokingToken !== i">
+              <button mat-button mat-icon-button (click)="revokeTokenForAPIContract(i)">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+              <span>{{'companyAdmin.api.common.token.title' | transloco}} {{ i + 1 }}</span>
+              <pre class="token">{{ token }}</pre>
+            </div>
+
+            <div class="spinner-with-text" *ngIf="revokingToken === i">
+              <mat-spinner [diameter]="14" ></mat-spinner>
+              <span>{{ 'companyAdmin.api.common.token.revoking' | transloco }}</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="margin-top">
+          <button mat-raised-button color="accent" (click)="addNewTokenToAPIContract()" *ngIf="!generatingNewToken">{{ 'companyAdmin.api.common.token.create' | transloco }}</button>
+        </div>
+        <mat-spinner [diameter]="15" *ngIf="generatingNewToken"></mat-spinner>
+      </mat-tab>
+      <mat-tab label="{{'companyAdmin.api.common.navigation.stats' | transloco}}">
+        <div fxLayout class="row" [hidden]="!apiContract.title">
+          <div fxFlex="40%">
+            <span>{{ 'companyAdmin.api.common.stats.requestCount' | transloco }}</span>
+          </div>
+          <div fxFlex>
+            {{ apiContract.stats.requestCount }}
+          </div>
+        </div>
+        <div fxLayout class="row" [hidden]="!apiContract.title">
+          <div fxFlex="40%">
+            <span>{{ 'companyAdmin.api.common.stats.uniqueSitesCount' | transloco }}</span>
+          </div>
+          <div fxFlex>
+            {{ apiContract.stats.uniqueSitesCount }}
+          </div>
+        </div>
+        <div fxLayout class="row" [hidden]="!apiContract.title">
+          <div fxFlex="40%">
+            {{ 'companyAdmin.api.common.stats.uiuCount' | transloco }}
+          </div>
+          <div fxFlex>
+            {{ apiContract.stats.uniqueInformationUnits }}
+          </div>
+        </div>
+
+        <div class="note">
+          <mat-divider></mat-divider>
+
+          <p [innerHTML]="'companyAdmin.api.common.stats.documentation' | transloco"></p>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+    <ng-template #noApiContracts>
+      <p>{{ 'companyAdmin.api.common.loading' | transloco }}</p>
+      <p>
+        <mat-progress-spinner mode="indeterminate" [diameter]="30"></mat-progress-spinner>
+      </p>
+    </ng-template>
+
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,81 @@
+<div *transloco="let t">
+  <ng-container *ngIf="project">
+    <button *ngIf="showOpen" mat-menu-item (click)="openProject()" color="accent" class="open-button">
+      <mat-icon>open_in_new</mat-icon>
+      {{ t('common.action.open') }}
+    </button>
+
+    <ng-container *ngIf="project.created">
+      <button mat-menu-item (click)="renameProject()" color="primary"
+              class="hide rename-button">
+        <mat-icon>create</mat-icon>
+        {{ t('project.toolbar.rename') }}
+      </button>
+
+      <mat-divider class="action-menu-divider"></mat-divider>
+
+      <button *ngIf="projectToClaimFreetrial$ | async" mat-menu-item (click)="claimFreetrial()">
+        <mat-icon>local_offer</mat-icon>
+        {{ t('project.action.claimFreetrial') }}
+      </button>
+
+      <button *ngIf="isLoggedIn$ | async" mat-menu-item (click)="compare()" [disabled]="(hasCompareAccess$ | async) === false">
+        <mat-icon svgIcon="sg:sgf-compare"></mat-icon>
+        {{ t('compare.compare') }}
+      </button>
+
+      <button *ngIf="updateDataAvailable$ | async" mat-menu-item (click)="openUpdateDataDialog()">
+        <mat-icon svgIcon="sg:sgf-reload"></mat-icon>
+        {{ t('project.action.updateProjectData') }}
+      </button>
+
+      <ng-container *ngIf="isLoggedIn$ | async">
+        <button mat-menu-item (click)="addTo()">
+          <mat-icon>label_outline</mat-icon>
+          {{ t('project.toolbar.addTag') }}
+        </button>
+
+        <button *ngIf="project?.status !== 'archived'" mat-menu-item (click)="updateStatus('archived', true)">
+          <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+          {{ t('project.toolbar.archive') }}
+        </button>
+
+        <button *ngIf="project?.status === 'archived'" mat-menu-item color="accent" (click)="updateStatus('active')">
+          <mat-icon svgIcon="sg:sgf-archive"></mat-icon>
+          {{ t('project.toolbar.unarchive') }}
+        </button>
+
+        <button *ngIf="project?.status === 'archived'" mat-menu-item (click)="delete()">
+          <mat-icon>delete</mat-icon>
+          {{ t('project.toolbar.delete') }}
+        </button>
+
+        <button *ngIf="showExport" mat-menu-item (click)="exportProjects.emit()">
+          <mat-icon>import_export</mat-icon>
+          {{ t('export.title') }}
+        </button>
+      </ng-container>
+
+      <button *ngIf="componentName === 'map'" mat-menu-item (click)="openShareDialog.emit()">
+        <mat-icon>share</mat-icon>
+        {{ t('project.share.share') }}
+      </button>
+
+      <button *ngIf="transferAvailable$ | async" mat-menu-item (click)="transfer()">
+        <mat-icon svgIcon="sg:sgf-transfer"></mat-icon>
+        {{ t('project.action.transfer') }}
+      </button>
+    </ng-container>
+  </ng-container>
+
+  <div class="button-wrapper" *ngIf="showSettings">
+    <mat-divider class="action-menu-divider"></mat-divider>
+    <button *ngIf="componentName === 'map' || 'list'" mat-menu-item (click)="openLayerSettings.emit()">
+      {{  t(componentName === 'map' ? 'common.label.configureMapView' : 'common.label.configureProjectsView') }}
+    </button>
+    <button mat-menu-item (click)="openUnitSettings.emit()">
+      <span>{{ t('project.dataSettings.unitSettings') }}</span>
+    </button>
+  </div>
+
+</div>

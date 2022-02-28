@@ -1,0 +1,63 @@
+<div>
+  <sg-fullscreen-dialog-toolbar
+    [headline]="'pvConfig.label.systemType' | transloco"
+    [subheadline]="project | sgProjectName"
+    (onClose)="close()">
+  </sg-fullscreen-dialog-toolbar>
+
+  <!-- CONTENT !-->
+  <div class="container">
+
+    <div class="content">
+      <mat-tab-group color="accent" (selectedTabChange)="tabChange($event.index)">
+        <!-- DEFAULT TAB !-->
+        <mat-tab>
+          <ng-template mat-tab-label>
+            {{ 'pvConfig.label.default' | transloco }}
+          </ng-template>
+
+          <ng-container *ngIf="defaultPvConfigTemplates; else empty">
+            <sg-pv-config-select-default
+              [pvConfigTemplates]="defaultPvConfigTemplates"
+              [permissions]="permissions$ | async"
+              (onSelected)="selectPvConfig($event, 0)">
+            </sg-pv-config-select-default>
+          </ng-container>
+        </mat-tab>
+
+        <!-- COPY FROM PROJECTS TAB !-->
+        <mat-tab [disabled]="!projectPvConfigTuples?.length">
+          <ng-template mat-tab-label>
+            {{ 'pvConfig.label.copy' | transloco }}
+          </ng-template>
+
+          <sg-pv-config-copy-from-project *ngIf="projectPvConfigTuples.length"
+            [projectPvConfigTuples]="projectPvConfigTuples"
+            [optimalOrientation]="optimalOrientation$ | async"
+            [license]="license$ | async"
+            [permissions]="permissions$ | async"
+            (onSelected)="selectPvConfig($event, 1)">
+          </sg-pv-config-copy-from-project>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+
+    <!-- CONTROL BUTTONS !-->
+    <div class="buttons">
+      <button class="secondary-button" (click)="close()">{{ 'common.action.back' | transloco }}</button>
+
+      <button class="primary-button" (click)="confirm()" [disabled]="!selectedPvConfig">
+        {{ (isEdit ? 'common.action.choose' : 'common.action.next') | transloco }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #empty>
+  <mat-card>
+    <div class="no-templates">
+      {{ 'pvConfig.error.notFound' | transloco }}
+    </div>
+  </mat-card>
+</ng-template>

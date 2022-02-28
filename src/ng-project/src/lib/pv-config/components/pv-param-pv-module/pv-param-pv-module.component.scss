@@ -1,0 +1,41 @@
+@import 'theme';
+
+@import 'mixins/pv-config-setting-panel';
+
+@include pv-config-setting-panel();
+
+.degradation {
+  margin-top: $sg-32;
+  margin-bottom: $sg-16;
+}
+
+.years {
+  margin-top: -10px;
+  margin-left: 28px;
+
+  div {
+    display: inline-block;
+    margin-right: $sg-16;
+  }
+
+  span {
+    margin-right: $sg-8;
+  }
+}
+
+mat-form-field {
+  width: 50px;
+}
+
+::ng-deep .mat-form-field-subscript-wrapper {
+  width: 400px;
+}
+.error-margin {
+  margin-bottom: 20px;
+}
+
+.row {
+  @include media-breakpoint-down(sm) {
+    height: auto;
+  }
+}

@@ -1,0 +1,25 @@
+@import 'theme';
+
+:host ::ng-deep .sg-dialog-content {
+  width: auto;
+  margin-bottom: 32px;
+}
+
+:host ::ng-deep button+button {
+  margin-top: 8px;
+}
+
+:host ::ng-deep .headline {
+  color: map-get($primary, 800);
+  font-weight: $font-weight-bold;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+:host ::ng-deep mat-dialog-actions {
+  display: none !important;
+}
+
+.wrapper {
+  min-height: 150px;
+}

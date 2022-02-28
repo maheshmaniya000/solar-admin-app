@@ -1,0 +1,56 @@
+<sg-cart-products-recap></sg-cart-products-recap>
+
+<mat-card class="main-card">
+  <div class="headline">
+    <mat-icon>arrow_right_alt</mat-icon>
+    <span>{{ 'payment.cart.step2.name' | transloco }}</span>
+    <button *ngIf="editMode && !isOnlyEditModeEnabled" mat-button color="accent"
+            [disabled]="shouldCompanyBeEdited"
+            (click)="editMode = false">
+      <mat-icon>close</mat-icon>&nbsp;{{ 'common.action.cancel' | transloco }}
+    </button>
+    <button *ngIf="!editMode" mat-button color="accent" (click)="editMode = true">
+        <mat-icon>edit</mat-icon>&nbsp;{{ 'common.action.edit' | transloco }}
+    </button>
+  </div>
+
+  <div class="content" *ngIf="company">
+    <ng-container *ngIf="editMode; else noEdit">
+      <sg-company-form [initValues]="company" [checkSimilarCompany]="false" (company)="companyEdit($event)"></sg-company-form>
+    </ng-container>
+  </div>
+
+  <div class="terms">
+    <div>
+      {{ 'auth.confirmTerms.contractualTerms' | transloco }}
+    </div>
+    <sg-terms-and-conditions variant="contractual-terms"></sg-terms-and-conditions>
+    <div style="margin-top: 16px;">
+      {{ 'auth.confirmTerms.particularConditions' | transloco }}
+    </div>
+    <sg-terms-and-conditions variant="particular-conditions"></sg-terms-and-conditions>
+    <mat-checkbox [(ngModel)]="termsConfirmed">
+      <span [innerHtml]="'companyAdmin.overview.prospectSubscription.confirmTerms' | transloco"></span>
+    </mat-checkbox>
+  </div>
+
+  <div class="actions">
+    <button class="secondary-button" [routerLink]="['..', '1']">{{ 'common.action.back' | transloco }}</button>
+    <button *ngIf="!working" class="primary-button"
+            (click)="continue()"
+            [disabled]="(editMode && !editedCompany) || !termsConfirmed || shouldCompanyBeEdited">
+      {{ 'common.action.continue' | transloco }}
+    </button>
+    <div style="display: inline-block;"><mat-spinner *ngIf="working" [diameter]="16"></mat-spinner></div>
+  </div>
+</mat-card>
+
+<ng-template #noEdit>
+  <div class="content-item">
+    <div class="company-name">{{ company.name }}</div>
+    <div>{{ 'payment.cart.step2.address' | transloco }}:
+      <b>{{ getBillingAddress(company) }}</b>
+    </div>
+    <div *ngIf="company.VAT">{{ 'user.company.field.VAT' | transloco }}: <b>{{ company.VAT }}</b></div>
+  </div>
+</ng-template>

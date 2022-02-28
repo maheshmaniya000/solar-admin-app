@@ -1,0 +1,71 @@
+<button
+  class="sg-small-button"
+  mat-flat-button
+  color="accent"
+  (click)="onOpenRegistrationButtonClick()"
+  data-test="open-registration-button"
+>
+  {{ 'auth.registration.title' | transloco }}
+</button>
+
+<ng-template #registrationDialogContent>
+  <ng-container
+    *ngIf="registrationStore.registrationDialogViewModel$ | async as viewModel"
+  >
+    <sg-dialog
+      *transloco="let t; read: 'auth.registration'"
+      [title]="t('createUserAccount')"
+      [closeIconButtonEnabled]="true"
+      [dividedContent]="false"
+    >
+      <mat-horizontal-stepper
+        linear
+        class="no-header"
+        [selectedIndex]="viewModel.step"
+      >
+        <mat-step> step1 </mat-step>
+        <mat-step> step2 </mat-step>
+        <mat-step> step3 </mat-step>
+        <mat-step> step4 </mat-step>
+        <mat-step> step5 </mat-step>
+        <mat-step> step6 </mat-step>
+      </mat-horizontal-stepper>
+
+      <mat-dialog-actions>
+        <button
+          *ngIf="viewModel.backButtonDisplayed"
+          mat-button
+          color="primary"
+          (click)="registrationStore.setPreviousStep()"
+          data-test="back-button"
+        >
+          <mat-icon>arrow_back</mat-icon>
+          {{ 'common.action.back' | transloco }}
+        </button>
+        <span class="spacer"></span>
+        <button
+          class="sg-large-button"
+          *ngIf="viewModel.continueButtonDisplayed"
+          mat-flat-button
+          color="accent"
+          (click)="registrationStore.setNextStep()"
+          data-test="continue-button"
+        >
+          {{ 'common.action.continue' | transloco }}
+        </button>
+      </mat-dialog-actions>
+
+      <sg-dialog-footer *ngIf="viewModel.footerDisplayed">
+        {{ t('alreadyHaveAccount') }}
+        <button
+          mat-button
+          color="accent"
+          (click)="onLogInButtonClick()"
+          data-test="login-button"
+        >
+          {{ t('login') }}
+        </button>
+      </sg-dialog-footer>
+    </sg-dialog>
+  </ng-container>
+</ng-template>

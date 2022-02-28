@@ -1,0 +1,49 @@
+@mixin sg-button($size, $type: white) {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: none;
+    border: none;
+    padding: 0 12px;
+
+    &:focus {
+      outline: none;
+    }
+
+    @if $type == white {
+        color: map-get($accent, default);
+        background: white;
+        border: 1px solid map-get($primary, 400);
+    } @else if $type == red {
+        color: white;
+        background: map-get($accent, 500);
+    } @else if $type == red-disabled {
+        color: map-get($primary, 500);
+        background: map-get($primary, 200);
+    } @else if $type == white-disabled {
+        color: map-get($primary, 400);
+        background: white;
+    }
+
+    @if $size == xs {
+        min-width: 74px;
+        min-height: 24px;
+        font-size: 11px!important;
+    } @else if $size == sm {
+        font-size: 12px;
+        min-width: 94px;
+        min-height: 28px;
+    } @else if $size == md {
+        font-size: 13px;
+        min-width: 110px;
+        min-height: 32px;
+    } @else if $size == lg {
+        font-size: 13px;
+        min-height: 36px;
+        min-width: 126px;
+    } @else if $size == xl {
+        font-size: 13px;
+        min-height: 40px;
+        min-width: 126px;
+    }
+}

@@ -1,0 +1,17 @@
+<div *ngIf="orderDetailStore.viewModel$ | async as viewModel">
+  <sg-fullscreen-dialog-toolbar
+    [headline]="headerLabel[mode]"
+    [subheadline]="viewModel.entity.sgOrderId"
+    (onClose)="onCloseButtonClick()"
+  ></sg-fullscreen-dialog-toolbar>
+
+  <ng-container *ngIf="mode === componentMode.view; else orderEditorTemplate">
+    <sg-admin-order-view></sg-admin-order-view>
+    <sg-admin-order-workflow></sg-admin-order-workflow>
+    <sg-admin-order-invoices></sg-admin-order-invoices>
+  </ng-container>
+
+  <ng-template #orderEditorTemplate>
+    <sg-admin-order-editor></sg-admin-order-editor>
+  </ng-template>
+</div>

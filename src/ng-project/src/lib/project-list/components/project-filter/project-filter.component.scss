@@ -1,0 +1,175 @@
+@import 'theme';
+
+mat-list {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden; // just to be sure there is no x-scroller on all systems/browsers
+}
+
+.list-icon {
+  color: map-get($primary, 800);
+  width: $sg-20;
+  height: $sg-36;
+  line-height: $sg-36;
+  margin-right: $sg-16;
+  font-size: $sg-20 !important;
+
+  &.right-icon {
+    display: none;
+    margin: 0;
+  }
+
+  & > ::ng-deep {
+    svg {
+      width: $sg-20;
+    }
+  }
+}
+
+.list-item-line {
+  padding: 0 $sg-12;
+  width: 90%;
+  height: $sg-36;
+  line-height: $sg-36;
+  text-align: left;
+  font-size: $sg-14;
+  margin: 0 auto 4px auto;
+  outline: 0;
+}
+
+div[mat-list-item] {
+  text-align: center;
+
+  button {
+    @extend .list-item-line;
+
+    .label {
+      font-weight: normal;
+      color: map-get($primary, 800);
+    }
+
+    .count {
+      color: map-get($primary, 600);
+
+      .action {
+        margin-left: $sg-4;
+      }
+    }
+
+    &:hover {
+      background-color: map-get($primary, 100);
+
+      .count {
+        span {
+          display: none;
+        }
+
+        .right-icon {
+          display: block;
+        }
+      }
+    }
+
+    &.highlighted, &.project-button:hover {
+      background-color: map-get($primary, 200);
+
+      .label {
+        font-weight: bold;
+      }
+    }
+
+    &.not-clickable:hover {
+      cursor: default;
+
+      .count {
+        span {
+          display: block;
+        }
+
+        .right-icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .list-header {
+    @extend .list-item-line;
+
+    .list-icon {
+      cursor: pointer;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+  }
+
+  .search-block {
+    margin: 0 $sg-4 $sg-8;
+    border: 1px solid map-get($primary, 400);
+    border-radius: $sg-4;
+    padding: 0 $sg-8;
+    height: $sg-32;
+
+    mat-icon {
+      @extend .list-icon;
+      margin-right: 0;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    input {
+      text-align: left;
+      font-size: $sg-14;
+      margin: 0 $sg-12;
+      height: 30px;
+      outline: 0;
+      border: 0;
+      display: block;
+    }
+
+    .close {
+      cursor: pointer;
+    }
+  }
+}
+
+mat-divider {
+  margin: $sg-4 0 $sg-8 0;
+}
+
+:host ::ng-deep {
+  .mat-button-focus-overlay {
+    background-color: map-get($primary, 100);
+    z-index: -1;
+  }
+  .label {
+    color: map-get($primary, 800);
+  }
+  .count {
+    color: map-get($primary, 600);
+  }
+}
+
+.ellipsis {
+  @include text-ellipsis();
+}
+
+sg-trademark {
+  bottom: 1px;
+  margin: 6% 8%;
+  padding: 1% 1%;
+  @media (min-height: 1200px) {
+    position: absolute;
+  }
+}
+
+.trademark-responsive {
+  @media (max-height: 800px) {
+    position: relative;
+  }
+  position: absolute;
+}

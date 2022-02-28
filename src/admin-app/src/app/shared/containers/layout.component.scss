@@ -1,0 +1,52 @@
+@import 'theme';
+
+:host {
+  width: 100%;
+  height: calc(100vh - 48px);
+
+  & > div {
+    flex: 1 0;
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    max-height: 100%;
+  }
+
+  main {
+    flex: 1 1 auto;
+  }
+
+  .scroll {
+    flex-wrap: wrap;
+  }
+}
+
+.max-full-screen {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.max-full-screen > .outlet {
+  flex: 0 1 auto;
+  min-width: auto;
+  width: 100%;
+}
+
+.max-full-screen > div {
+  max-height: 100%;
+  overflow-y: hidden;
+}
+
+.named-outlet-wrapper {
+  flex: 1;
+  min-width: min-content;
+
+  router-outlet + * {
+    height: 100%;
+  }
+
+  & > .admin-view-tool {
+    height: 100%;
+    overflow: auto;
+  }
+}

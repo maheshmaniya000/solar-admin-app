@@ -1,0 +1,10 @@
+<mat-expansion-panel
+  (closed)="setClosed(true)" (opened)="setClosed(false)" [expanded]="opened$ | async">
+
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{ 'projectDetail.glossary.title' | transloco }}</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <sg-glossary-table [layers]="layers" [noAcronym]="noAcronym" [noSort]="noSort"></sg-glossary-table>
+
+</mat-expansion-panel>

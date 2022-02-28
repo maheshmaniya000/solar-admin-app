@@ -1,0 +1,117 @@
+@use 'variables';
+
+$medium-dialog-vertical-spacing: 20px;
+$medium-dialog-horizontal-spacing: 32px;
+$medium-dialog-actions-min-height: 56px;
+
+$large-dialog-vertical-spacing: 28px;
+$large-dialog-horizontal-spacing: 48px;
+$large-dialog-actions-min-height: 68px;
+
+$mat-dialog-actions-vertical-padding: 8px;
+
+$medium-button-height: map-get(variables.$sg-button-height, medium);
+$large-button-height: map-get(variables.$sg-button-height, large);
+
+@mixin _divider-horizontal-spacing($value) {
+  margin-right: -$value;
+  margin-left: -$value;
+}
+
+@mixin _dialog(
+  $vertical-spacing,
+  $horizontal-spacing,
+  $actions-min-height,
+  $button-height,
+  $title-margin-bottom: null
+) {
+  padding: $vertical-spacing $horizontal-spacing;
+
+  @if $title-margin-bottom {
+    .mat-dialog-title {
+      margin-bottom: $title-margin-bottom;
+    }
+  }
+
+  .mat-dialog-content {
+    margin-right: -$horizontal-spacing;
+    margin-left: -$horizontal-spacing;
+    padding-right: $horizontal-spacing;
+    padding-left: $horizontal-spacing;
+  }
+
+  .top-content-divider,
+  .bottom-content-divider {
+    @include _divider-horizontal-spacing($horizontal-spacing);
+  }
+
+  .mat-dialog-actions {
+    min-height: $actions-min-height;
+    margin-bottom: -($vertical-spacing - $mat-dialog-actions-vertical-padding);
+  }
+
+  .sg-dialog-footer {
+    margin-bottom: -$vertical-spacing;
+  }
+
+  .footer-divider {
+    margin-top: $vertical-spacing;
+    @include _divider-horizontal-spacing($horizontal-spacing);
+  }
+}
+
+.sg-dialog-container {
+  .mat-dialog-container {
+    .close-button {
+      margin-right: 6px;
+      margin-left: -6px;
+    }
+
+    @include _dialog(
+      $medium-dialog-vertical-spacing,
+      $medium-dialog-horizontal-spacing,
+      $medium-dialog-actions-min-height,
+      $medium-button-height
+    );
+  }
+
+  &.large {
+    .mat-dialog-container {
+      @include _dialog(
+        $large-dialog-vertical-spacing,
+        $large-dialog-horizontal-spacing,
+        $large-dialog-actions-min-height,
+        $large-button-height,
+        $large-dialog-vertical-spacing
+      );
+    }
+
+    .mat-dialog-actions button {
+      height: $large-button-height;
+    }
+
+    &.featured {
+      .mat-dialog-title,
+      .mat-dialog-content,
+      .mat-dialog-actions,
+      .sg-dialog-footer {
+        justify-content: center;
+      }
+
+      .mat-dialog-title {
+        position: relative;
+        margin-bottom: 0;
+      }
+
+      .close-button {
+        position: absolute;
+        top: -$large-dialog-vertical-spacing + 6px;
+        left: -$large-dialog-horizontal-spacing + 12px;
+      }
+
+      .mat-dialog-content {
+        text-align: center;
+      }
+    }
+  }
+}

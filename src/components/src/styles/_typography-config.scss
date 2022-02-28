@@ -1,0 +1,15 @@
+@use '~@angular/material' as mat;
+
+$typography-config: mat.define-typography-config(
+  $display-2: mat.define-typography-level(24px, 30px, 700),
+  $display-1: mat.define-typography-level(20px, 26px),
+  $headline: mat.define-typography-level(18px, 24px, 700),
+  $title: mat.define-typography-level(14px, 20px, 700),
+  $subheading-2: mat.define-typography-level(13px, 18px, 700),
+  $subheading-1: mat.define-typography-level(13px, 18px, 500),
+  $body-2: mat.define-typography-level(14px, 20px, 500),
+  $body-1: mat.define-typography-level(14px, 20px),
+  $caption: mat.define-typography-level(13px, 18px),
+  $button: mat.define-typography-level(13px, 18px, 700, $letter-spacing: 0.025em),
+  $input: mat.define-typography-level(13px, 1.385)
+);

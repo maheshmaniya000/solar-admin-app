@@ -1,0 +1,22 @@
+@import 'theme';
+
+$setCardWidthOverview: 74px;
+
+:host ::ng-deep {
+  @include sg-detail-card-layout(map-get($primary, 800));
+}
+
+.chips {
+  margin-bottom: $sg-32 !important;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+  @include media-breakpoint-between(xs, md) {
+    mat-card {
+      width: calc(100vw - #{$setCardWidthOverview});
+    }
+  }

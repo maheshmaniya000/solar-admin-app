@@ -1,0 +1,34 @@
+<mat-card *ngIf="(orderDetailStore.viewModel$ | async).entity as order">
+  <mat-card-actions>
+    <sg-admin-view-order-tools></sg-admin-view-order-tools>
+  </mat-card-actions>
+
+  <mat-card-content>
+    <h2>Customer</h2>
+    <sg-admin-company-info [company]="order.company"></sg-admin-company-info>
+
+    <h2>Contacts</h2>
+    <sg-admin-contacts-table [contacts]="order.contacts"></sg-admin-contacts-table>
+
+    <h2>Order</h2>
+    <div class="order-codes">
+      <section>
+        <span>Purchase Order No</span>
+        <span>{{ order.purchaseOrderNo }}</span>
+
+        <span>Contract No</span>
+        <span>{{ order.contractNo }}</span>
+      </section>
+
+      <section>
+        <span>Free text</span>
+        <span>{{ order.freeText }}</span>
+
+        <span>Order Note</span>
+        <span>{{ order.note }}</span>
+      </section>
+    </div>
+
+    <sg-admin-order-items-view [order]="order"></sg-admin-order-items-view>
+  </mat-card-content>
+</mat-card>

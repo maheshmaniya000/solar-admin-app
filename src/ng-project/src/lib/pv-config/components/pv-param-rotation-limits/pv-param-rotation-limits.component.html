@@ -1,0 +1,27 @@
+<div class="content orientation">
+  <form [formGroup]="form">
+
+    <div class="row" [ngClass]="{'error-margin': form.get('east').invalid}">
+      <div class="label">{{ 'pvConfig.params.rotationLimits.east' | transloco }}</div>
+      <mat-form-field floatLabel="never">
+        <input matInput type="number" placeholder="0" formControlName="east" [min]="MIN_EAST" [max]="MAX_EAST">
+        <mat-error>{{ 'common.error.valueBetween' | transloco:{min: MIN_EAST, max: MAX_EAST} }}</mat-error>
+      </mat-form-field>
+      <div class="unit">°</div>
+    </div>
+
+    <div class="row" [ngClass]="{'error-margin': form.get('west').invalid}">
+      <div class="label">{{ 'pvConfig.params.rotationLimits.west' | transloco }}</div>
+      <mat-form-field floatLabel="never">
+        <input matInput type="number" placeholder="0" formControlName="west" [min]="MIN_WEST" [max]="MAX_WEST">
+        <mat-error>{{ 'common.error.valueBetween' | transloco:{min: MIN_WEST, max: MAX_WEST} }}</mat-error>
+      </mat-form-field>
+      <div class="unit">°</div>
+    </div>
+
+    <div class="row">
+      <button mat-button color="accent" (click)="setDefaults()">{{ 'pvConfig.params.cablingLosses.setDefault' | transloco }}</button>
+    </div>
+
+  </form>
+</div>

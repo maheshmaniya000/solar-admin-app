@@ -1,0 +1,30 @@
+@use 'variables';
+
+:host {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 6px;
+}
+
+div {
+  position: absolute;
+  height: 100%;
+  transition: variables.$sg-slider-transition;
+}
+
+.less {
+  background-color: map-get(variables.$sg-status-colors, warning);
+}
+
+.equal {
+  background-color: map-get(variables.$sg-status-colors, success);
+}
+
+.greater {
+  background-color: map-get(variables.$sg-status-colors, error);
+}
+
+.target {
+  width: 1px;
+}

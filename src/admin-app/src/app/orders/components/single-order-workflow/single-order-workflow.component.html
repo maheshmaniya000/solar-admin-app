@@ -1,0 +1,178 @@
+<div id="order-workflow" *ngIf="order">
+  <div class="toolbar" *ngIf="!deliveryChange()">
+    <button mat-raised-button color="accent"
+            *ngIf="!changingStatus"
+            (click)="changeToPaymentFirst()">Payment first</button>
+    <button mat-raised-button color="accent"
+            *ngIf="!changingStatus"
+            (click)="changeToDeliveryFirst()">Delivery first</button>
+    <mat-progress-spinner mode="indeterminate" *ngIf="changingStatus" [diameter]="30"></mat-progress-spinner>
+  </div>
+  <div class="toolbar" *ngIf="deliveryChange()">
+    <button mat-raised-button color="accent"
+            *ngIf="!changingStatus && order.deliveryFirst"
+            [disabled]="getInvoice(invoiceType.INVOICE)"
+            (click)="changeToPaymentFirst()">Change to payment first</button>
+    <button mat-raised-button color="accent"
+            *ngIf="!changingStatus && !order.deliveryFirst"
+            [disabled]="getInvoice(invoiceType.INVOICE_FOR_PROFA)"
+            (click)="changeToDeliveryFirst()">Change to delivery first</button>
+    <mat-progress-spinner mode="indeterminate" *ngIf="changingStatus" [diameter]="30"></mat-progress-spinner>
+  </div>
+
+  <div *ngIf="!deliveryChange()" class="dateStatus">
+    ( Created {{ order.author.ts | sgDateTimeFormat:'dateTime' }} by
+    <span class="email">{{ order.author.user.email }}</span> )
+  </div>
+
+  <div *ngIf="deliveryChange()" class="dateStatus">
+    ( Modified {{ order.updated.ts | sgDateTimeFormat:'dateTime' }} by
+    <span class="email">{{ order.updated.user.email }}</span> )
+  </div>
+
+
+
+  <div class="workflowLine">
+    <ol *ngIf="isPaymentFirst()" class="paymentFirst">
+      <li class="done">
+        <div>
+          <div class="event" *ngIf="order.author">
+            <p>Created</p>
+            <p>{{ order.author.ts | sgDateTimeFormat:'dateTime' }}</p>
+            <p class="email">{{ order.author.user.email }}</p>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+      <li class="workflow-pro-forma" [ngClass]="{'done': getInvoice(invoiceType.PROFA)}">
+        <div>
+          <div class="event">
+            <p>Pro Forma</p>
+            <p *ngIf="getInvoice(invoiceType.PROFA); let profa">
+              <span>{{ profa.issueDate | sgDateTimeFormat:'date' }}</span>
+              <span class="email">{{ profa.author.user.email }}</span>
+            </p>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+      <li [ngClass]="{'done': order.payment.status === 'PAID'}">
+        <div>
+          <div class="event" *ngIf="order.payment.status !== 'PAID'">
+            <p>Paid</p>
+          </div>
+          <div class="event" *ngIf="order.payment.status === 'PAID'">
+            <p>Paid</p>
+            <p>{{ order.payment.paymentDate | sgDateTimeFormat:'date' }}</p>
+            <p class="email">{{ order.payment.updated.user.email }}</p>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+      <li class="workflow-pro-forma" [ngClass]="{'done': order.orderItemsProcessed}">
+        <div>
+          <div class="event">
+            <p>Delivered</p>
+            <p *ngIf="order.orderItemsProcessed">
+              {{ order.orderItemsProcessed | sgDateTimeFormat:'dateTime' }} </p>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+      <li class="workflow-pro-forma" [ngClass]="{'done': getInvoice(invoiceType.INVOICE_FOR_PROFA)}">
+        <div>
+          <div class="event">
+            <p>Final Invoice</p>
+            <p *ngIf="getInvoice(invoiceType.INVOICE_FOR_PROFA); let invoice">
+              {{ invoice.issueDate | sgDateTimeFormat:'date' }}
+              <span class="email">
+                {{ invoice.author.user.email }}
+              </span>
+            </p>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+      <li [ngClass]="{ 'done': order?.status?.status === 'DONE' || isOrderFinished() }">
+        <div>
+          <div class="event -last">
+            <p *ngIf="order?.status">
+              <span *ngIf="order.status.status === 'IN_PROGRESS' && isOrderFinished() else orderStatus">DONE</span>
+              <span>{{ order.status.author.ts | sgDateTimeFormat:'dateTime' }}</span>
+              <span class="email">{{ order.status.author.user.email }}</span>
+            </p>
+            <ng-template #orderStatus>
+              <span>{{ order.status.status }}</span>
+            </ng-template>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+    </ol>
+
+
+    <ol *ngIf="isDeliveryFirst()" class="deliveryFirst">
+      <li class="done">
+        <div>
+          <div class="event" *ngIf="order.author">
+            <p>Created</p>
+            <p>{{ order.author.ts | sgDateTimeFormat:'dateTime' }}</p>
+            <p class="email">{{ order.author.user.email }}</p>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+      <li [ngClass]="{'done': order.orderItemsProcessed}">
+        <div>
+          <div class="event">
+            <p>Delivered</p>
+            <p *ngIf="order.orderItemsProcessed">
+              {{ order.orderItemsProcessed | sgDateTimeFormat:'dateTime' }}
+            </p>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+      <li [ngClass]="{'done': getInvoice(invoiceType.INVOICE)}">
+        <div>
+          <div class="event">
+            <span>Invoice</span>
+            <p *ngIf="getInvoice(invoiceType.INVOICE); let invoice">
+              <span>{{ invoice.issueDate | sgDateTimeFormat:'date' }}</span>
+              <span class="email">{{ invoice.author.user.email }}</span>
+            </p>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+      <li [ngClass]="{'done': order.payment.status === 'PAID'}">
+        <div>
+          <div class="event" *ngIf="order.payment.status !== 'PAID'">
+            <p>Paid</p>
+          </div>
+          <div class="event" *ngIf="order.payment.status === 'PAID'">
+            <p>Paid</p>
+            <p>{{ order.payment.paymentDate | sgDateTimeFormat:'date' }}</p>
+            <p class="email">{{ order.payment.updated.user.email }}</p>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+      <li [ngClass]="{ 'done': order?.status?.status === 'DONE' || isOrderFinished() }">
+        <div>
+          <div class="event -last">
+            <p *ngIf="order?.status">
+              <span *ngIf="order.status.status === 'IN_PROGRESS' && isOrderFinished() else orderStatus">DONE</span>
+              <span>{{ order.status.author.ts | sgDateTimeFormat:'dateTime' }}</span>
+              <span class="email">{{ order.status.author.user.email }}</span>
+            </p>
+            <ng-template #orderStatus>
+              <span>{{ order.status.status }}</span>
+            </ng-template>
+          </div>
+          <span class="point"></span>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>

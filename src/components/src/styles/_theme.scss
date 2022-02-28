@@ -1,0 +1,67 @@
+$sg-expansion-panel-height: 56px;
+@forward '~@angular/material/expansion/expansion-variables' with (
+  $header-collapsed-height: $sg-expansion-panel-height,
+  $header-collapsed-minimum-height: $sg-expansion-panel-height,
+  $header-expanded-height: $sg-expansion-panel-height,
+  $header-expanded-minimum-height: $sg-expansion-panel-height
+);
+@forward '~@angular/material/toolbar/toolbar-variables' with (
+  $minimum-height: 40px
+);
+@use '~@angular/material' as mat;
+@use 'palette';
+@use 'variables';
+@use 'typography-config';
+@use 'sg-components-theme' as sg;
+
+mat.$light-theme-background-palette: (
+  status-bar: map-get(palette.$sg-grey, 300),
+  app-bar: map-get(palette.$sg-grey, 100),
+  background: white,
+  hover: rgba(palette.$primary-gray, 0.05),
+  card: white,
+  dialog: white,
+  disabled-button: rgba(palette.$primary-gray, 0.08),
+  raised-button: white,
+  selected-button: map-get(palette.$sg-grey, 300),
+  selected-disabled-button: rgba(palette.$primary-gray, 0.25),
+  disabled-button-toggle: rgba(palette.$primary-gray, 0.08),
+  unselected-chip: rgba(palette.$primary-gray, 0.15),
+  disabled-list-option: rgba(palette.$primary-gray, 0.08),
+  tooltip: map-get(palette.$sg-grey, 700)
+);
+
+mat.$light-theme-foreground-palette: (
+  base: palette.$primary-gray,
+  divider: rgba(palette.$primary-gray, 0.15),
+  dividers: rgba(palette.$primary-gray, 0.15),
+  disabled: rgba(palette.$primary-gray, 0.25),
+  disabled-button: rgba(palette.$primary-gray, 0.25),
+  disabled-text: rgba(palette.$primary-gray, 0.25),
+  elevation: map-get(palette.$sg-grey, 950),
+  hint-text: rgba(palette.$primary-gray, 0.8),
+  secondary-text: rgba(palette.$primary-gray, 0.8),
+  icon: rgba(palette.$primary-gray, 0.8),
+  icons: rgba(palette.$primary-gray, 0.8),
+  text: palette.$primary-gray,
+  slider-off: rgba(palette.$primary-gray, 0.25),
+  slider-off-active: rgba(palette.$primary-gray, 0.5)
+);
+
+$sg-primary: mat.define-palette(palette.$sg-grey, 800, 700, 900);
+$sg-accent: mat.define-palette(palette.$sg-red, 500, 400, 600);
+$sg-warn: mat.define-palette(palette.$sg-bright-red);
+
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $sg-primary,
+      accent: $sg-accent,
+      warn: $sg-warn
+    ),
+    typography: typography-config.$typography-config
+  )
+);
+
+@include mat.core(typography-config.$typography-config);
+@include sg.all-component-themes($theme);

@@ -1,0 +1,15 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $background: map-get($color-config, background);
+  $foreground: map-get($color-config, foreground);
+
+  sg-range-indicator {
+    background-color: mat.get-color-from-palette($background, status-bar);
+
+    .target {
+      background-color: mat.get-color-from-palette($foreground, divider);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<div class="sg-grid-8-15">
+  <form [formGroup]="form">
+    <sg-timezone-input
+      class="row-6-9"
+      [form]="form"
+      [timezone]="data.userPreferences.timezone"
+      [utcOffset]="data.userPreferences.utcOffset"
+    ></sg-timezone-input>
+  </form>
+
+  <div
+    class="row-6-9 row-next"
+    *ngFor="let unitToggle of [latlngToggle].concat(data.unitToggles)"
+  >
+    <span>{{ unitToggleSettingsKeyToLabel[unitToggle.settingsKey] }}</span>
+    <sg-unit-toggle [toggle]="unitToggle"></sg-unit-toggle>
+
+    <sg-unit-value
+      *ngIf="unitToggle === latlngToggle"
+      [unit]="latlngUnit"
+      [value]="latlngSample"
+    ></sg-unit-value>
+  </div>
+</div>

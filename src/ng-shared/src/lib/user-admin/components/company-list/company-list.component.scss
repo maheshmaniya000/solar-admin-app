@@ -1,0 +1,83 @@
+@import 'theme';
+
+@import 'mixins/user-company';
+
+mat-cell, mat-header-cell {
+  color: map-get($primary, 800);
+}
+
+mat-row {
+  cursor: pointer;
+  @include user-or-company-selected();
+}
+
+.table-header-cell {
+  font-size: $sg-12;
+  font-weight: $font-weight-bold;
+  line-height: 14px;
+  color: map-get($primary, 800);
+}
+
+.table-cell {
+  font-size: $sg-14;
+  line-height: 17px;
+  color: map-get($primary, 800);
+
+  &:last-of-type {
+    padding-right: 0;
+  }
+}
+
+mat-header-cell, mat-cell {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding-right: 10px;
+
+  &.cdk-column-avatar { flex: 0 0 70px; }
+  &.cdk-column-name { flex: 0 0 400px; }
+  &.cdk-column-type { flex: 0 0 200px; }
+  &.cdk-column-role { flex: 0 0 200px; }
+  &.cdk-column-updated { flex: 0 0 200px; }
+}
+
+.table-company-avatar {
+  padding: 0;
+  height: 30px;
+}
+
+.table-name {
+  font-weight: $font-weight-medium;
+}
+
+.badge {
+  margin-left: 13px;
+  text-transform: uppercase;
+}
+
+.table-options {
+  cursor: pointer;
+  justify-content: flex-end;
+
+  mat-icon {
+    font-size: $sg-20;
+  }
+
+  .table-icon-settings {
+    margin-right: 10px;
+  }
+
+}
+
+// TODO: REMOVE OUTLINES
+
+::ng-deep {
+  .mat-menu-panel {
+    font-size: $sg-14;
+    line-height: 17px;
+    color: map-get($primary, 800);
+
+    min-height: 0;
+    outline: none;
+  }
+}

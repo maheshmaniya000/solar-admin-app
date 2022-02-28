@@ -1,0 +1,13 @@
+@import 'theme';
+
+.layer-list {
+  list-style-type: none;
+
+  &-item {
+    line-height: $sg-32;
+  }
+}
+
+.tab-actions {
+  padding-left: 20px;
+}

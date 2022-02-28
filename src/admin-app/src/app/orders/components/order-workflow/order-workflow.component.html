@@ -1,0 +1,57 @@
+<mat-card *ngIf="orderDetailStore.viewModel$ | async as viewModel">
+  <mat-card-title>
+    Workflow
+  </mat-card-title>
+
+  <mat-card-content>
+    <sg-admin-single-order-workflow
+      [order]="viewModel.entity"
+      (isOrderDoneChange)="onOrderDoneChanged($event)"
+      (patch)="orderDetailStore.changePayment($event)"
+    >
+    </sg-admin-single-order-workflow>
+
+    <div *ngIf="viewModel.paymentVisible">
+      <h4 class="span-2">Order payment</h4>
+      <div class="span-2">
+        <h5 *ngIf="viewModel.entity.payment; else noPayment">
+          Current payment method is {{ viewModel.entity.payment.type }}, with status : {{ viewModel.entity.payment.status }}
+        </h5>
+        <ng-template #noPayment>
+          <h5>No payment is set for this order</h5>
+        </ng-template>
+      </div>
+      <form [formGroup]="formGroup">
+        <mat-form-field>
+          <mat-label>Type</mat-label>
+          <mat-select formControlName="type" required>
+            <mat-option [value]="orderPaymentType.BANK">BANK</mat-option>
+            <mat-option [value]="orderPaymentType.PAY_PAL">PAYPAL</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status" required>
+            <mat-option [value]="orderPaymentStatus.NOT_PAID">Not Paid</mat-option>
+            <mat-option [value]="orderPaymentStatus.PAID">Paid</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Payment Date</mat-label>
+          <input matInput [matDatepicker]="paymentDate" formControlName="paymentDate" />
+          <mat-datepicker-toggle matSuffix [for]="paymentDate"></mat-datepicker-toggle>
+          <mat-datepicker #paymentDate></mat-datepicker>
+        </mat-form-field>
+
+        <div class="toolbar">
+          <button mat-raised-button color="accent" *ngIf="!viewModel.changingPayment" (click)="orderDetailStore.updatePayment()">
+            PAYMENT
+          </button>
+          <mat-progress-spinner mode="indeterminate" *ngIf="viewModel.changingPayment" [diameter]="30"></mat-progress-spinner>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

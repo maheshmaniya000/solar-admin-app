@@ -1,0 +1,116 @@
+<ng-container *transloco="let t">
+  <mat-list class="bootstrap">
+    <sg-drawer-button buttonStyle="arrowButton"></sg-drawer-button>
+    <div *ngIf="(isOpened$ | async)">
+      <div mat-list-item>
+        <button mat-button (click)="clearFilter()"
+          [ngClass]="{'highlighted': (isDefaultFilter$ | async)}">
+          <div class="row m-0">
+            <mat-icon class="list-icon col-auto p-0" matListIcon svgIcon="sg:sgf-mn-all"></mat-icon>
+            <div matLine class="label col p-0">{{ t('project.filter.allProjects') }}</div>
+            <div matLine class="count col-auto p-0">{{ (filterStats$ | async)?.all }}</div>
+          </div>
+        </button>
+      </div>
+
+      <div mat-list-item>
+        <button mat-button (click)="setRecentFilter()" [ngClass]="{'highlighted': (filter$ | async)?.recent}">
+          <div class="row m-0">
+            <mat-icon class="list-icon col-auto p-0" matListIcon>access_time</mat-icon>
+            <div matLine class="label col p-0">{{ t('project.filter.recent') }}</div>
+            <div matLine class="count col-auto p-0">{{ (filterStats$ | async)?.recent }}</div>
+          </div>
+        </button>
+      </div>
+
+      <!-- <div mat-list-item>
+        <button mat-button (click)="setFilter({ favorite: true })"
+          [ngClass]="{'highlighted': (filter$ | async)?.favorite}">
+          <div class="row m-0">
+            <mat-icon class="list-icon col-auto p-0" matListIcon>star_rate</mat-icon>
+            <div matLine class="label col p-0">{{ t('project.filter.favorites') }}</div>
+            <div matLine class="count col-auto p-0">{{ (filterStats$ | async)?.favorite }}</div>
+          </div>
+        </button>
+      </div> -->
+
+      <mat-divider></mat-divider>
+
+      <div *ngFor="let tag of (tags$ | async)" mat-list-item>
+        <button mat-button (click)="setTagFilter(tag)"
+          [ngClass]="{'highlighted': (selectedTag$ | async) === tag.tagName, 'not-clickable': (filterStats$ | async)?.userTag[tag.tagName] === 0}">
+          <div class="row m-0">
+            <mat-icon class="list-icon col-auto p-0" matListIcon>label</mat-icon>
+            <div matLine class="label ellipsis col p-0">{{ tag.tagName }}</div>
+            <div matLine class="count col-auto p-0">{{ (filterStats$ | async)?.userTag[tag.tagName] }}</div>
+          </div>
+        </button>
+      </div>
+
+      <div mat-list-item>
+        <button mat-button (click)="openManageLabelsDialog()">
+          <div class="row m-0">
+            <mat-icon class="list-icon col-auto p-0" matListIcon>add</mat-icon>
+            <div matLine class="label ellipsis col p-0">{{ t('project.filter.manageLabels') }}</div>
+          </div>
+        </button>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div mat-list-item>
+        <button mat-button (click)="setFilter({ archived: true })"
+          [ngClass]="{'highlighted': (filter$ | async)?.archived}">
+          <div class="row m-0">
+            <mat-icon svgIcon="sg:sgf-archive" class="list-icon col-auto p-0"></mat-icon>
+            <div matLine class="label col p-0">{{ t('project.filter.archived') }}</div>
+            <div matLine class="count col-auto p-0">{{ (filterStats$ | async)?.archived }}</div>
+          </div>
+        </button>
+      </div>
+
+      <mat-divider></mat-divider>
+      <sg-trademark [ngClass]="{'trademark-responsive': (tags$ | async).length < 12 }"></sg-trademark>
+    </div>
+  </mat-list>
+
+  <mat-list class="bootstrap" *ngIf="(selectedTag$ | async) && tagOpen">
+    <div *ngIf="(isOpened$ | async)">
+      <div mat-list-item>
+        <div class="list-header row m-0">
+          <mat-icon class="list-icon col-auto p-0" matListIcon
+                    (click)="tagOpen = false; clearSearch()">arrow_back</mat-icon>
+          <div matLine class="label col p-0 ellipsis">{{ selectedTag$ | async }}</div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div mat-list-item>
+        <div class="search-block row">
+          <div class="col-auto p-0"><mat-icon>search</mat-icon></div>
+          <div class="col p-0">
+            <input matInput placeholder="{{ t('common.action.search') }}" [formControl]="searchControl">
+          </div>
+          <div class="close col-auto p-0" *ngIf="searchControl.value" (click)="clearSearch()"><mat-icon>close</mat-icon></div>
+        </div>
+      </div>
+
+      <div mat-list-item *ngFor="let project of (projects$ | async)">
+        <button mat-button class="project-button"
+                *ngIf="isSearchedProject(project | sgProjectName)"
+                [routerLink]="['/detail', project._id]"
+                (click)="drawerClose()">
+          <div class="row m-0">
+            <div matLine class="label col p-0 ellipsis">{{ project | sgProjectName }}</div>
+            <div class="count col-auto p-0">
+              <mat-icon class="list-icon right-icon" matListIcon>play_circle_outline</mat-icon>
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <sg-trademark></sg-trademark>
+    </div>
+  </mat-list>
+</ng-container>

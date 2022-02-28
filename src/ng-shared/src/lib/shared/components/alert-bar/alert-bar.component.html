@@ -1,0 +1,18 @@
+<div class="bootstrap">
+  <div class="row no-gutters {{ alert.severity }}">
+    <div class="col-auto icon">
+      <mat-icon>{{ alert.severity === 'warning' ? 'warning' : 'info_outline' }}</mat-icon>
+    </div>
+
+    <div class="col pl-3">
+      <span *ngIf="alert.text">{{ alert.text | transloco }}</span>
+      <span class="highlighted" *ngIf="alert.highlightedText">{{ alert.highlightedText | transloco }}</span>
+      <span class="link primaryLink" *ngIf="alert.click" data-test="alert-link" (click)="click()">{{ alert.click.text | transloco }}</span>
+      <span class="link" *ngIf="alert.secondaryClick" (click)="secondaryClick()">{{ alert.secondaryClick.text | transloco }}</span>
+    </div>
+
+    <div class="col-auto close">
+      <mat-icon (click)="closeClick()">close</mat-icon>
+    </div>
+  </div>
+</div>

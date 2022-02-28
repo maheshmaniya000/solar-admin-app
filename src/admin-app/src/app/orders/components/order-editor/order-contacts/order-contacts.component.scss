@@ -1,0 +1,14 @@
+@import 'theme';
+
+.add-contact-and-phone {
+  display: flex;
+  align-items: center;
+
+  > *:not(:last-child) {
+    margin-right: $sg-8;
+  }
+
+  .phone-contact {
+    margin-left: auto;
+  }
+}

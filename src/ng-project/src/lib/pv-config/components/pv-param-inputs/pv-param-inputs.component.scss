@@ -1,0 +1,44 @@
+@import 'theme';
+
+@import 'mixins/pv-config-setting-panel';
+
+@include pv-config-setting-panel();
+
+.losses {
+  margin-bottom: $sg-24 !important;
+
+  .row {
+    & > div {
+      display: inline-block;
+
+      @include media-breakpoint-down(sm) {
+        &.label { display: block; }
+      }
+    }
+    .label {
+      width: 330px;
+
+      @include media-breakpoint-down(sm) {
+        width: auto;
+      }
+    }
+    mat-form-field {
+      width: 80px;
+    }
+    ::ng-deep .mat-form-field-subscript-wrapper {
+      width: 400px;
+    }
+    .optimum {
+      color: map-get($accent, default);
+    }
+  }
+}
+
+.row-spacing {
+  margin-top: 24px;
+  margin-left: 106px;
+
+  @include media-breakpoint-down(sm) {
+    margin-left: 0;
+  }
+}

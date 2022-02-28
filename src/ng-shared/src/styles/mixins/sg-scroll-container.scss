@@ -1,0 +1,21 @@
+@mixin sg-scroll-container($size: null) { // container for content with fixed width
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+
+  & > * {
+    width: 100%;
+    position: absolute;
+
+    // element needs min width, horizontal scroller will be present if it cannot fit on screen
+    @if $size == xs {
+      min-width: 360px;
+    } @else if $size == sm {
+      min-width: 480px;
+    } @else if $size == md {
+      min-width: 640px;
+    } @else {
+      min-width: 1060px;
+    }
+  }
+}

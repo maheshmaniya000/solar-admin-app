@@ -1,0 +1,115 @@
+@use '~@angular/material' as mat;
+
+$default-font-size: 14px;
+
+// redefine in order to reuse: ~@angular/material/theming
+
+// breakpoints
+$mat-xsmall: 'max-width: 600px';
+$mat-small: 'max-width: 960px';
+
+@import '~@angular/material/theming';
+
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+@import 'mixins/cdk-table';
+@import 'mixins/mat-checkbox';
+@import 'mixins/mat-icon';
+@import 'mixins/mat-icon-button';
+@import 'mixins/mat-toolbar';
+@import 'mixins/sg-detail-card-layout';
+@import 'mixins/sg-button.scss';
+@import 'mixins/sg-input.scss';
+@import 'mixins/text-ellipsis';
+@import 'mixins/no-margin';
+@import 'mixins/mat-tabs';
+@import 'mixins/sg-scroll-container';
+
+$sg-gray: (
+  50: #fafbfb,
+  100: #f4f5f7,
+  200: #edeff1,
+  250: #dadada,
+  300: #dfe2e7,
+  400: #d0d5db,
+  500: #a5adba,
+  600: #939dac,
+  700: #6f7c91,
+  800: #4b5b75,
+  900: #364863,
+  // added from $mat-blue-grey
+  contrast: map-get(mat.$blue-grey-palette, contrast)
+);
+
+$sg-red: (
+  100: #f7d3d3,
+  200: #f3bdbe,
+  400: #d82224,
+  500: #c31e20,
+  600: #ac1b1c,
+  contrast: map-get(mat.$red-palette, contrast)
+);
+
+$sg-table-header-active: #c31e21;
+
+$sg-favorite: #f1ae30;
+$sg-active: #94c34a;
+
+$sg-header-height: 48px; // header toolbar
+$sg-toolbar-height: 48px;
+$sg-toolbar-padding: 0 24px 0 14px;
+$sg-user-sidebar-width: 272px;
+
+// width of container in detail and admin-module
+$content-container-width: 1200px;
+
+$sg-system-type-offset: 260px;
+$sg-system-type-settings-offset: 160px;
+
+$sg-content-locked-dialog-content-width: 536px;
+
+$sg-4: 4px;
+$sg-8: 8px;
+$sg-12: 12px;
+$sg-13: 13px;
+$sg-14: 14px;
+$sg-16: 16px;
+$sg-18: 18px;
+$sg-20: 20px;
+$sg-24: 24px;
+$sg-32: 32px;
+$sg-36: 36px;
+$sg-48: 48px;
+$sg-56: 56px;
+$sg-64: 64px;
+$sg-72: 72px;
+$sg-80: 80px;
+$sg-88: 88px;
+
+$primary: mat.define-palette($sg-gray, 800, 500, 900 /*$mat-blue-grey*/);
+$accent: mat.define-palette($sg-red, 500, 100, 600 /*$mat-amber, A200, A100, A400*/);
+$warn: mat.define-palette(mat.$amber-palette);
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$print-space-top: 50px;
+$print-page-width: 640px;
+$print-layout-min-height: 900px;
+
+//FIXME 5733
+//mat.$light-theme-background-palette: map-merge(
+//  mat.$light-theme-background-palette,
+//  (
+//    app-bar: map-get($primary, 200)
+//  )
+//);
+
+$theme: mat.define-light-theme($primary, $accent, $warn);
+
+
+
+

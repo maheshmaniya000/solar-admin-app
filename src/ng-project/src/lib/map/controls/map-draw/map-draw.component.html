@@ -1,0 +1,36 @@
+<mat-card style="padding:0">
+  <div fxLayout="column" *transloco="let t; read: 'map.draw'">
+    <div fxFlex>
+      <button mat-icon-button (click)="onSelectionModeChange('site')"
+              [ngClass]="{'active': (drawMode$ | async) === 'site'}"
+              matTooltip="{{ t('site') }}"
+              matTooltipPosition="right">
+        <mat-icon>location_on</mat-icon>
+      </button>
+    </div>
+    <div fxFlex>
+      <button mat-icon-button (click)="onSelectionModeChange('rectangle')"
+              [ngClass]="{'active': (drawMode$ | async) === 'rectangle'}"
+              matTooltip="{{ t('rectangle') }}"
+              matTooltipPosition="right">
+        <mat-icon>crop_square</mat-icon>
+      </button>
+    </div>
+    <div fxFlex>
+      <button mat-icon-button (click)="onSelectionModeChange('polygon')"
+              [ngClass]="{'active': (drawMode$ | async) === 'polygon'}"
+              matTooltip="{{ t('polygon') }}"
+              matTooltipPosition="right">
+        <mat-icon>details</mat-icon>
+      </button>
+    </div>
+    <div fxFlex>
+      <button mat-icon-button (click)="onSelectionModeChange('distance')"
+              [ngClass]="{'active': (drawMode$ | async) === 'distance'}"
+              matTooltip="{{ t('distance') }}"
+              matTooltipPosition="right">
+        <mat-icon>straighten</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>

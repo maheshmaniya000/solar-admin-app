@@ -1,0 +1,68 @@
+@use 'variables';
+@use '../icon/icon' as icon;
+
+mat-toolbar {
+  $horizontal-spacing: 20px;
+  $large-vertical-padding: 12px;
+
+  &.mat-toolbar-single-row,
+  mat-toolbar-row:first-of-type {
+    padding: $large-vertical-padding $horizontal-spacing;
+  }
+
+  .mat-toolbar-row {
+    padding: 0 $horizontal-spacing $large-vertical-padding;
+  }
+
+  &.mat-toolbar-single-row {
+    &.small {
+      $small-vertical-padding: 8px;
+      padding-top: $small-vertical-padding;
+      padding-bottom: $small-vertical-padding;
+    }
+
+    &.extra-small {
+      $extra-small-vertical-padding: 4px;
+      padding-top: $extra-small-vertical-padding;
+      padding-bottom: $extra-small-vertical-padding;
+      text-transform: uppercase;
+
+      .mat-ink-bar {
+        bottom: $extra-small-vertical-padding;
+      }
+    }
+  }
+
+  > *:not(:first-child):not(.mat-toolbar-row):not(.spacer) {
+    $element-spacing: 8px;
+    margin-left: $element-spacing;
+
+    &.mat-divider-vertical {
+      $divider-spacing: 6px;
+      margin-right: $divider-spacing;
+      margin-left: $divider-spacing + $element-spacing;
+    }
+  }
+
+  .mat-divider-vertical {
+    height: 100%;
+  }
+
+  .mat-tab-nav-bar,
+  .mat-tab-header {
+    border-bottom: none;
+  }
+
+  .toolbar-button {
+    $horizontal-padding: 6px;
+    height: map-get(variables.$sg-button-height, small);
+    padding-right: $horizontal-padding;
+    padding-left: $horizontal-padding;
+
+    .mat-icon {
+      @include icon.size(default);
+      margin-left: 0;
+      margin-right: variables.$sg-button-icon-spacing;
+    }
+  }
+}

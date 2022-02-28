@@ -1,0 +1,19 @@
+@import 'theme';
+
+:host > div {
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: map-get($primary, 100);
+}
+
+:host > div > div {
+  height: fit-content;
+  text-align: center;
+  font-size: 18px;
+  color: map-get($primary, 800);
+}
+
+a {
+  margin-top: 8px;
+}

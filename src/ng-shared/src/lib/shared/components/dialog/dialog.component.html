@@ -1,0 +1,33 @@
+<div class="dialog-container bootstrap" [ngClass]="{'large': large, 'with-min-width': !!minWidth}"
+    [style.minWidth.px]="minWidth">
+  <div class="dialog-wrapper d-flex flex-column h-100">
+
+    <div mat-dialog-title class="d-flex">
+      <div class="title d-flex flex-wrap">
+        <span class="close-dialog">
+          <ng-content select=".sg-dialog-close-button"></ng-content>
+        </span>
+        <span class="heading">
+          <ng-content select=".sg-dialog-heading"></ng-content>
+        </span>
+        <ng-content select=".sg-dialog-heading-content"></ng-content>
+      </div>
+    </div>
+    <mat-dialog-content #contentWrapper [class.scroll-header]="isScroolHeader" class="flex-fill d-flex flex-wrap table-wrapper">
+      <div #content class="content">
+        <ng-content select=".sg-dialog-content"></ng-content>
+      </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions class="d-flex">
+      <div class="actions">
+          <hr *ngIf="showSeparator">
+        <ng-content select=".sg-dialog-actions"></ng-content>
+      </div>
+
+      <div class="footer">
+        <ng-content select=".sg-dialog-footer"></ng-content>
+      </div>
+    </mat-dialog-actions>
+  </div>
+</div>

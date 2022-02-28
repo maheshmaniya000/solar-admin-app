@@ -1,0 +1,14 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  ::ng-deep span:nth-child(2n - 1) {
+    font-weight: bold;
+  }
+}

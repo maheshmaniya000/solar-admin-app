@@ -1,0 +1,59 @@
+@import 'theme';
+
+@import 'mixins/pv-config-setting-panel';
+
+@include pv-config-setting-panel();
+
+.losses {
+  margin-bottom: $sg-24 !important;
+  color: map-get($primary, 800);
+
+  .row {
+    & > div {
+      &:nth-child(1) {
+        min-width: 50px;
+      }
+      &:nth-child(2) {
+        min-width: 90px;
+      }
+      &:nth-child(3) {
+        min-width: 90px;
+      }
+    }
+
+    .month {
+      text-align: right;
+      padding-right: 100px;
+      margin-top: 14px;
+
+      @include media-breakpoint-down(sm) {
+        padding-right: 0;
+        text-align: left;
+      }
+    }
+    .label {
+      width: 250px;
+    }
+    .unit {
+      display: inline-block;
+    }
+    mat-form-field {
+      width: 50px;
+    }
+    ::ng-deep .mat-form-field-subscript-wrapper {
+      width: 400px;
+    }
+    &.error-margin {
+      margin-bottom: 20px;
+    }
+  }
+
+  .yearly-soiling {
+    margin-top: 40px;
+    margin-left: 106px;
+
+    @include media-breakpoint-down(sm) {
+      margin-left: 0;
+    }
+  }
+}

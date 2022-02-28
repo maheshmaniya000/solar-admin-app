@@ -1,0 +1,5 @@
+<div>
+  <div class="headline">{{ 'payment.thankYou.thankYou' | transloco }}</div>
+  <div *ngIf="paymentMethod === 'bank'">{{ 'payment.thankYou.thankYouBank' | transloco }}</div>
+  <div *ngIf="paymentMethod === 'card'">{{ 'payment.thankYou.thankYouCard' | transloco }}</div>
+</div>

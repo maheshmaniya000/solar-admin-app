@@ -1,0 +1,196 @@
+<div class="card-layout">
+  <div class="card-big">
+    <sg-summary [text]="'projectDetail.pvLosses.summary'" [energySystem]="energySystem$ | async" [hasData]="true">
+      <sg-summary-data-item class="left"
+                            [layer]="annualLayers.get('PVOUT_specific')"
+                            [data]="annualData$ | async">
+        {{ 'project.data.yearlyAverage' | transloco }}
+      </sg-summary-data-item>
+      <sg-summary-data-item class="right"
+                            [layer]="annualLayers.get('PR')"
+                            [data]="annualData$ | async">
+        {{ 'project.data.yearlyAverage' | transloco }}
+      </sg-summary-data-item>
+    </sg-summary>
+  </div>
+
+  <div class="card-big">
+    <mat-card>
+      <mat-card-title>{{ 'projectDetail.pvLosses.title' | transloco }}</mat-card-title>
+      <div sgScrollContainer>
+        <div class="table-s energy-conversion-data">
+          <cdk-table #table [dataSource]="lossesTable$" class="data-table">
+
+            <ng-container cdkColumnDef="label">
+              <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.key !== 'emptyRow'">
+                  {{ translateRowKey(row) | transloco }}
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="solarEnergy">
+              <cdk-header-cell *cdkHeaderCellDef>
+                {{ 'projectDetail.pvLosses.energyInput' | transloco }}
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="gtiLayer.unit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.group === 'gti' || row.group === 'ghi'">
+                  <sg-unit-value [unit]="gtiLayer.unit" [value]="row.energy"></sg-unit-value>
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="solarEnergyDelta">
+              <cdk-header-cell *cdkHeaderCellDef>
+                {{ 'projectDetail.pvLosses.energyLossOrGain' | transloco }}
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="gtiLayer.unit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="(row.group === 'gti' || row.group === 'ghi') && notEmpty(row.energyDelta)">
+                  <sg-unit-value [unit]="gtiLayer.unit" [value]="row.energyDelta"></sg-unit-value>
+                </ng-container>
+                <ng-container *ngIf="row.energyDelta === null">-</ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="pvEnergy">
+              <cdk-header-cell *cdkHeaderCellDef>
+                {{ 'projectDetail.pvLosses.energy' | transloco }}
+                <sg-project-data-key [key]="pvoutSpecificLayer.key"></sg-project-data-key>
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="pvoutSpecificLayer.unit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.group === 'pv'">
+                  <sg-unit-value [unit]="pvoutSpecificLayer.unit" [value]="row.energy"></sg-unit-value>
+                </ng-container>
+                <ng-container *ngIf="row.capacityFactor">
+                  <sg-unit-value [unit]="percentUnit" [value]="row.capacityFactor"></sg-unit-value>
+                  <sg-unit-label [unit]="percentUnit"></sg-unit-label>
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="pvEnergyDelta">
+              <cdk-header-cell *cdkHeaderCellDef>
+                {{ 'projectDetail.pvLosses.energyLossOrGain' | transloco }}
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="pvoutSpecificLayer.unit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.group === 'pv'">
+                  <sg-unit-value [unit]="pvoutSpecificLayer.unit" [value]="row.energyDelta"></sg-unit-value>
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="lossPercent">
+              <cdk-header-cell *cdkHeaderCellDef>
+                {{ 'projectDetail.pvLosses.energyLoss' | transloco }}
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="percentUnit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="notEmpty(row.lossPercent)">
+                  <sg-unit-value [unit]="percentUnit" [value]="row.lossPercent"></sg-unit-value>
+                </ng-container>
+                <ng-container *ngIf="row.lossPercent === null">-</ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="pr">
+              <cdk-header-cell *cdkHeaderCellDef>
+                PR
+                <div class="label">
+                  <sg-unit-toggle-label [unit]="percentUnit"></sg-unit-toggle-label>
+                </div>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="row.group && row.group !== 'ghi'">
+                  <sg-unit-value [unit]="percentUnit" [value]="row.pr"></sg-unit-value>
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+            <cdk-row *cdkRowDef="let row; columns: columns"
+                     [ngClass]="{ 'highlighted': isRefRow(row), 'footer': (!row.group && row.key !== 'emptyRow') }">
+            </cdk-row>
+          </cdk-table>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="card-big">
+    <mat-card>
+      <mat-card-title>{{ 'projectDetail.pvLosses.lossDiagram' | transloco }}</mat-card-title>
+      <div sgScrollContainer="sm">
+        <div class="table-s">
+          <cdk-table #table [dataSource]="lossesDiagram$" class="data-table losses-chart">
+
+            <ng-container cdkColumnDef="sumLabel">
+              <cdk-header-cell *cdkHeaderCellDef>
+                <sg-loss-header [data]="annualData$ | async"
+                                [layer]="annualLayers.get('PR')">
+                </sg-loss-header>
+              </cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <sg-loss-arrow [loss]="row"></sg-loss-arrow>
+                <div *ngIf="isRefRow(row)">
+                  <span>{{ translateRowKey(row) | transloco }}:</span>
+                  <span class="sumLabel-value">
+                    <div class="total-perf"><sg-unit-value [unit]="unitByGroup(row.group)" [value]="row.energy"></sg-unit-value></div>
+                    <sg-unit-label [unit]="unitByGroup(row.group)"></sg-unit-label>
+                  </span>
+                </div>
+              </cdk-cell>
+            </ng-container>
+            <ng-container cdkColumnDef="loss">
+              <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="!isRefRow(row)">
+                  <sg-unit-value [unit]="percentUnit" [value]="row.lossPercent"></sg-unit-value>
+                  <sg-unit-label [unit]="percentUnit"></sg-unit-label>
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="lossLabel">
+              <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+              <cdk-cell *cdkCellDef="let row">
+                <ng-container *ngIf="isRefRow(row) && row.diagramKey">
+                  {{ 'projectDetail.pvLosses.' + row.diagramKey | transloco }}
+                </ng-container>
+                <ng-container *ngIf="!isRefRow(row)">
+                  {{ translateRowKey(row) | transloco }}
+                </ng-container>
+              </cdk-cell>
+            </ng-container>
+
+            <cdk-header-row *cdkHeaderRowDef="diagramColumns"></cdk-header-row>
+            <cdk-row *cdkRowDef="let row; columns: diagramColumns" [ngClass]="{'highlighted': isRefRow(row)}">
+            </cdk-row>
+
+          </cdk-table>
+        </div>
+      </div>
+      <div class="diagram-desc">
+        {{ 'projectDetail.pvLosses.diagramDesc' | transloco }}
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="card-big">
+    <sg-glossary [layers]="glossaryLayers" [noAcronym]="true" [noSort]="true"></sg-glossary>
+  </div>
+</div>

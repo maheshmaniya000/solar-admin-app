@@ -1,0 +1,9 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $typography-config: mat.get-typography-config($theme-or-color-config);
+
+  mat-error {
+    @include mat.typography-level($typography-config, caption);
+  }
+}

@@ -1,0 +1,421 @@
+[
+  {
+    "_id": "mapbox-streets",
+    "access": "free",
+    "zoom": { "min": 1, "max": 20 },
+    "name": { "translate": true },
+    "attribution": "&copy; Mapbox &copy; OpenStreetMap",
+    "urlTemplate": "{{env.MAPBOX_URL_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "accessToken": "{{env.MAPBOX_ACCESS_TOKEN}}",
+      "mapId": "mapbox/streets-v10",
+      "zoomOffset": -1
+    },
+    "labels": { "included": true }
+  },
+  {
+    "_id": "mapbox-satellite",
+    "access": "free",
+    "zoom": { "min": 1, "max": 22 },
+    "name": { "translate": true },
+    "attribution": "&copy; Mapbox &copy; OpenStreetMap &copy; DigitalGlobe",
+    "urlTemplate": "{{env.MAPBOX_URL_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "accessToken": "{{env.MAPBOX_ACCESS_TOKEN}}",
+      "mapId": "mapbox/satellite-v9",
+      "zoomOffset": -1
+    },
+    "labels": {
+      "alternative": {
+        "zoom": { "min": 1, "max": 22 },
+        "attribution": "&copy; Mapbox &copy; OpenStreetMap &copy; DigitalGlobe",
+        "urlTemplate": "{{env.MAPBOX_URL_TEMPLATE}}",
+        "tileSize": 512,
+        "options": {
+          "accessToken": "{{env.MAPBOX_ACCESS_TOKEN}}",
+          "mapId": "mapbox/satellite-streets-v10",
+          "zoomOffset": -1
+        }
+      }
+    }
+  },
+  {
+    "_id": "solargis-ele",
+    "access": "free",
+    "zoom": { "min": 2, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "ELE",
+    "dataKey": "ELE",
+    "attribution": "ELE map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "terrain_elevation_global"
+    }
+  },
+  {
+    "_id": "solargis-slo",
+    "access": "free",
+    "zoom": { "min": 2, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "SLO",
+    "dataKey": "SLO",
+    "attribution": "SLO map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "terrain_slope_global"
+    }
+  },
+  {
+    "_id": "solargis-azi",
+    "access": "free",
+    "zoom": { "min": 2, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "AZI",
+    "dataKey": "AZI",
+    "attribution": "AZI map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "terrain_aspect_global"
+    }
+  },
+  {
+    "_id": "solargis-pvout_csi",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "PVOUT csi",
+    "dataKey": "PVOUT_csi",
+    "attribution": "PVOUT cSi map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "pvout_csi_global"
+    }
+  },
+  {
+    "_id": "solargis-pvout_cdte",
+    "disabled": true,
+    "access": "prospect:lta:paid",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "PVOUT cdte",
+    "dataKey": "PVOUT_cdte",
+    "attribution": "PVOUT CdTe map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "pvout_cdte_global"
+    }
+  },
+  {
+    "_id": "solargis-pvgain_cdte",
+    "disabled": true,
+    "access": "prospect:lta:paid",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "PVOUT cdte csi",
+    "dataKey": "PVGAIN_cdte",
+    "attribution": "PVOUT CdTe cSi map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "pvout_cdte_csi_global"
+    }
+  },
+  {
+    "_id": "solargis-ghi",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "GHI",
+    "dataKey": "GHI",
+    "attribution": "GHI map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "ghi_global"
+    }
+  },
+  {
+    "_id": "solargis-dni",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "DNI",
+    "dataKey": "DNI",
+    "attribution": "DNI map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "dni_global"
+    }
+  },
+  {
+    "_id": "solargis-d2g",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "D2G",
+    "dataKey": "D2G",
+    "attribution": "D2G map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "d2g_global"
+    }
+  },
+  {
+    "_id": "solargis-opta",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "OPTA",
+    "dataKey": "OPTA",
+    "attribution": "OPTA map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "opta_global"
+    }
+  },
+  {
+    "_id": "solargis-gti_opta",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "GTI opta",
+    "dataKey": "GTI_opta",
+    "attribution": "GTI opta map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "gti_opta_global"
+    }
+  },
+  {
+    "_id": "solargis-ghi_season",
+    "access": "prospect:lta:paid",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate":  true },
+    "shortName": "GHI season",
+    "dataKey": "GHI_season",
+    "attribution": "GHI seasonality map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "ghi_season_global"
+    }
+  },
+  {
+    "_id": "solargis-dni_season",
+    "access": "prospect:lta:paid",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate":  true },
+    "shortName": "DNI season",
+    "dataKey": "DNI_season",
+    "attribution": "DNI seasonality map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "dni_season_global"
+    }
+  },
+  {
+    "_id": "solargis-alb",
+    "access": "prospect:lta:all",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "ALB",
+    "dataKey": "ALB",
+    "attribution": "ALB map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "albedo_global"
+    }
+  },
+  {
+    "_id": "solargis-temp",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "TEMP",
+    "dataKey": "TEMP",
+    "attribution": "TEMP map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "temp_global"
+    }
+  },
+  {
+    "_id": "solargis-ws",
+    "access": "prospect:lta:paid",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "WS",
+    "dataKey": "WS",
+    "attribution": "WS map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "ws_global"
+    }
+  },
+  {
+    "_id": "solargis-rh",
+    "access": "prospect:lta:all",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "RH",
+    "dataKey": "RH",
+    "attribution": "RH map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "rh_global"
+    }
+  },
+  {
+    "_id": "solargis-pwat",
+    "access": "prospect:lta:all",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "PWAT",
+    "dataKey": "PWAT",
+    "attribution": "PWAT map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "pwat_global"
+    }
+  },
+  {
+    "_id": "solargis-prec",
+    "access": "prospect:lta:all",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "PREC",
+    "dataKey": "PREC",
+    "attribution": "PREC map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "precip_global"
+    }
+  },
+  {
+    "_id": "solargis-snowd",
+    "access": "prospect:lta:all",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "SNOWD",
+    "dataKey": "SNOWD",
+    "attribution": "SNOWD map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "sdwe_global"
+    }
+  },
+  {
+    "_id": "solargis-cdd",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "CDD",
+    "dataKey": "CDD",
+    "attribution": "CDD map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "deg_day_cool_global"
+    }
+  },
+  {
+    "_id": "solargis-hdd",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "HDD",
+    "dataKey": "HDD",
+    "attribution": "HDD map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "deg_day_heat_global"
+    }
+  },
+  {
+    "_id": "solargis-popul",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "POPUL",
+    "dataKey": "POPUL",
+    "attribution": "POPUL map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "population_global"
+    }
+  },
+  {
+    "_id": "solargis-landc",
+    "access": "free",
+    "zoom": { "min": 1, "max": 12, "maxNative": 10 },
+    "name": { "translate": true },
+    "shortName": "LANDC",
+    "dataKey": "LANDC",
+    "attribution": "LANDC map &copy; {{now.year}} <a href=\"http://solargis.com\" target=\"_blank\">Solargis</a>",
+    "urlTemplate": "{{env.S3_MAP_URL_TEMPLATE}}",
+    "legendTemplate": "{{env.S3_MAP_LEGEND_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "layerPath": "landcover_global"
+    }
+  },
+  {
+    "_id": "mapbox-labels",
+    "access": "free",
+    "zoom": { "min": 1, "max": 22 },
+    "name": { "translate": true },
+    "attribution": "&copy; Mapbox &copy; OpenStreetMap",
+    "urlTemplate": "{{env.MAPBOX_URL_TEMPLATE}}",
+    "tileSize": 512,
+    "options": {
+      "accessToken": "{{env.MAPBOX_ACCESS_TOKEN}}",
+      "mapId": "geomodel/cj30stto100082so4i0atbnt2",
+      "zoomOffset": -1
+    },
+    "labels": true
+  }
+]

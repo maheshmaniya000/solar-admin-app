@@ -1,0 +1,38 @@
+<h4>
+  Contacts
+  <button title="Add contact" mat-icon-button (click)="onAddContactButtonClick()">
+    <mat-icon>add</mat-icon>
+  </button>
+</h4>
+<sg-admin-contacts-editor [formArray]="formArray"></sg-admin-contacts-editor>
+<mat-error *ngIf="formArray.hasError('required')">Please add at least one contact</mat-error>
+
+<ng-container [formGroup]="getParentFormGroup()" *ngIf="orderDetailStore.viewModel$ | async as viewModel">
+  <div class="add-contact-and-phone">
+    <strong>Add company contact / create contact from company user:</strong>
+    <mat-form-field>
+      <mat-label>Company contacts and users</mat-label>
+      <mat-select #contactSelect [formControl]="companyUserFormControl" (selectionChange)="onCompanyContactOrUserSelected($event)">
+        <mat-optgroup *ngIf="viewModel.availableCompanyContacts.length > 0" label="Contacts">
+          <mat-option *ngFor="let contact of viewModel.availableCompanyContacts" [value]="contact">
+            <span>{{ contact.email }}</span>
+          </mat-option>
+        </mat-optgroup>
+        <mat-optgroup *ngIf="viewModel.availableCompanyUsers.length > 0" label="Users">
+          <mat-option *ngFor="let user of viewModel.availableCompanyUsers" [value]="user">
+            <span>{{ user.email }}</span>
+          </mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="phone-contact">
+      <mat-label>Order phone contact</mat-label>
+      <mat-select formControlName="phone">
+        <mat-option *ngFor="let phoneOption of orderDetailStore.availablePhones$ | async" [value]="phoneOption.value">
+          <span>{{ phoneOption.value }} ({{ phoneOption.label }})</span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</ng-container>

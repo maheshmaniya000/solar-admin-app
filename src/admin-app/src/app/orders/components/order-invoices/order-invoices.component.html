@@ -1,0 +1,77 @@
+<mat-card *ngIf="orderDetailStore.viewModel$ | async as viewModel">
+  <mat-card-title> Invoices</mat-card-title>
+
+  <mat-card-content>
+    <div>
+      <button
+        (click)="orderDetailStore.setInvoiceFormVisible(true)"
+        *ngIf="!viewModel.invoice.formVisible; else invoiceFormTemplate"
+        [disabled]="!viewModel.valid"
+        color="accent"
+        mat-raised-button
+      >
+        Create new Invoice
+      </button>
+
+      <ng-template #invoiceFormTemplate>
+        <sg-admin-single-invoice
+          (saveOutput)="orderDetailStore.upsertInvoice({ request: $event[0], invoiceCode: $event[1] })"
+          [company]="viewModel.entity.company"
+          [order]="viewModel.entity"
+          [working]="viewModel.invoice.updating"
+        >
+        </sg-admin-single-invoice>
+      </ng-template>
+    </div>
+
+    <mat-list *ngIf="viewModel.hasInvoices; else noInvoicesTemplate">
+      <mat-list-item *ngFor="let invoice of viewModel.entity.invoices; let i = index">
+        <button
+          (click)="orderDetailStore.downloadInvoice(i)"
+          [disabled]="viewModel.invoice.downloading[i]"
+          color="accent"
+          mat-raised-button
+        >
+          <mat-icon *ngIf="!viewModel.invoice.downloading[i]; else buttonSpinnerTemplate">cloud_download</mat-icon>
+          <span class="invoice-code">
+            {{ getInvoiceFileName(invoice, viewModel.entity?.company?.name) }}
+          </span>
+        </button>
+
+        <button
+          (click)="orderDetailStore.deleteInvoice(i)"
+          *ngIf="canDelete(invoice)"
+          [disabled]="viewModel.invoice.downloading[i]"
+          mat-icon-button
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button
+          (click)="orderDetailStore.downloadViesValidation()"
+          *ngIf="viewModel.downloadViesValidationVisible"
+          [disabled]="viewModel.downloadingVies"
+          color="accent"
+          mat-raised-button
+        >
+          <mat-icon *ngIf="!viewModel.downloadingVies; else buttonSpinnerTemplate">playlist_add_check</mat-icon>
+          Download latest invoice VIES verification
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-checkbox (ngModelChange)="orderDetailStore.setInvoiceSign($event)" [ngModel]="viewModel.invoice.sign">
+          Download signed documents
+        </mat-checkbox>
+      </mat-list-item>
+    </mat-list>
+
+    <ng-template #noInvoicesTemplate>
+      <p>No invoices has been created</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #buttonSpinnerTemplate>
+  <mat-progress-spinner [diameter]="25" mode="indeterminate"></mat-progress-spinner>
+</ng-template>

@@ -1,0 +1,81 @@
+@import 'theme';
+
+::ng-deep {
+  mat-checkbox {
+    .mat-checkbox {
+      &-layout {
+      white-space: normal;
+      }
+      &-inner-container {
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+mat-card {
+  margin-top: 8px;
+  padding: 32px;
+
+  .headline {
+    color: #44a987;
+    position: relative;
+
+    > mat-icon {
+      position: absolute;
+    }
+
+    span {
+      margin-left: 24px + 16px;
+      color: #222d3d;
+      font-size: 20px;
+      font-weight: $font-weight-bold;
+    }
+
+    button {
+      float: right;
+      margin-top: -8px;
+    }
+  }
+
+  .content {
+    padding: 32px 0;
+    color: #222d3d;
+    font-size: 14px;
+
+    .content-item {
+      background-color: map-get($primary, 100);
+      padding: 24px;
+
+      div {
+        margin-bottom: 4px;
+      }
+    }
+
+    .company-name {
+      font-weight: $font-weight-bold;
+      font-size: 16px;
+    }
+  }
+
+  .terms {
+    > div {
+      font-weight: $font-weight-bold;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    mat-checkbox ::ng-deep a {
+      text-decoration: none;
+      color: map-get($accent, 500);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .actions {
+    text-align: right;
+  }
+}

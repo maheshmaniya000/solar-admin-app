@@ -1,0 +1,40 @@
+@mixin pv-config-setting-panel() {
+  .content {
+    $width: 304*2px;
+
+    width: $width - 2*$sg-24;
+    padding: 0 $sg-24;
+    margin: 0 auto;
+
+    @include media-breakpoint-down(sm) {
+      width: auto;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+    }
+  }
+
+  mat-radio-button {
+    display: block;
+    margin-bottom: $sg-8;
+  }
+
+  :host ::ng-deep .mat-radio-label-content, .unit, .label, span,
+  :host ::ng-deep .mat-checkbox-label, :host ::ng-deep input {
+    color: map-get($primary, 800) !important;
+  }
+
+  :host ::ng-deep .mat-radio-label, :host ::ng-deep .mat-checkbox-label {
+    white-space: normal;
+  }
+
+  .row, mat-form-field {
+    height: 32px;
+
+    @include media-breakpoint-down(sm) {
+      height: auto;
+    }
+  }
+
+}

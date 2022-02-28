@@ -1,0 +1,59 @@
+<div class="card-layout">
+  <div class="card-big">
+    <sg-project-site-card [project]="(project$ | async)"></sg-project-site-card>
+  </div>
+
+  <div class="card-small">
+    <mat-card>
+      <mat-card-title class="bold" fxLayout="row" fxLayoutAlign="space-between center">
+        {{ 'projectDetail.sunpath.label' | transloco }}
+        <div fxLayout="row">
+          <div class="badge">
+            {{ ('enum.horizon.' + (horizonType$ | async)) | transloco }}
+          </div>
+          <button mat-icon-button [matMenuTriggerFor]="sunpathExportMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+      </mat-card-title>
+
+      <div class="sunpath">
+        <canvas #sunpath></canvas>
+      </div>
+
+      <mat-card-actions>
+        <button fxHide fxShow.gt-sm *ngIf="!horizonSpinner; else spinner" mat-button color="accent" (click)="editHorizon()">
+          {{ 'projectDetail.sunpath.modify' | transloco }}
+        </button>
+      </mat-card-actions>
+
+      <mat-menu #sunpathExportMenu="matMenu">
+        <sg-export-chart-button (exportChart)="exportCanvas('sunpath')"></sg-export-chart-button>
+      </mat-menu>
+    </mat-card>
+  </div>
+
+  <div class="card-small">
+    <mat-card>
+      <mat-card-title class="bold" fxLayout="row" fxLayoutAlign="space-between center">
+        {{ 'projectDetail.daylength.label' | transloco }}
+        <button mat-icon-button [matMenuTriggerFor]="daylengthExportMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-card-title>
+
+      <div class="daylength">
+        <canvas #daylength></canvas>
+      </div>
+
+      <mat-menu #daylengthExportMenu="matMenu">
+        <sg-export-chart-button (exportChart)="exportCanvas('daylength')"></sg-export-chart-button>
+      </mat-menu>
+    </mat-card>
+  </div>
+
+</div>
+
+<ng-template #spinner>
+  <mat-spinner [diameter]="22" color="accent" ></mat-spinner>
+</ng-template>

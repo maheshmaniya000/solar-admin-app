@@ -1,0 +1,51 @@
+<div class="content losses">
+  <form [formGroup]="form">
+
+    <div fxFlayout="row" class="row">
+      <div fxFlex="40%"></div>
+      <div fxFlex="30%">{{ 'pvConfig.params.snowSoilingLosses.soilingLossesForm' | transloco }}</div>
+      <div fxFlex="30%">{{ 'pvConfig.params.snowSoilingLosses.snowLossesForm' | transloco }}</div>
+    </div>
+
+    <div *ngFor="let snowId of snowIds; let i = index" fxLayout="row" class="row">
+      <div fxFlex="40%" class="month">
+          {{ months[i] | transloco }}
+      </div>
+
+      <div fxFlex="30%">
+        <mat-form-field floatLabel="never" >
+          <input matInput type="number" [formControlName]="soilingIds[i]" step="0.1" [min]="MIN" [max]="MAX">
+          <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN, max: MAX} }}</mat-error>
+        </mat-form-field>
+        <div class="unit">%</div>
+      </div>
+
+      <div fxFlex="30%">
+        <mat-form-field floatLabel="never" >
+          <input matInput type="number" [formControlName]="snowIds[i]" step="0.1" [min]="MIN" [max]="MAX">
+          <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN, max: MAX} }}</mat-error>
+        </mat-form-field>
+        <div class="unit">%</div>
+      </div>
+
+    </div>
+
+    <div class="yearly-soiling">
+      <mat-checkbox formControlName="useSoilingYearly">
+        {{ 'pvConfig.params.snowSoilingLosses.soilingAsYearly' | transloco }}
+      </mat-checkbox>
+    </div>
+    <div fxFlayout="row" class="row">
+      <div fxFlex="40%" class="month">{{ year | transloco }}</div>
+      <div fxFlex="30%">
+        <mat-form-field floatLabel="never" >
+          <input matInput type="number" formControlName="soilingYearly" step="0.1" [min]="MIN" [max]="MAX">
+          <mat-error >{{ 'common.error.valueBetween' | transloco:{min: MIN, max: MAX} }}</mat-error>
+        </mat-form-field>
+        <div class="unit">%</div>
+      </div>
+      <div fxFlex="30%"></div>
+    </div>
+
+  </form>
+</div>

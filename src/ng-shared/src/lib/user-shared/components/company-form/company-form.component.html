@@ -1,0 +1,60 @@
+<ng-container *transloco="let t; read: 'user.company'">
+  <form [formGroup]="companyForm">
+    <mat-form-field>
+      <input matInput placeholder="{{ t('field.name') }}" name="name" formControlName="name" required />
+    </mat-form-field>
+
+    <mat-form-field [customErrors]="notSelectedFromListCustomErrors('country')">
+      <input type="text" placeholder="{{ t('field.country') }}" matInput
+             formControlName="country" [matAutocomplete]="auto" autocomplete="disabled" name="country" required />
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="countryStateDisplayFn" (optionSelected)="selectCountry($event)">
+        <mat-option *ngFor="let country of filteredCountries" [value]="country">
+          {{ country.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="country.value?.states?.length > 0" [customErrors]="notSelectedFromListCustomErrors('state')">
+      <input type="text" placeholder="{{ t('field.state') }}" matInput formControlName="state" [matAutocomplete]="auto" required />
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="countryStateDisplayFn">
+        <mat-option *ngFor="let state of filteredStates" [value]="state">
+          {{ state.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="{{ t('field.phone') }}" name="phone" formControlName="phone" required />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ t('field.city') }}" name="city" formControlName="city" required />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ t('field.street') }}" name="street" formControlName="street" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ t('field.zipCode') }}" name="zipCode" formControlName="zipCode" />
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isEUCountry" doNotAppendFormError>
+      <input matInput placeholder="{{ t('field.VAT') }}" name="VAT" formControlName="VAT" required />
+      <mat-error>
+        <div>{{ t('invalidEUVat') }}</div>
+        <div *ngIf="country.value?.territories?.length > 0" [innerHtml]="t('EUVATTerritoryHint')"></div>
+      </mat-error>
+      <mat-hint id="vat-id-hint">
+        <div fxLayout="row" fxLayoutAlign="center center" *ngIf="vatCheckInProgress">
+          <div fxFlex="nogrow">
+            <mat-progress-spinner mode="indeterminate" [diameter]="17"></mat-progress-spinner>
+          </div>
+          <div fxFlex="1 0 auto" class="info">{{ t('EUVATCheckInProgress') }}</div>
+        </div>
+        <div *ngIf="country.value?.territories?.length > 0" [innerHtml]="t('EUVATTerritoryHint')"></div>
+      </mat-hint>
+    </mat-form-field>
+  </form>
+
+  <div class="similar-exists" *ngIf="similarCompanyExists$ | async">
+    {{ t('similarExists') }}
+  </div>
+</ng-container>

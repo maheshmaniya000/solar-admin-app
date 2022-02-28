@@ -1,0 +1,53 @@
+@import 'theme';
+
+.order-detail {
+  height: 100%;
+  background-color: #f4f5f7;
+}
+
+mat-card {
+  color: map-get($primary, 800);
+  max-width: 1200px;
+  margin: $sg-24 auto;
+  width: 90%;
+}
+
+mat-card-content {
+  font-size: $sg-16;
+}
+
+.bold {
+  font-weight: $font-weight-bold;
+}
+
+.row {
+  margin: $sg-8 0;
+}
+
+mat-divider + div {
+  margin-top: $sg-16;
+}
+
+mat-toolbar {
+  height: $sg-48;
+}
+
+.back-icon {
+  width: auto;
+  max-width: $sg-56;
+  overflow: visible !important;
+  margin: 0px $sg-12;
+
+  mat-icon {
+    font-size: $sg-24;
+    display: flex;
+    align-items: center;
+    color: map-get($primary, 800);
+  }
+}
+
+.navigation-back {
+  color: map-get($primary, 800);
+  font-size: $sg-18;
+  font-weight: bold;
+}

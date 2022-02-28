@@ -1,0 +1,33 @@
+<div>
+  <div class="container">
+    <h1>{{ 'payment.cart.headline' | transloco }}</h1>
+    <ng-container *ngIf="hasOrder$ | async; else noOrder">
+      <div class="steps">
+        <div class="step">1. {{ 'payment.cart.step1.name' | transloco }}</div>
+        <div class="step" [ngClass]="{'inactive': ((step$ | async) < 2)}">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+          2. {{ 'payment.cart.step2.name' | transloco }}</div>
+        <div class="step" [ngClass]="{'inactive': ((step$ | async) < 3)}">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+          3. {{ 'payment.cart.step3.name' | transloco }}
+        </div>
+      </div>
+
+      <router-outlet></router-outlet>
+    </ng-container>
+
+  </div>
+</div>
+
+<ng-template #noOrder>
+  <mat-card>
+    <div>
+      <div>
+        {{ 'payment.cart.empty' | transloco }}
+      </div>
+      <button mat-button color="accent" [routerLink]="['/', 'payment', 'pricing']">
+        {{ 'payment.cart.step1.back' | transloco }}
+      </button>
+    </div>
+  </mat-card>
+</ng-template>

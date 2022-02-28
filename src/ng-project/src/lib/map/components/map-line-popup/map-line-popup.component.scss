@@ -1,0 +1,25 @@
+@import 'theme';
+
+.container {
+  min-width: 120px;
+  text-align: center;
+
+  span, mat-icon {
+    vertical-align: middle;
+  }
+
+  mat-icon {
+    cursor: pointer;
+    font-size: 18px;
+    width: 18px;
+    height: 19px;
+  }
+
+  .delete {
+    margin-left: 5px;
+  }
+
+  sg-unit-label {
+    margin-left: 5px;
+  }
+}

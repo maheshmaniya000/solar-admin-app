@@ -1,0 +1,79 @@
+@use 'variables';
+@use '../icon/icon' as icon;
+
+$sg-button-padding-x: (
+  wide: 24px,
+  basic: 8px
+);
+
+$basic-button-height: map-get(variables.$sg-button-height, basic);
+$small-button-height: map-get(variables.$sg-button-height, small);
+$medium-button-height: map-get(variables.$sg-button-height, medium);
+$large-button-height: map-get(variables.$sg-button-height, large);
+$wide-button-padding-x: map-get($sg-button-padding-x, wide);
+$basic-button-padding-x: map-get($sg-button-padding-x, basic);
+$default-icon-size: map-get(variables.$sg-icon-size, default);
+
+button {
+  &.mat-stroked-button,
+  &.mat-flat-button,
+  &.mat-button {
+    .mat-icon {
+      margin-right: variables.$sg-button-icon-spacing;
+    }
+  }
+
+  &.mat-stroked-button,
+  &.mat-flat-button {
+    height: $medium-button-height;
+    text-transform: uppercase;
+    padding-right: $wide-button-padding-x;
+    padding-left: $wide-button-padding-x;
+
+    &.sg-small-button {
+      height: $small-button-height;
+    }
+
+    &.sg-large-button {
+      height: $large-button-height;
+    }
+  }
+
+  &.mat-stroked-button,
+  &.mat-button {
+    &.cdk-keyboard-focused,
+    &.cdk-program-focused {
+      .mat-button-focus-overlay {
+        opacity: 0.04;
+      }
+    }
+  }
+
+  &.mat-button {
+    height: $basic-button-height;
+    padding-right: $basic-button-padding-x;
+    padding-left: $basic-button-padding-x;
+
+    .mat-icon {
+      @include icon.size(inline);
+      margin-left: variables.$sg-button-icon-spacing;
+      margin-right: 0;
+    }
+  }
+
+  &.mat-icon-button {
+    width: $medium-button-height;
+    height: $medium-button-height;
+    line-height: $medium-button-height;
+
+    .mat-icon {
+      line-height: $default-icon-size;
+    }
+  }
+
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

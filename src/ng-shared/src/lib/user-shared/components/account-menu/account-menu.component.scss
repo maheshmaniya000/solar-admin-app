@@ -1,0 +1,138 @@
+@import 'theme';
+
+:host > div {
+  display: block;
+  background: white;
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  z-index: 1001;
+  width: auto;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+
+  &.nested {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .account-info {
+    padding: 17px 0 13px 0;
+    cursor: pointer;
+  }
+
+  ::ng-deep {
+    .mat-list-base {
+      max-height: 259px;
+      overflow: auto;
+    }
+
+    .mat-list-item-content {
+      width: 100%;
+      overflow: hidden;
+
+      &:hover {
+        background: map-get($sg-gray, 100);
+      }
+    }
+
+    .mat-list-base .mat-list-item .mat-list-item-content {
+      padding: 0;
+    }
+  }
+
+  .company-account {
+    padding: 0 0 14px 0;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .account-select-icon {
+    line-height: 18px;
+    padding: 0 16px;
+    width: 56px;
+
+    mat-icon {
+      font-size: $sg-24;
+    }
+  }
+
+  .account-menu-avatar {
+    line-height: 18px;
+    padding-right: 12px;
+  }
+
+  .account-menu-info {
+    padding: 0;
+
+    .account-menu-type {
+      font-size: $sg-14;
+      font-weight: $font-weight-bold;
+      color: map-get($primary, 800);
+      line-height: 18px;
+      @include no-margin();
+    }
+
+    sg-account-overview {
+      ::ng-deep {
+        .account-overview-text,
+        .account-overview-name {
+          overflow: unset;
+          text-overflow: unset;
+        }
+      }
+    }
+
+    .account-menu-email,
+    .account-menu-role,
+    .account-menu-licence {
+      font-size: $sg-12;
+      font-weight: $font-weight-regular;
+      color: map-get($primary, 600);
+      line-height: 18px;
+      @include no-margin();
+    }
+
+    .account-menu-type,
+    .account-menu-email,
+    .account-menu-licence {
+      @include text-ellipsis();
+    }
+
+    .account-menu-licence::before {
+      content: '\00B7';
+      vertical-align: middle;
+      font-size: 20px;
+      margin-left: 3px;
+    }
+  }
+
+  .settings,
+  .admin,
+  .log-out {
+    padding: 8px 0;
+  }
+
+  .account-menu-btn {
+    @include sg-button(sm, red);
+    line-height: 18px;
+    margin: 8px 0 14px 56px;
+    white-space: normal;
+  }
+
+  .account-menu-label {
+    font-size: $sg-14;
+    font-weight: $font-weight-regular;
+    line-height: 20px;
+    color: map-get($primary, 700);
+    margin-bottom: 0;
+    padding: 9px 16px 9px 56px;
+    cursor: pointer;
+    white-space: normal;
+
+    &:hover {
+      background: map-get($primary, 100);
+    }
+  }
+
+}

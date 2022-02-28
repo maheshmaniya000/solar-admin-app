@@ -1,0 +1,56 @@
+@use '~@angular/material' as mat;
+
+@mixin theme($theme-or-color-config) {
+  $color-config: mat.get-color-config($theme-or-color-config);
+  $accent: map-get($color-config, accent);
+  $foreground: map-get($color-config, foreground);
+  $divider-color: mat.get-color-from-palette($foreground, divider);
+
+  mat-button-toggle-group.sg-tool-button-toggle-group {
+    background-color: white;
+
+    .mat-button-toggle + .sub-group .mat-button-toggle,
+    .sub-group + .mat-button-toggle,
+    .sub-group + .sub-group .mat-button-toggle {
+      border-left: solid 1px $divider-color;
+    }
+
+    &.mat-button-toggle-vertical {
+      .mat-button-toggle + .sub-group .mat-button-toggle,
+      .sub-group + .mat-button-toggle,
+      .sub-group + .sub-group .mat-button-toggle {
+        border-top: solid 1px $divider-color;
+        border-left: none;
+      }
+    }
+
+    .sub-group {
+      .mat-button-toggle + .mat-button-toggle {
+        border-left: none;
+      }
+    }
+
+    &.mat-button-toggle-vertical .sub-group {
+      .mat-button-toggle + .mat-button-toggle {
+        border-top: none;
+      }
+    }
+
+    .mat-button-toggle-appearance-standard {
+      background-color: transparent;
+
+      &.mat-button-toggle-checked {
+        color: mat.get-color-from-palette($accent);
+      }
+
+      .mat-button-toggle-label-content {
+        line-height: 0;
+      }
+    }
+
+    &.inverse .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+      background-color: mat.get-color-from-palette($accent);
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrademarkComponent component should correctly render component for year 2020 and version 1.2.3 1`] = `
+<sg-trademark
+  __ngContext__={[Function LRootView]}
+  config={[Function Object]}
+  year={[Function Number]}
+>
+  <span>
+    © 2020 Solargis v 1.2.3
+  </span>
+</sg-trademark>
+`;

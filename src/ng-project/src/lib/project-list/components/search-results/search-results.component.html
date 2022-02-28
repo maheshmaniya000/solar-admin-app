@@ -1,0 +1,33 @@
+<div style="padding:0px">
+  <mat-nav-list>
+    <mat-list-item
+      *ngFor="let project of searchedProjects"
+      (click)="onSelectProject.emit(project)">
+      <div class="icon">
+        <mat-icon [svgIcon]="'sg:sgf-inbox-outline'"></mat-icon>
+      </div>
+      <div class="placemark">
+        <div>
+          <div class="name">{{ project.site?.place?.placemark | sgPlacemarkPart:"name" }}</div>
+          <div class="address">
+            {{ project.site?.place?.placemark?.address }}
+          </div>
+        </div>
+      </div>
+    </mat-list-item>
+    <mat-list-item *ngFor="let searchSite of searchResults; let i = index"
+                   (click)="onSelectSite.emit(searchSite)"
+                   (mouseenter)="setHighlightIndex(i)"
+                   (mouseleave)="clearHighlightIndex()"
+                   [ngClass]="{'highlight': highlightIndex === i}"
+                   [sgScrollOn]="highlightIndex === i">
+      <div class="result-number">
+        {{ i + 1 }}
+      </div>
+      <h5 matLine>{{ searchSite.place?.placemark?.address }}</h5>
+      <small matLine>
+        <sg-unit-value [unit]="latlngUnit" [value]="searchSite.point"></sg-unit-value>
+      </small>
+    </mat-list-item>
+  </mat-nav-list>
+</div>

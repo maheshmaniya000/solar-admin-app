@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoHintDirective unit component should match snapshot with no-hint class that indicates the form
+ field does not contain hint when it really does not contain any mat-hint element 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+>
+  <mat-form-field
+    class="no-hint"
+  />
+</ng-component>
+`;
+
+exports[`NoHintDirective unit component should match snapshot without no-hint class when the form really
+ contains a mat-hint element 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+>
+  <mat-form-field>
+    <mat-hint />
+  </mat-form-field>
+</ng-component>
+`;

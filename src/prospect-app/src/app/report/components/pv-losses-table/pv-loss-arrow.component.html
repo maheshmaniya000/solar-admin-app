@@ -1,0 +1,23 @@
+<ng-container *ngIf="loss">
+  <div class="pr-last-row" [ngStyle]="{'width': (prLastRowWidth - 1) + 'px', 'height': height + 'px'}"></div>
+  <div class="pr"
+       [ngStyle]="{'width': prWidth + 'px'}"
+       [ngClass]="loss.group">
+  </div>
+  <ng-container *ngIf="loss.rowType !== 'sum' && loss.rowType !== 'ref'">
+    <div class="loss-left {{loss.group}}"
+         [ngStyle]="{'width': arrowBarWidth + 'px', 'margin-left': prWidth + 'px'}"
+         [ngClass]="{'loss-left-gain': isGain}">
+    </div>
+    <div class="loss-right"
+         [ngStyle]="{
+           'width': (arrowBarWidth - absLossWidth) + 'px',
+           'margin-left': (prWidth + absLossWidth) + 'px'}"
+         [ngClass]="{'loss-right-gain': isGain}">
+    </div>
+    <div class="{{loss.group}}"
+         [ngStyle]="{'margin-left': (prWidth + arrowBarWidth + (isGain ? -1.5 : 0)) + 'px'}"
+         [ngClass]="{'loss-arrow': !isGain, 'loss-arrow-gain': isGain }">
+    </div>
+  </ng-container>
+</ng-container>

@@ -1,0 +1,74 @@
+@import 'theme';
+
+:host {
+  ::ng-deep {
+    .mat-dialog-content {
+      padding: 1px 0 !important;
+      border-top: 1px solid map-get($primary, 200);
+      border-bottom: 1px solid map-get($primary, 200);
+    }
+
+    mat-dialog-content {
+      margin: 0 !important;
+    }
+
+    .content {
+      padding: 0 !important;
+    }
+
+    .title, .actions {
+      padding: $sg-24 !important;
+    }
+
+    .actions {
+      width: 100%;
+
+      hr {
+        display: none;
+      }
+
+      .sg-dialog-actions {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .tag-dialog-content {
+    overflow: hidden;
+
+    .tag {
+      height: 40px;
+      line-height: 40px;
+      font-size: $sg-14;
+      padding: 0 $sg-24;
+
+      mat-checkbox {
+        overflow: hidden;
+
+        ::ng-deep {
+          .mat-checkbox-frame {
+            border-color: map-get($sg-gray, 900);
+          }
+        }
+      }
+
+      .name {
+        padding-right: 48px;
+      }
+    }
+  }
+
+  .tag-dialog-actions {
+    .primary {
+      @include sg-button(lg, red);
+      margin: 0;
+    }
+
+    .secondary {
+      @include sg-button(lg);
+      min-width: 0;
+      padding: 0;
+      border: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div fxLayout="row">
+  <span [fxFlex]="'0 0 ' + (prWidth - (prLabelWidth / 2)) + 'px'">
+    <sg-unit-value [unit]="layer.unit" [value]="0"></sg-unit-value><sg-unit-label [unit]="layer.unit"></sg-unit-label>
+  </span>
+  <span fxFlex="0 0 {{prLabelWidth}}px" style="text-align: center">
+    <ng-container *ngIf="data">
+      <sg-unit-value [unit]="layer.unit" [value]="data[layer.key]"></sg-unit-value><sg-unit-label [unit]="layer.unit"></sg-unit-label>
+    </ng-container>
+  </span>
+  <span fxFlex style="text-align: right">
+    <sg-unit-value [unit]="layer.unit" [value]="100"></sg-unit-value><sg-unit-label [unit]="layer.unit"></sg-unit-label>
+  </span>
+</div>

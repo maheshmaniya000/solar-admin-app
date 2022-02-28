@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppendFormErrorToFormGroupDirective component error message rendering should render error message under invalid and touched form group 1`] = `
+<ng-component
+  __ngContext__={[Function LRootView]}
+  form={[Function FormGroup]}
+>
+  <form
+    class="ng-pristine ng-invalid ng-touched"
+    novalidate=""
+    sgappendformerror=""
+  /><sg-form-error>
+    <mat-error>
+       en.common.validation.required 
+    </mat-error>
+  </sg-form-error>; 
+</ng-component>
+`;

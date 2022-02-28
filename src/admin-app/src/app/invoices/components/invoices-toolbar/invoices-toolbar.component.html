@@ -1,0 +1,33 @@
+<sg-toolbar>
+  <span class="title pr-2">Invoices</span>
+  <div class="separator d-none d-md-block"></div>
+
+  <mat-slide-toggle class="d-none d-lg-block pl-2" [checked]="(filterCurrency$ | async) === '€'"
+                    (change)="changeCurrency($event.checked ? '€' : '$')">
+    €
+  </mat-slide-toggle>
+  <mat-slide-toggle class="d-none d-lg-block pl-2" [checked]="(filterCurrency$ | async) === '$'"
+                    (change)="changeCurrency($event.checked ? '$' : '€')">
+    $
+  </mat-slide-toggle>
+  <div class="separator d-none d-md-block"></div>
+
+  <mat-slide-toggle class="d-none d-lg-block pl-2" [checked]="(filterInvoiceType$ | async) === invoiceType.PROFA"
+                    (change)="changeInvoiceType($event.checked ? invoiceType.PROFA : invoiceType.INVOICE)">
+    Proforma
+  </mat-slide-toggle>
+  <mat-slide-toggle class="d-none d-lg-block pl-2" [checked]="(filterInvoiceType$ | async) === invoiceType.INVOICE"
+                    (change)="changeInvoiceType($event.checked ? invoiceType.INVOICE : invoiceType.PROFA)">
+    Final
+  </mat-slide-toggle>
+  <mat-slide-toggle class="d-none d-lg-block pl-2" [checked]="(filterInvoiceType$ | async) === invoiceType.CN"
+                    (change)="changeInvoiceType($event.checked ? invoiceType.CN : invoiceType.INVOICE)">
+    Credit Note
+  </mat-slide-toggle>
+
+  <ng-container class="sg-toolbar-right">
+    <sg-admin-column-selector [tableName]="tableSettingsKey" [selected]="selectedColumns$ | async" [columns]="columns"></sg-admin-column-selector>
+
+    <sg-admin-export-table-data (exportData)="exportInvoiceList()"></sg-admin-export-table-data>
+  </ng-container>
+</sg-toolbar>

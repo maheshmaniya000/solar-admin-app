@@ -1,0 +1,68 @@
+@import 'theme';
+
+@import 'mixins/sg-compare';
+
+:host ::ng-deep {
+  @include sg-compare();
+}
+
+.no-items {
+  color: map-get($primary, 800);
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  padding-top: $sg-toolbar-height;
+
+  div {
+    align-self: center;
+  }
+
+  .button {
+    text-align: center;
+    margin-top: $sg-8;
+  }
+}
+
+:host > div {
+  height: 100%;
+}
+
+.container {
+  background-color: map-get($primary, 100);
+  height: max-content;
+  min-height: calc(100% - 64px);
+  width: 100%;
+}
+
+.inner-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: $sg-24 $sg-16;
+}
+
+.detail-content {
+  width: 100%;
+  max-width: $content-container-width;
+  margin: 0 auto;
+}
+
+.drawer-content {
+  height: 100%;
+  border-left: 1px solid map-get($primary, 300);
+}
+
+
+mat-drawer-container {
+  height: max-content;
+  min-height: calc(100% - 64px);
+}
+
+.mat-drawer-content {
+  min-height: calc(100vh - 128px);
+  height: fit-content;
+  overflow: unset;
+}
+
+sg-compare-projects-toolbar {
+  display: block;
+}

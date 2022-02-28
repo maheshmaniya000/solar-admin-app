@@ -1,0 +1,105 @@
+<ng-container *ngIf="items && items.length > 0; else noCompanies">
+  <div sgScrollContainer>
+    <mat-table [dataSource]="items">
+
+      <!-- AVATAR COLUMN -->
+      <ng-container matColumnDef="avatar">
+        <mat-header-cell class="table-header-cell" *matHeaderCellDef>
+        </mat-header-cell>
+        <mat-cell class="table-cell" *matCellDef="let companyOrUser">
+          <div mat-menu-item class="table-company-avatar" >
+            <sg-avatar
+              [name]="getName(companyOrUser)"
+              [sgCompanyId] = "isCompany(companyOrUser) ? companyOrUser.company.sgCompanyId : null">
+            </sg-avatar>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- NAME COLUMN -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell class="table-header-cell" *matHeaderCellDef>
+          {{ 'user.company.profile.name' | transloco }}
+        </mat-header-cell>
+        <mat-cell class="table-cell table-name" *matCellDef="let companyOrUser">
+          <span>{{ getName(companyOrUser) }}</span>
+          <span *ngIf="isSelected(companyOrUser)" class="badge badge-secondary">
+            {{ 'user.company.profile.current' | transloco }}
+          </span>
+        </mat-cell>
+      </ng-container>
+
+      <!-- TYPE COLUMN -->
+      <ng-container matColumnDef="type">
+        <mat-header-cell class="table-header-cell" *matHeaderCellDef>
+          {{ 'user.company.profile.type' | transloco }}
+        </mat-header-cell>
+        <mat-cell class="table-cell" *matCellDef="let companyOrUser">
+          {{ 'user.company.profile.' + (isCompany(companyOrUser) ? 'companyAccount' : 'personalAccount') | transloco }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- ROLE COLUMN -->
+      <ng-container matColumnDef="role">
+        <mat-header-cell class="table-header-cell" *matHeaderCellDef>
+          {{ 'user.company.profile.role' | transloco }}
+        </mat-header-cell>
+        <mat-cell class="table-cell" *matCellDef="let companyOrUser">
+          {{ (isCompany(companyOrUser) ? 'user.company.role.' + getRole(companyOrUser) : ' ') | transloco }}
+          <!-- {{ (company.company ? 'user.company.role.' + getRole(company) : user?.firstName) | transloco}} -->
+        </mat-cell>
+      </ng-container>
+
+      <!-- UPDATED COLUMN -->
+      <ng-container matColumnDef="updated">
+        <mat-header-cell class="table-header-cell" *matHeaderCellDef>
+          {{ 'user.company.profile.updated' | transloco }}
+        </mat-header-cell>
+        <mat-cell class="table-cell" *matCellDef="let companyOrUser">
+          {{ (isCompany(companyOrUser) ? companyOrUser.company.updated : companyOrUser?.updated) | sgDateTimeFormat}}
+        </mat-cell>
+      </ng-container>
+
+      <!-- OPTIONS COLUMN -->
+      <ng-container matColumnDef="options">
+        <mat-header-cell class="table-header-cell" *matHeaderCellDef>
+        </mat-header-cell>
+        <mat-cell class="table-cell table-options" *matCellDef="let company">
+          <span *ngIf="isCompany(company) && getRole(company) === 'ADMIN'" class="table-icon-settings" (click)="edit(company, $event)">
+            <mat-icon>settings</mat-icon>
+          </span>
+
+          <ng-template [ngIf]="isCompany(company)" [ngIfElse]="user">
+            <button mat-button [matMenuTriggerFor]="contextMenu"><mat-icon>more_vert</mat-icon></button>
+            <mat-menu #contextMenu="matMenu">
+              <button mat-menu-item (click)="onSelect.emit(company)">{{ 'user.company.profile.switch' | transloco }}</button>
+            </mat-menu>
+          </ng-template>
+
+          <ng-template #user>
+            <button mat-button [matMenuTriggerFor]="contextMenu"><mat-icon>more_vert</mat-icon></button>
+            <mat-menu #contextMenu="matMenu">
+              <button mat-menu-item (click)="unselect.emit()">{{'user.profile.unselectCompany' | transloco}}</button>
+            </mat-menu>
+          </ng-template>
+
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+      <mat-row *matRowDef="let company; columns: columns">
+      </mat-row>
+    </mat-table>
+  </div>
+</ng-container>
+
+<ng-template #noCompanies>
+  <div class="bootstrap">
+    <div class="text-center">
+      {{ 'user.company.none' | transloco }}
+    </div>
+    <button class="add-company" mat-button color="accent" [routerLink]="['..', 'add-company']">
+      {{ 'user.company.add' | transloco }}
+    </button>
+  </div>
+</ng-template>

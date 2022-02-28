@@ -1,0 +1,8 @@
+@import 'theme';
+
+@include sg-toolbar($sg-toolbar-height, $sg-toolbar-padding);
+
+.left-section {
+  overflow: hidden;
+}
+

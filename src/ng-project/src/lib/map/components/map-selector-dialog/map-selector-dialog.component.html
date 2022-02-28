@@ -1,0 +1,90 @@
+<sg-dialog-deprecated [large]="true" *transloco="let t; read: 'map.menu'">
+  <div class="sg-dialog-heading">{{ t('selectLayer') }}</div>
+  <div class="sg-dialog-close-button">
+    <button mat-icon-button (click)="dialogRef.close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="sg-dialog-content">
+    <!-- GRID LIST VIEW -->
+    <ng-container *ngIf="previewsVisible$ | async">
+      <div class="map-list row">
+        <div *ngFor="let layer of mapboxLayerDefs$ | async" class="col-12 col-lg-3 col-md-4 col-sm-6 p-1">
+          <div (click)="selectLayer(layer)" class="item"
+               [ngClass]="{'selected': (selected$ | async).layerId === layer._id}">
+            <div class="overlay"></div>
+            <mat-icon *ngIf="(selected$ | async).layerId === layer._id">check_circle</mat-icon>
+            <h3>
+              <sg-translation [str]="layer.name" [key]="'map.layer.' + layer._id + '.name'"></sg-translation>
+            </h3>
+            <sg-map-selector-preview
+              [layerDef]="layer"
+              [labelsDef]="labelsDef$ | async"
+              [labels]="(selected$ | async).labels">
+            </sg-map-selector-preview>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-list row">
+        <div *ngFor="let layer of layerDefs$ | async" class="col-12 col-lg-3 col-md-4 col-sm-6 p-1">
+          <div (click)="selectLayer(layer)" class="item"
+               [ngClass]="{'selected': (selected$ | async).layerId === layer._id, 'paid': !layer.accessGranted}">
+            <div class="overlay"></div>
+            <mat-icon *ngIf="(selected$ | async).layerId === layer._id">check_circle</mat-icon>
+            <h3>
+              <sg-translation [str]="layer.name" [key]="'map.layer.' + layer._id + '.name'"></sg-translation>
+            </h3>
+            <sg-map-selector-preview *ngIf="layer.accessGranted; else paidPreview"
+              [layerDef]="layer"
+              [labelsDef]="labelsDef$ | async"
+              [labels]="(selected$ | async).labels">
+            </sg-map-selector-preview>
+            <ng-template #paidPreview>
+              <!-- TODO add call for action here - purchase prospect -->
+              <mat-icon>lock</mat-icon>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+
+    <!-- LIST VIEW -->
+    <ng-container *ngIf="(previewsVisible$ | async) === false">
+      <mat-list class="list">
+        <mat-list-item *ngFor="let layer of mapboxLayerDefs$ | async" (click)="selectLayer(layer)"
+                       [ngClass]="{'selected': (selected$ | async).layerId === layer._id}">
+          <mat-icon *ngIf="(selected$ | async).layerId === layer._id">check_circle</mat-icon>
+          <strong>
+            <sg-translation [str]="layer.name" [key]="'map.layer.' + layer._id + '.name'"></sg-translation>
+          </strong>
+        </mat-list-item>
+        <mat-list-item *ngFor="let layer of layerDefs$ | async" (click)="selectLayer(layer)"
+                       [ngClass]="{'selected': (selected$ | async).layerId === layer._id, 'paid': !layer.accessGranted}">
+          <mat-icon *ngIf="(selected$ | async).layerId === layer._id">check_circle</mat-icon>
+          <strong>{{ layer.dataKey === 'PVOUT_csi' ? 'PVOUT_specific' : layer.dataKey }}</strong>
+          <sg-translation [str]="layer.name" [key]="'map.layer.' + layer._id + '.name'"></sg-translation>
+          <mat-icon *ngIf="!layer.accessGranted" class="lock">lock</mat-icon>
+        </mat-list-item>
+      </mat-list>
+    </ng-container>
+  </div>
+
+  <div class="sg-dialog-actions">
+    <mat-checkbox *ngIf="labelsAvailable$ | async" #labels
+                  [checked]="(selected$ | async).labels"
+                  (change)="selectLabels($event.checked)">
+      <span>{{ t('labels') }}</span>
+    </mat-checkbox>
+    <mat-checkbox [checked]="showLargeMarkers$ | async"
+                  (change)="selectMarkers($event.checked)">
+      <span>{{ t('marker') }}</span>
+    </mat-checkbox>
+
+    <mat-icon class="view-switcher" (click)="switchView()">
+      {{ (previewsVisible$ | async) ? 'list' : 'grid_on'}}
+    </mat-icon>
+  </div>
+</sg-dialog-deprecated>
